@@ -1,4 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+const {
+  backgrounds,
+  colors,
+  fontSize,
+  fontFamily,
+} = require("./design-tokens/prased-tokens");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,27 +16,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "backgrounds-main-2": "#F6F8F8",
-        lightgray: "#ccc",
-        "neutral-colors-black": "#000",
-        "colors-grey-2": "#424957",
-        white: "#fff",
-        "brand-main": "#fa5300",
+        ...colors,
       },
-      spacing: {},
+      // Extend font sizes from your text styles (e.g. "h1" becomes available as text-h1)
+      fontSize: {
+        ...fontSize,
+      },
+      // Extend font families so you can use classes like font-h1 (if you choose to map them that way)
       fontFamily: {
-        jura: "Jura",
-        "small-text": "'Plus Jakarta Sans'",
+        ...fontFamily,
       },
-    },
-    fontSize: {
-      base: "1rem",
-      sm: "0.875rem",
-      inherit: "inherit",
     },
 
     borderWidth: {
       thin: "1px",
+    },
+
+    backgroundColor: {
+      ...backgrounds,
     },
   },
   corePlugins: {
