@@ -34,7 +34,7 @@ const NavbarComponent: NextPage = () => {
               src={searchIcon}
             />
             <div className="flex flex-row items-center justify-center">
-              <div className="relative leading-[150%]">Search</div>
+              <p className="font-regular_text font-medium">Search</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.5rem] text-brand-main">
@@ -46,7 +46,7 @@ const NavbarComponent: NextPage = () => {
               src={homeIcon}
             />
             <div className=" flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">Home</div>
+              <p className="font-regular_text font-medium">Home</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.5rem]">
@@ -58,7 +58,7 @@ const NavbarComponent: NextPage = () => {
               src={inboxIcon}
             />
             <div className="flex flex-row items-center justify-center">
-              <div className="relative leading-[150%]">Inbox</div>
+              <p className="font-regular_text font-medium">Inbox</p>
             </div>
           </div>
         </div>
@@ -73,9 +73,7 @@ const NavbarComponent: NextPage = () => {
               src={caregiverIcon}
             />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">
-                Caregiver
-              </div>
+              <p className="font-regular_text font-medium">Caregiver</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
@@ -87,7 +85,7 @@ const NavbarComponent: NextPage = () => {
               src={clientIcon}
             />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">Client</div>
+              <p className="font-regular_text font-medium">Client</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
@@ -99,9 +97,7 @@ const NavbarComponent: NextPage = () => {
               src={calendarIcon}
             />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">
-                Schedules
-              </div>
+              <p className="font-regular_text font-medium">Schedules</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
@@ -113,9 +109,7 @@ const NavbarComponent: NextPage = () => {
               src={agreementIcon}
             />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">
-                Agreements
-              </div>
+              <p className="font-regular_text font-medium">Agreements</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
@@ -127,9 +121,7 @@ const NavbarComponent: NextPage = () => {
               src={notificationIcon}
             />
             <div className="w-[7.313rem] overflow-hidden shrink-0 flex flex-row items-center justify-center">
-              <div className="flex-1 relative leading-[150%] font-medium">
-                Notifications...
-              </div>
+              <p className="font-regular_text font-medium">Notifications...</p>
             </div>
           </div>
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
@@ -143,9 +135,7 @@ const NavbarComponent: NextPage = () => {
               />
             </div>
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <div className="relative leading-[150%] font-medium">
-                Mobile App
-              </div>
+              <p className="font-regular_text font-medium">Mobile App</p>
             </div>
           </div>
         </div>
