@@ -7,7 +7,7 @@ type ClientIconProps = {
 const ClientIcon = ({ color = "#424957" }: ClientIconProps) => {
   return (
     <svg
-      width="22"
+      width="21"
       height="17"
       viewBox="0 0 22 17"
       fill="none"

@@ -7,7 +7,7 @@ type MobileAppIconProps = {
 const MobileAppIcon = ({ color = "#424957" }: MobileAppIconProps) => {
   return (
     <svg
-      width="20"
+      width="22"
       height="22"
       viewBox="0 0 14 19"
       fill="none"
