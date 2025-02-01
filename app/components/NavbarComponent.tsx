@@ -15,7 +15,7 @@ import starsIcon from "../../public/assets/icons/stars-icon.svg";
 
 const NavbarComponent: NextPage = () => {
   return (
-    <div className="relative bg-backgrounds-main-2 min-h-screen flex flex-col items-start justify-center gap-[0.625rem] text-left text-[1rem] text-colors-grey-2 font-small-text">
+    <div className="relative bg-backgrounds-main-2 min-h-screen flex flex-col items-start justify-center gap-[0.625rem] text-left text-[1rem] ">
       <div className="self-stretch flex flex-col items-start justify-center py-[0.5rem] px-[1rem] text-neutral-colors-black">
         <div className="flex flex-row items-center justify-start">
           <b className="relative tracking-[-0.03em] leading-[120%]">
