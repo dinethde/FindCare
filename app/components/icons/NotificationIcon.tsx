@@ -27,7 +27,8 @@ const NotificationIcon = ({ color = "#424957" }: NotificationIconProps) => {
       />
       <path
         d="M19.9998 3C19.9998 4.65685 18.7239 6 17.1498 6C15.5757 6 14.2998 4.65685 14.2998 3C14.2998 1.34315 15.5757 0 17.1498 0C18.7239 0 19.9998 1.34315 19.9998 3Z"
-        fill="#5A6A72"
+        fill="#fff"
+        stroke={color}
       />
     </svg>
   );
