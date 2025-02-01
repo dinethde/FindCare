@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import photo from "../../public/images/photo.png";
-import searchIcon from "../../public/assets/icons/search-icon.png";
-import homeIcon from "../../public/assets/icons/home-icon.png";
-import inboxIcon from "../../public/assets/icons/inbox-icon.png";
-import caregiverIcon from "../../public/assets/icons/caregiver-icon.png";
-import clientIcon from "../../public/assets/icons/client-icon.png";
-import calendarIcon from "../../public/assets/icons/calendar-icon.png";
-import agreementIcon from "../../public/assets/icons/agreement-icon.png";
-import notificationIcon from "../../public/assets/icons/notification-icon.png";
-import mobileAppIcon from "../../public/assets/icons/mobile_app-icon.png";
-import helpIcon from "../../public/assets/icons/help icon.png";
-import starsIcon from "../../public/assets/icons/stars-icon.png";
+import searchIcon from "../../public/assets/icons/search-icon.svg";
+import homeIcon from "../../public/assets/icons/home-icon.svg";
+import inboxIcon from "../../public/assets/icons/inbox-icon.svg";
+import caregiverIcon from "../../public/assets/icons/caregiver-icon.svg";
+import clientIcon from "../../public/assets/icons/client-icon.svg";
+import calendarIcon from "../../public/assets/icons/calendar-icon.svg";
+import agreementIcon from "../../public/assets/icons/agreement-icon.svg";
+import notificationIcon from "../../public/assets/icons/notification-icon.svg";
+import mobileAppIcon from "../../public/assets/icons/mobile_app-icon.svg";
+import helpIcon from "../../public/assets/icons/help-icon.svg";
+import starsIcon from "../../public/assets/icons/stars-icon.svg";
 
 const NavbarComponent: NextPage = () => {
   return (
