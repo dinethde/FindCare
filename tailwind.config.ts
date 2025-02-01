@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const {
-  backgrounds,
   colors,
   fontSize,
   fontFamily,
@@ -25,6 +24,7 @@ module.exports = {
       // Extend font families so you can use classes like font-h1 (if you choose to map them that way)
       fontFamily: {
         ...fontFamily,
+        jura: "jura",
       },
     },
 
@@ -33,7 +33,7 @@ module.exports = {
     },
 
     backgroundColor: {
-      ...backgrounds,
+      ...colors,
     },
   },
   corePlugins: {

@@ -15,12 +15,10 @@ import starsIcon from "../../public/assets/icons/stars-icon.svg";
 
 const NavbarComponent: NextPage = () => {
   return (
-    <div className="relative bg-backgrounds-main-2 min-h-screen flex flex-col items-start justify-center gap-[0.625rem] text-left text-[1rem] ">
-      <div className="self-stretch flex flex-col items-start justify-center py-[0.5rem] px-[1rem] text-neutral-colors-black">
+    <div className="relative bg-main-2 min-h-screen flex flex-col items-start justify-center">
+      <div className="self-stretch flex flex-col items-start justify-center p-[0.5rem] px-[1rem]">
         <div className="flex flex-row items-center justify-start">
-          <b className="relative tracking-[-0.03em] leading-[120%]">
-            Find Care
-          </b>
+          <b className="font-regular_text">Find Care</b>
         </div>
       </div>
       <div className="flex-1 flex flex-col items-start justify-center p-[1rem] gap-[1.75rem]">
@@ -62,7 +60,7 @@ const NavbarComponent: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="self-stretch relative box-border h-[0.8px] bg-black" />
+        <div className="self-stretch relative  h-[0.8px] bg-grey" />
         <div className="flex flex-col items-start justify-start gap-[1.25rem]">
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
             <Image
@@ -141,35 +139,22 @@ const NavbarComponent: NextPage = () => {
         </div>
       </div>
       <div className="self-stretch flex flex-col items-center justify-center gap-[0.75rem] text-[0.875rem]">
-        <div className="self-stretch flex flex-col items-start justify-start py-[0rem] pl-[1.25rem] pr-[1rem]">
+        <div className="self-stretch flex flex-col items-start justify-start pl-[1rem]">
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[0.938rem] relative h-[0.938rem]"
-              width={15}
-              height={15}
-              alt=""
-              src={helpIcon}
-            />
-            <div className="relative leading-[150%]">Help</div>
+            <Image width={20} height={20} alt="" src={helpIcon} />
+            <div className="font-regular_text">Help</div>
           </div>
         </div>
-        <div className="self-stretch flex flex-col items-start justify-start py-[0rem] pl-[1.25rem] pr-[1rem]">
+        <div className="self-stretch flex flex-col items-start justify-start pl-[1rem]">
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[0.938rem] relative h-[0.938rem]"
-              width={15}
-              height={15}
-              alt=""
-              src={starsIcon}
-            />
-            <div className="relative leading-[150%]">Getting starting</div>
+            <Image width={20} height={20} alt="" src={starsIcon} />
+            <div className="font-regular_text">Getting starting</div>
           </div>
         </div>
 
-        {/* I want to add a top border into bellow class your task is to implement it and generate only the changing bellow code */}
         <div
-          className="w-full flex flex-row items-center justify-start p-[0.75rem] gap-[0.5rem] text-left text-[1rem] text-neutral-colors-black font-jura"
-          style={{ borderTop: "1px solid black" }}
+          className="w-full flex flex-row items-center justify-start p-[0.75rem] gap-[0.5rem] text-[1rem] font-jura"
+          style={{ borderTop: "1px solid grey" }}
         >
           <Image
             className="w-[1.875rem] relative rounded-[100px] h-[1.875rem] object-cover"
@@ -178,9 +163,7 @@ const NavbarComponent: NextPage = () => {
             alt=""
             src={photo}
           />
-          <b className="relative tracking-[-0.03em] leading-[120%]">
-            Dineth Silva
-          </b>
+          <b>Dineth De Silva</b>
         </div>
       </div>
     </div>
