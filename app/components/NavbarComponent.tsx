@@ -16,11 +16,26 @@ import starsIcon from "../../public/assets/icons/stars-icon.svg";
 import HomeIcon from "./icons/HomeIcon";
 import SearchIcon from "./icons/SearchIcon";
 import InboxIcon from "./icons/InboxIcon";
+import CaregiverIcon from "./icons/CaregiverIcon";
+import ClientIcon from "./icons/ClientIcon";
+import CalendarIcon from "./icons/CalendarIcon";
+import AgreementIcon from "./icons/AgreementIcon";
+import NotificationIcon from "./icons/NotificationIcon";
+import MobileAppIcon from "./icons/MobileAppIcon";
+import HelpIcon from "./icons/HelpIcon";
+import StarsIcon from "./icons/StarsIcon";
 
 const NavbarComponent: NextPage = () => {
   return (
-    <div className="relative bg-main-2 min-h-screen flex flex-col items-start justify-center  w-auto max-w-[16rem] whitespace-nowrap text-grey ">
-      <div className="self-stretch flex flex-col items-start justify-center p-[0.5rem] px-[1rem]">
+    <div className="relative bg-main-2 min-h-screen flex flex-col items-start justify-center  w-auto max-w-[16rem] whitespace-nowrap">
+      <div className="self-stretch flex  justify-start p1-4 p-[0.5rem] pl-3 gap-2">
+        <Image
+          className="relative rounded-md object-cover "
+          width={30}
+          height={30}
+          alt=""
+          src={photo}
+        />
         <div className="flex flex-row items-center justify-start">
           <b className="font-regular_text">Find Care</b>
         </div>
@@ -55,91 +70,52 @@ const NavbarComponent: NextPage = () => {
         <div className="self-stretch relative  h-[0.8px] bg-grey" />
         <div className="flex flex-col items-start justify-start gap-[1.25rem]">
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[1.25rem] relative h-[1.25rem]"
-              width={20}
-              height={20}
-              alt=""
-              src={caregiverIcon}
-            />
+            <CaregiverIcon />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <p className="font-regular_text font-medium">Caregiver</p>
+              <p className="font-regular_text font-medium">Caregivers</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[1.319rem] relative h-[1.063rem]"
-              width={21}
-              height={17}
-              alt=""
-              src={clientIcon}
-            />
+            <ClientIcon />
             <div className="overflow-hidden flex flex-row items-center justify-center">
-              <p className="font-regular_text font-medium">Client</p>
+              <p className="font-regular_text font-medium">Clients</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[1.25rem] relative h-[1.25rem]"
-              width={20}
-              height={20}
-              alt=""
-              src={calendarIcon}
-            />
+            <CalendarIcon />
             <div className="overflow-hidden flex flex-row items-center justify-center">
               <p className="font-regular_text font-medium">Schedules</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[1.25rem] relative h-[1.25rem]"
-              width={20}
-              height={20}
-              alt=""
-              src={agreementIcon}
-            />
+            <AgreementIcon />
             <div className="overflow-hidden flex flex-row items-center justify-center">
               <p className="font-regular_text font-medium">Agreements</p>
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image
-              className="w-[1.25rem] relative h-[1.25rem]"
-              width={20}
-              height={20}
-              alt=""
-              src={notificationIcon}
-            />
+            <NotificationIcon />
             <div className="w-[7.313rem] overflow-hidden shrink-0 flex flex-row items-center justify-center">
               <p className="font-regular_text font-medium">Notifications...</p>
             </div>
           </div>
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
-            <div className="w-[1.25rem] bg-white h-[1.25rem] flex flex-row items-center justify-center">
-              <Image
-                className="w-[0.875rem] relative h-[1.188rem]"
-                width={14}
-                height={19}
-                alt=""
-                src={mobileAppIcon}
-              />
-            </div>
+            <MobileAppIcon />
             <div className="overflow-hidden flex flex-row items-center justify-center">
               <p className="font-regular_text font-medium">Mobile App</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="self-stretch flex flex-col items-center justify-center gap-[0.75rem] text-[0.875rem]">
-        <div className="self-stretch flex flex-col items-start justify-start pl-[1rem]">
+      <div className="self-stretch flex flex-col items-center justify-center gap-[1rem] text-[0.875rem]">
+        <div className="self-stretch flex flex-col justify-start gap-[0.75rem] text-[0.875rem] px-4">
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image width={20} height={20} alt="" src={helpIcon} />
+            <HelpIcon />
             <div className="font-regular_text">Help</div>
           </div>
-        </div>
-        <div className="self-stretch flex flex-col items-start justify-start pl-[1rem]">
+
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
-            <Image width={20} height={20} alt="" src={starsIcon} />
+            <StarsIcon />
             <div className="font-regular_text">Getting starting</div>
           </div>
         </div>
