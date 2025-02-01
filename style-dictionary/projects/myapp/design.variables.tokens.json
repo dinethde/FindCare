@@ -1,0 +1,204 @@
+{
+  "Backgrounds": {
+    "main": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "main-2": {
+      "type": "color",
+      "value": "#f6f8f8"
+    },
+    "big card": {
+      "type": "color",
+      "value": "#f7f8f8"
+    },
+    "small card": {
+      "type": "color",
+      "value": "#f8fbfb"
+    },
+    "small card - orange": {
+      "type": "color",
+      "value": "#fbfaf8"
+    }
+  },
+  "Colors": {
+    "grey": {
+      "type": "color",
+      "value": "#5a6a72"
+    },
+    "grey-darker": {
+      "type": "color",
+      "value": "#424957"
+    },
+    "logo-colors-icon": {
+      "type": "color",
+      "value": "#424957"
+    }
+  },
+  "Color": {
+    "bg-card": {
+      "type": "color",
+      "value": "#f1f3f4"
+    },
+    "test color 2": {
+      "type": "color",
+      "value": "#8d9da5"
+    }
+  },
+  "Strokes": {
+    "card": {
+      "xs": {
+        "type": "number",
+        "value": 0.5
+      },
+      "small": {
+        "type": "number",
+        "value": 0.800000011920929
+      },
+      "big": {
+        "type": "number",
+        "value": 1
+      },
+      "Number": {
+        "type": "number",
+        "value": 0
+      }
+    }
+  },
+  "Radius": {
+    "xs": {
+      "type": "number",
+      "value": 4
+    },
+    "small": {
+      "type": "number",
+      "value": 8
+    },
+    "regular": {
+      "type": "number",
+      "value": 12
+    },
+    "big": {
+      "type": "number",
+      "value": 16
+    }
+  },
+  "Neutral-colors": {
+    "White": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "Neutral 1": {
+      "type": "color",
+      "value": "#f5f5f5"
+    },
+    "Neutral 2": {
+      "type": "color",
+      "value": "#f2f2f2"
+    },
+    "Neutral 3": {
+      "type": "color",
+      "value": "#e6e6e6"
+    },
+    "Neutral 4": {
+      "type": "color",
+      "value": "#d9d9d9"
+    },
+    "Neutral 5": {
+      "type": "color",
+      "value": "#cccccc"
+    },
+    "Neutral 6": {
+      "type": "color",
+      "value": "#bfbfbf"
+    },
+    "Neutral 7": {
+      "type": "color",
+      "value": "#999999"
+    },
+    "Neutral 8": {
+      "type": "color",
+      "value": "#808080"
+    },
+    "Neutral 9": {
+      "type": "color",
+      "value": "#333333"
+    },
+    "Neutral 10": {
+      "type": "color",
+      "value": "#262626"
+    },
+    "Neutral 11": {
+      "type": "color",
+      "value": "#191919"
+    },
+    "Neutral 12": {
+      "type": "color",
+      "value": "#0d0d0d"
+    },
+    "Black": {
+      "type": "color",
+      "value": "#000000"
+    }
+  },
+  "Brand-colors": {
+    "Main": {
+      "type": "color",
+      "value": "#fa5300"
+    },
+    "Brand 2": {
+      "type": "color",
+      "value": "#ff6619"
+    },
+    "Brand 4": {
+      "type": "color",
+      "value": "#ff884c"
+    },
+    "Brand 5": {
+      "type": "color",
+      "value": "#ff9966"
+    },
+    "Brand 3": {
+      "type": "color",
+      "value": "#ff7733"
+    },
+    "Brand 6": {
+      "type": "color",
+      "value": "#ffaa80"
+    },
+    "Brand 7": {
+      "type": "color",
+      "value": "#ffbb99"
+    },
+    "Brand 8": {
+      "type": "color",
+      "value": "#ffccb2"
+    },
+    "Brand 9": {
+      "type": "color",
+      "value": "#ffddcc"
+    }
+  },
+  "Support-colors": {
+    "Color 1": {
+      "type": "color",
+      "value": "#007aff"
+    },
+    "Color 2": {
+      "type": "color",
+      "value": "#fca827"
+    },
+    "Color 3": {
+      "type": "color",
+      "value": "#ff2d55"
+    },
+    "Color 4": {
+      "type": "color",
+      "value": "#00b1cc"
+    },
+    "Color 5": {
+      "type": "color",
+      "value": "#6210c1"
+    }
+  }
+}
