@@ -1,3 +1,3 @@
 export default function AgreementPage() {
-  return <div>Agreement</div>;
+  return <div>HELP</div>;
 }
