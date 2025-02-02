@@ -17,3 +17,7 @@ p {
 .navbar-link {
   @apply self-stretch flex flex-row items-center justify-start gap-[0.5rem] text-grey no-underline;
 }
+
+.navitem-wrapper {
+  @apply overflow-hidden flex items-center justify-start;
+}

@@ -57,7 +57,7 @@ const NavbarComponent: NextPage = () => {
           </Link>
 
           {/* Inbox Page Nav Link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/inbox"} className="navbar-link">
             <InboxIcon />
             <div className="flex flex-row items-center justify-center">
               <p className="font-regular_text font-medium">Inbox</p>
@@ -71,49 +71,51 @@ const NavbarComponent: NextPage = () => {
         {/* Navbar pages link wrapper */}
         <div className="flex flex-col items-start justify-start gap-[1.25rem]">
           {/* Caregiver page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href="/caregivers" className="navbar-link">
             <CaregiverIcon />
-            <div className="overflow-hidden flex flex-row items-center justify-center">
+            <div className="navitem-wrapper">
               <p className="font-regular_text font-medium">Caregivers</p>
             </div>
           </Link>
 
           {/* Client page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/clients"} className="navbar-link">
             <ClientIcon />
-            <div className="overflow-hidden flex flex-row items-center justify-center">
+            <div className="navitem-wrapper">
               <p className="font-regular_text font-medium">Clients</p>
             </div>
           </Link>
 
           {/* Schedule page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/schedules"} className="navbar-link">
             <CalendarIcon />
-            <div className="overflow-hidden flex flex-row items-center justify-center">
+            <div className="navitem-wrapper">
               <p className="font-regular_text font-medium">Schedules</p>
             </div>
           </Link>
 
           {/* Agreement page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/agreements"} className="navbar-link">
             <AgreementIcon />
-            <div className="overflow-hidden flex flex-row items-center justify-center">
+            <div className="navitem-wrapper">
               <p className="font-regular_text font-medium">Agreements</p>
             </div>
           </Link>
 
           {/* Notification page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/notification"} className="navbar-link">
             <NotificationIcon />
-            <div className="w-[7.313rem] overflow-hidden shrink-0 flex flex-row items-center justify-center">
-              <p className="font-regular_text font-medium">Notifications...</p>
+            <div className="navitem-wrapper">
+              <p className="font-regular_text font-medium">
+                Notifications & ...
+              </p>
             </div>
           </Link>
 
           {/* Mobile App */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/mobileapp"} className="navbar-link">
             <MobileAppIcon />
-            <div className="overflow-hidden flex flex-row items-center justify-center">
+            <div className="navitem-wrapper">
               <p className="font-regular_text font-medium">Mobile App</p>
             </div>
           </Link>
@@ -125,13 +127,13 @@ const NavbarComponent: NextPage = () => {
         {/* Imporatant Links wrapper */}
         <div className="self-stretch flex flex-col justify-start gap-[0.75rem] text-[0.875rem] px-4">
           {/* Helping page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/help"} className="navbar-link">
             <HelpIcon />
             <div className="font-regular_text">Help</div>
           </Link>
 
           {/* Getting started page link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/getting-starting"} className="navbar-link">
             <StarsIcon />
             <div className="font-regular_text">Getting starting</div>
           </Link>
@@ -139,7 +141,7 @@ const NavbarComponent: NextPage = () => {
 
         {/* Account details wrapper */}
         <Link
-          href={"/"}
+          href={"/settings"}
           className="w-full flex flex-row items-center justify-start p-[0.75rem] gap-[0.5rem] text-[1rem] font-jura no-underline"
           style={{ borderTop: "1px solid grey" }}
         >
