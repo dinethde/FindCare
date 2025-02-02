@@ -22,3 +22,7 @@ p {
 .navitem-wrapper {
   @apply overflow-hidden flex items-center justify-start;
 }
+
+.weight-500 {
+  @apply font-medium;
+}

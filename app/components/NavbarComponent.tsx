@@ -37,14 +37,15 @@ const NavbarComponent: NextPage = () => {
           </b>
         </div>
       </div>
-      <div className="flex-1 flex flex-col items-start justify-center p-[1rem] gap-[1.75rem]">
+      {/* Nav items main wrapper */}
+      <div className="flex-1 flex flex-col items-start justify-center p-[1rem] gap-[1.75rem] text-black">
         {/* Top items wrapper */}
         <div className="self-stretch flex flex-col items-start justify-start py-[0rem] px-[0.25rem] gap-[1rem]">
           {/* Search Page Nav Link */}
           <Link href={"/"} className="navbar-link">
             <SearchIcon />
             <div className="flex flex-row items-center justify-center">
-              <p className="text-regular_text font-medium">Search</p>
+              <p className="text-regular-text">Search</p>
             </div>
           </Link>
 
@@ -62,7 +63,7 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/inbox"} className="navbar-link">
             <InboxIcon />
             <div className="flex flex-row items-center justify-center">
-              <p className="text-regular_text font-medium">Inbox</p>
+              <p className="text-regular-text ">Inbox</p>
             </div>
           </Link>
         </div>
@@ -76,7 +77,9 @@ const NavbarComponent: NextPage = () => {
           <Link href="/caregivers" className="navbar-link">
             <CaregiverIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">Caregivers</p>
+              <p className="text-regular-text-thicker font-medium">
+                Caregivers
+              </p>
             </div>
           </Link>
 
@@ -84,7 +87,7 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/clients"} className="navbar-link">
             <ClientIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">Clients</p>
+              <p className="text-regular-text-thicker font-medium">Clients</p>
             </div>
           </Link>
 
@@ -92,7 +95,7 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/schedules"} className="navbar-link">
             <CalendarIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">Schedules</p>
+              <p className="text-regular-text-thicker font-medium">Schedules</p>
             </div>
           </Link>
 
@@ -100,7 +103,9 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/agreements"} className="navbar-link">
             <AgreementIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">Agreements</p>
+              <p className="text-regular-text-thicker font-medium">
+                Agreements
+              </p>
             </div>
           </Link>
 
@@ -108,7 +113,7 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/notification"} className="navbar-link">
             <NotificationIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">
+              <p className="text-regular-text-thicker font-medium">
                 Notifications & ...
               </p>
             </div>
@@ -118,7 +123,9 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/mobileapp"} className="navbar-link">
             <MobileAppIcon />
             <div className="navitem-wrapper">
-              <p className="text-regular_text font-medium">Mobile App</p>
+              <p className="text-regular-text-thicker font-medium">
+                Mobile App
+              </p>
             </div>
           </Link>
         </div>
@@ -131,13 +138,13 @@ const NavbarComponent: NextPage = () => {
           {/* Helping page link */}
           <Link href={"/help"} className="navbar-link">
             <HelpIcon />
-            <div className="text-regular_text">Help</div>
+            <div className="text-regular-text">Help</div>
           </Link>
 
           {/* Getting started page link */}
           <Link href={"/getting-starting"} className="navbar-link">
             <StarsIcon />
-            <div className="text-regular_text">Getting starting</div>
+            <div className="text-regular-text">Getting starting</div>
           </Link>
         </div>
 

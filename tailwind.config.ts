@@ -21,7 +21,7 @@ const textStylesPlugin = plugin(function ({ addUtilities }) {
     };
   });
   // Note: No variants are specified as Tailwind v3 makes them responsive automatically.
-  addUtilities(utilities, { respectPrefix: true, respectImportant: true });
+  addUtilities(utilities);
 });
 
 const config: Config = {
