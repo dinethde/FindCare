@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,4 +12,12 @@
 
 p {
   margin: 0;
+}
+
+.navbar-link {
+  @apply self-stretch flex flex-row items-center justify-start gap-[0.5rem] text-grey no-underline;
+}
+
+.navitem-wrapper {
+  @apply overflow-hidden flex items-center justify-start;
 }
