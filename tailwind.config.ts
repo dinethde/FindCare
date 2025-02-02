@@ -45,6 +45,7 @@ const config: Config = {
       },
       fontFamily: {
         jura: "jura",
+        "plus-jakarta-sans": "Plus Jakarta Sans",
       },
       backgroundColor: {
         ...colors,
@@ -52,6 +53,6 @@ const config: Config = {
     },
   },
   plugins: [textStylesPlugin],
-}
+};
 
 export default config;

@@ -7,7 +7,7 @@ export default function layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col min-h-full ">
+    <div className="flex flex-col min-h-full py-4 px-5 gap-10">
       <header>
         <Header />
       </header>
