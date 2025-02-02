@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"min-h-screen m-0"}>
-        <div className="min-h-screen flex font-jura">
+        <div className="min-h-screen flex ">
           <NavbarComponent />
           <main className="w-full">{children}</main>
         </div>
