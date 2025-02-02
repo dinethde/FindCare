@@ -52,7 +52,6 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/"} className="navbar-link">
             <HomeIcon color={"#FA5300"} />
             <div className=" flex flex-row items-center justify-center">
-
               <p className="font-regular_text font-semibold text-main">Home</p>
             </div>
           </Link>
@@ -99,7 +98,7 @@ const NavbarComponent: NextPage = () => {
           <Link href={"/agreements"} className="navbar-link">
             <AgreementIcon />
             <div className="navitem-wrapper">
-              <p className="font-regular_text font-medium">Agreements</p>  
+              <p className="font-regular_text font-medium">Agreements</p>
             </div>
           </Link>
 
