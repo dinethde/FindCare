@@ -1,5 +1,5 @@
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
-  return <h1 className="font-h2">Home</h1>;
+export default function HomePage() {
+  return <div>Schedule</div>;
 }
