@@ -1,3 +1,3 @@
 export default function GettingStartingPage() {
-  return <div>Getting starting</div>;
+  return <div>Gettinsg starting</div>;
 }
