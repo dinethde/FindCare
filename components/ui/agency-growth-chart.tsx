@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select";
 import { agencyGrowthData } from "@/data/agency-growth";
 import type { AgencyGrowthData } from "@/types/chart";
+import SelectTime from "@/app/components/SelectTime";
 
 export function AgencyGrowthChart() {
   const [selectedYear, setSelectedYear] = useState(2024);
@@ -27,34 +28,23 @@ export function AgencyGrowthChart() {
     agencyGrowthData.find((d) => d.year === selectedYear)?.data || [];
 
   return (
-    <Card className="w-full">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-7">
+    // Card wrapper
+    <Card className="w-full p-4 pt-2 flex flex-col gap-4">
+      {/* Card header wrapper */}
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0">
         <CardTitle className="text-h6 font-normal">Agency Growth</CardTitle>
-
-        <div className="text-grey">
-          <Select
-            defaultValue={selectedYear.toString()}
-            onValueChange={(value) => setSelectedYear(Number.parseInt(value))}
-          >
-            <SelectTrigger className="w-[100px] bg-[#E8EBEE] text-tagline">
-              <SelectValue />
-            </SelectTrigger>
-
-            <SelectContent className="text-grey">
-              {agencyGrowthData.map((yearData) => (
-                <SelectItem
-                  key={yearData.year}
-                  value={yearData.year.toString()}
-                >
-                  {yearData.year}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        {/* Select year component  */}
+        <div>
+          <SelectTime
+            selectedYear={selectedYear}
+            setSelectedYear={setSelectedYear}
+          />
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="h-[300px] w-full">
+
+      {/* Card content wrapper */}
+      <CardContent className="p-0">
+        <div className=" h-40 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={currentYearData}
