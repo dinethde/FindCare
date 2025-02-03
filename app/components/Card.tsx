@@ -37,30 +37,6 @@ export default function RevenueCard({
       <CardHeader className="flex flex-row items-center justify-between p-0">
         <h2 className="text-h6 text-neutral-10">{title}</h2>
 
-        {/* <Select
-          defaultValue={selectedYear.toString()}
-          onValueChange={(value) => setSelectedYear(value)}
-        >
-          {/* Select Tirgger 
-          <div className="text-grey max-w-[120px] ">
-            <SelectTrigger className="bg-[#E8EBEE] text-tagline ">
-              <SelectValue />
-            </SelectTrigger>
-          </div>
-
-          <SelectContent className="text-grey">
-            {months.map((month) => (
-              <SelectItem
-                className="text-tagline"
-                key={month.value}
-                value={month.value}
-              >
-                {month.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select> */}
-
         <SelectTime
           selectedYear={selectedYear}
           setSelectedYear={setSelectedYear}
@@ -69,9 +45,6 @@ export default function RevenueCard({
       </CardHeader>
       <CardContent className="p-0">
         <div className="flex items-center space-x-3">
-          {/* <div className="">
-            {/* <CircleDollarSign className="h-4 w-4 text-primary" /> 
-          </div> */}
           <NestedCirclesIcon color={color} />
           <div className="text-h5 font-bold">
             <p className="font-bold">{formatCurrency(revenue)} LKR</p>
