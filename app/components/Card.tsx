@@ -1,0 +1,72 @@
+"use client";
+import { CircleDollarSign } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import type { RevenueCardProps, Month } from "../../types/CardTypes";
+import NestedCirclesIcon from "./icons/NestedCirclesIcon";
+
+const months: Month[] = [
+  { value: "oct-2024", label: "Oct 2024" },
+  { value: "sep-2024", label: "Sep 2024" },
+  { value: "aug-2024", label: "Aug 2024" },
+];
+
+export default function RevenueCard({
+  revenue = 560000,
+  title = "Total Revenue",
+  selectedMonth = "oct-2024",
+  color = "#FCA827",
+  onMonthChange = () => {},
+}: RevenueCardProps) {
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat("en-LK", {
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
+  return (
+    <Card className="w-full bg-small-card pb-4 pt-2 px-4 flex gap-5 flex-col">
+      <CardHeader className="flex flex-row items-center justify-between p-0">
+        <h2 className="text-h6 text-neutral-10">{title}</h2>
+
+        <Select defaultValue={selectedMonth} onValueChange={onMonthChange}>
+          {/* Select Tirgger */}
+          <div className="text-grey max-w-[120px] ">
+            <SelectTrigger className="bg-[#E8EBEE] text-tagline ">
+              <SelectValue />
+            </SelectTrigger>
+          </div>
+
+          <SelectContent className="text-grey">
+            {months.map((month) => (
+              <SelectItem
+                className="text-tagline"
+                key={month.value}
+                value={month.value}
+              >
+                {month.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </CardHeader>
+      <CardContent className="p-0">
+        <div className="flex items-center space-x-3">
+          {/* <div className="">
+            {/* <CircleDollarSign className="h-4 w-4 text-primary" /> 
+          </div> */}
+          <NestedCirclesIcon color={color} />
+          <div className="text-h5 font-bold">
+            <p className="font-bold">{formatCurrency(revenue)} LKR</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
