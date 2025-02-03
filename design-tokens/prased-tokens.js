@@ -1,31 +1,51 @@
 // design-tokens/parsed-tokens.js
-const tokens = require('./design-tokens'); // Your auto-generated tokens file
+const tokens = require('./design-tokens'); // Auto-generated file from Style Dictionary
 
-// Helper: Convert a token key to a Tailwind-friendly key
-function formatKey(key) {
-  return key.toLowerCase().replace(/\s+/g, '-');
+function toKebabCase(str) {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 }
 
-// Helper: Parse a color category from the tokens file
+function stripCategory(name, category) {
+  if (category.toLowerCase() === 'neutral-colors') {
+    // Remove "neutral", "neutral colors", "neutral-colors", etc.
+    return name.replace(/^(neutral[\s-]*colors)/i, '');
+  }
+  const regex = new RegExp('^' + category, 'i');
+  return name.replace(regex, '');
+}
+
 function parseColorCategory(category) {
   if (!tokens[category]) return {};
   return Object.fromEntries(
-    Object.entries(tokens[category]).map(([key, token]) => [
-      formatKey(key),
-      token.value,
-    ])
+    Object.entries(tokens[category]).map(([key, token]) => {
+      const rawName = token.name || key;
+      let stripped = stripCategory(rawName, category).trim();
+
+      if (category.toLowerCase() === 'neutral-colors') {
+        // Insert a hyphen between "neutral" and a digit if missing.
+        stripped = stripped.replace(/^(neutral)(\d+)/i, '$1-$2');
+      }
+
+      if (!stripped) {
+        stripped = key;
+      }
+      const newKey = toKebabCase(stripped).replace(/^-+|-+$/g, '');
+      return [newKey, token.value];
+    })
   );
 }
 
-// Parse each color category
-const backgrounds = parseColorCategory("Backgrounds");
-const colors = parseColorCategory("Colors");
-const color = parseColorCategory("Color");
+// Parse each color category.
+const backgrounds   = parseColorCategory("Backgrounds");
+const colors        = parseColorCategory("Colors");
+const color         = parseColorCategory("Color");
 const neutralColors = parseColorCategory("Neutral-colors");
-const brandColors = parseColorCategory("Brand-colors");
+const brandColors   = parseColorCategory("Brand-colors");
 const supportColors = parseColorCategory("Support-colors");
 
-// Merge all color objects into one
 const allColors = {
   ...backgrounds,
   ...colors,
@@ -35,38 +55,79 @@ const allColors = {
   ...supportColors,
 };
 
-// ---
-// Process Text Styles (which come as an array)
-function parseTextStyles() {
-  if (!tokens.textStyles) return { fontSize: {}, fontFamily: {}, fontWeight: {}, letterSpacing: {} };
-  const fontSize = {};
-  const fontFamily = {};
-  const fontWeight = {};
-  const letterSpacing = {};
-
-  tokens.textStyles.forEach(style => {
-    // Use the style name as key (e.g. "H1" becomes "h1")
-    const key = formatKey(style.name);
-    // Convert fontSize from px to rem (assuming 16px base)
-    fontSize[key] = `${style.fontSize / 16}rem`;
-    // Directly use the fontFamily
-    fontFamily[key] = style.fontFamily;
-    // Capture fontWeight (as provided)
-    fontWeight[key] = style.fontWeight;
-    // Convert letterSpacing percent to em (divide by 100)
-    letterSpacing[key] = `${style.letterSpacing.value / 100}em`;
-  });
-
-  return { fontSize, fontFamily, fontWeight, letterSpacing };
+// ==============
+// Parse Strokes (for border widths)
+// Assumes strokes are under tokens.Strokes.card.
+let strokes = {};
+if (tokens.Strokes && tokens.Strokes.card) {
+  strokes = Object.fromEntries(
+    Object.entries(tokens.Strokes.card).map(([key, token]) => [
+      toKebabCase(key),
+      token.value + 'px'
+    ])
+  );
 }
 
-const { fontSize, fontFamily, fontWeight, letterSpacing } = parseTextStyles();
+// ==============
+// Parse Radius (for border radius)
+let radius = {};
+if (tokens.Radius) {
+  radius = Object.fromEntries(
+    Object.entries(tokens.Radius).map(([key, token]) => [
+      toKebabCase(key),
+      token.value + 'px'
+    ])
+  );
+}
 
-// Export the parsed tokens for Tailwind configuration
+// ==============
+// Parse Text Styles (full style objects)
+// This function processes tokens.textStyles (an array) into an object keyed by style name.
+function parseTextStyles() {
+  const textStyles = {};
+  if (!tokens.textStyles) return textStyles;
+  tokens.textStyles.forEach(style => {
+    // Use the token name and convert to kebab-case (e.g. "H1" => "h1")
+    const key = toKebabCase(style.name).replace(/^-+|-+$/g, '');
+    const fontSize = style.fontSize ? `${style.fontSize / 16}rem` : undefined;
+    const fontFamily = style.fontFamily || 'sans-serif';
+    const fontWeight = style.fontWeight
+      ? (() => {
+          const lw = style.fontWeight.toLowerCase();
+          if (lw === 'bold') return '700';
+          if (lw === 'semibold') return '600';
+          if (lw === 'medium') return '500';
+          if (lw === 'regular') return '400';
+          return style.fontWeight;
+        })()
+      : undefined;
+    const letterSpacing = style.letterSpacing && style.letterSpacing.value != null
+      ? `${style.letterSpacing.value / 100}em`
+      : undefined;
+    const lineHeight = style.lineHeight ? `${style.lineHeight / style.fontSize}` : '1.2';
+    const textTransform = style.textCase && style.textCase.toLowerCase() === "original"
+      ? "none"
+      : (style.textCase ? style.textCase.toLowerCase() : undefined);
+
+    textStyles[key] = {
+      fontSize,
+      fontFamily,
+      fontWeight,
+      letterSpacing,
+      lineHeight,
+      textTransform,
+    };
+  });
+  return textStyles;
+}
+
+const textStyles = parseTextStyles();
+console.log('Parsed neutral colors:', parseColorCategory("Neutral-colors"));
+
+// Export all parsed tokens.
 module.exports = {
   colors: allColors,
-  fontSize,
-  fontFamily,
-  fontWeight,      // Optional – if you want to use it in your config
-  letterSpacing,   // Optional – you can extend Tailwind's spacing or letterSpacing if desired
+  strokes,
+  radius,
+  textStyles,
 };
