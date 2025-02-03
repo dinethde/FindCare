@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
 import NavbarComponent from "./components/NavbarComponent";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className={`min-h-screen m-0 ${inter.className}`}>
-        <div className="min-h-screen flex">
-          {/* <Navbar /> */}
+    <html lang="en">
+      <body className={"min-h-screen m-0"}>
+        <div className="min-h-screen flex ">
           <NavbarComponent />
           <main className="w-full">{children}</main>
         </div>
