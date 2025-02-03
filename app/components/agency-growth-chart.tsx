@@ -10,22 +10,27 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/app/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/app/components/select";
 import { agencyGrowthData } from "@/data/agency-growth";
 import type { AgencyGrowthData } from "@/types/chart";
 import SelectTime from "@/app/components/SelectTime";
 
 export function AgencyGrowthChart() {
-  const [selectedYear, setSelectedYear] = useState(2024);
+  const [selectedYear, setSelectedYear] = useState<string>("2024");
   const currentYearData =
-    agencyGrowthData.find((d) => d.year === selectedYear)?.data || [];
+    agencyGrowthData.find((d) => d.year === parseInt(selectedYear))?.data || [];
 
   return (
     // Card wrapper
@@ -38,6 +43,7 @@ export function AgencyGrowthChart() {
           <SelectTime
             selectedYear={selectedYear}
             setSelectedYear={setSelectedYear}
+            data={agencyGrowthData}
           />
         </div>
       </CardHeader>
