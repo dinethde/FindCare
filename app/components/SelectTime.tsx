@@ -5,38 +5,34 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { agencyGrowthData } from "@/data/agency-growth";
-
-type SelectTimeProps = {
-  selectedYear: number;
-  setSelectedYear: (year: number) => void;
-};
+} from "@/app/components/select";
+import { SelectTimeProps, Month, YearData } from "@/types/SelectTimeTypes";
 
 export default function SelectTime({
   selectedYear,
   setSelectedYear,
+  data,
 }: SelectTimeProps) {
-  return (
-    <div>
-      <div className="text-grey">
-        <Select
-          defaultValue={selectedYear.toString()}
-          onValueChange={(value) => setSelectedYear(Number.parseInt(value))}
-        >
-          <SelectTrigger className="w-[100px] bg-[#E8EBEE] text-tagline">
-            <SelectValue />
-          </SelectTrigger>
+  const isMonthData = (item: any): item is Month => "value" in item;
 
-          <SelectContent className="text-grey">
-            {agencyGrowthData.map((yearData) => (
-              <SelectItem key={yearData.year} value={yearData.year.toString()}>
-                {yearData.year}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+  return (
+    <div className="text-grey">
+      <Select defaultValue={selectedYear} onValueChange={setSelectedYear}>
+        <SelectTrigger className="w-[100px] bg-[#E8EBEE] text-tagline">
+          <SelectValue />
+        </SelectTrigger>
+
+        <SelectContent className="text-grey">
+          {data.map((item) => (
+            <SelectItem
+              key={isMonthData(item) ? item.value : item.year.toString()}
+              value={isMonthData(item) ? item.value : item.year.toString()}
+            >
+              {isMonthData(item) ? item.label : item.year}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 }
