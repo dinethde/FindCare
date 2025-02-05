@@ -1,18 +1,28 @@
-"use client"
+"use client";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Slider } from "@/components/ui/slider"
-import type { FilterState } from "../types/caregiver"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Slider } from "@/components/ui/slider";
+import type { FilterState } from "../types/caregiverTable";
 
 interface FilterModalProps {
-  isOpen: boolean
-  onClose: () => void
-  filters: FilterState
-  onFiltersChange: (filters: FilterState) => void
+  isOpen: boolean;
+  onClose: () => void;
+  filters: FilterState;
+  onFiltersChange: (filters: FilterState) => void;
 }
 
-export function FilterModal({ isOpen, onClose, filters, onFiltersChange }: FilterModalProps) {
+export function FilterModal({
+  isOpen,
+  onClose,
+  filters,
+  onFiltersChange,
+}: FilterModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[500px]">
@@ -42,7 +52,9 @@ export function FilterModal({ isOpen, onClose, filters, onFiltersChange }: Filte
               <Input
                 placeholder="Search location..."
                 value={filters.location}
-                onChange={(e) => onFiltersChange({ ...filters, location: e.target.value })}
+                onChange={(e) =>
+                  onFiltersChange({ ...filters, location: e.target.value })
+                }
                 className="pr-10 h-12 text-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
               />
               <svg
@@ -71,8 +83,16 @@ export function FilterModal({ isOpen, onClose, filters, onFiltersChange }: Filte
                 min={0}
                 max={6}
                 step={1}
-                value={[filters.workingClientsRange[0], filters.workingClientsRange[1]]}
-                onValueChange={([min, max]) => onFiltersChange({ ...filters, workingClientsRange: [min, max] })}
+                value={[
+                  filters.workingClientsRange[0],
+                  filters.workingClientsRange[1],
+                ]}
+                onValueChange={([min, max]) =>
+                  onFiltersChange({
+                    ...filters,
+                    workingClientsRange: [min, max],
+                  })
+                }
                 className="mt-6"
               />
               <div className="flex justify-between mt-2 text-sm">
@@ -89,8 +109,13 @@ export function FilterModal({ isOpen, onClose, filters, onFiltersChange }: Filte
                 min={0}
                 max={21}
                 step={1}
-                value={[filters.totalClientsRange[0], filters.totalClientsRange[1]]}
-                onValueChange={([min, max]) => onFiltersChange({ ...filters, totalClientsRange: [min, max] })}
+                value={[
+                  filters.totalClientsRange[0],
+                  filters.totalClientsRange[1],
+                ]}
+                onValueChange={([min, max]) =>
+                  onFiltersChange({ ...filters, totalClientsRange: [min, max] })
+                }
                 className="mt-6"
               />
               <div className="flex justify-between mt-2 text-sm">
@@ -102,6 +127,5 @@ export function FilterModal({ isOpen, onClose, filters, onFiltersChange }: Filte
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-

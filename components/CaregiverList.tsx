@@ -1,23 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 import { Eye, Search, SlidersHorizontal } from "lucide-react";
 import type { Caregiver, FilterState } from "@/types/caregiverTable";
 import { FilterModal } from "./filter-modal";
 import { CaregiverProfileModal } from "./caregiver-profile-modal";
 import { caregivers as initialCaregivers } from "../data/caregiverTable";
-
-const statusColors = {
-  Free: "bg-blue-500 text-white",
-  Working: "bg-orange-500 text-white",
-  Leave: "bg-red-500 text-white",
-} as const;
+import SearchBar from "@/app/components/SearchBar";
 
 export default function CaregiverList() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const [selectedCaregiver, setSelectedCaregiver] = useState<Caregiver>();
   const [filters, setFilters] = useState<FilterState>({
     workingClientsRange: [0, 6],
@@ -46,26 +40,11 @@ export default function CaregiverList() {
           <span className="text-neutral-11">Caregiver List</span>
         </h1>
         {/* Search */}
-        <div className="flex items-center gap-4 w-full max-w-[400px]">
-          <div className="relative rounded-[30px] w-full text-grey-darker ">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 " />
-            <Input
-              className=" 
-              text-small-text pl-10 rounded-[30px] w-full [&::placeholder]-text-grey your-input-class"
-              placeholder="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-          <Button
-            variant="ghost"
-            onClick={() => setIsFilterOpen(true)}
-            className="flex items-center gap-2  text-neutral-10 p-0"
-          >
-            <SlidersHorizontal className=" text-neutral-10" />
-            <span className="text-small-text">Apply filter</span>
-          </Button>
-        </div>
+        <SearchBar
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          setIsFilterOpen={setIsFilterOpen}
+        />
       </div>
 
       <div className="flex flex-col gap-3">

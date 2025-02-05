@@ -9,7 +9,7 @@ import {
   efficiencyData,
 } from "@/data/mock-data";
 import Card from "@/app/components/Card";
-import CaregiverList from "@/components/caregiver-list";
+import CaregiverList from "@/components/CaregiverList";
 
 export default function CaregiverPage() {
   return (
