@@ -33,7 +33,7 @@ export default function RevenueCard({
   };
 
   return (
-    <Card className="w-full bg-small-card pb-4 pt-2 px-4 flex gap-5 flex-col">
+    <Card className="w-full bg-big-card pb-4 pt-2 px-4 flex gap-5 flex-col">
       <CardHeader className="flex flex-row items-center justify-between p-0">
         <h2 className="text-h6 text-neutral-10">{title}</h2>
 

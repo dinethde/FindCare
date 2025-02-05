@@ -28,7 +28,11 @@ p {
 }
 
 .selected-table-row {
-  @apply bg-main2 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.1)] border-neutral-3 border-[0.8px] border-solid box-border py-[0.375rem] px-[0.5rem];
+  @apply bg-small-card shadow-[0px_1px_4px_rgba(0,_0,_0,_0.1)] border-neutral-3 border-[0.8px] border-solid box-border py-[0.375rem] px-[0.5rem];
+}
+
+.big-card {
+  @apply bg-main2 pt-2 px-4 pb-4 border-neutral-3 border-[1px] border-solid rounded-regular;
 }
 
 @layer base {
