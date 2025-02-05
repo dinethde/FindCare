@@ -38,7 +38,7 @@ export function TotalShiftsCard({
   const COLORS = ["#FF4500", "#007AFF", "#FFB800"];
 
   return (
-    <Card className="big-card">
+    <Card className="h-full big-card flex flex-col justify-between">
       {/* Header */}
       <CardHeader className="flex flex-row items-center justify-between p-0">
         {/* Heading 6 */}
@@ -50,15 +50,15 @@ export function TotalShiftsCard({
       </CardHeader>
       {/* Card content */}
       <CardContent className="flex flex-col items-center p-0">
-        <div className="h-[200px] w-full relative">
+        <div className="h-[280px] w-full mx-auto relative">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
-                cx="50%"
+                cx="%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={80}
+                innerRadius={80}
+                outerRadius={100}
                 paddingAngle={0}
                 dataKey="value"
               >
@@ -113,19 +113,19 @@ export function TotalShiftsCard({
             </PieChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-4 flex gap-4">
-          <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded-full bg-[#007AFF]" />
-            <span className="text-sm text-gray-600">{late} late shifts</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded-full bg-[#FFB800]" />
-            <span className="text-sm text-gray-600">
-              {cancelled} cancelled shifts
-            </span>
-          </div>
-        </div>
       </CardContent>
+      <div className="mt-4 flex gap-4">
+        <div className="flex items-center gap-2">
+          <div className="h-3 w-3 rounded-full bg-[#007AFF]" />
+          <span className="text-sm text-gray-600">{late} late shifts</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-3 w-3 rounded-full bg-[#FFB800]" />
+          <span className="text-sm text-gray-600">
+            {cancelled} cancelled shifts
+          </span>
+        </div>
+      </div>
     </Card>
   );
 }
