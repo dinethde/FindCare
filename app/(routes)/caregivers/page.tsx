@@ -8,6 +8,7 @@ import {
   activeCaregiversStats,
   efficiencyData,
 } from "@/data/mock-data";
+import Card from "@/app/components/Card";
 
 export default function CaregiverPage() {
   return (
@@ -22,11 +23,12 @@ export default function CaregiverPage() {
           cancelled={shiftStats.cancelled}
         />
       </div>
-      <div className="">
-        <ActiveCaregiversCard
+      <div className="flex flex-col gap-4">
+        {/* <ActiveCaregiversCard
           active={activeCaregiversStats.active}
           total={activeCaregiversStats.total}
-        />
+        /> */}
+        <Card />
         <CareEfficiencyCard data={efficiencyData} />
       </div>
     </div>
