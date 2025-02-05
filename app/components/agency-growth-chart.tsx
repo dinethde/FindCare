@@ -34,7 +34,7 @@ export function AgencyGrowthChart() {
 
   return (
     // Card wrapper
-    <Card className="w-full p-4 pt-2 flex flex-col gap-4">
+    <Card className="w-full p-4 pt-2 flex flex-col gap-4 big-card">
       {/* Card header wrapper */}
       <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0">
         <CardTitle className="text-h6 font-normal">Agency Growth</CardTitle>
