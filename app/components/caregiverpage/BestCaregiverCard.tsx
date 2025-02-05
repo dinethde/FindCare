@@ -3,7 +3,7 @@ import Image from "next/image";
 import photo from "../../public/images/photo.png";
 import { Month } from "@/types/CardTypes";
 import { useState } from "react";
-import SelectTime from "./SelectTime";
+import SelectTime from "../SelectTime";
 import BCTable from "./BCTable";
 import BCChart from "./BCChart";
 
