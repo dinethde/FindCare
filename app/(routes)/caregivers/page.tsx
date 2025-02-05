@@ -12,25 +12,31 @@ import Card from "@/app/components/Card";
 
 export default function CaregiverPage() {
   return (
-    <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
-      <div>
-        <BestCaregiversCard caregivers={caregivers} />
+    <div>
+      <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
+        {/* == Best caregiver card == */}
+        <div>
+          <BestCaregiversCard caregivers={caregivers} />
+        </div>
+
+        {/* == Total Shifts caregiver card == */}
+        <div>
+          <TotalShiftsCard
+            total={shiftStats.total}
+            late={shiftStats.late}
+            cancelled={shiftStats.cancelled}
+          />
+        </div>
+
+        <div className="flex flex-col gap-4">
+          {/* == Card == */}
+          <Card />
+          {/* == Care afficeny Card plus chart  == */}
+          <CareEfficiencyCard data={efficiencyData} />
+        </div>
       </div>
-      <div>
-        <TotalShiftsCard
-          total={shiftStats.total}
-          late={shiftStats.late}
-          cancelled={shiftStats.cancelled}
-        />
-      </div>
-      <div className="flex flex-col gap-4">
-        {/* <ActiveCaregiversCard
-          active={activeCaregiversStats.active}
-          total={activeCaregiversStats.total}
-        /> */}
-        <Card />
-        <CareEfficiencyCard data={efficiencyData} />
-      </div>
+
+      <div></div>
     </div>
   );
 }
