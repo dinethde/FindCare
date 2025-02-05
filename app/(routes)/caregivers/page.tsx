@@ -9,10 +9,11 @@ import {
   efficiencyData,
 } from "@/data/mock-data";
 import Card from "@/app/components/Card";
+import CaregiverList from "@/components/caregiver-list";
 
 export default function CaregiverPage() {
   return (
-    <div>
+    <div className="flex flex-col gap-8">
       <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
         {/* == Best caregiver card == */}
         <div>
@@ -36,7 +37,9 @@ export default function CaregiverPage() {
         </div>
       </div>
 
-      <div></div>
+      <div>
+        <CaregiverList />
+      </div>
     </div>
   );
 }

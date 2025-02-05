@@ -35,6 +35,23 @@ p {
   @apply bg-small-card pt-2 px-4 pb-4 border-neutral-3 border-[1px] border-solid rounded-regular;
 }
 
+.Free {
+  @apply bg-support-colors-color1 text-white;
+}
+
+.Working {
+  @apply bg-support-colors-color2 text-white;
+}
+
+.Leave {
+  @apply bg-support-colors-color3 text-white;
+}
+
+.your-input-class::placeholder {
+  color: black; /* gray-400 */
+  font-size: 0.875rem; /* text-sm */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
