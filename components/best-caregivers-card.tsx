@@ -31,7 +31,7 @@ export function BestCaregiversCard({ caregivers }: BestCaregiversCardProps) {
   ];
 
   return (
-    <Card className=" big-card flex flex-col gap-4 ">
+    <Card className=" big-card flex flex-col gap-4 h-full ">
       {/* card header */}
       <CardHeader className="flex flex-row items-center justify-between p-0">
         <CardTitle className="text-h6">Best Caregivers</CardTitle>
