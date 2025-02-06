@@ -14,11 +14,12 @@ export default function CaregiverOverview() {
     return (
 
 
-        <Tabs defaultValue="overview">
-            <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="general">General</TabsTrigger>
-                <TabsTrigger value="security">Security</TabsTrigger>
+        <Tabs defaultValue="overview" className="flex flex-col gap-8 items-start">
+            <TabsList
+                className="flex gap-5 w-full items-start justify-start bg-white border-b border-neutral-4 text-tagline text-neutral-7">
+                <TabsTrigger value="overview" className="p-0">Overview</TabsTrigger>
+                <TabsTrigger value="general" className="p-0">General</TabsTrigger>
+                <TabsTrigger value="security" className="p-0">Security</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="flex flex-col gap-4 w-full">
