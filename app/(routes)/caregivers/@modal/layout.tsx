@@ -11,9 +11,9 @@ export default function CaregiverLayout({
     return (
 
         <Modal>
-            <div className="flex max-h-full gap-3">
+            <div className="flex gap-3 p-2 max-h-[87vh]">
                 <SidebarCg/>
-                <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-col gap-4 w-full overflow-y-scroll">
                     <ProfileHeader/>
                     {children}
                 </div>
