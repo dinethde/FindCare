@@ -1,13 +1,7 @@
 import { BestCaregiversCard } from "@/components/BestCaregiversCard";
 import { TotalShiftsCard } from "@/components/TotalShiftsCard";
-import { ActiveCaregiversCard } from "@/components/ActiveCaregiversCard";
 import { CareEfficiencyCard } from "@/components/CareEfficiencyCard";
-import {
-  caregivers,
-  shiftStats,
-  activeCaregiversStats,
-  efficiencyData,
-} from "@/data/mock-data";
+import { caregivers, shiftStats, efficiencyData } from "@/data/mock-data";
 import Card from "@/components/Card";
 import CaregiverList from "@/components/CaregiverList";
 

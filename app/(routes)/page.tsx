@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import "../globals.css";
 import Card from "../../components/Card";
 import { AgencyGrowthChart } from "@/components/AgencyGrowthChart";

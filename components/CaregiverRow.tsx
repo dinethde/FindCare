@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User2 } from "lucide-react";
 import photo from "@/public/images/photo.png";
