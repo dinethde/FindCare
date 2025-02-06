@@ -4,7 +4,7 @@ import {SidebarCg} from "@/components/SidebarCg"
 import {ProfileHeader} from "@/components/ProfileHeader"
 import {Metrics} from "@/components/metrics"
 import {profile, shiftStats, lateArrivals} from "@/data/dashboard-2"
-import {Tabs, TabsContent} from "@/components/ui/tabs"
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Modal} from "@/components/ui/modal/modal";
 import Image from "next/image";
 import photo from "@/public/images/photo.png"
@@ -13,7 +13,14 @@ import Card from "@/components/Card"
 export default function CaregiverOverview() {
     return (
 
+
         <Tabs defaultValue="overview">
+            <TabsList>
+                <TabsTrigger value="overview">Overview</TabsTrigger>
+                <TabsTrigger value="general">General</TabsTrigger>
+                <TabsTrigger value="security">Security</TabsTrigger>
+            </TabsList>
+
             <TabsContent value="overview" className="flex flex-col gap-4 w-full">
                 {/* Top Row */}
                 <div className="grid grid-cols-[0.75fr_1.25fr_1fr]  gap-4">
@@ -44,7 +51,7 @@ export default function CaregiverOverview() {
 
                 {/* Bottom Row - Metrics */}
                 <Metrics/>
-                
+
             </TabsContent>
 
             <TabsContent value="general">
