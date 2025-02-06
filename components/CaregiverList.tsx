@@ -8,6 +8,7 @@ import { FilterModal } from "@/components/FilterModal";
 import { CaregiverProfileModal } from "./CaregiverProfileModal";
 import { caregivers as initialCaregivers } from "../data/caregiverTable";
 import SearchBar from "@/components/SearchBar";
+import Link from "next/link";
 
 export default function CaregiverList() {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -90,11 +91,11 @@ export default function CaregiverList() {
               <div className="text-center">{caregiver.rate}</div>
               <div className="text-center">{caregiver.location}</div>
               <div className="flex justify-center">
-                <button
-                  onClick={() => setSelectedCaregiver(caregiver)}
-                  className="p-1 hover:bg-gray-100 rounded-full transition-colors flex justify-center content-end"
-                >
-                  <Eye className="h-4 w-4" />
+                <button className="p-1 hover:bg-gray-100 rounded-full transition-colors flex justify-center content-end">
+                  {/*Routing to caregiver page*/}
+                  <Link href={`/caregivers/profile/${caregiver.id[0]}/overview`}>
+                    <Eye className="h-4 w-4" />
+                  </Link>
                 </button>
               </div>
             </div>
