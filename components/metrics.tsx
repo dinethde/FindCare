@@ -82,7 +82,7 @@ export function Metrics() {
                                 <Checkbox id={`task-${i}`}/>
                                 <label
                                     htmlFor={`task-${i}`}
-                                    className="text-regular-text leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                    className="text-regular-text text-neutral-10 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                 >
                                     {task}
                                 </label>

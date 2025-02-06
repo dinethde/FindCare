@@ -44,6 +44,7 @@ export default function CaregiverOverview() {
 
                 {/* Bottom Row - Metrics */}
                 <Metrics/>
+                
             </TabsContent>
 
             <TabsContent value="general">
