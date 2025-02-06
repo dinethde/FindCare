@@ -2,10 +2,10 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import NetworkIcon from "../components/icons/NetworkIcon";
-import UserProfileIcon from "../components/icons/UserProfileIcon copy";
+import NetworkIcon from "./icons/NetworkIcon";
+import UserProfileIcon from "./icons/UserProfileIcon copy";
 import SearchIcon from "./icons/SearchIcon";
-import "../globals.css";
+import "@/app/globals.css";
 
 // Define page title mapping
 const pageTitles: { [key: string]: string } = {

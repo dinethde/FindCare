@@ -1,14 +1,14 @@
-import { BestCaregiversCard } from "@/components/best-caregivers-card";
-import { TotalShiftsCard } from "@/components/total-shifts-card";
-import { ActiveCaregiversCard } from "@/components/active-caregivers-card";
-import { CareEfficiencyCard } from "@/components/care-efficiency-card";
+import { BestCaregiversCard } from "@/components/BestCaregiversCard";
+import { TotalShiftsCard } from "@/components/TotalShiftsCard";
+import { ActiveCaregiversCard } from "@/components/ActiveCaregiversCard";
+import { CareEfficiencyCard } from "@/components/CareEfficiencyCard";
 import {
   caregivers,
   shiftStats,
   activeCaregiversStats,
   efficiencyData,
 } from "@/data/mock-data";
-import Card from "@/app/components/Card";
+import Card from "@/components/Card";
 import CaregiverList from "@/components/CaregiverList";
 
 export default function CaregiverPage() {

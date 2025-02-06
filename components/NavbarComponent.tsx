@@ -2,9 +2,9 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
-import "../globals.css";
+import "@/app/globals.css";
 
-import photo from "../../public/images/photo.png";
+import photo from "@/public/images/photo.png";
 // Importing Icon componets
 import HomeIcon from "./icons/HomeIcon";
 import SearchIcon from "./icons/SearchIcon";

@@ -1,16 +1,20 @@
-"use client"
+"use client";
 
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-import type { Caregiver } from "../types/caregiver"
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import type { Caregiver } from "@/types/caregiverTable";
 
 interface CaregiverProfileModalProps {
-  isOpen: boolean
-  onClose: () => void
-  caregiver?: Caregiver
+  isOpen: boolean;
+  onClose: () => void;
+  caregiver?: Caregiver;
 }
 
-export function CaregiverProfileModal({ isOpen, onClose, caregiver }: CaregiverProfileModalProps) {
-  if (!caregiver) return null
+export function CaregiverProfileModal({
+  isOpen,
+  onClose,
+  caregiver,
+}: CaregiverProfileModalProps) {
+  if (!caregiver) return null;
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -21,6 +25,5 @@ export function CaregiverProfileModal({ isOpen, onClose, caregiver }: CaregiverP
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-

@@ -6,9 +6,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/select";
-import { Card, CardContent, CardHeader } from "@/app/components/ui/card";
-import type { RevenueCardProps, Month } from "../../types/CardTypes";
+} from "@/components/Select";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import type { RevenueCardProps, Month } from "../types/CardTypes";
 import NestedCirclesIcon from "./icons/NestedCirclesIcon";
 import SelectTime from "./SelectTime";
 import { useState } from "react";

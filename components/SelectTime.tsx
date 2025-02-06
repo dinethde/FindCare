@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/select";
+} from "@/components/Select";
 import { SelectTimeProps, Month, YearData } from "@/types/SelectTimeTypes";
 
 export default function SelectTime({

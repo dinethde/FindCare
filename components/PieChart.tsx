@@ -11,14 +11,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/ui/card";
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/app/components/ui/chart";
+} from "@/components/ui/chart";
 import SelectTime from "./SelectTime";
+import { Month } from "@/types/CardTypes";
 
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },

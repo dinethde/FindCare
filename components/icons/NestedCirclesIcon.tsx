@@ -1,5 +1,5 @@
 import React from "react";
-import "../../globals.css";
+import "@/app/globals.css";
 
 type NestedCirclesIconProps = {
   color: string;

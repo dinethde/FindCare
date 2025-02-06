@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import "../globals.css";
-import Card from "../components/Card";
-import { AgencyGrowthChart } from "@/app/components/agency-growth-chart";
+import Card from "../../components/Card";
+import { AgencyGrowthChart } from "@/components/AgencyGrowthChart";
 
 export default function Home() {
   return (
