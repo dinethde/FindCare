@@ -1,11 +1,8 @@
 "use client"
 
-import {SidebarCg} from "@/components/SidebarCg"
-import {ProfileHeader} from "@/components/ProfileHeader"
 import {Metrics} from "@/components/metrics"
-import {profile, shiftStats, lateArrivals} from "@/data/dashboard-2"
+import {profile} from "@/data/dashboard-2"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {Modal} from "@/components/ui/modal/modal";
 import Image from "next/image";
 import photo from "@/public/images/photo.png"
 import Card from "@/components/Card"

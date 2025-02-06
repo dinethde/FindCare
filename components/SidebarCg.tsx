@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import {MapPin, Mail} from "lucide-react"
+import {MapPin} from "lucide-react"
 import {profile, navigation} from "@/data/dashboard-2"
 import photo from "@/public/images/photo.png"
 

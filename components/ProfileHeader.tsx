@@ -1,6 +1,5 @@
 "use client"
 
-import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Pencil} from "lucide-react"
 
 export function ProfileHeader() {
