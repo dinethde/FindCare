@@ -1,12 +1,5 @@
 "use client";
-import { CircleDollarSign } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/Select";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import type { RevenueCardProps, Month } from "../types/CardTypes";
 import NestedCirclesIcon from "./icons/NestedCirclesIcon";

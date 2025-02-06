@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { User2 } from "lucide-react";
 import type { Caregiver } from "../types/dashboard";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import SelectTime from "@/components/SelectTime";

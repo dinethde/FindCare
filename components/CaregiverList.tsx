@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Eye, Search, SlidersHorizontal } from "lucide-react";
+import { Eye } from "lucide-react";
 import type { Caregiver, FilterState } from "@/types/caregiverTable";
 import { FilterModal } from "@/components/FilterModal";
 import { CaregiverProfileModal } from "./CaregiverProfileModal";
