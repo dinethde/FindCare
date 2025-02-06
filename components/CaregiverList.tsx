@@ -4,10 +4,10 @@ import { useState } from "react";
 
 import { Eye, Search, SlidersHorizontal } from "lucide-react";
 import type { Caregiver, FilterState } from "@/types/caregiverTable";
-import { FilterModal } from "./filter-modal";
-import { CaregiverProfileModal } from "./caregiver-profile-modal";
+import { FilterModal } from "@/components/FilterModal";
+import { CaregiverProfileModal } from "./CaregiverProfileModal";
 import { caregivers as initialCaregivers } from "../data/caregiverTable";
-import SearchBar from "@/app/components/SearchBar";
+import SearchBar from "@/components/SearchBar";
 
 export default function CaregiverList() {
   const [searchQuery, setSearchQuery] = useState<string>("");

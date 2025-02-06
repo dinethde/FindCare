@@ -1,6 +1,6 @@
 "use client";
 
-import SelectTime from "@/app/components/SelectTime";
+import SelectTime from "@/components/SelectTime";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Month } from "@/types/SelectTimeTypes";
 import {

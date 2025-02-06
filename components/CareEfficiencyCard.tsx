@@ -10,7 +10,7 @@ import {
   Tooltip,
 } from "recharts";
 import type { EfficiencyData } from "../types/dashboard";
-import SelectTime from "@/app/components/SelectTime";
+import SelectTime from "@/components/SelectTime";
 import { Month } from "@/types/SelectTimeTypes";
 
 interface CareEfficiencyCardProps {

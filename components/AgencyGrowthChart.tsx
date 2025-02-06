@@ -10,22 +10,11 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/app/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/app/components/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import { agencyGrowthData } from "@/data/agency-growth";
 import type { AgencyGrowthData } from "@/types/chart";
-import SelectTime from "@/app/components/SelectTime";
+import SelectTime from "@/components/SelectTime";
 
 export function AgencyGrowthChart() {
   const [selectedYear, setSelectedYear] = useState<string>("2024");

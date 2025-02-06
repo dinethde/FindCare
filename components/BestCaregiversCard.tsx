@@ -6,9 +6,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User2 } from "lucide-react";
 import type { Caregiver } from "../types/dashboard";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import SelectTime from "@/app/components/SelectTime";
+import SelectTime from "@/components/SelectTime";
 import { Month } from "@/types/CardTypes";
-import CaregiverRow from "./test-comp";
+import CaregiverRow from "./CaregiverRow";
 
 const months: Month[] = [
   { value: "oct-2024", label: "Oct 2024" },
