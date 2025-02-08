@@ -4,6 +4,8 @@ import {CareEfficiencyCard} from "@/components/CareEfficiencyCard";
 import {caregivers, shiftStats, efficiencyData} from "@/data/mock-data";
 import Card from "@/components/Card";
 import CaregiverList from "@/components/CaregiverList";
+import Link from "next/link";
+import React from "react";
 
 export default function CaregiverPage() {
     return (
@@ -34,6 +36,12 @@ export default function CaregiverPage() {
             <div>
                 <CaregiverList/>
             </div>
+
+            <br />
+            <ul>
+                <Link href="caregivers/profile/overview"> <li>profile overview</li> </Link>
+                <Link href="caregivers/profile/clients"> <li>profile overview</li> </Link>
+            </ul>
         </div>
     );
 }

@@ -14,23 +14,23 @@ export const navigation: NavItem[] = [
     {
         title: "Overview",
         icon: LayoutGrid,
-        href: "#",
+        href: "overview",
         isActive: true,
     },
     {
         title: "Clients",
         icon: Users,
-        href: "#",
+        href: "clients",
     },
     {
         title: "Schedule",
         icon: Calendar,
-        href: "#",
+        href: "schedule",
     },
     {
         title: "Notes",
         icon: FileText,
-        href: "#",
+        href: "notes",
     },
 ]
 
