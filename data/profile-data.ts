@@ -21,6 +21,12 @@ export const profileData = {
     email: "cg@gmail.com",
     pwd: "********",
   },
+  security: {
+    isBackgroundChecked: "checked",
+    criminalRecords: "No records",
+    lastVisit: "22/12/14",
+    lastImageUpdate: "02/12/14",
+    policeReport: "Hasn't provided yet",
+  },
   about: "No about has written for this user",
-}
-
+};
