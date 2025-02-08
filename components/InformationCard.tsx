@@ -20,20 +20,30 @@ export default function InformationCard() {
         <CaregiverDescription />
 
         {/* Personal Details */}
-        <SectionCard title="Personal details" icon={UserCircle}>
-          <DetailRow label="Name" value={profileData.personal.name} />
-          <DetailRow
-            label="Date of Birth"
-            value={`${profileData.personal.dateOfBirth}     ${profileData.personal.age} age`}
-          />
-          <DetailRow label="Gender" value={profileData.personal.gender} />
-          <DetailRow label="NIC" value={profileData.personal.nic} />
+        <SectionCard
+          title="Personal details"
+          icon={UserCircle}
+          className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
+        >
+          <div className="flex flex-col gap-4">
+            <DetailRow label="Name" value={profileData.personal.name} />
+            <DetailRow
+              label="Date of Birth"
+              value={`${profileData.personal.dateOfBirth} - ${profileData.personal.age} age`}
+            />
+            <DetailRow label="Gender" value={profileData.personal.gender} />
+            <DetailRow label="NIC" value={profileData.personal.nic} />
+          </div>
         </SectionCard>
       </div>
 
       <div className="grid grid-cols-3 gap-4">
         {/* Address Section */}
-        <SectionCard title="Address" icon={MapPin}>
+        <SectionCard
+          title="Address"
+          icon={MapPin}
+          className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
+        >
           <DetailRow label="Address:" value={profileData.address.address} />
           <DetailRow label="City:" value={profileData.address.city} />
           <DetailRow
@@ -43,17 +53,25 @@ export default function InformationCard() {
         </SectionCard>
 
         {/* Employee Details */}
-        <SectionCard title="Employee details" icon={Building2}>
+        <SectionCard
+          title="Employee details"
+          icon={Building2}
+          className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
+        >
           <DetailRow label="Id:" value={profileData.employee.id} />
           <DetailRow label="Hire date:" value={profileData.employee.hireDate} />
-          <div className="flex justify-between items-center py-2">
-            <span className="text-gray-600">Status:</span>
+          <div className="flex justify-between items-center">
+            <div className="text-tagline text-grey">Status:</div>
             <StatusBadge status={profileData.employee.status} />
           </div>
         </SectionCard>
 
         {/* Account Details */}
-        <SectionCard title="Account details" icon={User}>
+        <SectionCard
+          title="Account details"
+          icon={User}
+          className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
+        >
           <DetailRow label="Phone:" value={profileData.account.phone} />
           <DetailRow label="Email:" value={profileData.account.email} />
           <DetailRow label="PWD:" value={profileData.account.pwd} />
