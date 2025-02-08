@@ -5,9 +5,12 @@ import { DetailRow } from "@/components/detail-row";
 import { SectionCard } from "@/components/section-card";
 import { StatusBadge } from "@/components/status-badge";
 import { profileData } from "@/data/profile-data";
-import photo from "@/public/images/photo.png";
 import CaregiverDescription from "./CaregiverDescription";
 import CaregiverImg from "./CaregiverImg";
+import accountIcon from "@/public/assets/icons/account-icon.svg";
+import employeeIcon from "@/public/assets/icons/employee-icon.svg";
+import locationIcon from "@/public/assets/icons/location.svg";
+import personalDetailsIcons from "@/public/assets/icons/personal-details-icon.svg";
 
 export default function InformationCard() {
   return (
@@ -22,7 +25,7 @@ export default function InformationCard() {
         {/* Personal Details */}
         <SectionCard
           title="Personal details"
-          icon={UserCircle}
+          icon={personalDetailsIcons}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
         >
           <div className="flex flex-col gap-4">
@@ -41,7 +44,7 @@ export default function InformationCard() {
         {/* Address Section */}
         <SectionCard
           title="Address"
-          icon={MapPin}
+          icon={locationIcon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
         >
           <DetailRow label="Address:" value={profileData.address.address} />
@@ -55,7 +58,7 @@ export default function InformationCard() {
         {/* Employee Details */}
         <SectionCard
           title="Employee details"
-          icon={Building2}
+          icon={employeeIcon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
         >
           <DetailRow label="Id:" value={profileData.employee.id} />
@@ -69,7 +72,7 @@ export default function InformationCard() {
         {/* Account Details */}
         <SectionCard
           title="Account details"
-          icon={User}
+          icon={accountIcon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3"
         >
           <DetailRow label="Phone:" value={profileData.account.phone} />
