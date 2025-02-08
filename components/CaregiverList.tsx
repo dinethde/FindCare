@@ -95,7 +95,7 @@ export default function CaregiverList() {
                                 <button
                                     className="p-1 hover:bg-gray-100 rounded-full transition-colors flex justify-center content-end">
                                     {/*Routing to caregiver page*/}
-                                    <Link href={`/caregivers/overview`}>
+                                    <Link href={`/caregivers/profile/overview`}>
                                         <Eye className="h-4 w-4"/>
                                     </Link>
                                 </button>

@@ -9,8 +9,6 @@ import Card from "@/components/Card"
 
 export default function CaregiverOverview() {
     return (
-
-
         <Tabs defaultValue="overview" className="flex flex-col gap-8 items-start">
             <TabsList
                 className="flex gap-5 w-full items-start justify-start bg-white border-b border-neutral-4 text-tagline text-neutral-7">
