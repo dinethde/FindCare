@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NavbarComponent from "./components/NavbarComponent";
+import NavbarComponent from "../components/NavbarComponent";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"min-h-screen m-0"}>
+      <body className={"m-0"}>
         <div className="min-h-screen flex ">
           <NavbarComponent />
-          <main className="w-full">{children}</main>
+          <main className="w-full max-h-screen overflow-y-scroll ">
+            {children}
+          </main>
         </div>
       </body>
     </html>
