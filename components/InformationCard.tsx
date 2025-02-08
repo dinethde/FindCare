@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { MapPin, User, UserCircle, Building2 } from "lucide-react";
-import { DetailRow } from "@/components/detail-row";
-import { SectionCard } from "@/components/section-card";
-import { StatusBadge } from "@/components/status-badge";
+import { DetailRow } from "@/components/DetailRow";
+import { SectionCard } from "@/components/SectionCard";
+import { StatusBadge } from "@/components/StatusBadge";
 import { profileData } from "@/data/profile-data";
 import CaregiverDescription from "./CaregiverDescription";
 import CaregiverImg from "./CaregiverImg";
@@ -11,8 +11,10 @@ import accountIcon from "@/public/assets/icons/account-icon.svg";
 import employeeIcon from "@/public/assets/icons/employee-icon.svg";
 import locationIcon from "@/public/assets/icons/location.svg";
 import personalDetailsIcons from "@/public/assets/icons/personal-details-icon.svg";
+import { colorProps } from "@/data/ColorProps";
 
 export default function InformationCard() {
+  const color = colorProps.green.hsl;
   return (
     <div className="container flex gap-4 flex-col">
       {/* 1st row */}
@@ -67,7 +69,10 @@ export default function InformationCard() {
           <DetailRow label="Hire date:" value={profileData.employee.hireDate} />
           <div className="flex justify-between items-center">
             <div className="text-tagline text-grey">Status:</div>
-            <StatusBadge status={profileData.employee.status} />
+            <StatusBadge
+              status={profileData.employee.status}
+              color={colorProps.green.hsl}
+            />
           </div>
         </SectionCard>
 

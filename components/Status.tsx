@@ -1,4 +1,4 @@
-export function Stats() {
+export function Status() {
     return (
         <div className="grid grid-cols-2 gap-6">
             <div className="bg-white rounded-lg p-6 shadow-sm">
