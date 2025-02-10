@@ -1,24 +1,29 @@
-import type { CommentCardProps } from "../types"
-import { Avatar } from "./Avatar"
-import { Button } from "./Button"
+import type { CommentCardProps } from "../types";
+import { Avatar } from "./Avatar";
+import { Button } from "./Button";
 
 export function CommentCard({ comment }: CommentCardProps) {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm">
+    <div className="bg-white rounded-lg shadow-sm border border-neutral-3 p-4 space-y-4">
       <div className="flex items-start justify-between">
         <div className="flex gap-4">
           <Avatar src={comment.author.avatar} alt={comment.author.name} />
           <div>
-            <h3 className="font-medium text-gray-900">{comment.author.name}</h3>
-            <p className="text-sm text-gray-500">{comment.timestamp}</p>
+            <h3 className="text-regular-text-thicker text-neutral-10">
+              {comment.author.name}
+            </h3>
+            <p className="text-tagline text-neutral-7 mt-1">
+              {comment.timestamp}
+            </p>
           </div>
         </div>
         <Button variant={comment.type} className="text-sm">
           {comment.type.charAt(0).toUpperCase() + comment.type.slice(1)}
         </Button>
       </div>
-      <div className="mt-4 text-gray-700">{comment.content}</div>
-    </div>
-  )
-}
+      <div className="h-[0.8px] w-full bg-neutral-3"></div>
 
+      <div className="text-regular-text text-neutral-11">{comment.content}</div>
+    </div>
+  );
+}
