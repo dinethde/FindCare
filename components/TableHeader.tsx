@@ -1,9 +1,10 @@
 "use client";
 
-import { SlidersHorizontal } from "lucide-react";
+import { Filter, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SearchBar2 } from "./SearchBar2";
+import ApplyFilter from "./ApplyFilter";
 
 interface TableHeaderProps {
   title: string;
@@ -18,31 +19,16 @@ export function TableHeader({
   onSearch,
   onFilter,
   showTabs,
-  showSeeMore,
 }: TableHeaderProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-regular-text text-neutral-10">
-          {title}
-        </h1>
+        <h1 className="text-h5  text-neutral-10">{title}</h1>
         <div className="flex items-center gap-4">
           <div className="w-72">
             <SearchBar2 onSearch={onSearch} placeholder="Search..." />
           </div>
-          <Button
-            variant="outline"
-            onClick={onFilter}
-            className="text-regular-text text-neutral-10"
-          >
-            <SlidersHorizontal className="mr-2 h-4 w-4" />
-            Apply filter
-          </Button>
-          {showSeeMore && (
-            <Button variant="link" className="text-blue-500 text-regular-text">
-              See more
-            </Button>
-          )}
+          <ApplyFilter onFilter={onFilter} />
         </div>
       </div>
       {showTabs && (
