@@ -11,8 +11,6 @@ const feedbackConfig: TableConfig = {
     { key: "review", header: "Review", width: "100%" },
   ],
   headerAlignments: ["left", "center", "center", "left"],
-
-  showTabs: true,
 };
 
 const filterOptions = [

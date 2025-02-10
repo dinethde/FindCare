@@ -6,6 +6,7 @@ import { TableHeader } from "./TableHeader";
 import { CareTypeBadge } from "./CareTypeBadge";
 import { SquareStackIcon as Square2StackIcon } from "lucide-react";
 import { FilterModal2 } from "./FilterModal2";
+import { ReviewBox } from "./ReviewBadge";
 
 interface DynamicTableProps {
   config: TableConfig;
@@ -72,19 +73,7 @@ export function DynamicTable({
     }
 
     if (column.key === "review") {
-      const bgColor =
-        item.careType === "Domici Care"
-          ? "bg-support-colors-color2"
-          : item.careType === "Senior Care"
-            ? "bg-support-colors-color2"
-            : "bg-support-colors-color2";
-      return (
-        <div
-          className={`p-4 rounded-lg ${bgColor} text-regular-text text-neutral-10`}
-        >
-          {value}
-        </div>
-      );
+      return <ReviewBox review={value} rate={item.rate} />;
     }
 
     return <span className="text-regular-text text-neutral-10">{value}</span>;
