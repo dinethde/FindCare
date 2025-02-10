@@ -17,7 +17,7 @@ export function CommentCard({ comment }: CommentCardProps) {
             </p>
           </div>
         </div>
-        <Button variant={comment.type} className="text-sm">
+        <Button variant={comment.type} className="text-small-text">
           {comment.type.charAt(0).toUpperCase() + comment.type.slice(1)}
         </Button>
       </div>

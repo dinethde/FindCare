@@ -11,7 +11,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "px-5 py-2 rounded-md font-medium transition-colors",
+        "px-5 py-2 rounded-md transition-colors",
         variant === "primary" &&
           `bg-brand-colors-main text-white hover:bg-[#FF4500]/90`,
         variant === "feedback" &&
