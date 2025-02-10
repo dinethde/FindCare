@@ -17,7 +17,6 @@ export function CareTypeBadge({ type, rate }: CareTypeBadgeProps) {
     }
   };
 
-  // console.log(` color ${getBadgeColor(type)}`);
   return (
     <span
       className={`px-4 py-2 rounded-[4px] text-regular-text-thicker  ${getBadgeColor(type)}`}
