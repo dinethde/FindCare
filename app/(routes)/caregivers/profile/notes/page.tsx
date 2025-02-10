@@ -37,9 +37,12 @@ export default function NotesPage() {
     <div className="bg-gray-50">
       <div className="space-y-6">
         <CommentForm onSubmit={handleSubmit} />
-        {comments.map((comment) => (
-          <CommentCard key={comment.id} comment={comment} />
-        ))}
+        <div className="space-y-5">
+          <h5 className="text-h5 mb-1 ml-1">Notes</h5>
+          {comments.map((comment) => (
+            <CommentCard key={comment.id} comment={comment} />
+          ))}
+        </div>
       </div>
     </div>
   );
