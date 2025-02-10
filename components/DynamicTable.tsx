@@ -74,10 +74,10 @@ export function DynamicTable({
     if (column.key === "review") {
       const bgColor =
         item.careType === "Domici Care"
-          ? "bg-blue-50"
+          ? "bg-support-colors-color2"
           : item.careType === "Senior Care"
-            ? "bg-orange-50"
-            : "bg-pink-50";
+            ? "bg-support-colors-color2"
+            : "bg-support-colors-color2";
       return (
         <div
           className={`p-4 rounded-lg ${bgColor} text-regular-text text-neutral-10`}
@@ -99,8 +99,8 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-lg border bg-[#F7F8F8] overflow-hidden">
-      <div className="p-6 pb-3">
+    <div className="rounded-lg border bg-[#F7F8F8] overflow-hidden flex flex-col p-5 gap-8">
+      <div className="">
         <TableHeader
           title={config.title}
           onSearch={handleSearch}
@@ -109,14 +109,14 @@ export function DynamicTable({
           showSeeMore={config.showSeeMore}
         />
       </div>
-      <div className="px-6">
+      <div className="">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-200">
               {config.columns.map((column, index) => (
                 <th
                   key={column.key}
-                  className={`pb-2 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} text-${config.headerAlignments[index]}`}
+                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} text-${config.headerAlignments[index]}`}
                   style={{ width: column.width }}
                 >
                   {column.header}
@@ -138,12 +138,14 @@ export function DynamicTable({
                 {config.columns.map((column, colIndex) => (
                   <td
                     key={column.key}
-                    className={`py-3 ${colIndex === 0 ? "pl-4" : "px-4"} text-${config.headerAlignments[colIndex]}`}
+                    className={`${config.title === "Caregiver List" ? "py-6" : "py-5"} ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} text-${config.headerAlignments[colIndex]}`}
                   >
                     {renderCell(column, item)}
                   </td>
                 ))}
-                <td className="py-3 pr-4">
+                <td
+                  className={` ${config.title === "Caregiver List" ? "py-5 pr-4 flex justify-end" : "hidden"} `}
+                >
                   <button className="text-gray-400 hover:text-gray-600">
                     <Square2StackIcon className="h-5 w-5" />
                   </button>

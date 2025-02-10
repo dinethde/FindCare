@@ -5,15 +5,14 @@ import type { TableConfig } from "../types/TableTypes";
 const feedbackConfig: TableConfig = {
   title: "Feedback List",
   columns: [
-    { key: "name", header: "Name", width: "20%" },
+    { key: "name", header: "Name", width: "15%" },
     { key: "careType", header: "Care Type", width: "20%" },
-    { key: "rate", header: "Rate", width: "10%" },
-    { key: "review", header: "Review", width: "50%" },
+    { key: "rate", header: "Rate", width: "12%" },
+    { key: "review", header: "Review", width: "100%" },
   ],
   headerAlignments: ["left", "center", "center", "left"],
 
   showTabs: true,
-  showSeeMore: true,
 };
 
 const filterOptions = [
