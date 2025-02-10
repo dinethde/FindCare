@@ -1,4 +1,6 @@
 "use client";
+import { CaregiverTable } from "@/components/CaregiverTable";
+import { FeedbackTable } from "@/components/FeedbackTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function CgClientsModal() {
@@ -13,16 +15,19 @@ export default function CgClientsModal() {
         </TabsTrigger>
       </TabsList>
 
-      <div>
+      <div
+        className="w-full
+      "
+      >
         <TabsContent
           value="assigned"
           className="flex flex-col gap-4 w-full m-0 text-ne"
         >
-          Assigned
+          <CaregiverTable />
         </TabsContent>
 
         <TabsContent value="feedback" className="m-0">
-          Feedback
+          <FeedbackTable />
         </TabsContent>
       </div>
     </Tabs>
