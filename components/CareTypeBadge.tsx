@@ -1,8 +1,9 @@
 interface CareTypeBadgeProps {
   type: string;
+  rate?: number;
 }
 
-export function CareTypeBadge({ type }: CareTypeBadgeProps) {
+export function CareTypeBadge({ type, rate }: CareTypeBadgeProps) {
   const getBadgeColor = (type: string) => {
     switch (type) {
       case "Domici Care":
@@ -12,7 +13,7 @@ export function CareTypeBadge({ type }: CareTypeBadgeProps) {
       case "Child Care":
         return "bg-support-colors-color3 text-white";
       default:
-        return " bg-grey text-gray-700";
+        return " bg text-gray-700";
     }
   };
 

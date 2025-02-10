@@ -1,4 +1,4 @@
-import type { Caregiver, Feedback } from "../types/TableTypes"
+import type { Caregiver, Feedback } from "../types/TableTypes";
 
 export const caregiverData: Caregiver[] = [
   {
@@ -41,14 +41,14 @@ export const caregiverData: Caregiver[] = [
     rate: 4.6,
     location: "Madrid",
   },
-]
+];
 
 export const feedbackData: Feedback[] = [
   {
     id: "1",
     name: "Dineth De Silva",
     careType: "Domici Care",
-    rate: 4.5,
+    rate: 4,
     review:
       "Excellent care provided. Always punctual and attentive to needs. Highly recommended for anyone seeking quality domiciliary care.",
   },
@@ -56,7 +56,7 @@ export const feedbackData: Feedback[] = [
     id: "2",
     name: "Sarah Johnson",
     careType: "Senior Care",
-    rate: 4.8,
+    rate: 2.8,
     review:
       "Sarah is a godsend for our family. Her expertise in senior care has made a significant difference in my father's quality of life. Her patience and kindness are unmatched.",
   },
@@ -72,7 +72,7 @@ export const feedbackData: Feedback[] = [
     id: "4",
     name: "Emma Watson",
     careType: "Domici Care",
-    rate: 4.7,
+    rate: 3,
     review:
       "Emma provides top-notch care. She's professional, compassionate, and always goes the extra mile. Her medical knowledge is impressive and reassuring.",
   },
@@ -84,5 +84,4 @@ export const feedbackData: Feedback[] = [
     review:
       "Carlos is a dedicated caregiver. He's particularly good at engaging seniors in meaningful activities and conversations. His Spanish language skills are a bonus for multilingual families.",
   },
-]
-
+];
