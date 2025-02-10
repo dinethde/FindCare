@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { SearchableDropdown } from "./SearchableDropdown";
 import { caregivers } from "../data/Caregivers2";
 import type { CommentFormData } from "../types";
-import { Tag } from "lucide-react";
+import Placeholder from "@tiptap/extension-placeholder";
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -43,7 +43,13 @@ export function CommentForm({
   );
 
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        placeholder: "Write your comment here...",
+        emptyEditorClass: "is-editor-empty",
+      }),
+    ],
     content: "",
     editorProps: {
       attributes: {
@@ -120,7 +126,7 @@ export function CommentForm({
       onSubmit={handleSubmit}
       className="bg-white rounded-lg p-2 shadow-sm flex flex-col gap-4"
     >
-      <div className="border rounded-lg min-h-56">
+      <div className="border rounded-lg min-h-56 [&_.is-editor-empty]:before:text-neutral-8 [&_.is-editor-empty]:before:italic [&_.is-editor-empty]:before:content-[attr(data-placeholder)] [&_.is-editor-empty]:before:float-left [&_.is-editor-empty]:before:pointer-events-none">
         <EditorContent editor={editor} />
       </div>
 
