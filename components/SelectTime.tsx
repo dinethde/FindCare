@@ -6,12 +6,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/Select";
-import { SelectTimeProps, Month, YearData } from "@/types/SelectTimeTypes";
+import type { Month } from "../types/CardTypes";
+import { SelectTimeProps, YearData } from "@/types/SelectTimeTypes";
+
+const months: Month[] = [
+  { value: "oct-2024", label: "Oct 2024" },
+  { value: "sep-2024", label: "Sep 2024" },
+  { value: "aug-2024", label: "Aug 2024" },
+];
 
 export default function SelectTime({
-  selectedYear,
+  selectedYear = "oct-2024",
   setSelectedYear,
-  data,
+  data = months,
 }: SelectTimeProps) {
   const isMonthData = (item: any): item is Month => "value" in item;
 

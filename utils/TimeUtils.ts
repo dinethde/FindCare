@@ -21,8 +21,8 @@ export function timeToMinutes(time: string): number {
  * @returns {{ top: number, height: number }} Position and height in pixels
  */
 export function calculateEventPosition(
-    startTime: string,
-    endTime: string,
+  startTime: string,
+  endTime: string,
 ): {
   top: number
   height: number

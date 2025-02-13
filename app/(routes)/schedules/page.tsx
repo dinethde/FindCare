@@ -1,26 +1,32 @@
-import { Calendar } from "@/components/schedule/Calendar"
-import { weeklyData } from "@/data/schedule/CalendarData"
-import { caregiverWeeklyData } from "@/data/schedule/CaregiverCalendarData"
-import { clientWeeklyData } from "@/data/schedule/CilentCalendarData"
+
+import {CareProviderDashboard} from "@/components/CareProviderDashboard";
+import {agencyData} from "@/data/AgencyData";
+import {CaregiverCalendarView} from "@/components/CaregiverCalendarView";
+import {ClientCalendarView} from "@/components/ClientCalendarView";
 
 export default function SchedulePage() {
+    // For demonstration purposes, we'll use the first caregiver and client
+    const selectedCaregiverId = Object.keys(agencyData.caregivers)[0]
+    const selectedClientId = Object.keys(agencyData.clients)[0]
+
+    const selectedCaregiver = agencyData.caregivers[selectedCaregiverId]
   return (
     <div className="bg-gray-50">
-        <div className="max-w-[1200px] mx-auto space-y-8">
+        <div className="w-full space-y-8">
             {/* Care Provider Calendar Section */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Care Provider View</h2>
-                <Calendar calendarData={weeklyData} />
+                <CareProviderDashboard agencyData={agencyData} />
             </div>
             {/* Caregiver Calendar Section */}
             <div>
-                <h2 className="text-2xl font-semibold mb-4">Caregiver View</h2>
-                <Calendar calendarData={caregiverWeeklyData} />
+                <h2 className="text-2xl font-semibold mb-4">Caregiver View: {selectedCaregiver.name}</h2>
+                <CaregiverCalendarView agencyData={agencyData} selectedCaregiverId={selectedCaregiverId} />
             </div>
             {/* Client Calendar Section */}
             <div>
-                <h2 className="text-2xl font-semibold mb-4">Client View</h2>
-                <Calendar calendarData={clientWeeklyData} />
+                <h2 className="text-2xl font-semibold mb-4">Client Calendar</h2>
+                <ClientCalendarView agencyData={agencyData} selectedClientId={selectedClientId} />
             </div>
         </div>
     </div>
