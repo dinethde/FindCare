@@ -39,8 +39,8 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
   }, 0)
 
   return (
-    <div className="flex gap-6">
-      <div className="flex-1">
+    <div className="flex gap-4 w-full">
+      <div className="">
         <Calendar
           agencyData={agencyData}
           view="caregiver"
@@ -48,32 +48,31 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
           selectedClientId={selectedClientId}
         />
       </div>
-      <div className="w-80 flex flex-col gap-6">
+      <div className="flex flex-col gap-6 w-64 bg-big-card">
         {/* Clients List */}
-        <div className="bg-white rounded-xl p-4 border border-neutral-200">
-          <h3 className="text-xl font-semibold mb-4">Clients</h3>
-          <div className="space-y-3">
+        <div className="bg-white rounded-xl border border-neutral-200 flex flex-col gap-2 p-3">
+          <h3 className="text-xl font-semibold ">Clients</h3>
+          <div className="space-y-2">
             {caregiverClients.map((client) => (
               <button
                 key={client.id}
-                className={`w-full flex items-center gap-3 p-3 rounded-lg transition-colors ${
-                  selectedClientId === client.id ? "bg-[#FFF5E6] border-2 border-[#FF9966]" : "hover:bg-gray-50"
+                className={`w-full flex items-center gap-2 p-2 rounded-lg transition-colors m-0 ${
+                  selectedClientId === client.id ? "bg-[#FFF5E6] border-2 border-[#FF9966] shadow-[0px_3px_4px_rgba(0,_0,_0,_0.10)]" : "border-[1px] bg-main border-neutral-3 "
                 }`}
                 onClick={() => setSelectedClientId(client.id === selectedClientId ? null : client.id)}
               >
                 <Image
                   src={client.profileImage || "/placeholder.svg"}
                   alt={client.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
+                  width={25}
+                  height={25}
+                  className="rounded-full w-11 h-11"
                 />
-                <div className="flex-1 text-left space-y-0.5">
-                  <div className="font-semibold truncate" title={client.name}>
+                <div className="flex-1 text-left space-y-1">
+                  <div className="text-regular-text-thicker truncate text-neutral-10" title={client.name}>
                     {client.name}
                   </div>
-                  <div className="text-sm text-gray-500">{client.location}</div>
-                  <div className="text-xs text-gray-400">Mon - Tue 6-8</div>
+                  <div className="text-tagline text-neutral-8">{client.location}</div>
                 </div>
               </button>
             ))}
@@ -107,7 +106,7 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
                 <div className="w-6 h-6 rounded-full bg-[#FF6619]" />
               </div>
               <div className="flex-1">
-                <div className="text-sm text-gray-500">Total Shifts</div>
+                <div className="text-h6 text-gray-500">Total Shifts</div>
                 <div className="text-2xl font-semibold">{totalShifts}</div>
               </div>
             </div>
