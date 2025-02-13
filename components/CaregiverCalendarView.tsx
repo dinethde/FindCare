@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Calendar } from "./Calendar"
 import type { AgencyData } from "../types/ScheduleTypes"
 import Image from "next/image"
+import Card from "../components/Card"
 
 interface CaregiverCalendarViewProps {
   agencyData: AgencyData
@@ -50,14 +51,14 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
       </div>
       <div className="flex flex-col gap-6 w-64 bg-big-card">
         {/* Clients List */}
-        <div className="bg-white rounded-xl border border-neutral-200 flex flex-col gap-2 p-3">
+        <div className="bg-white rounded-regular border border-neutral-200 flex flex-col gap-2 p-3">
           <h3 className="text-xl font-semibold ">Clients</h3>
           <div className="space-y-2">
             {caregiverClients.map((client) => (
               <button
                 key={client.id}
                 className={`w-full flex items-center gap-2 p-2 rounded-lg transition-colors m-0 ${
-                  selectedClientId === client.id ? "bg-[#FFF5E6] border-2 border-[#FF9966] shadow-[0px_3px_4px_rgba(0,_0,_0,_0.10)]" : "border-[1px] bg-main border-neutral-3 "
+                  selectedClientId === client.id ? "bg-[#FFF5E6] border-2 border-brand-colors-brand5 shadow-[0px_3px_4px_rgba(0,_0,_0,_0.10)]" : "border-[1px] bg-main2 border-neutral-3 "
                 }`}
                 onClick={() => setSelectedClientId(client.id === selectedClientId ? null : client.id)}
               >
@@ -100,28 +101,11 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
 
         {/* Total Metrics */}
         <div className="space-y-4">
-          <div className="bg-white rounded-xl p-4 border border-neutral-200">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-full bg-[#FFF5E6]">
-                <div className="w-6 h-6 rounded-full bg-[#FF6619]" />
-              </div>
-              <div className="flex-1">
-                <div className="text-h6 text-gray-500">Total Shifts</div>
-                <div className="text-2xl font-semibold">{totalShifts}</div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-4 border border-neutral-200">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-full bg-[#FFF5E6]">
-                <div className="w-6 h-6 rounded-full bg-[#FF6619]" />
-              </div>
-              <div className="flex-1">
-                <div className="text-sm text-gray-500">Total Hours</div>
-                <div className="text-2xl font-semibold">{totalHours}</div>
-              </div>
-            </div>
-          </div>
+          {/**/}
+          <Card dataType={""} revenue={totalShifts} title={"Total Shifts"} isButtonVisible={false} />
+
+          <Card dataType={""} revenue={totalHours} title={"Total Hours"} isButtonVisible={false} />
+
         </div>
       </div>
     </div>
