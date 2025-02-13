@@ -2,11 +2,24 @@ export const HOUR_HEIGHT = 60 // pixels per hour
 export const DAY_START_HOUR = 4 // 4 AM
 export const TOTAL_HOURS = 24
 
+/**
+ * Converts a time string to minutes since midnight
+ *
+ * @param {string} time - Time in "HH:MM" format
+ * @returns {number} Minutes since midnight
+ */
 export function timeToMinutes(time: string): number {
   const [hours, minutes] = time.split(":").map(Number)
   return hours * 60 + minutes
 }
 
+/**
+ * Calculates the position and height of an event for the calendar view
+ *
+ * @param {string} startTime - Start time of the event in "HH:MM" format
+ * @param {string} endTime - End time of the event in "HH:MM" format
+ * @returns {{ top: number, height: number }} Position and height in pixels
+ */
 export function calculateEventPosition(
   startTime: string,
   endTime: string,
@@ -28,6 +41,12 @@ export function calculateEventPosition(
   return { top, height }
 }
 
+/**
+ * Formats a time string to a more readable format
+ *
+ * @param {string} time - Time in "HH:MM" format
+ * @returns {string} Formatted time string (e.g., "2:30 PM")
+ */
 export function formatTime(time: string): string {
   const [hours, minutes] = time.split(":")
   const hour = Number.parseInt(hours, 10)
