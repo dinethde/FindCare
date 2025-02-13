@@ -13,7 +13,7 @@ interface CalendarProps {
   renderAppointment?: (appointment: Appointment, isSelected: boolean) => React.ReactNode
 }
 
-const TIME_COLUMN_WIDTH = 60 // pixels
+const TIME_COLUMN_WIDTH = 50 // pixels
 
 export function Calendar({ agencyData, view, selectedId, selectedClientId, renderAppointment }: CalendarProps) {
   // Generate time slots for every hour with unique keys
@@ -40,24 +40,26 @@ export function Calendar({ agencyData, view, selectedId, selectedClientId, rende
   // Add opacity class based on selected client
   const getAppointmentOpacity = (appointment: Appointment) => {
     if (!selectedClientId) return "opacity-100"
-    return appointment.clientId === selectedClientId ? "opacity-100" : "opacity-30"
+    return appointment.clientId === selectedClientId ? "opacity-100" : "opacity-40"
   }
 
   return (
-    <div className="bg-white border border-neutral-3 rounded-xl shadow-lg overflow-hidden shadow-[0px_0px_10px_-1px_rgba(0,_0,_0,_0.12)]">
+    <div className="bg-white border border-neutral-3 rounded-xl shadow-lg overflow-hidden shadow-[0px_0px_10px_-1px_rgba(0,_0,_0,_0.12)] ">
       <CalendarHeader
         weekOf={formatDate(agencyData.schedule.weekOf)}
         days={agencyData.schedule.days.map((day) => ({
           date: day.date.getDate(),
           fullDate: day.date,
           day: getDayName(day.date),
+
         }))}
+        headerMargin = {45}
       />
 
       <div className="flex max-h-[60vh] overflow-y-scroll pt-2">
         {/* Time slots */}
         <div
-          className="relative flex-shrink-0 border-r border-neutral-3"
+          className="relative flex-shrink-0 border-r border-neutral-3 flex flex-col items-center"
           style={{
             width: `${TIME_COLUMN_WIDTH}px`,
             height: `${HOUR_HEIGHT * TOTAL_HOURS}px`,
@@ -68,22 +70,22 @@ export function Calendar({ agencyData, view, selectedId, selectedClientId, rende
               timeSlot.shouldShowLabel && (
                 <div
                   key={timeSlot.id}
-                  className="my-4 absolute text-small-text text-neutral-8 text-right w-full pr-4"
+                  className="my-4 absolute text-small-text text-neutral-7 text-right w-fit text-center"
                   style={{
                     top: `${timeSlots.indexOf(timeSlot) * HOUR_HEIGHT}px`,
                     transform: "translateY(-50%)",
                   }}
                 >
-                  {timeSlot.display}
+                 <span className="font-medium"> {timeSlot.display}</span>
                 </div>
               ),
           )}
         </div>
 
         {/* Calendar grid */}
-        <div className="flex-grow grid grid-cols-7 gap-4 px-4">
+        <div className="flex-grow grid grid-cols-7 gap-2 px-2">
           {agencyData.schedule.days.map((day, index) => (
-            <div key={day.date.toISOString()} className="relative min-w-[120px]">
+            <div key={day.date.toISOString()} className="relative min-w-[12px]">
               <div className="relative mt-2" style={{ height: `${HOUR_HEIGHT * TOTAL_HOURS}px` }}>
                 {/* Hour grid lines */}
                 {timeSlots.map((timeSlot) => (

@@ -8,6 +8,7 @@ const TIME_COLUMN_WIDTH = 60 // pixels
 interface CalendarHeaderProps {
   weekOf: string
   days: DayData[]
+  headerMargin?: number
 }
 
 /**
@@ -20,7 +21,7 @@ interface CalendarHeaderProps {
  * @param {DayData[]} props.days - Array of day data for the week
  * @returns {JSX.Element} The rendered calendar header
  */
-export function CalendarHeader({ weekOf, days }: CalendarHeaderProps) {
+export function CalendarHeader({ weekOf, days, headerMargin = 60 }: CalendarHeaderProps) {
   return (
     <div className="p-4 shadow-[0px_2px_4px_rgba(0,_0,_0,_0.08)] flex flex-col gap-2">
       <div className="flex items-center justify-between bg-white">
@@ -55,7 +56,7 @@ export function CalendarHeader({ weekOf, days }: CalendarHeaderProps) {
 
       {/* Days of the week */}
       <div className="flex mt-4">
-        <div style={{ width: `${TIME_COLUMN_WIDTH}px` }} /> {/* Spacer for time column */}
+        <div style={{ width: `${headerMargin}px` }} /> {/* Spacer for time column */}
         <div className="flex-grow grid grid-cols-7 gap-3">
           {days.map((day) => (
             <div

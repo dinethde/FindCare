@@ -93,7 +93,7 @@ export function AppointmentCard({ data, view, agencyData, isSelected }: Appointm
     return text.slice(0, maxLength - 1) + "…"
   }
 
-  if (view === "care-provider") {
+  if (view == "care-provider") {
     // Care Provider View (unchanged)
     return (
       <div
@@ -173,7 +173,7 @@ export function AppointmentCard({ data, view, agencyData, isSelected }: Appointm
 
     return (
       <div
-        className={` absolute left-0 right-0  rounded-lg p-2 
+        className={` absolute left-0 right-0  rounded-lg p-[6px]
           transition-all duration-300 ease-in-out transform hover:scale-105 
           hover:shadow-lg hover:z-10 cursor-pointer ${styles.wrapper}`}
         style={{
