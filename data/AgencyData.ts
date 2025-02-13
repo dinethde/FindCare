@@ -1,9 +1,9 @@
-import type { AgencyData } from "../types/ScheduleTypes"
-import { getCurrentWeekDates } from "../utils/DateUtils"
-import cg_photo from "@/public/images/photo.png"
-import cl_photo from "@/public/images/photo-rovi.png"
+import type { AgencyData } from "../types/ScheduleTypes";
+import { getCurrentWeekDates } from "../utils/DateUtils";
+import cg_photo from "@/public/images/photo.png";
+import cl_photo from "@/public/images/photo-rovi.png";
 
-const currentWeekDates = getCurrentWeekDates()
+const currentWeekDates = getCurrentWeekDates();
 
 export const agencyData: AgencyData = {
   clients: {
@@ -77,7 +77,7 @@ export const agencyData: AgencyData = {
               {
                 id: "appt-1",
                 startTime: "04:00",
-                endTime: "08:00",
+                endTime: "06:00",
                 caregiverId: "cg-1",
                 clientId: "client-1",
                 status: "successful",
@@ -123,7 +123,7 @@ export const agencyData: AgencyData = {
               {
                 id: "appt-5",
                 startTime: "10:00",
-                endTime: "14:00",
+                endTime: "16:00",
                 caregiverId: "cg-2",
                 clientId: "client-1",
                 status: "cancelled",
@@ -143,10 +143,22 @@ export const agencyData: AgencyData = {
           ? [
               {
                 id: `appt-${index + 6}`,
-                startTime: ["10:00", "08:00", "04:00", "09:00", "08:00"][index - 2],
-                endTime: ["18:00", "16:00", "08:00", "11:00", "15:00"][index - 2],
-                caregiverId: [`cg-1`, `cg-2`, `cg-3`, `cg-4`, `cg-5`][index - 2],
-                clientId: [`client-2`, `client-3`, `client-1`, `client-4`, `client-5`][index - 2],
+                startTime: ["10:00", "08:00", "04:00", "09:00", "08:00"][
+                  index - 2
+                ],
+                endTime: ["18:00", "16:00", "08:00", "11:00", "15:00"][
+                  index - 2
+                ],
+                caregiverId: [`cg-1`, `cg-2`, `cg-3`, `cg-4`, `cg-5`][
+                  index - 2
+                ],
+                clientId: [
+                  `client-2`,
+                  `client-3`,
+                  `client-1`,
+                  `client-4`,
+                  `client-5`,
+                ][index - 2],
                 status: "successful",
               },
             ]
@@ -154,5 +166,4 @@ export const agencyData: AgencyData = {
       ],
     })),
   },
-}
-
+};

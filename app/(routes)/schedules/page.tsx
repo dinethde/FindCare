@@ -10,6 +10,7 @@ export default function SchedulePage() {
     const selectedClientId = Object.keys(agencyData.clients)[0]
 
     const selectedCaregiver = agencyData.caregivers[selectedCaregiverId]
+
   return (
     <div className="bg-gray-50">
         <div className="w-full space-y-8">
@@ -18,12 +19,7 @@ export default function SchedulePage() {
                 <h2 className="text-2xl font-semibold mb-4">Care Provider View</h2>
                 <CareProviderDashboard agencyData={agencyData} />
             </div>
-            {/* Caregiver Calendar Section */}
-            {/*<div>*/}
-            {/*    <h2 className="text-2xl font-semibold mb-4">Caregiver View: {selectedCaregiver.name}</h2>*/}
-            {/*    <CaregiverCalendarView agencyData={agencyData} selectedCaregiverId={selectedCaregiverId} />*/}
-            {/*</div>*/}
-            {/* Client Calendar Section */}
+
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Client Calendar</h2>
                 <ClientCalendarView agencyData={agencyData} selectedClientId={selectedClientId} />
