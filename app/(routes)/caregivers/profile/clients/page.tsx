@@ -1,6 +1,6 @@
 "use client";
-import { CaregiverTable } from "@/components/CaregiverTable";
-import { FeedbackTable } from "@/components/FeedbackTable";
+import { CaregiverTable } from "@/components/table/CaregiverTable";
+import { FeedbackTable } from "@/components/table/FeedbackTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function CgClientsModal() {

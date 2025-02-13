@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
-import type { FilterState } from "../types/caregiverTable";
+import type { FilterState } from "../../types/caregiverTable";
 
 interface FilterModalProps {
   isOpen: boolean;
