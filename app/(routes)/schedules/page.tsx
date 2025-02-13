@@ -19,10 +19,10 @@ export default function SchedulePage() {
                 <CareProviderDashboard agencyData={agencyData} />
             </div>
             {/* Caregiver Calendar Section */}
-            <div>
-                <h2 className="text-2xl font-semibold mb-4">Caregiver View: {selectedCaregiver.name}</h2>
-                <CaregiverCalendarView agencyData={agencyData} selectedCaregiverId={selectedCaregiverId} />
-            </div>
+            {/*<div>*/}
+            {/*    <h2 className="text-2xl font-semibold mb-4">Caregiver View: {selectedCaregiver.name}</h2>*/}
+            {/*    <CaregiverCalendarView agencyData={agencyData} selectedCaregiverId={selectedCaregiverId} />*/}
+            {/*</div>*/}
             {/* Client Calendar Section */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Client Calendar</h2>

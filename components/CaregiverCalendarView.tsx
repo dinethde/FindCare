@@ -41,7 +41,7 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
 
   return (
     <div className="flex gap-4 w-full">
-      <div className="">
+      <div className="w-full">
         <Calendar
           agencyData={agencyData}
           view="caregiver"
@@ -52,7 +52,7 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
       <div className="flex flex-col gap-6 w-64 bg-big-card">
         {/* Clients List */}
         <div className="bg-white rounded-regular border border-neutral-200 flex flex-col gap-2 p-3">
-          <h3 className="text-xl font-semibold ">Clients</h3>
+          <h3 className="text-h6 ">Clients</h3>
           <div className="space-y-2">
             {caregiverClients.map((client) => (
               <button
@@ -80,31 +80,13 @@ export function CaregiverCalendarView({ agencyData, selectedCaregiverId }: Careg
           </div>
         </div>
 
-        {/* Shift Statistics */}
-        <div className="bg-white rounded-xl p-4 border border-neutral-200">
-          <h3 className="text-xl font-semibold mb-4">Shift Statistics</h3>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 p-2 rounded bg-[#ddffda]">
-              <span className="text-[#00b829]">Successful</span>
-              <span className="ml-auto font-semibold">05</span>
-            </div>
-            <div className="flex items-center gap-2 p-2 rounded bg-[#feebcd]">
-              <span className="text-[#fca827]">Late Arrivals</span>
-              <span className="ml-auto font-semibold">02</span>
-            </div>
-            <div className="flex items-center gap-2 p-2 rounded bg-[#ffccd6]">
-              <span className="text-[#ff2d55]">Cancelled</span>
-              <span className="ml-auto font-semibold">01</span>
-            </div>
-          </div>
-        </div>
-
         {/* Total Metrics */}
         <div className="space-y-4">
           {/**/}
+          <h4 className="text-h6"> Shift Overview </h4>
           <Card dataType={""} revenue={totalShifts} title={"Total Shifts"} isButtonVisible={false} />
 
-          <Card dataType={""} revenue={totalHours} title={"Total Hours"} isButtonVisible={false} />
+          <Card dataType={""} revenue={totalHours} title={"Total Care Hours"} isButtonVisible={false} />
 
         </div>
       </div>

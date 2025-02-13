@@ -13,7 +13,7 @@ export function SidebarCg() {
   return (
     <div
       className=".sidebar-color bg-[#F1F3F4] flex flex-col justify-between w-full text-h6
-         max-w-[15ch] p-4 rounded-regular"
+         max-w-[13ch] p-4 rounded-regular"
     >
       <div className="flex flex-col gap-8 text-regular-text">
         {/* Upper */}
