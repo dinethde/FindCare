@@ -1,6 +1,6 @@
 import { DynamicTable } from "./DynamicTable";
-import { feedbackData } from "../data/TableData";
-import type { TableConfig } from "../types/TableTypes";
+import { feedbackData } from "../../data/TableData";
+import type { TableConfig } from "../../types/TableTypes";
 
 const feedbackConfig: TableConfig = {
   title: "Feedback List",

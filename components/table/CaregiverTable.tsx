@@ -1,6 +1,6 @@
 import { DynamicTable } from "./DynamicTable";
-import { caregiverData } from "../data/TableData";
-import type { TableConfig } from "../types/TableTypes";
+import { caregiverData } from "../../data/TableData";
+import type { TableConfig } from "../../types/TableTypes";
 
 const caregiverConfig: TableConfig = {
   title: "Caregiver List",

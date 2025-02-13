@@ -4,10 +4,10 @@ import {useState} from "react";
 
 import {Eye} from "lucide-react";
 import type {Caregiver, FilterState} from "@/types/caregiverTable";
-import {FilterModal} from "@/components/FilterModal";
+import {FilterModal} from "@/components/table/FilterModal";
 import {CaregiverProfileModal} from "./CaregiverProfileModal";
 import {caregivers as initialCaregivers} from "../data/caregiverTable";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/table/SearchBar";
 import Link from "next/link";
 
 export default function CaregiverList() {

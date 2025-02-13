@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { TableConfig } from "../types/TableTypes";
+import type { TableConfig } from "../../types/TableTypes";
 import { TableHeader } from "./TableHeader";
 import { CareTypeBadge } from "./CareTypeBadge";
 import { SquareStackIcon as Square2StackIcon } from "lucide-react";
 import { FilterModal2 } from "./FilterModal2";
-import { ReviewBox } from "./ReviewBadge";
+import { ReviewBox } from "../ReviewBadge";
 
 interface DynamicTableProps {
   config: TableConfig;
