@@ -1,6 +1,5 @@
 import type { WeekData, CaregiverDayData } from "@/types/ScheduleType"
 import { getCurrentWeekDates, formatDate, getDayName } from "@/utils/DateUtils"
-import photo from "@/public/images/photo.png"
 
 const currentWeekDates = getCurrentWeekDates()
 
@@ -20,7 +19,7 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
     appointments: [
       // Monday
       ...(index === 0
-        ? [
+          ? [
             {
               id: "appt-1",
               startTime: "04:00",
@@ -29,7 +28,7 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-1",
                 name: "Jayantha Silva",
                 location: "Panadura",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
             {
@@ -40,7 +39,7 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-2",
                 name: "Dineth Silva",
                 location: "Panadura",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
             // 1.5-hour event for testing short duration styling
@@ -52,14 +51,14 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-2a",
                 name: "Short Event",
                 location: "Colombo",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
           ]
-        : []),
+          : []),
       // Tuesday
       ...(index === 1
-        ? [
+          ? [
             {
               id: "appt-3",
               startTime: "06:00",
@@ -68,7 +67,7 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-3",
                 name: "Rovind Silva",
                 location: "Panadura",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
             {
@@ -79,7 +78,7 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-4",
                 name: "Jayantha Silva",
                 location: "Panadura",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
             // 1-hour event for testing short duration styling
@@ -91,14 +90,14 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: "client-4a",
                 name: "Quick Meeting",
                 location: "Galle",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
           ]
-        : []),
+          : []),
       // Wednesday to Sunday
       ...(index >= 2
-        ? [
+          ? [
             {
               id: `appt-${index + 3}`,
               startTime: ["10:00", "08:00", "04:00", "09:00", "08:00"][index - 2],
@@ -107,11 +106,11 @@ export const caregiverWeeklyData: WeekData<CaregiverDayData> = {
                 id: `client-${index + 3}`,
                 name: ["Dineth Silva", "Dinuka De Silva", "Dineth Silva", "Benali Silva", "Benali Perera"][index - 2],
                 location: index === 5 ? "Galle" : "Panadura",
-                profileImage: photo.src,
+                profileImage: "/placeholder.svg?height=32&width=32",
               },
             },
           ]
-        : []),
+          : []),
     ],
   })),
 }
