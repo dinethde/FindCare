@@ -1,5 +1,7 @@
-import { WeeklyCalendar } from "@/components/schedule/WeeklyCalendar";
-import {CaregiverCalendar} from "@/components/schedule/CaregiverCalendar";
+import { Calendar } from "@/components/schedule/Calendar"
+import { weeklyData } from "@/data/schedule/CalendarData"
+import { caregiverWeeklyData } from "@/data/schedule/CaregiverCalendarData"
+import { clientWeeklyData } from "@/data/schedule/CilentCalendarData"
 
 export default function SchedulePage() {
   return (
@@ -8,12 +10,17 @@ export default function SchedulePage() {
             {/* Care Provider Calendar Section */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Care Provider View</h2>
-                <WeeklyCalendar />
+                <Calendar calendarData={weeklyData} />
             </div>
             {/* Caregiver Calendar Section */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Caregiver View</h2>
-                <CaregiverCalendar />
+                <Calendar calendarData={caregiverWeeklyData} />
+            </div>
+            {/* Client Calendar Section */}
+            <div>
+                <h2 className="text-2xl font-semibold mb-4">Client View</h2>
+                <Calendar calendarData={clientWeeklyData} />
             </div>
         </div>
     </div>
