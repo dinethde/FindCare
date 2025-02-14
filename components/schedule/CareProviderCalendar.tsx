@@ -1,44 +1,55 @@
-import type { AgencyData, Appointment } from "../types/ScheduleTypes"
-import { Calendar } from "./Calendar"
-import { calculateEventPosition } from "../utils/TimeUtils" // Import the function
-import Image from "next/image"
+import type { AgencyData, Appointment } from "@/types/ScheduleTypes";
+import { Calendar } from "./Calendar";
+import {calculateEventPosition} from "@/utils/TimeUtils"// Import the function
+import Image from "next/image";
 
 interface CareProviderCalendarProps {
-  agencyData: AgencyData
+  agencyData: AgencyData;
 }
 
 interface ConsolidatedAppointment {
-  id: string
-  startTime: string
-  endTime: string
-  numberOfAppointments: number
-  caregiverIds: string[]
+  id: string;
+  startTime: string;
+  endTime: string;
+  numberOfAppointments: number;
+  caregiverIds: string[];
 }
 
-export function CareProviderCalendar({ agencyData }: CareProviderCalendarProps) {
-  const consolidateAppointments = (appointments: Appointment[]): ConsolidatedAppointment => {
-    const sortedAppointments = appointments.sort((a, b) => a.startTime.localeCompare(b.startTime))
+export function CareProviderCalendar({
+  agencyData,
+}: CareProviderCalendarProps) {
+  const consolidateAppointments = (
+    appointments: Appointment[]
+  ): ConsolidatedAppointment => {
+    const sortedAppointments = appointments.sort((a, b) =>
+      a.startTime.localeCompare(b.startTime)
+    );
     return {
       id: `consolidated-${sortedAppointments[0].id}`,
       startTime: sortedAppointments[0].startTime,
       endTime: sortedAppointments[sortedAppointments.length - 1].endTime,
       numberOfAppointments: sortedAppointments.length,
-      caregiverIds: [...new Set(sortedAppointments.map((appt) => appt.caregiverId))],
-    }
-  }
+      caregiverIds: [
+        ...new Set(sortedAppointments.map((appt) => appt.caregiverId)),
+      ],
+    };
+  };
 
   const consolidatedSchedule = {
     weekOf: agencyData.schedule.weekOf,
     days: agencyData.schedule.days.map((day) => ({
       ...day,
-      appointments: day.appointments.length > 0 ? [consolidateAppointments(day.appointments)] : [],
+      appointments:
+        day.appointments.length > 0
+          ? [consolidateAppointments(day.appointments)]
+          : [],
     })),
-  }
+  };
 
   const modifiedAgencyData: AgencyData = {
     ...agencyData,
     schedule: consolidatedSchedule,
-  }
+  };
 
   return (
     <Calendar
@@ -52,17 +63,24 @@ export function CareProviderCalendar({ agencyData }: CareProviderCalendarProps) 
         />
       )}
     />
-  )
+  );
 }
 
 interface CareProviderAppointmentCardProps {
-  appointment: ConsolidatedAppointment
-  agencyData: AgencyData
-  isSelected: boolean
+  appointment: ConsolidatedAppointment;
+  agencyData: AgencyData;
+  isSelected: boolean;
 }
 
-function CareProviderAppointmentCard({ appointment, agencyData, isSelected }: CareProviderAppointmentCardProps) {
-  const { top, height } = calculateEventPosition(appointment.startTime, appointment.endTime)
+function CareProviderAppointmentCard({
+  appointment,
+  agencyData,
+  isSelected,
+}: CareProviderAppointmentCardProps) {
+  const { top, height } = calculateEventPosition(
+    appointment.startTime,
+    appointment.endTime
+  );
 
   const styles = isSelected
     ? {
@@ -71,7 +89,7 @@ function CareProviderAppointmentCard({ appointment, agencyData, isSelected }: Ca
         subtitle: "text-[#FFDDCC]",
         avatarContainer: "bg-[#FFF1EB]",
         time: "bg-[#FFF1EB] text-[#FF7733]",
-        border: "none"
+        border: "none",
       }
     : {
         wrapper: "bg-[#FFF5E6] text-brand-colors-brand2",
@@ -79,13 +97,13 @@ function CareProviderAppointmentCard({ appointment, agencyData, isSelected }: Ca
         subtitle: "text-brand-colors-brand4 font-semibold",
         avatarContainer: "bg-white",
         time: "bg-[#FF7733] text-white",
-        border: "border-2 border-brand-colors-brand8"
-      }
+        border: "border-2 border-brand-colors-brand8",
+      };
 
   const truncateText = (text: string, maxLength: number) => {
-    if (text.length <= maxLength) return text
-    return text.slice(0, maxLength - 1) + "…"
-  }
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength - 1) + "…";
+  };
 
   return (
     <div
@@ -109,7 +127,10 @@ function CareProviderAppointmentCard({ appointment, agencyData, isSelected }: Ca
             </span>
           </h3>
           <p className={`text-small-text ${styles.subtitle}`}>
-            <span className="font-medium truncate block" title={`${appointment.caregiverIds.length} Caregivers`}>
+            <span
+              className="font-medium truncate block"
+              title={`${appointment.caregiverIds.length} Caregivers`}
+            >
               {`${appointment.caregiverIds.length} Caregivers`}
             </span>
           </p>
@@ -120,35 +141,43 @@ function CareProviderAppointmentCard({ appointment, agencyData, isSelected }: Ca
               className={`inline-flex items-center ${styles.avatarContainer} rounded-full px-2 py-1 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.15)]`}
             >
               <div className="flex -space-x-3">
-                {appointment.caregiverIds.slice(0, 3).map((caregiverId, index) => (
-                  <div
-                    key={caregiverId}
-                    className="w-8 h-8 rounded-full border-2 border-white relative overflow-hidden"
-                    style={{ zIndex: 3 - index }}
-                  >
-                    <Image
-                      src={agencyData.caregivers[caregiverId].profileImage || "/placeholder.svg"}
-                      alt={`Caregiver ${index + 1}`}
-                      width={32}
-                      height={32}
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
+                {appointment.caregiverIds
+                  .slice(0, 3)
+                  .map((caregiverId, index) => (
+                    <div
+                      key={caregiverId}
+                      className="w-8 h-8 rounded-full border-2 border-white relative overflow-hidden"
+                      style={{ zIndex: 3 - index }}
+                    >
+                      <Image
+                        src={
+                          agencyData.caregivers[caregiverId].profileImage ||
+                          "/placeholder.svg"
+                        }
+                        alt={`Caregiver ${index + 1}`}
+                        width={32}
+                        height={32}
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
               </div>
               {appointment.caregiverIds.length > 3 && (
-                <span className={`ml-1 text-tagline ${styles.title}`}>+{appointment.caregiverIds.length - 3}</span>
+                <span className={`ml-1 text-tagline ${styles.title}`}>
+                  +{appointment.caregiverIds.length - 3}
+                </span>
               )}
             </div>
           </div>
         </div>
 
         {/* Time display */}
-        <div className={`px-2 py-1 rounded text-tagline ${styles.time} inline-block w-fit`}>
+        <div
+          className={`px-2 py-1 rounded text-tagline ${styles.time} inline-block w-fit`}
+        >
           {appointment.startTime} - {appointment.endTime}
         </div>
       </div>
     </div>
-  )
+  );
 }
-

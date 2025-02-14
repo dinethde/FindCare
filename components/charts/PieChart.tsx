@@ -17,7 +17,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import SelectTime from "./SelectTime";
+import SelectTime from "../cards/SelectTime";
 import { Month } from "@/types/CardTypes";
 
 const chartData = [
