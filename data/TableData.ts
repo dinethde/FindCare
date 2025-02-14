@@ -1,4 +1,4 @@
-import type { Caregiver, Feedback } from "../types/TableTypes";
+import type { Caregiver, Client, Feedback } from "../types/TableTypes";
 
 export const caregiverData: Caregiver[] = [
   {
@@ -48,7 +48,7 @@ export const feedbackData: Feedback[] = [
     id: "1",
     name: "Dineth De Silva",
     careType: "Domici Care",
-    rate: 4,
+    rate: 4.8,
     review:
       "Excellent care provided. Always punctual and attentive to needs. Highly recommended for anyone seeking quality domiciliary care.",
   },
@@ -56,32 +56,85 @@ export const feedbackData: Feedback[] = [
     id: "2",
     name: "Sarah Johnson",
     careType: "Senior Care",
-    rate: 2.8,
+    rate: 3.5,
     review:
-      "Sarah is a godsend for our family. Her expertise in senior care has made a significant difference in my father's quality of life. Her patience and kindness are unmatched.",
+      "Sarah provides good care for seniors. She's patient and kind, but sometimes could be more proactive in engaging with activities.",
   },
   {
     id: "3",
     name: "Michael Chen",
     careType: "Child Care",
-    rate: 4.2,
+    rate: 2.5,
     review:
-      "Michael is great with kids. He's energetic and creative, always coming up with fun activities. However, sometimes he could be more organized with the daily schedule.",
+      "Michael is energetic but needs improvement in several areas. Organization and time management need work. Communication with parents could be better.",
   },
   {
     id: "4",
     name: "Emma Watson",
     careType: "Domici Care",
-    rate: 3,
+    rate: 5.0,
     review:
-      "Emma provides top-notch care. She's professional, compassionate, and always goes the extra mile. Her medical knowledge is impressive and reassuring.",
+      "Emma provides exceptional care. She's professional, compassionate, and always goes the extra mile. Her medical knowledge is impressive and reassuring.",
   },
   {
     id: "5",
     name: "Carlos Rodriguez",
     careType: "Senior Care",
-    rate: 4.6,
+    rate: 1.8,
     review:
-      "Carlos is a dedicated caregiver. He's particularly good at engaging seniors in meaningful activities and conversations. His Spanish language skills are a bonus for multilingual families.",
+      "Significant concerns about punctuality and adherence to care protocols. While Carlos is friendly, there are serious issues that need to be addressed.",
+  },
+];
+
+export const clientData: Client[] = [
+  {
+    id: "1",
+    name: "Dineth De Silva",
+    contactInfo: "070 3242 772",
+    nok: "Dinuka",
+    careType: "Senior Care",
+    primaryCaregiver: "CG001",
+    location: "Colombo",
+    assignedTimes: ["Oct 24 Wed : 6am - 8pm"],
+  },
+  {
+    id: "2",
+    name: "John Smith",
+    contactInfo: "070 3242 772",
+    nok: "Rovindie A",
+    careType: "Child Care",
+    primaryCaregiver: "CG002",
+    location: "Colombo",
+    assignedTimes: ["Oct 24 - 26 : 6am - 8pm", "Oct 27 Sun : 6am - 4pm"],
+  },
+  {
+    id: "3",
+    name: "Emma Thompson",
+    contactInfo: "070 3242 772",
+    nok: "Dineth Silva",
+    careType: "Child Care",
+    primaryCaregiver: "CG003",
+    location: "Colombo",
+    assignedTimes: ["Oct 24 Wed : 6am - 8pm", "Oct 27 Sun : 6am - 4pm"],
+  },
+  {
+    id: "4",
+    name: "Michael Brown",
+    contactInfo: "071 1234 567",
+    nok: "Sarah Brown",
+    careType: "Domici Care",
+    primaryCaregiver: "CG004",
+    location: "Colombo",
+    assignedTimes: ["Oct 25 Thu : 10am - 6pm"],
+  },
+  {
+    id: "5",
+    name: "Sarah Wilson",
+    contactInfo: "072 9876 543",
+    nok: "John Wilson",
+    careType: "Senior Care",
+    primaryCaregiver: "CG005",
+    location: "Colombo",
+    assignedTimes: ["Oct 26 Fri : 8am - 4pm", "Oct 28 Sun : 9am - 5pm"],
   },
 ];

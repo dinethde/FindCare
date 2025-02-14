@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Modal } from "@/components/ui/modal/modal";
 import { ProfileHeader } from "@/components/ProfileHeader";
-import { SidebarCg } from "@/components/SidebarCg";
+import { SidebarCg } from "@/components/layout-components/SidebarCg";
 
 export const metadata: Metadata = {
   title: "Create Next App",

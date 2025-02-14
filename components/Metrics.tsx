@@ -3,9 +3,9 @@
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
 import {Checkbox} from "@/components/ui/checkbox"
 import {metrics} from "@/data/dashboard-2"
-import {TotalShiftsCard} from "@/components/TotalShiftsCard";
+import {TotalShiftsCard} from "@/components/cards/TotalShiftsCard";
 import {shiftStats} from "@/data/mock-data";
-import SelectTime from "@/components/SelectTime";
+import SelectTime from "@/components/cards/SelectTime";
 import type {Month} from "@/types/CardTypes";
 import {commentStyles} from "style-dictionary/enums";
 import none = commentStyles.none;
