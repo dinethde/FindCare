@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# intelij
+/.idea/
+
 # production
 /build
 
@@ -38,4 +41,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+Frontend/findecare-demo-com/next-env.d.ts

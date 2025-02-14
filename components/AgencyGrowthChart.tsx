@@ -14,7 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { agencyGrowthData } from "@/data/agency-growth";
 import type { AgencyGrowthData } from "@/types/chart";
-import SelectTime from "@/components/SelectTime";
+import SelectTime from "@/components/cards/SelectTime";
 
 export function AgencyGrowthChart() {
   const [selectedYear, setSelectedYear] = useState<string>("2024");
