@@ -1,12 +1,10 @@
 import React from "react";
-import Image from "next/image";
-import { MapPin, User, UserCircle, Building2 } from "lucide-react";
 import { DetailRow } from "@/components/DetailRow";
-import { SectionCard } from "@/components/SectionCard";
+import { SectionCard } from "@/components/cards/SectionCard";
 import { StatusBadge } from "@/components/StatusBadge";
 import { profileData } from "@/data/profile-data";
-import CaregiverDescription from "./CaregiverDescription";
-import CaregiverImg from "./CaregiverImg";
+import CaregiverDescription from "../CaregiverDescription";
+import CaregiverImg from "../CaregiverImg";
 import accountIcon from "@/public/assets/icons/account-icon.svg";
 import employeeIcon from "@/public/assets/icons/employee-icon.svg";
 import locationIcon from "@/public/assets/icons/location.svg";
@@ -14,7 +12,6 @@ import personalDetailsIcons from "@/public/assets/icons/personal-details-icon.sv
 import { colorProps } from "@/data/ColorProps";
 
 export default function InformationCard() {
-  const color = colorProps.green.hsl;
   return (
     <div className="container flex gap-4 flex-col">
       {/* 1st row */}

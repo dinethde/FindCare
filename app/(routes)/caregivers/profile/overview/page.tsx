@@ -2,12 +2,12 @@
 
 import {Metrics} from "@/components/Metrics";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Card from "@/components/Card";
+import Card from "@/components/cards/Card";
 import CaregiverImg from "@/components/CaregiverImg";
 import CaregiverDescription from "@/components/CaregiverDescription";
-import InformationCard from "@/components/InformationCard";
+import InformationCard from "@/components/cards/InformationCard";
 import { DetailRow } from "@/components/DetailRow";
-import { SectionCard } from "@/components/SectionCard";
+import { SectionCard } from "@/components/cards/SectionCard";
 import { profileData } from "@/data/profile-data";
 import verifiedIcon from "@/public/assets/icons/verrified-icon.svg";
 import { StatusBadge } from "@/components/StatusBadge";

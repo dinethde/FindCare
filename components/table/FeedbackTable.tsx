@@ -13,7 +13,14 @@ const feedbackConfig: TableConfig = {
   headerAlignments: ["left", "center", "center", "left"],
 };
 
-const filterOptions = [
+interface FilterOption {
+  key: string;
+  label: string;
+  type: "number" | "text" | "checkbox";
+  options?: string[];
+}
+
+const filterOptions: FilterOption[] = [
   { key: "name", label: "Name", type: "text" },
   {
     key: "careType",
@@ -25,15 +32,10 @@ const filterOptions = [
 ];
 
 export function FeedbackTable() {
-  const handleSearch = (query: string) => {
-    console.log("Searching:", query);
-  };
-
   return (
     <DynamicTable
       config={feedbackConfig}
       data={feedbackData}
-      onSearch={handleSearch}
       filterOptions={filterOptions}
     />
   );

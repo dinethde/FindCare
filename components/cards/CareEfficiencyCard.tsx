@@ -9,8 +9,8 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
-import type { EfficiencyData } from "../types/dashboard";
-import SelectTime from "@/components/SelectTime";
+import type { EfficiencyData } from "@/types/dashboard";
+import SelectTime from "@/components/cards/SelectTime";
 import { Month } from "@/types/SelectTimeTypes";
 
 interface CareEfficiencyCardProps {
@@ -46,7 +46,9 @@ export function CareEfficiencyCard({ data }: CareEfficiencyCardProps) {
                         <div className="grid grid-cols-2 gap-2">
                           <div className="font-medium">Efficiency</div>
                           <div className="font-medium">
-                            {payload[0].value.toFixed(1)}%
+                            {typeof payload[0].value === "number"
+                              ? `${payload[0].value.toFixed(1)}%`
+                              : "0%"}
                           </div>
                         </div>
                       </div>

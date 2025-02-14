@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import NetworkIcon from "./icons/NetworkIcon";
-import UserProfileIcon from "./icons/UserProfileIcon copy";
-import SearchIcon from "./icons/SearchIcon";
+import NetworkIcon from "../icons/NetworkIcon";
+import UserProfileIcon from "../icons/UserProfileIcon copy";
+import SearchIcon from "../icons/SearchIcon";
 import "@/app/globals.css";
 
 // Define page title mapping

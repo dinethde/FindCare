@@ -20,10 +20,6 @@ export function ClientTable({
   filterOptions,
   tableType,
 }: ClientTableProps) {
-  const handleSearch = (query: string) => {
-    console.log("Searching:", query);
-  };
-
   const tableConfig: TableConfig = {
     ...config,
   };
@@ -32,7 +28,6 @@ export function ClientTable({
     <DynamicTable
       config={tableConfig}
       data={clientData}
-      onSearch={handleSearch}
       filterOptions={filterOptions}
       tableType={tableType}
     />

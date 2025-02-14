@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/Select";
-import type { Month } from "../types/CardTypes";
+import type { Month } from "../../types/CardTypes";
 import { SelectTimeProps, YearData } from "@/types/SelectTimeTypes";
 
 const months: Month[] = [

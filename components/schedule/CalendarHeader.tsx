@@ -1,9 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { DayData } from "../types/ScheduleType";
-import { isToday } from "../utils/DateUtils";
-
-const TIME_COLUMN_WIDTH = 60; // pixels
+import type { DayData } from "@/types/ScheduleType";
+import { isToday } from "@/utils/DateUtils";
 
 interface CalendarHeaderProps {
   weekOf: string;

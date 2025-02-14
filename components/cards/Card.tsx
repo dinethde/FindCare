@@ -1,8 +1,8 @@
 "use client";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import type { RevenueCardProps, Month } from "../types/CardTypes";
-import NestedCirclesIcon from "./icons/NestedCirclesIcon";
+import type { RevenueCardProps, Month } from "@/types/CardTypes";
+import NestedCirclesIcon from "../icons/NestedCirclesIcon";
 import SelectTime from "./SelectTime";
 import { useState } from "react";
 

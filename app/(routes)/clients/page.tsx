@@ -15,7 +15,14 @@ const clientConfigWithNOK: TableConfig = {
   showViewAction: true,
 };
 
-const filterOptions = [
+interface FilterOption {
+  key: string;
+  label: string;
+  type: "number" | "text" | "checkbox";
+  options?: string[];
+}
+
+const filterOptions: FilterOption[] = [
   { key: "name", label: "Name", type: "text" },
   {
     key: "careType",

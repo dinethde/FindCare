@@ -1,8 +1,8 @@
 "use client"
 
-import type { CareProviderDashboardProps, ShiftStatistics, TaskStatistics } from "../types/ScheduleTypes"
+import type { CareProviderDashboardProps, ShiftStatistics, TaskStatistics } from "@/types/ScheduleTypes"
 import { CareProviderCalendar } from "./CareProviderCalendar"
-import { ChartCard } from "./ChartCard"
+import { ChartCard } from "../charts/ChartCard"
 
 export function CareProviderDashboard({ agencyData }: CareProviderDashboardProps) {
     // Calculate shift statistics

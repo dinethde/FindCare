@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DonutChart } from "@/components/ui/chart"
-import SelectTime from "@/components/SelectTime";
+import SelectTime from "@/components/cards/SelectTime";
 
 interface ChartCardProps {
   title: string

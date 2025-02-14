@@ -1,22 +1,19 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
-
 import "@/app/globals.css";
-
 import photo from "@/public/images/photo.png";
-// Importing Icon componets
-import HomeIcon from "./icons/HomeIcon";
-import SearchIcon from "./icons/SearchIcon";
-import InboxIcon from "./icons/InboxIcon";
-import CaregiverIcon from "./icons/CaregiverIcon";
-import ClientIcon from "./icons/ClientIcon";
-import CalendarIcon from "./icons/CalendarIcon";
-import AgreementIcon from "./icons/AgreementIcon";
-import NotificationIcon from "./icons/NotificationIcon";
-import MobileAppIcon from "./icons/MobileAppIcon";
-import HelpIcon from "./icons/HelpIcon";
-import StarsIcon from "./icons/StarsIcon";
+import HomeIcon from "../icons/HomeIcon";
+import SearchIcon from "../icons/SearchIcon";
+import InboxIcon from "../icons/InboxIcon";
+import CaregiverIcon from "../icons/CaregiverIcon";
+import ClientIcon from "../icons/ClientIcon";
+import CalendarIcon from "../icons/CalendarIcon";
+import AgreementIcon from "../icons/AgreementIcon";
+import NotificationIcon from "../icons/NotificationIcon";
+import MobileAppIcon from "../icons/MobileAppIcon";
+import HelpIcon from "../icons/HelpIcon";
+import StarsIcon from "../icons/StarsIcon";
 
 const NavbarComponent: NextPage = () => {
   return (
@@ -42,7 +39,7 @@ const NavbarComponent: NextPage = () => {
         {/* Top items wrapper */}
         <div className="self-stretch flex flex-col items-start justify-start py-[0rem] px-[0.25rem] gap-[1rem]">
           {/* Search Page Nav Link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/public"} className="navbar-link">
             <SearchIcon />
             <div className="flex flex-row items-center justify-center">
               <p className="text-regular-text">Search</p>
@@ -50,7 +47,7 @@ const NavbarComponent: NextPage = () => {
           </Link>
 
           {/* Home Page Nav Link */}
-          <Link href={"/"} className="navbar-link">
+          <Link href={"/public"} className="navbar-link">
             <HomeIcon color={"#FA5300"} />
             <div className=" flex flex-row items-center justify-center">
               <p className="text-regular-text-thicker text-brand-colors-main">

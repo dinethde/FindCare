@@ -1,6 +1,6 @@
 import Image from "next/image";
-import type { Appointment, AgencyData } from "../types/ScheduleTypes";
-import { calculateEventPosition } from "../utils/TimeUtils";
+import type { Appointment, AgencyData } from "@/types/ScheduleTypes";
+import { calculateEventPosition } from "@/utils/TimeUtils";
 
 interface AppointmentCardProps {
   data: Appointment;

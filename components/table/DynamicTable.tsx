@@ -3,12 +3,14 @@
 import { useState, useMemo } from "react";
 import type { TableConfig } from "../../types/TableTypes";
 import { TableHeader } from "./TableHeader";
-import { CareTypeBadge } from "./CareTypeBadge";
+import { CareTypeBadge } from "../CareTypeBadge";
 import { SquareStackIcon as Square2StackIcon } from "lucide-react";
 import { FilterModal2 } from "./FilterModal2";
 import { ReviewBox } from "../ReviewBadge";
 import Link from "next/link";
 import { Eye } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { UrlObject } from "url";
 
 interface DynamicTableProps {
   config: TableConfig;
@@ -28,6 +30,18 @@ export function DynamicTable({
   filterOptions,
   tableType = "",
 }: DynamicTableProps) {
+  const pathname = usePathname();
+  const pageIn = pathname.split("/")[1];
+  let navigationLink: string | UrlObject;
+
+  if (pageIn === "caregivers") {
+    navigationLink = "caregivers/profile/overview";
+  } else if (pageIn === "clients") {
+    navigationLink = "/clients";
+  } else {
+    navigationLink = "/";
+  }
+
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState<Record<string, any>>({});
   const [searchQuery, setSearchQuery] = useState("");
@@ -104,7 +118,7 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-regular border bg-main overflow-hidden flex flex-col p-5 gap-8">
+    <div className="rounded-regular border bg-main2 overflow-hidden flex flex-col p-5 gap-8">
       <div className="">
         <TableHeader
           title={config.title}
@@ -140,7 +154,7 @@ export function DynamicTable({
                 key={item.id}
                 className={
                   index !== filteredData.length - 1
-                    ? "border-b border-gray-200"
+                    ? "border-b border-gray-600"
                     : ""
                 }
               >
@@ -162,13 +176,13 @@ export function DynamicTable({
 
                 {tableType === "fill" ? (
                   <td className="py-5 pr-4 flex justify-end">
-                    <Link href={"/"}>
+                    <Link href={navigationLink}>
                       <Square2StackIcon className="h-5 w-5" />
                     </Link>
                   </td>
                 ) : tableType === "eye" ? (
                   <td className="py-5 pr-4 flex justify-end">
-                    <Link href={"/"}>
+                    <Link href={navigationLink}>
                       <Eye className="h-5 w-5" />
                     </Link>
                   </td>

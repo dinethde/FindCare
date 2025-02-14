@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Calendar } from "./Calendar";
-import type { AgencyData } from "../types/ScheduleTypes";
+import type { AgencyData } from "@/types/ScheduleTypes";
 import Image from "next/image";
-import Card from "../components/Card";
+import Card from "../cards/Card";
 
 interface CaregiverCalendarViewProps {
   agencyData: AgencyData;

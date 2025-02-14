@@ -1,4 +1,4 @@
-import { CareProviderDashboard } from "@/components/CareProviderDashboard";
+import { CareProviderDashboard } from "@/components/schedule/CareProviderDashboard";
 import { agencyData } from "@/data/AgencyData";
 import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
@@ -32,7 +32,14 @@ export default function SchedulePage() {
     showViewAction: true,
   };
 
-  const filterOptions = [
+  interface FilterOption {
+    key: string;
+    label: string;
+    type: "number" | "text" | "checkbox";
+    options?: string[];
+  }
+
+  const filterOptions: FilterOption[] = [
     { key: "name", label: "Name", type: "text" },
     {
       key: "careType",
@@ -45,22 +52,24 @@ export default function SchedulePage() {
 
   return (
     <div className="bg-gray-50">
-      <div className="w-full space-y-8">
+      <div className="w-full space-y-9">
         {/* Care Provider Calendar Section */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Care Provider View</h2>
-          <CareProviderDashboard agencyData={agencyData} />
-        </div>
 
-        <div className="bg-[#ffffff] space-y-8">
-          <ClientTable
-            config={clientConfigWithTimes}
-            filterOptions={filterOptions}
-          />
-          <ClientTable
-            config={clientConfigWithNOK}
-            filterOptions={filterOptions}
-          />
+          <CareProviderDashboard agencyData={agencyData} />
+
+
+        <div className="flex flex-col gap-y-5">
+          <h3 className="text-h4 text-neutral-10 pl-2"> Fill a Spot </h3>
+          <div className="bg-[#ffffff] space-y-8">
+            <ClientTable
+                config={clientConfigWithTimes}
+                filterOptions={filterOptions}
+            />
+            <ClientTable
+                config={clientConfigWithNOK}
+                filterOptions={filterOptions}
+            />
+          </div>
         </div>
       </div>
     </div>
