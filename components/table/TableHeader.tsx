@@ -24,10 +24,11 @@ export function TableHeader({
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-h5  text-neutral-10">{title}</h1>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="w-72">
             <SearchBar2 onSearch={onSearch} placeholder="Search..." />
           </div>
+          {/* <FilterIcon onFilter={onFilter} /> */}
           <ApplyFilter onFilter={onFilter} />
         </div>
       </div>
