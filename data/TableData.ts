@@ -90,7 +90,7 @@ export const clientData: Client[] = [
   {
     id: "1",
     name: "Dineth De Silva",
-    contactInfo: "Mon - Wed : 6am - 8pm",
+    assignedTimes: ["Oct 24 Wed : 6am - 8pm"],
     careType: "Domici Care",
     primaryCaregiver: "CG1001",
     location: "Colombo",
@@ -98,7 +98,7 @@ export const clientData: Client[] = [
   {
     id: "2",
     name: "John Smith",
-    contactInfo: "Thu - Sat : 9am - 5pm",
+    assignedTimes: ["Oct 24 - 26 : 6am - 8pm", "Oct 27 Sun : 6am - 4pm"],
     careType: "Senior Care",
     primaryCaregiver: "CG1002",
     location: "Colombo",
@@ -106,7 +106,7 @@ export const clientData: Client[] = [
   {
     id: "3",
     name: "Emma Thompson",
-    contactInfo: "Mon - Fri : 7am - 3pm",
+    assignedTimes: ["Oct 24 Wed : 6am - 8pm", "Oct 27 Sun : 6am - 4pm"],
     careType: "Child Care",
     primaryCaregiver: "CG1003",
     location: "Colombo",
@@ -114,7 +114,7 @@ export const clientData: Client[] = [
   {
     id: "4",
     name: "Michael Brown",
-    contactInfo: "Tue - Sun : 10am - 6pm",
+    assignedTimes: ["Oct 25 Thu : 10am - 6pm"],
     careType: "Domici Care",
     primaryCaregiver: "CG1004",
     location: "Colombo",
@@ -122,7 +122,7 @@ export const clientData: Client[] = [
   {
     id: "5",
     name: "Sarah Wilson",
-    contactInfo: "Wed - Mon : 8am - 4pm",
+    assignedTimes: ["Oct 26 Fri : 8am - 4pm", "Oct 28 Sun : 9am - 5pm"],
     careType: "Senior Care",
     primaryCaregiver: "CG1005",
     location: "Colombo",

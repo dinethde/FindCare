@@ -76,6 +76,18 @@ export function DynamicTable({
       return <ReviewBox review={value} rate={item.rate} />;
     }
 
+    if (column.key === "assignedTimes" && Array.isArray(value)) {
+      return (
+        <div className="flex flex-col gap-1">
+          {value.map((time: string, index: number) => (
+            <span key={index} className="text-regular-text text-neutral-10">
+              {time}
+            </span>
+          ))}
+        </div>
+      );
+    }
+
     return <span className="text-regular-text text-neutral-10">{value}</span>;
   };
 
@@ -88,7 +100,7 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-lg border bg-[#F7F8F8] overflow-hidden flex flex-col p-5 gap-8">
+    <div className="rounded-regular border bg-main overflow-hidden flex flex-col p-5 gap-8">
       <div className="">
         <TableHeader
           title={config.title}
@@ -101,7 +113,7 @@ export function DynamicTable({
       <div className="">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-200">
+            <tr className="border-b border-neutral-3">
               {config.columns.map((column, index) => (
                 <th
                   key={column.key}
