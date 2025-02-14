@@ -7,9 +7,12 @@ import { CareTypeBadge } from "./CareTypeBadge";
 import { SquareStackIcon as Square2StackIcon } from "lucide-react";
 import { FilterModal2 } from "./FilterModal2";
 import { ReviewBox } from "../ReviewBadge";
+import Link from "next/link";
+import { Eye } from "lucide-react";
 
 interface DynamicTableProps {
   config: TableConfig;
+  tableType?: string;
   data: any[];
   filterOptions: Array<{
     key: string;
@@ -23,6 +26,7 @@ export function DynamicTable({
   config,
   data,
   filterOptions,
+  tableType = "",
 }: DynamicTableProps) {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState<Record<string, any>>({});
@@ -78,7 +82,7 @@ export function DynamicTable({
 
     if (column.key === "assignedTimes" && Array.isArray(value)) {
       return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-3">
           {value.map((time: string, index: number) => (
             <span key={index} className="text-regular-text text-neutral-10">
               {time}
@@ -156,13 +160,21 @@ export function DynamicTable({
                   </td>
                 ))}
 
-                <td
-                  className={` ${config.title === "Caregiver List" || config.title === "Client List" ? "py-5 pr-4 flex justify-end" : "hidden"} `}
-                >
-                  <button className="text-gray-400 hover:text-gray-600">
-                    <Square2StackIcon className="h-5 w-5" />
-                  </button>
-                </td>
+                {tableType === "fill" ? (
+                  <td className="py-5 pr-4 flex justify-end">
+                    <Link href={"/"}>
+                      <Square2StackIcon className="h-5 w-5" />
+                    </Link>
+                  </td>
+                ) : tableType === "eye" ? (
+                  <td className="py-5 pr-4 flex justify-end">
+                    <Link href={"/"}>
+                      <Eye className="h-5 w-5" />
+                    </Link>
+                  </td>
+                ) : (
+                  <td className="hidden"></td>
+                )}
               </tr>
             ))}
           </tbody>

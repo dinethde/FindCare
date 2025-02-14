@@ -1,6 +1,7 @@
-import { ClientChildTable } from "@/components/table/ClientChildTable";
 import { ClientTable } from "@/components/table/ClientTable";
 
-export default function NotificationPage() {
-  return <div>notification</div>;
+import type { TableConfig } from "@/types/TableTypes";
+
+export default function Page() {
+  return <div className="bg-[#ffffff] space-y-8">Notification</div>;
 }
