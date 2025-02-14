@@ -13,6 +13,7 @@ export interface TableConfig {
   showTabs?: boolean;
   showSeeMore?: boolean;
   headerAlignments?: string[];
+  showViewAction?: boolean;
 }
 
 export interface TableProps {
@@ -37,9 +38,11 @@ export interface Client {
   id: string;
   name: string;
   contactInfo: string;
+  nok?: string;
   careType: CareType;
   primaryCaregiver: string;
   location: string;
+  assignedTimes?: string[];
 }
 
 export interface Feedback {

@@ -4,40 +4,37 @@ import { DynamicTable } from "./DynamicTable";
 import { clientData } from "@/data/TableData";
 import type { TableConfig } from "@/types/TableTypes";
 
-const clientConfig: TableConfig = {
-  title: "Client List",
-  columns: [
-    { key: "name", header: "Name", width: "15%" },
-    { key: "contactInfo", header: "Schedule", width: "25%" },
-    { key: "careType", header: "Care Type", width: "15%" },
-    { key: "primaryCaregiver", header: "Primary caregiver", width: "20%" },
-    { key: "location", header: "location", width: "12%" },
-  ],
-  headerAlignments: ["left", "center", "center", "center", "right"],
-};
+interface ClientTableProps {
+  config: TableConfig;
+  tableType?: string;
+  filterOptions: Array<{
+    key: string;
+    label: string;
+    type: "text" | "number" | "checkbox";
+    options?: string[];
+  }>;
+}
 
-const filterOptions = [
-  { key: "name", label: "Name", type: "text" },
-  {
-    key: "careType",
-    label: "Care Type",
-    type: "checkbox",
-    options: ["Domici Care", "Senior Care", "Child Care"],
-  },
-  { key: "location", label: "Location", type: "text" },
-];
-
-export function ClientTable() {
+export function ClientTable({
+  config,
+  filterOptions,
+  tableType,
+}: ClientTableProps) {
   const handleSearch = (query: string) => {
     console.log("Searching:", query);
   };
 
+  const tableConfig: TableConfig = {
+    ...config,
+  };
+
   return (
     <DynamicTable
-      config={clientConfig}
+      config={tableConfig}
       data={clientData}
       onSearch={handleSearch}
       filterOptions={filterOptions}
+      tableType={tableType}
     />
   );
 }
