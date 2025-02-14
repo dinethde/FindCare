@@ -2,6 +2,7 @@ import { CareProviderDashboard } from "@/components/CareProviderDashboard";
 import { agencyData } from "@/data/AgencyData";
 import { CaregiverCalendarView } from "@/components/CaregiverCalendarView";
 import { ClientCalendarView } from "@/components/ClientCalendarView";
+import { ClientTable } from "@/components/table/ClientTable";
 
 export default function SchedulePage() {
   // For demonstration purposes, we'll use the first caregiver and client
@@ -23,6 +24,9 @@ export default function SchedulePage() {
                 <h2 className="text-2xl font-semibold mb-4">Client Calendar</h2>
                 <ClientCalendarView agencyData={agencyData} selectedClientId={selectedClientId} />
             </div> */}
+        <div>
+          <ClientTable />
+        </div>
       </div>
     </div>
   );

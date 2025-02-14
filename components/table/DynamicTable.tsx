@@ -105,7 +105,11 @@ export function DynamicTable({
               {config.columns.map((column, index) => (
                 <th
                   key={column.key}
-                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} text-${config.headerAlignments[index]}`}
+                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${
+                    config.headerAlignments && config.headerAlignments[index]
+                      ? `text-${config.headerAlignments[index]}`
+                      : ""
+                  }`}
                   style={{ width: column.width }}
                 >
                   {column.header}
@@ -127,13 +131,21 @@ export function DynamicTable({
                 {config.columns.map((column, colIndex) => (
                   <td
                     key={column.key}
-                    className={`${config.title === "Caregiver List" ? "py-6" : "py-5"} ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} text-${config.headerAlignments[colIndex]}`}
+                    className={`${
+                      config.title === "Caregiver List" ? "py-6" : "py-5"
+                    } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
+                      config.headerAlignments &&
+                      config.headerAlignments[colIndex]
+                        ? `text-${config.headerAlignments[colIndex]}`
+                        : ""
+                    }`}
                   >
                     {renderCell(column, item)}
                   </td>
                 ))}
+
                 <td
-                  className={` ${config.title === "Caregiver List" ? "py-5 pr-4 flex justify-end" : "hidden"} `}
+                  className={` ${config.title === "Caregiver List" || config.title === "Client List" ? "py-5 pr-4 flex justify-end" : "hidden"} `}
                 >
                   <button className="text-gray-400 hover:text-gray-600">
                     <Square2StackIcon className="h-5 w-5" />
