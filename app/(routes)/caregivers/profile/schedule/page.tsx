@@ -9,7 +9,7 @@ export default function SchedulePage() {
 
   return (
     <div>
-      <div className="space-y-10">
+      <div className="space-y-8 mt-6">
         <CaregiverCalendarView
           agencyData={agencyData}
           selectedCaregiverId={selectedCaregiverId}
