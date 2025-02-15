@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/onboarding/button/button_widget.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'patient_details_model.dart';
 export 'patient_details_model.dart';
 
@@ -44,7 +45,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,7 +70,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                             fontWeight: FontWeight.w500,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 12.0)),
+                  ].divide(SizedBox(height: 12.0)),
                 ),
                 Column(
                   mainAxisSize: MainAxisSize.max,
@@ -79,7 +80,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                       'Step 1/5',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: const Color(0xFFFF3355),
+                            color: Color(0xFFFF3355),
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -94,52 +95,66 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                           wrapWithModel(
                             model: _model.textBoxModel1,
                             updateCallback: () => safeSetState(() {}),
-                            child: const TextBoxWidget(
+                            child: TextBoxWidget(
                               textField: 'Name with initials',
                             ),
                           ),
                           wrapWithModel(
                             model: _model.textBoxModel2,
                             updateCallback: () => safeSetState(() {}),
-                            child: const TextBoxWidget(
+                            child: TextBoxWidget(
                               textField: 'Date Of Birth',
                             ),
                           ),
                           wrapWithModel(
                             model: _model.textBoxModel3,
                             updateCallback: () => safeSetState(() {}),
-                            child: const TextBoxWidget(
+                            child: TextBoxWidget(
                               textField: 'Sex',
                             ),
                           ),
                           wrapWithModel(
                             model: _model.textBoxModel4,
                             updateCallback: () => safeSetState(() {}),
-                            child: const TextBoxWidget(
+                            child: TextBoxWidget(
                               textField: 'Weight',
                             ),
                           ),
                           wrapWithModel(
                             model: _model.textBoxModel5,
                             updateCallback: () => safeSetState(() {}),
-                            child: const TextBoxWidget(
+                            child: TextBoxWidget(
                               textField: 'Height',
                             ),
                           ),
-                        ].divide(const SizedBox(height: 14.0)),
+                        ].divide(SizedBox(height: 14.0)),
                       ),
                     ),
-                  ].divide(const SizedBox(height: 20.0)),
+                  ].divide(SizedBox(height: 20.0)),
                 ),
-                wrapWithModel(
-                  model: _model.buttonModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: ButtonWidget(
-                    btnText: '+ Add',
-                    btnColor: FlutterFlowTheme.of(context).primary,
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('PrimaryCareOptions');
+                  },
+                  text: '+ Add',
+                  options: FFButtonOptions(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 47.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: GoogleFonts.getFont(
+                      'Inter Tight',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16.0,
+                    ),
+                    borderRadius: BorderRadius.circular(6.0),
                   ),
+                  showLoadingIndicator: false,
                 ),
-              ].divide(const SizedBox(height: 10.0)),
+              ].divide(SizedBox(height: 10.0)),
             ),
           ),
         ),

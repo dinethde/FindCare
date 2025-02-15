@@ -46,17 +46,17 @@ class _DropdownWidgetState extends State<DropdownWidget> {
       constraints: BoxConstraints(
         maxWidth: MediaQuery.sizeOf(context).width * 1.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: FlutterFlowDropDown<String>(
         controller: _model.dropDownValueController ??=
             FormFieldController<String>(null),
-        options: const ['Option 1', 'Option 2', 'Option 3'],
+        options: ['Option 1', 'Option 2', 'Option 3'],
         onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
         width: double.infinity,
         height: 45.0,
         textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
               fontFamily: 'Inter',
-              color: const Color(0xFF8D8D8D),
+              color: Color(0xFF8D8D8D),
               letterSpacing: 0.0,
             ),
         hintText: widget.lableName,
@@ -67,10 +67,10 @@ class _DropdownWidgetState extends State<DropdownWidget> {
         ),
         fillColor: FlutterFlowTheme.of(context).secondaryBackground,
         elevation: 2.0,
-        borderColor: const Color(0xFFD9D9D9),
+        borderColor: Color(0xFFD9D9D9),
         borderWidth: 0.5,
         borderRadius: 8.0,
-        margin: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+        margin: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
         hidesUnderline: true,
         isOverButton: false,
         isSearchable: false,

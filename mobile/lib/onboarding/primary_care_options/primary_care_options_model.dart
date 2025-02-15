@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/onboarding/button/button_widget.dart';
 import '/onboarding/button_half/button_half_widget.dart';
 import '/onboarding/selection_button/selection_button_widget.dart';
 import 'primary_care_options_widget.dart' show PrimaryCareOptionsWidget;
@@ -21,8 +20,6 @@ class PrimaryCareOptionsModel
   late SelectionButtonModel selectionButtonModel5;
   // Model for ButtonHalf component.
   late ButtonHalfModel buttonHalfModel;
-  // Model for Button component.
-  late ButtonModel buttonModel;
 
   @override
   void initState(BuildContext context) {
@@ -32,7 +29,6 @@ class PrimaryCareOptionsModel
     selectionButtonModel4 = createModel(context, () => SelectionButtonModel());
     selectionButtonModel5 = createModel(context, () => SelectionButtonModel());
     buttonHalfModel = createModel(context, () => ButtonHalfModel());
-    buttonModel = createModel(context, () => ButtonModel());
   }
 
   @override
@@ -43,6 +39,5 @@ class PrimaryCareOptionsModel
     selectionButtonModel4.dispose();
     selectionButtonModel5.dispose();
     buttonHalfModel.dispose();
-    buttonModel.dispose();
   }
 }

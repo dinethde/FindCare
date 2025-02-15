@@ -45,79 +45,103 @@ class _IconButtonWidgetState extends State<IconButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: MediaQuery.sizeOf(context).width * 1.0,
-      ),
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 3.0,
-            color: Color(0xFFDDE6EE),
-            offset: Offset(
-              0.0,
-              2.0,
-            ),
-          )
-        ],
-      ),
-      child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 1.0,
-        child: Stack(
-          alignment: const AlignmentDirectional(1.0, 0.0),
-          children: [
-            FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
-              },
-              text: 'Button',
-              options: FFButtonOptions(
-                width: double.infinity,
-                height: 48.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                textStyle: GoogleFonts.getFont(
-                  'Inter Tight',
-                  color: Colors.transparent,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16.0,
-                ),
-                borderRadius: BorderRadius.circular(6.0),
+      width: MediaQuery.sizeOf(context).width * 1.0,
+      child: Stack(
+        alignment: AlignmentDirectional(1.0, 0.0),
+        children: [
+          FFButtonWidget(
+            onPressed: () {
+              print('Button pressed ...');
+            },
+            text: 'Button',
+            options: FFButtonOptions(
+              width: double.infinity,
+              height: 48.0,
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              textStyle: GoogleFonts.getFont(
+                'Inter Tight',
+                color: Colors.transparent,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.0,
               ),
+              borderRadius: BorderRadius.circular(6.0),
             ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                widget.icon1!,
-                Text(
-                  valueOrDefault<String>(
-                    widget.lable,
-                    'TEXT',
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
-                        fontSize: 16.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
+            showLoadingIndicator: false,
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              widget.icon1!,
+              Text(
+                valueOrDefault<String>(
+                  widget.lable,
+                  'TEXT',
                 ),
-              ]
-                  .divide(const SizedBox(width: 8.0))
-                  .addToStart(const SizedBox(width: 12.0))
-                  .addToEnd(const SizedBox(width: 12.0)),
-            ),
-            const Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-              child: Icon(
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      fontSize: 16.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
+              Flexible(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Opacity(
+                        opacity: 0.0,
+                        child: Text(
+                          'Hello World',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.0,
+                        child: Text(
+                          'Hello World',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.0,
+                        child: Text(
+                          'Hello World',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Color(0xFF007AFF),
                 size: 16.0,
               ),
-            ),
-          ],
-        ),
+            ]
+                .divide(SizedBox(width: 8.0))
+                .addToStart(SizedBox(width: 12.0))
+                .addToEnd(SizedBox(width: 12.0)),
+          ),
+        ],
       ),
     );
   }

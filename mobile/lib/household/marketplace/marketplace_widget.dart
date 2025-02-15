@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -39,11 +40,19 @@ class _MarketplaceWidgetState extends State<MarketplaceWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: const SafeArea(
+        body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [],
+            children: [
+              wrapWithModel(
+                model: _model.navBarModel,
+                updateCallback: () => safeSetState(() {}),
+                child: NavBarWidget(
+                  page: 1,
+                ),
+              ),
+            ],
           ),
         ),
       ),

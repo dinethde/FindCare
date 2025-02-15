@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'paitent_report_model.dart';
 export 'paitent_report_model.dart';
@@ -51,12 +50,13 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        maxWidth: MediaQuery.sizeOf(context).width * 0.42,
-        maxHeight: 120.0,
+        minHeight: 120.0,
+        maxWidth: double.infinity,
+        maxHeight: double.infinity,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 3.0,
             color: Color(0xFFDDE6EE),
@@ -69,7 +69,7 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +92,7 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
                         fontWeight: FontWeight.w600,
                       ),
                 ),
-              ].divide(const SizedBox(width: 10.0)),
+              ].divide(SizedBox(width: 10.0)),
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -106,10 +106,7 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          valueOrDefault<String>(
-                            random_data.randomInteger(0, 10).toString(),
-                            '0',
-                          ),
+                          '1',
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
@@ -135,7 +132,7 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: const Color(0xFF8D8D8D),
+                            color: Color(0xFF8D8D8D),
                             fontSize: 12.0,
                             letterSpacing: 0.0,
                           ),
@@ -143,7 +140,7 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
                   ],
                 ),
                 widget.icon2!,
-              ],
+              ].divide(SizedBox(width: 20.0)),
             ),
           ],
         ),

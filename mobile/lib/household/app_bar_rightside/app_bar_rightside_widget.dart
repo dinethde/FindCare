@@ -44,17 +44,26 @@ class _AppBarRightsideWidgetState extends State<AppBarRightsideWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Text(
-          valueOrDefault<String>(
-            widget.secLable,
-            'TEXT',
+        InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            context.safePop();
+          },
+          child: Text(
+            valueOrDefault<String>(
+              widget.secLable,
+              'TEXT',
+            ),
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Inter',
+                  color: Color(0xFF007AFF),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
           ),
-          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Inter',
-                color: const Color(0xFF007AFF),
-                fontSize: 16.0,
-                letterSpacing: 0.0,
-              ),
         ),
       ],
     );

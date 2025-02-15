@@ -1,9 +1,10 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/onboarding/button/button_widget.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/button_half/button_half_widget.dart';
 import '/onboarding/selection_button/selection_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'primary_care_options_model.dart';
 export 'primary_care_options_model.dart';
 
@@ -46,7 +47,7 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,7 +72,7 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                             fontWeight: FontWeight.w500,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 12.0)),
+                  ].divide(SizedBox(height: 12.0)),
                 ),
                 Column(
                   mainAxisSize: MainAxisSize.max,
@@ -81,7 +82,7 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                       'Step 2/5',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: const Color(0xFFFF3355),
+                            color: Color(0xFFFF3355),
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -135,7 +136,7 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                                 .secondaryBackground,
                           ),
                         ),
-                      ].divide(const SizedBox(height: 14.0)),
+                      ].divide(SizedBox(height: 14.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -143,14 +144,14 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                         wrapWithModel(
                           model: _model.buttonHalfModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const ButtonHalfWidget(
+                          child: ButtonHalfWidget(
                             btnText: '+ Add notes',
                             btnColor: Color(0xFFFF3355),
                           ),
                         ),
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 38.0, 0.0),
                             child: Text(
                               'Add special notes about the care patient needs',
@@ -163,19 +164,33 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 12.0)),
+                      ].divide(SizedBox(width: 12.0)),
                     ),
-                  ].divide(const SizedBox(height: 20.0)),
+                  ].divide(SizedBox(height: 20.0)),
                 ),
-                wrapWithModel(
-                  model: _model.buttonModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: ButtonWidget(
-                    btnText: 'Continue',
-                    btnColor: FlutterFlowTheme.of(context).primary,
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('PatientDiseases');
+                  },
+                  text: 'Continue',
+                  options: FFButtonOptions(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 47.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: GoogleFonts.getFont(
+                      'Inter Tight',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16.0,
+                    ),
+                    borderRadius: BorderRadius.circular(6.0),
                   ),
+                  showLoadingIndicator: false,
                 ),
-              ].divide(const SizedBox(height: 10.0)),
+              ].divide(SizedBox(height: 10.0)),
             ),
           ),
         ),

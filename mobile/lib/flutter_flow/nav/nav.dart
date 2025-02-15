@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -33,157 +32,402 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => const WelcomeScreenWidget(),
+      errorBuilder: (context, state) => WelcomeScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const WelcomeScreenWidget(),
+          builder: (context, _) => WelcomeScreenWidget(),
         ),
         FFRoute(
           name: 'WelcomeScreen',
           path: '/welcomeScreen',
-          builder: (context, params) => const WelcomeScreenWidget(),
+          builder: (context, params) => WelcomeScreenWidget(),
         ),
         FFRoute(
           name: 'onboardRoleSelect',
           path: '/onboardRoleSelect',
-          builder: (context, params) => const OnboardRoleSelectWidget(),
+          builder: (context, params) => OnboardRoleSelectWidget(
+            typeColor: params.getParam(
+              'typeColor',
+              ParamType.Color,
+            ),
+          ),
         ),
         FFRoute(
           name: 'houseHoldSignin',
           path: '/houseHoldSignin',
-          builder: (context, params) => const HouseHoldSigninWidget(),
+          builder: (context, params) => HouseHoldSigninWidget(),
         ),
         FFRoute(
           name: 'careGiverSignIn',
           path: '/careGiverSignIn',
-          builder: (context, params) => const CareGiverSignInWidget(),
+          builder: (context, params) => CareGiverSignInWidget(),
         ),
         FFRoute(
           name: 'registerName',
           path: '/registerName',
-          builder: (context, params) => const RegisterNameWidget(),
+          builder: (context, params) => RegisterNameWidget(),
         ),
         FFRoute(
           name: 'careType',
           path: '/careType',
-          builder: (context, params) => const CareTypeWidget(),
+          builder: (context, params) => CareTypeWidget(
+            typeColor: params.getParam(
+              'typeColor',
+              ParamType.Color,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Householdsignup',
           path: '/householdsignup',
-          builder: (context, params) => const HouseholdsignupWidget(),
+          builder: (context, params) => HouseholdsignupWidget(),
         ),
         FFRoute(
           name: 'PatientFirstPage',
           path: '/patientFirstPage',
-          builder: (context, params) => const PatientFirstPageWidget(),
+          builder: (context, params) => PatientFirstPageWidget(),
         ),
         FFRoute(
           name: 'PatientDetails',
           path: '/patientDetails',
-          builder: (context, params) => const PatientDetailsWidget(),
+          builder: (context, params) => PatientDetailsWidget(),
         ),
         FFRoute(
           name: 'PrimaryCareOptions',
           path: '/primaryCareOptions',
-          builder: (context, params) => const PrimaryCareOptionsWidget(),
+          builder: (context, params) => PrimaryCareOptionsWidget(),
         ),
         FFRoute(
           name: 'PatientDiseases',
           path: '/patientDiseases',
-          builder: (context, params) => const PatientDiseasesWidget(),
+          builder: (context, params) => PatientDiseasesWidget(),
         ),
         FFRoute(
           name: 'PatientRequirements',
           path: '/patientRequirements',
-          builder: (context, params) => const PatientRequirementsWidget(),
+          builder: (context, params) => PatientRequirementsWidget(),
         ),
         FFRoute(
           name: 'Personalization',
           path: '/personalization',
-          builder: (context, params) => const PersonalizationWidget(),
+          builder: (context, params) => PersonalizationWidget(),
         ),
         FFRoute(
           name: 'homePage',
           path: '/homePage',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'homePage')
-              : const HomePageWidget(),
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
           name: 'PatientInfo',
           path: '/patientInfo',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'PatientInfo')
-              : const PatientInfoWidget(),
+          builder: (context, params) => PatientInfoWidget(),
         ),
         FFRoute(
           name: 'MessageScreen',
           path: '/messageScreen',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'MessageScreen')
-              : const MessageScreenWidget(),
+          builder: (context, params) => MessageScreenWidget(),
         ),
         FFRoute(
           name: 'Marketplace',
           path: '/marketplace',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Marketplace')
-              : const MarketplaceWidget(),
+          builder: (context, params) => MarketplaceWidget(),
         ),
         FFRoute(
-          name: 'CaregiverInfo',
-          path: '/caregiverInfo',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'CaregiverInfo')
-              : const CaregiverInfoWidget(),
+          name: 'CaregiverPage',
+          path: '/caregiverPage',
+          builder: (context, params) => CaregiverPageWidget(),
+        ),
+        FFRoute(
+          name: 'PatientReports',
+          path: '/patientReports',
+          builder: (context, params) => PatientReportsWidget(),
+        ),
+        FFRoute(
+          name: 'CaregiverPersonal',
+          path: '/caregiverPersonal',
+          builder: (context, params) => CaregiverPersonalWidget(),
+        ),
+        FFRoute(
+          name: 'Caregiverinfo',
+          path: '/caregiverinfo',
+          builder: (context, params) => CaregiverinfoWidget(),
         ),
         FFRoute(
           name: 'profilePage',
           path: '/profilePage',
-          builder: (context, params) => const ProfilePageWidget(),
+          builder: (context, params) => ProfilePageWidget(),
         ),
         FFRoute(
           name: 'PatientPersonalInfo',
           path: '/patientPersonalInfo',
-          builder: (context, params) => const PatientPersonalInfoWidget(),
+          builder: (context, params) => PatientPersonalInfoWidget(),
         ),
         FFRoute(
           name: 'PatientInformationEDIT',
           path: '/patientInformationEDIT',
-          builder: (context, params) => const PatientInformationEDITWidget(),
+          builder: (context, params) => PatientInformationEDITWidget(),
         ),
         FFRoute(
           name: 'MedicalRecords',
           path: '/medicalRecords',
-          builder: (context, params) => const MedicalRecordsWidget(),
+          builder: (context, params) => MedicalRecordsWidget(),
         ),
         FFRoute(
           name: 'MedicalRecordsINFO',
           path: '/medicalRecordsINFO',
-          builder: (context, params) => const MedicalRecordsINFOWidget(),
+          builder: (context, params) => MedicalRecordsINFOWidget(),
         ),
         FFRoute(
           name: 'MedicalRecordUpdate',
           path: '/medicalRecordUpdate',
-          builder: (context, params) => const MedicalRecordUpdateWidget(),
+          builder: (context, params) => MedicalRecordUpdateWidget(),
         ),
         FFRoute(
           name: 'PatientCalendar',
           path: '/patientCalendar',
-          builder: (context, params) => const PatientCalendarWidget(),
+          builder: (context, params) => PatientCalendarWidget(),
         ),
         FFRoute(
           name: 'PatientCalendarINFO',
           path: '/patientCalendarINFO',
-          builder: (context, params) => const PatientCalendarINFOWidget(),
+          builder: (context, params) => PatientCalendarINFOWidget(),
         ),
         FFRoute(
           name: 'CaregiverRequirements',
           path: '/caregiverRequirements',
-          builder: (context, params) => const CaregiverRequirementsWidget(),
+          builder: (context, params) => CaregiverRequirementsWidget(),
+        ),
+        FFRoute(
+          name: 'HealthInformation',
+          path: '/healthInformation',
+          builder: (context, params) => HealthInformationWidget(),
+        ),
+        FFRoute(
+          name: 'AcademicInfo',
+          path: '/academicInfo',
+          builder: (context, params) => AcademicInfoWidget(),
+        ),
+        FFRoute(
+          name: 'ExperiencePage',
+          path: '/experiencePage',
+          builder: (context, params) => ExperiencePageWidget(),
+        ),
+        FFRoute(
+          name: 'SpecializedinPage',
+          path: '/specializedinPage',
+          builder: (context, params) => SpecializedinPageWidget(),
+        ),
+        FFRoute(
+          name: 'AgencyDetails',
+          path: '/agencyDetails',
+          builder: (context, params) => AgencyDetailsWidget(),
+        ),
+        FFRoute(
+          name: 'AgencyGeneralInfo',
+          path: '/agencyGeneralInfo',
+          builder: (context, params) => AgencyGeneralInfoWidget(),
+        ),
+        FFRoute(
+          name: 'AgencyRatings',
+          path: '/agencyRatings',
+          builder: (context, params) => AgencyRatingsWidget(),
+        ),
+        FFRoute(
+          name: 'RateAgency',
+          path: '/rateAgency',
+          builder: (context, params) => RateAgencyWidget(),
+        ),
+        FFRoute(
+          name: 'RateCaregiver',
+          path: '/rateCaregiver',
+          builder: (context, params) => RateCaregiverWidget(),
+        ),
+        FFRoute(
+          name: 'RateCareGiverScreen',
+          path: '/rateCareGiverScreen',
+          builder: (context, params) => RateCareGiverScreenWidget(),
+        ),
+        FFRoute(
+          name: 'CaregiverReports',
+          path: '/caregiverReports',
+          builder: (context, params) => CaregiverReportsWidget(),
+        ),
+        FFRoute(
+          name: 'CaregiverHomeage',
+          path: '/caregiverHomeage',
+          builder: (context, params) => CaregiverHomeageWidget(),
+        ),
+        FFRoute(
+          name: 'testingPage',
+          path: '/testingPage',
+          builder: (context, params) => TestingPageWidget(),
+        ),
+        FFRoute(
+          name: 'CaregiverersonalLinks',
+          path: '/caregiverersonalLinks',
+          builder: (context, params) => CaregiverersonalLinksWidget(),
+        ),
+        FFRoute(
+          name: 'CGQuicklinks',
+          path: '/cGQuicklinks',
+          builder: (context, params) => CGQuicklinksWidget(),
+        ),
+        FFRoute(
+          name: 'PersonalInfo',
+          path: '/personalInfo',
+          builder: (context, params) => PersonalInfoWidget(),
+        ),
+        FFRoute(
+          name: 'personalInfoEDIT',
+          path: '/personalInfoEDIT',
+          builder: (context, params) => PersonalInfoEDITWidget(),
+        ),
+        FFRoute(
+          name: 'cgAcademicInfo',
+          path: '/cgAcademicInfo',
+          builder: (context, params) => CgAcademicInfoWidget(),
+        ),
+        FFRoute(
+          name: 'cgExperience',
+          path: '/cgExperience',
+          builder: (context, params) => CgExperienceWidget(),
+        ),
+        FFRoute(
+          name: 'cgSpecializedin',
+          path: '/cgSpecializedin',
+          builder: (context, params) => CgSpecializedinWidget(),
+        ),
+        FFRoute(
+          name: 'Caregiverfunctions',
+          path: '/caregiverfunctions',
+          builder: (context, params) => CaregiverfunctionsWidget(),
+        ),
+        FFRoute(
+          name: 'cgCalendar',
+          path: '/cgCalendar',
+          builder: (context, params) => CgCalendarWidget(),
+        ),
+        FFRoute(
+          name: 'cgCalendarinfo',
+          path: '/cgCalendarinfo',
+          builder: (context, params) => CgCalendarinfoWidget(),
+        ),
+        FFRoute(
+          name: 'cgAvailability',
+          path: '/cgAvailability',
+          builder: (context, params) => CgAvailabilityWidget(),
+        ),
+        FFRoute(
+          name: 'cgClockinandout',
+          path: '/cgClockinandout',
+          builder: (context, params) => CgClockinandoutWidget(),
+        ),
+        FFRoute(
+          name: 'cgReports',
+          path: '/cgReports',
+          builder: (context, params) => CgReportsWidget(),
+        ),
+        FFRoute(
+          name: 'cgAgencyDetails',
+          path: '/cgAgencyDetails',
+          builder: (context, params) => CgAgencyDetailsWidget(),
+        ),
+        FFRoute(
+          name: 'cgGeneralInfo',
+          path: '/cgGeneralInfo',
+          builder: (context, params) => CgGeneralInfoWidget(),
+        ),
+        FFRoute(
+          name: 'cgAgencyRatings',
+          path: '/cgAgencyRatings',
+          builder: (context, params) => CgAgencyRatingsWidget(),
+        ),
+        FFRoute(
+          name: 'cgRateagency',
+          path: '/cgRateagency',
+          builder: (context, params) => CgRateagencyWidget(),
+        ),
+        FFRoute(
+          name: 'PatientsList',
+          path: '/patientsList',
+          builder: (context, params) => PatientsListWidget(),
+        ),
+        FFRoute(
+          name: 'psPatientInfo',
+          path: '/psPatientInfo',
+          builder: (context, params) => PsPatientInfoWidget(),
+        ),
+        FFRoute(
+          name: 'pcQuickLinks',
+          path: '/pcQuickLinks',
+          builder: (context, params) => PcQuickLinksWidget(),
+        ),
+        FFRoute(
+          name: 'pcPersonalinfo',
+          path: '/pcPersonalinfo',
+          builder: (context, params) => PcPersonalinfoWidget(),
+        ),
+        FFRoute(
+          name: 'pcMedicalRecords',
+          path: '/pcMedicalRecords',
+          builder: (context, params) => PcMedicalRecordsWidget(),
+        ),
+        FFRoute(
+          name: 'pcMedicalRecordsINFO',
+          path: '/pcMedicalRecordsINFO',
+          builder: (context, params) => PcMedicalRecordsINFOWidget(),
+        ),
+        FFRoute(
+          name: 'pcMedicalRecordsEDIT',
+          path: '/pcMedicalRecordsEDIT',
+          builder: (context, params) => PcMedicalRecordsEDITWidget(),
+        ),
+        FFRoute(
+          name: 'pcRequirements',
+          path: '/pcRequirements',
+          builder: (context, params) => PcRequirementsWidget(),
+        ),
+        FFRoute(
+          name: 'pcHealthInformation',
+          path: '/pcHealthInformation',
+          builder: (context, params) => PcHealthInformationWidget(),
+        ),
+        FFRoute(
+          name: 'pcCalendar',
+          path: '/pcCalendar',
+          builder: (context, params) => PcCalendarWidget(),
+        ),
+        FFRoute(
+          name: 'pcCalendarINFO',
+          path: '/pcCalendarINFO',
+          builder: (context, params) => PcCalendarINFOWidget(),
+        ),
+        FFRoute(
+          name: 'todotask',
+          path: '/todotask',
+          builder: (context, params) => TodotaskWidget(),
+        ),
+        FFRoute(
+          name: 'todotask2',
+          path: '/todotask2',
+          builder: (context, params) => Todotask2Widget(),
+        ),
+        FFRoute(
+          name: 'MarcketPlace1',
+          path: '/marcketPlace1',
+          builder: (context, params) => MarcketPlace1Widget(),
+        ),
+        FFRoute(
+          name: 'MarcketPlace1Copy',
+          path: '/marcketPlace1Copy',
+          builder: (context, params) => MarcketPlace1CopyWidget(),
+        ),
+        FFRoute(
+          name: 'MarketPlace2',
+          path: '/marketPlace2',
+          builder: (context, params) => MarketPlace2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -347,7 +591,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -50,7 +50,7 @@ class _TextBoxWidgetState extends State<TextBoxWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4.0),
       ),
-      child: SizedBox(
+      child: Container(
         width: double.infinity,
         child: TextFormField(
           controller: _model.textController,
@@ -62,19 +62,19 @@ class _TextBoxWidgetState extends State<TextBoxWidget> {
             hintText: widget.textField,
             hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Inter',
-                  color: const Color(0x40000000),
+                  color: Color(0x40000000),
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
                 ),
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 color: Color(0xFFD9D9D9),
                 width: 1.0,
               ),
               borderRadius: BorderRadius.circular(6.0),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 color: Color(0x00000000),
                 width: 1.0,
               ),
@@ -97,7 +97,7 @@ class _TextBoxWidgetState extends State<TextBoxWidget> {
             filled: true,
             fillColor: FlutterFlowTheme.of(context).secondaryBackground,
             contentPadding:
-                const EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
+                EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',

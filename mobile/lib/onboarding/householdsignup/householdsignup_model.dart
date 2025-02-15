@@ -1,6 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/onboarding/button/button_widget.dart';
-import '/onboarding/invisible_button/invisible_button_widget.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
 import 'householdsignup_widget.dart' show HouseholdsignupWidget;
@@ -26,10 +24,6 @@ class HouseholdsignupModel extends FlutterFlowModel<HouseholdsignupWidget> {
   late TextBoxModel textBoxModel5;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
-  // Model for Button component.
-  late ButtonModel buttonModel;
-  // Model for invisibleButton component.
-  late InvisibleButtonModel invisibleButtonModel;
 
   @override
   void initState(BuildContext context) {
@@ -40,8 +34,6 @@ class HouseholdsignupModel extends FlutterFlowModel<HouseholdsignupWidget> {
     textBoxModel3 = createModel(context, () => TextBoxModel());
     textBoxModel4 = createModel(context, () => TextBoxModel());
     textBoxModel5 = createModel(context, () => TextBoxModel());
-    buttonModel = createModel(context, () => ButtonModel());
-    invisibleButtonModel = createModel(context, () => InvisibleButtonModel());
   }
 
   @override
@@ -53,7 +45,5 @@ class HouseholdsignupModel extends FlutterFlowModel<HouseholdsignupWidget> {
     textBoxModel3.dispose();
     textBoxModel4.dispose();
     textBoxModel5.dispose();
-    buttonModel.dispose();
-    invisibleButtonModel.dispose();
   }
 }

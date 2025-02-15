@@ -40,7 +40,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
     return Container(
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -84,7 +84,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
             ),
         inactiveDateStyle: FlutterFlowTheme.of(context).labelMedium.override(
               fontFamily: 'Inter',
-              color: const Color(0xFFBDBDBD),
+              color: Color(0xFFBDBDBD),
               letterSpacing: 0.0,
             ),
       ),

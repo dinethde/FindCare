@@ -48,7 +48,7 @@ class _RecordButtonWidgetState extends State<RecordButtonWidget> {
       constraints: BoxConstraints(
         maxWidth: MediaQuery.sizeOf(context).width * 1.0,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             blurRadius: 3.0,
@@ -60,10 +60,10 @@ class _RecordButtonWidgetState extends State<RecordButtonWidget> {
           )
         ],
       ),
-      child: SizedBox(
+      child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         child: Stack(
-          alignment: const AlignmentDirectional(1.0, 0.0),
+          alignment: AlignmentDirectional(1.0, 0.0),
           children: [
             FFButtonWidget(
               onPressed: () {
@@ -73,8 +73,8 @@ class _RecordButtonWidgetState extends State<RecordButtonWidget> {
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 48.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: GoogleFonts.getFont(
                   'Inter Tight',
@@ -84,6 +84,7 @@ class _RecordButtonWidgetState extends State<RecordButtonWidget> {
                 ),
                 borderRadius: BorderRadius.circular(6.0),
               ),
+              showLoadingIndicator: false,
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -115,11 +116,11 @@ class _RecordButtonWidgetState extends State<RecordButtonWidget> {
                       ),
                 ),
               ]
-                  .divide(const SizedBox(width: 8.0))
-                  .addToStart(const SizedBox(width: 12.0))
-                  .addToEnd(const SizedBox(width: 12.0)),
+                  .divide(SizedBox(width: 8.0))
+                  .addToStart(SizedBox(width: 12.0))
+                  .addToEnd(SizedBox(width: 12.0)),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
               child: Icon(
                 Icons.arrow_forward_ios_outlined,
