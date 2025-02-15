@@ -10,9 +10,10 @@ export interface TableColumn {
 export interface TableConfig {
   title: string;
   columns: TableColumn[];
-  headerAlignments: string[];
   showTabs?: boolean;
   showSeeMore?: boolean;
+  headerAlignments?: string[];
+  showViewAction?: boolean;
 }
 
 export interface TableProps {
@@ -31,6 +32,17 @@ export interface Caregiver {
   careType: CareType;
   rate: number;
   location: string;
+}
+
+export interface Client {
+  id: string;
+  name: string;
+  contactInfo: string;
+  nok?: string;
+  careType: CareType;
+  primaryCaregiver: string;
+  location: string;
+  assignedTimes?: string[];
 }
 
 export interface Feedback {
