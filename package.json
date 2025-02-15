@@ -1,8 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "apps/SaaS-Frontend/*",
-    "apps/Mobile-Frontend/*",
+    "Mobile-Frontend/*",
+    "SaaS-Frontend/*",
     "packages/*"
   ],
   "packageManager": "npm@8.5.0",
