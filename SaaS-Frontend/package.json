@@ -48,6 +48,8 @@
     "typescript": "^5"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "build": "next build",
+    "check-types": "tsc --noEmit",
+    "dev": "next dev"
   }
 }
