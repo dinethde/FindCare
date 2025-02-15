@@ -3,6 +3,7 @@
 import React from "react";
 import { SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FilterIcon from "@/components/icons/FilterIcon";
 
 type ApplyFilterProps = {
   onFilter: () => void;
@@ -14,10 +15,16 @@ export default function ApplyFilter({ onFilter }: ApplyFilterProps) {
       <Button
         variant="outline"
         onClick={onFilter}
-        className="text-small-text border-none bg-transparent m-0 p-0 pr-2"
+        className="text-small-text bg-transparent m-0 p-2 flex justify-center items-center 
+    border border-main2
+    hover:bg-[#FFF5E5] 
+    hover:border-[1px] 
+    hover:border-brand-colors-brand5 
+    hover:shadow-[0px_2px_4px_rgba(0,_0,_0,_0.15)]
+    transition-all duration-200"
       >
-        <SlidersHorizontal className="text-neutral-9 h-4 w-4" />
-        Apply filter
+        <FilterIcon />
+        <span className=""> Apply filter</span>
       </Button>
     </div>
   );

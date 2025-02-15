@@ -12,7 +12,7 @@ export type YearData = {
 };
 
 export type SelectTimeProps = {
-  selectedYear: string;
-  setSelectedYear: (year: string) => void;
-  data: Month[] | YearData[];
+  selectedYear?: string;
+  setSelectedYear?: (year: string) => void;
+  data?: Month[] | YearData[];
 };
