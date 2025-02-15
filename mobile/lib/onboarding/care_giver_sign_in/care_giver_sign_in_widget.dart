@@ -41,91 +41,112 @@ class _CareGiverSignInWidgetState extends State<CareGiverSignInWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFFBFAF8),
+        backgroundColor: const Color(0xFFFBFAF8),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+          child: Align(
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Sign in',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
-                        textAlign: TextAlign.center,
+                Container(
+                  width: 338.0,
+                  height: 82.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(0.0),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Sign in',
                         style:
-                            FlutterFlowTheme.of(context).titleMedium.override(
+                            FlutterFlowTheme.of(context).displaySmall.override(
                                   fontFamily: 'Inter',
-                                  fontSize: 14.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                      child: wrapWithModel(
-                        model: _model.textBoxModel1,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Id',
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        child: Text(
+                          'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).titleMedium.override(
+                                    fontFamily: 'Inter',
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 300.0),
+                  child: Container(
+                    width: 338.0,
+                    height: 120.0,
+                    decoration: const BoxDecoration(),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 16.0),
+                          child: wrapWithModel(
+                            model: _model.textBoxModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: const TextBoxWidget(
+                              textField: 'Id',
+                            ),
+                          ),
+                        ),
+                        wrapWithModel(
+                          model: _model.textBoxModel2,
+                          updateCallback: () => safeSetState(() {}),
+                          child: const TextBoxWidget(
+                            textField: 'Password',
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              4.0, 5.0, 0.0, 0.0),
+                          child: wrapWithModel(
+                            model: _model.invisibleButtonModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: const InvisibleButtonWidget(
+                              lableName: 'Forgot password',
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    wrapWithModel(
-                      model: _model.textBoxModel2,
-                      updateCallback: () => safeSetState(() {}),
-                      child: TextBoxWidget(
-                        textField: 'Password',
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 5.0, 0.0, 0.0),
-                      child: wrapWithModel(
-                        model: _model.invisibleButtonModel,
+                  ),
+                ),
+                Container(
+                  width: 338.0,
+                  height: 73.0,
+                  decoration: const BoxDecoration(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      wrapWithModel(
+                        model: _model.buttonModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: InvisibleButtonWidget(
-                          lableName: 'Forgot password',
+                        child: ButtonWidget(
+                          btnText: 'Sign in',
+                          btnColor: FlutterFlowTheme.of(context).primary,
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    wrapWithModel(
-                      model: _model.buttonModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: ButtonWidget(
-                        btnText: 'Sign in',
-                        btnColor: FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ],
-                ),
-              ].divide(SizedBox(height: 10.0)),
+              ].divide(const SizedBox(height: 10.0)),
             ),
           ),
         ),

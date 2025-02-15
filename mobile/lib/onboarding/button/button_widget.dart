@@ -46,11 +46,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        minHeight: 47.0,
         maxWidth: MediaQuery.sizeOf(context).width * 1.0,
-        maxHeight: double.infinity,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: FFButtonWidget(
         onPressed: () {
           print('Button pressed ...');
@@ -58,8 +56,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         text: widget.btnText!,
         options: FFButtonOptions(
           width: double.infinity,
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          height: 47.0,
+          padding: const EdgeInsetsDirectional.fromSTEB(80.0, 14.0, 80.0, 14.0),
+          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.btnColor,
           textStyle: GoogleFonts.getFont(
             'Inter Tight',
@@ -69,7 +68,6 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           ),
           borderRadius: BorderRadius.circular(6.0),
         ),
-        showLoadingIndicator: false,
       ),
     );
   }

@@ -59,12 +59,12 @@ class _SelectionButtonWidgetState extends State<SelectionButtonWidget> {
         options: FFButtonOptions(
           width: double.infinity,
           height: 45.0,
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.btnColor,
           textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Inter',
-                color: Color(0xFF8D8D8D),
+                color: const Color(0xFF8D8D8D),
                 fontSize: 14.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.normal,

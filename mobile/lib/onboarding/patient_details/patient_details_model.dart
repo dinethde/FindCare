@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/onboarding/button/button_widget.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import 'patient_details_widget.dart' show PatientDetailsWidget;
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class PatientDetailsModel extends FlutterFlowModel<PatientDetailsWidget> {
   late TextBoxModel textBoxModel4;
   // Model for TextBox component.
   late TextBoxModel textBoxModel5;
+  // Model for Button component.
+  late ButtonModel buttonModel;
 
   @override
   void initState(BuildContext context) {
@@ -25,6 +28,7 @@ class PatientDetailsModel extends FlutterFlowModel<PatientDetailsWidget> {
     textBoxModel3 = createModel(context, () => TextBoxModel());
     textBoxModel4 = createModel(context, () => TextBoxModel());
     textBoxModel5 = createModel(context, () => TextBoxModel());
+    buttonModel = createModel(context, () => ButtonModel());
   }
 
   @override
@@ -34,5 +38,6 @@ class PatientDetailsModel extends FlutterFlowModel<PatientDetailsWidget> {
     textBoxModel3.dispose();
     textBoxModel4.dispose();
     textBoxModel5.dispose();
+    buttonModel.dispose();
   }
 }

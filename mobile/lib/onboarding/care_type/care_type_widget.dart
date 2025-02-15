@@ -1,19 +1,12 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/onboarding/care_type_b_o_x/care_type_b_o_x_widget.dart';
+import '/onboarding/button/button_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'care_type_model.dart';
 export 'care_type_model.dart';
 
 class CareTypeWidget extends StatefulWidget {
-  const CareTypeWidget({
-    super.key,
-    Color? typeColor,
-  }) : this.typeColor = typeColor ?? Colors.white;
-
-  final Color typeColor;
+  const CareTypeWidget({super.key});
 
   @override
   State<CareTypeWidget> createState() => _CareTypeWidgetState();
@@ -46,127 +39,181 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFFBFAF8),
+        backgroundColor: const Color(0xFFFBFAF8),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'What type of care you need?',
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                        ),
-                        Text(
-                          'Select your role and start your journey',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            _model.careType = 0;
-                            safeSetState(() {});
-                          },
-                          child: wrapWithModel(
-                            model: _model.careTypeBOXModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: CareTypeBOXWidget(
-                              selecColor: _model.careType == 0
-                                  ? FlutterFlowTheme.of(context).primary
-                                  : Colors.transparent,
-                              icon: Icon(
-                                Icons.cancel,
-                                size: 28.0,
-                              ),
-                              text: 'Senior Care',
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'What type of care you need?',
+                        style:
+                            FlutterFlowTheme.of(context).displaySmall.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                      ),
+                      Text(
+                        'Select your role and start your journey',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            _model.careType = 1;
-                            safeSetState(() {});
-                          },
-                          child: wrapWithModel(
-                            model: _model.careTypeBOXModel2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: CareTypeBOXWidget(
-                              selecColor: _model.careType == 1
-                                  ? FlutterFlowTheme.of(context).primary
-                                  : Colors.transparent,
-                              icon: Icon(
-                                Icons.eighteen_up_rating_outlined,
-                                size: 28.0,
-                              ),
-                              text: 'Child Care',
-                            ),
-                          ),
-                        ),
-                      ]
-                          .divide(SizedBox(height: 16.0))
-                          .around(SizedBox(height: 16.0)),
-                    ),
-                  ].divide(SizedBox(height: 40.0)),
-                ),
-                FFButtonWidget(
-                  onPressed: (_model.careType == null)
-                      ? null
-                      : () async {
-                          context.pushNamed('Householdsignup');
-                        },
-                  text: 'Continue',
-                  options: FFButtonOptions(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 47.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: GoogleFonts.getFont(
-                      'Inter Tight',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16.0,
-                    ),
-                    borderRadius: BorderRadius.circular(6.0),
-                    disabledColor: Color(0xFF8D8D8D),
+                      ),
+                    ],
                   ),
-                  showLoadingIndicator: false,
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            32.0, 0.0, 32.0, 0.0),
+                        child: Container(
+                          width: 338.0,
+                          height: 63.3,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0xFFDDE6EE),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(6.0),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Image.asset(
+                                  'assets/images/image_2025-01-25_20-59-04.png',
+                                  width: 35.0,
+                                  height: 39.31,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      'Senior Care',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 18.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ].addToEnd(const SizedBox(width: 150.0)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            32.0, 0.0, 32.0, 0.0),
+                        child: Container(
+                          width: 338.0,
+                          height: 63.3,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0xFFDDE6EE),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(6.0),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Image.asset(
+                                  'assets/images/image_2025-01-25_20-58-51.png',
+                                  width: 35.0,
+                                  height: 39.31,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      'Child Care',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 18.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ].addToEnd(const SizedBox(width: 160.0)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ].divide(const SizedBox(height: 16.0)),
+                  ),
+                ].divide(const SizedBox(height: 40.0)),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
+                child: wrapWithModel(
+                  model: _model.buttonModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: ButtonWidget(
+                    btnText: 'Continue',
+                    btnColor: FlutterFlowTheme.of(context).primary,
+                  ),
                 ),
-              ].divide(SizedBox(height: 10.0)),
-            ),
+              ),
+            ].divide(const SizedBox(height: 10.0)),
           ),
         ),
       ),

@@ -9,11 +9,9 @@ class InvisibleButtonWidget extends StatefulWidget {
   const InvisibleButtonWidget({
     super.key,
     required this.lableName,
-    this.color,
   });
 
   final String? lableName;
-  final Color? color;
 
   @override
   State<InvisibleButtonWidget> createState() => _InvisibleButtonWidgetState();
@@ -44,33 +42,31 @@ class _InvisibleButtonWidgetState extends State<InvisibleButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: double.infinity,
-        maxHeight: 20.0,
-      ),
+      width: 100.0,
+      height: 20.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0.0),
       ),
-      child: FFButtonWidget(
-        onPressed: () {
-          print('Button pressed ...');
-        },
-        text: widget.lableName!,
-        options: FFButtonOptions(
-          padding: EdgeInsets.all(0.0),
-          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-          color: Color(0x00FFFFFF),
-          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
-                color: valueOrDefault<Color>(
-                  widget.color,
-                  Color(0xFFFF3355),
+      child: Align(
+        alignment: const AlignmentDirectional(-1.0, 0.0),
+        child: FFButtonWidget(
+          onPressed: () {
+            print('Button pressed ...');
+          },
+          text: widget.lableName!,
+          options: FFButtonOptions(
+            padding: const EdgeInsets.all(0.0),
+            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+            color: const Color(0x00FFFFFF),
+            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                  fontFamily: 'Inter',
+                  color: const Color(0xFFFF3355),
+                  fontSize: 12.0,
+                  letterSpacing: 0.0,
                 ),
-                fontSize: 12.0,
-                letterSpacing: 0.0,
-              ),
-          elevation: 0.0,
-          borderRadius: BorderRadius.circular(0.0),
+            elevation: 0.0,
+            borderRadius: BorderRadius.circular(0.0),
+          ),
         ),
       ),
     );

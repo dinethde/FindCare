@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'patient_block_model.dart';
 export 'patient_block_model.dart';
@@ -50,13 +51,12 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        minHeight: 120.0,
-        maxWidth: double.infinity,
-        maxHeight: double.infinity,
+        maxWidth: MediaQuery.sizeOf(context).width * 0.42,
+        maxHeight: 120.0,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 3.0,
             color: Color(0xFFDDE6EE),
@@ -69,7 +69,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +92,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                         fontWeight: FontWeight.w600,
                       ),
                 ),
-              ].divide(SizedBox(width: 10.0)),
+              ].divide(const SizedBox(width: 10.0)),
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -106,7 +106,10 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          '0',
+                          valueOrDefault<String>(
+                            random_data.randomInteger(0, 10).toString(),
+                            '0',
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
@@ -124,7 +127,13 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                               ),
                         ),
                         Text(
-                          '5',
+                          valueOrDefault<String>(
+                            formatNumber(
+                              random_data.randomInteger(0, 10),
+                              formatType: FormatType.decimal,
+                            ),
+                            '5',
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
@@ -141,7 +150,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: Color(0xFF8D8D8D),
+                            color: const Color(0xFF8D8D8D),
                             fontSize: 12.0,
                             letterSpacing: 0.0,
                           ),
@@ -149,7 +158,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                   ],
                 ),
                 widget.icon2!,
-              ].divide(SizedBox(width: 20.0)),
+              ],
             ),
           ],
         ),

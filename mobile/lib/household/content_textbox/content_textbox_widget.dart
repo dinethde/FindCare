@@ -8,11 +8,9 @@ class ContentTextboxWidget extends StatefulWidget {
   const ContentTextboxWidget({
     super.key,
     required this.textField,
-    this.readOnly,
   });
 
   final String? textField;
-  final bool? readOnly;
 
   @override
   State<ContentTextboxWidget> createState() => _ContentTextboxWidgetState();
@@ -53,13 +51,12 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
         borderRadius: BorderRadius.circular(4.0),
         shape: BoxShape.rectangle,
       ),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: TextFormField(
           controller: _model.textController,
           focusNode: _model.textFieldFocusNode,
           autofocus: false,
-          readOnly: widget.readOnly!,
           obscureText: false,
           decoration: InputDecoration(
             isDense: true,
@@ -67,19 +64,18 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
             alignLabelWithHint: true,
             hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Inter',
-                  fontSize: 16.0,
+                  fontSize: 14.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
                 ),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xFFD9D9D9),
                 width: 1.0,
               ),
               borderRadius: BorderRadius.circular(6.0),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0x00000000),
                 width: 1.0,
               ),
@@ -100,9 +96,9 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
               borderRadius: BorderRadius.circular(6.0),
             ),
             filled: true,
-            fillColor: FlutterFlowTheme.of(context).info,
+            fillColor: FlutterFlowTheme.of(context).secondaryBackground,
             contentPadding:
-                EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
+                const EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',

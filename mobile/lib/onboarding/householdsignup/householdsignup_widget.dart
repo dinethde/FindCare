@@ -1,10 +1,10 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/onboarding/button/button_widget.dart';
+import '/onboarding/invisible_button/invisible_button_widget.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'householdsignup_model.dart';
 export 'householdsignup_model.dart';
 
@@ -42,27 +42,31 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFFBFAF8),
+        backgroundColor: const Color(0xFFFBFAF8),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 35.0, 20.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Sign up',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Sign up',
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  Container(
+                    width: 281.0,
+                    height: 42.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(0.0),
                     ),
-                    Text(
+                    child: Text(
                       'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -71,30 +75,38 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                             fontWeight: FontWeight.w500,
                           ),
                     ),
-                  ],
-                ),
-                Form(
-                  key: _model.formKey,
-                  autovalidateMode: AutovalidateMode.disabled,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      wrapWithModel(
+                  ),
+                ],
+              ),
+              Form(
+                key: _model.formKey,
+                autovalidateMode: AutovalidateMode.disabled,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: wrapWithModel(
                         model: _model.textBoxModel1,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
+                        child: const TextBoxWidget(
                           textField: 'Email',
                         ),
                       ),
-                      Row(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           wrapWithModel(
                             model: _model.textBoxhalfModel1,
                             updateCallback: () => safeSetState(() {}),
-                            child: TextBoxhalfWidget(
+                            child: const TextBoxhalfWidget(
                               textField: 'First name',
                             ),
                           ),
@@ -102,42 +114,62 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                             child: wrapWithModel(
                               model: _model.textBoxhalfModel2,
                               updateCallback: () => safeSetState(() {}),
-                              child: TextBoxhalfWidget(
+                              child: const TextBoxhalfWidget(
                                 textField: 'Last name',
                               ),
                             ),
                           ),
                         ],
                       ),
-                      wrapWithModel(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: wrapWithModel(
                         model: _model.textBoxModel2,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
+                        child: const TextBoxWidget(
                           textField: 'Mobile',
                         ),
                       ),
-                      wrapWithModel(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: wrapWithModel(
                         model: _model.textBoxModel3,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
+                        child: const TextBoxWidget(
                           textField: 'Address',
                         ),
                       ),
-                      wrapWithModel(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: wrapWithModel(
                         model: _model.textBoxModel4,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
+                        child: const TextBoxWidget(
                           textField: 'Password',
                         ),
                       ),
-                      wrapWithModel(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: wrapWithModel(
                         model: _model.textBoxModel5,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
+                        child: const TextBoxWidget(
                           textField: 'Confirm the password',
                         ),
                       ),
-                      Row(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(48.0, 0.0, 48.0, 0.0),
+                      child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -180,78 +212,66 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 12.0)),
+                        ].divide(const SizedBox(width: 12.0)),
                       ),
-                    ].divide(SizedBox(height: 16.0)),
-                  ),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed('PatientFirstPage');
-                      },
-                      text: 'Find a Caregiver',
-                      options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 47.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle: GoogleFonts.getFont(
-                          'Inter Tight',
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16.0,
-                        ),
-                        borderRadius: BorderRadius.circular(6.0),
-                      ),
-                      showLoadingIndicator: false,
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Already sign up?',
-                          style:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('houseHoldSignin');
-                          },
-                          text: 'Sign-in here',
-                          options: FFButtonOptions(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
+                  ].divide(const SizedBox(height: 16.0)),
+                ),
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
+                    child: wrapWithModel(
+                      model: _model.buttonModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: ButtonWidget(
+                        btnText: 'Find a Caregiver',
+                        btnColor: FlutterFlowTheme.of(context).primary,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 338.0,
+                    height: 26.0,
+                    decoration: const BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(85.0, 8.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Already sign up?',
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFFFF3355),
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                 ),
-                            elevation: 0.0,
                           ),
-                        ),
-                      ].divide(SizedBox(width: 3.0)),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                3.0, 0.0, 0.0, 0.0),
+                            child: wrapWithModel(
+                              model: _model.invisibleButtonModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: const InvisibleButtonWidget(
+                                lableName: 'Sign-in here',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ].divide(SizedBox(height: 8.0)),
-                ),
-              ].divide(SizedBox(height: 10.0)),
-            ),
+                  ),
+                ],
+              ),
+            ].divide(const SizedBox(height: 10.0)),
           ),
         ),
       ),

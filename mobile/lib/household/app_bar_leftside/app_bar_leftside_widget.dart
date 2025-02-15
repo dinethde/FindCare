@@ -44,37 +44,28 @@ class _AppBarLeftsideWidgetState extends State<AppBarLeftsideWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        InkWell(
-          splashColor: Colors.transparent,
-          focusColor: Colors.transparent,
-          hoverColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          onTap: () async {
-            context.safePop();
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.chevron_left,
-                color: Color(0xFF007AFF),
-                size: 24.0,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Icon(
+              Icons.chevron_left,
+              color: Color(0xFF007AFF),
+              size: 24.0,
+            ),
+            Text(
+              valueOrDefault<String>(
+                widget.fLable,
+                'TEXT',
               ),
-              Text(
-                valueOrDefault<String>(
-                  widget.fLable,
-                  'TEXT',
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
-                      color: Color(0xFF007AFF),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
-              ),
-            ],
-          ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Inter',
+                    color: const Color(0xFF007AFF),
+                    fontSize: 16.0,
+                    letterSpacing: 0.0,
+                  ),
+            ),
+          ],
         ),
       ],
     );

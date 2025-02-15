@@ -48,7 +48,7 @@ class _ButtonHalfWidgetState extends State<ButtonHalfWidget> {
       constraints: BoxConstraints(
         maxWidth: MediaQuery.sizeOf(context).width * 0.25,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: FFButtonWidget(
         onPressed: () {
           print('Button pressed ...');
@@ -57,8 +57,8 @@ class _ButtonHalfWidgetState extends State<ButtonHalfWidget> {
         options: FFButtonOptions(
           width: double.infinity,
           height: 35.0,
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.btnColor,
           textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Inter',
