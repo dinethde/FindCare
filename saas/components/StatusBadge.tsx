@@ -1,7 +1,5 @@
 "use client";
 
-import { colorProps } from "@/data/ColorProps";
-
 interface StatusBadgeProps {
   status: string;
   color: string;
