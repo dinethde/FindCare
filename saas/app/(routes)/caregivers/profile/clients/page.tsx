@@ -3,6 +3,7 @@ import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { FeedbackTable } from "@/components/table/FeedbackTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TableConfig } from "@/types/TableTypes";
+import { Link } from "lucide-react";
 
 export default function CgClientsModal() {
   const caregiverConfig: TableConfig = {
@@ -17,7 +18,14 @@ export default function CgClientsModal() {
     headerAlignments: ["left", "center", "center", "center", "right"],
   };
 
-  const filterOptions = [
+  interface FilterOption {
+    key: string;
+    label: string;
+    type: "number" | "text" | "checkbox";
+    options?: string[];
+  }
+
+  const filterOptions: FilterOption[] = [
     { key: "name", label: "Name", type: "text" },
     {
       key: "careType",
@@ -53,7 +61,6 @@ export default function CgClientsModal() {
             tableType="fill"
           />
         </TabsContent>
-
         <TabsContent value="feedback" className="m-0">
           <FeedbackTable />
         </TabsContent>

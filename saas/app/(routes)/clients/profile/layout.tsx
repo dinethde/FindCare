@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Modal } from "@/components/ui/modal/modal";
 import { ProfileHeader } from "@/components/ProfileHeader";
-import { SidebarCg } from "@/components/layout-components/SidebarCg";
+import { SidebarClient } from "@/components/layout-components/SidebarClient";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <Modal routePath="/caregivers">
+      <Modal routePath="/clients">
         <div className="flex gap-3 p-2 min-h-[87vh] max-h-[87vh]">
-          <SidebarCg />
+          <SidebarClient />
           <div className="flex flex-col gap-2 w-full overflow-y-scroll pr-2">
-            <ProfileHeader />
+            <ProfileHeader profileHeading="Client Profile" />
             {children}
           </div>
         </div>

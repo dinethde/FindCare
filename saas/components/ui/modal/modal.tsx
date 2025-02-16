@@ -2,13 +2,18 @@
 
 import { useRouter } from "next/navigation";
 
-export function Modal({ children }: { children: React.ReactNode }) {
+interface ModalProps {
+  children: React.ReactNode;
+  routePath: string;
+}
+
+export function Modal({ children, routePath }: ModalProps) {
   const router = useRouter();
 
   // When the overlay is clicked, navigate to "/cargiver"
   const handleOverlayClick = () => {
     // router.back();
-    router.push("/caregivers");
+    router.push(routePath);
   };
 
   // Prevent clicks inside the modal from propagating to the overlay

@@ -37,7 +37,7 @@ export function DynamicTable({
   if (pageIn === "caregivers") {
     navigationLink = "caregivers/profile/overview";
   } else if (pageIn === "clients") {
-    navigationLink = "/clients";
+    navigationLink = "/clients/profile/overview";
   } else {
     navigationLink = "/";
   }

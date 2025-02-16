@@ -1,13 +1,30 @@
 import React from "react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { profile } from "@/data/dashboard-2";
 import photo from "@/public/images/photo.png";
 
-export default function CaregiverImg() {
+type ImgProps = {
+  image?: string;
+  imgSize?: number;
+};
+
+export default function CaregiverImg({
+  image = photo.src,
+  imgSize = 270,
+}: ImgProps) {
   return (
-    <div className="h-full max-h-[270px] overflow-hidden border-solid box-border border-neutral-4 rounded-small ">
+    <div
+      className={`overflow-hidden h-full border-solid box-border border-neutral-4 rounded-small`}
+    >
       {/*Profile Image*/}
-      <Image src={photo} alt={profile.name} className="object-cover " />
+      <Image
+        src={image}
+        alt={profile.name}
+        width={0}
+        height={0}
+        sizes="270px"
+        className="object-cover h-full w-full"
+      />
     </div>
   );
 }

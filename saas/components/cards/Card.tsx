@@ -5,6 +5,10 @@ import type { RevenueCardProps, Month } from "@/types/CardTypes";
 import NestedCirclesIcon from "../icons/NestedCirclesIcon";
 import SelectTime from "./SelectTime";
 import { useState } from "react";
+import seeMoreIcon from "@/public/assets/icons/see-more-icon.svg";
+import Image from "next/image";
+import { link } from "fs";
+import Link from "next/link";
 
 const months: Month[] = [
   { value: "oct-2024", label: "Oct 2024" },
@@ -17,7 +21,9 @@ export default function RevenueCard({
   title = "Total Revenue",
   color = "#FCA827",
   isButtonVisible = true,
+  btnVarient = "SelectTime",
   dataType = "LKR",
+  link = "/",
 }: RevenueCardProps) {
   const [selectedYear, setSelectedYear] = useState("oct-2024");
 
@@ -28,26 +34,38 @@ export default function RevenueCard({
   };
 
   return (
-    <Card className="w-full big-card flex gap-5 flex-col">
-      <CardHeader className="flex flex-row items-center justify-between p-0">
-        <h2 className="text-h6 text-neutral-10">{title}</h2>
+    <Card className="w-full big-card ">
+      <div
+        className={`flex flex-col ${btnVarient === "SelectTime" ? "gap-3" : "gap-4"} p-1`}
+      >
+        <CardHeader className="flex flex-row items-center justify-between p-0">
+          <h2 className="text-h6 text-neutral-12">{title}</h2>
 
-        {isButtonVisible && (
+          {btnVarient === "SelectTime" && (
             <SelectTime
-            selectedYear={selectedYear}
-            setSelectedYear={setSelectedYear}
-            data={months}
-        />)}
+              selectedYear={selectedYear}
+              setSelectedYear={setSelectedYear}
+              data={months}
+            />
+          )}
 
-      </CardHeader>
-      <CardContent className="p-0">
-        <div className="flex items-center space-x-3">
-          <NestedCirclesIcon color={color} />
-          <div className="text-h5 font-bold">
-            <p className="font-bold">{formatCurrency(revenue)} {dataType}</p>
+          {btnVarient === "seeMore" && (
+            <Link href={link}>
+              <Image src={seeMoreIcon} width={24} height={24} alt="see more" />
+            </Link>
+          )}
+        </CardHeader>
+        <CardContent className="p-0">
+          <div className="flex items-center space-x-3">
+            <NestedCirclesIcon color={color} />
+            <div className="text-h5 font-bold">
+              <p className="font-bold text-neutral-10">
+                {formatCurrency(revenue)} {dataType}
+              </p>
+            </div>
           </div>
-        </div>
-      </CardContent>
+        </CardContent>
+      </div>
     </Card>
   );
 }

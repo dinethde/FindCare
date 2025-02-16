@@ -1,5 +1,6 @@
 import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
+import Link from "next/link";
 
 const clientConfigWithNOK: TableConfig = {
   title: "Client List",
@@ -41,6 +42,7 @@ export default function Page() {
         filterOptions={filterOptions}
         tableType="eye"
       />
+      <Link href="">Modal</Link>
     </div>
   );
 }

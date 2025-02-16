@@ -1,6 +1,6 @@
 "use client";
 
-import {Metrics} from "@/components/Metrics";
+import { Metrics } from "@/components/Metrics";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Card from "@/components/cards/Card";
 import CaregiverImg from "@/components/CaregiverImg";
@@ -30,13 +30,13 @@ export default function CaregiverOverview() {
         </TabsTrigger>
       </TabsList>
 
-      <div>
+      <div className="w-full">
         <TabsContent
           value="overview"
           className="flex flex-col gap-4 w-full m-0"
         >
           {/* Top Row */}
-          <div className="grid grid-cols-[0.75fr_1.25fr_1fr]  gap-4">
+          <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[270px]">
             <CaregiverImg />
 
             {/*/!* Description *!/*/}
@@ -61,7 +61,7 @@ export default function CaregiverOverview() {
 
         <TabsContent
           value="security"
-          className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 m-0"
+          className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[270px]"
         >
           <CaregiverImg />
           <SectionCard

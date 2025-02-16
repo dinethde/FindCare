@@ -5,7 +5,6 @@ import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
 import { CareEfficiencyCard } from "@/components/cards/CareEfficiencyCard";
 import { caregivers, shiftStats, efficiencyData } from "@/data/mock-data";
 import Card from "@/components/cards/Card";
-import CaregiverList from "@/components/CaregiverList";
 import Link from "next/link";
 import React from "react";
 import { TableConfig } from "@/types/TableTypes";

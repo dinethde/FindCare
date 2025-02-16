@@ -4,8 +4,10 @@ export interface RevenueCardProps {
   selectedMonth?: string;
   onMonthChange?: (month: string) => void;
   color?: string;
-  isButtonVisible?:boolean
-  dataType?:string
+  isButtonVisible?: boolean;
+  dataType?: string;
+  btnVarient?: string;
+  link?: string;
 }
 
 export type Month = {

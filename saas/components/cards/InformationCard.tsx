@@ -1,4 +1,3 @@
-import React from "react";
 import { DetailRow } from "@/components/DetailRow";
 import { SectionCard } from "@/components/cards/SectionCard";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -15,7 +14,7 @@ export default function InformationCard() {
   return (
     <div className="container flex gap-4 flex-col">
       {/* 1st row */}
-      <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4">
+      <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[270px]">
         {/* Profile Image */}
         <CaregiverImg />
 
