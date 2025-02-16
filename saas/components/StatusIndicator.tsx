@@ -18,7 +18,7 @@ export function StatusIndicator({ status }: StatusIndicatorProps) {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   return (
-    <div className="flex gap-3 mt-4">
+    <div className="flex gap-3">
       <TooltipProvider>
         {roles.map((role) => (
           <Tooltip key={role} open={activeTooltip === role}>

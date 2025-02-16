@@ -6,6 +6,10 @@ import { comments } from "@/data/Comments";
 import { CommentCard } from "@/components/CommentCard";
 import { progressCardData } from "@/data/progressCardData";
 import { ProgressCard } from "@/components/ProgressCard";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import planIcon from "@/public/assets/icons/plan-icon.svg";
 
 const firstRowKeys = ["caregiverRequirements", "skillsAndExperience"] as const;
 const secondRowKeys = ["caregiverRequirements", "skillsAndExperience"] as const;
@@ -24,7 +28,36 @@ export default function CareInfo() {
         </TabsList>
 
         <TabsContent value="carePlan" className="m-0">
-          Make changes to your account here.
+          {/* Care Plan Card */}
+          <Card className="p-4 space-y-4">
+            <CardHeader className="flex flex-row items-center gap-2 p-0">
+              {/* <ClipboardList className="w-5" /> */}
+              <Image src={planIcon} alt="plan-icon" width={25} height={25} />
+              <CardTitle className="-mt-[6px] text-h6">Care Plan</CardTitle>
+            </CardHeader>
+            <div className="h-[1px] bg-neutral-4 w-full"></div>
+            <CardContent className="space-y-4 p-0">
+              <div className="flex text-tagline justify-between items-center">
+                <span className=" text-neutral-7">Plan name :</span>
+                <span className="text-neutral-11 font-medium">02/12/2022</span>
+              </div>
+              <Separator />
+              <div className="flex text-tagline justify-between items-center">
+                <span className=" text-neutral-7">Price :</span>
+                <span className="text-neutral-11 font-medium">02/12/2022</span>
+              </div>
+              <Separator />
+              <div className="flex text-tagline justify-between items-center">
+                <span className=" text-neutral-7">Care hours :</span>
+                <span className="text-neutral-11 font-medium">36</span>
+              </div>
+              <Separator />
+              <p className="text-small-text text-neutral-8 ">
+                Lorem ipsum dolor sit amet consectetur. Interdum sed vitae
+                aliquet eget.
+              </p>
+            </CardContent>
+          </Card>
         </TabsContent>
         <TabsContent value="careReq" className="m-0">
           <div className="space-y-4">
@@ -78,23 +111,34 @@ export default function CareInfo() {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="flex flex-col gap-4">
-                {comments.map((comment) => (
-                  <CommentCard
-                    key={comment.id}
-                    comment={comment}
-                    isButtonShowm={false}
-                  />
-                ))}
-              </div>
-              <div className="min-h-screen bg-[#f7f7f8] p-6">
-                <div className="max-w-2xl mx-auto space-y-4">
+            <div className="flex gap-4">
+              <SectionCard
+                title={"Patient Progress"}
+                icon={personalDetailsIcons}
+                className="flex p-4 flex-col gap-3 bg-small-card border-neutral-3 w-3/6"
+              >
+                <div className="flex flex-col gap-4 w-full">
                   {progressCardData.map((card) => (
                     <ProgressCard key={card.id} data={card} />
                   ))}
                 </div>
-              </div>
+              </SectionCard>
+
+              <SectionCard
+                title={"Caregiver Notes"}
+                icon={personalDetailsIcons}
+                className="flex p-4 flex-col gap-3 bg-small-card border-neutral-3 w-full h-fit"
+              >
+                <div className="flex flex-col gap-4 w-full">
+                  {comments.map((comment) => (
+                    <CommentCard
+                      key={comment.id}
+                      comment={comment}
+                      isButtonShowm={false}
+                    />
+                  ))}
+                </div>
+              </SectionCard>
             </div>
           </div>
         </TabsContent>

@@ -1,3 +1,5 @@
+"use client";
+
 import { AppointmentCard } from "./AppointmentCard";
 import { CalendarHeader } from "./CalendarHeader";
 import { HOUR_HEIGHT, TOTAL_HOURS, DAY_START_HOUR } from "@/utils/TimeUtils";

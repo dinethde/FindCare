@@ -11,8 +11,8 @@ import clientImage from "@/public/images/photo-rovi.png";
 
 export default function page() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[250px]">
+    <div className="flex flex-col gap-4 mt-6">
+      <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[250px] ">
         <CaregiverImg image={clientImage.src} imgSize={260} />
 
         {/*/!* Description *!/*/}
@@ -21,41 +21,55 @@ export default function page() {
         <div className="">
           {/*/!* Status Container *!/*/}
           <div className="flex gap-4 flex-col ">
-            <Card btnVarient="seeMore" />
-            <Card color="#FF2D55" btnVarient="seeMore" />
+            <Card
+              title="Primary Caregiver"
+              color="#FF2D55"
+              btnVarient="seeMore"
+              revenue={"Dineth Silva"}
+              dataType=""
+            />
+            <Card
+              title="Agreement"
+              btnVarient="seeMore"
+              revenue={"04/07/2022  -  04/09/2022"}
+              contentClassName="text-regular-text-thicker text-neutral-12"
+              dataType=""
+            />
           </div>
         </div>
       </div>
       <div className="flex gap-4 w-full">
         <SectionCard
           title="Personal Information"
-          icon={personalDetailsIcons}
+          icon={profileData.personal.icon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3 w-full"
+          stackVertical={false}
         >
           <div className="flex flex-col gap-4">
-            <DetailRow label="Name" value={profileData.personal.fullName} />
+            <DetailRow label="Name :" value={profileData.personal.fullName} />
             <DetailRow
-              label="Date of Birth"
+              label="Date of Birth :"
               value={`${profileData.personal.dateOfBirth} - ${profileData.personal.age} age`}
             />
-            <DetailRow label="Gender" value={profileData.personal.gender} />
-            <DetailRow label="NIC" value={profileData.personal.nic} />
+            <DetailRow label="Gender :" value={profileData.personal.gender} />
+            <DetailRow label="NIC :" value={profileData.personal.nic} />
           </div>
         </SectionCard>
 
         <SectionCard
           title="Care Recipient Details"
-          icon={personalDetailsIcons}
+          icon={profileData.careRecipient.icon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3 w-full"
+          stackVertical={false}
         >
           <div className="flex flex-col gap-4">
-            <DetailRow label="ID" value={profileData.careRecipient.id} />
+            <DetailRow label="ID :" value={profileData.careRecipient.id} />
             <DetailRow
-              label="Registered Date"
+              label="Registered Date :"
               value={profileData.careRecipient.registeredDate}
             />
             <DetailRow
-              label="Signature"
+              label="Signature :"
               value={profileData.careRecipient.signature}
             />
           </div>
@@ -63,13 +77,14 @@ export default function page() {
 
         <SectionCard
           title="Account Information"
-          icon={personalDetailsIcons}
+          icon={profileData.account.icon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3 w-full"
+          stackVertical={false}
         >
           <div className="flex flex-col gap-4">
-            <DetailRow label="Phone" value={profileData.account.phone} />
-            <DetailRow label="Email" value={profileData.account.email} />
-            <DetailRow label="Password" value={profileData.account.pwd} />
+            <DetailRow label="Phone :" value={profileData.account.phone} />
+            <DetailRow label="Email :" value={profileData.account.email} />
+            <DetailRow label="Password :" value={profileData.account.pwd} />
             <div className="flex justify-between items-center">
               <div className="text-tagline text-grey">Background Status :</div>
               <StatusBadge
@@ -83,14 +98,15 @@ export default function page() {
       <div className="flex gap-4 w-full">
         <SectionCard
           title="Address Information"
-          icon={personalDetailsIcons}
+          icon={profileData.address.icon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3 w-3/6"
+          stackVertical={false}
         >
           <div className="flex flex-col gap-4">
-            <DetailRow label="Address" value={profileData.address.address} />
-            <DetailRow label="City" value={profileData.address.city} />
+            <DetailRow label="Address :" value={profileData.address.address} />
+            <DetailRow label="City :" value={profileData.address.city} />
             <DetailRow
-              label="Postal Code"
+              label="Postal Code :"
               value={profileData.address.postalCode}
             />
           </div>
@@ -98,18 +114,19 @@ export default function page() {
 
         <SectionCard
           title="NOK Information"
-          icon={personalDetailsIcons}
+          icon={profileData.nok.icon}
           className="flex p-4 flex-col gap-4 bg-main2 border-neutral-3 w-full"
+          stackVertical={false}
         >
           <div className="flex gap-12">
             <div className="flex flex-col gap-4 w-full">
-              <DetailRow label="Name" value={profileData.nok.name} />
-              <DetailRow label="Relation" value={profileData.nok.relation} />
-              <DetailRow label="Phone" value={profileData.nok.phone} />
+              <DetailRow label="Name :" value={profileData.nok.name} />
+              <DetailRow label="Relation :" value={profileData.nok.relation} />
+              <DetailRow label="Phone :" value={profileData.nok.phone} />
             </div>
             <div className="flex flex-col gap-4 w-full">
-              <DetailRow label="Email" value={profileData.nok.email} />
-              <DetailRow label="Address" value={profileData.nok.address} />
+              <DetailRow label="Email :" value={profileData.nok.email} />
+              <DetailRow label="Address :" value={profileData.nok.address} />
             </div>
           </div>
         </SectionCard>

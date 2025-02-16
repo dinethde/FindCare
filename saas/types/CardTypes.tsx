@@ -1,5 +1,5 @@
 export interface RevenueCardProps {
-  revenue?: number;
+  revenue?: number | string;
   title?: string;
   selectedMonth?: string;
   onMonthChange?: (month: string) => void;
@@ -8,6 +8,9 @@ export interface RevenueCardProps {
   dataType?: string;
   btnVarient?: string;
   link?: string;
+  isBigText?: boolean;
+  contentClassName?: string;
+  dataTypeClassName?: string;
 }
 
 export type Month = {

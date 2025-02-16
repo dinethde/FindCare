@@ -7,7 +7,6 @@ import SelectTime from "./SelectTime";
 import { useState } from "react";
 import seeMoreIcon from "@/public/assets/icons/see-more-icon.svg";
 import Image from "next/image";
-import { link } from "fs";
 import Link from "next/link";
 
 const months: Month[] = [
@@ -24,6 +23,9 @@ export default function RevenueCard({
   btnVarient = "SelectTime",
   dataType = "LKR",
   link = "/",
+  isBigText = true,
+  contentClassName = "font-bold text-neutral-10",
+  dataTypeClassName = "",
 }: RevenueCardProps) {
   const [selectedYear, setSelectedYear] = useState("oct-2024");
 
@@ -41,27 +43,34 @@ export default function RevenueCard({
         <CardHeader className="flex flex-row items-center justify-between p-0">
           <h2 className="text-h6 text-neutral-12">{title}</h2>
 
-          {btnVarient === "SelectTime" && (
-            <SelectTime
-              selectedYear={selectedYear}
-              setSelectedYear={setSelectedYear}
-              data={months}
-            />
-          )}
-
-          {btnVarient === "seeMore" && (
-            <Link href={link}>
-              <Image src={seeMoreIcon} width={24} height={24} alt="see more" />
-            </Link>
-          )}
+          {isButtonVisible &&
+            (btnVarient === "SelectTime" ? (
+              <SelectTime
+                selectedYear={selectedYear}
+                setSelectedYear={setSelectedYear}
+                data={months}
+              />
+            ) : (
+              <Link href={link}>
+                <Image
+                  src={seeMoreIcon}
+                  width={24}
+                  height={24}
+                  alt="see more"
+                />
+              </Link>
+            ))}
         </CardHeader>
         <CardContent className="p-0">
           <div className="flex items-center space-x-3">
             <NestedCirclesIcon color={color} />
-            <div className="text-h5 font-bold">
-              <p className="font-bold text-neutral-10">
-                {formatCurrency(revenue)} {dataType}
-              </p>
+            <div className="text-h5">
+              <div className={contentClassName}>
+                {typeof revenue !== "string"
+                  ? formatCurrency(revenue)
+                  : revenue}
+                <span className={dataTypeClassName}>{dataType}</span>
+              </div>
             </div>
           </div>
         </CardContent>

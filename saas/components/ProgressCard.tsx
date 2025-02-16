@@ -1,25 +1,27 @@
-import type { CardData } from "@/types/progressCardType"
-import { StatusIndicator } from "./StatusIndicator"
+import type { CardData } from "@/types/progressCardType";
+import { StatusIndicator } from "./StatusIndicator";
 
 interface ProgressCardProps {
-  data: CardData
+  data: CardData;
 }
 
 export function ProgressCard({ data }: ProgressCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg">
-      <div className="border-b border-[#e6e6e6] pb-4">
+    <div className="bg-main rounded-regular flex flex-col gap-4 p-4 border border-neutral-3  shadow-[0px_2px_4px_rgba(0,_0,_0,_0.1)] w-full">
+      <div className="">
         <div className="flex justify-between items-start">
           <div>
-            <h2 className="text-[#191919] text-xl font-medium">{data.name}</h2>
-            <p className="text-[#999999] text-sm">{data.code}</p>
+            <h2 className="text-neutral-12 text-regular-text-thicker">
+              {data.name}
+            </h2>
+            <p className="text-tagline text-neutral-6">{data.code}</p>
           </div>
-          <span className="text-[#999999] text-sm">{data.timestamp}</span>
+          <span className="text-tagline text-neutral-7">{data.timestamp}</span>
         </div>
       </div>
-      <p className="text-[#262626] mt-4 leading-relaxed">{data.description}</p>
+      <hr />
+      <p className="text-regular-text text-neutral-10">{data.description}</p>
       <StatusIndicator status={data.status} />
     </div>
-  )
+  );
 }
-

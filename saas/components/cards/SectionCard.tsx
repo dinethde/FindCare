@@ -7,6 +7,7 @@ interface SectionCardProps {
   icon: string;
   children: React.ReactNode;
   className?: string;
+  stackVertical?: boolean;
 }
 
 export function SectionCard({
@@ -14,12 +15,21 @@ export function SectionCard({
   icon: Icon,
   children,
   className = "",
+  stackVertical = true,
 }: SectionCardProps) {
   return (
     <Card className={className}>
       <CardHeader className="p-0">
-        <CardTitle className="flex flex-col gap-2 items-start ">
-          <Image src={Icon} alt={"Icon"} className="h-6 w-6" />
+        <CardTitle
+          className={`flex gap-3  items-center ${stackVertical && "flex-col gap-2 items-start"} selection:items-start`}
+        >
+          <Image
+            src={Icon}
+            alt={"Icon"}
+            width={28}
+            height={28}
+            className="h-7 w-7"
+          />
           <div className="text-neutral-10 text-h6">{title}</div>
         </CardTitle>
       </CardHeader>

@@ -1,4 +1,8 @@
 import { RequirementDetails } from "@/types/client-modal/clientProfileData";
+import accountIcon from "@/public/assets/icons/account-icon.svg";
+import careRecipientInfoIcon from "@/public/assets/icons/care-recipient-details=icon.svg";
+import personalInfoIcon from "@/public/assets/icons/personal-info.svg";
+import locationIcon from "@/public/assets/icons/location.svg";
 
 export const profileData = {
   personal: {
@@ -7,22 +11,26 @@ export const profileData = {
     age: 31,
     gender: "Male",
     nic: "946544200V",
+    icon: personalInfoIcon.src,
   },
   careRecipient: {
     id: "CR-00125",
     registeredDate: "03/12/2023",
     signature: "JohnDoeSignature",
+    icon: careRecipientInfoIcon.src,
   },
   account: {
     phone: "(+94)71 234 5678",
     email: "john.doe@example.com",
     pwd: "********",
     status: "Logged in",
+    icon: accountIcon.src,
   },
   address: {
     address: "15 Regent Street",
     city: "Colombo",
     postalCode: "00700",
+    icon: locationIcon.src,
   },
   nok: {
     name: "Jane Doe",
@@ -30,6 +38,7 @@ export const profileData = {
     phone: "(+94)71 987 6543",
     email: "jane.doe@example.com",
     address: "London",
+    icon: personalInfoIcon.src,
   },
 };
 

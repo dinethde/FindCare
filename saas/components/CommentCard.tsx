@@ -1,9 +1,9 @@
 import Image from "next/image";
-import type { CommentType } from "@/types/commentTypes";
+import type { Comment } from "@/types/commentTypes";
 import { Button } from "./Button";
 
 interface CommentCardProps {
-  comment: CommentType;
+  comment: Comment;
   isButtonShowm?: boolean;
 }
 
