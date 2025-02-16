@@ -1,4 +1,4 @@
-import type { Comment } from "../types";
+import type { Comment } from "@/types/commentTypes";
 import photo from "@/public/images/photo.png";
 
 export const comments: Comment[] = [

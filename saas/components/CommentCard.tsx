@@ -1,13 +1,27 @@
-import type { CommentCardProps } from "../types";
-import { Avatar } from "./Avatar";
+import Image from "next/image";
+import type { CommentType } from "@/types/commentTypes";
 import { Button } from "./Button";
 
-export function CommentCard({ comment }: CommentCardProps) {
+interface CommentCardProps {
+  comment: CommentType;
+  isButtonShowm?: boolean;
+}
+
+export function CommentCard({
+  comment,
+  isButtonShowm = true,
+}: CommentCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-neutral-3 p-4 space-y-4">
+    <div className="bg-white rounded-lg shadow-sm border border-neutral-3 p-4 space-y-4">
       <div className="flex items-start justify-between">
         <div className="flex gap-4">
-          <Avatar src={comment.author.avatar} alt={comment.author.name} />
+          <Image
+            src={comment.author.avatar}
+            alt={comment.author.name}
+            width={44}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover"
+          />
           <div>
             <h3 className="text-regular-text-thicker text-neutral-10">
               {comment.author.name}
@@ -17,9 +31,11 @@ export function CommentCard({ comment }: CommentCardProps) {
             </p>
           </div>
         </div>
-        <Button variant={comment.type} className="text-small-text">
-          {comment.type.charAt(0).toUpperCase() + comment.type.slice(1)}
-        </Button>
+        {isButtonShowm && (
+          <Button variant={comment.type} className="text-small-text">
+            {comment.type.charAt(0).toUpperCase() + comment.type.slice(1)}
+          </Button>
+        )}
       </div>
       <div className="h-[0.8px] w-full bg-neutral-3"></div>
 
