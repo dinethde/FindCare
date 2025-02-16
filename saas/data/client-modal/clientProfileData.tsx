@@ -3,6 +3,11 @@ import accountIcon from "@/public/assets/icons/account-icon.svg";
 import careRecipientInfoIcon from "@/public/assets/icons/care-recipient-details=icon.svg";
 import personalInfoIcon from "@/public/assets/icons/personal-info.svg";
 import locationIcon from "@/public/assets/icons/location.svg";
+import requirementIcon from "@/public/assets/icons/requirements-icon.svg";
+import lightBlueIcon from "@/public/assets/icons/lightblue-circle.svg";
+import regularBlueIcon from "@/public/assets/icons/regular-blue-circle.svg";
+import pinkStarIcon from "@/public/assets/icons/start-pink-icon.svg";
+import uniqueStarIcon from "@/public/assets/icons/star-unique-icon.svg";
 
 export const profileData = {
   personal: {
@@ -51,6 +56,7 @@ export const requirementDetails: RequirementDetails = {
       "Ability to handle emergency situations calmly",
       "Comfortable with pets in the home",
     ],
+    icon: requirementIcon.src,
   },
   caregiverRequirements: {
     heading: "Caregiver Requirements",
@@ -60,6 +66,7 @@ export const requirementDetails: RequirementDetails = {
       "Strong communication skills",
       "Patient and empathetic demeanor",
     ],
+    icon: regularBlueIcon.src,
   },
   skillsAndExperience: {
     heading: "Skills and Experience",
@@ -69,6 +76,7 @@ export const requirementDetails: RequirementDetails = {
       "Light housekeeping and meal preparation",
       "Experience tracking medication schedules",
     ],
+    icon: pinkStarIcon.src,
   },
   weeklyActivities: {
     heading: "Weekly Activities",
@@ -78,6 +86,7 @@ export const requirementDetails: RequirementDetails = {
       "Assist with laundry and light cleaning",
       "Engage in daily cognitive exercises",
     ],
+    icon: uniqueStarIcon.src,
   },
   specialInstructions: {
     heading: "Special Instructions",
@@ -87,5 +96,6 @@ export const requirementDetails: RequirementDetails = {
       "Keep a daily care log for family reference",
       "Maintain a friendly, respectful environment",
     ],
+    icon: lightBlueIcon.src,
   },
 };

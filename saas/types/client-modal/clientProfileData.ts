@@ -3,6 +3,7 @@
 export interface RequirementSection {
   heading: string;
   items: string[];
+  icon: string;
 }
 
 export interface RequirementDetails {

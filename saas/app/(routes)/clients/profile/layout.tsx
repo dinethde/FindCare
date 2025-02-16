@@ -18,7 +18,7 @@ export default function RootLayout({
       <Modal routePath="/clients">
         <div className="flex gap-4 p-2 min-h-[87vh] max-h-[87vh]">
           <SidebarClient />
-          <div className="flex flex-col gap-2 w-full overflow-y-scroll pr-4">
+          <div className="flex flex-col gap-2 w-full overflow-y-scroll pr-4 pb-8">
             <ProfileHeader profileHeading="Client Profile" />
             {children}
           </div>

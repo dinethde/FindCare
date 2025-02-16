@@ -1,6 +1,7 @@
 import type React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Avatar } from "../Avatar";
 
 interface SectionCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface SectionCardProps {
   children: React.ReactNode;
   className?: string;
   stackVertical?: boolean;
+  imgSize?: string;
 }
 
 export function SectionCard({
@@ -16,20 +18,16 @@ export function SectionCard({
   children,
   className = "",
   stackVertical = true,
+  imgSize = "sm",
 }: SectionCardProps) {
   return (
     <Card className={className}>
       <CardHeader className="p-0">
         <CardTitle
-          className={`flex gap-3  items-center ${stackVertical && "flex-col gap-2 items-start"} selection:items-start`}
+          className={`flex gap-3 items-center ${stackVertical && "flex-col gap-[10px] items-start"} selection:items-start`}
         >
-          <Image
-            src={Icon}
-            alt={"Icon"}
-            width={28}
-            height={28}
-            className="h-7 w-7"
-          />
+          <Avatar src={Icon} alt={"Icon"} size={imgSize} />
+
           <div className="text-neutral-10 text-h6">{title}</div>
         </CardTitle>
       </CardHeader>

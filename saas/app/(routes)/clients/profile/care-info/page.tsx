@@ -10,9 +10,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import planIcon from "@/public/assets/icons/plan-icon.svg";
+import caregiverNotes from "@/public/assets/icons/care-recipient-details=icon.svg";
+import pinkisRedIcon from "@/public/assets/icons/pinkis-red-circle-icon.svg";
+import { Circle } from "lucide-react";
 
 const firstRowKeys = ["caregiverRequirements", "skillsAndExperience"] as const;
-const secondRowKeys = ["caregiverRequirements", "skillsAndExperience"] as const;
+const secondRowKeys = ["weeklyActivities", "specialInstructions"] as const;
 
 export default function CareInfo() {
   return (
@@ -64,12 +67,14 @@ export default function CareInfo() {
             <div className="flex gap-4">
               <SectionCard
                 title={requirementDetails["requirements"].heading}
-                icon={personalDetailsIcons}
+                icon={requirementDetails["requirements"].icon}
                 className="flex p-4 flex-col gap-3 bg-main2 border-neutral-3 w-3/6"
+                stackVertical={false}
+                imgSize="xs"
               >
                 {requirementDetails["requirements"].items.map((item, index) => (
                   <div key={index} className="flex gap-2 items-center">
-                    <p>-</p>
+                    <Circle size={8} fill="#222" />
                     <p>{item}</p>
                   </div>
                 ))}
@@ -80,12 +85,12 @@ export default function CareInfo() {
                     <SectionCard
                       key={key}
                       title={requirementDetails[key].heading}
-                      icon={personalDetailsIcons}
+                      icon={requirementDetails[key].icon}
                       className="flex p-4 flex-col gap-3 bg-main2 border-neutral-3 w-full"
                     >
                       {requirementDetails[key].items.map((item, index) => (
                         <div key={index} className="flex gap-2 items-center">
-                          <p>-</p>
+                          <Circle size={8} fill="#222" />
                           <p>{item}</p>
                         </div>
                       ))}
@@ -97,12 +102,12 @@ export default function CareInfo() {
                     <SectionCard
                       key={key}
                       title={requirementDetails[key].heading}
-                      icon={personalDetailsIcons}
+                      icon={requirementDetails[key].icon}
                       className="flex p-4 flex-col gap-3 bg-main2 border-neutral-3 w-full"
                     >
                       {requirementDetails[key].items.map((item, index) => (
                         <div key={index} className="flex gap-2 items-center">
-                          <p>-</p>
+                          <Circle size={8} fill="#222" />
                           <p>{item}</p>
                         </div>
                       ))}
@@ -114,8 +119,8 @@ export default function CareInfo() {
             <div className="flex gap-4">
               <SectionCard
                 title={"Patient Progress"}
-                icon={personalDetailsIcons}
-                className="flex p-4 flex-col gap-3 bg-small-card border-neutral-3 w-3/6"
+                icon={pinkisRedIcon.src}
+                className="flex p-4 flex-col gap-3 bg-[#FBFEFE] border-neutral-2 shadow-md  w-3/6"
               >
                 <div className="flex flex-col gap-4 w-full">
                   {progressCardData.map((card) => (
@@ -126,8 +131,8 @@ export default function CareInfo() {
 
               <SectionCard
                 title={"Caregiver Notes"}
-                icon={personalDetailsIcons}
-                className="flex p-4 flex-col gap-3 bg-small-card border-neutral-3 w-full h-fit"
+                icon={caregiverNotes.src}
+                className="flex p-4 flex-col gap-3 bg-[#FBFEFE] border-neutral-2 shadow-md w-full h-fit"
               >
                 <div className="flex flex-col gap-4 w-full">
                   {comments.map((comment) => (

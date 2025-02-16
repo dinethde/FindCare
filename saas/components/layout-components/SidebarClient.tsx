@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 export function SidebarClient() {
   const pathname = usePathname();
   const isActive = pathname.split("/profile/")[1];
+  console.log("ISACTIVE" + isActive);
 
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) return text;
@@ -36,7 +37,7 @@ export function SidebarClient() {
               key={item.title}
               href={item.href}
               className={`flex items-center gap-2 ${
-                isActive === item.title.toLowerCase()
+                isActive === item.href.toLowerCase()
                   ? "text-[#ff4b00] font-medium"
                   : "text-[#424957] hover:text-[#ff4b00]"
               }`}
