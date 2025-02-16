@@ -137,11 +137,13 @@ export '/caregiver/patient_screens/pc_calendar/pc_calendar_widget.dart'
     show PcCalendarWidget;
 export '/caregiver/patient_screens/pc_calendar_i_n_f_o/pc_calendar_i_n_f_o_widget.dart'
     show PcCalendarINFOWidget;
-export '/testing/todotask/todotask_widget.dart' show TodotaskWidget;
-export '/testing/todotask2/todotask2_widget.dart' show Todotask2Widget;
-export '/testing/marcket_place1/marcket_place1_widget.dart'
+export '/approved_pages/todotask/todotask_widget.dart' show TodotaskWidget;
+export '/approved_pages/todotask2/todotask2_widget.dart' show Todotask2Widget;
+export '/approved_pages/marcket_place1/marcket_place1_widget.dart'
     show MarcketPlace1Widget;
-export '/testing/marcket_place1_copy/marcket_place1_copy_widget.dart'
-    show MarcketPlace1CopyWidget;
-export '/testing/market_place2/market_place2_widget.dart'
+export '/approved_pages/market_place2/market_place2_widget.dart'
     show MarketPlace2Widget;
+export '/caregiver/message_screen_caregiver/message_screen_caregiver_widget.dart'
+    show MessageScreenCaregiverWidget;
+export '/approved_pages/market_place3/market_place3_widget.dart'
+    show MarketPlace3Widget;

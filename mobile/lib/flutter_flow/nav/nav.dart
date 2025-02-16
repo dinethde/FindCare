@@ -420,14 +420,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MarcketPlace1Widget(),
         ),
         FFRoute(
-          name: 'MarcketPlace1Copy',
-          path: '/marcketPlace1Copy',
-          builder: (context, params) => MarcketPlace1CopyWidget(),
-        ),
-        FFRoute(
           name: 'MarketPlace2',
           path: '/marketPlace2',
           builder: (context, params) => MarketPlace2Widget(),
+        ),
+        FFRoute(
+          name: 'MessageScreenCaregiver',
+          path: '/messageScreenCaregiver',
+          builder: (context, params) => MessageScreenCaregiverWidget(),
+        ),
+        FFRoute(
+          name: 'MarketPlace3',
+          path: '/marketPlace3',
+          builder: (context, params) => MarketPlace3Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

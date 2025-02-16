@@ -87,23 +87,18 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                             : Color(0xFFBBBBBB),
                         size: 23.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Home',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 0
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Home',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 0
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -130,23 +125,18 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                             : Color(0xFFBBBBBB),
                         size: 23.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Explore',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 1
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Explore',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 1
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -160,7 +150,7 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     _model.number = 2;
                     safeSetState(() {});
 
-                    context.pushNamed('CaregiverPage');
+                    context.pushNamed('profilePage');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -173,23 +163,18 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                             : Color(0xFFBBBBBB),
                         size: 23.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Patient',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 2
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Patient',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 2
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -202,6 +187,8 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                   onTap: () async {
                     _model.number = 3;
                     safeSetState(() {});
+
+                    context.pushNamed('CaregiverPage');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -214,23 +201,18 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                             : Color(0xFFBBBBBB),
                         size: 24.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Caregiver',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 3
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Caregiver',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 3
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -243,6 +225,8 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                   onTap: () async {
                     _model.number = 4;
                     safeSetState(() {});
+
+                    context.pushNamed('MessageScreen');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -255,23 +239,18 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                             : Color(0xFFBBBBBB),
                         size: 24.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Message',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 4
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Message',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 4
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),

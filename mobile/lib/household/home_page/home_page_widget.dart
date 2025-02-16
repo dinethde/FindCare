@@ -1,10 +1,10 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/calender/calender_widget.dart';
 import '/household/home_card/home_card_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/paitent_report/paitent_report_widget.dart';
 import '/household/patient_block/patient_block_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -540,9 +540,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
             wrapWithModel(
-              model: _model.navBarModel,
+              model: _model.navBarHouseModel,
               updateCallback: () => safeSetState(() {}),
-              child: NavBarWidget(
+              child: NavBarHouseWidget(
                 page: 0,
               ),
             ),

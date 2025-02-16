@@ -1,8 +1,8 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/calender/calender_widget.dart';
 import '/household/home_card/home_card_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/paitent_report/paitent_report_widget.dart';
 import '/household/patient_block/patient_block_widget.dart';
 import 'home_page_widget.dart' show HomePageWidget;
@@ -33,8 +33,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   late CalenderModel calenderModel;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel4;
-  // Model for nav_bar component.
-  late NavBarModel navBarModel;
+  // Model for nav_barHouse component.
+  late NavBarHouseModel navBarHouseModel;
 
   @override
   void initState(BuildContext context) {
@@ -47,7 +47,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     paitentReportModel = createModel(context, () => PaitentReportModel());
     calenderModel = createModel(context, () => CalenderModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
-    navBarModel = createModel(context, () => NavBarModel());
+    navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
   @override
@@ -64,6 +64,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     paitentReportModel.dispose();
     calenderModel.dispose();
     iconButtonModel4.dispose();
-    navBarModel.dispose();
+    navBarHouseModel.dispose();
   }
 }

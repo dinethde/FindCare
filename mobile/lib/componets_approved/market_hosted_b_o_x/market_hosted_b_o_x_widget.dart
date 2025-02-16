@@ -8,15 +8,11 @@ export 'market_hosted_b_o_x_model.dart';
 class MarketHostedBOXWidget extends StatefulWidget {
   const MarketHostedBOXWidget({
     super.key,
-    required this.icon,
     String? title,
     String? description,
   })  : this.title = title ?? 'Hosted By Find Care',
         this.description = description ??
             'Lorem ipsum dolor sit amet consectetur. Orci purus amet tortor nisi massa nisl sit';
-
-  /// icon for the profile box
-  final Widget? icon;
 
   /// title for the profile box
   final String title;
@@ -53,13 +49,16 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
+      borderRadius: BorderRadius.circular(6.0),
       child: Container(
+        width: MediaQuery.sizeOf(context).width * 1.0,
+        height: 84.0,
         constraints: BoxConstraints(
           minWidth: 362.0,
           minHeight: 100.0,
         ),
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.circular(6.0),
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(12.75, 12.0, 12.0, 12.0),
@@ -68,13 +67,10 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
-                child: Icon(
-                  Icons.how_to_reg,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 30.0,
-                ),
+              Icon(
+                Icons.how_to_reg,
+                color: FlutterFlowTheme.of(context).primaryText,
+                size: 26.0,
               ),
               Flexible(
                 child: Column(
@@ -91,8 +87,10 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Roboto',
+                                  fontSize: 14.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
                                 ),
                       ),
                     ),
@@ -107,12 +105,13 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                         minFontSize: 14.0,
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: Color(0xFFABABAB),
+                              fontSize: 14.0,
                               letterSpacing: 0.0,
                             ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(SizedBox(height: 8.0)),
                 ),
               ),
             ].divide(SizedBox(width: 16.0)),
