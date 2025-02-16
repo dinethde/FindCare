@@ -1,3 +1,5 @@
+import { RequirementDetails } from "@/types/client-modal/clientProfileData";
+
 export const profileData = {
   personal: {
     fullName: "John Doe",
@@ -28,5 +30,53 @@ export const profileData = {
     phone: "(+94)71 987 6543",
     email: "jane.doe@example.com",
     address: "London",
+  },
+};
+
+export const requirementDetails: RequirementDetails = {
+  requirements: {
+    heading: "Requirements",
+    items: [
+      "Must be at least 21 years of age",
+      "Willing to work on weekends",
+      "Ability to handle emergency situations calmly",
+      "Comfortable with pets in the home",
+    ],
+  },
+  caregiverRequirements: {
+    heading: "Caregiver Requirements",
+    items: [
+      "Experience with senior care for at least 2 years",
+      "Knowledge of basic first aid",
+      "Strong communication skills",
+      "Patient and empathetic demeanor",
+    ],
+  },
+  skillsAndExperience: {
+    heading: "Skills and Experience",
+    items: [
+      "CPR and AED certified",
+      "Familiarity with mobility aids (wheelchairs, walkers)",
+      "Light housekeeping and meal preparation",
+      "Experience tracking medication schedules",
+    ],
+  },
+  weeklyActivities: {
+    heading: "Weekly Activities",
+    items: [
+      "Accompany care recipient on short walks",
+      "Plan and prepare balanced meals",
+      "Assist with laundry and light cleaning",
+      "Engage in daily cognitive exercises",
+    ],
+  },
+  specialInstructions: {
+    heading: "Special Instructions",
+    items: [
+      "Monitor blood pressure twice daily",
+      "Report any unusual symptoms immediately",
+      "Keep a daily care log for family reference",
+      "Maintain a friendly, respectful environment",
+    ],
   },
 };

@@ -26,7 +26,7 @@ export const navLinks: NavItem[] = [
   {
     title: "Care Info",
     icon: Calendar,
-    href: "care_info",
+    href: "care-info",
   },
   {
     title: "Schedule",

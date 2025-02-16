@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 export function CommentCard({ comment }: CommentCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-neutral-3 p-4 space-y-4">
+    <div className="bg-white rounded-xl shadow-sm border border-neutral-3 p-4 space-y-4">
       <div className="flex items-start justify-between">
         <div className="flex gap-4">
           <Avatar src={comment.author.avatar} alt={comment.author.name} />
