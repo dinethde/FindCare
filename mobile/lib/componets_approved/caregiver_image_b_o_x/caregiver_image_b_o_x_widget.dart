@@ -71,7 +71,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
               buttonSize: 40.0,
               fillColor: FlutterFlowTheme.of(context).info,
               icon: Icon(
-                Icons.favorite_border_sharp,
+                Icons.message_rounded,
                 color: FlutterFlowTheme.of(context).primaryText,
                 size: 24.0,
               ),
@@ -84,7 +84,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
               buttonSize: 40.0,
               fillColor: FlutterFlowTheme.of(context).info,
               icon: Icon(
-                Icons.message_rounded,
+                Icons.favorite_border_sharp,
                 color: FlutterFlowTheme.of(context).primaryText,
                 size: 24.0,
               ),
