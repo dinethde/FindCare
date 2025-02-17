@@ -9,6 +9,7 @@ interface SectionCardProps {
   className?: string;
   stackVertical?: boolean;
   imgSize?: string;
+  isIconVisible?: boolean;
 }
 
 export function SectionCard({
@@ -18,6 +19,7 @@ export function SectionCard({
   className = "",
   stackVertical = true,
   imgSize = "sm",
+  isIconVisible = true,
 }: SectionCardProps) {
   return (
     <Card className={className}>
@@ -25,7 +27,7 @@ export function SectionCard({
         <CardTitle
           className={`flex gap-3 items-center ${stackVertical && "flex-col gap-[10px] items-start"} selection:items-start`}
         >
-          <Avatar src={Icon} alt={"Icon"} size={imgSize} />
+          {isIconVisible && <Avatar src={Icon} alt={"Icon"} size={imgSize} />}
 
           <div className="text-neutral-10 text-h6">{title}</div>
         </CardTitle>

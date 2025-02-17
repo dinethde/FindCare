@@ -3,10 +3,11 @@ import CaregiverImg from "@/components/CaregiverImg";
 import Card from "@/components/cards/Card";
 import React from "react";
 import clientImage from "@/public/images/photo-rovi.png";
+import SatisfactionGauge from "@/components/charts/GaugeChart";
 
 export default function clientModalOverview() {
   return (
-    <div className=" mt-6">
+    <div className=" mt-6 flex flex-col gap-4">
       <div className="grid grid-cols-[0.75fr_1.25fr_1fr] gap-4 h-[250px] ">
         <CaregiverImg image={clientImage.src} imgSize={260} />
 
@@ -32,6 +33,14 @@ export default function clientModalOverview() {
             />
           </div>
         </div>
+      </div>
+      {/* 95% Satisfaction Rate */}
+      <div className="max-w-[400px] h-[]">
+        <SatisfactionGauge
+          value={95}
+          date="Oct 2024"
+          title="Satisfaction Rate"
+        />
       </div>
     </div>
   );
