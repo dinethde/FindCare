@@ -1,5 +1,5 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'marketplace_caregiver_card_model.dart';
@@ -8,25 +8,21 @@ export 'marketplace_caregiver_card_model.dart';
 class MarketplaceCaregiverCardWidget extends StatefulWidget {
   const MarketplaceCaregiverCardWidget({
     super.key,
-    String? name,
-    String? caregiverAgency,
-    String? rating,
-    String? description,
-    String? priceLKR,
     required this.image,
-  })  : this.name = name ?? 'Kapila Perera',
-        this.caregiverAgency = caregiverAgency ?? 'Royal Nursing Home',
-        this.rating = rating ?? '4.0 Stars',
-        this.description = description ??
-            'Specializing in providing attentive and personalized elderly care with professionalism and warmth.',
-        this.priceLKR = priceLKR ?? '50000LKR';
+    required this.name,
+    required this.rating,
+    required this.agency,
+    String? description,
+    required this.price,
+  }) : this.description = description ??
+            'Specializing in providing attentive and personalized elderly elderly care with professionalism and warmth.';
 
-  final String name;
-  final String caregiverAgency;
-  final String rating;
-  final String description;
-  final String priceLKR;
   final String? image;
+  final String? name;
+  final String? rating;
+  final String? agency;
+  final String description;
+  final String? price;
 
   @override
   State<MarketplaceCaregiverCardWidget> createState() =>
@@ -58,203 +54,133 @@ class _MarketplaceCaregiverCardWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width * 1.0,
-      height: 139.0,
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 2.0,
-            color: Color(0x33000000),
-            offset: Offset(
-              0.0,
-              2.0,
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Stack(
+          alignment: AlignmentDirectional(1.0, -1.0),
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.02),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.network(
+                  'https://picsum.photos/seed/941/600',
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 250.0,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          )
-        ],
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(10.0),
-          bottomRight: Radius.circular(10.0),
-          topLeft: Radius.circular(10.0),
-          topRight: Radius.circular(10.0),
+            ToggleIcon(
+              onPressed: () async {},
+              onIcon: Icon(
+                Icons.favorite,
+                color: Color(0xFFFF2D55),
+                size: 24.0,
+              ),
+              offIcon: Icon(
+                Icons.favorite_border,
+                color: Color(0xFFFF2D55),
+                size: 24.0,
+              ),
+            ),
+          ],
         ),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            width: 132.0,
-            height: 154.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(0.0),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10.0),
-                bottomRight: Radius.circular(0.0),
-                topLeft: Radius.circular(10.0),
-                topRight: Radius.circular(0.0),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    valueOrDefault<String>(
+                      widget.name,
+                      'Kapila Perera',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          fontSize: 20.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Icon(
+                        Icons.star_sharp,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 15.0,
+                      ),
+                      Text(
+                        valueOrDefault<String>(
+                          widget.rating,
+                          '4.0 Stars',
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ].addToEnd(SizedBox(width: 25.0)),
+                  ),
+                ],
               ),
-              child: Image.network(
-                'https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxwZXJzb258ZW58MHx8fHwxNzM4NjQyMzQ3fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                width: 200.0,
-                height: 200.0,
-                fit: BoxFit.fill,
-              ),
             ),
-          ),
-          Flexible(
-            child: Column(
+            Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  valueOrDefault<String>(
+                    widget.agency,
+                    'Royal Nursing Home',
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: Color(0xFF515151),
+                        fontSize: 12.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
                 Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            widget.name,
-                            style:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      lineHeight: 2.0,
-                                    ),
-                          ),
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.favorite_border,
-                              color: Color(0xFFFF2D55),
-                              size: 24.0,
-                            ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
-                        ],
-                      ),
-                      Flexible(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Icon(
-                                    Icons.home,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 15.0,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        widget.caregiverAgency,
-                                        'testt',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Color(0xFF515151),
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ].divide(SizedBox(width: 4.0)),
-                              ),
-                            ),
-                            Flexible(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Icon(
-                                    Icons.star_rate,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 15.0,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      widget.rating,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: Color(0xFF515151),
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ].divide(SizedBox(width: 4.0)),
-                              ),
-                            ),
-                          ].divide(SizedBox(width: 8.0)),
+                  child: Text(
+                    valueOrDefault<String>(
+                      widget.description,
+                      'Specializing in providing attentive and personalized elderly elderly care with professionalism and warmth.',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF515151),
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w300,
                         ),
-                      ),
-                      Flexible(
-                        child: Text(
-                          widget.description,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFFABABAB),
-                                    fontSize: 10.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ].divide(SizedBox(height: 8.0)),
                   ),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        'from',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              color: Color(0xFFABABAB),
-                              fontSize: 10.0,
-                              letterSpacing: 0.0,
-                              lineHeight: 4.0,
-                            ),
-                      ),
-                    ),
-                    Text(
-                      widget.priceLKR,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            lineHeight: 2.0,
-                          ),
-                    ),
-                  ].divide(SizedBox(width: 4.0)),
-                ),
-              ].divide(SizedBox(height: 16.0)),
+              ].divide(SizedBox(height: 6.0)),
             ),
+          ].divide(SizedBox(height: 7.0)),
+        ),
+        Text(
+          valueOrDefault<String>(
+            widget.price,
+            '5000LKR hr',
           ),
-        ].divide(SizedBox(width: 16.0)).addToEnd(SizedBox(width: 12.0)),
-      ),
+          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                fontFamily: 'Inter',
+                fontSize: 20.0,
+                letterSpacing: 0.0,
+                fontWeight: FontWeight.w500,
+              ),
+        ),
+      ].divide(SizedBox(height: 15.0)),
     );
   }
 }

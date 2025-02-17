@@ -50,7 +50,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
       children: [
         FlutterFlowIconButton(
           borderRadius: 30.0,
-          buttonSize: 50.0,
+          buttonSize: 40.0,
           fillColor: FlutterFlowTheme.of(context).info,
           icon: Icon(
             Icons.arrow_back_ios_rounded,
@@ -68,7 +68,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
           children: [
             FlutterFlowIconButton(
               borderRadius: 30.0,
-              buttonSize: 50.0,
+              buttonSize: 40.0,
               fillColor: FlutterFlowTheme.of(context).info,
               icon: Icon(
                 Icons.favorite_border_sharp,
@@ -81,7 +81,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
             ),
             FlutterFlowIconButton(
               borderRadius: 30.0,
-              buttonSize: 50.0,
+              buttonSize: 40.0,
               fillColor: FlutterFlowTheme.of(context).info,
               icon: Icon(
                 Icons.message_rounded,
@@ -92,7 +92,7 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
                 print('IconButton pressed ...');
               },
             ),
-          ].divide(SizedBox(width: 52.0)),
+          ].divide(SizedBox(width: 16.0)),
         ),
       ],
     );

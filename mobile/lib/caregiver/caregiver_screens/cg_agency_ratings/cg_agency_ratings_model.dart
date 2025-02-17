@@ -1,3 +1,4 @@
+import '/caregiver/caregiver_screens/caregiver_rating/caregiver_rating_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
@@ -13,6 +14,8 @@ class CgAgencyRatingsModel extends FlutterFlowModel<CgAgencyRatingsWidget> {
   late AppbarModel appbarModel;
   // Model for ButtonHalf component.
   late ButtonHalfModel buttonHalfModel;
+  // Model for caregiverRating component.
+  late CaregiverRatingModel caregiverRatingModel;
   // Model for oneTextbtn component.
   late OneTextbtnModel oneTextbtnModel;
   // Model for SoftskillCOMP component.
@@ -22,6 +25,7 @@ class CgAgencyRatingsModel extends FlutterFlowModel<CgAgencyRatingsWidget> {
   void initState(BuildContext context) {
     appbarModel = createModel(context, () => AppbarModel());
     buttonHalfModel = createModel(context, () => ButtonHalfModel());
+    caregiverRatingModel = createModel(context, () => CaregiverRatingModel());
     oneTextbtnModel = createModel(context, () => OneTextbtnModel());
     softskillCOMPModel = createModel(context, () => SoftskillCOMPModel());
   }
@@ -30,6 +34,7 @@ class CgAgencyRatingsModel extends FlutterFlowModel<CgAgencyRatingsWidget> {
   void dispose() {
     appbarModel.dispose();
     buttonHalfModel.dispose();
+    caregiverRatingModel.dispose();
     oneTextbtnModel.dispose();
     softskillCOMPModel.dispose();
   }

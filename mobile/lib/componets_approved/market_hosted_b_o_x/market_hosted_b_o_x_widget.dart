@@ -53,13 +53,27 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
+      borderRadius: BorderRadius.circular(6.0),
       child: Container(
+        width: MediaQuery.sizeOf(context).width * 1.0,
+        height: 84.0,
         constraints: BoxConstraints(
           minWidth: 362.0,
           minHeight: 100.0,
         ),
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 0.5,
+              color: Color(0x33000000),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
+            )
+          ],
+          borderRadius: BorderRadius.circular(6.0),
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(12.75, 12.0, 12.0, 12.0),
@@ -73,7 +87,7 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                 child: Icon(
                   Icons.how_to_reg,
                   color: FlutterFlowTheme.of(context).primaryText,
-                  size: 30.0,
+                  size: 26.0,
                 ),
               ),
               Flexible(
@@ -91,8 +105,10 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Roboto',
+                                  fontSize: 14.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
                                 ),
                       ),
                     ),
@@ -107,12 +123,13 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                         minFontSize: 14.0,
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: Color(0xFFABABAB),
+                              fontSize: 14.0,
                               letterSpacing: 0.0,
                             ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(SizedBox(height: 8.0)),
                 ),
               ),
             ].divide(SizedBox(width: 16.0)),
