@@ -7,7 +7,7 @@ interface ProgressCardProps {
 
 export function ProgressCard({ data }: ProgressCardProps) {
   return (
-    <div className="bg-main rounded-regular flex flex-col gap-4 p-4 border border-neutral-3  shadow-[0px_2px_4px_rgba(0,_0,_0,_0.1)] w-full">
+    <div className="bg-main rounded-regular flex flex-col gap-4 p-4 border border-neutral-3 w-full">
       <div className="">
         <div className="flex justify-between items-start">
           <div>

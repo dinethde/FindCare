@@ -1,6 +1,5 @@
 import type React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
 import { Avatar } from "../Avatar";
 
 interface SectionCardProps {

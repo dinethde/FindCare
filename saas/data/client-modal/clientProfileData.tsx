@@ -45,6 +45,14 @@ export const profileData = {
     address: "London",
     icon: personalInfoIcon.src,
   },
+  carePlan: {
+    plan: "Basic",
+    price: "20$/m",
+    careHours: "40",
+  },
+  goals: {
+    goalsList: [],
+  },
 };
 
 export const requirementDetails: RequirementDetails = {
