@@ -6,7 +6,7 @@ module.exports = {
   Backgrounds: {
     main: {
       type: "color",
-      value: "#ffffff",
+      value: "#FDFCFC",
       filePath: "design.variables.tokens.json",
       isSource: true,
       original: {

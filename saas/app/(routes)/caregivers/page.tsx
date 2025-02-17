@@ -1,14 +1,15 @@
 "use client";
 
 import { BestCaregiversCard } from "@/components/cards/BestCaregiversCard";
-import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
+// import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
 import { CareEfficiencyCard } from "@/components/cards/CareEfficiencyCard";
 import { caregivers, shiftStats, efficiencyData } from "@/data/mock-data";
 import Card from "@/components/cards/Card";
-import Link from "next/link";
 import React from "react";
 import { TableConfig } from "@/types/TableTypes";
 import { CaregiverTable } from "@/components/table/CaregiverTable";
+import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
+import { shiftsData, performanceData } from "@/data/pie-chart/totalShiftCard";
 
 export default function CaregiverPage() {
   const caregiverConfig: TableConfig = {
@@ -44,11 +45,7 @@ export default function CaregiverPage() {
 
         {/* == Total Shifts caregiver card == */}
         <div>
-          <TotalShiftsCard
-            total={shiftStats.total}
-            late={shiftStats.late}
-            cancelled={shiftStats.cancelled}
-          />
+          <TotalShiftsCard {...shiftsData} />
         </div>
 
         <div className="flex flex-col gap-4">
@@ -66,6 +63,12 @@ export default function CaregiverPage() {
           filterOptions={filterOptions}
           tableType="eye"
         />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Render Total Shifts chart */}
+        {/* <TotalShiftsCard {...shiftsData} /> */}
+        {/* Render Employee Performance chart */}
+        <TotalShiftsCard {...performanceData} />
       </div>
     </div>
   );

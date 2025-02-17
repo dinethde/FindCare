@@ -163,8 +163,7 @@ export function AppointmentCard({
               className={`p-2 rounded text-xsmall-text w-full text-center ${styles.button}`}
             >
               <span className={styles.button}>
-                {" "}
-                {data.startTime} - {data.endTime}{" "}
+                {data.startTime} - {data.endTime}
               </span>
             </div>
           )}

@@ -16,6 +16,7 @@ interface TotalShiftsCardProps {
   total: number;
   late: number;
   cancelled: number;
+  title?: string;
 }
 
 const months: Month[] = [
@@ -28,6 +29,7 @@ export function TotalShiftsCard({
   total,
   late,
   cancelled,
+  title = "Total Shifts",
 }: TotalShiftsCardProps) {
   const data = [
     { name: "Complete", value: total - late - cancelled },
@@ -42,7 +44,7 @@ export function TotalShiftsCard({
       {/* Header */}
       <CardHeader className="flex flex-row items-center justify-between p-0">
         {/* Heading 6 */}
-        <CardTitle className="text-h6">Total Shifts</CardTitle>
+        <CardTitle className="text-h6">{title}</CardTitle>
         {/* Select time dropdown */}
         <div className="">
           <SelectTime data={months} />
@@ -74,7 +76,7 @@ export function TotalShiftsCard({
                           x={cx}
                           y={cy - 10}
                           textAnchor="middle"
-                          className="text-4xl font-bold"
+                          className="text-h3 font-bold"
                           dominantBaseline="middle"
                         >
                           {total}
@@ -83,10 +85,10 @@ export function TotalShiftsCard({
                           x={cx}
                           y={cy + 15}
                           textAnchor="middle"
-                          className="text-sm fill-gray-500"
+                          className="text-tagline fill-neutral-8"
                           dominantBaseline="middle"
                         >
-                          Total Shifts
+                          {title}
                         </text>
                       </>
                     );

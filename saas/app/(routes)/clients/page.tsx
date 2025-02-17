@@ -1,6 +1,6 @@
 import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
-import Link from "next/link";
+import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
 
 const clientConfigWithNOK: TableConfig = {
   title: "Client List",
@@ -37,12 +37,17 @@ const filterOptions: FilterOption[] = [
 export default function Page() {
   return (
     <div className="space-y-8">
+      <div className="w-full grid grid-cols-[0.75fr_1.5fr_0.75fr]">
+        <div>{/* <TotalShiftsCard /> */}</div>
+        <div></div>
+        <div></div>
+      </div>
+
       <ClientTable
         config={clientConfigWithNOK}
         filterOptions={filterOptions}
         tableType="eye"
       />
-      <Link href="">Modal</Link>
     </div>
   );
 }

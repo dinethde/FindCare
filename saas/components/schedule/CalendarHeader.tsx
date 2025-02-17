@@ -30,14 +30,11 @@ export function CalendarHeader({
         <h1 className="text-h5">{weekOf}</h1>
 
         {/* View toggle buttons */}
-        <div className="flex items-center text-small-text gap-2 rounded-regular py-1 bg-main2 border-[0.8px] border-neutral-3 text-neutral-10">
+        <div className="flex items-center text-small-text gap-2 rounded-small py-1 bg-main border-[0.8px] border-neutral-3 text-neutral-10">
           <Button variant="ghost" className="rounded-lg">
             Month
           </Button>
-          <Button
-            variant="hovBlack"
-            className="bg-white rounded-lg py-0 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.1)]"
-          >
+          <Button className="bg-brand-colors-brand4 rounded-lg py-0 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.1)]">
             Week
           </Button>
           <Button variant="ghost" className="rounded-lg">
@@ -68,7 +65,9 @@ export function CalendarHeader({
             <div
               key={day.day}
               className={`text-center p-2 py-4 rounded-lg flex justify-end items-center flex-col border border-neutral-3 ${
-                isToday(day.fullDate) ? "bg-[#191919] text-white" : "bg-main2"
+                isToday(day.fullDate)
+                  ? "bg-brand-colors-brand2 text-white"
+                  : "bg-main border-bra"
               }`}
             >
               <div className="text-small-text w-fit">{day.day}</div>

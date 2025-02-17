@@ -75,11 +75,11 @@ export function Calendar({
       />
 
       <div
-        className={`flex ${page === "schedules" && "max-h-[70vh]"}  max-h-[60vh] overflow-y-scroll pt-2`}
+        className={`flex ${page === "schedules" && "max-h-[70vh]"}  max-h-[60vh] overflow-y-scroll pt-2 `}
       >
         {/* Time slots */}
         <div
-          className="relative flex-shrink-0 border-r border-neutral-3 flex flex-col items-center"
+          className="relative flex-shrink-0 border-r border-neutral-3 flex flex-col items-center pb-2"
           style={{
             width: `${TIME_COLUMN_WIDTH}px`,
             height: `${HOUR_HEIGHT * TOTAL_HOURS}px`,
@@ -90,7 +90,7 @@ export function Calendar({
               timeSlot.shouldShowLabel && (
                 <div
                   key={timeSlot.id}
-                  className="my-4 absolute text-small-text text-neutral-7 text-right w-fit text-center"
+                  className="my-4 absolute text-small-text text-neutral-7 w-fit text-center"
                   style={{
                     top: `${timeSlots.indexOf(timeSlot) * HOUR_HEIGHT}px`,
                     transform: "translateY(-50%)",
