@@ -112,7 +112,7 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     _model.number = 1;
                     safeSetState(() {});
 
-                    context.pushNamed('Marketplace');
+                    context.pushNamed('MarcketPlaceHome');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

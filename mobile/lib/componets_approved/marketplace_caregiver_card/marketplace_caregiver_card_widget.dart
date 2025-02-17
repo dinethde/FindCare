@@ -56,21 +56,19 @@ class _MarketplaceCaregiverCardWidgetState
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Stack(
           alignment: AlignmentDirectional(1.0, -1.0),
           children: [
-            Align(
-              alignment: AlignmentDirectional(0.0, 0.02),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.network(
-                  'https://picsum.photos/seed/941/600',
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 250.0,
-                  fit: BoxFit.cover,
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network(
+                widget.image!,
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 250.0,
+                fit: BoxFit.cover,
               ),
             ),
             FlutterFlowIconButton(
@@ -89,12 +87,14 @@ class _MarketplaceCaregiverCardWidgetState
         ),
         Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     valueOrDefault<String>(
@@ -127,7 +127,7 @@ class _MarketplaceCaregiverCardWidgetState
                               fontWeight: FontWeight.w500,
                             ),
                       ),
-                    ].addToEnd(SizedBox(width: 25.0)),
+                    ],
                   ),
                 ],
               ),

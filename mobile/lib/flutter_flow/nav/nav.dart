@@ -130,11 +130,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MessageScreenWidget(),
         ),
         FFRoute(
-          name: 'Marketplace',
-          path: '/marketplace',
-          builder: (context, params) => MarketplaceWidget(),
-        ),
-        FFRoute(
           name: 'CaregiverPage',
           path: '/caregiverPage',
           builder: (context, params) => CaregiverPageWidget(),
@@ -415,14 +410,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Todotask2Widget(),
         ),
         FFRoute(
-          name: 'MarcketPlace1',
-          path: '/marcketPlace1',
-          builder: (context, params) => MarcketPlace1Widget(),
+          name: 'MarcketPlaceHome',
+          path: '/marcketPlaceHome',
+          builder: (context, params) => MarcketPlaceHomeWidget(),
         ),
         FFRoute(
-          name: 'MarketPlace2',
-          path: '/marketPlace2',
-          builder: (context, params) => MarketPlace2Widget(),
+          name: 'MarketPlaceCaregiverDetails',
+          path: '/marketPlaceCaregiverDetails',
+          builder: (context, params) => MarketPlaceCaregiverDetailsWidget(),
         ),
         FFRoute(
           name: 'MessageScreenCaregiver',
@@ -430,9 +425,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MessageScreenCaregiverWidget(),
         ),
         FFRoute(
-          name: 'MarketPlace3',
-          path: '/marketPlace3',
-          builder: (context, params) => MarketPlace3Widget(),
+          name: 'MarketPlaceAgencyDetails',
+          path: '/marketPlaceAgencyDetails',
+          builder: (context, params) => MarketPlaceAgencyDetailsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
