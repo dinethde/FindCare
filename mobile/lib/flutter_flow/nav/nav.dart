@@ -430,9 +430,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MarketPlace3Widget(),
         ),
         FFRoute(
-          name: 'marketplace',
-          path: '/marketplace',
-          builder: (context, params) => MarketplaceWidget(),
+          name: 'marketplace1',
+          path: '/marketplace1',
+          builder: (context, params) => Marketplace1Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
