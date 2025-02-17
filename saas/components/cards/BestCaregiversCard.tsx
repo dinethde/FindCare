@@ -7,6 +7,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import SelectTime from "@/components/cards/SelectTime";
 import { Month } from "@/types/CardTypes";
 import CaregiverRow from "../CaregiverRow";
+import { colorProps } from "@/data/ColorProps";
 
 const months: Month[] = [
   { value: "oct-2024", label: "Oct 2024" },
@@ -33,7 +34,7 @@ export function BestCaregiversCard({ caregivers }: BestCaregiversCardProps) {
       {/* card header */}
       <CardHeader className="flex flex-row items-center justify-between p-0">
         <CardTitle className="text-h6">Best Caregivers</CardTitle>
-        <div className="rounded-md bg-gray-100 text-sm text-gray-500">
+        <div>
           <SelectTime data={months} />
         </div>
       </CardHeader>
@@ -84,9 +85,10 @@ export function BestCaregiversCard({ caregivers }: BestCaregiversCardProps) {
                       outerRadius={80}
                       startAngle={90}
                       endAngle={-270}
+                      cornerRadius={5}
                       dataKey="value"
                     >
-                      <Cell key="satisfaction" fill="#FF4500" />
+                      <Cell key="satisfaction" fill={colorProps.brand.hex} />
                       <Cell key="remaining" fill="#E5E7EB" />
                     </Pie>
                   </PieChart>
@@ -97,26 +99,24 @@ export function BestCaregiversCard({ caregivers }: BestCaregiversCardProps) {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 -mt-1">
+              <div className="flex flex-col gap-6">
                 <div className="text-regular-text-thicker text-center">
-                  <span className="text-neutral-7 font-jura">
-                    User satisfaction
-                  </span>
+                  <span className="text-neutral-7">User satisfaction</span>
                 </div>
-                <div className="flex flex-col gap-2 font-jura text-neutral-7">
-                  <div className="flex justify-between text-sm ">
+                <div className="flex flex-col gap-3 text-tagline text-neutral-9">
+                  <div className="flex justify-between  ">
                     <span className="">Late arrivals :</span>
                     <span className="font-medium">
                       {selectedCaregiver.stats.lateArrivals}
                     </span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between">
                     <span className="">Cancel Shifts :</span>
                     <span className="font-medium">
                       {selectedCaregiver.stats.cancelShifts}
                     </span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between">
                     <span className="">Leave :</span>
                     <span className="font-medium">
                       {selectedCaregiver.stats.leave}

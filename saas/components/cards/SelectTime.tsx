@@ -25,7 +25,7 @@ export default function SelectTime({
   return (
     <div className="text-grey">
       <Select defaultValue={selectedYear} onValueChange={setSelectedYear}>
-        <SelectTrigger className="w-[100px] bg-[#E8EBEE] text-tagline">
+        <SelectTrigger className="w-[80px] bg-main2 text-tagline p-0  shadow-[0px_-1px_4px_rgba(0,_0,_0,_0.10)_inset] focus:ring-blue-500 focus:border-blue-500">
           <SelectValue />
         </SelectTrigger>
 

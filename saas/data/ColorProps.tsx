@@ -16,7 +16,12 @@ export const colorProps = {
   blue: {
     hex: "#007AFF",
   },
+
   pinkishRed: {
     hex: "#FF2D55",
+  },
+
+  ash: {
+    hex: "#E1E1E1",
   },
 };

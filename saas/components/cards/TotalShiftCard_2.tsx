@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { useState } from "react";
 import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
+import SelectTime from "./SelectTime";
 
 /**
  * Renders the label in the center of the pie chart
@@ -161,19 +162,14 @@ export function TotalShiftsCard({
   const [selectedTime, setSelectedTime] = useState(timeOptions[0].value);
 
   return (
-    <Card className="h-full big-card flex flex-col justify-between rounded-xl shadow-lg overflow-hidden">
-      <CardHeader className="flex flex-row items-center justify-between py-2 px-4 bg-gray-50">
-        <CardTitle className="text-lg font-semibold text-gray-800">
-          {title}
-        </CardTitle>
-        <TimeSelector
-          options={timeOptions}
-          value={selectedTime}
-          onChange={setSelectedTime}
-        />
+    <Card className="h-full big-card flex flex-col justify-between rounded-xl shadow-sm overflow-hidden">
+      <CardHeader className="flex flex-row items-center justify-between p-0 bg-gray-50 text-neutral-10">
+        <CardTitle className="text-h6 "> {title}</CardTitle>
+
+        <SelectTime />
       </CardHeader>
-      <CardContent className="flex flex-col items-center pt-2 px-4 pb-0">
-        <div className="h-[220px] w-full mx-auto relative">
+      <CardContent className="flex flex-col items-center p-0">
+        <div className="h-[250px] w-[250px] mx-auto relative">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

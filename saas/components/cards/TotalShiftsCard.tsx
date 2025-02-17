@@ -38,6 +38,7 @@ export function TotalShiftsCard({
   ];
 
   const COLORS = ["#FF4500", "#007AFF", "#FFB800"];
+  sel;
 
   return (
     <Card className="h-full big-card flex flex-col justify-between">

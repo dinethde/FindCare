@@ -118,7 +118,7 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-regular border bg-main2 overflow-hidden flex flex-col p-5 gap-8">
+    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8">
       <div className="">
         <TableHeader
           title={config.title}

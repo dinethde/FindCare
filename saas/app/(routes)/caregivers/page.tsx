@@ -65,9 +65,6 @@ export default function CaregiverPage() {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Render Total Shifts chart */}
-        {/* <TotalShiftsCard {...shiftsData} /> */}
-        {/* Render Employee Performance chart */}
         <TotalShiftsCard {...performanceData} />
       </div>
     </div>
