@@ -56,7 +56,11 @@ const CustomTooltip = ({
   return null;
 };
 
-export function GrowthChart() {
+type GrowthChartProps = {
+  height: number;
+};
+
+export function GrowthChart({ height = 200 }: GrowthChartProps) {
   // Custom tick formatter to only show Jan and Dec
   const formatXAxis = (tickItem: string) => {
     return tickItem === "Jan" || tickItem === "Dec" ? tickItem : "";
@@ -69,7 +73,7 @@ export function GrowthChart() {
         <SelectTime />
       </CardHeader>
       <CardContent className="p-0">
-        <div className="relative h-[250px] w-full -mt-2">
+        <div className={`relative h-[${height}px] w-full -mt-2`}>
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={growthData}

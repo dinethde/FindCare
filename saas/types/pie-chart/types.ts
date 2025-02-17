@@ -32,4 +32,5 @@ export interface ChartData {
   total: number;
   /** Array of time options for the chart */
   timeOptions: TimeOption[];
+  isCaptionVisible?: boolean;
 }

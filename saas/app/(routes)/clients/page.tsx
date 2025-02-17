@@ -1,6 +1,11 @@
 import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
-import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
+import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
+import { GrowthChart } from "@/components/charts/growth-chart";
+import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
+import SatisfactionGauge from "@/components/charts/GaugeChart";
+import { taskCompletionData } from "@/data/pie-chart/totalShiftCard";
+import { colorProps } from "@/data/ColorProps";
 
 const clientConfigWithNOK: TableConfig = {
   title: "Client List",
@@ -37,10 +42,15 @@ const filterOptions: FilterOption[] = [
 export default function Page() {
   return (
     <div className="space-y-8">
-      <div className="w-full grid grid-cols-[0.75fr_1.5fr_0.75fr]">
-        <div>{/* <TotalShiftsCard /> */}</div>
-        <div></div>
-        <div></div>
+      <div className="grid grid-cols-[0.75fr_1.5fr_0.75fr] gap-4">
+        <TotalShiftsCard {...taskCompletionData} isCaptionVisible={false} />
+        <GrowthChart />
+        <SatisfactionGauge
+          value={95}
+          date="Oct 2024"
+          title="Agency's Satisfaction Rate"
+          color={colorProps.pinkishRed.hex}
+        />
       </div>
 
       <ClientTable

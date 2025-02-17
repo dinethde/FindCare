@@ -36,6 +36,8 @@ export default function CaregiverPage() {
     { key: "location", label: "Location", type: "text" },
   ];
 
+  const totalCaregivers = 32;
+
   return (
     <div className="flex flex-col gap-8">
       <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
@@ -51,7 +53,13 @@ export default function CaregiverPage() {
 
         <div className="flex flex-col gap-4">
           {/* == Card == */}
-          <Card />
+          <Card
+            revenue={"24/"}
+            title="Active Caregivers"
+            dataType={`${totalCaregivers}`}
+            dataTypeClassName="text-[18px] font-medium text-neutral-8"
+            contentClassName="text-h4"
+          />
           {/* == Care afficeny Card plus chart  == */}
           <CareEfficiencyCard data={efficiencyData} />
         </div>
@@ -64,9 +72,6 @@ export default function CaregiverPage() {
           filterOptions={filterOptions}
           tableType="eye"
         />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <TotalShiftsCard {...performanceData} />
       </div>
     </div>
   );

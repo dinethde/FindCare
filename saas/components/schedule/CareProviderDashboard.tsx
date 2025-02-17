@@ -44,65 +44,6 @@ export function CareProviderDashboard({
       <div className="w-full">
         <CareProviderCalendar agencyData={agencyData} />
       </div>
-      <div className="space-y-6">
-        {/* Total Shifts Chart */}
-        <ChartCard
-          title="Total Shifts"
-          subtitle="This Week"
-          data={[
-            {
-              name: "Successful",
-              value: shiftStats.successful,
-              color: "#007aff",
-            },
-            { name: "Late", value: shiftStats.late, color: "#fca827" },
-            {
-              name: "Cancelled",
-              value: shiftStats.cancelled,
-              color: "#ff2d55",
-            },
-          ]}
-          centerText={shiftStats.total}
-          legend={{
-            items: [
-              {
-                label: "successful shifts",
-                value: shiftStats.successful,
-                color: "#007aff",
-              },
-              {
-                label: "late shifts",
-                value: shiftStats.late,
-                color: "#fca827",
-              },
-              {
-                label: "cancelled shifts",
-                value: shiftStats.cancelled,
-                color: "#ff2d55",
-              },
-            ],
-          }}
-        />
-
-        {/* Task Completion Chart */}
-        <ChartCard
-          title="Total Completion"
-          subtitle="This Week"
-          data={[
-            { name: "Completed", value: taskStats.completed, color: "#fca827" },
-            {
-              name: "Remaining",
-              value: taskStats.total - taskStats.completed,
-              color: "#f2f2f2",
-            },
-          ]}
-          centerText={`${completionPercentage}%`}
-          footer={[
-            { label: "Total tasks:", value: taskStats.total },
-            { label: "Completion:", value: taskStats.completed },
-          ]}
-        />
-      </div>
     </div>
   );
 }

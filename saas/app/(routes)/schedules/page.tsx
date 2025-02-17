@@ -22,11 +22,11 @@ export default function SchedulePage() {
   const clientConfigWithNOK: TableConfig = {
     title: "Client List",
     columns: [
-      { key: "name", header: "Name", width: "15%" },
-      { key: "contactInfo", header: "Contact info", width: "15%" },
-      { key: "careType", header: "Care Type", width: "18%" },
-      { key: "primaryCaregiver", header: "Primary Caregiver", width: "15%" },
-      { key: "location", header: "locations", width: "10%" },
+      { key: "name", header: "Name", width: "16%" },
+      { key: "contactInfo", header: "Contact info", width: "18%" },
+      { key: "careType", header: "Care Type", width: "20%" },
+      { key: "primaryCaregiver", header: "Primary Caregiver", width: "18%" },
+      { key: "location", header: "locations", width: "12%" },
     ],
     headerAlignments: ["left", "center", "center", "center", "right"],
     showViewAction: true,
@@ -55,19 +55,15 @@ export default function SchedulePage() {
       <div className="w-full space-y-9">
         {/* Care Provider Calendar Section */}
 
-          <CareProviderDashboard agencyData={agencyData} />
-
+        <CareProviderDashboard agencyData={agencyData} />
 
         <div className="flex flex-col gap-y-5">
           <h3 className="text-h4 text-neutral-10 pl-2"> Fill a Spot </h3>
           <div className="bg-[#ffffff] space-y-8">
             <ClientTable
-                config={clientConfigWithTimes}
-                filterOptions={filterOptions}
-            />
-            <ClientTable
-                config={clientConfigWithNOK}
-                filterOptions={filterOptions}
+              config={clientConfigWithNOK}
+              filterOptions={filterOptions}
+              tableType="fill"
             />
           </div>
         </div>

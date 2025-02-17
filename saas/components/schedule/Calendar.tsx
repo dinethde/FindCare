@@ -103,7 +103,7 @@ export function Calendar({
         </div>
 
         {/* Calendar grid */}
-        <div className="flex-grow grid grid-cols-7 gap-2 px-2">
+        <div className="flex-grow grid grid-cols-7 gap-3 px-2">
           {agencyData.schedule.days.map((day, index) => (
             <div key={day.date.toISOString()} className="relative min-w-[12px]">
               <div

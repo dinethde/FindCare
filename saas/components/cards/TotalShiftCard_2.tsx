@@ -132,7 +132,7 @@ const TimeSelector = ({
  * @returns {JSX.Element} The legend JSX
  */
 const Legend = ({ data }: { data: DataItem[] }) => (
-  <div className="mt-2 flex flex-wrap justify-center gap-3 py-2 px-4 bg-gray-50">
+  <div className="flex flex-wrap justify-center gap-3 py-2 px-4 bg-gray-50">
     {data.map((item, index) => (
       <div key={index} className="flex items-center gap-1">
         <div
@@ -157,6 +157,7 @@ export function TotalShiftsCard({
   title,
   total,
   timeOptions,
+  isCaptionVisible = true,
 }: ChartData) {
   // State for managing the selected time period
   const [selectedTime, setSelectedTime] = useState(timeOptions[0].value);
@@ -197,7 +198,7 @@ export function TotalShiftsCard({
           </ResponsiveContainer>
         </div>
       </CardContent>
-      <Legend data={data} />
+      {isCaptionVisible && <Legend data={data} />}
     </Card>
   );
 }

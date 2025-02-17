@@ -32,6 +32,20 @@ export const shiftsData: ChartData = {
   ],
 };
 
+export const taskCompletionData: ChartData = {
+  data: [
+    { name: "Completed", value: 150, color: colorProps.blue.hex },
+    { name: "Uncompleted", value: 30, color: colorProps.brand.hex },
+  ],
+  title: "Task Completion",
+  total: 180,
+  timeOptions: [
+    { value: "oct-2024", label: "Oct 2024" },
+    { value: "sep-2024", label: "Sep 2024" },
+    { value: "aug-2024", label: "Aug 2024" },
+  ],
+};
+
 /**
  * Data for the Employee Performance chart
  */

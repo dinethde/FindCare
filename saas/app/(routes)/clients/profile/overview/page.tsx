@@ -39,7 +39,7 @@ export default function clientModalOverview() {
         <SatisfactionGauge
           value={95}
           date="Oct 2024"
-          title="Satisfaction Rate"
+          title=" Care Satisfaction Rate"
         />
       </div>
     </div>
