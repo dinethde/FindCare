@@ -145,3 +145,4 @@ export '/approved_pages/market_place2/market_place2_widget.dart'
     show MarketPlace2Widget;
 export '/approved_pages/market_place3/market_place3_widget.dart'
     show MarketPlace3Widget;
+export '/testing/marketplace/marketplace_widget.dart' show MarketplaceWidget;
