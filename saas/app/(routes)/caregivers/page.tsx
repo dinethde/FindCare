@@ -10,6 +10,7 @@ import { TableConfig } from "@/types/TableTypes";
 import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
 import { shiftsData, performanceData } from "@/data/pie-chart/totalShiftCard";
+import { FilterOption } from "@/types/TableTypes";
 
 export default function CaregiverPage() {
   const caregiverConfig: TableConfig = {
@@ -24,7 +25,7 @@ export default function CaregiverPage() {
     headerAlignments: ["left", "center", "center", "center", "right"],
   };
 
-  const filterOptions = [
+  const filterOptions: FilterOption[] = [
     { key: "name", label: "Name", type: "text" },
     {
       key: "careType",

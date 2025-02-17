@@ -36,9 +36,9 @@ export default function RevenueCard({
   };
 
   return (
-    <Card className="w-full big-card ">
+    <Card className="w-full big-card p-0">
       <div
-        className={`flex flex-col ${btnVarient === "SelectTime" ? "gap-3" : "gap-4"} p-1`}
+        className={`flex flex-col ${btnVarient === "SelectTime" ? "gap-3" : "gap-4"} `}
       >
         <CardHeader className="flex flex-row items-center justify-between p-0">
           <h2 className="text-h6 text-neutral-12">{title}</h2>

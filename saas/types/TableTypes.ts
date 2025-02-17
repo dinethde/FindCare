@@ -52,3 +52,10 @@ export interface Feedback {
   rate: number;
   review: string;
 }
+
+export interface FilterOption {
+  key: string;
+  label: string;
+  type: "number" | "text" | "checkbox";
+  options?: string[];
+}

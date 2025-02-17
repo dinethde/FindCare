@@ -18,7 +18,7 @@ import StarsIcon from "../icons/StarsIcon";
 const NavbarComponent: NextPage = () => {
   return (
     // Main wrapper
-    <div className="relative bg-main2 min-h-screen flex flex-col items-start justify-center  w-auto max-w-[16rem] whitespace-nowrap text-grey ">
+    <div className="relative bg-main2 min-h-screen flex flex-col items-start justify-center  w-auto max-w-[16rem] whitespace-nowrap text-grey border-r border-r-neutral-2">
       {/* Agency name and logo */}
       <div className="self-stretch flex  justify-start p1-4 p-[0.5rem] pl-3 gap-2 ">
         {/* Agency logo */}
@@ -47,7 +47,7 @@ const NavbarComponent: NextPage = () => {
           </Link>
 
           {/* Home Page Nav Link */}
-          <Link href={"/public"} className="navbar-link">
+          <Link href={"/"} className="navbar-link">
             <HomeIcon color={"#FA5300"} />
             <div className=" flex flex-row items-center justify-center">
               <p className="text-regular-text-thicker text-brand-colors-main">

@@ -3,6 +3,8 @@
 import "../globals.css";
 import Card from "../../components/cards/Card";
 import { AgencyGrowthChart } from "@/components/AgencyGrowthChart";
+import SatisfactionGauge from "@/components/charts/GaugeChart";
+import { GrowthChart } from "@/components/charts/growth-chart";
 
 export default function Home() {
   return (
@@ -12,22 +14,33 @@ export default function Home() {
           <div className="w-full flex gap-4 ">
             <Card revenue={560000} />
 
-            <Card revenue={560000} title="Total Caregivers" color="#FF2D55" />
+            <Card
+              revenue={24}
+              dataType=""
+              title="Total Caregivers"
+              color="#FF2D55"
+            />
 
-            <Card revenue={560000} title="Total Clinets" color="#007AFF" />
+            <Card
+              revenue={36}
+              dataType=""
+              title="Total Clinets"
+              color="#007AFF"
+            />
 
             <Card revenue={560000} title="Total Shifts" color="#FF2D55" />
           </div>
         </div>
       </div>
-      <div className="flex gap-4">
-        <div className="flex w-full">
-          <AgencyGrowthChart />
-        </div>
-        <div className="flex w-4/5">
-          <AgencyGrowthChart />
-        </div>
+      <div className="grid grid-cols-[1.5fr_0.75fr] gap-4">
+        <GrowthChart />
+        <SatisfactionGauge
+          value={95}
+          date="Oct 2024"
+          title="Agency's Satisfaction Rate"
+        />
       </div>
+      <div className="flex min-h-screen items-center justify-center p-4 bg-background"></div>
     </div>
   );
 }

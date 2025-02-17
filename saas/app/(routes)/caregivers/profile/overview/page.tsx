@@ -1,6 +1,6 @@
 "use client";
 
-import { Metrics } from "@/components/Metrics";
+import { TasksCard } from "@/components/TasksCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Card from "@/components/cards/Card";
 import CaregiverImg from "@/components/CaregiverImg";
@@ -12,6 +12,9 @@ import { profileData } from "@/data/profile-data";
 import verifiedIcon from "@/public/assets/icons/verrified-icon.svg";
 import { StatusBadge } from "@/components/StatusBadge";
 import { colorProps } from "@/data/ColorProps";
+import GaugeChart from "@/components/charts/GaugeChart";
+import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
+import { shiftsData } from "@/data/pie-chart/totalShiftCard";
 
 export default function CaregiverOverview() {
   console.log();
@@ -52,7 +55,17 @@ export default function CaregiverOverview() {
           </div>
 
           {/* Bottom Row - Metrics */}
-          <Metrics />
+          <div className="grid grid-cols-[1fr_1fr_1fr] gap-5">
+            {/* Client Satisfaction Card */}
+            <div>
+              <GaugeChart value={75} isSelectTimeVisible={true} />
+            </div>
+
+            {/* Total Shifts Card */}
+            <TotalShiftsCard {...shiftsData} />
+
+            <TasksCard />
+          </div>
         </TabsContent>
 
         <TabsContent value="general" className="m-0">

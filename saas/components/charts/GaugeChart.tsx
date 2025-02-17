@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 import { SectionCard } from "../cards/SectionCard";
+import SelectTime from "../cards/SelectTime";
 
 interface SatisfactionGaugeProps {
   value: number;
@@ -16,6 +17,7 @@ interface SatisfactionGaugeProps {
   width?: number;
   caption?: string;
   isCaptionVisible?: boolean;
+  isSelectTimeVisible?: boolean;
 }
 
 export default function SatisfactionGauge({
@@ -26,6 +28,8 @@ export default function SatisfactionGauge({
   width = 400,
   isCaptionVisible = true,
   isTitleVisible = true,
+
+  isSelectTimeVisible = false,
 }: SatisfactionGaugeProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -43,9 +47,9 @@ export default function SatisfactionGauge({
   const needleAngle = -90 + (value / 100) * 180;
 
   return (
-    <div>
+    <div className="w-full">
       <Card
-        className={`w-[${width}px] p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 w-fit p-4 bg-[#FCFDFD]`}
+        className={` p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-center  items-center`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
@@ -56,7 +60,10 @@ export default function SatisfactionGauge({
         }}
       >
         {isTitleVisible && (
-          <h3 className="text-h6 text-neutral-11 w-fit">{title}</h3>
+          <div className="flex items-center justify-between w-full">
+            <h3 className="text-h6 text-neutral-11 w-full">{title}</h3>
+            {isSelectTimeVisible && <SelectTime />}
+          </div>
         )}
 
         <div className="max-w-[280px] relative p-4 overflow-hidden">
@@ -76,6 +83,7 @@ export default function SatisfactionGauge({
                   outerRadius={120}
                   paddingAngle={0}
                   dataKey="value"
+                  cornerRadius={5}
                 >
                   <Cell fill={color} />
                   <Cell fill="#e8ebee" />
@@ -122,9 +130,9 @@ export default function SatisfactionGauge({
 
         {isCaptionVisible && (
           <div className="text-center w-full">
-            <p className="text-neutral-8 text-tagline">
+            <p className="text-neutral-8 text-regular-text">
               User satisfaction{" "}
-              <span className="text-h6 text-foreground ml-1">{value}%</span>
+              <span className="text-h5 text-foreground ml-1">{value}%</span>
             </p>
           </div>
         )}
