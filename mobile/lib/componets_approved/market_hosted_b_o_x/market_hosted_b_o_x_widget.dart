@@ -78,21 +78,18 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
-                      child: Text(
-                        valueOrDefault<String>(
-                          widget.title,
-                          'Hosted By Find Care',
-                        ),
-                        style:
-                            FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                    Text(
+                      valueOrDefault<String>(
+                        widget.title,
+                        'Hosted By Find Care',
                       ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Roboto',
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
                     ),
                     Flexible(
                       child: AutoSizeText(

@@ -206,15 +206,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .randomInteger(
                                                                 5, 5),
                                                         (index) => random_data
-                                                            .randomDouble(
-                                                                0.0, 1.0)),
+                                                            .randomInteger(
+                                                                0, 0)),
                                                     yData: List.generate(
                                                         random_data
                                                             .randomInteger(
                                                                 5, 5),
                                                         (index) => random_data
-                                                            .randomDouble(
-                                                                0.0, 1.0)),
+                                                            .randomInteger(
+                                                                0, 0)),
                                                     settings: LineChartBarData(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -236,6 +236,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ],
                                                 chartStylingInfo:
                                                     ChartStylingInfo(
+                                                  enableTooltip: true,
                                                   backgroundColor:
                                                       Color(0xFFFFF5E6),
                                                   showBorder: false,
