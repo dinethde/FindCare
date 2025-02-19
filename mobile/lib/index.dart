@@ -67,7 +67,7 @@ export '/household/caregiver_information/agency_details/agency_details_widget.da
     show AgencyDetailsWidget;
 export '/household/caregiver_information/agency_general_info/agency_general_info_widget.dart'
     show AgencyGeneralInfoWidget;
-export '/household/caregiver_information/agency_ratings/agency_ratings_widget.dart'
+export '/household/agency_ratings/agency_ratings_widget.dart'
     show AgencyRatingsWidget;
 export '/household/caregiver_information/rate_agency/rate_agency_widget.dart'
     show RateAgencyWidget;

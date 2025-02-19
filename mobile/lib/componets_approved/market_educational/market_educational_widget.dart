@@ -48,10 +48,7 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 220.0,
-      constraints: BoxConstraints(
-        minHeight: 150.0,
-        maxHeight: double.infinity,
-      ),
+      height: 160.0,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -80,19 +77,17 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
                     letterSpacing: 0.0,
                   ),
             ),
-            Flexible(
-              child: Text(
-                valueOrDefault<String>(
-                  widget.normalText,
-                  'asdasd',
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Roboto',
-                      color: Color(0xFFABABAB),
-                      fontSize: 10.0,
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              valueOrDefault<String>(
+                widget.normalText,
+                'asdasd',
               ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFFABABAB),
+                    fontSize: 10.0,
+                    letterSpacing: 0.0,
+                  ),
             ),
           ].divide(SizedBox(height: 8.0)).addToStart(SizedBox(height: 4.0)),
         ),

@@ -51,8 +51,8 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
             color: FlutterFlowTheme.of(context).primaryText,
             size: 24.0,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.safePop();
           },
         ),
         Row(
