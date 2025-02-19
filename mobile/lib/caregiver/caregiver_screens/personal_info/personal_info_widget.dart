@@ -9,6 +9,9 @@ export 'personal_info_model.dart';
 class PersonalInfoWidget extends StatefulWidget {
   const PersonalInfoWidget({super.key});
 
+  static String routeName = 'PersonalInfo';
+  static String routePath = '/personalInfo';
+
   @override
   State<PersonalInfoWidget> createState() => _PersonalInfoWidgetState();
 }

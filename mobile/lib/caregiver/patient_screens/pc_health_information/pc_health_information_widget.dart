@@ -10,6 +10,9 @@ export 'pc_health_information_model.dart';
 class PcHealthInformationWidget extends StatefulWidget {
   const PcHealthInformationWidget({super.key});
 
+  static String routeName = 'pcHealthInformation';
+  static String routePath = '/pcHealthInformation';
+
   @override
   State<PcHealthInformationWidget> createState() =>
       _PcHealthInformationWidgetState();

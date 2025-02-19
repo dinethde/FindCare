@@ -10,6 +10,9 @@ export 'care_giver_sign_in_model.dart';
 class CareGiverSignInWidget extends StatefulWidget {
   const CareGiverSignInWidget({super.key});
 
+  static String routeName = 'careGiverSignIn';
+  static String routePath = '/careGiverSignIn';
+
   @override
   State<CareGiverSignInWidget> createState() => _CareGiverSignInWidgetState();
 }

@@ -9,6 +9,9 @@ export 'cg_specializedin_model.dart';
 class CgSpecializedinWidget extends StatefulWidget {
   const CgSpecializedinWidget({super.key});
 
+  static String routeName = 'cgSpecializedin';
+  static String routePath = '/cgSpecializedin';
+
   @override
   State<CgSpecializedinWidget> createState() => _CgSpecializedinWidgetState();
 }

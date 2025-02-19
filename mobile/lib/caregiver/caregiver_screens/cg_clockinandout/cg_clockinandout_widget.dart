@@ -10,6 +10,9 @@ export 'cg_clockinandout_model.dart';
 class CgClockinandoutWidget extends StatefulWidget {
   const CgClockinandoutWidget({super.key});
 
+  static String routeName = 'cgClockinandout';
+  static String routePath = '/cgClockinandout';
+
   @override
   State<CgClockinandoutWidget> createState() => _CgClockinandoutWidgetState();
 }

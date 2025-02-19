@@ -1,3 +1,4 @@
+import '/caregiver/caregiver_screens/caregiver_rating/caregiver_rating_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
@@ -10,6 +11,9 @@ export 'cg_agency_ratings_model.dart';
 
 class CgAgencyRatingsWidget extends StatefulWidget {
   const CgAgencyRatingsWidget({super.key});
+
+  static String routeName = 'cgAgencyRatings';
+  static String routePath = '/cgAgencyRatings';
 
   @override
   State<CgAgencyRatingsWidget> createState() => _CgAgencyRatingsWidgetState();
@@ -102,142 +106,10 @@ class _CgAgencyRatingsWidgetState extends State<CgAgencyRatingsWidget> {
                             ),
                           ].divide(SizedBox(height: 12.0)),
                         ),
-                        Container(
-                          constraints: BoxConstraints(
-                            maxWidth: MediaQuery.sizeOf(context).width * 1.0,
-                            maxHeight: 100.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).info,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3.0,
-                                color: Color(0xFFDDE6EE),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsets.all(14.5),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      '9+',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Icon(
-                                          Icons.star_rounded,
-                                          color: Color(0xFFFCA929),
-                                          size: 14.0,
-                                        ),
-                                        Icon(
-                                          Icons.star_rounded,
-                                          color: Color(0xFFFCA929),
-                                          size: 14.0,
-                                        ),
-                                        Icon(
-                                          Icons.star_rounded,
-                                          color: Color(0xFFFCA929),
-                                          size: 14.0,
-                                        ),
-                                        Icon(
-                                          Icons.star_rounded,
-                                          color: Color(0xFFFCA929),
-                                          size: 14.0,
-                                        ),
-                                        Icon(
-                                          Icons.star_rounded,
-                                          color: Color(0xFFFCA929),
-                                          size: 14.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ].divide(SizedBox(height: 4.0)),
-                                ),
-                                SizedBox(
-                                  height: 50.0,
-                                  child: VerticalDivider(
-                                    thickness: 1.0,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                  ),
-                                ),
-                                Flexible(
-                                  child: Text(
-                                    'House-Holds\nFavorite',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 50.0,
-                                  child: VerticalDivider(
-                                    thickness: 1.0,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '10+',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                    Text(
-                                      'Reviews',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
-                                    ),
-                                  ].divide(SizedBox(height: 4.0)),
-                                ),
-                              ].divide(SizedBox(width: 5.0)),
-                            ),
-                          ),
+                        wrapWithModel(
+                          model: _model.caregiverRatingModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: CaregiverRatingWidget(),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,

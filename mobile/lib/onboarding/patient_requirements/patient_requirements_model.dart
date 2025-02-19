@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/onboarding/button_half/button_half_widget.dart';
+import '/index.dart';
 import 'patient_requirements_widget.dart' show PatientRequirementsWidget;
 import 'package:flutter/material.dart';
 

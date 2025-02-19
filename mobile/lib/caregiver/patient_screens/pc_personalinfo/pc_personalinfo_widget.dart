@@ -9,6 +9,9 @@ export 'pc_personalinfo_model.dart';
 class PcPersonalinfoWidget extends StatefulWidget {
   const PcPersonalinfoWidget({super.key});
 
+  static String routeName = 'pcPersonalinfo';
+  static String routePath = '/pcPersonalinfo';
+
   @override
   State<PcPersonalinfoWidget> createState() => _PcPersonalinfoWidgetState();
 }

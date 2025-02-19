@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import 'medical_record_update_widget.dart' show MedicalRecordUpdateWidget;
 import 'package:flutter/material.dart';
 
@@ -22,10 +23,13 @@ class MedicalRecordUpdateModel
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // Model for nav_barHouse component.
+  late NavBarHouseModel navBarHouseModel;
 
   @override
   void initState(BuildContext context) {
     appbarModel = createModel(context, () => AppbarModel());
+    navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
   @override
@@ -39,5 +43,7 @@ class MedicalRecordUpdateModel
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();
+
+    navBarHouseModel.dispose();
   }
 }

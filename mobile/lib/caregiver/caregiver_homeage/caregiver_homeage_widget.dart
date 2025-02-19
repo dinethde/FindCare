@@ -16,6 +16,9 @@ export 'caregiver_homeage_model.dart';
 class CaregiverHomeageWidget extends StatefulWidget {
   const CaregiverHomeageWidget({super.key});
 
+  static String routeName = 'CaregiverHomeage';
+  static String routePath = '/caregiverHomeage';
+
   @override
   State<CaregiverHomeageWidget> createState() => _CaregiverHomeageWidgetState();
 }

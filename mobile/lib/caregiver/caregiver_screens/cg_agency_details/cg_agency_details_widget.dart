@@ -9,6 +9,9 @@ export 'cg_agency_details_model.dart';
 class CgAgencyDetailsWidget extends StatefulWidget {
   const CgAgencyDetailsWidget({super.key});
 
+  static String routeName = 'cgAgencyDetails';
+  static String routePath = '/cgAgencyDetails';
+
   @override
   State<CgAgencyDetailsWidget> createState() => _CgAgencyDetailsWidgetState();
 }

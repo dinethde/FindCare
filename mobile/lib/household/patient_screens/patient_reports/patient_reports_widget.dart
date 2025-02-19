@@ -11,6 +11,9 @@ export 'patient_reports_model.dart';
 class PatientReportsWidget extends StatefulWidget {
   const PatientReportsWidget({super.key});
 
+  static String routeName = 'PatientReports';
+  static String routePath = '/patientReports';
+
   @override
   State<PatientReportsWidget> createState() => _PatientReportsWidgetState();
 }

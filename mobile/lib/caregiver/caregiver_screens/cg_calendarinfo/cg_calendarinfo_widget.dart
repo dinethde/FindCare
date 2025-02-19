@@ -9,6 +9,9 @@ export 'cg_calendarinfo_model.dart';
 class CgCalendarinfoWidget extends StatefulWidget {
   const CgCalendarinfoWidget({super.key});
 
+  static String routeName = 'cgCalendarinfo';
+  static String routePath = '/cgCalendarinfo';
+
   @override
   State<CgCalendarinfoWidget> createState() => _CgCalendarinfoWidgetState();
 }

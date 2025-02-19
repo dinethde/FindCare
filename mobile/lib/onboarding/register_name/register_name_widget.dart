@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'register_name_model.dart';
@@ -9,6 +10,9 @@ export 'register_name_model.dart';
 
 class RegisterNameWidget extends StatefulWidget {
   const RegisterNameWidget({super.key});
+
+  static String routeName = 'registerName';
+  static String routePath = '/registerName';
 
   @override
   State<RegisterNameWidget> createState() => _RegisterNameWidgetState();
@@ -97,7 +101,7 @@ class _RegisterNameWidgetState extends State<RegisterNameWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('careType');
+                        context.pushNamed(CareTypeWidget.routeName);
                       },
                       text: 'Continue',
                       options: FFButtonOptions(
@@ -134,7 +138,7 @@ class _RegisterNameWidgetState extends State<RegisterNameWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('houseHoldSignin');
+                            context.pushNamed(HouseHoldSigninWidget.routeName);
                           },
                           text: 'Sign-in here',
                           options: FFButtonOptions(

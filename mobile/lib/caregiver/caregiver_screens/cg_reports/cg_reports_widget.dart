@@ -11,6 +11,9 @@ export 'cg_reports_model.dart';
 class CgReportsWidget extends StatefulWidget {
   const CgReportsWidget({super.key});
 
+  static String routeName = 'cgReports';
+  static String routePath = '/cgReports';
+
   @override
   State<CgReportsWidget> createState() => _CgReportsWidgetState();
 }

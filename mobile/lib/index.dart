@@ -29,7 +29,6 @@ export '/household/patient_screens/patient_info/patient_info_widget.dart'
     show PatientInfoWidget;
 export '/household/message_screen/message_screen_widget.dart'
     show MessageScreenWidget;
-export '/household/marketplace/marketplace_widget.dart' show MarketplaceWidget;
 export '/household/caregiver_information/caregiver_page/caregiver_page_widget.dart'
     show CaregiverPageWidget;
 export '/household/patient_screens/patient_reports/patient_reports_widget.dart'
@@ -80,7 +79,6 @@ export '/household/caregiver_information/caregiver_reports/caregiver_reports_wid
     show CaregiverReportsWidget;
 export '/caregiver/caregiver_homeage/caregiver_homeage_widget.dart'
     show CaregiverHomeageWidget;
-export '/testing/testing_page/testing_page_widget.dart' show TestingPageWidget;
 export '/caregiver/caregiver_screens/caregiverersonal_links/caregiverersonal_links_widget.dart'
     show CaregiverersonalLinksWidget;
 export '/caregiver/caregiver_screens/c_g_quicklinks/c_g_quicklinks_widget.dart'
@@ -137,11 +135,13 @@ export '/caregiver/patient_screens/pc_calendar/pc_calendar_widget.dart'
     show PcCalendarWidget;
 export '/caregiver/patient_screens/pc_calendar_i_n_f_o/pc_calendar_i_n_f_o_widget.dart'
     show PcCalendarINFOWidget;
-export '/testing/todotask/todotask_widget.dart' show TodotaskWidget;
-export '/testing/todotask2/todotask2_widget.dart' show Todotask2Widget;
-export '/testing/marcket_place1/marcket_place1_widget.dart'
-    show MarcketPlace1Widget;
-export '/testing/marcket_place1_copy/marcket_place1_copy_widget.dart'
-    show MarcketPlace1CopyWidget;
-export '/testing/market_place2/market_place2_widget.dart'
-    show MarketPlace2Widget;
+export '/approved_pages/todotask/todotask_widget.dart' show TodotaskWidget;
+export '/approved_pages/todotask2/todotask2_widget.dart' show Todotask2Widget;
+export '/household/marcket_place_home/marcket_place_home_widget.dart'
+    show MarcketPlaceHomeWidget;
+export '/household/market_place_caregiver_details/market_place_caregiver_details_widget.dart'
+    show MarketPlaceCaregiverDetailsWidget;
+export '/caregiver/message_screen_caregiver/message_screen_caregiver_widget.dart'
+    show MessageScreenCaregiverWidget;
+export '/household/market_place_agency_details/market_place_agency_details_widget.dart'
+    show MarketPlaceAgencyDetailsWidget;
