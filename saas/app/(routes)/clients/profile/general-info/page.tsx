@@ -6,7 +6,6 @@ import { DetailRow } from "@/components/DetailRow";
 import { StatusBadge } from "@/components/StatusBadge";
 import { profileData } from "@/data/client-modal/clientProfileData";
 import { colorProps } from "@/data/ColorProps";
-import personalDetailsIcons from "@/public/assets/icons/personal-details-icon.svg";
 import clientImage from "@/public/images/photo-rovi.png";
 
 export default function page() {

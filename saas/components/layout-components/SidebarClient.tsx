@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-// import { profile, navigation } from "@/data/dashboard-2";
 import { navLinks, profile } from "@/data/client-modal/clientModal";
 import photo from "@/public/images/photo.png";
 import { usePathname } from "next/navigation";

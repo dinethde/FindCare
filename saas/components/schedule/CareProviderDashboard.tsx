@@ -6,7 +6,6 @@ import type {
   TaskStatistics,
 } from "@/types/ScheduleTypes";
 import { CareProviderCalendar } from "./CareProviderCalendar";
-import { ChartCard } from "../charts/ChartCard";
 
 export function CareProviderDashboard({
   agencyData,

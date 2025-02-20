@@ -2,7 +2,6 @@ import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
 import { GrowthChart } from "@/components/charts/growth-chart";
-import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { taskCompletionData } from "@/data/pie-chart/totalShiftCard";
 import { colorProps } from "@/data/ColorProps";

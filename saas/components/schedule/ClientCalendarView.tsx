@@ -1,8 +1,5 @@
 import { Calendar } from "./Calendar";
 import type { AgencyData } from "@/types/ScheduleTypes";
-import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CardSmall from "@/components/cards/Card";
 
 interface ClientCalendarViewProps {
   agencyData: AgencyData;

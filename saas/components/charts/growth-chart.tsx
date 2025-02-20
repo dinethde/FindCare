@@ -1,8 +1,6 @@
 "use client";
 import {
   Area,
-  Line,
-  LineChart,
   ResponsiveContainer,
   XAxis,
   Tooltip,

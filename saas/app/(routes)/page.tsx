@@ -2,7 +2,6 @@
 
 import "../globals.css";
 import Card from "../../components/cards/Card";
-import { AgencyGrowthChart } from "@/components/AgencyGrowthChart";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
 

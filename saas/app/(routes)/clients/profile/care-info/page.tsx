@@ -1,14 +1,10 @@
 import { SectionCard } from "@/components/cards/SectionCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import personalDetailsIcons from "@/public/assets/icons/personal-details-icon.svg";
 import { requirementDetails } from "@/data/client-modal/clientProfileData";
 import { comments } from "@/data/Comments";
 import { CommentCard } from "@/components/CommentCard";
 import { progressCardData } from "@/data/progressCardData";
 import { ProgressCard } from "@/components/ProgressCard";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
 import planIcon from "@/public/assets/icons/plan-icon.svg";
 import caregiverNotes from "@/public/assets/icons/care-recipient-details=icon.svg";
 import pinkisRedIcon from "@/public/assets/icons/pinkis-red-circle-icon.svg";

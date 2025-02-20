@@ -1,10 +1,8 @@
 "use client";
 
 import { PieChart, Pie, Cell } from "recharts";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import { SectionCard } from "../cards/SectionCard";
 import SelectTime from "../cards/SelectTime";
 
 interface SatisfactionGaugeProps {
