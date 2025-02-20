@@ -9,7 +9,7 @@ import {
   type TooltipProps,
   AreaChart,
 } from "recharts";
-import type { GrowthDataPoint } from "@/data/growthData";
+import type { GrowthDataPoint } from "@/types/growthTypes";
 
 import { CHART_CONFIG, growthData } from "@/data/growthData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
