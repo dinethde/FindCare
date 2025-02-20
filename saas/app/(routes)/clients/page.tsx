@@ -43,7 +43,7 @@ export default function Page() {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-[0.75fr_1.5fr_0.75fr] gap-4">
-        <TotalShiftsCard {...taskCompletionData} isCaptionVisible={false} />
+        <TotalShiftsCard {...taskCompletionData} />
         <GrowthChart />
         <SatisfactionGauge
           value={95}

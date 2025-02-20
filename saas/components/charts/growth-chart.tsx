@@ -9,9 +9,9 @@ import {
   type TooltipProps,
   AreaChart,
 } from "recharts";
-import type { GrowthDataPoint } from "@/data/growth-data";
+import type { GrowthDataPoint } from "@/data/growthData";
 
-import { CHART_CONFIG, growthData } from "@/data/growth-data";
+import { CHART_CONFIG, growthData } from "@/data/growthData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { colorProps } from "@/data/ColorProps";
 import SelectTime from "../cards/SelectTime";
@@ -57,10 +57,10 @@ const CustomTooltip = ({
 };
 
 type GrowthChartProps = {
-  height: number;
+  height?: number;
 };
 
-export function GrowthChart({ height = 200 }: GrowthChartProps) {
+export function GrowthChart({ height = 250 }: GrowthChartProps) {
   // Custom tick formatter to only show Jan and Dec
   const formatXAxis = (tickItem: string) => {
     return tickItem === "Jan" || tickItem === "Dec" ? tickItem : "";

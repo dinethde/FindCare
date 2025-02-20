@@ -47,9 +47,9 @@ export default function SatisfactionGauge({
   const needleAngle = -90 + (value / 100) * 180;
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Card
-        className={` p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-center  items-center`}
+        className={` p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start  items-center h-full`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
