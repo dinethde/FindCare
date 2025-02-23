@@ -1,15 +1,18 @@
 import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'cg_reports_model.dart';
 export 'cg_reports_model.dart';
 
 class CgReportsWidget extends StatefulWidget {
   const CgReportsWidget({super.key});
+
+  static String routeName = 'cgReports';
+  static String routePath = '/cgReports';
 
   @override
   State<CgReportsWidget> createState() => _CgReportsWidgetState();

@@ -1,5 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'agency_details_card_model.dart';
 export 'agency_details_card_model.dart';
@@ -53,214 +53,201 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
-      child: Container(
-        width: MediaQuery.sizeOf(context).width * 1.0,
-        height: 215.0,
-        decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 3.0,
-              color: Color(0x33000000),
-              offset: Offset(
-                0.0,
-                2.0,
-              ),
-            )
-          ],
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Container(
+      width: MediaQuery.sizeOf(context).width * 1.0,
+      height: 240.0,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).secondaryBackground,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 2.0,
+            color: Color(0x33000000),
+            offset: Offset(
+              0.0,
+              2.0,
+            ),
+          )
+        ],
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Stack(
+                  alignment: AlignmentDirectional(1.0, 1.0),
                   children: [
+                    Container(
+                      width: 105.0,
+                      height: 105.0,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1658314756095-f2e121683819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxjYXJlZ2l2ZXJ8ZW58MHx8fHwxNzM4ODYwMDU3fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     Stack(
-                      alignment: AlignmentDirectional(1.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       children: [
-                        Container(
-                          width: 105.0,
-                          height: 105.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.network(
-                            'https://images.unsplash.com/photo-1658314756095-f2e121683819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxjYXJlZ2l2ZXJ8ZW58MHx8fHwxNzM4ODYwMDU3fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                            fit: BoxFit.cover,
-                          ),
+                        Icon(
+                          Icons.circle_sharp,
+                          color: Color(0xFFE31C5F),
+                          size: 33.0,
                         ),
-                        Stack(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          children: [
-                            Icon(
-                              Icons.circle_sharp,
-                              color: Color(0xFFE31C5F),
-                              size: 33.0,
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
-                              child: Icon(
-                                Icons.verified_user,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                size: 14.0,
-                              ),
-                            ),
-                          ],
+                        Align(
+                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          child: Icon(
+                            Icons.verified_user,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 14.0,
+                          ),
                         ),
                       ],
                     ),
-                    Flexible(
-                      child: Text(
-                        widget.findcare,
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Inter Tight',
-                              fontSize: 26.0,
-                              letterSpacing: 1.0,
+                  ],
+                ),
+                Flexible(
+                  child: Text(
+                    widget.findcare,
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Inter Tight',
+                          fontSize: 26.0,
+                          letterSpacing: 1.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+            Flexible(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        valueOrDefault<String>(
+                          widget.noOfReviews,
+                          '486',
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Roboto',
+                              fontSize: 21.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                    ),
-                  ],
-                ),
+                      Text(
+                        'Reviews',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              color: Color(0xFF8D8D8D),
+                              fontSize: 12.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    height: 24.0,
+                    thickness: 2.0,
+                    color: FlutterFlowTheme.of(context).alternate,
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            valueOrDefault<String>(
+                              widget.rating,
+                              '5.0',
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  fontSize: 21.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                          Icon(
+                            Icons.star_purple500_sharp,
+                            color: Color(0xFFFCA827),
+                            size: 15.0,
+                          ),
+                        ].divide(SizedBox(width: 5.0)),
+                      ),
+                      Text(
+                        'Rating',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              color: Color(0xFF8D8D8D),
+                              fontSize: 12.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    height: 24.0,
+                    thickness: 2.0,
+                    color: FlutterFlowTheme.of(context).alternate,
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        valueOrDefault<String>(
+                          widget.years,
+                          '9',
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Roboto',
+                              fontSize: 21.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      Text(
+                        'Years in the industry',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              color: Color(0xFF8D8D8D),
+                              fontSize: 12.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              Flexible(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            widget.noOfReviews,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 21.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            'Reviews',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Color(0xFF8D8D8D),
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Divider(
-                      height: 24.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            widget.noOfReviews,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 21.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            'Reviews',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Color(0xFF8D8D8D),
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Divider(
-                      height: 24.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            widget.noOfReviews,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 21.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            'Reviews',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Color(0xFF8D8D8D),
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ]
-                .divide(SizedBox(width: 48.0))
-                .addToStart(SizedBox(width: 24.0))
-                .addToEnd(SizedBox(width: 24.0)),
-          ),
+            ),
+          ]
+              .divide(SizedBox(width: 48.0))
+              .addToStart(SizedBox(width: 24.0))
+              .addToEnd(SizedBox(width: 24.0)),
         ),
       ),
     );

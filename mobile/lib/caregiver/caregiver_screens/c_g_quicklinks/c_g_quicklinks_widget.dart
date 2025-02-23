@@ -1,13 +1,17 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'c_g_quicklinks_model.dart';
 export 'c_g_quicklinks_model.dart';
 
 class CGQuicklinksWidget extends StatefulWidget {
   const CGQuicklinksWidget({super.key});
+
+  static String routeName = 'CGQuicklinks';
+  static String routePath = '/cGQuicklinks';
 
   @override
   State<CGQuicklinksWidget> createState() => _CGQuicklinksWidgetState();
@@ -82,15 +86,24 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                     ),
                   ].divide(SizedBox(height: 10.0)),
                 ),
-                wrapWithModel(
-                  model: _model.iconButtonModel1,
-                  updateCallback: () => safeSetState(() {}),
-                  child: IconButtonWidget(
-                    icon1: Icon(
-                      Icons.info_outline,
-                      size: 16.0,
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed(PersonalInfoWidget.routeName);
+                  },
+                  child: wrapWithModel(
+                    model: _model.iconButtonModel1,
+                    updateCallback: () => safeSetState(() {}),
+                    child: IconButtonWidget(
+                      icon1: Icon(
+                        Icons.info_outline,
+                        size: 16.0,
+                      ),
+                      lable: '19 years old, 185cm, 60.0kg ...',
                     ),
-                    lable: '19 years old, 185cm, 60.0kg ...',
                   ),
                 ),
                 Column(
@@ -104,40 +117,67 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel2,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.grain,
-                          color: Color(0xFFFF2D55),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgAcademicInfoWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel2,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.grain,
+                            color: Color(0xFFFF2D55),
+                            size: 16.0,
+                          ),
+                          lable: 'Educational Knowledge',
                         ),
-                        lable: 'Educational Knowledge',
                       ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel3,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.document_scanner_rounded,
-                          color: Color(0xFF046ACC),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgExperienceWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel3,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.document_scanner_rounded,
+                            color: Color(0xFF046ACC),
+                            size: 16.0,
+                          ),
+                          lable: 'Professional Skills',
                         ),
-                        lable: 'Professional Skills',
                       ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel4,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.medical_information_sharp,
-                          color: Color(0xFFC27E2D),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgSpecializedinWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel4,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.medical_information_sharp,
+                            color: Color(0xFFC27E2D),
+                            size: 16.0,
+                          ),
+                          lable: 'Specialized in',
                         ),
-                        lable: 'Specialized in',
                       ),
                     ),
                   ].divide(SizedBox(height: 12.0)),
@@ -153,15 +193,24 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel5,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.api,
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgAvailabilityWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel5,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.api,
+                            size: 16.0,
+                          ),
+                          lable: 'View availability times ',
                         ),
-                        lable: 'Add a goal',
                       ),
                     ),
                   ].divide(SizedBox(height: 12.0)),

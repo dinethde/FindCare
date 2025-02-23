@@ -1,6 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'icon_button_model.dart';
@@ -72,58 +72,48 @@ class _IconButtonWidgetState extends State<IconButtonWidget> {
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               widget.icon1!,
-              Text(
-                valueOrDefault<String>(
-                  widget.lable,
-                  'TEXT',
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w500,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    valueOrDefault<String>(
+                      widget.lable,
+                      'TEXT',
                     ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ],
               ),
               Flexible(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Opacity(
                         opacity: 0.0,
                         child: Text(
-                          'Hello World',
+                          valueOrDefault<String>(
+                            widget.lable,
+                            'TEXT',
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.0,
-                        child: Text(
-                          'Hello World',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.0,
-                        child: Text(
-                          'Hello World',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
                         ),
                       ),
@@ -131,15 +121,18 @@ class _IconButtonWidgetState extends State<IconButtonWidget> {
                   ),
                 ),
               ),
-              Icon(
-                Icons.arrow_forward_ios_outlined,
-                color: Color(0xFF007AFF),
-                size: 16.0,
-              ),
             ]
                 .divide(SizedBox(width: 8.0))
                 .addToStart(SizedBox(width: 12.0))
                 .addToEnd(SizedBox(width: 12.0)),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+            child: Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: Color(0xFF007AFF),
+              size: 16.0,
+            ),
           ),
         ],
       ),

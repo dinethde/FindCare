@@ -1,8 +1,9 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/invisible_button/invisible_button_widget.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'house_hold_signin_model.dart';
@@ -10,6 +11,9 @@ export 'house_hold_signin_model.dart';
 
 class HouseHoldSigninWidget extends StatefulWidget {
   const HouseHoldSigninWidget({super.key});
+
+  static String routeName = 'houseHoldSignin';
+  static String routePath = '/houseHoldSignin';
 
   @override
   State<HouseHoldSigninWidget> createState() => _HouseHoldSigninWidgetState();
@@ -114,7 +118,7 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('PatientFirstPage');
+                        context.pushNamed(PatientFirstPageWidget.routeName);
                       },
                       text: 'Find a Caregiver',
                       options: FFButtonOptions(
@@ -150,7 +154,7 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('Householdsignup');
+                            context.pushNamed(HouseholdsignupWidget.routeName);
                           },
                           text: 'Sign up here',
                           options: FFButtonOptions(

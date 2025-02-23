@@ -1,20 +1,24 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/calender/calender_widget.dart';
 import '/household/home_card/home_card_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/paitent_report/paitent_report_widget.dart';
 import '/household/patient_block/patient_block_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
+
+  static String routeName = 'homePage';
+  static String routePath = '/homePage';
 
   @override
   State<HomePageWidget> createState() => _HomePageWidgetState();
@@ -52,7 +56,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Stack(
-          alignment: AlignmentDirectional(0.0, -1.0),
           children: [
             SingleChildScrollView(
               child: Column(
@@ -100,7 +103,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('profilePage');
+                                        context.pushNamed(
+                                            ProfilePageWidget.routeName);
                                       },
                                       child: Container(
                                         width: 40.0,
@@ -206,15 +210,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .randomInteger(
                                                                 5, 5),
                                                         (index) => random_data
-                                                            .randomDouble(
-                                                                0.0, 1.0)),
+                                                            .randomInteger(
+                                                                0, 0)),
                                                     yData: List.generate(
                                                         random_data
                                                             .randomInteger(
                                                                 5, 5),
                                                         (index) => random_data
-                                                            .randomDouble(
-                                                                0.0, 1.0)),
+                                                            .randomInteger(
+                                                                0, 0)),
                                                     settings: LineChartBarData(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -236,6 +240,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ],
                                                 chartStylingInfo:
                                                     ChartStylingInfo(
+                                                  enableTooltip: true,
                                                   backgroundColor:
                                                       Color(0xFFFFF5E6),
                                                   showBorder: false,
@@ -262,23 +267,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                wrapWithModel(
-                                  model: _model.homeCardModel1,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: HomeCardWidget(
-                                    textColor: Color(0xFF6210C1),
-                                    label: 'Inform Caregiver',
+                                Expanded(
+                                  child: wrapWithModel(
+                                    model: _model.homeCardModel1,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: HomeCardWidget(
+                                      textColor: Color(0xFF6210C1),
+                                      label: 'Inform Caregiver',
+                                    ),
                                   ),
                                 ),
-                                wrapWithModel(
-                                  model: _model.homeCardModel2,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: HomeCardWidget(
-                                    textColor: Color(0xFF007AFF),
-                                    label: 'Inform Agency',
+                                Expanded(
+                                  child: wrapWithModel(
+                                    model: _model.homeCardModel2,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: HomeCardWidget(
+                                      textColor: Color(0xFF007AFF),
+                                      label: 'Inform Agency',
+                                    ),
                                   ),
                                 ),
-                              ],
+                              ].divide(SizedBox(width: 10.0)),
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -469,45 +478,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    wrapWithModel(
-                                      model: _model.patientBlockModel,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: PatientBlockWidget(
-                                        textColor: Color(0xFFFF2D55),
-                                        label: 'Patient Rerpots',
-                                        icon: Icon(
-                                          Icons.favorite_rounded,
-                                          color: Color(0xFFFF2D55),
-                                          size: 16.0,
-                                        ),
-                                        textBox: 'Last Update',
-                                        icon2: Icon(
-                                          Icons.monitor_heart_outlined,
-                                          color: Color(0xFFFF2D55),
-                                          size: 38.0,
-                                        ),
-                                      ),
-                                    ),
-                                    wrapWithModel(
-                                      model: _model.paitentReportModel,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: PaitentReportWidget(
-                                        textColor: Color(0xFF0584FF),
-                                        label: 'Patient Reports',
-                                        icon: Icon(
-                                          Icons.reorder,
-                                          color: Color(0xFF0584FF),
-                                          size: 16.0,
-                                        ),
-                                        textBox: 'Last week',
-                                        icon2: Icon(
-                                          Icons.bar_chart,
-                                          color: Color(0xFF0584FF),
-                                          size: 38.0,
+                                    Expanded(
+                                      child: wrapWithModel(
+                                        model: _model.patientBlockModel,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: PatientBlockWidget(
+                                          textColor: Color(0xFFFF2D55),
+                                          label: 'Patient Rerpots',
+                                          icon: Icon(
+                                            Icons.favorite_rounded,
+                                            color: Color(0xFFFF2D55),
+                                            size: 16.0,
+                                          ),
+                                          textBox: 'Last Update',
+                                          icon2: Icon(
+                                            Icons.monitor_heart_outlined,
+                                            color: Color(0xFFFF2D55),
+                                            size: 38.0,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ],
+                                    Expanded(
+                                      child: wrapWithModel(
+                                        model: _model.paitentReportModel,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: PaitentReportWidget(
+                                          textColor: Color(0xFF0584FF),
+                                          label: 'Patient Reports',
+                                          icon: Icon(
+                                            Icons.reorder,
+                                            color: Color(0xFF0584FF),
+                                            size: 16.0,
+                                          ),
+                                          textBox: 'Last week',
+                                          icon2: Icon(
+                                            Icons.bar_chart,
+                                            color: Color(0xFF0584FF),
+                                            size: 38.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 wrapWithModel(
                                   model: _model.calenderModel,
@@ -540,9 +555,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
             wrapWithModel(
-              model: _model.navBarModel,
+              model: _model.navBarHouseModel,
               updateCallback: () => safeSetState(() {}),
-              child: NavBarWidget(
+              child: NavBarHouseWidget(
                 page: 0,
               ),
             ),

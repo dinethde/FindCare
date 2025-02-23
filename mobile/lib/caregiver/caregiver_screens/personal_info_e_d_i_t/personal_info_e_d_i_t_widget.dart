@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'personal_info_e_d_i_t_model.dart';
 export 'personal_info_e_d_i_t_model.dart';
 
 class PersonalInfoEDITWidget extends StatefulWidget {
   const PersonalInfoEDITWidget({super.key});
+
+  static String routeName = 'personalInfoEDIT';
+  static String routePath = '/personalInfoEDIT';
 
   @override
   State<PersonalInfoEDITWidget> createState() => _PersonalInfoEDITWidgetState();
@@ -59,32 +62,28 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                       secLable: 'Done',
                     ),
                   ),
-                  Flexible(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Request to change your personal information',
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .displayMedium
-                              .override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                        Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ].divide(SizedBox(height: 12.0)),
-                    ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Request to change your personal information',
+                        textAlign: TextAlign.center,
+                        style:
+                            FlutterFlowTheme.of(context).displayMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                      ),
+                      Text(
+                        'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ].divide(SizedBox(height: 12.0)),
                   ),
                   Container(
                     decoration: BoxDecoration(

@@ -1,14 +1,17 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'pc_health_information_model.dart';
 export 'pc_health_information_model.dart';
 
 class PcHealthInformationWidget extends StatefulWidget {
   const PcHealthInformationWidget({super.key});
+
+  static String routeName = 'pcHealthInformation';
+  static String routePath = '/pcHealthInformation';
 
   @override
   State<PcHealthInformationWidget> createState() =>

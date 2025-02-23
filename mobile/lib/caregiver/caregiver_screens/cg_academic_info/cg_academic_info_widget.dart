@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'cg_academic_info_model.dart';
 export 'cg_academic_info_model.dart';
 
 class CgAcademicInfoWidget extends StatefulWidget {
   const CgAcademicInfoWidget({super.key});
+
+  static String routeName = 'cgAcademicInfo';
+  static String routePath = '/cgAcademicInfo';
 
   @override
   State<CgAcademicInfoWidget> createState() => _CgAcademicInfoWidgetState();

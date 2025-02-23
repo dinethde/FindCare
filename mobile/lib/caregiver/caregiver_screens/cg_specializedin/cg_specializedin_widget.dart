@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'cg_specializedin_model.dart';
 export 'cg_specializedin_model.dart';
 
 class CgSpecializedinWidget extends StatefulWidget {
   const CgSpecializedinWidget({super.key});
+
+  static String routeName = 'cgSpecializedin';
+  static String routePath = '/cgSpecializedin';
 
   @override
   State<CgSpecializedinWidget> createState() => _CgSpecializedinWidgetState();

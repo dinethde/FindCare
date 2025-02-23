@@ -1,13 +1,17 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'caregiverfunctions_model.dart';
 export 'caregiverfunctions_model.dart';
 
 class CaregiverfunctionsWidget extends StatefulWidget {
   const CaregiverfunctionsWidget({super.key});
+
+  static String routeName = 'Caregiverfunctions';
+  static String routePath = '/caregiverfunctions';
 
   @override
   State<CaregiverfunctionsWidget> createState() =>
@@ -76,14 +80,23 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        wrapWithModel(
-                          model: _model.iconButtonModel1,
-                          updateCallback: () => safeSetState(() {}),
-                          child: IconButtonWidget(
-                            icon1: Icon(
-                              Icons.ten_k,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(CgClockinandoutWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.iconButtonModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: IconButtonWidget(
+                              icon1: Icon(
+                                Icons.ten_k,
+                              ),
+                              lable: 'Clock in and out',
                             ),
-                            lable: 'Clock in and out',
                           ),
                         ),
                         wrapWithModel(
@@ -96,24 +109,42 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                             lable: 'Perform Tasks',
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.iconButtonModel3,
-                          updateCallback: () => safeSetState(() {}),
-                          child: IconButtonWidget(
-                            icon1: Icon(
-                              Icons.ten_k_rounded,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(CgCalendarWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.iconButtonModel3,
+                            updateCallback: () => safeSetState(() {}),
+                            child: IconButtonWidget(
+                              icon1: Icon(
+                                Icons.ten_k_rounded,
+                              ),
+                              lable: 'View Calendar',
                             ),
-                            lable: 'View Calendar',
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.iconButtonModel4,
-                          updateCallback: () => safeSetState(() {}),
-                          child: IconButtonWidget(
-                            icon1: Icon(
-                              Icons.ten_k_outlined,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(CgAgencyDetailsWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.iconButtonModel4,
+                            updateCallback: () => safeSetState(() {}),
+                            child: IconButtonWidget(
+                              icon1: Icon(
+                                Icons.ten_k_outlined,
+                              ),
+                              lable: 'Inform Agency',
                             ),
-                            lable: 'Inform Agency',
                           ),
                         ),
                         wrapWithModel(

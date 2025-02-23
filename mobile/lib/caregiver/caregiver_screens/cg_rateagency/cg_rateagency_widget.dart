@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'cg_rateagency_model.dart';
 export 'cg_rateagency_model.dart';
 
 class CgRateagencyWidget extends StatefulWidget {
   const CgRateagencyWidget({super.key});
+
+  static String routeName = 'cgRateagency';
+  static String routePath = '/cgRateagency';
 
   @override
   State<CgRateagencyWidget> createState() => _CgRateagencyWidgetState();

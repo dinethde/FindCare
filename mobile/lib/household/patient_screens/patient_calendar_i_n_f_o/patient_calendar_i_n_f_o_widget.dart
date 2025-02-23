@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'patient_calendar_i_n_f_o_model.dart';
 export 'patient_calendar_i_n_f_o_model.dart';
 
 class PatientCalendarINFOWidget extends StatefulWidget {
   const PatientCalendarINFOWidget({super.key});
+
+  static String routeName = 'PatientCalendarINFO';
+  static String routePath = '/patientCalendarINFO';
 
   @override
   State<PatientCalendarINFOWidget> createState() =>

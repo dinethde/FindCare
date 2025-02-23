@@ -1,13 +1,16 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'cg_general_info_model.dart';
 export 'cg_general_info_model.dart';
 
 class CgGeneralInfoWidget extends StatefulWidget {
   const CgGeneralInfoWidget({super.key});
+
+  static String routeName = 'cgGeneralInfo';
+  static String routePath = '/cgGeneralInfo';
 
   @override
   State<CgGeneralInfoWidget> createState() => _CgGeneralInfoWidgetState();

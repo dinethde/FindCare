@@ -1,15 +1,18 @@
 import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'patient_reports_model.dart';
 export 'patient_reports_model.dart';
 
 class PatientReportsWidget extends StatefulWidget {
   const PatientReportsWidget({super.key});
+
+  static String routeName = 'PatientReports';
+  static String routePath = '/patientReports';
 
   @override
   State<PatientReportsWidget> createState() => _PatientReportsWidgetState();

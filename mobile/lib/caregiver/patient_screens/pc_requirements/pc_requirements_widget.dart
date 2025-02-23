@@ -1,14 +1,17 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'pc_requirements_model.dart';
 export 'pc_requirements_model.dart';
 
 class PcRequirementsWidget extends StatefulWidget {
   const PcRequirementsWidget({super.key});
+
+  static String routeName = 'pcRequirements';
+  static String routePath = '/pcRequirements';
 
   @override
   State<PcRequirementsWidget> createState() => _PcRequirementsWidgetState();

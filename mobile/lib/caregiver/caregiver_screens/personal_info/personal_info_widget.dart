@@ -1,13 +1,17 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'personal_info_model.dart';
 export 'personal_info_model.dart';
 
 class PersonalInfoWidget extends StatefulWidget {
   const PersonalInfoWidget({super.key});
+
+  static String routeName = 'PersonalInfo';
+  static String routePath = '/personalInfo';
 
   @override
   State<PersonalInfoWidget> createState() => _PersonalInfoWidgetState();
@@ -53,19 +57,45 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
                 child: Stack(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   children: [
-                    wrapWithModel(
-                      model: _model.appbarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: AppbarWidget(
-                        fLable: 'Profile',
-                        secLable: 'Edit',
-                      ),
+                    Stack(
+                      alignment: AlignmentDirectional(1.0, 0.0),
+                      children: [
+                        wrapWithModel(
+                          model: _model.appbarModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: AppbarWidget(
+                            fLable: 'Profile',
+                            secLable: 'Edit',
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.0,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context
+                                  .pushNamed(PersonalInfoEDITWidget.routeName);
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.03,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Align(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Personal details',
                           style: FlutterFlowTheme.of(context)

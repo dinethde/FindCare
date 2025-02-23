@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import 'caregiver_requirements_widget.dart' show CaregiverRequirementsWidget;
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,8 @@ class CaregiverRequirementsModel
   late ContentTextboxModel contentTextboxModel2;
   // Model for ContentTextbox component.
   late ContentTextboxModel contentTextboxModel3;
+  // Model for nav_barHouse component.
+  late NavBarHouseModel navBarHouseModel;
 
   @override
   void initState(BuildContext context) {
@@ -27,6 +30,7 @@ class CaregiverRequirementsModel
     iconButtonModel = createModel(context, () => IconButtonModel());
     contentTextboxModel2 = createModel(context, () => ContentTextboxModel());
     contentTextboxModel3 = createModel(context, () => ContentTextboxModel());
+    navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
   @override
@@ -36,5 +40,6 @@ class CaregiverRequirementsModel
     iconButtonModel.dispose();
     contentTextboxModel2.dispose();
     contentTextboxModel3.dispose();
+    navBarHouseModel.dispose();
   }
 }

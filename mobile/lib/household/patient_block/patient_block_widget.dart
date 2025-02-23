@@ -1,5 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'patient_block_model.dart';
 export 'patient_block_model.dart';
@@ -50,6 +50,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
+        minWidth: MediaQuery.sizeOf(context).width * 1.0,
         minHeight: 120.0,
         maxWidth: double.infinity,
         maxHeight: double.infinity,
