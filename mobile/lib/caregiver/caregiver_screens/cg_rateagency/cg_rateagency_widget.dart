@@ -9,6 +9,9 @@ export 'cg_rateagency_model.dart';
 class CgRateagencyWidget extends StatefulWidget {
   const CgRateagencyWidget({super.key});
 
+  static String routeName = 'cgRateagency';
+  static String routePath = '/cgRateagency';
+
   @override
   State<CgRateagencyWidget> createState() => _CgRateagencyWidgetState();
 }

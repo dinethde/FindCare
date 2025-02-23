@@ -9,6 +9,9 @@ export 'cg_availability_model.dart';
 class CgAvailabilityWidget extends StatefulWidget {
   const CgAvailabilityWidget({super.key});
 
+  static String routeName = 'cgAvailability';
+  static String routePath = '/cgAvailability';
+
   @override
   State<CgAvailabilityWidget> createState() => _CgAvailabilityWidgetState();
 }
@@ -46,37 +49,28 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: Stack(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  children: [
-                    wrapWithModel(
-                      model: _model.appbarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: AppbarWidget(
-                        fLable: 'Profile',
-                        secLable: 'Done',
-                      ),
+              Stack(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                children: [
+                  wrapWithModel(
+                    model: _model.appbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: AppbarWidget(
+                      fLable: 'Profile',
+                      secLable: 'Done',
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Academic Skills ',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                      ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.16, 0.0),
+                    child: Text(
+                      'Academic Skills ',
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Container(
                 decoration: BoxDecoration(

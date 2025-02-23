@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'householdsignup_model.dart';
@@ -10,6 +11,9 @@ export 'householdsignup_model.dart';
 
 class HouseholdsignupWidget extends StatefulWidget {
   const HouseholdsignupWidget({super.key});
+
+  static String routeName = 'Householdsignup';
+  static String routePath = '/householdsignup';
 
   @override
   State<HouseholdsignupWidget> createState() => _HouseholdsignupWidgetState();
@@ -190,7 +194,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('PatientFirstPage');
+                        context.pushNamed(PatientFirstPageWidget.routeName);
                       },
                       text: 'Find a Caregiver',
                       options: FFButtonOptions(
@@ -226,7 +230,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('houseHoldSignin');
+                            context.pushNamed(HouseHoldSigninWidget.routeName);
                           },
                           text: 'Sign-in here',
                           options: FFButtonOptions(

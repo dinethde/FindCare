@@ -9,6 +9,9 @@ export 'cg_general_info_model.dart';
 class CgGeneralInfoWidget extends StatefulWidget {
   const CgGeneralInfoWidget({super.key});
 
+  static String routeName = 'cgGeneralInfo';
+  static String routePath = '/cgGeneralInfo';
+
   @override
   State<CgGeneralInfoWidget> createState() => _CgGeneralInfoWidgetState();
 }

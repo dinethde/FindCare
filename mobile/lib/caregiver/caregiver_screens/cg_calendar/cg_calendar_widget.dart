@@ -10,6 +10,9 @@ export 'cg_calendar_model.dart';
 class CgCalendarWidget extends StatefulWidget {
   const CgCalendarWidget({super.key});
 
+  static String routeName = 'cgCalendar';
+  static String routePath = '/cgCalendar';
+
   @override
   State<CgCalendarWidget> createState() => _CgCalendarWidgetState();
 }

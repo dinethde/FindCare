@@ -50,6 +50,7 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
+        minWidth: MediaQuery.sizeOf(context).width * 1.0,
         minHeight: 120.0,
         maxWidth: double.infinity,
         maxHeight: double.infinity,

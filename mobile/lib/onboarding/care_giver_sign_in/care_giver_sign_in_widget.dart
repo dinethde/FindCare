@@ -1,14 +1,19 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/onboarding/button/button_widget.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/invisible_button/invisible_button_widget.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'care_giver_sign_in_model.dart';
 export 'care_giver_sign_in_model.dart';
 
 class CareGiverSignInWidget extends StatefulWidget {
   const CareGiverSignInWidget({super.key});
+
+  static String routeName = 'careGiverSignIn';
+  static String routePath = '/careGiverSignIn';
 
   @override
   State<CareGiverSignInWidget> createState() => _CareGiverSignInWidgetState();
@@ -115,13 +120,28 @@ class _CareGiverSignInWidgetState extends State<CareGiverSignInWidget> {
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    wrapWithModel(
-                      model: _model.buttonModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: ButtonWidget(
-                        btnText: 'Sign in',
-                        btnColor: FlutterFlowTheme.of(context).primary,
+                    FFButtonWidget(
+                      onPressed: () async {
+                        context.pushNamed(CaregiverHomeageWidget.routeName);
+                      },
+                      text: 'Sign in',
+                      options: FFButtonOptions(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 47.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle: GoogleFonts.getFont(
+                          'Inter Tight',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16.0,
+                        ),
+                        borderRadius: BorderRadius.circular(6.0),
                       ),
+                      showLoadingIndicator: false,
                     ),
                   ],
                 ),

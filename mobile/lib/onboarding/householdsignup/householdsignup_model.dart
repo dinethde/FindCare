@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
+import '/index.dart';
 import 'householdsignup_widget.dart' show HouseholdsignupWidget;
 import 'package:flutter/material.dart';
 

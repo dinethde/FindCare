@@ -10,6 +10,9 @@ export 'cg_experience_model.dart';
 class CgExperienceWidget extends StatefulWidget {
   const CgExperienceWidget({super.key});
 
+  static String routeName = 'cgExperience';
+  static String routePath = '/cgExperience';
+
   @override
   State<CgExperienceWidget> createState() => _CgExperienceWidgetState();
 }

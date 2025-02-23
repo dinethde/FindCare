@@ -2,12 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'cg_agency_details_model.dart';
 export 'cg_agency_details_model.dart';
 
 class CgAgencyDetailsWidget extends StatefulWidget {
   const CgAgencyDetailsWidget({super.key});
+
+  static String routeName = 'cgAgencyDetails';
+  static String routePath = '/cgAgencyDetails';
 
   @override
   State<CgAgencyDetailsWidget> createState() => _CgAgencyDetailsWidgetState();
@@ -93,40 +97,68 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel1,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.grain,
-                          color: Color(0xFFFF2D55),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context
+                            .pushNamed(MessageScreenCaregiverWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel1,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.grain,
+                            color: Color(0xFFFF2D55),
+                            size: 16.0,
+                          ),
+                          lable: 'Message',
                         ),
-                        lable: 'Message',
                       ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel2,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.document_scanner_rounded,
-                          color: Color(0xFF046ACC),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgGeneralInfoWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel2,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.document_scanner_rounded,
+                            color: Color(0xFF046ACC),
+                            size: 16.0,
+                          ),
+                          lable: 'General Info',
                         ),
-                        lable: 'General Info',
                       ),
                     ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel3,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.medical_information_sharp,
-                          color: Color(0xFFC27E2D),
-                          size: 16.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(CgAgencyRatingsWidget.routeName);
+                      },
+                      child: wrapWithModel(
+                        model: _model.iconButtonModel3,
+                        updateCallback: () => safeSetState(() {}),
+                        child: IconButtonWidget(
+                          icon1: Icon(
+                            Icons.medical_information_sharp,
+                            color: Color(0xFFC27E2D),
+                            size: 16.0,
+                          ),
+                          lable: 'Ratings',
                         ),
-                        lable: 'Ratings',
                       ),
                     ),
                   ].divide(SizedBox(height: 12.0)),

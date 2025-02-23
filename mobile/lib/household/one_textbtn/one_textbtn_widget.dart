@@ -94,6 +94,9 @@ class _OneTextbtnWidgetState extends State<OneTextbtnWidget> {
                   valueOrDefault<String>(
                     widget.lable,
                     'TEXT',
+                  ).maybeHandleOverflow(
+                    maxChars: 5,
+                    replacement: '…',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Inter',

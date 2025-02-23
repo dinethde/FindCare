@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/index.dart';
 import 'profile_page_widget.dart' show ProfilePageWidget;
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,8 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   late IconButtonModel iconButtonModel3;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel4;
+  // Model for nav_barHouse component.
+  late NavBarHouseModel navBarHouseModel;
 
   @override
   void initState(BuildContext context) {
@@ -25,6 +29,7 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
     iconButtonModel2 = createModel(context, () => IconButtonModel());
     iconButtonModel3 = createModel(context, () => IconButtonModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
+    navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
   @override
@@ -34,5 +39,6 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
     iconButtonModel2.dispose();
     iconButtonModel3.dispose();
     iconButtonModel4.dispose();
+    navBarHouseModel.dispose();
   }
 }

@@ -45,7 +45,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        minWidth: 160.0,
+        minWidth: MediaQuery.sizeOf(context).width * 1.0,
         minHeight: 148.0,
         maxWidth: double.infinity,
         maxHeight: double.infinity,

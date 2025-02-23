@@ -9,6 +9,9 @@ export 'pc_personalinfo_model.dart';
 class PcPersonalinfoWidget extends StatefulWidget {
   const PcPersonalinfoWidget({super.key});
 
+  static String routeName = 'pcPersonalinfo';
+  static String routePath = '/pcPersonalinfo';
+
   @override
   State<PcPersonalinfoWidget> createState() => _PcPersonalinfoWidgetState();
 }
@@ -48,37 +51,29 @@ class _PcPersonalinfoWidgetState extends State<PcPersonalinfoWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: Stack(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  children: [
-                    wrapWithModel(
-                      model: _model.appbarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: AppbarWidget(
-                        fLable: 'Profile',
-                        secLable: 'Edit',
-                      ),
+              Stack(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                children: [
+                  wrapWithModel(
+                    model: _model.appbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: AppbarWidget(
+                      fLable: 'Profile',
+                      secLable: 'Edit',
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Personal details',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                      ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      'Personal details',
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Container(
                 decoration: BoxDecoration(

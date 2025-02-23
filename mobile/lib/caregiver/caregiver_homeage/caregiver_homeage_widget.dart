@@ -9,12 +9,16 @@ import '/household/icon_button/icon_button_widget.dart';
 import '/household/paitent_report/paitent_report_widget.dart';
 import '/household/patient_block/patient_block_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'caregiver_homeage_model.dart';
 export 'caregiver_homeage_model.dart';
 
 class CaregiverHomeageWidget extends StatefulWidget {
   const CaregiverHomeageWidget({super.key});
+
+  static String routeName = 'CaregiverHomeage';
+  static String routePath = '/caregiverHomeage';
 
   @override
   State<CaregiverHomeageWidget> createState() => _CaregiverHomeageWidgetState();
@@ -95,16 +99,27 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                      Container(
-                                        width: 40.0,
-                                        height: 40.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/385/600',
-                                          fit: BoxFit.cover,
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                              CaregiverersonalLinksWidget
+                                                  .routeName);
+                                        },
+                                        child: Container(
+                                          width: 40.0,
+                                          height: 40.0,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/385/600',
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ].divide(SizedBox(width: 121.0)),
@@ -247,6 +262,8 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                                                               'Inter',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
+                                                                          fontSize:
+                                                                              14.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -303,23 +320,27 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  wrapWithModel(
-                                    model: _model.homeCardModel1,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: HomeCardWidget(
-                                      textColor: Color(0xFF6210C1),
-                                      label: 'Inform Caregiver',
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.homeCardModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: HomeCardWidget(
+                                        textColor: Color(0xFF6210C1),
+                                        label: 'Inform Caregiver',
+                                      ),
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.homeCardModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: HomeCardWidget(
-                                      textColor: Color(0xFF007AFF),
-                                      label: 'Inform Agency',
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.homeCardModel2,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: HomeCardWidget(
+                                        textColor: Color(0xFF007AFF),
+                                        label: 'Inform Agency',
+                                      ),
                                     ),
                                   ),
-                                ],
+                                ].divide(SizedBox(width: 10.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -334,16 +355,26 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.iconButtonModel1,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.timelapse_sharp,
-                                        color: Color(0xFFF29D38),
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          CgClockinandoutWidget.routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.iconButtonModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: IconButtonWidget(
+                                        icon1: Icon(
+                                          Icons.timelapse_sharp,
+                                          color: Color(0xFFF29D38),
+                                          size: 24.0,
+                                        ),
+                                        lable: 'Clock In and Out',
                                       ),
-                                      lable: 'Clock In and Out',
                                     ),
                                   ),
                                   Container(
@@ -550,43 +581,47 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      wrapWithModel(
-                                        model: _model.patientBlockModel,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: PatientBlockWidget(
-                                          textColor: Color(0xFFFF2D55),
-                                          label: 'Patient Rerpots',
-                                          icon: Icon(
-                                            Icons.favorite_rounded,
-                                            color: Color(0xFFFF2D55),
-                                            size: 16.0,
-                                          ),
-                                          textBox: 'Last Update',
-                                          icon2: Icon(
-                                            Icons.monitor_heart_outlined,
-                                            color: Color(0xFFFF2D55),
-                                            size: 38.0,
+                                      Expanded(
+                                        child: wrapWithModel(
+                                          model: _model.patientBlockModel,
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: PatientBlockWidget(
+                                            textColor: Color(0xFFFF2D55),
+                                            label: 'Patient Rerpots',
+                                            icon: Icon(
+                                              Icons.favorite_rounded,
+                                              color: Color(0xFFFF2D55),
+                                              size: 16.0,
+                                            ),
+                                            textBox: 'Last Update',
+                                            icon2: Icon(
+                                              Icons.monitor_heart_outlined,
+                                              color: Color(0xFFFF2D55),
+                                              size: 38.0,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                      wrapWithModel(
-                                        model: _model.paitentReportModel,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: PaitentReportWidget(
-                                          textColor: Color(0xFF0584FF),
-                                          label: 'Patient Reports',
-                                          icon: Icon(
-                                            Icons.reorder,
-                                            color: Color(0xFF0584FF),
-                                            size: 16.0,
-                                          ),
-                                          textBox: 'Last week',
-                                          icon2: Icon(
-                                            Icons.bar_chart,
-                                            color: Color(0xFF0584FF),
-                                            size: 38.0,
+                                      Expanded(
+                                        child: wrapWithModel(
+                                          model: _model.paitentReportModel,
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: PaitentReportWidget(
+                                            textColor: Color(0xFF0584FF),
+                                            label: 'Patient Reports',
+                                            icon: Icon(
+                                              Icons.reorder,
+                                              color: Color(0xFF0584FF),
+                                              size: 16.0,
+                                            ),
+                                            textBox: 'Last week',
+                                            icon2: Icon(
+                                              Icons.bar_chart,
+                                              color: Color(0xFF0584FF),
+                                              size: 38.0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -623,14 +658,11 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
-              child: wrapWithModel(
-                model: _model.navBarModel,
-                updateCallback: () => safeSetState(() {}),
-                child: NavBarWidget(
-                  page: 0,
-                ),
+            wrapWithModel(
+              model: _model.navBarModel,
+              updateCallback: () => safeSetState(() {}),
+              child: NavBarWidget(
+                page: 0,
               ),
             ),
           ],

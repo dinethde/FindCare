@@ -2,12 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'ps_patient_info_model.dart';
 export 'ps_patient_info_model.dart';
 
 class PsPatientInfoWidget extends StatefulWidget {
   const PsPatientInfoWidget({super.key});
+
+  static String routeName = 'psPatientInfo';
+  static String routePath = '/psPatientInfo';
 
   @override
   State<PsPatientInfoWidget> createState() => _PsPatientInfoWidgetState();
@@ -100,39 +104,67 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          wrapWithModel(
-                            model: _model.iconButtonModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.document_scanner,
-                                color: Color(0xFF456BB4),
-                                size: 16.0,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(PcQuickLinksWidget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.iconButtonModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: IconButtonWidget(
+                                icon1: Icon(
+                                  Icons.document_scanner,
+                                  color: Color(0xFF456BB4),
+                                  size: 16.0,
+                                ),
+                                lable: 'Patient Information',
                               ),
-                              lable: 'Patient Information',
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.iconButtonModel2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.calendar_month,
-                                size: 16.0,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context
+                                  .pushNamed(PcPatientReportsWidget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.iconButtonModel2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: IconButtonWidget(
+                                icon1: Icon(
+                                  Icons.calendar_month,
+                                  size: 16.0,
+                                ),
+                                lable: 'Patient reports',
                               ),
-                              lable: 'Patient reports',
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.iconButtonModel3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.add_circle_sharp,
-                                color: Color(0xFFFCA827),
-                                size: 16.0,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(PcCalendarWidget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.iconButtonModel3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: IconButtonWidget(
+                                icon1: Icon(
+                                  Icons.add_circle_sharp,
+                                  color: Color(0xFFFCA827),
+                                  size: 16.0,
+                                ),
+                                lable: 'Patient calendar',
                               ),
-                              lable: 'Patient calendar',
                             ),
                           ),
                           wrapWithModel(

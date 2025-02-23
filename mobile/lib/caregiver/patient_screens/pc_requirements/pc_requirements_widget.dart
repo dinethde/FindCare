@@ -10,6 +10,9 @@ export 'pc_requirements_model.dart';
 class PcRequirementsWidget extends StatefulWidget {
   const PcRequirementsWidget({super.key});
 
+  static String routeName = 'pcRequirements';
+  static String routePath = '/pcRequirements';
+
   @override
   State<PcRequirementsWidget> createState() => _PcRequirementsWidgetState();
 }

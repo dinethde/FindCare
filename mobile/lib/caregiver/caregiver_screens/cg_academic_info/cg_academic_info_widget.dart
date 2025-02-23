@@ -9,6 +9,9 @@ export 'cg_academic_info_model.dart';
 class CgAcademicInfoWidget extends StatefulWidget {
   const CgAcademicInfoWidget({super.key});
 
+  static String routeName = 'cgAcademicInfo';
+  static String routePath = '/cgAcademicInfo';
+
   @override
   State<CgAcademicInfoWidget> createState() => _CgAcademicInfoWidgetState();
 }

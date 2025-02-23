@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/index.dart';
 import 'caregiver_page_widget.dart' show CaregiverPageWidget;
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,8 @@ class CaregiverPageModel extends FlutterFlowModel<CaregiverPageWidget> {
   late IconButtonModel iconButtonModel4;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel5;
+  // Model for nav_barHouse component.
+  late NavBarHouseModel navBarHouseModel;
 
   @override
   void initState(BuildContext context) {
@@ -28,6 +32,7 @@ class CaregiverPageModel extends FlutterFlowModel<CaregiverPageWidget> {
     iconButtonModel3 = createModel(context, () => IconButtonModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
     iconButtonModel5 = createModel(context, () => IconButtonModel());
+    navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
   @override
@@ -38,5 +43,6 @@ class CaregiverPageModel extends FlutterFlowModel<CaregiverPageWidget> {
     iconButtonModel3.dispose();
     iconButtonModel4.dispose();
     iconButtonModel5.dispose();
+    navBarHouseModel.dispose();
   }
 }
