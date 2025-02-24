@@ -4,8 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'caregiver_reports_model.dart';
 export 'caregiver_reports_model.dart';
 
@@ -39,6 +41,8 @@ class _CaregiverReportsWidgetState extends State<CaregiverReportsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -288,113 +292,110 @@ class _CaregiverReportsWidgetState extends State<CaregiverReportsWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Container(
-                                            width: 80.0,
-                                            height: 80.0,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF562929),
+                                            width: 157.0,
+                                            height: 157.0,
+                                            child: custom_widgets
+                                                .CustomDoughnutChart(
+                                              width: 157.0,
+                                              height: 157.0,
+                                              data: FFAppState().data,
+                                              radius: 20.0,
                                             ),
                                           ),
                                           Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 0.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Container(
-                                                        width: 10.0,
-                                                        height: 10.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color:
-                                                              Color(0xFFC32929),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      width: 10.0,
+                                                      height: 10.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFFFF2D55),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
                                                       ),
-                                                      Text(
-                                                        'Satisfaction',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                    ),
+                                                    Text(
+                                                      'Satisfaction',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 5.0)),
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      width: 10.0,
+                                                      height: 10.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFF6210C1),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
                                                       ),
-                                                    ].divide(
-                                                        SizedBox(width: 5.0)),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Container(
-                                                        width: 10.0,
-                                                        height: 10.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color:
-                                                              Color(0xFFC32929),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
+                                                    ),
+                                                    Text(
+                                                      'Unsatisfactory',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 5.0)),
+                                                ),
+                                                Text(
+                                                  'Due to xxx & xxx reasons xx patient satisfaction has drop to 95%',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
-                                                      Text(
-                                                        'Unsatisfactory',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(width: 5.0)),
-                                                  ),
-                                                  Text(
-                                                    'Due to xxx & xxx reasons xx patient satisfaction has drop to 95%',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ].divide(
-                                                    SizedBox(height: 16.0)),
-                                              ),
+                                                ),
+                                              ].divide(SizedBox(height: 16.0)),
                                             ),
                                           ),
-                                        ],
+                                        ].divide(SizedBox(width: 20.0)),
                                       ),
                                     ),
                                   ),
