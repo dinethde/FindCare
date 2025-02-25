@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
@@ -16,6 +17,8 @@ class PcRequirementsModel extends FlutterFlowModel<PcRequirementsWidget> {
   late OneTextbtnModel oneTextbtnModel;
   // Model for ContentTextbox component.
   late ContentTextboxModel contentTextboxModel2;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
@@ -23,6 +26,7 @@ class PcRequirementsModel extends FlutterFlowModel<PcRequirementsWidget> {
     contentTextboxModel1 = createModel(context, () => ContentTextboxModel());
     oneTextbtnModel = createModel(context, () => OneTextbtnModel());
     contentTextboxModel2 = createModel(context, () => ContentTextboxModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -31,5 +35,6 @@ class PcRequirementsModel extends FlutterFlowModel<PcRequirementsWidget> {
     contentTextboxModel1.dispose();
     oneTextbtnModel.dispose();
     contentTextboxModel2.dispose();
+    navBarModel.dispose();
   }
 }

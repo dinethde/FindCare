@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
@@ -22,6 +23,8 @@ class PsPatientInfoModel extends FlutterFlowModel<PsPatientInfoWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
@@ -30,6 +33,7 @@ class PsPatientInfoModel extends FlutterFlowModel<PsPatientInfoWidget> {
     iconButtonModel2 = createModel(context, () => IconButtonModel());
     iconButtonModel3 = createModel(context, () => IconButtonModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -41,5 +45,7 @@ class PsPatientInfoModel extends FlutterFlowModel<PsPatientInfoWidget> {
     iconButtonModel4.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
+
+    navBarModel.dispose();
   }
 }

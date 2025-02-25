@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
@@ -15,6 +16,8 @@ class PatientsListModel extends FlutterFlowModel<PatientsListWidget> {
   late IconButtonModel iconButtonModel2;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel3;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
@@ -22,6 +25,7 @@ class PatientsListModel extends FlutterFlowModel<PatientsListWidget> {
     iconButtonModel1 = createModel(context, () => IconButtonModel());
     iconButtonModel2 = createModel(context, () => IconButtonModel());
     iconButtonModel3 = createModel(context, () => IconButtonModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -30,5 +34,6 @@ class PatientsListModel extends FlutterFlowModel<PatientsListWidget> {
     iconButtonModel1.dispose();
     iconButtonModel2.dispose();
     iconButtonModel3.dispose();
+    navBarModel.dispose();
   }
 }

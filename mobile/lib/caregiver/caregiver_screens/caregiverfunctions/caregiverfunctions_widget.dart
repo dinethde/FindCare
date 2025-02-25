@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
@@ -48,121 +49,149 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: wrapWithModel(
-                  model: _model.appBarLeftsideModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: AppBarLeftsideWidget(
-                    fLable: 'Quick links',
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: Column(
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+            child: Stack(
+              children: [
+                Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Functions',
-                      style:
-                          FlutterFlowTheme.of(context).displayMedium.override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.appBarLeftsideModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: AppBarLeftsideWidget(
+                          fLable: 'Quick links',
+                        ),
+                      ),
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(CgClockinandoutWidget.routeName);
-                          },
-                          child: wrapWithModel(
-                            model: _model.iconButtonModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.ten_k,
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Functions',
+                            style: FlutterFlowTheme.of(context)
+                                .displayMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      CgClockinandoutWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel1,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.ten_k,
+                                    ),
+                                    lable: 'Clock in and out',
+                                  ),
+                                ),
                               ),
-                              lable: 'Clock in and out',
-                            ),
-                          ),
-                        ),
-                        wrapWithModel(
-                          model: _model.iconButtonModel2,
-                          updateCallback: () => safeSetState(() {}),
-                          child: IconButtonWidget(
-                            icon1: Icon(
-                              Icons.ten_k_sharp,
-                            ),
-                            lable: 'Perform Tasks',
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(CgCalendarWidget.routeName);
-                          },
-                          child: wrapWithModel(
-                            model: _model.iconButtonModel3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.ten_k_rounded,
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(TodotaskWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel2,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.ten_k_sharp,
+                                    ),
+                                    lable: 'Perform Tasks',
+                                  ),
+                                ),
                               ),
-                              lable: 'View Calendar',
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(CgAgencyDetailsWidget.routeName);
-                          },
-                          child: wrapWithModel(
-                            model: _model.iconButtonModel4,
-                            updateCallback: () => safeSetState(() {}),
-                            child: IconButtonWidget(
-                              icon1: Icon(
-                                Icons.ten_k_outlined,
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(CgCalendarWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel3,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.ten_k_rounded,
+                                    ),
+                                    lable: 'View Calendar',
+                                  ),
+                                ),
                               ),
-                              lable: 'Inform Agency',
-                            ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      CgAgencyDetailsWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel4,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.ten_k_outlined,
+                                    ),
+                                    lable: 'Inform Agency',
+                                  ),
+                                ),
+                              ),
+                              wrapWithModel(
+                                model: _model.iconButtonModel5,
+                                updateCallback: () => safeSetState(() {}),
+                                child: IconButtonWidget(
+                                  icon1: Icon(
+                                    Icons.ten_mp_rounded,
+                                  ),
+                                  lable: 'Document Care Recipient Details',
+                                ),
+                              ),
+                            ].divide(SizedBox(height: 12.0)),
                           ),
-                        ),
-                        wrapWithModel(
-                          model: _model.iconButtonModel5,
-                          updateCallback: () => safeSetState(() {}),
-                          child: IconButtonWidget(
-                            icon1: Icon(
-                              Icons.ten_mp_rounded,
-                            ),
-                            lable: 'Document Care Recipient Details',
-                          ),
-                        ),
-                      ].divide(SizedBox(height: 12.0)),
+                        ].divide(SizedBox(height: 48.0)),
+                      ),
                     ),
-                  ].divide(SizedBox(height: 48.0)),
+                  ].divide(SizedBox(height: 32.0)),
                 ),
-              ),
-            ].divide(SizedBox(height: 32.0)),
+                wrapWithModel(
+                  model: _model.navBarModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: NavBarWidget(
+                    page: 2,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

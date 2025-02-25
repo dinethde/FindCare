@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'FindCare',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

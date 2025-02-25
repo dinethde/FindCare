@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'appbar_model.dart';
 export 'appbar_model.dart';
@@ -9,10 +10,14 @@ class AppbarWidget extends StatefulWidget {
     super.key,
     required this.fLable,
     String? secLable,
+    this.pgName,
+    required this.pgCount,
   }) : this.secLable = secLable ?? 'TEXT';
 
   final String? fLable;
   final String secLable;
+  final String? pgName;
+  final int? pgCount;
 
   @override
   State<AppbarWidget> createState() => _AppbarWidgetState();
@@ -79,17 +84,33 @@ class _AppbarWidgetState extends State<AppbarWidget> {
               ],
             ),
           ),
-          Text(
-            valueOrDefault<String>(
-              widget.secLable,
-              'TEXT',
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              if (widget.pgCount == 0) {
+                context.safePop();
+              } else {
+                await actions.navigateToPage(
+                  context,
+                  widget.pgName,
+                );
+              }
+            },
+            child: Text(
+              valueOrDefault<String>(
+                widget.secLable,
+                'TEXT',
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Inter',
+                    color: Color(0xFF007AFF),
+                    fontSize: 16.0,
+                    letterSpacing: 0.0,
+                  ),
             ),
-            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Inter',
-                  color: Color(0xFF007AFF),
-                  fontSize: 16.0,
-                  letterSpacing: 0.0,
-                ),
           ),
         ],
       ),
