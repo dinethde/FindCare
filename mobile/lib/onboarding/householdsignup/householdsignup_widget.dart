@@ -66,218 +66,244 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 35.0, 20.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Sign up',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                    Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
-                  ],
-                ),
-                Form(
-                  key: _model.formKey,
-                  autovalidateMode: AutovalidateMode.disabled,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      wrapWithModel(
-                        model: _model.textBoxModel1,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Email',
-                        ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: wrapWithModel(
-                              model: _model.textBoxhalfModel1,
-                              updateCallback: () => safeSetState(() {}),
-                              child: TextBoxhalfWidget(
-                                textField: 'First name',
-                              ),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Sign up',
+                              style: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                          ),
-                          Expanded(
-                            child: wrapWithModel(
-                              model: _model.textBoxhalfModel2,
-                              updateCallback: () => safeSetState(() {}),
-                              child: TextBoxhalfWidget(
-                                textField: 'Last name',
-                              ),
-                            ),
-                          ),
-                        ].divide(SizedBox(width: 16.0)),
-                      ),
-                      wrapWithModel(
-                        model: _model.textBoxModel2,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Mobile',
-                        ),
-                      ),
-                      wrapWithModel(
-                        model: _model.textBoxModel3,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Address',
-                        ),
-                      ),
-                      wrapWithModel(
-                        model: _model.textBoxModel4,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Password',
-                        ),
-                      ),
-                      wrapWithModel(
-                        model: _model.textBoxModel5,
-                        updateCallback: () => safeSetState(() {}),
-                        child: TextBoxWidget(
-                          textField: 'Confirm the password',
-                        ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Theme(
-                            data: ThemeData(
-                              checkboxTheme: CheckboxThemeData(
-                                visualDensity: VisualDensity.compact,
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                              ),
-                              unselectedWidgetColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                            ),
-                            child: Checkbox(
-                              value: _model.checkboxValue ??= true,
-                              onChanged: (newValue) async {
-                                safeSetState(
-                                    () => _model.checkboxValue = newValue!);
-                              },
-                              side: BorderSide(
-                                width: 2,
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: FlutterFlowTheme.of(context).info,
-                            ),
-                          ),
-                          Flexible(
-                            child: Text(
-                              'Agreeing all the inputed data is correct.',
-                              textAlign: TextAlign.start,
+                            Text(
+                              'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
                             ),
-                          ),
-                        ].divide(SizedBox(width: 12.0)),
-                      ),
-                    ].divide(SizedBox(height: 16.0)),
-                  ),
-                ),
-                if (!(isWeb
-                    ? MediaQuery.viewInsetsOf(context).bottom > 0
-                    : _isKeyboardVisible))
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          context.pushNamed(PatientFirstPageWidget.routeName);
-                        },
-                        text: 'Find a Caregiver',
-                        options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 47.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: GoogleFonts.getFont(
-                            'Inter Tight',
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.0,
-                          ),
-                          borderRadius: BorderRadius.circular(6.0),
+                          ],
                         ),
-                        showLoadingIndicator: false,
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Already sign up?',
-                            style: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
+                        Form(
+                          key: _model.formKey,
+                          autovalidateMode: AutovalidateMode.disabled,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              wrapWithModel(
+                                model: _model.textBoxModel1,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextBoxWidget(
+                                  textField: 'Email',
                                 ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.textBoxhalfModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: TextBoxhalfWidget(
+                                        textField: 'First name',
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.textBoxhalfModel2,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: TextBoxhalfWidget(
+                                        textField: 'Last name',
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(width: 16.0)),
+                              ),
+                              wrapWithModel(
+                                model: _model.textBoxModel2,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextBoxWidget(
+                                  textField: 'Mobile',
+                                ),
+                              ),
+                              wrapWithModel(
+                                model: _model.textBoxModel3,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextBoxWidget(
+                                  textField: 'Address',
+                                ),
+                              ),
+                              wrapWithModel(
+                                model: _model.textBoxModel4,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextBoxWidget(
+                                  textField: 'Password',
+                                ),
+                              ),
+                              wrapWithModel(
+                                model: _model.textBoxModel5,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextBoxWidget(
+                                  textField: 'Confirm the password',
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Theme(
+                                    data: ThemeData(
+                                      checkboxTheme: CheckboxThemeData(
+                                        visualDensity: VisualDensity.compact,
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(4.0),
+                                        ),
+                                      ),
+                                      unselectedWidgetColor:
+                                          FlutterFlowTheme.of(context)
+                                              .alternate,
+                                    ),
+                                    child: Checkbox(
+                                      value: _model.checkboxValue ??= true,
+                                      onChanged: (newValue) async {
+                                        safeSetState(() =>
+                                            _model.checkboxValue = newValue!);
+                                      },
+                                      side: BorderSide(
+                                        width: 2,
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                      ),
+                                      activeColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      checkColor:
+                                          FlutterFlowTheme.of(context).info,
+                                    ),
+                                  ),
+                                  Flexible(
+                                    child: Text(
+                                      'Agreeing all the inputed data is correct.',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(width: 12.0)),
+                              ),
+                            ].divide(SizedBox(height: 16.0)),
                           ),
+                        ),
+                      ].divide(SizedBox(height: 48.0)),
+                    ),
+                  ),
+                  if (!(isWeb
+                      ? MediaQuery.viewInsetsOf(context).bottom > 0
+                      : _isKeyboardVisible))
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
                           FFButtonWidget(
                             onPressed: () async {
                               context
-                                  .pushNamed(HouseHoldSigninWidget.routeName);
+                                  .pushNamed(PatientFirstPageWidget.routeName);
                             },
-                            text: 'Sign-in here',
+                            text: 'Find a Caregiver',
                             options: FFButtonOptions(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 47.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0x00FFFFFF),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFFFF3355),
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 0.0,
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: GoogleFonts.getFont(
+                                'Inter Tight',
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.0,
+                              ),
+                              borderRadius: BorderRadius.circular(6.0),
                             ),
+                            showLoadingIndicator: false,
                           ),
-                        ].divide(SizedBox(width: 3.0)),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Already sign up?',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                      HouseHoldSigninWidget.routeName);
+                                },
+                                text: 'Sign-in here',
+                                options: FFButtonOptions(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0x00FFFFFF),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: Color(0xFFFF3355),
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0.0,
+                                ),
+                              ),
+                            ].divide(SizedBox(width: 3.0)),
+                          ),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
-                    ].divide(SizedBox(height: 8.0)),
-                  ),
-              ].divide(SizedBox(height: 10.0)),
+                    ),
+                ].divide(SizedBox(height: 60.0)),
+              ),
             ),
           ),
         ),
