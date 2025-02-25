@@ -3,8 +3,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
+import 'dart:async';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'householdsignup_model.dart';
 export 'householdsignup_model.dart';
@@ -23,17 +25,31 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
   late HouseholdsignupModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late StreamSubscription<bool> _keyboardVisibilitySubscription;
+  bool _isKeyboardVisible = false;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => HouseholdsignupModel());
+
+    if (!isWeb) {
+      _keyboardVisibilitySubscription =
+          KeyboardVisibilityController().onChange.listen((bool visible) {
+        safeSetState(() {
+          _isKeyboardVisible = visible;
+        });
+      });
+    }
   }
 
   @override
   void dispose() {
     _model.dispose();
 
+    if (!isWeb) {
+      _keyboardVisibilitySubscription.cancel();
+    }
     super.dispose();
   }
 
@@ -95,14 +111,16 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          wrapWithModel(
-                            model: _model.textBoxhalfModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: TextBoxhalfWidget(
-                              textField: 'First name',
+                          Expanded(
+                            child: wrapWithModel(
+                              model: _model.textBoxhalfModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: TextBoxhalfWidget(
+                                textField: 'First name',
+                              ),
                             ),
                           ),
-                          Flexible(
+                          Expanded(
                             child: wrapWithModel(
                               model: _model.textBoxhalfModel2,
                               updateCallback: () => safeSetState(() {}),
@@ -111,7 +129,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                               ),
                             ),
                           ),
-                        ],
+                        ].divide(SizedBox(width: 16.0)),
                       ),
                       wrapWithModel(
                         model: _model.textBoxModel2,
@@ -189,71 +207,76 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                     ].divide(SizedBox(height: 16.0)),
                   ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed(PatientFirstPageWidget.routeName);
-                      },
-                      text: 'Find a Caregiver',
-                      options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 47.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle: GoogleFonts.getFont(
-                          'Inter Tight',
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16.0,
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed(PatientFirstPageWidget.routeName);
+                        },
+                        text: 'Find a Caregiver',
+                        options: FFButtonOptions(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 47.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: GoogleFonts.getFont(
+                            'Inter Tight',
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.0,
+                          ),
+                          borderRadius: BorderRadius.circular(6.0),
                         ),
-                        borderRadius: BorderRadius.circular(6.0),
+                        showLoadingIndicator: false,
                       ),
-                      showLoadingIndicator: false,
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Already sign up?',
-                          style:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(HouseHoldSigninWidget.routeName);
-                          },
-                          text: 'Sign-in here',
-                          options: FFButtonOptions(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Already sign up?',
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFFFF3355),
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                 ),
-                            elevation: 0.0,
                           ),
-                        ),
-                      ].divide(SizedBox(width: 3.0)),
-                    ),
-                  ].divide(SizedBox(height: 8.0)),
-                ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              context
+                                  .pushNamed(HouseHoldSigninWidget.routeName);
+                            },
+                            text: 'Sign-in here',
+                            options: FFButtonOptions(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0x00FFFFFF),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: Color(0xFFFF3355),
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                            ),
+                          ),
+                        ].divide(SizedBox(width: 3.0)),
+                      ),
+                    ].divide(SizedBox(height: 8.0)),
+                  ),
               ].divide(SizedBox(height: 10.0)),
             ),
           ),

@@ -86,7 +86,7 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Caregiver',
+                                  'Dineth De Silva',
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(

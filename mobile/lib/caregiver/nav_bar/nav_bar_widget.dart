@@ -110,7 +110,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    _model.number = 2;
+                    _model.number = 1;
                     safeSetState(() {});
 
                     context.pushNamed(PsPatientInfoWidget.routeName);
@@ -121,7 +121,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     children: [
                       Icon(
                         Icons.water_drop_rounded,
-                        color: widget.page == 2
+                        color: widget.page == 1
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
                         size: 23.0,
@@ -130,7 +130,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         'Patient',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Inter',
-                              color: widget.page == 2
+                              color: widget.page == 1
                                   ? FlutterFlowTheme.of(context).primary
                                   : Color(0xFFBBBBBB),
                               letterSpacing: 0.0,
@@ -148,7 +148,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    _model.number = 3;
+                    _model.number = 2;
                     safeSetState(() {});
 
                     context.pushNamed(CaregiverersonalLinksWidget.routeName);
@@ -159,7 +159,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     children: [
                       Icon(
                         Icons.child_care_outlined,
-                        color: widget.page == 3
+                        color: widget.page == 2
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
                         size: 24.0,
@@ -168,7 +168,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         'Caregiver',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Inter',
-                              color: widget.page == 3
+                              color: widget.page == 2
                                   ? FlutterFlowTheme.of(context).primary
                                   : Color(0xFFBBBBBB),
                               letterSpacing: 0.0,

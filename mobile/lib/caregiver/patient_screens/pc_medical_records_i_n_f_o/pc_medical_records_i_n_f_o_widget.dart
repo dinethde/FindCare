@@ -78,7 +78,8 @@ class _PcMedicalRecordsINFOWidgetState
                           child: AppbarWidget(
                             fLable: 'Medical records',
                             secLable: 'Edit',
-                            pgCount: 0,
+                            pgName: 'pcMedicalRecordsEDIT',
+                            pgCount: 1,
                           ),
                         ),
                       ),

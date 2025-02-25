@@ -47,73 +47,72 @@ class _AppbarWidgetState extends State<AppbarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Icon(
-                  Icons.chevron_left,
-                  color: Color(0xFF007AFF),
-                  size: 24.0,
-                ),
-                Text(
-                  valueOrDefault<String>(
-                    widget.fLable,
-                    'TEXT',
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
-                        color: Color(0xFF007AFF),
-                        fontSize: 16.0,
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ],
-            ),
-          ),
-          InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              if (widget.pgCount == 0) {
-                context.safePop();
-              } else {
-                await actions.navigateToPage(
-                  context,
-                  widget.pgName,
-                );
-              }
-            },
-            child: Text(
-              valueOrDefault<String>(
-                widget.secLable,
-                'TEXT',
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            context.safePop();
+          },
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Icon(
+                Icons.chevron_left,
+                color: Color(0xFF007AFF),
+                size: 24.0,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
-                    color: Color(0xFF007AFF),
-                    fontSize: 16.0,
-                    letterSpacing: 0.0,
-                  ),
-            ),
+              Text(
+                valueOrDefault<String>(
+                  widget.fLable,
+                  'TEXT',
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      color: Color(0xFF007AFF),
+                      fontSize: 16.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            if (widget.pgCount == 0) {
+              context.safePop();
+              return;
+            } else {
+              await actions.navigateToPage(
+                context,
+                widget.pgName,
+              );
+              return;
+            }
+          },
+          child: Text(
+            valueOrDefault<String>(
+              widget.secLable,
+              'TEXT',
+            ),
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Inter',
+                  color: Color(0xFF007AFF),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
+          ),
+        ),
+      ],
     );
   }
 }
