@@ -1,9 +1,9 @@
 {
   "private": true,
   "workspaces": [
-    "Mobile-Frontend/*",
-    "SaaS-Frontend/*",
-    "packages/*"
+    "packages/*",
+    "mobile/*",
+    "saas/*"
   ],
   "packageManager": "npm@8.5.0",
   "scripts": {
