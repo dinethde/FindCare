@@ -5,6 +5,7 @@ import NetworkIcon from "../icons/NetworkIcon";
 import UserProfileIcon from "../icons/UserProfileIcon copy";
 import SearchIcon from "../icons/SearchIcon";
 import "@/app/globals.css";
+import PrimaryButton from "../ui/PrimaryButton";
 
 // Define page title mapping
 const pageTitles: { [key: string]: string } = {
@@ -24,6 +25,7 @@ const pageTitles: { [key: string]: string } = {
 export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isCaregiverPage = pathname === "/caregivers";
 
   return (
     <div className="flex flex-col gap-6">
@@ -61,6 +63,11 @@ export default function Header() {
         {/* Show greeting only on home page */}
         {isHomePage ? (
           <h2 className="text-h1">Hi, Dineth Silva</h2>
+        ) : isCaregiverPage ? (
+          <div className="w-full flex justify-between items-center">
+            <h2 className="text-h1">{pageTitles[pathname]}</h2>
+            <PrimaryButton content="New Caregiver" />
+          </div>
         ) : (
           <h2 className="text-h1">{pageTitles[pathname]}</h2>
         )}
