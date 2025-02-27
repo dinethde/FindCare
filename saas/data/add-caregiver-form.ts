@@ -1,4 +1,8 @@
-import type { FormField, TabOption, Caregiver } from "@/types/form"
+import type {
+  FormField,
+  TabOption,
+  Caregiver,
+} from "@/types/add-caregiver-form";
 
 // Sample caregiver data
 export const caregivers: Caregiver[] = [
@@ -32,16 +36,16 @@ export const caregivers: Caregiver[] = [
     email: "",
     password: "",
   },
-]
+];
 
 /**
  * Generates the next caregiver ID
  * @returns {string} The next caregiver ID
  */
 export function generateNextCaregiverId(): string {
-  const lastId = caregivers[caregivers.length - 1]?.id ?? "CG0000"
-  const numPart = Number.parseInt(lastId.slice(2), 10)
-  return `CG${(numPart + 1).toString().padStart(4, "0")}`
+  const lastId = caregivers[caregivers.length - 1]?.id ?? "CG0000";
+  const numPart = Number.parseInt(lastId.slice(2), 10);
+  return `CG${(numPart + 1).toString().padStart(4, "0")}`;
 }
 
 // Define tab options for the form
@@ -56,7 +60,7 @@ export const tabOptions: TabOption[] = [
     title: "Bulk Upload",
     description: "Upload multiple caregivers at once using a CSV file.",
   },
-]
+];
 
 // Define form fields for the caregiver form
 export const formFields: FormField[] = [
@@ -140,5 +144,4 @@ export const formFields: FormField[] = [
     type: "password",
     placeholder: "******",
   },
-]
-
+];
