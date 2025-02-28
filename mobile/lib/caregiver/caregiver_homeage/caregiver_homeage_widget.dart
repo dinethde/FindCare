@@ -534,22 +534,33 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                           lable: 'Validate caregiver',
                                         ),
                                       ),
-                                      wrapWithModel(
-                                        model: _model.iconButtonModel4,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: IconButtonWidget(
-                                          icon1: Icon(
-                                            Icons.all_inclusive_sharp,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                              CGQuicklinksWidget.routeName);
+                                        },
+                                        child: wrapWithModel(
+                                          model: _model.iconButtonModel4,
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: IconButtonWidget(
+                                            icon1: Icon(
+                                              Icons.all_inclusive_sharp,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                            lable: 'Show all caregiver details',
                                           ),
-                                          lable: 'Show all caregiver details',
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 16.0)),
+                                    ],
                                   ),
-                                ].divide(SizedBox(height: 16.0)),
+                                ],
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -564,16 +575,26 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.iconButtonModel5,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.all_inclusive_rounded,
-                                        color: Color(0xFFFF2D55),
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          PatientsListWidget.routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.iconButtonModel5,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: IconButtonWidget(
+                                        icon1: Icon(
+                                          Icons.all_inclusive_rounded,
+                                          color: Color(0xFFFF2D55),
+                                          size: 24.0,
+                                        ),
+                                        lable: 'View all the assigned patients',
                                       ),
-                                      lable: 'View all the assigned patients',
                                     ),
                                   ),
                                   Row(
@@ -632,16 +653,26 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: CalenderWidget(),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.iconButtonModel6,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.all_inclusive_sharp,
-                                        color: Color(0xFFFF2D55),
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          PcQuickLinksWidget.routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.iconButtonModel6,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: IconButtonWidget(
+                                        icon1: Icon(
+                                          Icons.all_inclusive_sharp,
+                                          color: Color(0xFFFF2D55),
+                                          size: 24.0,
+                                        ),
+                                        lable: 'Show all patient details',
                                       ),
-                                      lable: 'Show all patient details',
                                     ),
                                   ),
                                 ].divide(SizedBox(height: 16.0)),
@@ -654,7 +685,7 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                         ),
                       ],
                     ),
-                  ],
+                  ].addToEnd(SizedBox(height: 90.0)),
                 ),
               ),
             ),

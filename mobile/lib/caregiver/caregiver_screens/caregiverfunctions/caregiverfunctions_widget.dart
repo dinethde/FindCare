@@ -176,7 +176,7 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   lable: 'Document Care Recipient Details',
                                 ),
                               ),
-                            ].divide(SizedBox(height: 12.0)),
+                            ],
                           ),
                         ].divide(SizedBox(height: 48.0)),
                       ),

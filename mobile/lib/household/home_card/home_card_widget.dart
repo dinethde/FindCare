@@ -74,7 +74,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: widget.textColor,
+                            color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -123,13 +123,14 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                       'Hello World',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
+                            color: widget.textColor,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
                     ),
                     Icon(
                       Icons.notifications_sharp,
-                      color: FlutterFlowTheme.of(context).primaryText,
+                      color: widget.textColor,
                       size: 18.0,
                     ),
                   ],

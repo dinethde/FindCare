@@ -75,10 +75,12 @@ class _MedicalRecordsINFOWidgetState extends State<MedicalRecordsINFOWidget> {
                           model: _model.appbarModel,
                           updateCallback: () => safeSetState(() {}),
                           child: AppbarWidget(
-                            fLable: 'Medical records',
+                            fLable: 'Profile',
                             secLable: 'Edit',
                             pgName: 'MedicalRecordUpdate',
                             pgCount: 1,
+                            validPage: 1,
+                            anyBack: 'profilePage',
                           ),
                         ),
                       ),

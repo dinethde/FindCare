@@ -189,7 +189,7 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,

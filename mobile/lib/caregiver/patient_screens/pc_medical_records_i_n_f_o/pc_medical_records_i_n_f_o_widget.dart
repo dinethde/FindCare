@@ -76,10 +76,12 @@ class _PcMedicalRecordsINFOWidgetState
                           model: _model.appbarModel,
                           updateCallback: () => safeSetState(() {}),
                           child: AppbarWidget(
-                            fLable: 'Medical records',
+                            fLable: 'Profile',
                             secLable: 'Edit',
                             pgName: 'pcMedicalRecordsEDIT',
                             pgCount: 1,
+                            validPage: 1,
+                            anyBack: 'psPatientInfo',
                           ),
                         ),
                       ),

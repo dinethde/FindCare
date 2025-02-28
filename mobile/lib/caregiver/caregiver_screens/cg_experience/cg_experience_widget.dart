@@ -344,7 +344,9 @@ class _CgExperienceWidgetState extends State<CgExperienceWidget> {
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(height: 20.0)),
+                    ]
+                        .divide(SizedBox(height: 20.0))
+                        .addToEnd(SizedBox(height: 90.0)),
                   ),
                 ),
                 wrapWithModel(

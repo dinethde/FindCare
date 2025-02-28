@@ -1,9 +1,11 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
-import '/onboarding/button_half/button_half_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'rate_caregiver_model.dart';
 export 'rate_caregiver_model.dart';
 
@@ -105,14 +107,31 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.buttonHalfModel,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ButtonHalfWidget(
-                                      btnText: 'Rate Caregiver',
-                                      btnColor:
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      context.pushNamed(
+                                          RateCareGiverScreenWidget.routeName);
+                                    },
+                                    text: 'Rate Agency',
+                                    options: FFButtonOptions(
+                                      width: 126.0,
+                                      height: 43.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
                                           FlutterFlowTheme.of(context).primary,
+                                      textStyle: GoogleFonts.getFont(
+                                        'Inter Tight',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(6.0),
                                     ),
+                                    showLoadingIndicator: false,
                                   ),
                                 ].divide(SizedBox(height: 12.0)),
                               ),

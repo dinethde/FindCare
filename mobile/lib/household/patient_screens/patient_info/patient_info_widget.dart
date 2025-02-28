@@ -64,6 +64,7 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                         child: AppbarWidget(
                           fLable: 'Quick Links',
                           secLable: 'Done',
+                          pgName: '',
                           pgCount: 0,
                         ),
                       ),
@@ -193,7 +194,7 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
@@ -219,7 +220,7 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                               lable: 'Add a goal',
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                     ].addToEnd(SizedBox(height: 30.0)),
                   ),

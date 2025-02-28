@@ -1,5 +1,5 @@
 import '/caregiver/nav_bar/nav_bar_widget.dart';
-import '/components/chart_time_widget.dart';
+import '/componets_approved/chart_time/chart_time_widget.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

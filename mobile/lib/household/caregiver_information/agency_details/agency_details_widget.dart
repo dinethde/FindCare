@@ -169,7 +169,7 @@ class _AgencyDetailsWidgetState extends State<AgencyDetailsWidget> {
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                     ].divide(SizedBox(height: 48.0)),
                   ),

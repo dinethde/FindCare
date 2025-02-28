@@ -1,7 +1,6 @@
 import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -60,17 +59,6 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
-                      child: wrapWithModel(
-                        model: _model.appBarRightsideModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: AppBarRightsideWidget(
-                          secLable: 'Done',
-                        ),
-                      ),
-                    ),
                     Container(
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -188,7 +176,7 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                     lable: 'Add new patient',
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 12.0)),
+                              ],
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,

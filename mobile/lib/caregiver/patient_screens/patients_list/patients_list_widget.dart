@@ -142,7 +142,7 @@ class _PatientsListWidgetState extends State<PatientsListWidget> {
                                     lable: 'Patient 3 - Dineth Silva',
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 12.0)),
+                              ],
                             ),
                           ].divide(SizedBox(height: 50.0)),
                         ),

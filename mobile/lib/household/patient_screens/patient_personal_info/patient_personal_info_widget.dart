@@ -67,6 +67,8 @@ class _PatientPersonalInfoWidgetState extends State<PatientPersonalInfoWidget> {
                           secLable: 'Edit',
                           pgName: 'PatientInformationEDIT',
                           pgCount: 1,
+                          validPage: 1,
+                          anyBack: 'profilePage',
                         ),
                       ),
                       Container(

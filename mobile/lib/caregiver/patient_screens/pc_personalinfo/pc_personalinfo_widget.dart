@@ -59,18 +59,21 @@ class _PcPersonalinfoWidgetState extends State<PcPersonalinfoWidget> {
                     Stack(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       children: [
-                        wrapWithModel(
-                          model: _model.appbarModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: AppbarWidget(
-                            fLable: 'Profile',
-                            secLable: 'Edit',
-                            pgCount: 0,
-                          ),
-                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
+                              20.0, 0.0, 20.0, 0.0),
+                          child: wrapWithModel(
+                            model: _model.appbarModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: AppbarWidget(
+                              fLable: 'Profile',
+                              secLable: 'Done',
+                              pgCount: 0,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.16, 0.0),
                           child: Text(
                             'Personal details',
                             style: FlutterFlowTheme.of(context)

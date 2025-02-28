@@ -11,13 +11,19 @@ class AppbarWidget extends StatefulWidget {
     required this.fLable,
     String? secLable,
     this.pgName,
-    required this.pgCount,
-  }) : this.secLable = secLable ?? 'TEXT';
+    int? pgCount,
+    int? validPage,
+    this.anyBack,
+  })  : this.secLable = secLable ?? 'TEXT',
+        this.pgCount = pgCount ?? 0,
+        this.validPage = validPage ?? 0;
 
   final String? fLable;
   final String secLable;
   final String? pgName;
-  final int? pgCount;
+  final int pgCount;
+  final int validPage;
+  final String? anyBack;
 
   @override
   State<AppbarWidget> createState() => _AppbarWidgetState();
@@ -57,7 +63,24 @@ class _AppbarWidgetState extends State<AppbarWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            context.safePop();
+            if (widget.validPage == 0) {
+              context.safePop();
+              return;
+            } else {
+              if ((widget.validPage == 1) && (widget.pgCount == 1)) {
+                await actions.navigateToPage(
+                  context,
+                  widget.anyBack,
+                );
+              } else {
+                await actions.navigateToPage(
+                  context,
+                  widget.pgName,
+                );
+              }
+
+              return;
+            }
           },
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -88,16 +111,31 @@ class _AppbarWidgetState extends State<AppbarWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
+            var _shouldSetState = false;
             if (widget.pgCount == 0) {
-              context.safePop();
-              return;
+              if (widget.validPage == 0) {
+                context.safePop();
+                if (_shouldSetState) safeSetState(() {});
+                return;
+              } else {
+                await actions.navigateToPage(
+                  context,
+                  widget.pgName,
+                );
+                if (_shouldSetState) safeSetState(() {});
+                return;
+              }
             } else {
-              await actions.navigateToPage(
+              _model.backSrc = await actions.navigateToPageReturn(
                 context,
                 widget.pgName,
               );
+              _shouldSetState = true;
+              if (_shouldSetState) safeSetState(() {});
               return;
             }
+
+            if (_shouldSetState) safeSetState(() {});
           },
           child: Text(
             valueOrDefault<String>(

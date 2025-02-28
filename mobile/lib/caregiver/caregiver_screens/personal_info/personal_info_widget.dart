@@ -70,6 +70,8 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
                               secLable: 'Edit',
                               pgName: 'personalInfoEDIT',
                               pgCount: 1,
+                              validPage: 1,
+                              anyBack: 'CaregiverersonalLinks',
                             ),
                           ),
                           Align(

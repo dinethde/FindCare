@@ -170,7 +170,7 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                     ].divide(SizedBox(height: 48.0)),
                   ),

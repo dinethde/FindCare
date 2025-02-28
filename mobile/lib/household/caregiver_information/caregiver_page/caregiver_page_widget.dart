@@ -185,7 +185,7 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 12.0)),
+                              ],
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,

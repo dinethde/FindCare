@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
@@ -59,13 +58,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      wrapWithModel(
-                        model: _model.appBarRightsideModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: AppBarRightsideWidget(
-                          secLable: 'Done',
-                        ),
-                      ),
                       Container(
                         decoration: BoxDecoration(
                           color:
@@ -155,7 +147,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(PcCalendarWidget.routeName);
+                                context
+                                    .pushNamed(PatientCalendarWidget.routeName);
                               },
                               child: wrapWithModel(
                                 model: _model.iconButtonModel3,
@@ -181,7 +174,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 lable: 'Add new patient',
                               ),
                             ),
-                          ].divide(SizedBox(height: 12.0)),
+                          ],
                         ),
                       ),
                     ].divide(SizedBox(height: 32.0)),

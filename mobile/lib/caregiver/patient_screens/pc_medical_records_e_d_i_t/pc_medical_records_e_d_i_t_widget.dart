@@ -78,7 +78,9 @@ class _PcMedicalRecordsEDITWidgetState
                           child: AppbarWidget(
                             fLable: 'Medical records',
                             secLable: 'Done',
+                            pgName: 'pcMedicalRecordsINFO',
                             pgCount: 0,
+                            validPage: 1,
                           ),
                         ),
                       ),

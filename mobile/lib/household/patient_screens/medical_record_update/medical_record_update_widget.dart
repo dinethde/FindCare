@@ -75,9 +75,11 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                           model: _model.appbarModel,
                           updateCallback: () => safeSetState(() {}),
                           child: AppbarWidget(
-                            fLable: 'Medical records',
+                            fLable: '01/05',
                             secLable: 'Done',
-                            pgCount: 0,
+                            pgName: 'MedicalRecordsINFO',
+                            validPage: 1,
+                            anyBack: '',
                           ),
                         ),
                       ),

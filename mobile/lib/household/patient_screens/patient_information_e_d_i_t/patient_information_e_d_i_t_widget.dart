@@ -66,7 +66,10 @@ class _PatientInformationEDITWidgetState
                         child: AppbarWidget(
                           fLable: 'Profile',
                           secLable: 'Done',
-                          pgCount: 0,
+                          pgName: 'PatientPersonalInfo',
+                          pgCount: 1,
+                          validPage: 1,
+                          anyBack: 'profilePage',
                         ),
                       ),
                       Container(

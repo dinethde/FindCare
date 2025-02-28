@@ -189,7 +189,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ],
                       ),
                     ].divide(SizedBox(height: 48.0)),
                   ),

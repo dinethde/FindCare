@@ -1,4 +1,4 @@
-import '/components/chart_time_widget.dart';
+import '/componets_approved/chart_time/chart_time_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';

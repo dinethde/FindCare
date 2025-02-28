@@ -65,7 +65,9 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                           child: AppbarWidget(
                             fLable: 'Profile',
                             secLable: 'Done',
+                            pgName: 'PersonalInfo',
                             pgCount: 0,
+                            validPage: 1,
                           ),
                         ),
                         Column(

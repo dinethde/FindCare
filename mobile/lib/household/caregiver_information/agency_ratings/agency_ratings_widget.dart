@@ -5,6 +5,7 @@ import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
 import '/household/softskill_c_o_m_p/softskill_c_o_m_p_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'agency_ratings_model.dart';
@@ -104,14 +105,14 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                         ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      context.pushNamed(
+                                          RateAgencyWidget.routeName);
                                     },
                                     text: 'Rate Agency',
                                     options: FFButtonOptions(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.25,
-                                      height: 35.0,
+                                      width: 126.0,
+                                      height: 43.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
@@ -123,7 +124,7 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                         'Inter Tight',
                                         color: Colors.white,
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 12.0,
+                                        fontSize: 16.0,
                                       ),
                                       borderRadius: BorderRadius.circular(6.0),
                                     ),

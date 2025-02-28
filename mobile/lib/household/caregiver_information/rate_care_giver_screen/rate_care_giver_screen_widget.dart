@@ -87,7 +87,7 @@ class _RateCareGiverScreenWidgetState extends State<RateCareGiverScreenWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  'FindCare Agency',
+                                  'Dineth De Silva',
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
