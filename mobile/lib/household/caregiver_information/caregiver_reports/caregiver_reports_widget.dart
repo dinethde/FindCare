@@ -99,7 +99,7 @@ class _CaregiverReportsWidgetState extends State<CaregiverReportsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Client Reports',
+                                      'Caregiver Reports',
                                       style: FlutterFlowTheme.of(context)
                                           .displayMedium
                                           .override(
@@ -108,7 +108,7 @@ class _CaregiverReportsWidgetState extends State<CaregiverReportsWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                      'Monitor caregiver performance and engagement with detailed reports on hours worked, arrival rates, and overall reliability.',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
