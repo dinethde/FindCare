@@ -142,7 +142,7 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.grain,
+                                      FFIcons.kpLivingWithDiabetes,
                                       color: Color(0xFFFF2D55),
                                       size: 16.0,
                                     ),
@@ -165,7 +165,7 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.document_scanner_rounded,
+                                      FFIcons.kdocText,
                                       color: Color(0xFF046ACC),
                                       size: 16.0,
                                     ),
@@ -188,9 +188,9 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.medical_information_sharp,
+                                      FFIcons.kpMedicalRecords,
                                       color: Color(0xFFC27E2D),
-                                      size: 16.0,
+                                      size: 22.0,
                                     ),
                                     lable: 'Medical records',
                                   ),

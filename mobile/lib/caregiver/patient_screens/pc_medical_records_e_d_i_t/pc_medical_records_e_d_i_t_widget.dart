@@ -123,7 +123,7 @@ class _PcMedicalRecordsEDITWidgetState
                                       FontAwesomeIcons.shareSquare,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
+                                      size: 20.0,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
