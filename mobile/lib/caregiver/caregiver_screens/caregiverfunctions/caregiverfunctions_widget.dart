@@ -102,7 +102,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k,
+                                      FFIcons.kuserClock,
+                                      color: Color(0xFFFF2D55),
+                                      size: 16.0,
                                     ),
                                     lable: 'Clock in and out',
                                   ),
@@ -121,7 +123,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_sharp,
+                                      FFIcons.kfileSignature,
+                                      color: Color(0xFF3793FF),
+                                      size: 16.0,
                                     ),
                                     lable: 'Perform Tasks',
                                   ),
@@ -140,7 +144,8 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_rounded,
+                                      Icons.calendar_month,
+                                      size: 17.0,
                                     ),
                                     lable: 'View Calendar',
                                   ),
@@ -160,7 +165,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_outlined,
+                                      FFIcons.kmegaphone,
+                                      color: Color(0xFFF8962C),
+                                      size: 17.0,
                                     ),
                                     lable: 'Inform Agency',
                                   ),
@@ -171,7 +178,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
                                   icon1: Icon(
-                                    Icons.ten_mp_rounded,
+                                    FFIcons.kdocText,
+                                    color: Color(0xFF238CFF),
+                                    size: 16.0,
                                   ),
                                   lable: 'Document Care Recipient Details',
                                 ),
