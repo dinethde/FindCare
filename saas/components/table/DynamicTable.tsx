@@ -22,6 +22,7 @@ interface DynamicTableProps {
     type: "text" | "number" | "checkbox";
     options?: string[];
   }>;
+  initialFilters?: Record<string, any>;
 }
 
 export function DynamicTable({
@@ -29,6 +30,7 @@ export function DynamicTable({
   data,
   filterOptions,
   tableType = "",
+  initialFilters = {},
 }: DynamicTableProps) {
   const pathname = usePathname();
   const pageIn = pathname.split("/")[1];
@@ -38,12 +40,15 @@ export function DynamicTable({
     navigationLink = "caregivers/profile/overview";
   } else if (pageIn === "clients") {
     navigationLink = "/clients/profile/overview";
+  } else if (pageIn === "filla-spot") {
+    navigationLink = "/filla-spot/modal";
   } else {
     navigationLink = "/";
   }
 
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const [activeFilters, setActiveFilters] = useState<Record<string, any>>({});
+  const [activeFilters, setActiveFilters] =
+    useState<Record<string, any>>(initialFilters);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredData = useMemo(() => {
@@ -118,7 +123,7 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8">
+    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8 w-full h-fit">
       <div className="">
         <TableHeader
           title={config.title}
@@ -148,50 +153,63 @@ export function DynamicTable({
               <th className="w-10 pb-2" />
             </tr>
           </thead>
-          <tbody>
-            {filteredData.map((item, index) => (
-              <tr
-                key={item.id}
-                className={
-                  index !== filteredData.length - 1
-                    ? "border-b border-gray-600"
-                    : ""
-                }
-              >
-                {config.columns.map((column, colIndex) => (
-                  <td
-                    key={column.key}
-                    className={`${
-                      config.title === "Caregiver List" ? "py-6" : "py-5"
-                    } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
-                      config.headerAlignments &&
-                      config.headerAlignments[colIndex]
-                        ? `text-${config.headerAlignments[colIndex]}`
-                        : ""
-                    }`}
-                  >
-                    {renderCell(column, item)}
-                  </td>
-                ))}
+          {filteredData.length > 0 ? (
+            <tbody>
+              {filteredData.map((item, index) => (
+                <tr
+                  key={item.id}
+                  className={
+                    index !== filteredData.length - 1
+                      ? "border-b border-gray-600"
+                      : ""
+                  }
+                >
+                  {config.columns.map((column, colIndex) => (
+                    <td
+                      key={column.key}
+                      className={`${
+                        config.title === "Caregiver List" ? "py-6" : "py-5"
+                      } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
+                        config.headerAlignments &&
+                        config.headerAlignments[colIndex]
+                          ? `text-${config.headerAlignments[colIndex]}`
+                          : ""
+                      }`}
+                    >
+                      {renderCell(column, item)}
+                    </td>
+                  ))}
 
-                {tableType === "fill" ? (
-                  <td className="py-5 pr-4 flex justify-end">
-                    <Link href={navigationLink}>
-                      <Square2StackIcon className="h-5 w-5" />
-                    </Link>
-                  </td>
-                ) : tableType === "eye" ? (
-                  <td className="py-5 pr-4 flex justify-end">
-                    <Link href={navigationLink}>
-                      <Eye className="h-5 w-5" />
-                    </Link>
-                  </td>
-                ) : (
-                  <td className="hidden"></td>
-                )}
-              </tr>
-            ))}
-          </tbody>
+                  {tableType === "fill" ? (
+                    <td className="py-5 pr-4 flex justify-end">
+                      <Link href={navigationLink}>
+                        <Square2StackIcon className="h-5 w-5" />
+                      </Link>
+                    </td>
+                  ) : tableType === "eye" ? (
+                    <td className="py-5 pr-4 flex justify-end">
+                      <Link href={navigationLink}>
+                        <Eye className="h-5 w-5" />
+                      </Link>
+                    </td>
+                  ) : (
+                    <td className="hidden"></td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          ) : (
+            <tr>
+              <td
+                colSpan={
+                  config.columns.length + (config.showViewAction ? 1 : 0)
+                }
+                className="py-8 text-center"
+              >
+                {config.emptyStateMessage || "No data available"}
+              </td>
+            </tr>
+          )}
         </table>
       </div>
       <FilterModal2
@@ -199,6 +217,7 @@ export function DynamicTable({
         onClose={() => setIsFilterModalOpen(false)}
         onApply={handleFilter}
         filterOptions={filterOptions}
+        initialFilters={initialFilters}
       />
     </div>
   );

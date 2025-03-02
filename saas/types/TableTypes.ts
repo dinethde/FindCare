@@ -1,34 +1,36 @@
-import type React from "react";
+import type { ReactNode } from "react";
 
-export interface TableColumn {
-  key: string;
+export type CareType = "Domici Care" | "Senior Care" | "Child Care";
+export type CaregiverStatus = "Free" | "Working" | "leave";
+
+export interface TableColumn<T> {
+  key: keyof T;
   header: string;
   width?: string;
-  render?: (value: any) => React.ReactNode;
+  render?: (value: T[keyof T], item: T) => ReactNode;
 }
 
-export interface TableConfig {
+export interface TableConfig<T> {
   title: string;
-  columns: TableColumn[];
+  columns: TableColumn<T>[];
   showTabs?: boolean;
   showSeeMore?: boolean;
-  headerAlignments?: string[];
   showViewAction?: boolean;
 }
 
-export interface TableProps {
-  config: TableConfig;
-  data: any[];
-  onSearch: (query: string) => void;
-  onFilter: () => void;
+export interface FilterOption {
+  key: string;
+  label: string;
+  type: "text" | "number" | "checkbox";
+  options?: string[];
 }
-
-export type CareType = "Domici Care" | "Senior Care" | "Child Care";
 
 export interface Caregiver {
   id: string;
   name: string;
   contactInfo: string;
+  status?: CaregiverStatus;
+  clients?: number;
   careType: CareType;
   rate: number;
   location: string;
@@ -53,9 +55,12 @@ export interface Feedback {
   review: string;
 }
 
-export interface FilterOption {
-  key: string;
-  label: string;
-  type: "number" | "text" | "checkbox";
-  options?: string[];
+export interface Match {
+  id: string;
+  name: string;
+  careType: CareType;
+  rate: number;
+  location: string;
+  reason: string;
+  isBestMatch: boolean;
 }

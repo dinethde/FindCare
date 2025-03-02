@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 interface ModalProps {
   children: React.ReactNode;
   routePath: string;
-  width?: number;
 }
 
-export function Modal({ children, routePath, width = 90 }: ModalProps) {
+export function Modal({ children, routePath }: ModalProps) {
   const router = useRouter();
 
   // When the overlay is clicked, navigate to "/cargiver"
@@ -28,8 +27,10 @@ export function Modal({ children, routePath, width = 90 }: ModalProps) {
       onClick={handleOverlayClick}
     >
       <div
-        className={`absolute top-0 bottom-0 left-0 right-0 m-auto w-[${width}vw] h-[87vh] z-10 max-h-screen bg-white
-             rounded-regular shadow-[0px_2px_8px_rgba(0,_0,_0,_0.15)] overflow-hidden`}
+        className="
+            absolute top-0 bottom-0 left-0 right-0 m-auto w-[80vw] h-[87vh] z-10 max-h-screen bg-white
+             rounded-regular shadow-[0px_2px_8px_rgba(0,_0,_0,_0.15)] overflow-hidden
+            "
         onClick={handleModalClick}
       >
         <div className="max-h-full">{children}</div>

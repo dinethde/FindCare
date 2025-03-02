@@ -26,6 +26,8 @@ export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isCaregiverPage = pathname === "/caregivers";
+  const isFillaSpotPage = pathname === "/filla-spot";
+  console.log("pathname", pageTitles[pathname]);
 
   return (
     <div className="flex flex-col gap-6">
@@ -68,6 +70,8 @@ export default function Header() {
             <h2 className="text-h1">{pageTitles[pathname]}</h2>
             <PrimaryButton content="New Caregiver" />
           </div>
+        ) : isFillaSpotPage ? (
+          <h2 className="text-h1">Fill a Spot</h2>
         ) : (
           <h2 className="text-h1">{pageTitles[pathname]}</h2>
         )}
