@@ -173,7 +173,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                         ],
                                       ),
                                       Text(
-                                        'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                        'Hi, I wanted to confirm the schedule for tomorrow. Please let me know if there are any changes.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -232,7 +232,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            '16:54',
+                                            '15:05',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -245,7 +245,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                         ],
                                       ),
                                       Text(
-                                        'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                        'Thank you for the service provided last week. The caregiver was excellent and very professional.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -317,7 +317,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                         ],
                                       ),
                                       Text(
-                                        'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                        'Caregiver didn\'t arrive on time.  I’d like to schedule a call.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
