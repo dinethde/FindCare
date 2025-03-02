@@ -1,9 +1,10 @@
 import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/onboarding/button_half/button_half_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'patient_requirements_model.dart';
@@ -11,6 +12,9 @@ export 'patient_requirements_model.dart';
 
 class PatientRequirementsWidget extends StatefulWidget {
   const PatientRequirementsWidget({super.key});
+
+  static String routeName = 'PatientRequirements';
+  static String routePath = '/patientRequirements';
 
   @override
   State<PatientRequirementsWidget> createState() =>
@@ -192,7 +196,7 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed('Personalization');
+                      context.pushNamed(PersonalizationWidget.routeName);
                     },
                     text: 'Continue',
                     options: FFButtonOptions(

@@ -6,6 +6,7 @@ import '/household/home_card/home_card_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/household/paitent_report/paitent_report_widget.dart';
 import '/household/patient_block/patient_block_widget.dart';
+import '/index.dart';
 import 'caregiver_homeage_widget.dart' show CaregiverHomeageWidget;
 import 'package:flutter/material.dart';
 

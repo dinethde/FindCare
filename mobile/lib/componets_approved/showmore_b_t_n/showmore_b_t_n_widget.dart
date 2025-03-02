@@ -1,6 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'showmore_b_t_n_model.dart';
 export 'showmore_b_t_n_model.dart';
@@ -43,12 +43,15 @@ class _ShowmoreBTNWidgetState extends State<ShowmoreBTNWidget> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
+      borderRadius: BorderRadius.circular(0.0),
       child: Container(
         constraints: BoxConstraints(
           minWidth: 105.0,
           minHeight: 20.0,
         ),
-        decoration: BoxDecoration(),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(0.0),
+        ),
         child: FFButtonWidget(
           onPressed: () {
             print('Button pressed ...');
@@ -63,7 +66,7 @@ class _ShowmoreBTNWidgetState extends State<ShowmoreBTNWidget> {
           ),
           options: FFButtonOptions(
             height: 40.0,
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
             iconAlignment: IconAlignment.end,
             iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
             color: Color(0x00E0E3E7),

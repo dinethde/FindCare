@@ -1,5 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'content_textbox_model.dart';
 export 'content_textbox_model.dart';
@@ -63,13 +63,13 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
           obscureText: false,
           decoration: InputDecoration(
             isDense: true,
-            labelText: widget.textField,
             alignLabelWithHint: true,
+            hintText: widget.textField,
             hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Inter',
                   fontSize: 16.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.normal,
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(

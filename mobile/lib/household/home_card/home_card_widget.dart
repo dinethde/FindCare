@@ -1,6 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'home_card_model.dart';
 export 'home_card_model.dart';
@@ -45,7 +45,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        minWidth: 160.0,
+        minWidth: MediaQuery.sizeOf(context).width * 1.0,
         minHeight: 148.0,
         maxWidth: double.infinity,
         maxHeight: double.infinity,
@@ -74,7 +74,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
-                            color: widget.textColor,
+                            color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -123,13 +123,14 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                       'Hello World',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
+                            color: widget.textColor,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
                     ),
                     Icon(
                       Icons.notifications_sharp,
-                      color: FlutterFlowTheme.of(context).primaryText,
+                      color: widget.textColor,
                       size: 18.0,
                     ),
                   ],

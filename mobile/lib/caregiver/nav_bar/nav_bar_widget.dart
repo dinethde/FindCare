@@ -1,5 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'nav_bar_model.dart';
@@ -74,7 +75,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 0;
                     safeSetState(() {});
 
-                    context.pushNamed('CaregiverHomeage');
+                    context.pushNamed(CaregiverHomeageWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -87,23 +88,18 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             : Color(0xFFBBBBBB),
                         size: 23.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Home',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 0
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Home',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 0
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -117,36 +113,31 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 1;
                     safeSetState(() {});
 
-                    context.pushNamed('Marketplace');
+                    context.pushNamed(PatientsListWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.search,
+                      Icon(
+                        Icons.water_drop_rounded,
                         color: widget.page == 1
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
                         size: 23.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Explore',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 1
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Patient',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 1
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -160,36 +151,31 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 2;
                     safeSetState(() {});
 
-                    context.pushNamed('CaregiverPage');
+                    context.pushNamed(CaregiverersonalLinksWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.water_drop_rounded,
+                        Icons.child_care_outlined,
                         color: widget.page == 2
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 23.0,
+                        size: 24.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Patient',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 2
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Caregiver',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 2
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),
@@ -202,47 +188,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   onTap: () async {
                     _model.number = 3;
                     safeSetState(() {});
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.child_care_outlined,
-                        color: widget.page == 3
-                            ? FlutterFlowTheme.of(context).primary
-                            : Color(0xFFBBBBBB),
-                        size: 24.0,
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Caregiver',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 3
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    _model.number = 4;
-                    safeSetState(() {});
+
+                    context.pushNamed(MessageScreenCaregiverWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -250,28 +197,23 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     children: [
                       Icon(
                         Icons.message_sharp,
-                        color: widget.page == 4
+                        color: widget.page == 3
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
                         size: 24.0,
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                        child: Text(
-                          'Message',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Inter',
-                                    color: widget.page == 4
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : Color(0xFFBBBBBB),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
+                      Text(
+                        'Message',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              color: widget.page == 3
+                                  ? FlutterFlowTheme.of(context).primary
+                                  : Color(0xFFBBBBBB),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                    ],
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ),
               ),

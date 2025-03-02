@@ -1,6 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'market_educational_model.dart';
 export 'market_educational_model.dart';
@@ -49,64 +48,48 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 220.0,
-      constraints: BoxConstraints(
-        minHeight: 150.0,
-        maxHeight: double.infinity,
-      ),
+      height: 160.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
         border: Border.all(
           color: FlutterFlowTheme.of(context).alternate,
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
-              child: Text(
-                valueOrDefault<String>(
-                  widget.title,
-                  'Title',
-                ).maybeHandleOverflow(
-                  maxChars: 10,
-                  replacement: '…',
-                ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              valueOrDefault<String>(
+                widget.title,
+                'Title',
+              ).maybeHandleOverflow(
+                maxChars: 10,
+                replacement: '…',
               ),
-            ),
-            Flexible(
-              child: Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
-                child: AutoSizeText(
-                  valueOrDefault<String>(
-                    widget.normalText,
-                    'Lorem ipsum dolor sit amet consectetur. Ac consequat cursus',
-                  ).maybeHandleOverflow(
-                    maxChars: 45,
-                    replacement: '…',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Inter',
+                    fontSize: 14.0,
+                    letterSpacing: 0.0,
                   ),
-                  textAlign: TextAlign.start,
-                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Inter',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
             ),
-          ]
-              .divide(SizedBox(height: 8.0))
-              .addToStart(SizedBox(height: 46.0))
-              .addToEnd(SizedBox(height: 10.0)),
+            Text(
+              valueOrDefault<String>(
+                widget.normalText,
+                'asdasd',
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Roboto',
+                    color: Color(0xFFABABAB),
+                    fontSize: 10.0,
+                    letterSpacing: 0.0,
+                  ),
+            ),
+          ].divide(SizedBox(height: 8.0)).addToStart(SizedBox(height: 4.0)),
         ),
       ),
     );

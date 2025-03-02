@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'onboard_role_select_widget.dart' show OnboardRoleSelectWidget;
 import 'package:flutter/material.dart';
 
