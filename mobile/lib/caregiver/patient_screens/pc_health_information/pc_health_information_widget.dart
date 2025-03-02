@@ -120,6 +120,7 @@ class _PcHealthInformationWidgetState extends State<PcHealthInformationWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ContentTextboxWidget(
                                     textField: 'HIV/AIDS',
+                                    readOnly: false,
                                   ),
                                 ),
                               ].divide(SizedBox(height: 12.0)),
@@ -168,6 +169,7 @@ class _PcHealthInformationWidgetState extends State<PcHealthInformationWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: ContentTextboxWidget(
                                     textField: 'Down Syndrome',
+                                    readOnly: false,
                                   ),
                                 ),
                               ].divide(SizedBox(height: 12.0)),

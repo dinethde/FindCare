@@ -240,10 +240,10 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                                                       FlutterFlowRadioButton(
                                                                     options: [
                                                                       'Inform Agency asdasdasdasd',
-                                                                      'Inform Agency',
-                                                                      'Inform Agency',
-                                                                      'Inform Agency',
-                                                                      'Inform Agency'
+                                                                      'Inform Agency1',
+                                                                      'Inform Agency2',
+                                                                      'Inform Agency3',
+                                                                      'Inform Agency4'
                                                                     ].toList(),
                                                                     onChanged: (val) =>
                                                                         safeSetState(

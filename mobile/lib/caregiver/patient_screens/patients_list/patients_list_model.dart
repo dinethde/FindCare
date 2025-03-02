@@ -2,6 +2,7 @@ import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'patients_list_widget.dart' show PatientsListWidget;
 import 'package:flutter/material.dart';
 

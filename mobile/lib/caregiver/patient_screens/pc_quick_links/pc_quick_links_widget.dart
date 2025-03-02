@@ -128,29 +128,50 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              wrapWithModel(
-                                model: _model.iconButtonModel2,
-                                updateCallback: () => safeSetState(() {}),
-                                child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.grain,
-                                    color: Color(0xFFFF2D55),
-                                    size: 16.0,
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      PcHealthInformationWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel2,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.grain,
+                                      color: Color(0xFFFF2D55),
+                                      size: 16.0,
+                                    ),
+                                    lable:
+                                        'Living with diabetes, arthritis ...',
                                   ),
-                                  lable: 'Living with diabetes, arthritis ...',
                                 ),
                               ),
-                              wrapWithModel(
-                                model: _model.iconButtonModel3,
-                                updateCallback: () => safeSetState(() {}),
-                                child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.document_scanner_rounded,
-                                    color: Color(0xFF046ACC),
-                                    size: 16.0,
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      PcRequirementsWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel3,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.document_scanner_rounded,
+                                      color: Color(0xFF046ACC),
+                                      size: 16.0,
+                                    ),
+                                    lable:
+                                        'Require a caregiver specialized in ...',
                                   ),
-                                  lable:
-                                      'Require a caregiver specialized in ...',
                                 ),
                               ),
                               InkWell(

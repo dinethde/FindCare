@@ -113,7 +113,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 1;
                     safeSetState(() {});
 
-                    context.pushNamed(PsPatientInfoWidget.routeName);
+                    context.pushNamed(PatientsListWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
