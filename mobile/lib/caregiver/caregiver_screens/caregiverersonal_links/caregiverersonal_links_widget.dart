@@ -112,7 +112,8 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.calendar_month,
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFFF2D55),
                                         size: 16.0,
                                       ),
                                       lable: 'Personal information',
@@ -133,9 +134,9 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.add_circle_sharp,
-                                        color: Color(0xFFFCA827),
-                                        size: 16.0,
+                                        FFIcons.kcogAlt,
+                                        color: Color(0xFF39C0F2),
+                                        size: 18.0,
                                       ),
                                       lable: 'Functions',
                                     ),
@@ -155,8 +156,9 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.info,
-                                        color: Color(0xFFCC2444),
+                                        FFIcons.kcgHomepgCaregiverReports,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 16.0,
                                       ),
                                       lable: 'Reports',
@@ -192,8 +194,8 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.document_scanner,
-                                        color: Color(0xFF456BB4),
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFFF2D55),
                                         size: 16.0,
                                       ),
                                       lable: 'Caregiver agency’s information',
