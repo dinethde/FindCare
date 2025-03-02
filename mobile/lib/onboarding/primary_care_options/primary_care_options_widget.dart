@@ -1,8 +1,9 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/button_half/button_half_widget.dart';
 import '/onboarding/selection_button/selection_button_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'primary_care_options_model.dart';
@@ -10,6 +11,9 @@ export 'primary_care_options_model.dart';
 
 class PrimaryCareOptionsWidget extends StatefulWidget {
   const PrimaryCareOptionsWidget({super.key});
+
+  static String routeName = 'PrimaryCareOptions';
+  static String routePath = '/primaryCareOptions';
 
   @override
   State<PrimaryCareOptionsWidget> createState() =>
@@ -170,7 +174,7 @@ class _PrimaryCareOptionsWidgetState extends State<PrimaryCareOptionsWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('PatientDiseases');
+                    context.pushNamed(PatientDiseasesWidget.routeName);
                   },
                   text: 'Continue',
                   options: FFButtonOptions(

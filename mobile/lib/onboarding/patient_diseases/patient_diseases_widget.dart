@@ -1,8 +1,9 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/button_half/button_half_widget.dart';
 import '/onboarding/dropdown/dropdown_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'patient_diseases_model.dart';
@@ -10,6 +11,9 @@ export 'patient_diseases_model.dart';
 
 class PatientDiseasesWidget extends StatefulWidget {
   const PatientDiseasesWidget({super.key});
+
+  static String routeName = 'PatientDiseases';
+  static String routePath = '/patientDiseases';
 
   @override
   State<PatientDiseasesWidget> createState() => _PatientDiseasesWidgetState();
@@ -152,7 +156,7 @@ class _PatientDiseasesWidgetState extends State<PatientDiseasesWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('PatientRequirements');
+                    context.pushNamed(PatientRequirementsWidget.routeName);
                   },
                   text: 'Continue',
                   options: FFButtonOptions(

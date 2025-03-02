@@ -1,13 +1,18 @@
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'pc_quick_links_model.dart';
 export 'pc_quick_links_model.dart';
 
 class PcQuickLinksWidget extends StatefulWidget {
   const PcQuickLinksWidget({super.key});
+
+  static String routeName = 'pcQuickLinks';
+  static String routePath = '/pcQuickLinks';
 
   @override
   State<PcQuickLinksWidget> createState() => _PcQuickLinksWidgetState();
@@ -44,105 +49,168 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+            child: Stack(
               children: [
-                wrapWithModel(
-                  model: _model.appBarLeftsideModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: AppBarLeftsideWidget(
-                    fLable: 'Quick links',
-                  ),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 40.0,
-                      height: 40.0,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      wrapWithModel(
+                        model: _model.appBarLeftsideModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: AppBarLeftsideWidget(
+                          fLable: 'Quick links',
+                        ),
                       ),
-                      child: Image.network(
-                        'https://picsum.photos/seed/385/600',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Text(
-                      'Dineth De Silva',
-                      style:
-                          FlutterFlowTheme.of(context).displayMedium.override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Image.network(
+                                  'https://picsum.photos/seed/385/600',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                    ),
-                  ].divide(SizedBox(height: 10.0)),
-                ),
-                wrapWithModel(
-                  model: _model.iconButtonModel1,
-                  updateCallback: () => safeSetState(() {}),
-                  child: IconButtonWidget(
-                    icon1: Icon(
-                      Icons.info_outline,
-                      size: 16.0,
-                    ),
-                    lable: '19 years old, 185cm, 60.0kg ...',
+                              Text(
+                                'Dineth De Silva',
+                                style: FlutterFlowTheme.of(context)
+                                    .displayMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ].divide(SizedBox(height: 10.0)),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(PcPersonalinfoWidget.routeName);
+                            },
+                            child: wrapWithModel(
+                              model: _model.iconButtonModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: IconButtonWidget(
+                                icon1: Icon(
+                                  Icons.info_outline,
+                                  size: 16.0,
+                                ),
+                                lable: '19 years old, 185cm, 60.0kg ...',
+                              ),
+                            ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Health Details',
+                                style: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      PcHealthInformationWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel2,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.grain,
+                                      color: Color(0xFFFF2D55),
+                                      size: 16.0,
+                                    ),
+                                    lable:
+                                        'Living with diabetes, arthritis ...',
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      PcRequirementsWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel3,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.document_scanner_rounded,
+                                      color: Color(0xFF046ACC),
+                                      size: 16.0,
+                                    ),
+                                    lable:
+                                        'Require a caregiver specialized in ...',
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      PcMedicalRecordsWidget.routeName);
+                                },
+                                child: wrapWithModel(
+                                  model: _model.iconButtonModel4,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.medical_information_sharp,
+                                      color: Color(0xFFC27E2D),
+                                      size: 16.0,
+                                    ),
+                                    lable: 'Medical records',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ].divide(SizedBox(height: 48.0)),
+                      ),
+                    ].addToEnd(SizedBox(height: 30.0)),
                   ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Health Details',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel2,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.grain,
-                          color: Color(0xFFFF2D55),
-                          size: 16.0,
-                        ),
-                        lable: 'Living with diabetes, arthritis ...',
-                      ),
-                    ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel3,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.document_scanner_rounded,
-                          color: Color(0xFF046ACC),
-                          size: 16.0,
-                        ),
-                        lable: 'Require a caregiver specialized in ...',
-                      ),
-                    ),
-                    wrapWithModel(
-                      model: _model.iconButtonModel4,
-                      updateCallback: () => safeSetState(() {}),
-                      child: IconButtonWidget(
-                        icon1: Icon(
-                          Icons.medical_information_sharp,
-                          color: Color(0xFFC27E2D),
-                          size: 16.0,
-                        ),
-                        lable: 'Medical records',
-                      ),
-                    ),
-                  ].divide(SizedBox(height: 12.0)),
+                wrapWithModel(
+                  model: _model.navBarModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: NavBarWidget(
+                    page: 1,
+                  ),
                 ),
-              ].addToEnd(SizedBox(height: 30.0)),
+              ],
             ),
           ),
         ),

@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'personalization_widget.dart' show PersonalizationWidget;
 import 'package:flutter/material.dart';
 

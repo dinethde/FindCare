@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
@@ -15,6 +16,8 @@ class CgAvailabilityModel extends FlutterFlowModel<CgAvailabilityWidget> {
   late ContentTextboxModel contentTextboxModel2;
   // Model for ContentTextbox component.
   late ContentTextboxModel contentTextboxModel3;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
@@ -22,6 +25,7 @@ class CgAvailabilityModel extends FlutterFlowModel<CgAvailabilityWidget> {
     contentTextboxModel1 = createModel(context, () => ContentTextboxModel());
     contentTextboxModel2 = createModel(context, () => ContentTextboxModel());
     contentTextboxModel3 = createModel(context, () => ContentTextboxModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -30,5 +34,6 @@ class CgAvailabilityModel extends FlutterFlowModel<CgAvailabilityWidget> {
     contentTextboxModel1.dispose();
     contentTextboxModel2.dispose();
     contentTextboxModel3.dispose();
+    navBarModel.dispose();
   }
 }

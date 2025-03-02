@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'patient_details_widget.dart' show PatientDetailsWidget;
 import 'package:flutter/material.dart';
 

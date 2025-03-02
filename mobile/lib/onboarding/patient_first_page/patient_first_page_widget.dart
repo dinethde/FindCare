@@ -1,6 +1,7 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'patient_first_page_model.dart';
@@ -8,6 +9,9 @@ export 'patient_first_page_model.dart';
 
 class PatientFirstPageWidget extends StatefulWidget {
   const PatientFirstPageWidget({super.key});
+
+  static String routeName = 'PatientFirstPage';
+  static String routePath = '/patientFirstPage';
 
   @override
   State<PatientFirstPageWidget> createState() => _PatientFirstPageWidgetState();
@@ -77,7 +81,7 @@ class _PatientFirstPageWidgetState extends State<PatientFirstPageWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('PatientDetails');
+                        context.pushNamed(PatientDetailsWidget.routeName);
                       },
                       text: '+ Add',
                       options: FFButtonOptions(
@@ -100,7 +104,7 @@ class _PatientFirstPageWidgetState extends State<PatientFirstPageWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('homePage');
+                        context.pushNamed(HomePageWidget.routeName);
                       },
                       text: 'Skip for Now',
                       options: FFButtonOptions(

@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
@@ -11,16 +12,20 @@ class CgSpecializedinModel extends FlutterFlowModel<CgSpecializedinWidget> {
   late AppBarLeftsideModel appBarLeftsideModel;
   // Model for SkillBox component.
   late SkillBoxModel skillBoxModel;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
     appBarLeftsideModel = createModel(context, () => AppBarLeftsideModel());
     skillBoxModel = createModel(context, () => SkillBoxModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
   void dispose() {
     appBarLeftsideModel.dispose();
     skillBoxModel.dispose();
+    navBarModel.dispose();
   }
 }

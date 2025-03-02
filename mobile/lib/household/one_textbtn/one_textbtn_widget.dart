@@ -1,6 +1,6 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'one_textbtn_model.dart';
@@ -90,17 +90,22 @@ class _OneTextbtnWidgetState extends State<OneTextbtnWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  valueOrDefault<String>(
-                    widget.lable,
-                    'TEXT',
+                Flexible(
+                  child: Text(
+                    valueOrDefault<String>(
+                      widget.lable,
+                      'TEXT',
+                    ).maybeHandleOverflow(
+                      maxChars: 5,
+                      replacement: '…',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
-                        fontSize: 16.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
                 ),
               ]
                   .divide(SizedBox(width: 8.0))
