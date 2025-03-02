@@ -1,15 +1,13 @@
 "use client";
 
 import { BestCaregiversCard } from "@/components/cards/BestCaregiversCard";
-// import { TotalShiftsCard } from "@/components/cards/TotalShiftsCard";
 import { CareEfficiencyCard } from "@/components/cards/CareEfficiencyCard";
-import { caregivers, shiftStats, efficiencyData } from "@/data/mock-data";
+import { caregivers, efficiencyData } from "@/data/mock-data";
 import Card from "@/components/cards/Card";
-import React from "react";
 import { TableConfig } from "@/types/TableTypes";
 import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
-import { shiftsData, performanceData } from "@/data/pie-chart/totalShiftCard";
+import { shiftsData } from "@/data/pie-chart/totalShiftCard";
 import { FilterOption } from "@/types/TableTypes";
 
 export default function CaregiverPage() {

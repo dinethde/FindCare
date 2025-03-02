@@ -53,6 +53,11 @@ export const NAVBAR_MIDDLE_LINKS: NavLink[] = [
     icon: CalendarIcon,
   },
   {
+    label: "Fill a Spot",
+    href: "/filla-spot",
+    icon: MobileAppIcon,
+  },
+  {
     label: "Agreements",
     href: "/agreements",
     icon: AgreementIcon,

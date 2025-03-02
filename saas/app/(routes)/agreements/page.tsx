@@ -1,12 +1,9 @@
-import React from 'react'
-import Link from "next/link";
+import React from "react";
 
 export default function CaregiversPage() {
-    return (
-        <div>
-            <h1>AGREEMENTS</h1>
-
-        </div>
-
-    )
+  return (
+    <div>
+      <h1>AGREEMENTS</h1>
+    </div>
+  );
 }

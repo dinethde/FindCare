@@ -1,4 +1,4 @@
-import type { Caregiver, Client, Feedback } from "../types/TableTypes";
+import type { Caregiver, Client, Feedback, Match } from "../types/TableTypes";
 
 export const caregiverData: Caregiver[] = [
   {
@@ -136,5 +136,38 @@ export const clientData: Client[] = [
     primaryCaregiver: "CG005",
     location: "Colombo",
     assignedTimes: ["Oct 26 Fri : 8am - 4pm", "Oct 28 Sun : 9am - 5pm"],
+  },
+];
+
+export const matchesData: Match[] = [
+  {
+    id: "1",
+    name: "Dineth De Silva",
+    careType: "Domici Care",
+    rate: 4,
+    location: "Colombo",
+    reason:
+      "Lorem ipsum dolor sit amet consectetur. Amet scelerisque ac integer condimen",
+    isBestMatch: false,
+  },
+  {
+    id: "2",
+    name: "Dineth De Silva",
+    careType: "Senior Care",
+    rate: 4,
+    location: "Colombo",
+    reason:
+      "Lorem ipsum dolor sit amet consectetur. Amet scelerisque ac integer condimen",
+    isBestMatch: false,
+  },
+  {
+    id: "3",
+    name: "Dineth De Silva",
+    careType: "Child Care",
+    rate: 4,
+    location: "Colombo",
+    reason:
+      "Lorem ipsum dolor sit amet consectetur. Amet scelerisque ac integer condimen",
+    isBestMatch: false,
   },
 ];

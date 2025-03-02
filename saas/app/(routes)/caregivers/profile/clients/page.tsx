@@ -3,7 +3,6 @@ import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { FeedbackTable } from "@/components/table/FeedbackTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TableConfig } from "@/types/TableTypes";
-import { Link } from "lucide-react";
 
 export default function CgClientsModal() {
   const caregiverConfig: TableConfig = {

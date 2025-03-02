@@ -3,6 +3,8 @@ import { Backgrounds } from "@/design-tokens/design-tokens";
 export const colorProps = {
   green: {
     hsl: "hsl(115, 100%, 35%)",
+    400: "#DDFFDA",
+    800: "#00B81A",
   },
 
   orange: {
