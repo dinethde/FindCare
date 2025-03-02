@@ -119,8 +119,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
+                                  FFIcons.kcgInformationpgMessage,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16.0,
                                 ),
                                 lable: 'Message',
@@ -140,8 +141,8 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
+                                  FFIcons.kpInfo,
+                                  color: Color(0xFFFF2D55),
                                   size: 16.0,
                                 ),
                                 lable: 'General Info',
@@ -162,9 +163,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  Icons.star_outlined,
+                                  color: Color(0xFFFAA800),
+                                  size: 18.0,
                                 ),
                                 lable: 'Ratings',
                               ),
