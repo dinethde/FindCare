@@ -113,9 +113,10 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.document_scanner,
-                                      color: Color(0xFF456BB4),
-                                      size: 16.0,
+                                      FFIcons.kcgHomepgValidatecg,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 18.0,
                                     ),
                                     lable: 'Validate caregiver',
                                   ),
@@ -134,7 +135,8 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.calendar_month,
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFFF2D55),
                                         size: 16.0,
                                       ),
                                       lable: 'Caregiver information',
@@ -155,9 +157,9 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.add_circle_sharp,
+                                        Icons.star_outlined,
                                         color: Color(0xFFFCA827),
-                                        size: 16.0,
+                                        size: 18.0,
                                       ),
                                       lable: 'Rate Caregiver',
                                     ),
@@ -177,8 +179,8 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.info,
-                                        color: Color(0xFFCC2444),
+                                        FFIcons.kcgHomepgCaregiverReports,
+                                        color: Color(0xFF3F91EC),
                                         size: 16.0,
                                       ),
                                       lable: 'Caregiver reports',
@@ -214,8 +216,8 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.document_scanner,
-                                        color: Color(0xFF456BB4),
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFFF2D55),
                                         size: 16.0,
                                       ),
                                       lable: 'Caregiver agency’s information',

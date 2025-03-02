@@ -62,7 +62,7 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
-              Icons.how_to_reg,
+              FFIcons.khotTub,
               color: FlutterFlowTheme.of(context).primaryText,
               size: 26.0,
             ),

@@ -49,7 +49,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.house_sharp,
+                  Icons.house_outlined,
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 30.0,
                 ),
@@ -67,7 +67,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.elderly_woman_rounded,
+                  FFIcons.kmarketElderly,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -86,7 +86,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.wheelchair_pickup,
+                  FFIcons.kwheelchair,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -105,7 +105,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.hail_sharp,
+                  FFIcons.kmarketChildcare,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -124,7 +124,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.person_3_rounded,
+                  FFIcons.kuserNurse,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),

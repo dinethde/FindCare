@@ -5,6 +5,7 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'caregiverinfo_model.dart';
 export 'caregiverinfo_model.dart';
 
@@ -137,9 +138,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               model: _model.iconButtonModel2,
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
-                                icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
+                                icon1: FaIcon(
+                                  FontAwesomeIcons.solidLightbulb,
+                                  color: Color(0xFFFAA800),
                                   size: 16.0,
                                 ),
                                 lable: 'Academic Skills',
@@ -159,8 +160,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
+                                  FFIcons.kbriefcase,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16.0,
                                 ),
                                 lable: 'Professional Skills',
@@ -181,9 +183,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  Icons.auto_awesome_outlined,
+                                  color: Color(0xFFFF2D55),
+                                  size: 20.0,
                                 ),
                                 lable: 'Specializations',
                               ),

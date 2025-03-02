@@ -322,7 +322,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       updateCallback: () => safeSetState(() {}),
                                       child: IconButtonWidget(
                                         icon1: Icon(
-                                          Icons.done_all,
+                                          FFIcons.kcgHomepgValidatecg,
                                         ),
                                         lable: 'Validate caregiver',
                                       ),

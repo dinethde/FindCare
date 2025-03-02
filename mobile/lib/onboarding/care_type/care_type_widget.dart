@@ -107,7 +107,7 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                Icons.cancel,
+                                FFIcons.kmarketElderly,
                                 size: 28.0,
                               ),
                               text: 'Senior Care',
@@ -131,7 +131,7 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                Icons.eighteen_up_rating_outlined,
+                                FFIcons.kmarketChildcare,
                                 size: 28.0,
                               ),
                               text: 'Child Care',
