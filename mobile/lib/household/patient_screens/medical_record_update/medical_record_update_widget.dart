@@ -5,6 +5,7 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'medical_record_update_model.dart';
 export 'medical_record_update_model.dart';
 
@@ -117,11 +118,11 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                   FlutterFlowIconButton(
                                     borderRadius: 8.0,
                                     buttonSize: 40.0,
-                                    icon: Icon(
-                                      Icons.share,
+                                    icon: FaIcon(
+                                      FontAwesomeIcons.shareSquare,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
+                                      size: 20.0,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');

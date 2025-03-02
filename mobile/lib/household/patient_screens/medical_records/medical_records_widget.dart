@@ -91,7 +91,7 @@ class _MedicalRecordsWidgetState extends State<MedicalRecordsWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                  'Keep track of all your medical records in one place for easy access and updates.',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium

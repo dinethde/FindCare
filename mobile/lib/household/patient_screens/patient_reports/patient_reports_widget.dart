@@ -108,7 +108,7 @@ class _PatientReportsWidgetState extends State<PatientReportsWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                      'View detailed client reports to track patient satisfaction and the effectiveness of care services.',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

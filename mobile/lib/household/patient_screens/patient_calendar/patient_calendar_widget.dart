@@ -99,7 +99,7 @@ class _PatientCalendarWidgetState extends State<PatientCalendarWidget> {
                                   children: [
                                     Icon(
                                       Icons.calendar_month,
-                                      color: Color(0xFFCA861F),
+                                      color: Color(0xFFF9AA33),
                                       size: 24.0,
                                     ),
                                     Text(

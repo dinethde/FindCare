@@ -111,8 +111,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
                                   icon1: Icon(
-                                    Icons.info,
-                                    color: Color(0xFFCC2444),
+                                    FFIcons.kpInfo,
+                                    color: Color(0xFFFF2D55),
                                     size: 16.0,
                                   ),
                                   lable: 'Patient Information',
@@ -133,7 +133,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
                                   icon1: Icon(
-                                    Icons.document_scanner,
+                                    FFIcons.kcgHomepgCaregiverReports,
                                     color: Color(0xFF456BB4),
                                     size: 16.0,
                                   ),
