@@ -71,7 +71,7 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                                 ),
                       ),
                       Text(
-                        'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                        'Select the specific requirements and \nservices needed for the patient’s care to match \nthem with the best caregiver.',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',

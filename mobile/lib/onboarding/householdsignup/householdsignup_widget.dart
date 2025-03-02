@@ -92,7 +92,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                   ),
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                              'Create your account to connect with \ntrusted caregivers and manage your household\'s care needs effortlessly.',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
