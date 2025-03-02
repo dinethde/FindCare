@@ -99,7 +99,7 @@ class _PcCalendarWidgetState extends State<PcCalendarWidget> {
                                   children: [
                                     Icon(
                                       Icons.calendar_month,
-                                      color: Color(0xFFCA861F),
+                                      color: Color(0xFFF49F21),
                                       size: 24.0,
                                     ),
                                     Text(

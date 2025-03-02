@@ -101,7 +101,7 @@ class _CgCalendarWidgetState extends State<CgCalendarWidget> {
                                   children: [
                                     Icon(
                                       Icons.calendar_month,
-                                      color: Color(0xFFCA861F),
+                                      color: Color(0xFFF9A623),
                                       size: 24.0,
                                     ),
                                     Text(

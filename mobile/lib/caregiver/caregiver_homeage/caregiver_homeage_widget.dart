@@ -371,7 +371,7 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                         icon1: Icon(
                                           Icons.timelapse_sharp,
                                           color: Color(0xFFF29D38),
-                                          size: 24.0,
+                                          size: 20.0,
                                         ),
                                         lable: 'Clock In and Out',
                                       ),
@@ -529,7 +529,7 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                             safeSetState(() {}),
                                         child: IconButtonWidget(
                                           icon1: Icon(
-                                            Icons.done_all,
+                                            FFIcons.kcgHomepgValidatecg,
                                           ),
                                           lable: 'Validate caregiver',
                                         ),
