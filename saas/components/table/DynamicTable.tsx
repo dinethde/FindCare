@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Key } from "react";
 import type { TableConfig } from "../../types/TableTypes";
 import { TableHeader } from "./TableHeader";
 import { CareTypeBadge } from "../CareTypeBadge";
@@ -123,7 +123,7 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8 w-full h-fit">
+    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8 w-full ">
       <div className="">
         <TableHeader
           title={config.title}
@@ -137,19 +137,28 @@ export function DynamicTable({
         <table className="w-full">
           <thead>
             <tr className="border-b border-neutral-3">
-              {config.columns.map((column, index) => (
-                <th
-                  key={column.key}
-                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${
-                    config.headerAlignments && config.headerAlignments[index]
-                      ? `text-${config.headerAlignments[index]}`
-                      : ""
-                  }`}
-                  style={{ width: column.width }}
-                >
-                  {column.header}
-                </th>
-              ))}
+              {config.columns.map(
+                (
+                  column: {
+                    key: string;
+                    header: string;
+                    width?: string | number;
+                  },
+                  index: number
+                ) => (
+                  <th
+                    key={column.key}
+                    className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${
+                      config.headerAlignments && config.headerAlignments[index]
+                        ? `text-${config.headerAlignments[index]}`
+                        : ""
+                    }`}
+                    style={{ width: column.width }}
+                  >
+                    {column.header}
+                  </th>
+                )
+              )}
               <th className="w-10 pb-2" />
             </tr>
           </thead>
@@ -164,21 +173,26 @@ export function DynamicTable({
                       : ""
                   }
                 >
-                  {config.columns.map((column, colIndex) => (
-                    <td
-                      key={column.key}
-                      className={`${
-                        config.title === "Caregiver List" ? "py-6" : "py-5"
-                      } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
-                        config.headerAlignments &&
-                        config.headerAlignments[colIndex]
-                          ? `text-${config.headerAlignments[colIndex]}`
-                          : ""
-                      }`}
-                    >
-                      {renderCell(column, item)}
-                    </td>
-                  ))}
+                  {config.columns.map(
+                    (
+                      column: { key: Key | null | undefined },
+                      colIndex: number
+                    ) => (
+                      <td
+                        key={column.key}
+                        className={`${
+                          config.title === "Caregiver List" ? "py-6" : "py-5"
+                        } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
+                          config.headerAlignments &&
+                          config.headerAlignments[colIndex]
+                            ? `text-${config.headerAlignments[colIndex]}`
+                            : ""
+                        }`}
+                      >
+                        {renderCell(column, item)}
+                      </td>
+                    )
+                  )}
 
                   {tableType === "fill" ? (
                     <td className="py-5 pr-4 flex justify-end">
