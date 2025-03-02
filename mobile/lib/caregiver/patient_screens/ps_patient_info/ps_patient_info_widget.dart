@@ -4,6 +4,7 @@ import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ps_patient_info_model.dart';
 export 'ps_patient_info_model.dart';
 
@@ -113,8 +114,8 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.document_scanner,
-                                        color: Color(0xFF456BB4),
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFFF2D55),
                                         size: 16.0,
                                       ),
                                       lable: 'Patient Information',
@@ -134,8 +135,9 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                     model: _model.iconButtonModel2,
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.calendar_month,
+                                      icon1: FaIcon(
+                                        FontAwesomeIcons.fileMedicalAlt,
+                                        color: Color(0xFF3F92E1),
                                         size: 16.0,
                                       ),
                                       lable: 'Patient reports',
@@ -156,8 +158,9 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.add_circle_sharp,
-                                        color: Color(0xFFFCA827),
+                                        Icons.calendar_month,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 16.0,
                                       ),
                                       lable: 'Patient calendar',
@@ -169,9 +172,9 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.info,
-                                      color: Color(0xFFCC2444),
-                                      size: 16.0,
+                                      Icons.add_circle,
+                                      color: Color(0xFFFCA827),
+                                      size: 20.0,
                                     ),
                                     lable: 'Add new patient',
                                   ),
