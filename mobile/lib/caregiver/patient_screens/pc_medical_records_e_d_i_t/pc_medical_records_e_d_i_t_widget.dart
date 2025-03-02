@@ -5,6 +5,7 @@ import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'pc_medical_records_e_d_i_t_model.dart';
 export 'pc_medical_records_e_d_i_t_model.dart';
 
@@ -118,8 +119,8 @@ class _PcMedicalRecordsEDITWidgetState
                                   FlutterFlowIconButton(
                                     borderRadius: 8.0,
                                     buttonSize: 40.0,
-                                    icon: Icon(
-                                      Icons.share,
+                                    icon: FaIcon(
+                                      FontAwesomeIcons.shareSquare,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       size: 24.0,
