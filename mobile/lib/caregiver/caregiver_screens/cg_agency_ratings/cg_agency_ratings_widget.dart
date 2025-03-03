@@ -96,7 +96,7 @@ class _CgAgencyRatingsWidgetState extends State<CgAgencyRatingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                    'Share your feedback about the agency to help others make informed decisions and improve service quality.',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

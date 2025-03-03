@@ -201,7 +201,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'last name',
+                                        'Last name',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -274,7 +274,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'sex',
+                                        'Sex',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -313,7 +313,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'weight',
+                                        'Weight',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -351,7 +351,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'height',
+                                        'Height',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -389,7 +389,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'address',
+                                        'Address',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -428,7 +428,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'zip',
+                                        'Zip',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

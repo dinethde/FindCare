@@ -95,7 +95,7 @@ class _CgSpecializedinWidgetState extends State<CgSpecializedinWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                  'Discover the focused areas of expertise, backed by extensive training and practical experience.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
