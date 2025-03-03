@@ -88,7 +88,7 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                  'Specify the caregiver’s expertise and experience required to meet the patient\'s needs.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
