@@ -105,7 +105,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: IconButtonWidget(
                             icon1: Icon(
-                              Icons.info_outline,
+                              FFIcons.kpInfo,
                               size: 16.0,
                             ),
                             lable: '19 years old, 185cm, 60.0kg ...',
@@ -138,8 +138,8 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
+                                  FFIcons.kbookReader,
+                                  color: Color(0xFFDDAA1B),
                                   size: 16.0,
                                 ),
                                 lable: 'Academic Skills',
@@ -159,8 +159,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
+                                  FFIcons.kbriefcase,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16.0,
                                 ),
                                 lable: 'Professional Skills',
@@ -181,9 +182,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  FFIcons.kaward,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 22.0,
                                 ),
                                 lable: 'Specializations',
                               ),
