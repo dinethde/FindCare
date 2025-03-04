@@ -159,11 +159,11 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.water_drop_rounded,
+                        FFIcons.kuserInjured,
                         color: widget.page == 2
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 23.0,
+                        size: 26.0,
                       ),
                       Text(
                         'Patient',
@@ -197,11 +197,11 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.child_care_outlined,
+                        FFIcons.kuserNurse,
                         color: widget.page == 3
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 24.0,
+                        size: 26.0,
                       ),
                       Text(
                         'Caregiver',
@@ -235,7 +235,7 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.message_sharp,
+                        FFIcons.kcgInformationpgMessage,
                         color: widget.page == 4
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
