@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/record_button/record_button_widget.dart';
@@ -14,12 +15,15 @@ class PcMedicalRecordsModel extends FlutterFlowModel<PcMedicalRecordsWidget> {
   late ButtonModel buttonModel;
   // Model for RecordButton component.
   late RecordButtonModel recordButtonModel;
+  // Model for nav_bar component.
+  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
     appbarModel = createModel(context, () => AppbarModel());
     buttonModel = createModel(context, () => ButtonModel());
     recordButtonModel = createModel(context, () => RecordButtonModel());
+    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -27,5 +31,6 @@ class PcMedicalRecordsModel extends FlutterFlowModel<PcMedicalRecordsWidget> {
     appbarModel.dispose();
     buttonModel.dispose();
     recordButtonModel.dispose();
+    navBarModel.dispose();
   }
 }

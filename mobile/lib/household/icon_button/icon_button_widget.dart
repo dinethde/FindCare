@@ -70,40 +70,22 @@ class _IconButtonWidgetState extends State<IconButtonWidget> {
             ),
             showLoadingIndicator: false,
           ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          Stack(
+            alignment: AlignmentDirectional(0.0, 0.0),
             children: [
-              widget.icon1!,
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    valueOrDefault<String>(
-                      widget.lable,
-                      'TEXT',
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ),
-                ],
-              ),
-              Flexible(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Opacity(
-                        opacity: 0.0,
-                        child: Text(
+              Align(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    widget.icon1!,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
                           valueOrDefault<String>(
                             widget.lable,
                             'TEXT',
@@ -116,15 +98,207 @@ class _IconButtonWidgetState extends State<IconButtonWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
+                      ],
+                    ),
+                  ]
+                      .divide(SizedBox(width: 8.0))
+                      .addToStart(SizedBox(width: 12.0))
+                      .addToEnd(SizedBox(width: 12.0)),
+                ),
+              ),
+              Opacity(
+                opacity: 0.0,
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Flexible(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Opacity(
+                                    opacity: 0.0,
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        widget.lable,
+                                        'TEXT',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ),
+                                  Opacity(
+                                    opacity: 0.0,
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        widget.lable,
+                                        'TEXT',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ),
+                                  Opacity(
+                                    opacity: 0.0,
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        widget.lable,
+                                        'TEXT',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.0,
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.lable,
+                                      'TEXT',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ].divide(SizedBox(width: 100.0)),
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-            ]
-                .divide(SizedBox(width: 8.0))
-                .addToStart(SizedBox(width: 12.0))
-                .addToEnd(SizedBox(width: 12.0)),
+            ],
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),

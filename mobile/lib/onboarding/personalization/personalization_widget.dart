@@ -1,9 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import 'dart:async';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'personalization_model.dart';
 export 'personalization_model.dart';
@@ -22,17 +24,31 @@ class _PersonalizationWidgetState extends State<PersonalizationWidget> {
   late PersonalizationModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late StreamSubscription<bool> _keyboardVisibilitySubscription;
+  bool _isKeyboardVisible = false;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => PersonalizationModel());
+
+    if (!isWeb) {
+      _keyboardVisibilitySubscription =
+          KeyboardVisibilityController().onChange.listen((bool visible) {
+        safeSetState(() {
+          _isKeyboardVisible = visible;
+        });
+      });
+    }
   }
 
   @override
   void dispose() {
     _model.dispose();
 
+    if (!isWeb) {
+      _keyboardVisibilitySubscription.cancel();
+    }
     super.dispose();
   }
 
@@ -223,28 +239,32 @@ class _PersonalizationWidgetState extends State<PersonalizationWidget> {
                     ),
                   ].divide(SizedBox(height: 20.0)),
                 ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    context.pushNamed(HomePageWidget.routeName);
-                  },
-                  text: 'Find a Caregiver',
-                  options: FFButtonOptions(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 47.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: GoogleFonts.getFont(
-                      'Inter Tight',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16.0,
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed(HomePageWidget.routeName);
+                    },
+                    text: 'Find a Caregiver',
+                    options: FFButtonOptions(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 47.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle: GoogleFonts.getFont(
+                        'Inter Tight',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16.0,
+                      ),
+                      borderRadius: BorderRadius.circular(6.0),
                     ),
-                    borderRadius: BorderRadius.circular(6.0),
+                    showLoadingIndicator: false,
                   ),
-                  showLoadingIndicator: false,
-                ),
               ].divide(SizedBox(height: 10.0)),
             ),
           ),

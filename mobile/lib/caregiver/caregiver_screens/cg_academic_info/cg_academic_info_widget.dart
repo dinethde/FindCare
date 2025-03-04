@@ -1,3 +1,4 @@
+import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
@@ -46,65 +47,79 @@ class _CgAcademicInfoWidgetState extends State<CgAcademicInfoWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: Stack(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    wrapWithModel(
-                      model: _model.appbarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: AppbarWidget(
-                        fLable: 'Profile',
-                        secLable: 'Done',
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Stack(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        children: [
+                          wrapWithModel(
+                            model: _model.appbarModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: AppbarWidget(
+                              fLable: 'Profile',
+                              secLable: 'Done',
+                              pgCount: 0,
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.16, 0.0),
+                            child: Text(
+                              'Academic Skills ',
+                              style: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Academic Skills ',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            wrapWithModel(
+                              model: _model.skillBoxModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: SkillBoxWidget(),
+                            ),
+                            wrapWithModel(
+                              model: _model.skillBoxModel2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: SkillBoxWidget(),
+                            ),
+                          ].divide(SizedBox(height: 12.0)),
                         ),
                       ),
                     ),
-                  ],
+                  ].divide(SizedBox(height: 26.0)),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      wrapWithModel(
-                        model: _model.skillBoxModel1,
-                        updateCallback: () => safeSetState(() {}),
-                        child: SkillBoxWidget(),
-                      ),
-                      wrapWithModel(
-                        model: _model.skillBoxModel2,
-                        updateCallback: () => safeSetState(() {}),
-                        child: SkillBoxWidget(),
-                      ),
-                    ].divide(SizedBox(height: 12.0)),
+                wrapWithModel(
+                  model: _model.navBarModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: NavBarWidget(
+                    page: 2,
                   ),
                 ),
-              ),
-            ].divide(SizedBox(height: 26.0)),
+              ],
+            ),
           ),
         ),
       ),
