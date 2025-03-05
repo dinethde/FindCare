@@ -11,6 +11,7 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -500,7 +501,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           icon: Icon(
                                             Icons.favorite_rounded,
                                             color: Color(0xFFFF2D55),
-                                            size: 16.0,
+                                            size: 18.0,
                                           ),
                                           textBox: 'Last Update',
                                           icon2: Icon(
@@ -519,10 +520,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         child: PaitentReportWidget(
                                           textColor: Color(0xFF0584FF),
                                           label: 'Patient Reports',
-                                          icon: Icon(
-                                            Icons.reorder,
+                                          icon: FaIcon(
+                                            FontAwesomeIcons.fileContract,
                                             color: Color(0xFF0584FF),
-                                            size: 16.0,
+                                            size: 18.0,
                                           ),
                                           textBox: 'Last week',
                                           icon2: Icon(
