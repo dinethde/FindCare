@@ -78,9 +78,9 @@ class _CaregiverImageBOXWidgetState extends State<CaregiverImageBOXWidget> {
               buttonSize: 40.0,
               fillColor: FlutterFlowTheme.of(context).info,
               icon: Icon(
-                Icons.message_rounded,
+                FFIcons.kmarketImgboxMessage,
                 color: FlutterFlowTheme.of(context).primaryText,
-                size: 24.0,
+                size: 25.0,
               ),
               onPressed: () {
                 print('IconButton pressed ...');
