@@ -73,7 +73,7 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Inter',
-                    fontSize: 14.0,
+                    fontSize: 15.0,
                     letterSpacing: 0.0,
                   ),
             ),
@@ -85,7 +85,7 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Roboto',
                     color: Color(0xFFABABAB),
-                    fontSize: 10.0,
+                    fontSize: 13.0,
                     letterSpacing: 0.0,
                   ),
             ),

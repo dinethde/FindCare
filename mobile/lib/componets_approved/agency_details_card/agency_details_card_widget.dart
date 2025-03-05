@@ -92,7 +92,7 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
-                        'https://images.unsplash.com/photo-1658314756095-f2e121683819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxjYXJlZ2l2ZXJ8ZW58MHx8fHwxNzM4ODYwMDU3fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                        'https://www.shutterstock.com/image-photo/happy-woman-arms-crossed-caregiver-260nw-2499766679.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
