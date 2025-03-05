@@ -4,6 +4,7 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'profile_page_model.dart';
 export 'profile_page_model.dart';
 
@@ -111,9 +112,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
                                   icon1: Icon(
-                                    Icons.info,
-                                    color: Color(0xFFCC2444),
-                                    size: 16.0,
+                                    FFIcons.kpInfo,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 18.0,
                                   ),
                                   lable: 'Patient Information',
                                 ),
@@ -132,10 +133,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 model: _model.iconButtonModel2,
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.document_scanner,
-                                    color: Color(0xFF456BB4),
-                                    size: 16.0,
+                                  icon1: FaIcon(
+                                    FontAwesomeIcons.fileInvoice,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 22.0,
                                   ),
                                   lable: 'Patient reports',
                                 ),
@@ -154,9 +156,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 model: _model.iconButtonModel3,
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.calendar_month,
-                                    size: 16.0,
+                                  icon1: FaIcon(
+                                    FontAwesomeIcons.calendarAlt,
+                                    size: 18.0,
                                   ),
                                   lable: 'Patient calendar',
                                 ),
@@ -169,7 +171,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 icon1: Icon(
                                   Icons.add_circle_sharp,
                                   color: Color(0xFFFCA827),
-                                  size: 16.0,
+                                  size: 20.0,
                                 ),
                                 lable: 'Add new patient',
                               ),
