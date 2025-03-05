@@ -49,9 +49,9 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.house_sharp,
+                  Icons.add_home_work_rounded,
                   color: FlutterFlowTheme.of(context).primaryText,
-                  size: 30.0,
+                  size: 32.0,
                 ),
                 Text(
                   'Certified',
@@ -105,7 +105,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.hail_sharp,
+                  FFIcons.kbaby,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -124,7 +124,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.person_3_rounded,
+                  FFIcons.kuserNurse,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
