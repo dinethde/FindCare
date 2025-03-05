@@ -5,6 +5,7 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'caregiver_page_model.dart';
 export 'caregiver_page_model.dart';
 
@@ -48,194 +49,200 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Stack(
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
-                    child: wrapWithModel(
-                      model: _model.appBarRightsideModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: AppBarRightsideWidget(
-                        secLable: 'Done',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    child: Padding(
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 5.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Caregiver',
-                                style: FlutterFlowTheme.of(context)
-                                    .displayMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Container(
-                                width: 40.0,
-                                height: 40.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  'https://picsum.photos/seed/385/600',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              wrapWithModel(
-                                model: _model.iconButtonModel1,
-                                updateCallback: () => safeSetState(() {}),
-                                child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.document_scanner,
-                                    color: Color(0xFF456BB4),
-                                    size: 16.0,
-                                  ),
-                                  lable: 'Validate caregiver',
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(CaregiverinfoWidget.routeName);
-                                },
-                                child: wrapWithModel(
-                                  model: _model.iconButtonModel2,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.calendar_month,
-                                      size: 16.0,
-                                    ),
-                                    lable: 'Caregiver information',
-                                  ),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(RateCaregiverWidget.routeName);
-                                },
-                                child: wrapWithModel(
-                                  model: _model.iconButtonModel3,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.add_circle_sharp,
-                                      color: Color(0xFFFCA827),
-                                      size: 16.0,
-                                    ),
-                                    lable: 'Rate Caregiver',
-                                  ),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                      CaregiverReportsWidget.routeName);
-                                },
-                                child: wrapWithModel(
-                                  model: _model.iconButtonModel4,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.info,
-                                      color: Color(0xFFCC2444),
-                                      size: 16.0,
-                                    ),
-                                    lable: 'Caregiver reports',
-                                  ),
-                                ),
-                              ),
-                            ].divide(SizedBox(height: 12.0)),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Agency',
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(AgencyDetailsWidget.routeName);
-                                },
-                                child: wrapWithModel(
-                                  model: _model.iconButtonModel5,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.document_scanner,
-                                      color: Color(0xFF456BB4),
-                                      size: 16.0,
-                                    ),
-                                    lable: 'Caregiver agency’s information',
-                                  ),
-                                ),
-                              ),
-                            ].divide(SizedBox(height: 12.0)),
-                          ),
-                        ].divide(SizedBox(height: 50.0)),
+                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.appBarRightsideModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: AppBarRightsideWidget(
+                          secLable: 'Done',
+                        ),
                       ),
                     ),
-                  ),
-                ].divide(SizedBox(height: 32.0)),
-              ),
-              wrapWithModel(
-                model: _model.navBarHouseModel,
-                updateCallback: () => safeSetState(() {}),
-                child: NavBarHouseWidget(
-                  page: 3,
+                    Container(
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 20.0, 5.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Caregiver',
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Container(
+                                  width: 40.0,
+                                  height: 40.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/385/600',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                wrapWithModel(
+                                  model: _model.iconButtonModel1,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: FaIcon(
+                                      FontAwesomeIcons.addressCard,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 20.0,
+                                    ),
+                                    lable: 'Validate caregiver',
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                        CaregiverinfoWidget.routeName);
+                                  },
+                                  child: wrapWithModel(
+                                    model: _model.iconButtonModel2,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: IconButtonWidget(
+                                      icon1: Icon(
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFF94D56),
+                                        size: 18.0,
+                                      ),
+                                      lable: 'Caregiver information',
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                        RateCaregiverWidget.routeName);
+                                  },
+                                  child: wrapWithModel(
+                                    model: _model.iconButtonModel3,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: IconButtonWidget(
+                                      icon1: Icon(
+                                        FFIcons.kstar,
+                                        color: Color(0xFFFCA827),
+                                        size: 20.0,
+                                      ),
+                                      lable: 'Rate Caregiver',
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                        CaregiverReportsWidget.routeName);
+                                  },
+                                  child: wrapWithModel(
+                                    model: _model.iconButtonModel4,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: IconButtonWidget(
+                                      icon1: FaIcon(
+                                        FontAwesomeIcons.fileContract,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 19.0,
+                                      ),
+                                      lable: 'Caregiver reports',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Agency',
+                                  style: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                        AgencyDetailsWidget.routeName);
+                                  },
+                                  child: wrapWithModel(
+                                    model: _model.iconButtonModel5,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: IconButtonWidget(
+                                      icon1: Icon(
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFF94D56),
+                                        size: 16.0,
+                                      ),
+                                      lable: 'Caregiver agency’s information',
+                                    ),
+                                  ),
+                                ),
+                              ].divide(SizedBox(height: 12.0)),
+                            ),
+                          ].divide(SizedBox(height: 50.0)),
+                        ),
+                      ),
+                    ),
+                  ].divide(SizedBox(height: 32.0)),
                 ),
-              ),
-            ],
+                wrapWithModel(
+                  model: _model.navBarHouseModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: NavBarHouseWidget(
+                    page: 3,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

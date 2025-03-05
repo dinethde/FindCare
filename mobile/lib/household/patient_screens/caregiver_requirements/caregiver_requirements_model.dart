@@ -18,8 +18,6 @@ class CaregiverRequirementsModel
   late IconButtonModel iconButtonModel;
   // Model for ContentTextbox component.
   late ContentTextboxModel contentTextboxModel2;
-  // Model for ContentTextbox component.
-  late ContentTextboxModel contentTextboxModel3;
   // Model for nav_barHouse component.
   late NavBarHouseModel navBarHouseModel;
 
@@ -29,7 +27,6 @@ class CaregiverRequirementsModel
     contentTextboxModel1 = createModel(context, () => ContentTextboxModel());
     iconButtonModel = createModel(context, () => IconButtonModel());
     contentTextboxModel2 = createModel(context, () => ContentTextboxModel());
-    contentTextboxModel3 = createModel(context, () => ContentTextboxModel());
     navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
@@ -39,7 +36,6 @@ class CaregiverRequirementsModel
     contentTextboxModel1.dispose();
     iconButtonModel.dispose();
     contentTextboxModel2.dispose();
-    contentTextboxModel3.dispose();
     navBarHouseModel.dispose();
   }
 }

@@ -135,8 +135,10 @@ export '/caregiver/patient_screens/pc_calendar/pc_calendar_widget.dart'
     show PcCalendarWidget;
 export '/caregiver/patient_screens/pc_calendar_i_n_f_o/pc_calendar_i_n_f_o_widget.dart'
     show PcCalendarINFOWidget;
-export '/approved_pages/todotask/todotask_widget.dart' show TodotaskWidget;
-export '/approved_pages/todotask2/todotask2_widget.dart' show Todotask2Widget;
+export '/caregiver/caregiver_screens/todotask/todotask_widget.dart'
+    show TodotaskWidget;
+export '/caregiver/caregiver_screens/todotask2/todotask2_widget.dart'
+    show Todotask2Widget;
 export '/household/marcket_place_home/marcket_place_home_widget.dart'
     show MarcketPlaceHomeWidget;
 export '/household/market_place_caregiver_details/market_place_caregiver_details_widget.dart'
