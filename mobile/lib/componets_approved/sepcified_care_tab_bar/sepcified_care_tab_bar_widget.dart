@@ -69,7 +69,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                 Icon(
                   Icons.elderly_woman_rounded,
                   color: Color(0xFF999999),
-                  size: 30.0,
+                  size: 31.0,
                 ),
                 Text(
                   'Elderly Care',
@@ -86,7 +86,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.wheelchair_pickup,
+                  Icons.wheelchair_pickup_outlined,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -126,7 +126,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                 Icon(
                   FFIcons.kuserNurse,
                   color: Color(0xFF999999),
-                  size: 30.0,
+                  size: 31.0,
                 ),
                 Text(
                   'Professionals',
