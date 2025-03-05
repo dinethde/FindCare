@@ -109,7 +109,8 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: IconButtonWidget(
                             icon1: Icon(
-                              Icons.info_outline,
+                              FFIcons.kpInfo,
+                              color: FlutterFlowTheme.of(context).error,
                               size: 16.0,
                             ),
                             lable: '19 years old, 185cm, 60.0kg ...',
@@ -143,9 +144,9 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
+                                  FFIcons.kpLivingWithDiabetes,
                                   color: Color(0xFFFF2D55),
-                                  size: 16.0,
+                                  size: 18.0,
                                 ),
                                 lable: 'Living with diabetes, arthritis ...',
                               ),
@@ -165,9 +166,9 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
+                                  FFIcons.kfileSignature,
                                   color: Color(0xFF046ACC),
-                                  size: 16.0,
+                                  size: 19.0,
                                 ),
                                 lable: 'Require a caregiver specialized in ...',
                               ),
@@ -186,9 +187,9 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
+                                  FFIcons.kpMedicalRecords,
                                   color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  size: 25.0,
                                 ),
                                 lable: 'Medical records',
                               ),
@@ -214,8 +215,9 @@ class _PatientInfoWidgetState extends State<PatientInfoWidget> {
                             updateCallback: () => safeSetState(() {}),
                             child: IconButtonWidget(
                               icon1: Icon(
-                                Icons.api,
-                                size: 16.0,
+                                Icons.golf_course,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 22.0,
                               ),
                               lable: 'Add a goal',
                             ),
