@@ -1,4 +1,3 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
@@ -47,134 +46,116 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-            child: Stack(
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Stack(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      children: [
-                        wrapWithModel(
-                          model: _model.appbarModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: AppbarWidget(
-                            fLable: 'Profile',
-                            secLable: 'Done',
-                            pgCount: 0,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Stack(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                children: [
+                  wrapWithModel(
+                    model: _model.appbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: AppbarWidget(
+                      fLable: 'Profile',
+                      secLable: 'Done',
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.16, 0.0),
+                    child: Text(
+                      'Academic Skills ',
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
                           ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(0.16, 0.0),
-                          child: Text(
-                            'Academic Skills ',
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Week days',
                             style: FlutterFlowTheme.of(context)
-                                .displaySmall
+                                .headlineLarge
                                 .override(
                                   fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                 ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                          wrapWithModel(
+                            model: _model.contentTextboxModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ContentTextboxWidget(
+                              textField: '06.00AM - 10.00PM',
+                              readOnly: true,
+                            ),
+                          ),
+                        ].divide(SizedBox(height: 12.0)),
                       ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Week days',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'On call Availability',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
                                 ),
-                                wrapWithModel(
-                                  model: _model.contentTextboxModel1,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: ContentTextboxWidget(
-                                    textField: '06.00AM - 10.00PM',
-                                    readOnly: true,
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 12.0)),
+                          ),
+                          wrapWithModel(
+                            model: _model.contentTextboxModel2,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ContentTextboxWidget(
+                              textField: 'You don’t work on call',
+                              readOnly: true,
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'On call Availability',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                wrapWithModel(
-                                  model: _model.contentTextboxModel2,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: ContentTextboxWidget(
-                                    textField: 'You don’t work on call',
-                                    readOnly: true,
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 12.0)),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Week Ends',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                wrapWithModel(
-                                  model: _model.contentTextboxModel3,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: ContentTextboxWidget(
-                                    textField: '08.00AM - 06.00PM',
-                                    readOnly: true,
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 12.0)),
-                            ),
-                          ].divide(SizedBox(height: 48.0)),
-                        ),
+                          ),
+                        ].divide(SizedBox(height: 12.0)),
                       ),
-                    ),
-                  ].divide(SizedBox(height: 26.0)),
-                ),
-                wrapWithModel(
-                  model: _model.navBarModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: NavBarWidget(
-                    page: 2,
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Week Ends',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          wrapWithModel(
+                            model: _model.contentTextboxModel3,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ContentTextboxWidget(
+                              textField: '08.00AM - 06.00PM',
+                              readOnly: true,
+                            ),
+                          ),
+                        ].divide(SizedBox(height: 12.0)),
+                      ),
+                    ].divide(SizedBox(height: 48.0)),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ].divide(SizedBox(height: 26.0)),
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/index.dart';
 import 'patient_personal_info_widget.dart' show PatientPersonalInfoWidget;
 import 'package:flutter/material.dart';
 

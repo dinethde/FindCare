@@ -1,4 +1,3 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
@@ -14,15 +13,12 @@ class CgAcademicInfoModel extends FlutterFlowModel<CgAcademicInfoWidget> {
   late SkillBoxModel skillBoxModel1;
   // Model for SkillBox component.
   late SkillBoxModel skillBoxModel2;
-  // Model for nav_bar component.
-  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
     appbarModel = createModel(context, () => AppbarModel());
     skillBoxModel1 = createModel(context, () => SkillBoxModel());
     skillBoxModel2 = createModel(context, () => SkillBoxModel());
-    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -30,6 +26,5 @@ class CgAcademicInfoModel extends FlutterFlowModel<CgAcademicInfoWidget> {
     appbarModel.dispose();
     skillBoxModel1.dispose();
     skillBoxModel2.dispose();
-    navBarModel.dispose();
   }
 }

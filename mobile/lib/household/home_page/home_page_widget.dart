@@ -282,7 +282,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     model: _model.homeCardModel2,
                                     updateCallback: () => safeSetState(() {}),
                                     child: HomeCardWidget(
-                                      textColor: Color(0xFFFF3355),
+                                      textColor: Color(0xFF007AFF),
                                       label: 'Inform Agency',
                                     ),
                                   ),
@@ -327,30 +327,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         lable: 'Validate caregiver',
                                       ),
                                     ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                            CaregiverinfoWidget.routeName);
-                                      },
-                                      child: wrapWithModel(
-                                        model: _model.iconButtonModel3,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: IconButtonWidget(
-                                          icon1: Icon(
-                                            Icons.all_inclusive_sharp,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                          ),
-                                          lable: 'Show all caregiver details',
+                                    wrapWithModel(
+                                      model: _model.iconButtonModel3,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: IconButtonWidget(
+                                        icon1: Icon(
+                                          Icons.all_inclusive_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
                                         ),
+                                        lable: 'Show all caregiver details',
                                       ),
                                     ),
-                                  ],
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
                               ].divide(SizedBox(height: 16.0)),
                             ),
@@ -496,7 +485,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             safeSetState(() {}),
                                         child: PatientBlockWidget(
                                           textColor: Color(0xFFFF2D55),
-                                          label: 'Patient Reports',
+                                          label: 'Patient Rerpots',
                                           icon: Icon(
                                             Icons.favorite_rounded,
                                             color: Color(0xFFFF2D55),
@@ -540,26 +529,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: CalenderWidget(),
                                 ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context
-                                        .pushNamed(PatientInfoWidget.routeName);
-                                  },
-                                  child: wrapWithModel(
-                                    model: _model.iconButtonModel4,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.all_inclusive_sharp,
-                                        color: Color(0xFFFF2D55),
-                                        size: 24.0,
-                                      ),
-                                      lable: 'Show all patient details',
+                                wrapWithModel(
+                                  model: _model.iconButtonModel4,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: IconButtonWidget(
+                                    icon1: Icon(
+                                      Icons.all_inclusive_sharp,
+                                      color: Color(0xFFFF2D55),
+                                      size: 24.0,
                                     ),
+                                    lable: 'Show all patient details',
                                   ),
                                 ),
                               ].divide(SizedBox(height: 16.0)),

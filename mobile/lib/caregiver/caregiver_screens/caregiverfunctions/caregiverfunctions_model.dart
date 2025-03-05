@@ -1,4 +1,3 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
@@ -22,8 +21,6 @@ class CaregiverfunctionsModel
   late IconButtonModel iconButtonModel4;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel5;
-  // Model for nav_bar component.
-  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
@@ -33,7 +30,6 @@ class CaregiverfunctionsModel
     iconButtonModel3 = createModel(context, () => IconButtonModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
     iconButtonModel5 = createModel(context, () => IconButtonModel());
-    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -44,6 +40,5 @@ class CaregiverfunctionsModel
     iconButtonModel3.dispose();
     iconButtonModel4.dispose();
     iconButtonModel5.dispose();
-    navBarModel.dispose();
   }
 }

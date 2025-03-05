@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/index.dart';
 import 'medical_records_i_n_f_o_widget.dart' show MedicalRecordsINFOWidget;
 import 'package:flutter/material.dart';
 

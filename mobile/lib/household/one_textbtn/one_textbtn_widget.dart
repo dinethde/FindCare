@@ -90,22 +90,20 @@ class _OneTextbtnWidgetState extends State<OneTextbtnWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Flexible(
-                  child: Text(
-                    valueOrDefault<String>(
-                      widget.lable,
-                      'TEXT',
-                    ).maybeHandleOverflow(
-                      maxChars: 5,
-                      replacement: '…',
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                        ),
+                Text(
+                  valueOrDefault<String>(
+                    widget.lable,
+                    'TEXT',
+                  ).maybeHandleOverflow(
+                    maxChars: 5,
+                    replacement: '…',
                   ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
               ]
                   .divide(SizedBox(width: 8.0))

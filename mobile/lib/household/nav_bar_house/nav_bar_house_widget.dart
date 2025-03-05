@@ -1,4 +1,3 @@
-import '';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -159,11 +158,11 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        FFIcons.kuserInjured,
+                        Icons.water_drop_rounded,
                         color: widget.page == 2
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 26.0,
+                        size: 23.0,
                       ),
                       Text(
                         'Patient',
@@ -197,11 +196,11 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        FFIcons.kuserNurse,
+                        Icons.child_care_outlined,
                         color: widget.page == 3
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 26.0,
+                        size: 24.0,
                       ),
                       Text(
                         'Caregiver',
@@ -235,7 +234,7 @@ class _NavBarHouseWidgetState extends State<NavBarHouseWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        FFIcons.kcgInformationpgMessage,
+                        Icons.message_sharp,
                         color: widget.page == 4
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),

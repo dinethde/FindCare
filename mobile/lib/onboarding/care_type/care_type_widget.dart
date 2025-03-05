@@ -1,4 +1,3 @@
-import '';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/care_type_b_o_x/care_type_b_o_x_widget.dart';
@@ -108,8 +107,8 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                FFIcons.kmarketElderly,
-                                size: 30.0,
+                                Icons.cancel,
+                                size: 28.0,
                               ),
                               text: 'Senior Care',
                             ),
@@ -132,8 +131,8 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                FFIcons.kbaby,
-                                size: 30.0,
+                                Icons.eighteen_up_rating_outlined,
+                                size: 28.0,
                               ),
                               text: 'Child Care',
                             ),

@@ -1,4 +1,3 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import 'pc_medical_records_i_n_f_o_widget.dart' show PcMedicalRecordsINFOWidget;
@@ -23,13 +22,10 @@ class PcMedicalRecordsINFOModel
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // Model for nav_bar component.
-  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
     appbarModel = createModel(context, () => AppbarModel());
-    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -43,7 +39,5 @@ class PcMedicalRecordsINFOModel
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();
-
-    navBarModel.dispose();
   }
 }

@@ -13,18 +13,12 @@ void main() async {
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
-  final appState = FFAppState(); // Initialize FFAppState
-  await appState.initializePersistedState();
-
   final shadcn_u_i_kit_v48jv9AppState =
       shadcn_u_i_kit_v48jv9_app_state.FFAppState();
   await shadcn_u_i_kit_v48jv9AppState.initializePersistedState();
 
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(
-        create: (context) => appState,
-      ),
       ChangeNotifierProvider(
         create: (context) => shadcn_u_i_kit_v48jv9AppState,
       ),
@@ -76,7 +70,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
       title: 'FindCare',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

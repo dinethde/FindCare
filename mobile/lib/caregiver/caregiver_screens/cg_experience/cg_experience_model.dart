@@ -1,4 +1,3 @@
-import '/caregiver/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
@@ -15,15 +14,12 @@ class CgExperienceModel extends FlutterFlowModel<CgExperienceWidget> {
   late OneTextbtnModel oneTextbtnModel;
   // Model for SoftskillCOMP component.
   late SoftskillCOMPModel softskillCOMPModel;
-  // Model for nav_bar component.
-  late NavBarModel navBarModel;
 
   @override
   void initState(BuildContext context) {
     appBarLeftsideModel = createModel(context, () => AppBarLeftsideModel());
     oneTextbtnModel = createModel(context, () => OneTextbtnModel());
     softskillCOMPModel = createModel(context, () => SoftskillCOMPModel());
-    navBarModel = createModel(context, () => NavBarModel());
   }
 
   @override
@@ -31,6 +27,5 @@ class CgExperienceModel extends FlutterFlowModel<CgExperienceWidget> {
     appBarLeftsideModel.dispose();
     oneTextbtnModel.dispose();
     softskillCOMPModel.dispose();
-    navBarModel.dispose();
   }
 }
