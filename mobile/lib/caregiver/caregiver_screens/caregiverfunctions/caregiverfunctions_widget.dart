@@ -105,7 +105,7 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                     icon1: Icon(
                                       FFIcons.kuserClock,
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                          .secondary,
                                       size: 18.0,
                                     ),
                                     lable: 'Clock in and out',
@@ -148,7 +148,7 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                     icon1: Icon(
                                       Icons.calendar_month_sharp,
                                       color:
-                                          FlutterFlowTheme.of(context).tertiary,
+                                          FlutterFlowTheme.of(context).success,
                                       size: 20.0,
                                     ),
                                     lable: 'View Calendar',
@@ -170,8 +170,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   child: IconButtonWidget(
                                     icon1: Icon(
                                       FFIcons.kmegaphone,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 19.0,
                                     ),
                                     lable: 'Inform Agency',
                                   ),
@@ -183,7 +184,7 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                 child: IconButtonWidget(
                                   icon1: FaIcon(
                                     FontAwesomeIcons.fileMedicalAlt,
-                                    color: FlutterFlowTheme.of(context).success,
+                                    color: FlutterFlowTheme.of(context).warning,
                                   ),
                                   lable: 'Document Care Recipient Details',
                                 ),

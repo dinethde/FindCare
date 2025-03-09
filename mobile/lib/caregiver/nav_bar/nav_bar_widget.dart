@@ -87,7 +87,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         color: widget.page == 0
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 23.0,
+                        size: 26.0,
                       ),
                       Text(
                         'Home',
@@ -121,11 +121,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.water_drop_rounded,
+                        FFIcons.kuserInjured,
                         color: widget.page == 1
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 23.0,
+                        size: 27.0,
                       ),
                       Text(
                         'Patient',
@@ -159,11 +159,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.child_care_outlined,
+                        FFIcons.kuserNurse,
                         color: widget.page == 2
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 24.0,
+                        size: 27.0,
                       ),
                       Text(
                         'Caregiver',
@@ -197,11 +197,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.message_sharp,
+                        FFIcons.kmarketImgboxMessage,
                         color: widget.page == 3
                             ? FlutterFlowTheme.of(context).primary
                             : Color(0xFFBBBBBB),
-                        size: 24.0,
+                        size: 26.0,
                       ),
                       Text(
                         'Message',
