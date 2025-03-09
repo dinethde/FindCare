@@ -38,14 +38,8 @@ export default function Header() {
         </div>
 
         {/* Header left items */}
-        <div className="w-[22.75rem] flex flex-row items-center justify-start gap-[1.25rem] text-[0.875rem] text-neutral-colors-neutral-9">
+        <div className="w-[22.75rem] flex flex-row items-center justify-end gap-[1.25rem] text-[0.875rem] text-neutral-colors-neutral-9">
           {/* Searching bar */}
-          <button className="flex-1 shadow-[0px_1px_3px_rgba(0,_0,_0,_0.12)] rounded-[30px] bg-gray border-neutral-3 border-[0.5px] border-solid flex flex-row items-center justify-start px-4 py-3 gap-[0.5rem]">
-            <SearchIcon color={"#5A6A72"} />
-            <div className="flex-1 flex flex-col items-start justify-start text-small-text text-neutral-9">
-              <p className="font-medium">Search</p>
-            </div>
-          </button>
 
           {/* Userprofile icon and Localization settings' icon wrapper */}
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">
