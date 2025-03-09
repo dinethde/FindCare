@@ -12,7 +12,7 @@ import { FilterOption } from "@/types/TableTypes";
 
 export default function CaregiverPage() {
   const caregiverConfig: TableConfig = {
-    title: "Client List",
+    title: "Caregiver List",
     columns: [
       { key: "name", header: "Name", width: "15%" },
       { key: "contactInfo", header: "Schedule", width: "25%" },
