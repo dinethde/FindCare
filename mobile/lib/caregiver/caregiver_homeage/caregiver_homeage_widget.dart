@@ -633,9 +633,9 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                             textColor: Color(0xFF0584FF),
                                             label: 'Patient Reports',
                                             icon: Icon(
-                                              Icons.reorder,
+                                              FFIcons.kpMedicalRecords,
                                               color: Color(0xFF0584FF),
-                                              size: 16.0,
+                                              size: 19.0,
                                             ),
                                             textBox: 'Last week',
                                             icon2: Icon(
