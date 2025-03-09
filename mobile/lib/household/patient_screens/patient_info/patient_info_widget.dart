@@ -1,9 +1,9 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'patient_info_model.dart';
 export 'patient_info_model.dart';

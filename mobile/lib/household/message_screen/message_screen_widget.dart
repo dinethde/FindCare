@@ -1,9 +1,9 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/icon_text_box/icon_text_box_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/very_small_button/very_small_button_widget.dart';
 import '/onboarding/round_button/round_button_widget.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'message_screen_model.dart';
 export 'message_screen_model.dart';

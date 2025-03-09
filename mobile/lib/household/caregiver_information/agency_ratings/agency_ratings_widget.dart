@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/household/appbar/appbar_widget.dart';
@@ -5,7 +6,6 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
 import '/household/softskill_c_o_m_p/softskill_c_o_m_p_widget.dart';
 import '/index.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'agency_ratings_model.dart';

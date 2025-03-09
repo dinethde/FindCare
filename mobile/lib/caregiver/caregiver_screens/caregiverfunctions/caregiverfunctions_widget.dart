@@ -1,10 +1,11 @@
 import '/caregiver/nav_bar/nav_bar_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'caregiverfunctions_model.dart';
 export 'caregiverfunctions_model.dart';
 
@@ -102,7 +103,10 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k,
+                                      FFIcons.kuserClock,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 18.0,
                                     ),
                                     lable: 'Clock in and out',
                                   ),
@@ -121,7 +125,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_sharp,
+                                      Icons.checklist_rtl,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 23.0,
                                     ),
                                     lable: 'Perform Tasks',
                                   ),
@@ -140,7 +146,10 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_rounded,
+                                      Icons.calendar_month_sharp,
+                                      color:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      size: 20.0,
                                     ),
                                     lable: 'View Calendar',
                                   ),
@@ -160,7 +169,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_outlined,
+                                      FFIcons.kmegaphone,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                     ),
                                     lable: 'Inform Agency',
                                   ),
@@ -170,8 +181,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                 model: _model.iconButtonModel5,
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.ten_mp_rounded,
+                                  icon1: FaIcon(
+                                    FontAwesomeIcons.fileMedicalAlt,
+                                    color: FlutterFlowTheme.of(context).success,
                                   ),
                                   lable: 'Document Care Recipient Details',
                                 ),

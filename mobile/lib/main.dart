@@ -5,9 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
-import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
-    as shadcn_u_i_kit_v48jv9_app_state;
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
@@ -16,19 +13,8 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
-  final shadcn_u_i_kit_v48jv9AppState =
-      shadcn_u_i_kit_v48jv9_app_state.FFAppState();
-  await shadcn_u_i_kit_v48jv9AppState.initializePersistedState();
-
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (context) => appState,
-      ),
-      ChangeNotifierProvider(
-        create: (context) => shadcn_u_i_kit_v48jv9AppState,
-      ),
-    ],
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
     child: MyApp(),
   ));
 }
