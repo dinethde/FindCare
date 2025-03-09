@@ -138,6 +138,11 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            Icon(
+                              Icons.person_sharp,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 29.0,
+                            ),
                             Flexible(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -170,12 +175,7 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                 ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
-                            Icon(
-                              Icons.arrow_back,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
-                            ),
-                          ],
+                          ].divide(SizedBox(width: 10.0)),
                         ),
                       ),
                     ),
@@ -223,18 +223,10 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 26.5, 12.0, 26.5),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/image_2025-01-25_20-58-51.png',
-                                  width: 31.2,
-                                  height: 35.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            Icon(
+                              FFIcons.kuserNurse,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 29.0,
                             ),
                             Flexible(
                               child: Column(
@@ -267,7 +259,7 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                 ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 10.0)),
                         ),
                       ),
                     ),
