@@ -119,9 +119,10 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
-                                  size: 16.0,
+                                  FFIcons.kcgInformationpgMessage,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 18.0,
                                 ),
                                 lable: 'Message',
                               ),
@@ -140,9 +141,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
-                                  size: 16.0,
+                                  FFIcons.kpInfo,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 18.0,
                                 ),
                                 lable: 'General Info',
                               ),
@@ -162,9 +163,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  FFIcons.kstar,
+                                  color: FlutterFlowTheme.of(context).warning,
+                                  size: 19.0,
                                 ),
                                 lable: 'Ratings',
                               ),
