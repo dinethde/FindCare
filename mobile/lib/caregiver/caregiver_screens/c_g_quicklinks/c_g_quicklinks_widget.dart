@@ -5,6 +5,7 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'c_g_quicklinks_model.dart';
 export 'c_g_quicklinks_model.dart';
 
@@ -105,7 +106,7 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: IconButtonWidget(
                             icon1: Icon(
-                              Icons.info_outline,
+                              FFIcons.kpInfo,
                               size: 16.0,
                             ),
                             lable: '19 years old, 185cm, 60.0kg ...',
@@ -138,9 +139,9 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
+                                  FFIcons.kbookReader,
                                   color: Color(0xFFFF2D55),
-                                  size: 16.0,
+                                  size: 18.0,
                                 ),
                                 lable: 'Educational Knowledge',
                               ),
@@ -158,9 +159,10 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                               model: _model.iconButtonModel3,
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
-                                icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
+                                icon1: FaIcon(
+                                  FontAwesomeIcons.briefcase,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16.0,
                                 ),
                                 lable: 'Professional Skills',
@@ -181,9 +183,9 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  FFIcons.kstars,
+                                  color: Color(0xFFEFC347),
+                                  size: 19.0,
                                 ),
                                 lable: 'Specialized in',
                               ),
@@ -217,7 +219,8 @@ class _CGQuicklinksWidgetState extends State<CGQuicklinksWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.api,
+                                  FFIcons.kcgViewAvailabilityTime,
+                                  color: FlutterFlowTheme.of(context).error,
                                   size: 16.0,
                                 ),
                                 lable: 'View availability times ',
