@@ -83,7 +83,7 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Sign in to access your personalized caregiving services and manage your care \nneeds seamlessly.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Inter',
