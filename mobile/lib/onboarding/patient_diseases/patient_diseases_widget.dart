@@ -67,7 +67,7 @@ class _PatientDiseasesWidgetState extends State<PatientDiseasesWidget> {
                           ),
                     ),
                     Text(
-                      'Choose the care that matters most tailored to their unique needs.',
+                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
