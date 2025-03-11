@@ -76,26 +76,24 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Flexible(
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  widget.icon!,
-                  Text(
-                    valueOrDefault<String>(
-                      widget.label,
-                      'TEXT',
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          color: widget.textColor,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                widget.icon!,
+                Text(
+                  valueOrDefault<String>(
+                    widget.label,
+                    'TEXT',
                   ),
-                ].divide(SizedBox(width: 10.0)),
-              ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: widget.textColor,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ],
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
