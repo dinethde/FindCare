@@ -82,7 +82,7 @@ class _PersonalizationWidgetState extends State<PersonalizationWidget> {
                           ),
                     ),
                     Text(
-                      'Provide additional details to personalize the caregiving experience and find the best match for your needs.',
+                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
