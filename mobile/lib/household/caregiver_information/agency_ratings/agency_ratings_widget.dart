@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
+import '/household/one_textbtn/one_textbtn_widget.dart';
 import '/household/softskill_c_o_m_p/softskill_c_o_m_p_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +95,7 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Share your feedback about the agency to help others make informed decisions and improve service quality.',
+                                    'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -356,24 +357,42 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       wrapWithModel(
-                                        model: _model.softskillCOMPModel1,
+                                        model: _model.oneTextbtnModel,
                                         updateCallback: () =>
                                             safeSetState(() {}),
-                                        child: SoftskillCOMPWidget(),
-                                      ),
-                                      wrapWithModel(
-                                        model: _model.softskillCOMPModel2,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: SoftskillCOMPWidget(),
-                                      ),
-                                      wrapWithModel(
-                                        model: _model.softskillCOMPModel3,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: SoftskillCOMPWidget(),
+                                        child: OneTextbtnWidget(
+                                          lable: 'Ratings',
+                                        ),
                                       ),
                                     ].divide(SizedBox(height: 12.0)),
+                                  ),
+                                ].divide(SizedBox(height: 12.0)),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Reviews',
+                                    style: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      wrapWithModel(
+                                        model: _model.softskillCOMPModel,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: SoftskillCOMPWidget(),
+                                      ),
+                                    ]
+                                        .divide(SizedBox(height: 12.0))
+                                        .addToEnd(SizedBox(height: 12.0)),
                                   ),
                                 ].divide(SizedBox(height: 12.0)),
                               ),
