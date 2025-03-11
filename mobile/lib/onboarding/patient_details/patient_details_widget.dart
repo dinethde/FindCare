@@ -66,7 +66,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Please fill in the required patient details to proceed.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
