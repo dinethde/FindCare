@@ -70,7 +70,7 @@ class _CareGiverSignInWidgetState extends State<CareGiverSignInWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
-                        'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                        'Sign in to manage your caregiving tasks, access client information, and stay \nconnected seamlessly.',
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
