@@ -75,24 +75,26 @@ class _PaitentReportWidgetState extends State<PaitentReportWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                widget.icon!,
-                Text(
-                  valueOrDefault<String>(
-                    widget.label,
-                    'TEXT',
+            Flexible(
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  widget.icon!,
+                  Text(
+                    valueOrDefault<String>(
+                      widget.label,
+                      'TEXT',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: widget.textColor,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
-                        color: widget.textColor,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-              ].divide(SizedBox(width: 10.0)),
+                ].divide(SizedBox(width: 10.0)),
+              ),
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
