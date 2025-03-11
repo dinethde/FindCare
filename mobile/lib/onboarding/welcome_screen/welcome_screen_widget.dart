@@ -47,25 +47,25 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
         backgroundColor: Color(0xFFFBFAF8),
         body: SafeArea(
           top: true,
-          child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(0.0),
-                    child: Image.asset(
-                      'assets/images/image_2025-01-25_05-47-05.png',
-                      width: 235.0,
-                      height: 216.0,
-                      fit: BoxFit.cover,
-                    ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(0.0),
+                  child: Image.asset(
+                    'assets/images/image_2025-01-25_05-47-05.png',
+                    width: 235.0,
+                    height: 216.0,
+                    fit: BoxFit.cover,
                   ),
-                  Column(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
@@ -111,11 +111,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                           ),
                         ].divide(SizedBox(height: 12.0)),
                       ),
-                    ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 120.0)),
+                    ].divide(SizedBox(height: 16.0)),
                   ),
-                  FFButtonWidget(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed(OnboardRoleSelectWidget.routeName);
                     },
@@ -138,11 +139,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     ),
                     showLoadingIndicator: false,
                   ),
-                ]
-                    .divide(SizedBox(height: 40.0))
-                    .addToStart(SizedBox(height: 5.0))
-                    .addToEnd(SizedBox(height: 20.0)),
-              ),
+                ),
+              ]
+                  .divide(SizedBox(height: 40.0))
+                  .addToStart(SizedBox(height: 5.0))
+                  .addToEnd(SizedBox(height: 20.0)),
             ),
           ),
         ),
