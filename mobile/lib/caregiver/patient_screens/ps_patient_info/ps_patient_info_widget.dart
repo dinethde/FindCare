@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'ps_patient_info_model.dart';
 export 'ps_patient_info_model.dart';
 
@@ -78,8 +79,13 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Container(
@@ -187,8 +193,13 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 Container(
@@ -220,9 +231,17 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -272,9 +291,15 @@ class _PsPatientInfoWidgetState extends State<PsPatientInfoWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                       cursorColor: FlutterFlowTheme.of(context)
                                           .primaryText,

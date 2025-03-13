@@ -5,6 +5,7 @@ import '/household/icon_button/icon_button_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiverinfo_model.dart';
 export 'caregiverinfo_model.dart';
 
@@ -86,8 +87,12 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displayMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displayMediumFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 10.0)),
@@ -105,7 +110,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: IconButtonWidget(
                             icon1: Icon(
-                              Icons.info_outline,
+                              FFIcons.kpInfo,
                               size: 16.0,
                             ),
                             lable: '19 years old, 185cm, 60.0kg ...',
@@ -121,8 +126,12 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                           ),
                           InkWell(
@@ -138,8 +147,8 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
+                                  FFIcons.kbookReader,
+                                  color: Color(0xFFDDAA1B),
                                   size: 16.0,
                                 ),
                                 lable: 'Academic Skills',
@@ -159,8 +168,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
+                                  FFIcons.kbriefcase,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16.0,
                                 ),
                                 lable: 'Professional Skills',
@@ -181,9 +191,9 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  FFIcons.kaward,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 22.0,
                                 ),
                                 lable: 'Specializations',
                               ),

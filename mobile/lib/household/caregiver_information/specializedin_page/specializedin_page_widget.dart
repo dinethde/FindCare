@@ -4,6 +4,7 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'specializedin_page_model.dart';
 export 'specializedin_page_model.dart';
 
@@ -91,8 +92,13 @@ class _SpecializedinPageWidgetState extends State<SpecializedinPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Text(
@@ -100,8 +106,13 @@ class _SpecializedinPageWidgetState extends State<SpecializedinPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
                                       ),
                                 ),
                               ].divide(SizedBox(height: 12.0)),

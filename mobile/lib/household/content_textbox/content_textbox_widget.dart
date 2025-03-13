@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'content_textbox_model.dart';
 export 'content_textbox_model.dart';
 
@@ -66,10 +67,12 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
             alignLabelWithHint: true,
             hintText: widget.textField,
             hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Inter',
+                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                   fontSize: 16.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).bodyMediumFamily),
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -105,9 +108,11 @@ class _ContentTextboxWidgetState extends State<ContentTextboxWidget> {
                 EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                 fontSize: 16.0,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
               ),
           textAlign: TextAlign.start,
           cursorColor: FlutterFlowTheme.of(context).primaryText,

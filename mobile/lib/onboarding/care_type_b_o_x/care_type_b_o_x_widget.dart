@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'care_type_b_o_x_model.dart';
 export 'care_type_b_o_x_model.dart';
 
@@ -80,9 +81,11 @@ class _CareTypeBOXWidgetState extends State<CareTypeBOXWidget> {
             ),
             textAlign: TextAlign.start,
             style: FlutterFlowTheme.of(context).titleMedium.override(
-                  fontFamily: 'Inter',
+                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                   fontSize: 18.0,
                   letterSpacing: 0.0,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).titleMediumFamily),
                 ),
           ),
         ]

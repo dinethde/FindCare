@@ -100,10 +100,13 @@ class _OneTextbtnWidgetState extends State<OneTextbtnWidget> {
                       replacement: '…',
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),

@@ -7,6 +7,7 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cg_reports_model.dart';
 export 'cg_reports_model.dart';
@@ -99,8 +100,14 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displayMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayMediumFamily),
                                           ),
                                     ),
                                     Text(
@@ -108,8 +115,14 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                   ].divide(SizedBox(height: 12.0)),
@@ -123,8 +136,14 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmallFamily),
                                           ),
                                     ),
                                     Container(
@@ -176,25 +195,43 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                                   children: [
                                                     Text(
                                                       'Today, 16th November',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Color(
-                                                                0xFF8D8D8D),
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Color(
+                                                                    0xFF8D8D8D),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                     Text(
                                                       '6h 1m',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .displaySmall
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .displaySmallFamily),
+                                                              ),
                                                     ),
                                                   ].divide(
                                                       SizedBox(height: 4.0)),
@@ -275,8 +312,14 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmallFamily),
                                           ),
                                     ),
                                     Container(
@@ -343,19 +386,27 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                                       ),
                                                       Text(
                                                         'Satisfaction',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                       ),
                                                     ].divide(
                                                         SizedBox(width: 5.0)),
@@ -381,19 +432,27 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                                       ),
                                                       Text(
                                                         'Unsatisfactory',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                       ),
                                                     ].divide(
                                                         SizedBox(width: 5.0)),
@@ -404,11 +463,20 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                                   ),
                                                 ].divide(
@@ -430,8 +498,14 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmallFamily),
                                           ),
                                     ),
                                     Container(
@@ -483,25 +557,43 @@ class _CgReportsWidgetState extends State<CgReportsWidget> {
                                                   children: [
                                                     Text(
                                                       'Today, 16th November',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Color(
-                                                                0xFF8D8D8D),
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Color(
+                                                                    0xFF8D8D8D),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                     Text(
                                                       '6h 1m',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .displaySmall
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .displaySmallFamily),
+                                                              ),
                                                     ),
                                                   ].divide(
                                                       SizedBox(height: 4.0)),

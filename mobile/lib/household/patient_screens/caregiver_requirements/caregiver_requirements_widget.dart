@@ -5,6 +5,8 @@ import '/household/content_textbox/content_textbox_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiver_requirements_model.dart';
 export 'caregiver_requirements_model.dart';
 
@@ -85,18 +87,28 @@ class _CaregiverRequirementsWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                  'Specify the caregiver\'s expertise and experience required to meet the patient\'s needs.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
                                       ),
                                 ),
                               ]
@@ -112,8 +124,13 @@ class _CaregiverRequirementsWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -131,22 +148,27 @@ class _CaregiverRequirementsWidgetState
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Deficiency Diseases',
+                                  'Who can',
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
                                   model: _model.iconButtonModel,
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.no_backpack_outlined,
+                                    icon1: FaIcon(
+                                      FontAwesomeIcons.virusSlash,
                                       color: FlutterFlowTheme.of(context).error,
-                                      size: 24.0,
+                                      size: 18.0,
                                     ),
                                     lable: 'Patient doesn\'t have any disease ',
                                   ),
@@ -158,12 +180,17 @@ class _CaregiverRequirementsWidgetState
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Hereditary Diseases',
+                                  'Who are available',
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -171,29 +198,6 @@ class _CaregiverRequirementsWidgetState
                                   updateCallback: () => safeSetState(() {}),
                                   child: ContentTextboxWidget(
                                     textField: 'Down Syndrome',
-                                    readOnly: true,
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 12.0)),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Physiological Diseases',
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                wrapWithModel(
-                                  model: _model.contentTextboxModel3,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: ContentTextboxWidget(
-                                    textField: 'Asthma',
                                     readOnly: true,
                                   ),
                                 ),

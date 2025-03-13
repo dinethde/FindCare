@@ -1,3 +1,6 @@
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -77,18 +80,25 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                     Text(
                       'Sign in',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).displaySmallFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .displaySmallFamily),
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Sign in to access your personalized caregiving services and manage your care \nneeds seamlessly.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
                             fontSize: 14.0,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
                     ),
                   ].divide(SizedBox(height: 12.0)),
@@ -101,14 +111,14 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
-                          model: _model.textBoxModel1,
+                          model: _model.emailBoxModel,
                           updateCallback: () => safeSetState(() {}),
                           child: TextBoxWidget(
                             textField: 'Email',
                           ),
                         ),
                         wrapWithModel(
-                          model: _model.textBoxModel2,
+                          model: _model.passwordBoxModel,
                           updateCallback: () => safeSetState(() {}),
                           child: TextBoxWidget(
                             textField: 'Password',
@@ -137,7 +147,80 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(PatientFirstPageWidget.routeName);
+                          var _shouldSetState = false;
+                          Function() _navigate = () {};
+                          _model.aPIloginResult =
+                              await AuthGroup.loginCall.call(
+                            username: _model.emailBoxModel.textController.text,
+                            password:
+                                _model.passwordBoxModel.textController.text,
+                          );
+
+                          _shouldSetState = true;
+                          if ((_model.aPIloginResult?.succeeded ?? true)) {
+                            _model.accessTokenDecoded =
+                                await AuthGroup.userInfoCall.call(
+                              accessToken: AuthGroup.loginCall.accessToken(
+                                (_model.aPIloginResult?.jsonBody ?? ''),
+                              ),
+                            );
+
+                            _shouldSetState = true;
+                            await OnBoardCall.call(
+                              sub: AuthGroup.userInfoCall.sub(
+                                (_model.accessTokenDecoded?.jsonBody ?? ''),
+                              ),
+                              email: AuthGroup.userInfoCall.email(
+                                (_model.accessTokenDecoded?.jsonBody ?? ''),
+                              ),
+                              token: AuthGroup.loginCall.accessToken(
+                                (_model.aPIloginResult?.jsonBody ?? ''),
+                              ),
+                            );
+
+                            GoRouter.of(context).prepareAuthEvent();
+                            await authManager.signIn(
+                              authenticationToken:
+                                  AuthGroup.loginCall.accessToken(
+                                (_model.aPIloginResult?.jsonBody ?? ''),
+                              ),
+                              authUid: AuthGroup.userInfoCall.sub(
+                                (_model.accessTokenDecoded?.jsonBody ?? ''),
+                              ),
+                              userData: Auth0UserStruct(
+                                sub: AuthGroup.userInfoCall.sub(
+                                  (_model.accessTokenDecoded?.jsonBody ?? ''),
+                                ),
+                                email: AuthGroup.userInfoCall.email(
+                                  (_model.accessTokenDecoded?.jsonBody ?? ''),
+                                ),
+                              ),
+                            );
+                            _navigate = () => context.goNamedAuth(
+                                HomePageWidget.routeName, context.mounted);
+
+                            _navigate();
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  (_model.aPIloginResult?.bodyText ?? ''),
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                                ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).error,
+                              ),
+                            );
+                          }
+
+                          _navigate();
+                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: 'Find a Caregiver',
                         options: FFButtonOptions(
@@ -156,7 +239,6 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                           ),
                           borderRadius: BorderRadius.circular(6.0),
                         ),
-                        showLoadingIndicator: false,
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -167,9 +249,13 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
                                 ),
                           ),
                           FFButtonWidget(
@@ -187,10 +273,15 @@ class _HouseHoldSigninWidgetState extends State<HouseHoldSigninWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: Color(0xFFFF3355),
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               elevation: 0.0,
                             ),

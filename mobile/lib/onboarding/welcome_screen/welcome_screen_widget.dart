@@ -49,101 +49,120 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
           top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(0.0),
-                  child: Image.asset(
-                    'assets/images/image_2025-01-25_05-47-05.png',
-                    width: 235.0,
-                    height: 216.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Welcome to Find care',
-                        textAlign: TextAlign.center,
-                        style:
-                            FlutterFlowTheme.of(context).displayLarge.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                30.0, 16.0, 30.0, 0.0),
-                            child: Text(
-                              'This app brings all your loved ones’ care needs together in one  place.',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFF8D8D8D),
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                30.0, 12.0, 30.0, 0.0),
-                            child: Text(
-                              'You can see important changes or alerts, get insights from your data, and learn about essential topics.',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ].divide(SizedBox(height: 12.0)),
-                      ),
-                    ].divide(SizedBox(height: 16.0)),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed(OnboardRoleSelectWidget.routeName);
-                    },
-                    text: 'Continue',
-                    options: FFButtonOptions(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 47.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
-                      textStyle: GoogleFonts.getFont(
-                        'Inter Tight',
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.0,
-                      ),
-                      borderRadius: BorderRadius.circular(6.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(0.0),
+                    child: Image.asset(
+                      'assets/images/image_2025-01-25_05-47-05.png',
+                      width: 235.0,
+                      height: 216.0,
+                      fit: BoxFit.cover,
                     ),
-                    showLoadingIndicator: false,
                   ),
-                ),
-              ]
-                  .divide(SizedBox(height: 40.0))
-                  .addToStart(SizedBox(height: 5.0))
-                  .addToEnd(SizedBox(height: 20.0)),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          'Welcome to Find care',
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .displayLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .displayLargeFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .displayLargeFamily),
+                              ),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 16.0, 30.0, 0.0),
+                              child: Text(
+                                'This app brings all your loved ones’ care needs together in one  place.',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xFF8D8D8D),
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 12.0, 30.0, 0.0),
+                              child: Text(
+                                'You can see important changes or alerts, get insights from your data, and learn about essential topics.',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily),
+                                    ),
+                              ),
+                            ),
+                          ].divide(SizedBox(height: 12.0)),
+                        ),
+                      ].divide(SizedBox(height: 16.0)),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        context.pushNamed(OnboardRoleSelectWidget.routeName);
+                      },
+                      text: 'Continue',
+                      options: FFButtonOptions(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 47.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle: GoogleFonts.getFont(
+                          'Inter Tight',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16.0,
+                        ),
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                      showLoadingIndicator: false,
+                    ),
+                  ),
+                ]
+                    .divide(SizedBox(height: 40.0))
+                    .addToStart(SizedBox(height: 5.0))
+                    .addToEnd(SizedBox(height: 20.0)),
+              ),
             ),
           ),
         ),

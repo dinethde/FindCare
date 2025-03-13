@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'button_half_model.dart';
 export 'button_half_model.dart';
 
@@ -61,11 +62,13 @@ class _ButtonHalfWidgetState extends State<ButtonHalfWidget> {
           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.btnColor,
           textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                 color: Colors.white,
                 fontSize: 12.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineSmallFamily),
               ),
           borderRadius: BorderRadius.circular(6.0),
         ),

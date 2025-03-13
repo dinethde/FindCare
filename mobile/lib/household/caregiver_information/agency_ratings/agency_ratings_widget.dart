@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
-import '/household/one_textbtn/one_textbtn_widget.dart';
 import '/household/softskill_c_o_m_p/softskill_c_o_m_p_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -90,18 +89,30 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displayMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displayMediumFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayMediumFamily),
                                         ),
                                   ),
                                   Text(
-                                    'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                    'Share your feedback about the agency to help others make informed decisions and improve service quality.',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
                                         ),
                                   ),
                                   FFButtonWidget(
@@ -167,9 +178,18 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily),
                                                 ),
                                           ),
                                           Row(
@@ -219,13 +239,21 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -247,9 +275,18 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily),
                                                 ),
                                           ),
                                           Text(
@@ -257,7 +294,10 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -265,6 +305,12 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                                   fontWeight: FontWeight.w500,
                                                   decoration:
                                                       TextDecoration.underline,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 4.0)),
@@ -282,8 +328,14 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Container(
@@ -321,8 +373,16 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
                                                 ),
                                           ),
                                           Text(
@@ -330,8 +390,17 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 8.0)),
@@ -349,50 +418,38 @@ class _AgencyRatingsWidgetState extends State<AgencyRatingsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       wrapWithModel(
-                                        model: _model.oneTextbtnModel,
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: OneTextbtnWidget(
-                                          lable: 'Ratings',
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(height: 12.0)),
-                                  ),
-                                ].divide(SizedBox(height: 12.0)),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Reviews',
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      wrapWithModel(
-                                        model: _model.softskillCOMPModel,
+                                        model: _model.softskillCOMPModel1,
                                         updateCallback: () =>
                                             safeSetState(() {}),
                                         child: SoftskillCOMPWidget(),
                                       ),
-                                    ]
-                                        .divide(SizedBox(height: 12.0))
-                                        .addToEnd(SizedBox(height: 12.0)),
+                                      wrapWithModel(
+                                        model: _model.softskillCOMPModel2,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: SoftskillCOMPWidget(),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.softskillCOMPModel3,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: SoftskillCOMPWidget(),
+                                      ),
+                                    ].divide(SizedBox(height: 12.0)),
                                   ),
                                 ].divide(SizedBox(height: 12.0)),
                               ),

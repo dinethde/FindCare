@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'market_hosted_b_o_x_model.dart';
 export 'market_hosted_b_o_x_model.dart';
 
@@ -62,9 +63,9 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
-              Icons.how_to_reg,
+              Icons.how_to_reg_rounded,
               color: FlutterFlowTheme.of(context).primaryText,
-              size: 26.0,
+              size: 30.0,
             ),
             Flexible(
               child: Column(
@@ -82,6 +83,8 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          useGoogleFonts:
+                              GoogleFonts.asMap().containsKey('Roboto'),
                         ),
                   ),
                   Flexible(
@@ -94,10 +97,13 @@ class _MarketHostedBOXWidgetState extends State<MarketHostedBOXWidget> {
                       ),
                       minFontSize: 14.0,
                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleSmallFamily,
                             color: Color(0xFFABABAB),
                             fontSize: 14.0,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleSmallFamily),
                           ),
                     ),
                   ),

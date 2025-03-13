@@ -93,8 +93,14 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Text(
@@ -102,9 +108,15 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
                                         ),
                                   ),
                                   FFButtonWidget(
@@ -144,8 +156,14 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Container(
@@ -190,8 +208,17 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                                 Text(
@@ -200,8 +227,17 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ]
@@ -237,8 +273,14 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Column(
@@ -285,23 +327,41 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                                   children: [
                                                     Text(
                                                       'Heading six',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineSmall
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
+                                                              ),
                                                     ),
                                                     Text(
                                                       'Have worked more than 46hrs for xx household',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ]
                                                       .divide(
@@ -368,23 +428,41 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                                   children: [
                                                     Text(
                                                       'Heading six',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineSmall
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
+                                                              ),
                                                     ),
                                                     Text(
                                                       'Have worked more than 46hrs for xx household',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ]
                                                       .divide(

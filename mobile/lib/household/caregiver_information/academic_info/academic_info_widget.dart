@@ -4,6 +4,7 @@ import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/skill_box/skill_box_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'academic_info_model.dart';
 export 'academic_info_model.dart';
 
@@ -77,8 +78,12 @@ class _AcademicInfoWidgetState extends State<AcademicInfoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                           ),
                         ),

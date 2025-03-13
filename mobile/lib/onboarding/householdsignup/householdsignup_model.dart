@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/text_box/text_box_widget.dart';
 import '/onboarding/text_boxhalf/text_boxhalf_widget.dart';
@@ -9,42 +10,48 @@ class HouseholdsignupModel extends FlutterFlowModel<HouseholdsignupWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // Model for TextBox component.
-  late TextBoxModel textBoxModel1;
-  // Model for TextBoxhalf component.
-  late TextBoxhalfModel textBoxhalfModel1;
-  // Model for TextBoxhalf component.
-  late TextBoxhalfModel textBoxhalfModel2;
-  // Model for TextBox component.
-  late TextBoxModel textBoxModel2;
-  // Model for TextBox component.
-  late TextBoxModel textBoxModel3;
-  // Model for TextBox component.
-  late TextBoxModel textBoxModel4;
-  // Model for TextBox component.
-  late TextBoxModel textBoxModel5;
+  // Model for EmailBox.
+  late TextBoxModel emailBoxModel;
+  // Model for fNameBoxhalf.
+  late TextBoxhalfModel fNameBoxhalfModel;
+  // Model for lNameBoxhalf.
+  late TextBoxhalfModel lNameBoxhalfModel;
+  // Model for mobileBox.
+  late TextBoxModel mobileBoxModel;
+  // Model for addressBox.
+  late TextBoxModel addressBoxModel;
+  // Model for passBox.
+  late TextBoxModel passBoxModel;
+  // Model for confirmPassBox.
+  late TextBoxModel confirmPassBoxModel;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
+  // Stores action output result for [Backend Call - API (signup)] action in Button widget.
+  ApiCallResponse? aPIsingupResult;
+  // Stores action output result for [Backend Call - API (login)] action in Button widget.
+  ApiCallResponse? aPIloginResult;
+  // Stores action output result for [Backend Call - API (UserInfo)] action in Button widget.
+  ApiCallResponse? accessTokenDecoded;
 
   @override
   void initState(BuildContext context) {
-    textBoxModel1 = createModel(context, () => TextBoxModel());
-    textBoxhalfModel1 = createModel(context, () => TextBoxhalfModel());
-    textBoxhalfModel2 = createModel(context, () => TextBoxhalfModel());
-    textBoxModel2 = createModel(context, () => TextBoxModel());
-    textBoxModel3 = createModel(context, () => TextBoxModel());
-    textBoxModel4 = createModel(context, () => TextBoxModel());
-    textBoxModel5 = createModel(context, () => TextBoxModel());
+    emailBoxModel = createModel(context, () => TextBoxModel());
+    fNameBoxhalfModel = createModel(context, () => TextBoxhalfModel());
+    lNameBoxhalfModel = createModel(context, () => TextBoxhalfModel());
+    mobileBoxModel = createModel(context, () => TextBoxModel());
+    addressBoxModel = createModel(context, () => TextBoxModel());
+    passBoxModel = createModel(context, () => TextBoxModel());
+    confirmPassBoxModel = createModel(context, () => TextBoxModel());
   }
 
   @override
   void dispose() {
-    textBoxModel1.dispose();
-    textBoxhalfModel1.dispose();
-    textBoxhalfModel2.dispose();
-    textBoxModel2.dispose();
-    textBoxModel3.dispose();
-    textBoxModel4.dispose();
-    textBoxModel5.dispose();
+    emailBoxModel.dispose();
+    fNameBoxhalfModel.dispose();
+    lNameBoxhalfModel.dispose();
+    mobileBoxModel.dispose();
+    addressBoxModel.dispose();
+    passBoxModel.dispose();
+    confirmPassBoxModel.dispose();
   }
 }

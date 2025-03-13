@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'showmore_b_t_n_model.dart';
 export 'showmore_b_t_n_model.dart';
 
@@ -76,6 +77,7 @@ class _ShowmoreBTNWidgetState extends State<ShowmoreBTNWidget> {
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey('Roboto'),
                 ),
             elevation: 0.0,
             borderRadius: BorderRadius.circular(6.0),

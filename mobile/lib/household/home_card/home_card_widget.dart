@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home_card_model.dart';
 export 'home_card_model.dart';
 
@@ -77,6 +78,8 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                             color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            useGoogleFonts:
+                                GoogleFonts.asMap().containsKey('Inter'),
                           ),
                     ),
                     Icon(
@@ -102,17 +105,23 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                     '0',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Text(
                   'Messages',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         color: Color(0xFF8D8D8D),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Row(
@@ -122,10 +131,13 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                     Text(
                       'Hello World',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             color: widget.textColor,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                     Icon(

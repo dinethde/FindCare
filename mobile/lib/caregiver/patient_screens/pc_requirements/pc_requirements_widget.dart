@@ -5,6 +5,7 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'pc_requirements_model.dart';
 export 'pc_requirements_model.dart';
 
@@ -83,8 +84,13 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Text(
@@ -92,9 +98,14 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
                                       ),
                                 ),
                               ]
@@ -110,8 +121,13 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -133,8 +149,13 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -159,8 +180,13 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -182,8 +208,13 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 wrapWithModel(

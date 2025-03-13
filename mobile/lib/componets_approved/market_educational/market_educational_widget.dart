@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'market_educational_model.dart';
 export 'market_educational_model.dart';
 
@@ -72,9 +73,12 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
                 replacement: '…',
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Inter',
-                    fontSize: 14.0,
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineMediumFamily,
+                    fontSize: 15.0,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).headlineMediumFamily),
                   ),
             ),
             Text(
@@ -85,8 +89,9 @@ class _MarketEducationalWidgetState extends State<MarketEducationalWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Roboto',
                     color: Color(0xFFABABAB),
-                    fontSize: 10.0,
+                    fontSize: 13.0,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey('Roboto'),
                   ),
             ),
           ].divide(SizedBox(height: 8.0)).addToStart(SizedBox(height: 4.0)),

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'cg_rateagency_model.dart';
 export 'cg_rateagency_model.dart';
 
@@ -90,8 +91,13 @@ class _CgRateagencyWidgetState extends State<CgRateagencyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Container(
@@ -138,9 +144,18 @@ class _CgRateagencyWidgetState extends State<CgRateagencyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                               Text(
@@ -155,9 +170,18 @@ class _CgRateagencyWidgetState extends State<CgRateagencyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -178,9 +202,18 @@ class _CgRateagencyWidgetState extends State<CgRateagencyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                               Text(
@@ -195,9 +228,18 @@ class _CgRateagencyWidgetState extends State<CgRateagencyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                             ],

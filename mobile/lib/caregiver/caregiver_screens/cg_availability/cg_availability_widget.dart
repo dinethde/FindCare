@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/household/content_textbox/content_textbox_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'cg_availability_model.dart';
 export 'cg_availability_model.dart';
 
@@ -73,8 +74,12 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                           ),
                         ),
@@ -100,8 +105,13 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -123,8 +133,13 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily),
                                       ),
                                 ),
                                 wrapWithModel(
@@ -146,8 +161,13 @@ class _CgAvailabilityWidgetState extends State<CgAvailabilityWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily),
                                       ),
                                 ),
                                 wrapWithModel(

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'patient_block_model.dart';
 export 'patient_block_model.dart';
 
@@ -91,6 +92,8 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                         color: widget.textColor,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ],
@@ -111,8 +114,12 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineLargeFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineLargeFamily),
                               ),
                         ),
                         Text(
@@ -120,8 +127,12 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineLargeFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineLargeFamily),
                               ),
                         ),
                         Text(
@@ -129,8 +140,12 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineLargeFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineLargeFamily),
                               ),
                         ),
                       ],
@@ -141,10 +156,13 @@ class _PatientBlockWidgetState extends State<PatientBlockWidget> {
                         'text',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             color: Color(0xFF8D8D8D),
                             fontSize: 12.0,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ],

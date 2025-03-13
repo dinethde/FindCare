@@ -74,9 +74,13 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).displayMedium.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displayMediumFamily,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displayMediumFamily),
                                 ),
                       ),
                     ),
@@ -84,9 +88,12 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                       'Select your role and start your journey',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelLargeFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).labelLargeFamily),
                           ),
                     ),
                   ],
@@ -138,18 +145,10 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 26.5, 12.0, 26.5),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/image_2025-01-25_20-59-04.png',
-                                  width: 31.2,
-                                  height: 35.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            Icon(
+                              Icons.person_sharp,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 29.0,
                             ),
                             Flexible(
                               child: Column(
@@ -167,6 +166,8 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Inter'),
                                         ),
                                   ),
                                   Text(
@@ -175,15 +176,21 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
                                           color: Color(0xFF8D8D8D),
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
                                         ),
                                   ),
                                 ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 10.0)),
                         ),
                       ),
                     ),
@@ -231,18 +238,10 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 26.5, 12.0, 26.5),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/image_2025-01-25_20-58-51.png',
-                                  width: 31.2,
-                                  height: 35.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            Icon(
+                              FFIcons.kuserNurse,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 29.0,
                             ),
                             Flexible(
                               child: Column(
@@ -256,9 +255,15 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLargeFamily,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily),
                                         ),
                                   ),
                                   Text(
@@ -267,15 +272,21 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
                                           color: Color(0xFF8D8D8D),
                                           letterSpacing: 0.1,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
                                         ),
                                   ),
                                 ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 10.0)),
                         ),
                       ),
                     ),

@@ -5,6 +5,7 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'pc_quick_links_model.dart';
 export 'pc_quick_links_model.dart';
 
@@ -89,8 +90,13 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .displayMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displayMediumFamily),
                                     ),
                               ),
                             ].divide(SizedBox(height: 10.0)),
@@ -124,8 +130,13 @@ class _PcQuickLinksWidgetState extends State<PcQuickLinksWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displaySmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily),
                                     ),
                               ),
                               InkWell(

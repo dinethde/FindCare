@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiverersonal_links_model.dart';
 export 'caregiverersonal_links_model.dart';
 
@@ -77,8 +78,13 @@ class _CaregiverersonalLinksWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Container(
@@ -112,8 +118,10 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.calendar_month,
-                                        size: 16.0,
+                                        FFIcons.kpInfo,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 19.0,
                                       ),
                                       lable: 'Personal information',
                                     ),
@@ -133,9 +141,10 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.add_circle_sharp,
-                                        color: Color(0xFFFCA827),
-                                        size: 16.0,
+                                        FFIcons.kcogAlt,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 19.0,
                                       ),
                                       lable: 'Functions',
                                     ),
@@ -155,9 +164,10 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.info,
-                                        color: Color(0xFFCC2444),
-                                        size: 16.0,
+                                        FFIcons.kdocText,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 19.0,
                                       ),
                                       lable: 'Reports',
                                     ),
@@ -174,8 +184,13 @@ class _CaregiverersonalLinksWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 InkWell(
@@ -192,9 +207,10 @@ class _CaregiverersonalLinksWidgetState
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.document_scanner,
-                                        color: Color(0xFF456BB4),
-                                        size: 16.0,
+                                        FFIcons.kpInfo,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 19.0,
                                       ),
                                       lable: 'Caregiver agency’s information',
                                     ),

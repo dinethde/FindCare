@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'agency_details_card_model.dart';
 export 'agency_details_card_model.dart';
 
@@ -92,7 +93,7 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
-                        'https://images.unsplash.com/photo-1658314756095-f2e121683819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxjYXJlZ2l2ZXJ8ZW58MHx8fHwxNzM4ODYwMDU3fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                        'https://www.shutterstock.com/image-photo/happy-woman-arms-crossed-caregiver-260nw-2499766679.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -126,6 +127,8 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                           fontSize: 26.0,
                           letterSpacing: 1.0,
                           fontWeight: FontWeight.bold,
+                          useGoogleFonts:
+                              GoogleFonts.asMap().containsKey('Inter Tight'),
                         ),
                   ),
                 ),
@@ -151,15 +154,21 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                               fontSize: 21.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
+                              useGoogleFonts:
+                                  GoogleFonts.asMap().containsKey('Roboto'),
                             ),
                       ),
                       Text(
                         'Reviews',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               color: Color(0xFF8D8D8D),
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ],
@@ -188,6 +197,8 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                                   fontSize: 21.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
+                                  useGoogleFonts:
+                                      GoogleFonts.asMap().containsKey('Roboto'),
                                 ),
                           ),
                           Icon(
@@ -200,10 +211,14 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                       Text(
                         'Rating',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               color: Color(0xFF8D8D8D),
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ],
@@ -228,15 +243,21 @@ class _AgencyDetailsCardWidgetState extends State<AgencyDetailsCardWidget> {
                               fontSize: 21.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
+                              useGoogleFonts:
+                                  GoogleFonts.asMap().containsKey('Roboto'),
                             ),
                       ),
                       Text(
                         'Years in the industry',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               color: Color(0xFF8D8D8D),
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ],

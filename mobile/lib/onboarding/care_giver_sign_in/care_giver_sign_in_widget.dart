@@ -61,22 +61,30 @@ class _CareGiverSignInWidgetState extends State<CareGiverSignInWidget> {
                     Text(
                       'Sign in',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).displaySmallFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .displaySmallFamily),
                           ),
                     ),
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
-                        'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                        'Sign in to manage your caregiving tasks, access client information, and stay \nconnected seamlessly.',
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
                                 ),
                       ),
                     ),

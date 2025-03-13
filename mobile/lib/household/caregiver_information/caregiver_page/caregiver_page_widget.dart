@@ -5,6 +5,8 @@ import '/household/icon_button/icon_button_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiver_page_model.dart';
 export 'caregiver_page_model.dart';
 
@@ -87,8 +89,13 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Container(
@@ -112,10 +119,11 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                   model: _model.iconButtonModel1,
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
-                                    icon1: Icon(
-                                      Icons.document_scanner,
-                                      color: Color(0xFF456BB4),
-                                      size: 16.0,
+                                    icon1: FaIcon(
+                                      FontAwesomeIcons.addressCard,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 20.0,
                                     ),
                                     lable: 'Validate caregiver',
                                   ),
@@ -134,8 +142,9 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.calendar_month,
-                                        size: 16.0,
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFF94D56),
+                                        size: 18.0,
                                       ),
                                       lable: 'Caregiver information',
                                     ),
@@ -155,9 +164,9 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.add_circle_sharp,
+                                        FFIcons.kstar,
                                         color: Color(0xFFFCA827),
-                                        size: 16.0,
+                                        size: 20.0,
                                       ),
                                       lable: 'Rate Caregiver',
                                     ),
@@ -176,10 +185,11 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     model: _model.iconButtonModel4,
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
-                                      icon1: Icon(
-                                        Icons.info,
-                                        color: Color(0xFFCC2444),
-                                        size: 16.0,
+                                      icon1: FaIcon(
+                                        FontAwesomeIcons.fileContract,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 19.0,
                                       ),
                                       lable: 'Caregiver reports',
                                     ),
@@ -196,8 +206,13 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
                                 ),
                                 InkWell(
@@ -214,8 +229,8 @@ class _CaregiverPageWidgetState extends State<CaregiverPageWidget> {
                                     updateCallback: () => safeSetState(() {}),
                                     child: IconButtonWidget(
                                       icon1: Icon(
-                                        Icons.document_scanner,
-                                        color: Color(0xFF456BB4),
+                                        FFIcons.kpInfo,
+                                        color: Color(0xFFF94D56),
                                         size: 16.0,
                                       ),
                                       lable: 'Caregiver agency’s information',

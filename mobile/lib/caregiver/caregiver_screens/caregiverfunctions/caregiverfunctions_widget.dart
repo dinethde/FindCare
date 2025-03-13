@@ -5,6 +5,8 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiverfunctions_model.dart';
 export 'caregiverfunctions_model.dart';
 
@@ -81,8 +83,12 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displayMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displayMediumFamily),
                                 ),
                           ),
                           Column(
@@ -102,7 +108,10 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k,
+                                      FFIcons.kuserClock,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      size: 18.0,
                                     ),
                                     lable: 'Clock in and out',
                                   ),
@@ -121,7 +130,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_sharp,
+                                      Icons.checklist_rtl,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 23.0,
                                     ),
                                     lable: 'Perform Tasks',
                                   ),
@@ -140,7 +151,10 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_rounded,
+                                      Icons.calendar_month_sharp,
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
+                                      size: 20.0,
                                     ),
                                     lable: 'View Calendar',
                                   ),
@@ -160,7 +174,10 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: IconButtonWidget(
                                     icon1: Icon(
-                                      Icons.ten_k_outlined,
+                                      FFIcons.kmegaphone,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 19.0,
                                     ),
                                     lable: 'Inform Agency',
                                   ),
@@ -170,8 +187,9 @@ class _CaregiverfunctionsWidgetState extends State<CaregiverfunctionsWidget> {
                                 model: _model.iconButtonModel5,
                                 updateCallback: () => safeSetState(() {}),
                                 child: IconButtonWidget(
-                                  icon1: Icon(
-                                    Icons.ten_mp_rounded,
+                                  icon1: FaIcon(
+                                    FontAwesomeIcons.fileMedicalAlt,
+                                    color: FlutterFlowTheme.of(context).warning,
                                   ),
                                   lable: 'Document Care Recipient Details',
                                 ),

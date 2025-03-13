@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'appbar_model.dart';
 export 'appbar_model.dart';
 
@@ -96,10 +97,12 @@ class _AppbarWidgetState extends State<AppbarWidget> {
                   'TEXT',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       color: Color(0xFF007AFF),
                       fontSize: 16.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
             ],
@@ -143,10 +146,12 @@ class _AppbarWidgetState extends State<AppbarWidget> {
               'TEXT',
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Inter',
+                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                   color: Color(0xFF007AFF),
                   fontSize: 16.0,
                   letterSpacing: 0.0,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).bodyMediumFamily),
                 ),
           ),
         ),

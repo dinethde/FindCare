@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'selection_button_model.dart';
 export 'selection_button_model.dart';
 
@@ -63,11 +64,13 @@ class _SelectionButtonWidgetState extends State<SelectionButtonWidget> {
           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.btnColor,
           textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                 color: Color(0xFF8D8D8D),
                 fontSize: 14.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.normal,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineSmallFamily),
               ),
           borderRadius: BorderRadius.circular(0.0),
         ),

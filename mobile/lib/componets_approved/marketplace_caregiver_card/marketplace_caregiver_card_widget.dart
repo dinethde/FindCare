@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'marketplace_caregiver_card_model.dart';
 export 'marketplace_caregiver_card_model.dart';
 
@@ -105,6 +106,8 @@ class _MarketplaceCaregiverCardWidgetState
                         fontSize: 20.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
                 Row(
@@ -124,6 +127,8 @@ class _MarketplaceCaregiverCardWidgetState
                             fontFamily: 'Inter',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
+                            useGoogleFonts:
+                                GoogleFonts.asMap().containsKey('Inter'),
                           ),
                     ),
                   ],
@@ -145,6 +150,8 @@ class _MarketplaceCaregiverCardWidgetState
                         fontSize: 12.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
                 Text(
@@ -157,6 +164,8 @@ class _MarketplaceCaregiverCardWidgetState
                         color: Color(0xFF515151),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ].divide(SizedBox(height: 6.0)),
@@ -173,6 +182,7 @@ class _MarketplaceCaregiverCardWidgetState
                 fontSize: 20.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w500,
+                useGoogleFonts: GoogleFonts.asMap().containsKey('Inter'),
               ),
         ),
       ].divide(SizedBox(height: 15.0)),

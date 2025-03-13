@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'sepcified_care_tab_bar_model.dart';
 export 'sepcified_care_tab_bar_model.dart';
 
@@ -49,9 +50,9 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.house_sharp,
+                  Icons.add_home_work_rounded,
                   color: FlutterFlowTheme.of(context).primaryText,
-                  size: 30.0,
+                  size: 32.0,
                 ),
                 Text(
                   'Certified',
@@ -59,6 +60,8 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ],
@@ -69,7 +72,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                 Icon(
                   Icons.elderly_woman_rounded,
                   color: Color(0xFF999999),
-                  size: 30.0,
+                  size: 31.0,
                 ),
                 Text(
                   'Elderly Care',
@@ -78,6 +81,8 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                         color: Color(0xFF999999),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ],
@@ -86,17 +91,20 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.wheelchair_pickup,
+                  Icons.wheelchair_pickup_outlined,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
                 Text(
                   'Hospice Care',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodySmallFamily,
                         color: Color(0xFF999999),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
               ],
@@ -105,7 +113,7 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.hail_sharp,
+                  FFIcons.kbaby,
                   color: Color(0xFF999999),
                   size: 30.0,
                 ),
@@ -116,6 +124,8 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                         color: Color(0xFF999999),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ],
@@ -124,9 +134,9 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Icon(
-                  Icons.person_3_rounded,
+                  FFIcons.kuserNurse,
                   color: Color(0xFF999999),
-                  size: 30.0,
+                  size: 31.0,
                 ),
                 Text(
                   'Professionals',
@@ -135,6 +145,8 @@ class _SepcifiedCareTabBarWidgetState extends State<SepcifiedCareTabBarWidget> {
                         color: Color(0xFF999999),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Inter'),
                       ),
                 ),
               ],

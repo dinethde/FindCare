@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/calender/calender_widget.dart';
 import '/household/home_card/home_card_widget.dart';
@@ -34,6 +35,10 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   late CalenderModel calenderModel;
   // Model for iconButton component.
   late IconButtonModel iconButtonModel4;
+  // Model for iconButton component.
+  late IconButtonModel iconButtonModel5;
+  // Stores action output result for [Backend Call - API (logout)] action in iconButton widget.
+  ApiCallResponse? apiResultwmi;
   // Model for nav_barHouse component.
   late NavBarHouseModel navBarHouseModel;
 
@@ -48,6 +53,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     paitentReportModel = createModel(context, () => PaitentReportModel());
     calenderModel = createModel(context, () => CalenderModel());
     iconButtonModel4 = createModel(context, () => IconButtonModel());
+    iconButtonModel5 = createModel(context, () => IconButtonModel());
     navBarHouseModel = createModel(context, () => NavBarHouseModel());
   }
 
@@ -65,6 +71,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     paitentReportModel.dispose();
     calenderModel.dispose();
     iconButtonModel4.dispose();
+    iconButtonModel5.dispose();
     navBarHouseModel.dispose();
   }
 }

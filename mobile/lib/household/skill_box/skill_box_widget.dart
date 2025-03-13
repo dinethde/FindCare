@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'skill_box_model.dart';
 export 'skill_box_model.dart';
 
@@ -67,17 +68,23 @@ class _SkillBoxWidgetState extends State<SkillBoxWidget> {
                 Text(
                   'XX Course',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineSmallFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineSmallFamily),
                       ),
                 ),
                 Text(
                   '2022',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ],
@@ -85,10 +92,12 @@ class _SkillBoxWidgetState extends State<SkillBoxWidget> {
             Text(
               'Have worked more than 46hrs for xx household',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     color: Color(0xFF8D8D8D),
                     fontSize: 16.0,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
           ].divide(SizedBox(height: 8.5)),

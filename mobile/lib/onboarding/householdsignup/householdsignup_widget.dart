@@ -1,3 +1,6 @@
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -86,20 +89,30 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .displaySmallFamily,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .displaySmallFamily),
                                   ),
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                              'Create your account to connect with trusted caregivers and manage your household\'s care needs effortlessly.',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
                                   ),
                             ),
                           ],
@@ -112,7 +125,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               wrapWithModel(
-                                model: _model.textBoxModel1,
+                                model: _model.emailBoxModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: TextBoxWidget(
                                   textField: 'Email',
@@ -125,7 +138,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                 children: [
                                   Expanded(
                                     child: wrapWithModel(
-                                      model: _model.textBoxhalfModel1,
+                                      model: _model.fNameBoxhalfModel,
                                       updateCallback: () => safeSetState(() {}),
                                       child: TextBoxhalfWidget(
                                         textField: 'First name',
@@ -134,7 +147,7 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                   ),
                                   Expanded(
                                     child: wrapWithModel(
-                                      model: _model.textBoxhalfModel2,
+                                      model: _model.lNameBoxhalfModel,
                                       updateCallback: () => safeSetState(() {}),
                                       child: TextBoxhalfWidget(
                                         textField: 'Last name',
@@ -144,28 +157,28 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                 ].divide(SizedBox(width: 16.0)),
                               ),
                               wrapWithModel(
-                                model: _model.textBoxModel2,
+                                model: _model.mobileBoxModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: TextBoxWidget(
                                   textField: 'Mobile',
                                 ),
                               ),
                               wrapWithModel(
-                                model: _model.textBoxModel3,
+                                model: _model.addressBoxModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: TextBoxWidget(
                                   textField: 'Address',
                                 ),
                               ),
                               wrapWithModel(
-                                model: _model.textBoxModel4,
+                                model: _model.passBoxModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: TextBoxWidget(
                                   textField: 'Password',
                                 ),
                               ),
                               wrapWithModel(
-                                model: _model.textBoxModel5,
+                                model: _model.confirmPassBoxModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: TextBoxWidget(
                                   textField: 'Confirm the password',
@@ -214,8 +227,14 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                   ),
@@ -238,8 +257,104 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              context
-                                  .pushNamed(PatientFirstPageWidget.routeName);
+                              var _shouldSetState = false;
+                              Function() _navigate = () {};
+                              _model.aPIsingupResult =
+                                  await AuthGroup.signupCall.call(
+                                email: _model.emailBoxModel.textController.text,
+                                password: _model
+                                    .confirmPassBoxModel.textController.text,
+                              );
+
+                              _shouldSetState = true;
+                              if ((_model.aPIsingupResult?.succeeded ?? true)) {
+                                _model.aPIloginResult =
+                                    await AuthGroup.loginCall.call(
+                                  username:
+                                      _model.emailBoxModel.textController.text,
+                                  password: _model
+                                      .confirmPassBoxModel.textController.text,
+                                );
+
+                                _shouldSetState = true;
+                                if ((_model.aPIloginResult?.succeeded ??
+                                    true)) {
+                                  _model.accessTokenDecoded =
+                                      await AuthGroup.userInfoCall.call(
+                                    accessToken:
+                                        AuthGroup.loginCall.accessToken(
+                                      (_model.aPIloginResult?.jsonBody ?? ''),
+                                    ),
+                                  );
+
+                                  _shouldSetState = true;
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  await authManager.signIn(
+                                    authenticationToken:
+                                        AuthGroup.loginCall.accessToken(
+                                      (_model.aPIloginResult?.jsonBody ?? ''),
+                                    ),
+                                    authUid: AuthGroup.userInfoCall.sub(
+                                      (_model.accessTokenDecoded?.jsonBody ??
+                                          ''),
+                                    ),
+                                    userData: Auth0UserStruct(
+                                      sub: AuthGroup.userInfoCall.sub(
+                                        (_model.accessTokenDecoded?.jsonBody ??
+                                            ''),
+                                      ),
+                                      email: AuthGroup.userInfoCall.email(
+                                        (_model.accessTokenDecoded?.jsonBody ??
+                                            ''),
+                                      ),
+                                    ),
+                                  );
+                                  _navigate = () => context.goNamedAuth(
+                                      HomePageWidget.routeName,
+                                      context.mounted);
+
+                                  _navigate();
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        (_model.aPIloginResult?.bodyText ?? ''),
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).error,
+                                    ),
+                                  );
+                                }
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      getJsonField(
+                                        (_model.aPIsingupResult?.jsonBody ??
+                                            ''),
+                                        r'''$.description''',
+                                      ).toString(),
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).error,
+                                  ),
+                                );
+                              }
+
+                              _navigate();
+                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: 'Find a Caregiver',
                             options: FFButtonOptions(
@@ -258,7 +373,6 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                               ),
                               borderRadius: BorderRadius.circular(6.0),
                             ),
-                            showLoadingIndicator: false,
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -269,9 +383,14 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
                                     ),
                               ),
                               FFButtonWidget(
@@ -289,10 +408,15 @@ class _HouseholdsignupWidgetState extends State<HouseholdsignupWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         color: Color(0xFFFF3355),
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
                                       ),
                                   elevation: 0.0,
                                 ),

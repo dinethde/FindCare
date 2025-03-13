@@ -61,18 +61,25 @@ class _PatientDiseasesWidgetState extends State<PatientDiseasesWidget> {
                     Text(
                       'Patient Diseases',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).displaySmallFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .displaySmallFamily),
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Choose the care that matters most tailored to their unique needs.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ].divide(SizedBox(height: 12.0)),
@@ -84,11 +91,14 @@ class _PatientDiseasesWidgetState extends State<PatientDiseasesWidget> {
                     Text(
                       'Step 3/5',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             color: Color(0xFFFF3355),
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                     Column(
@@ -144,8 +154,13 @@ class _PatientDiseasesWidgetState extends State<PatientDiseasesWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
                                   ),
                             ),
                           ),

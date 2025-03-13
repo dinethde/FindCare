@@ -5,6 +5,7 @@ import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'patients_list_model.dart';
 export 'patients_list_model.dart';
 
@@ -87,8 +88,13 @@ class _PatientsListWidgetState extends State<PatientsListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 Container(

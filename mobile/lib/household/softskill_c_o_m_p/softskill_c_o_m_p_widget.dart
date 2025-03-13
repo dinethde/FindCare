@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'softskill_c_o_m_p_model.dart';
 export 'softskill_c_o_m_p_model.dart';
 
@@ -67,10 +68,13 @@ class _SoftskillCOMPWidgetState extends State<SoftskillCOMPWidget> {
                 Text(
                   'Dineth',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Row(
@@ -108,15 +112,19 @@ class _SoftskillCOMPWidgetState extends State<SoftskillCOMPWidget> {
             Text(
               '2022',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
             Text(
               'Have worked more than 46hrs for xx household',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
           ],

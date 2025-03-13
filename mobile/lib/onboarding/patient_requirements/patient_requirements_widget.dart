@@ -65,18 +65,26 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                         'Patient Requirements',
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                       ),
                       Text(
-                        'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                        'Select the specific requirements and services needed for the patient’s care to match them with the best caregiver.',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ].divide(SizedBox(height: 12.0)),
@@ -90,14 +98,19 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                         alignment: AlignmentDirectional(-1.0, -1.0),
                         child: Text(
                           'Step 4/5',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFFFF3355),
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                color: Color(0xFFFF3355),
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                       ),
                       FlutterFlowChoiceChips(
@@ -123,14 +136,19 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                             safeSetState(() => _model.choiceChipsValues = val),
                         selectedChipStyle: ChipStyle(
                           backgroundColor: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context).info,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                color: FlutterFlowTheme.of(context).info,
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                           iconColor: Colors.white,
                           iconSize: 16.0,
                           elevation: 0.0,
@@ -142,11 +160,15 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                           textStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 12.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
                               ),
                           iconColor: Colors.white,
                           iconSize: 16.0,
@@ -184,8 +206,13 @@ class _PatientRequirementsWidgetState extends State<PatientRequirementsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
                                     ),
                               ),
                             ),

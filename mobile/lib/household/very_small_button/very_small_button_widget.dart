@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'very_small_button_model.dart';
 export 'very_small_button_model.dart';
 
@@ -69,10 +70,12 @@ class _VerySmallButtonWidgetState extends State<VerySmallButtonWidget> {
           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: widget.color,
           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                 color: widget.textColor,
                 fontSize: 14.0,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
               ),
           elevation: 0.0,
           borderSide: BorderSide(

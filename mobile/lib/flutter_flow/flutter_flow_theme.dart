@@ -3,8 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+enum DeviceSize {
+  mobile,
+  tablet,
+  desktop,
+}
+
 abstract class FlutterFlowTheme {
+  static DeviceSize deviceSize = DeviceSize.mobile;
+
   static FlutterFlowTheme of(BuildContext context) {
+    deviceSize = getDeviceSize(context);
     return LightModeTheme();
   }
 
@@ -92,7 +101,22 @@ abstract class FlutterFlowTheme {
   String get bodySmallFamily => typography.bodySmallFamily;
   TextStyle get bodySmall => typography.bodySmall;
 
-  Typography get typography => ThemeTypography(this);
+  Typography get typography => {
+        DeviceSize.mobile: MobileTypography(this),
+        DeviceSize.tablet: TabletTypography(this),
+        DeviceSize.desktop: DesktopTypography(this),
+      }[deviceSize]!;
+}
+
+DeviceSize getDeviceSize(BuildContext context) {
+  final width = MediaQuery.sizeOf(context).width;
+  if (width < 479) {
+    return DeviceSize.mobile;
+  } else if (width < 991) {
+    return DeviceSize.tablet;
+  } else {
+    return DeviceSize.desktop;
+  }
 }
 
 class LightModeTheme extends FlutterFlowTheme {
@@ -109,7 +133,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF000000);
   late Color secondaryText = const Color(0xFF1E1E1E);
-  late Color primaryBackground = const Color(0xFFFBFAF8);
+  late Color primaryBackground = const Color(0xFFFAF8F5);
   late Color secondaryBackground = const Color(0xFFF6F6F9);
   late Color accent1 = const Color(0x4C4B39EF);
   late Color accent2 = const Color(0x4D39D2C0);
@@ -154,8 +178,258 @@ abstract class Typography {
   TextStyle get bodySmall;
 }
 
-class ThemeTypography extends Typography {
-  ThemeTypography(this.theme);
+class MobileTypography extends Typography {
+  MobileTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Inter';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 32.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get displayMediumFamily => 'Inter';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 28.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get displaySmallFamily => 'Inter';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineLargeFamily => 'Inter';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineMediumFamily => 'Inter';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 20.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineSmallFamily => 'Inter';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 18.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleLargeFamily => 'Inter';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleMediumFamily => 'Inter';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleSmallFamily => 'Inter';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelLargeFamily => 'Inter';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelMediumFamily => 'Inter';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelSmallFamily => 'IBM Plex Sans';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'IBM Plex Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 10.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get bodyLargeFamily => 'Inter';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get bodyMediumFamily => 'Inter';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get bodySmallFamily => 'Inter';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+}
+
+class TabletTypography extends Typography {
+  TabletTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Inter';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 32.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get displayMediumFamily => 'Inter';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 28.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get displaySmallFamily => 'Inter';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineLargeFamily => 'Inter';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineMediumFamily => 'Inter';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 20.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get headlineSmallFamily => 'Inter';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 18.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleLargeFamily => 'Inter';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleMediumFamily => 'Inter';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get titleSmallFamily => 'Inter';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelLargeFamily => 'Inter';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelMediumFamily => 'Inter';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get labelSmallFamily => 'IBM Plex Sans';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'IBM Plex Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 10.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get bodyLargeFamily => 'Inter';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+        fontStyle: FontStyle.normal,
+      );
+  String get bodyMediumFamily => 'Inter';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get bodySmallFamily => 'Inter';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Inter',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+}
+
+class DesktopTypography extends Typography {
+  DesktopTypography(this.theme);
 
   final FlutterFlowTheme theme;
 

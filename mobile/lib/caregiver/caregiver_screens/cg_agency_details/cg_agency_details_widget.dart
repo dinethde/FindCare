@@ -5,6 +5,7 @@ import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'cg_agency_details_model.dart';
 export 'cg_agency_details_model.dart';
 
@@ -86,8 +87,12 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displayMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displayMediumFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 10.0)),
@@ -101,8 +106,12 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                           ),
                           InkWell(
@@ -119,9 +128,10 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.grain,
-                                  color: Color(0xFFFF2D55),
-                                  size: 16.0,
+                                  FFIcons.kcgInformationpgMessage,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 18.0,
                                 ),
                                 lable: 'Message',
                               ),
@@ -140,9 +150,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.document_scanner_rounded,
-                                  color: Color(0xFF046ACC),
-                                  size: 16.0,
+                                  FFIcons.kpInfo,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 18.0,
                                 ),
                                 lable: 'General Info',
                               ),
@@ -162,9 +172,9 @@ class _CgAgencyDetailsWidgetState extends State<CgAgencyDetailsWidget> {
                               updateCallback: () => safeSetState(() {}),
                               child: IconButtonWidget(
                                 icon1: Icon(
-                                  Icons.medical_information_sharp,
-                                  color: Color(0xFFC27E2D),
-                                  size: 16.0,
+                                  FFIcons.kstar,
+                                  color: FlutterFlowTheme.of(context).warning,
+                                  size: 19.0,
                                 ),
                                 lable: 'Ratings',
                               ),

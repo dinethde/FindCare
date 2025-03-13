@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'text_boxhalf_model.dart';
 export 'text_boxhalf_model.dart';
 
@@ -65,6 +66,7 @@ class _TextBoxhalfWidgetState extends State<TextBoxhalfWidget> {
                   color: Color(0x40000000),
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey('Inter'),
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -100,8 +102,10 @@ class _TextBoxhalfWidgetState extends State<TextBoxhalfWidget> {
                 EdgeInsetsDirectional.fromSTEB(17.5, 17.5, 0.0, 17.5),
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
               ),
           textAlign: TextAlign.start,
           cursorColor: FlutterFlowTheme.of(context).primaryText,

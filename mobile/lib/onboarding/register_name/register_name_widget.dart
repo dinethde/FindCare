@@ -68,20 +68,29 @@ class _RegisterNameWidgetState extends State<RegisterNameWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displayMedium
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .displayMediumFamily,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .displayMediumFamily),
                               ),
                         ),
                         Text(
                           'Select your role and start your journey',
                           textAlign: TextAlign.start,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                       ].divide(SizedBox(height: 4.0)),
                     ),
@@ -128,13 +137,18 @@ class _RegisterNameWidgetState extends State<RegisterNameWidget> {
                       children: [
                         Text(
                           'Already sign up?',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                fontSize: 12.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                         FFButtonWidget(
                           onPressed: () async {
@@ -150,10 +164,14 @@ class _RegisterNameWidgetState extends State<RegisterNameWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: Color(0xFFFF3355),
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                             elevation: 0.0,
                           ),

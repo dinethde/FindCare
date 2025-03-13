@@ -72,19 +72,28 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Inter',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .displaySmallFamily,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .displaySmallFamily),
                               ),
                         ),
                         Text(
                           'Select your role and start your journey',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                       ],
                     ),
@@ -108,8 +117,8 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                Icons.cancel,
-                                size: 28.0,
+                                FFIcons.kmarketElderly,
+                                size: 30.0,
                               ),
                               text: 'Senior Care',
                             ),
@@ -132,8 +141,8 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                                   ? FlutterFlowTheme.of(context).primary
                                   : Colors.transparent,
                               icon: Icon(
-                                Icons.eighteen_up_rating_outlined,
-                                size: 28.0,
+                                FFIcons.kbaby,
+                                size: 30.0,
                               ),
                               text: 'Child Care',
                             ),

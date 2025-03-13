@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/button/button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'clock_i_n_o_u_t_model.dart';
 export 'clock_i_n_o_u_t_model.dart';
 
@@ -84,9 +85,12 @@ class _ClockINOUTWidgetState extends State<ClockINOUTWidget> {
                     'text',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         fontSize: 12.0,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Text(
@@ -95,10 +99,13 @@ class _ClockINOUTWidgetState extends State<ClockINOUTWidget> {
                     '08.00AM - 05.00PM',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Row(
@@ -115,10 +122,13 @@ class _ClockINOUTWidgetState extends State<ClockINOUTWidget> {
                         'NO. 190, Deerakkandha rd, Wadduwa',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             color: Color(0xFFA6A6A6),
                             fontSize: 10.0,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ].divide(SizedBox(width: 8.0)),

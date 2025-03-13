@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/onboarding/invisible_button/invisible_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'cg_clockinandout_model.dart';
 export 'cg_clockinandout_model.dart';
 
@@ -75,10 +76,14 @@ class _CgClockinandoutWidgetState extends State<CgClockinandoutWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   color: FlutterFlowTheme.of(context).secondary,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily),
                                 ),
                           ),
                           Row(
@@ -91,8 +96,13 @@ class _CgClockinandoutWidgetState extends State<CgClockinandoutWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .displayMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displayMediumFamily),
                                     ),
                               ),
                               Row(

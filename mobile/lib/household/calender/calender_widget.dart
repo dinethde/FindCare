@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'calender_model.dart';
 export 'calender_model.dart';
 
@@ -63,29 +64,39 @@ class _CalenderWidgetState extends State<CalenderWidget> {
           safeSetState(() => _model.calendarSelectedDay = newSelectedDate);
         },
         titleStyle: FlutterFlowTheme.of(context).titleLarge.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
               fontSize: 12.0,
               letterSpacing: 0.0,
               fontWeight: FontWeight.w600,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
             ),
         dayOfWeekStyle: FlutterFlowTheme.of(context).bodyLarge.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
               letterSpacing: 0.0,
               fontWeight: FontWeight.bold,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
             ),
         dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
               letterSpacing: 0.0,
               fontWeight: FontWeight.w500,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
             ),
         selectedDateStyle: FlutterFlowTheme.of(context).titleSmall.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
               letterSpacing: 0.0,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
             ),
         inactiveDateStyle: FlutterFlowTheme.of(context).labelMedium.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
               color: Color(0xFFBDBDBD),
               letterSpacing: 0.0,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
             ),
       ),
     );

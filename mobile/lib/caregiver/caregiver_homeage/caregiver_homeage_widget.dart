@@ -11,6 +11,7 @@ import '/household/patient_block/patient_block_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'caregiver_homeage_model.dart';
 export 'caregiver_homeage_model.dart';
 
@@ -95,8 +96,16 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .displayLarge
                                             .override(
-                                              fontFamily: 'Inter',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayLargeFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displayLargeFamily),
                                             ),
                                       ),
                                       InkWell(
@@ -142,10 +151,19 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .displaySmall
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displaySmallFamily,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displaySmallFamily),
                                                         ),
                                               ),
                                             ),
@@ -205,10 +223,16 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -259,22 +283,26 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Inter',
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                         ),
                                                                     selectedTextStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Inter',
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                         ),
                                                                     buttonPosition:
                                                                         RadioButtonPosition
@@ -351,8 +379,14 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   InkWell(
@@ -408,23 +442,39 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           isDense: true,
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Inter',
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
+                                              ),
                                           hintText:
                                               'Document care-recipient day',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Inter',
-                                                    color: Color(0xFFA6A6A6),
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
+                                                color: Color(0xFFA6A6A6),
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
+                                              ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Color(0x00000000),
@@ -475,8 +525,16 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -503,9 +561,15 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Column(
@@ -571,8 +635,14 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   InkWell(
@@ -633,9 +703,9 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                             textColor: Color(0xFF0584FF),
                                             label: 'Patient Reports',
                                             icon: Icon(
-                                              Icons.reorder,
+                                              FFIcons.kpMedicalRecords,
                                               color: Color(0xFF0584FF),
-                                              size: 16.0,
+                                              size: 19.0,
                                             ),
                                             textBox: 'Last week',
                                             icon2: Icon(

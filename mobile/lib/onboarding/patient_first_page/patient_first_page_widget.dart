@@ -59,17 +59,24 @@ class _PatientFirstPageWidgetState extends State<PatientFirstPageWidget> {
                     Text(
                       'Add your first patient',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).displaySmallFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .displaySmallFamily),
                           ),
                     ),
                     Text(
                       'Select your role and start your journey',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ].divide(SizedBox(height: 12.0)),
@@ -113,13 +120,18 @@ class _PatientFirstPageWidgetState extends State<PatientFirstPageWidget> {
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Color(0x00FFFFFF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Inter',
-                                  color: Color(0xFFA6A6A6),
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .titleSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
+                              color: Color(0xFFA6A6A6),
+                              fontSize: 12.0,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
+                            ),
                         elevation: 0.0,
                       ),
                     ),

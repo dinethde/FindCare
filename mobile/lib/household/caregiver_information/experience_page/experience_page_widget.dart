@@ -5,6 +5,7 @@ import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/household/one_textbtn/one_textbtn_widget.dart';
 import '/household/softskill_c_o_m_p/softskill_c_o_m_p_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'experience_page_model.dart';
 export 'experience_page_model.dart';
 
@@ -88,8 +89,14 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displayMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displayMediumFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayMediumFamily),
                                         ),
                                   ),
                                   Text(
@@ -97,9 +104,15 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
                                         ),
                                   ),
                                 ].divide(SizedBox(height: 12.0)),
@@ -138,9 +151,18 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily),
                                                 ),
                                           ),
                                           Text(
@@ -148,9 +170,18 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: Color(0xFFABABAB),
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 4.0)),
@@ -170,13 +201,21 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -196,9 +235,18 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily),
                                                 ),
                                           ),
                                           Text(
@@ -206,9 +254,18 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: Color(0xFFABABAB),
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 4.0)),
@@ -226,8 +283,14 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Container(
@@ -265,8 +328,16 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
                                                 ),
                                           ),
                                           Text(
@@ -274,8 +345,17 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 8.0)),
@@ -293,8 +373,14 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Column(
@@ -321,8 +407,14 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Inter',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ),
                                   Column(

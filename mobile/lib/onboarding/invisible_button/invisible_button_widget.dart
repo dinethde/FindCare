@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'invisible_button_model.dart';
 export 'invisible_button_model.dart';
 
@@ -61,13 +62,15 @@ class _InvisibleButtonWidgetState extends State<InvisibleButtonWidget> {
           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
           color: Color(0x00FFFFFF),
           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                 color: valueOrDefault<Color>(
                   widget.color,
                   Color(0xFFFF3355),
                 ),
                 fontSize: 12.0,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
               ),
           elevation: 0.0,
           borderRadius: BorderRadius.circular(0.0),

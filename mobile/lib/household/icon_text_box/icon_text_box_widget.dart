@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'icon_text_box_model.dart';
 export 'icon_text_box_model.dart';
 
@@ -55,15 +56,19 @@ class _IconTextBoxWidgetState extends State<IconTextBoxWidget> {
         decoration: InputDecoration(
           isDense: true,
           labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).labelMediumFamily),
               ),
           hintText: widget.lable,
           hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                fontFamily: 'Inter',
+                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                 color: Color(0xFFA6A6A6),
                 fontSize: 12.0,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).labelMediumFamily),
               ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -98,8 +103,10 @@ class _IconTextBoxWidgetState extends State<IconTextBoxWidget> {
           prefixIcon: widget.icon,
         ),
         style: FlutterFlowTheme.of(context).bodyMedium.override(
-              fontFamily: 'Inter',
+              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
               letterSpacing: 0.0,
+              useGoogleFonts: GoogleFonts.asMap()
+                  .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
             ),
         cursorColor: FlutterFlowTheme.of(context).primaryText,
         validator: _model.textControllerValidator.asValidator(context),

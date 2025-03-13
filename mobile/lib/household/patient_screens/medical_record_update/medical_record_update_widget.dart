@@ -5,6 +5,8 @@ import '/household/appbar/appbar_widget.dart';
 import '/household/nav_bar_house/nav_bar_house_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'medical_record_update_model.dart';
 export 'medical_record_update_model.dart';
 
@@ -108,7 +110,7 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                       Icons.file_download_outlined,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
+                                      size: 28.0,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
@@ -118,10 +120,10 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                     borderRadius: 8.0,
                                     buttonSize: 40.0,
                                     icon: Icon(
-                                      Icons.share,
+                                      Icons.ios_share_rounded,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
+                                      size: 28.0,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
@@ -141,8 +143,14 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displayMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayMediumFamily),
                                           ),
                                     ),
                                     Column(
@@ -161,8 +169,17 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                             ),
                                             Text(
@@ -171,11 +188,20 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFF0584FF),
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                           ],
@@ -196,8 +222,17 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               hintText: dateTimeFormat("d/M/y",
                                                   random_data.randomDate()),
@@ -205,9 +240,18 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -254,9 +298,18 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
@@ -284,8 +337,17 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                             ),
                                             Text(
@@ -294,11 +356,20 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFF0584FF),
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                           ],
@@ -319,17 +390,35 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               hintText: 'Hospital name',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -376,9 +465,18 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
@@ -406,8 +504,17 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                             ),
                                             Text(
@@ -416,11 +523,20 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFF0584FF),
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                           ],
@@ -443,9 +559,18 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -496,9 +621,18 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
@@ -526,8 +660,17 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                             ),
                                             Text(
@@ -536,11 +679,20 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFF0584FF),
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                           ],
@@ -566,12 +718,12 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                               FlutterFlowIconButton(
                                                 borderRadius: 8.0,
                                                 buttonSize: 40.0,
-                                                icon: Icon(
-                                                  Icons.picture_as_pdf,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.filePdf,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 24.0,
+                                                  size: 28.0,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -581,12 +733,12 @@ class _MedicalRecordUpdateWidgetState extends State<MedicalRecordUpdateWidget> {
                                               FlutterFlowIconButton(
                                                 borderRadius: 8.0,
                                                 buttonSize: 40.0,
-                                                icon: Icon(
-                                                  Icons.picture_as_pdf,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.filePdf,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 24.0,
+                                                  size: 28.0,
                                                 ),
                                                 onPressed: () {
                                                   print(
