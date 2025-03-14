@@ -1,0 +1,39 @@
+# Maven build files
+target/
+!target/*.jar
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.sublime-*
+.settings/
+.project
+.classpath
+
+# Git files
+.git/
+.gitignore
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+tmp/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Docker files (to avoid recursion)
+Dockerfile
+docker-compose*
+
+# Other unnecessary files for the build
+README.md
+LICENSE
+*.md
