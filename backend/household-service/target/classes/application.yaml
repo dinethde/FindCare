@@ -3,7 +3,7 @@ spring:
     name: household-service
 
   datasource:
-    url: jdbc:postgresql://household-db-postgres.postgres.database.azure.com:5432/household?sslmode=require
+    url: jdbc:postgresql://household-db.postgres.database.azure.com:5432/household?sslmode=require
     username: dbhousehold
     password: Findcare_householdDb
 
@@ -17,9 +17,9 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://findcare.jp.auth0.com/
-          audiences: https://findcareff
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: https://findcare.jp.auth0.com/
+#          audiences: https://findcareff

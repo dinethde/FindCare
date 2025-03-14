@@ -1,23 +1,18 @@
 package com.findcare.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import com.findcare.dto.User;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
 @Slf4j
+@RestController
+@RequestMapping("/household")
 public class HouseholdController {
 
-    @GetMapping("/")
-    public String home() {
-//        log.info("Request reveived for Household Service");
-        return "Welcome to Household Service!";
-    }
-
-    @PostMapping("/")
-    public String postHome(){
-        return "Welcome to POST Household Service!";
+    @PostMapping(value = "/", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public String getHousehold(@ModelAttribute User user) {
+        log.info(user.toString());
+        return "message received";
     }
 }
