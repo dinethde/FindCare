@@ -56,4 +56,5 @@ jobs:
               --ports 8080 \
               --restart-policy Always \
               --registry-username ${{ secrets.ACR_USERNAME }} \
-              --registry-password ${{ secrets.ACR_PASSWORD }}
+              --registry-password ${{ secrets.ACR_PASSWORD }} \
+              --os-type Linux 
