@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class User {
-    private String sub;
-    private String email;
+    private Integer householdId;
+    private String auth0Identifier;
+    private Integer householdaccId;
+    private String preferredLanguage;
 }
