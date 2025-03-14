@@ -55,6 +55,8 @@ jobs:
               --cpu 1 --memory 1 \
               --ports 8080 \
               --restart-policy Always \
+              --ip-address Public \
+              --dns-name-label household \
               --registry-username ${{ secrets.ACR_USERNAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }} \
               --os-type Linux 
