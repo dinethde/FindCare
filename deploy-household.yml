@@ -1,0 +1,67 @@
+name: Deploy Household Service
+
+on:
+  push:
+    branches:
+      - backend/household
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Azure Login using the SP credentials stored in GitHub Secrets
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # 3. (Optional) Log in to ACR if needed
+      # The azure/login@v1 step can automatically authenticate to your ACR if your SP has Contributor access to the registry’s resource group.
+      # If you prefer separate ACR credentials:
+      #
+      # - name: ACR Login
+      #   run: az acr login --name findcarebackendcr
+      #
+      # (If your SP is properly set, you can skip this step.)
+
+      # 4. Build the Docker image
+      - name: Build Docker image
+        run: |
+          cd backend/household
+          IMAGE_NAME="${{ secrets.ACR_LOGIN_SERVER }}/household-service:latest"
+          echo "Building image: $IMAGE_NAME"
+          docker build -t $IMAGE_NAME .
+
+      # 5. Push Docker image to ACR
+      - name: Push Docker image
+        run: |
+          IMAGE_NAME="${{ secrets.ACR_LOGIN_SERVER }}/household-service:latest"
+          docker push $IMAGE_NAME
+
+      # 6. Update Container Instance
+      - name: Update ACI with new image
+        run: |
+          RESOURCE_GROUP="backend-service"
+          ACI_NAME="household-service-acr"
+          NEW_IMAGE="${{ secrets.ACR_LOGIN_SERVER }}/household-service:latest"
+
+          az container update \
+            --resource-group $RESOURCE_GROUP \
+            --name $ACI_NAME \
+            --image $NEW_IMAGE
+
+
+          # Option B (alternative):
+          # Delete and recreate the container to ensure a clean start
+          # az container delete --resource-group $RESOURCE_GROUP --name $ACI_NAME --yes
+          # az container create --resource-group $RESOURCE_GROUP --name $ACI_NAME \
+          #     --image $NEW_IMAGE \
+          #     --cpu 1 --memory 1 \
+          #     --ports 8080 \
+          #     --environment-variables <KEY=VALUE pairs> \
+          #     --restart-policy Always
