@@ -46,23 +46,14 @@ jobs:
       # 6. Update Container Instance
       - name: Update ACI with new image
         run: |
-           RESOURCE_GROUP="backend-service"
-           ACI_NAME="household-service-acr"
-           NEW_IMAGE="${{ secrets.ACR_LOGIN_SERVER }}/household-service:latest"
-           az container delete --resource-group $RESOURCE_GROUP --name $ACI_NAME --yes
-           az container create --resource-group $RESOURCE_GROUP --name $ACI_NAME \
-               --image $NEW_IMAGE \
-               --cpu 1 --memory 1 \
-               --ports 8080 \
-               --restart-policy Always
-
-
-          # Option B (alternative):
-          # Delete and recreate the container to ensure a clean start
-          # az container delete --resource-group $RESOURCE_GROUP --name $ACI_NAME --yes
-          # az container create --resource-group $RESOURCE_GROUP --name $ACI_NAME \
-          #     --image $NEW_IMAGE \
-          #     --cpu 1 --memory 1 \
-          #     --ports 8080 \
-          #     --environment-variables <KEY=VALUE pairs> \
-          #     --restart-policy Always
+          RESOURCE_GROUP="backend-service"
+          ACI_NAME="household-service-acr"
+          NEW_IMAGE="${{ secrets.ACR_LOGIN_SERVER }}/household-service:latest"
+          az container delete --resource-group $RESOURCE_GROUP --name $ACI_NAME --yes
+          az container create --resource-group $RESOURCE_GROUP --name $ACI_NAME \
+              --image $NEW_IMAGE \
+              --cpu 1 --memory 1 \
+              --ports 8080 \
+              --restart-policy Always \
+              --registry-username ${{ secrets.ACR_USERNAME }} \
+              --registry-password ${{ secrets.ACR_PASSWORD }}
