@@ -43,6 +43,13 @@ public class HouseholdService {
         }
     }
 
+    public HouseholdDto getHouseholdByAuth0Identifier(String auth0Identifier) {
+        log.info("Fetching household for auth0Identifier: {}", auth0Identifier);
+        return householdRepository.findByAuth0Identifier(auth0Identifier)
+                .map(entity -> objectMapper.convertValue(entity, HouseholdDto.class))
+                .orElseThrow(() -> new RuntimeException("Household not found for auth0Identifier: " + auth0Identifier));
+    }
+
     public boolean testDatabaseConnection() {
         try {
             householdRepository.count();

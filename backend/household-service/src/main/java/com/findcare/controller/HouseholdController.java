@@ -28,6 +28,20 @@ public class HouseholdController {
         }
     }
 
+    @GetMapping(value = "/")
+    public ResponseEntity<HouseholdDto> getHousehold(@RequestHeader("auth0Identifier") String auth0Identifier) {
+        try {
+            HouseholdDto household = householdService.getHouseholdByAuth0Identifier(auth0Identifier);
+            return ResponseEntity.ok(household);
+        } catch (RuntimeException e) {
+            log.error("Error fetching household", e);
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            log.error("Unexpected error fetching household", e);
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
     @GetMapping("/health")
     public ResponseEntity<String> checkDatabaseConnection() {
         try {
