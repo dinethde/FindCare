@@ -11,7 +11,6 @@ public class HouseholdServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(HouseholdServiceApplication.class, args);
         log.info("Household Service started successfully.");
-
     }
 
 }

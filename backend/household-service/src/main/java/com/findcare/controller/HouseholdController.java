@@ -1,6 +1,6 @@
 package com.findcare.controller;
 
-import com.findcare.dto.User;
+import com.findcare.dto.HouseholdDto;
 import com.findcare.service.HouseholdService;
 
 import lombok.RequiredArgsConstructor;
@@ -18,17 +18,13 @@ public class HouseholdController {
     private final HouseholdService householdService;
 
     @PostMapping(value = "/", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<?> getHousehold(@ModelAttribute User user) {
+    public ResponseEntity<HouseholdDto> createHousehold(@ModelAttribute HouseholdDto household) {
         try {
-            log.info("Received household creation request: {}", user);
-            User savedUser = householdService.createHousehold(user);
-            return ResponseEntity.ok(savedUser.toString() + " created");
-        } catch (IllegalArgumentException e) {
-            log.warn("Invalid request: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (IllegalStateException e) {
-            log.error("Failed to create household", e);
-            return ResponseEntity.internalServerError().body(e.getMessage());
+            HouseholdDto createdHousehold = householdService.createHousehold(household);
+            return ResponseEntity.ok(createdHousehold);
+        } catch (Exception e) {
+            log.error("Error creating household", e);
+            return ResponseEntity.internalServerError().build();
         }
     }
 

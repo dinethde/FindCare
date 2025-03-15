@@ -1,6 +1,7 @@
 package com.findcare.service;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.findcare.dto.User;
+import com.findcare.dto.HouseholdDto;
 import com.findcare.entity.HouseholdEntity;
 import com.findcare.repository.HouseholdRepository;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import jakarta.transaction.Transactional;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -18,22 +18,22 @@ public class HouseholdService {
     private final HouseholdRepository householdRepository;
     private final ObjectMapper objectMapper;
     
-    // create household
     @Transactional
-    public User createHousehold(User user) {
+    public HouseholdDto createHousehold(HouseholdDto householdDto) {
         try {
-            // Check if ID already exists
-            if (user.getHouseholdId() != null && householdRepository.existsById(user.getHouseholdId())) {
-                throw new IllegalArgumentException("Household ID already exists: " + user.getHouseholdId());
+            // Validate that no ID is provided for new household
+            if (householdDto.getHouseholdId() != null) {
+                log.warn("Attempted to create household with predefined ID: {}. Removing ID to allow database generation.", householdDto.getHouseholdId());
+                householdDto.setHouseholdId(null);
             }
 
-            HouseholdEntity entity = objectMapper.convertValue(user, HouseholdEntity.class);
+            HouseholdEntity entity = objectMapper.convertValue(householdDto, HouseholdEntity.class);
             log.info("Attempting to save household: {}", entity);
             
-            HouseholdEntity returnEntity = householdRepository.save(entity);
-            log.info("Successfully saved household: {}", returnEntity);
+            HouseholdEntity savedEntity = householdRepository.save(entity);
+            log.info("Successfully saved household: {}", savedEntity);
             
-            return objectMapper.convertValue(returnEntity, User.class);
+            return objectMapper.convertValue(savedEntity, HouseholdDto.class);
         } catch (DataIntegrityViolationException e) {
             log.error("Database constraint violation while saving household", e);
             throw new IllegalStateException("Failed to save household due to database constraint violation", e);
@@ -45,7 +45,6 @@ public class HouseholdService {
 
     public boolean testDatabaseConnection() {
         try {
-            // Try to execute a simple query
             householdRepository.count();
             return true;
         } catch (Exception e) {

@@ -13,14 +13,24 @@ import lombok.Data;
 @Table(name = "household")
 public class HouseholdEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "household_id")
-    private Integer householdId;
+    private Long householdId;
     
     @Column(name = "auth0_identifier")
     private String auth0Identifier;
     
-    @Column(name = "householdacc_id")
-    private Integer householdaccId;
+    @Column(name = "use_for")
+    private String useFor;
+    
+    @Column(name = "name")
+    private String name;
+    
+    @Column(name = "username")
+    private String username;
+    
+    @Column(name = "email")
+    private String email;
     
     @Column(name = "preferred_language")
     private String preferredLanguage;
