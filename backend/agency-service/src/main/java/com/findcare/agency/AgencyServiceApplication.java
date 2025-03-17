@@ -10,7 +10,7 @@ public class AgencyServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AgencyServiceApplication.class, args);
-		log.info("Agency Service started");
+//		log.info("Agency Service started");
 	}
 }
 
