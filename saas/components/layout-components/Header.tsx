@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import NetworkIcon from "../icons/NetworkIcon";
 import UserProfileIcon from "../icons/UserProfileIcon copy";
 import SearchIcon from "../icons/SearchIcon";
-import "@/app/globals.css";
 import PrimaryButton from "../ui/PrimaryButton";
 
 // Define page title mapping

@@ -1,7 +1,5 @@
 "use client";
-
-import "../globals.css";
-import Card from "../../components/cards/Card";
+import Card from "@/components/cards/Card";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
 
