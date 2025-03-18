@@ -12,6 +12,7 @@ export default function TenantLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <div className="min-h-screen flex">
       <NavbarComponent />
       <main className="w-full max-h-screen overflow-y-scroll">

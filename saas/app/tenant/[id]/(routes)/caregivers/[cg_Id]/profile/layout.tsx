@@ -10,12 +10,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { id: string; cg_Id: string };
 }>) {
+  // Create dynamic path that includes the tenant ID
+  const dynamicPath = `/tenant/${params.id}/caregivers`;
+  
   return (
     <div>
-      <Modal routePath="/caregivers">
+      <Modal routePath={dynamicPath}>
         <div className="flex gap-3 p-2 min-h-[87vh] max-h-[87vh]">
           <SidebarCg />
           <div className="flex flex-col gap-2 w-full overflow-y-scroll pr-2">
