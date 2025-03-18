@@ -42,6 +42,59 @@ public class HouseholdService {
             throw new IllegalStateException("Failed to save household", e);
         }
     }
+    
+    @Transactional
+    public HouseholdDto createHouseholdWithRequiredFields(String authId, String email, String fName) {
+        try {
+            HouseholdDto householdDto = new HouseholdDto();
+            householdDto.setAuth0Identifier(authId);
+            householdDto.setEmail(email);
+            householdDto.setName(fName);
+            
+            log.info("Creating new household with required fields only: auth0Id={}, email={}, name={}", authId, email, fName);
+            
+            HouseholdEntity entity = objectMapper.convertValue(householdDto, HouseholdEntity.class);
+            HouseholdEntity savedEntity = householdRepository.save(entity);
+            
+            log.info("Successfully created household with ID: {}", savedEntity.getHouseholdId());
+            
+            return objectMapper.convertValue(savedEntity, HouseholdDto.class);
+        } catch (DataIntegrityViolationException e) {
+            log.error("Database constraint violation while creating household", e);
+            throw new IllegalStateException("Failed to create household due to database constraint violation", e);
+        } catch (Exception e) {
+            log.error("Error creating household", e);
+            throw new IllegalStateException("Failed to create household", e);
+        }
+    }
+    
+    @Transactional
+    public HouseholdDto updateHouseholdProfile(String auth0Identifier, HouseholdDto updateData) {
+        try {
+            log.info("Updating profile for household with auth0Identifier: {}", auth0Identifier);
+            
+            HouseholdEntity existingEntity = householdRepository.findByAuth0Identifier(auth0Identifier)
+                .orElseThrow(() -> new RuntimeException("Household not found for auth0Identifier: " + auth0Identifier));
+            
+            // Update fields from the updateData, preserving the existing ID and auth0Identifier
+            if (updateData.getUseFor() != null) existingEntity.setUseFor(updateData.getUseFor());
+            if (updateData.getName() != null) existingEntity.setName(updateData.getName());
+            if (updateData.getUsername() != null) existingEntity.setUsername(updateData.getUsername());
+            if (updateData.getEmail() != null) existingEntity.setEmail(updateData.getEmail());
+            if (updateData.getPreferredLanguage() != null) existingEntity.setPreferredLanguage(updateData.getPreferredLanguage());
+            
+            HouseholdEntity updatedEntity = householdRepository.save(existingEntity);
+            log.info("Successfully updated household profile: {}", updatedEntity);
+            
+            return objectMapper.convertValue(updatedEntity, HouseholdDto.class);
+        } catch (RuntimeException e) {
+            log.error("Household not found for update", e);
+            throw e;
+        } catch (Exception e) {
+            log.error("Error updating household profile", e);
+            throw new IllegalStateException("Failed to update household profile", e);
+        }
+    }
 
     public HouseholdDto getHouseholdByAuth0Identifier(String auth0Identifier) {
         log.info("Fetching household for auth0Identifier: {}", auth0Identifier);
