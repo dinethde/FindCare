@@ -16,20 +16,30 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - app-network
 
   agency-service:
     build: .
     container_name: agency-service
     ports:
-      - "8081:8081"
+      - "8081:8081"  # Map container's 8081 to host's 8081
     depends_on:
       postgres:
         condition: service_healthy
     environment:
-      # Optional: Override any configuration if needed.
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydatabase
       SPRING_DATASOURCE_USERNAME: myuser
       SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_FLYWAY_ENABLED: true
+      SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
+      SERVER_PORT: 8081  # Set Spring Boot to use port 8081
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   postgres-data:

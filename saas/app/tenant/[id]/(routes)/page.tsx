@@ -4,38 +4,10 @@ import Card from "@/components/cards/Card";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
 import { useUser } from "@clerk/nextjs";
-import { useEffect } from "react";
 
 export default function Home() {
   const user = useUser();
   console.log("User data:", user.user);
-
-  useEffect(() => {
-    if (user.user) {
-      // Call your Spring Boot API to create a new user record.
-      // Ensure that your backend is configured to accept requests from your frontend domain.
-      fetch("http://localhost:8081/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: user.user.id,
-          username: user.user.username || user.user.firstName,
-        }),
-      })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Failed to create user");
-          }
-          return res.json();
-        })
-        .then((data) => console.log("User created in backend:", data))
-        .catch((error) =>
-          console.error("Error calling backend API for user creation:", error)
-        );
-    }
-  }, [user.user]);
 
   return (
     <div className="flex flex-col gap-4">
