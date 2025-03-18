@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body>{children}</body>
+        <body suppressHydrationWarning>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

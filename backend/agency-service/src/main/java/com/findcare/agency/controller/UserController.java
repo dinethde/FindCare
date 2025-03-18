@@ -20,12 +20,13 @@ public class UserController {
 
     @PostMapping("/create-user")
     public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) {
+        log.info("Received request to create user: {}", userDTO);
         try {
             UserDTO createdUser = userService.createUser(userDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of("error", "Failed to create user: " + e.getMessage()));
+                    .body(Map.of("error", "Failed to create user: " + e.getMessage()));
         }
     }
 }

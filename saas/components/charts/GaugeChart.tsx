@@ -26,14 +26,15 @@ export default function SatisfactionGauge({
   width = 400,
   isCaptionVisible = true,
   isTitleVisible = true,
-
   isSelectTimeVisible = false,
 }: SatisfactionGaugeProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+    setIsMounted(true);
   }, []);
 
   const data = [
@@ -44,10 +45,30 @@ export default function SatisfactionGauge({
   // Calculate needle angle based on value (0-100)
   const needleAngle = -90 + (value / 100) * 180;
 
+  // Don't render the chart on the server
+  if (!isMounted) {
+    return (
+      <div className="w-full h-full">
+        <Card
+          className={`p-6 transition-all duration-300 ease-in-out opacity-0 space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start items-center h-full`}
+        >
+          {isTitleVisible && (
+            <div className="flex items-center justify-between w-full">
+              <h3 className="text-h6 text-neutral-11 w-full">{title}</h3>
+            </div>
+          )}
+          <div className="max-w-[280px] relative p-4 overflow-hidden">
+            <div style={{ height: "200px" }}></div>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-full">
       <Card
-        className={` p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start  items-center h-full`}
+        className={`p-6 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"} space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start items-center h-full`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{

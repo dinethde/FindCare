@@ -1,6 +1,7 @@
 "use client"
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
+import { useEffect, useState } from "react"
 
 interface DonutChartProps {
   data: {
@@ -12,6 +13,17 @@ interface DonutChartProps {
 }
 
 export function DonutChart({ data, centerText }: DonutChartProps) {
+  const [isMounted, setIsMounted] = useState(false)
+  
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  
+  // Don't render the chart on the server
+  if (!isMounted) {
+    return <div style={{ width: '100%', height: '100%' }}></div>
+  }
+  
   return (
     <ResponsiveContainer width="100%" height="100%">
       <PieChart>
