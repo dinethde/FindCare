@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import "./tenant/[id]/globals.css"; // Updated path to the located CSS file
+import "@/app/globals.css";
 import {
   ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
 } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
@@ -21,6 +17,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+
         <body suppressHydrationWarning>
           {children}
         </body>

@@ -1,57 +1,34 @@
 import axios from "axios";
 
-/**
- * Base URL for API calls - falls back to localhost if environment variable is not set
- */
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8081';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
-/**
- * Interface for user data required by the API
- */
 export interface UserData {
-  id: string;
-  email: string;
-}
-
-/**
- * Interface for API response
- */
-export interface UserCreationResponse {
-  userId: string;
+  uniqueIdentifier: string;
   username: string;
-  // Add other expected response fields
 }
 
-/**
- * Creates a user by sending user data to the backend API
- * @param user - User data including id and email
- * @returns Promise with user creation response
- */
-export const createUser = async (user: UserData): Promise<UserCreationResponse> => {
+export const createUser = async (user: UserData) => {
+  console.log("Create user api called with data:", user);
   const userData = {
-    uniqueIdentifier: user.id,
-    username: user.email,
+    uniqueIdentifier: user.uniqueIdentifier,
+    username: user.username,
   };
 
+  console.log("User data to be sent:", userData);
+
   try {
-    const url = `${API_BASE_URL}/api/create-user`;
+    const url = `http://localhost:8081/api/create-user`;
+    console.log("Making API call to:", url);
 
-    const response = await axios.post<UserCreationResponse>(url, userData);
+    const response = await axios.post(url, userData);
+    console.log("API response:", response.data);
     return response.data;
-  } catch (error) {
-    // Check if it's an axios error with a response
-    if (axios.isAxiosError(error) && error.response) {
-      throw new Error(
-        error.response.data?.error ||
-        `Failed to create user: Server returned ${error.response.status}`
-      );
-    }
-
-    // Handle network errors or other issues
-    throw new Error(
-      error instanceof Error
-        ? `User creation failed: ${error.message}`
-        : "Unknown error during user creation"
-    );
+  } catch (error: any) {
+    console.error("Error creating user:", {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status
+    });
+    throw new Error(error.response?.data?.error || "Failed to create user");
   }
 };
