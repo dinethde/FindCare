@@ -2,13 +2,19 @@ package com.findcare.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.findcare.dto.HouseholdDto;
+import com.findcare.entity.AddressEntity;
 import com.findcare.entity.HouseholdEntity;
+import com.findcare.entity.PhoneEntity;
+import com.findcare.repository.AddressRepository;
 import com.findcare.repository.HouseholdRepository;
+import com.findcare.repository.PhoneRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import jakarta.transaction.Transactional;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -16,6 +22,8 @@ import org.springframework.stereotype.Service;
 public class HouseholdService {
  
     private final HouseholdRepository householdRepository;
+    private final PhoneRepository phoneRepository;
+    private final AddressRepository addressRepository;
     private final ObjectMapper objectMapper;
     
     @Transactional
@@ -42,57 +50,93 @@ public class HouseholdService {
             throw new IllegalStateException("Failed to save household", e);
         }
     }
-    
+
     @Transactional
-    public HouseholdDto createHouseholdWithRequiredFields(String authId, String email, String fName) {
-        try {
-            HouseholdDto householdDto = new HouseholdDto();
-            householdDto.setAuth0Identifier(authId);
-            householdDto.setEmail(email);
-            householdDto.setName(fName);
-            
-            log.info("Creating new household with required fields only: auth0Id={}, email={}, name={}", authId, email, fName);
-            
-            HouseholdEntity entity = objectMapper.convertValue(householdDto, HouseholdEntity.class);
-            HouseholdEntity savedEntity = householdRepository.save(entity);
-            
-            log.info("Successfully created household with ID: {}", savedEntity.getHouseholdId());
-            
-            return objectMapper.convertValue(savedEntity, HouseholdDto.class);
-        } catch (DataIntegrityViolationException e) {
-            log.error("Database constraint violation while creating household", e);
-            throw new IllegalStateException("Failed to create household due to database constraint violation", e);
-        } catch (Exception e) {
-            log.error("Error creating household", e);
-            throw new IllegalStateException("Failed to create household", e);
+    public boolean updateHouseholdProfile(String authId, String language, String mobilePhone, 
+                                       String landPhone, String address, String city, 
+                                       String postalCode, String username, String useFor) {
+        log.info("Updating household profile for auth0Identifier: {}", authId);
+        
+        Optional<HouseholdEntity> householdOpt = householdRepository.findByAuth0Identifier(authId);
+        if (householdOpt.isEmpty()) {
+            log.error("Household not found for auth0Identifier: {}", authId);
+            return false;
         }
-    }
-    
-    @Transactional
-    public HouseholdDto updateHouseholdProfile(String auth0Identifier, HouseholdDto updateData) {
+        
+        HouseholdEntity household = householdOpt.get();
+        
+        // Update household fields
+        if (language != null) household.setPreferredLanguage(language);
+        if (username != null) household.setUsername(username);
+        if (useFor != null) household.setUseFor(useFor);
+        
         try {
-            log.info("Updating profile for household with auth0Identifier: {}", auth0Identifier);
+            // Save household updates
+            household = householdRepository.save(household);
             
-            HouseholdEntity existingEntity = householdRepository.findByAuth0Identifier(auth0Identifier)
-                .orElseThrow(() -> new RuntimeException("Household not found for auth0Identifier: " + auth0Identifier));
+            // Create or update phone information
+            updatePhoneInfo(household, mobilePhone, landPhone);
             
-            // Update fields from the updateData, preserving the existing ID and auth0Identifier
-            if (updateData.getUseFor() != null) existingEntity.setUseFor(updateData.getUseFor());
-            if (updateData.getName() != null) existingEntity.setName(updateData.getName());
-            if (updateData.getUsername() != null) existingEntity.setUsername(updateData.getUsername());
-            if (updateData.getEmail() != null) existingEntity.setEmail(updateData.getEmail());
-            if (updateData.getPreferredLanguage() != null) existingEntity.setPreferredLanguage(updateData.getPreferredLanguage());
+            // Create or update address information
+            updateAddressInfo(household, address, city, postalCode);
             
-            HouseholdEntity updatedEntity = householdRepository.save(existingEntity);
-            log.info("Successfully updated household profile: {}", updatedEntity);
-            
-            return objectMapper.convertValue(updatedEntity, HouseholdDto.class);
-        } catch (RuntimeException e) {
-            log.error("Household not found for update", e);
-            throw e;
+            log.info("Successfully updated household profile with ID: {}", household.getHouseholdId());
+            return true;
+        } catch (DataIntegrityViolationException e) {
+            log.error("Database constraint violation while updating household profile", e);
+            throw new IllegalStateException("Failed to update household profile due to database constraint violation", e);
         } catch (Exception e) {
             log.error("Error updating household profile", e);
             throw new IllegalStateException("Failed to update household profile", e);
+        }
+    }
+    
+    private void updatePhoneInfo(HouseholdEntity household, String mobilePhone, String landPhone) {
+        if (mobilePhone != null || landPhone != null) {
+            // Check for existing phone record
+            PhoneEntity phoneEntity = new PhoneEntity();
+            phoneRepository.findByHousehold(household)
+                .stream()
+                .findFirst()
+                .ifPresentOrElse(
+                    existing -> {
+                        if (mobilePhone != null) existing.setPhoneNumber(mobilePhone);
+                        if (landPhone != null) existing.setLandPhone(landPhone);
+                        phoneRepository.save(existing);
+                    },
+                    () -> {
+                        PhoneEntity newPhone = new PhoneEntity();
+                        newPhone.setHousehold(household);
+                        newPhone.setPhoneNumber(mobilePhone);
+                        newPhone.setLandPhone(landPhone);
+                        phoneRepository.save(newPhone);
+                    }
+                );
+        }
+    }
+    
+    private void updateAddressInfo(HouseholdEntity household, String address, String city, String postalCode) {
+        if (address != null || city != null || postalCode != null) {
+            // Check for existing address record
+            addressRepository.findByHousehold(household)
+                .stream()
+                .findFirst()
+                .ifPresentOrElse(
+                    existing -> {
+                        if (address != null) existing.setAddress(address);
+                        if (city != null) existing.setCity(city);
+                        if (postalCode != null) existing.setPostalCode(postalCode);
+                        addressRepository.save(existing);
+                    },
+                    () -> {
+                        AddressEntity newAddress = new AddressEntity();
+                        newAddress.setHousehold(household);
+                        newAddress.setAddress(address);
+                        newAddress.setCity(city);
+                        newAddress.setPostalCode(postalCode);
+                        addressRepository.save(newAddress);
+                    }
+                );
         }
     }
 
