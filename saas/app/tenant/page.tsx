@@ -1,50 +1,113 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
-import { useCreateTenant } from '@/utils/hooks/use-create-tenant';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { useUser } from '@clerk/nextjs';
+import { createTenant } from '@/utils/api-calls/create-tenant-acc';
 
+export interface TenantResponse {
+  accountId: string;
+  auth0Identifier: string;
+  email: string;
+  tier: string;
+}
 export default function TenantPage() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
-  const { createTenantAccount, isCreating } = useCreateTenant();
+  const [hasAttemptedCreation, setHasAttemptedCreation] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  // const user = {
+  //   id: '10', // Replace with actual user ID
+  //   primaryEmailAddress: {
+  //     emailAddress: 'randandu'
+  //   }
+  // }
+
 
   useEffect(() => {
+    let isMounted = true;
+
     const setupTenant = async () => {
-      if (!isLoaded) return;
-      if (!isSignedIn) {
-        router.push('/sign-in');
+      // Prevent running if component is unmounted
+      if (!isMounted) return;
+
+      // Don't proceed if already attempted or has error
+      if (hasAttemptedCreation || hasError) {
         return;
       }
 
-      if (user?.id && user?.emailAddresses?.[0]?.emailAddress) {
-        // Check if we've already created an account for this user
-        const accountCreatedKey = `tenant-account-created-${user.id}`;
-        // const hasAccountBeenCreated = localStorage.getItem(accountCreatedKey);
-        const hasAccountBeenCreated = false;
+      // Don't proceed if Clerk hasn't loaded yet or user isn't signed in
+      if (!isLoaded || !isSignedIn) {
+        return;
+      }
 
-        if (!hasAccountBeenCreated) {
-          const userData = {
-            id: user.id,
-            email: user.emailAddresses[0].emailAddress,
-          };
+      // Don't proceed if don't have required user data
+      if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
+        return;
+      }
 
-          try {
-            await createTenantAccount(userData);
-            // Mark that we've created an account for this user
-            // localStorage.setItem(accountCreatedKey, 'true');
-          } catch (error) {
-            console.error('Failed to create tenant:', error);
-            // Only log the error but don't set the flag so it can retry next time
+      try {
+        setHasAttemptedCreation(true);
+
+        const url = process.env.NEXT_PUBLIC_AGENCY_SERVICE_URL;
+
+        const tenant = {
+          auth0Identifier: user.id,
+          email: user.primaryEmailAddress.emailAddress,
+          tier: "premium",
+        };
+        try {
+          const response = await axios.post<TenantResponse>(
+            `${url}/accounts`,
+            tenant
+          );
+
+          if (!response.data || !response.data.accountId) {
+            throw new Error("Invalid response from server: Missing account ID");
           }
+
+          console.log('Tenant created successfully:', response);
+          router.push(`/tenant/${response.data.accountId}/`);
+
+          return response.data;
+        } catch (error) {
+          throw new Error(
+            error instanceof Error ? error.message : "Failed to create tenant"
+          );
+        }
+
+
+
+      } catch (error) {
+        console.error('Failed to create tenant:', error);
+        if (isMounted) {
+          setHasError(true);
         }
       }
     };
 
     setupTenant();
-  }, [isLoaded, isSignedIn, router, user]);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError]); // Updated dependencies
+
+  if (!isLoaded) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <LoadingSpinner className="w-6 h-6" />
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    router.push('/sign-in');
+    return null;
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen">

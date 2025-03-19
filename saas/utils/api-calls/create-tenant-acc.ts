@@ -5,14 +5,14 @@ export interface User {
   email: string;
 }
 
-export interface Tenant {
-  accountId?: string;
+export interface TenantResponse {
+  accountId: string;
   auth0Identifier: string;
   email: string;
   tier: string;
 }
 
-export const createTenant = async (user: User): Promise<Tenant> => {
+export const createTenant = async (user: User): Promise<TenantResponse> => {
   if (!user || !user.id || !user.email) {
     throw new Error("Invalid user data. Both ID and email are required.");
   }
@@ -26,10 +26,35 @@ export const createTenant = async (user: User): Promise<Tenant> => {
   const url = process.env.NEXT_PUBLIC_AGENCY_SERVICE_URL;
 
   try {
-    const response = await axios.post<Tenant>(`${url}/accounts`, tenant);
+    const response = await axios.post<TenantResponse>(
+      `${url}/accounts`,
+      tenant
+    );
+
+    if (!response.data || !response.data.accountId) {
+      throw new Error("Invalid response from server: Missing account ID");
+    }
+
     return response.data;
   } catch (error) {
-    console.error("Error creating tenant:", error);
-    throw error;
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to create tenant"
+    );
+  }
+};
+
+export const setupTenant = async (user: User): Promise<TenantResponse> => {
+  if (!user || !user.id || !user.email) {
+    throw new Error("Invalid user data. Both ID and email are required.");
+  }
+
+  try {
+    // Use the existing createTenant function
+    const tenantData = await createTenant(user);
+    return tenantData;
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to set up tenant"
+    );
   }
 };
