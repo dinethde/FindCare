@@ -6,6 +6,15 @@ CREATE TYPE payment_type_enum AS ENUM ('hourly', 'daily');
 CREATE TYPE transaction_method_enum AS ENUM ('card', 'cash');
 CREATE TYPE tier_enum AS ENUM ('basic', 'standard', 'premium');
 
+-- Create sequence for Agency_Account IDs
+CREATE SEQUENCE IF NOT EXISTS agency_account_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+-- Tables
 -- ===== Household Reference Table =====
 CREATE TABLE Household_Reference (
     household_ref_id SERIAL PRIMARY KEY,
@@ -13,14 +22,13 @@ CREATE TABLE Household_Reference (
 );
 
 
--- ===== Agency Tables =====
+-- Agency Tables 
 -- ===== Agency Account Table =====
 CREATE TABLE Agency_Account (
     agency_account_id SERIAL PRIMARY KEY,
+    auth0_identifier VARCHAR(255) UNIQUE,
     email VARCHAR(255) UNIQUE,
-    username VARCHAR(255) UNIQUE,
-    mobile VARCHAR(20) UNIQUE,
-    profile_img TEXT
+    tier tier_enum
 );
 
 -- Agency (primary table)

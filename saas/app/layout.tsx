@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import QueryClientProvider from "@/components/providers/QueryClientProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "FindCare",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <body suppressHydrationWarning>
           <QueryClientProvider>
             {children}
+            <Toaster />
           </QueryClientProvider>
         </body>
       </html>

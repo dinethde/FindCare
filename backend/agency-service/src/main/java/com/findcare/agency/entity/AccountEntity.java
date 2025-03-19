@@ -14,7 +14,7 @@ public class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "agency_account_seq")
     @SequenceGenerator(name = "agency_account_seq", sequenceName = "agency_account_seq", allocationSize = 1)
-    @Column(name = "account_id")
+    @Column(name = "agency_account_id")
     private Integer accountId;
 
     @Column(name = "auth0_identifier", unique = true)
@@ -24,5 +24,6 @@ public class AccountEntity {
     private String email;
 
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "tier_enum")
     private TierEnum tier;
 }
