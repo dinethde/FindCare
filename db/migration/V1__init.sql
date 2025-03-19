@@ -85,7 +85,7 @@ CREATE TABLE Caregiver (
     agency_id INTEGER,
     caregiver_account_id INTEGER NOT NULL,
     FOREIGN KEY (agency_id) REFERENCES Agency(agency_id) ON DELETE CASCADE,
-    FOREIGN KEY (caregiver_account_id) REFERENCES CaregiverAccount(caregiver_account_id) ON DELETE SET NULL
+    FOREIGN KEY (caregiver_account_id) REFERENCES Caregiver_Account(caregiver_account_id) ON DELETE SET NULL
 );
 
 -- ===== Rest of the tables =====
