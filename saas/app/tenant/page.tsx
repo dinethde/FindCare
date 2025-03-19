@@ -4,8 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
-import { create } from 'domain';
-import { createUser } from '@/api/SignUpApi';
+import { createUser } from '@/utils/api-calls/create-tenant';
 
 export default function Onboarding() {
   const router = useRouter();

@@ -29,4 +29,15 @@ public class UserService {
         log.info("New user created with ID: {}", savedUser.getUserId());
         return objectMapper.convertValue(savedUser, UserDTO.class);
     }
+
+    public UserDTO getUserById(Integer id) {
+        UserEntity userEntity = userRepository.findById(id).orElse(null);
+        if (userEntity == null) {
+            log.info("User not found with ID: {}", id);
+            return null;
+        }
+
+        log.info("User found with ID: {}", id);
+        return objectMapper.convertValue(userEntity, UserDTO.class);
+    }
 }

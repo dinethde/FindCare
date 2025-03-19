@@ -4,17 +4,26 @@ import Card from "@/components/cards/Card";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
 import { useUser } from "@clerk/nextjs";
+import { useParams } from "next/navigation";
 
 export default function Home() {
-  const user = useUser();
-  console.log("User data:", user.user);
+  const tenantId = useParams().id;
 
   return (
     <div className="flex flex-col gap-4">
       <div>
         <div className="w-full relative flex flex-row items-start justify-start gap-[1.25rem] text-left text-[1.25rem] text-neutral-colors-neutral-11 font-small-text">
           <div className="w-full flex gap-4 ">
-            <Card revenue={560000} />
+
+            <Card revenue={560000} color={"#FF4B00"} />
+
+            <Card
+              title="Total Shifts"
+              revenue={"120/"}
+              dataType={`100`}
+              dataTypeClassName="text-[18px] font-medium text-neutral-8"
+              contentClassName="text-h4"
+            />
 
             <Card
               revenue={24}
@@ -30,7 +39,6 @@ export default function Home() {
               color="#007AFF"
             />
 
-            <Card revenue={560000} title="Total Shifts" color="#FF2D55" />
           </div>
         </div>
       </div>

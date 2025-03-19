@@ -11,14 +11,14 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 @CrossOrigin(origins = "${app.cors.allowed-origins}", allowedHeaders = "*")
 @RequiredArgsConstructor
 @Slf4j
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/create-user")
+    @PostMapping("user")
     public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) {
         log.info("Received request to create user: {}", userDTO);
         try {
@@ -28,5 +28,23 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Failed to create user: " + e.getMessage()));
         }
+    }
+
+    @GetMapping("user")
+    public ResponseEntity<?> getUser(@RequestParam Integer id) {
+        log.info("Received request to get user with ID: {}", id);
+        try {
+            UserDTO user = userService.getUserById(id);
+            if (user != null) {
+                return ResponseEntity.ok(user);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(Map.of("error", "User not found"));
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to retrieve user: " + e.getMessage()));
+        }
+
     }
 }

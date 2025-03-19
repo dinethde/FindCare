@@ -2,6 +2,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
 
 export const metadata: Metadata = {
   title: "FindCare Home",
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const user = await currentUser();
-  const userid = user?.id;
+  const userid = Number(user?.id);
+
+  const homePageData = useGetTenantById(userid);
+  console.log("HomePage data:", homePageData);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">

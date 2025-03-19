@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import {
-  ClerkProvider,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
+import QueryClientProvider from "@/components/providers/QueryClientProvider";
 
 export const metadata: Metadata = {
   title: "FindCare",
@@ -17,9 +16,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-
         <body suppressHydrationWarning>
-          {children}
+          <QueryClientProvider>
+            {children}
+          </QueryClientProvider>
         </body>
       </html>
     </ClerkProvider>
