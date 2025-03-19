@@ -13,9 +13,6 @@ export default async function HomePage() {
   const user = await currentUser();
   const userid = Number(user?.id);
 
-  const homePageData = useGetTenantById(userid);
-  console.log("HomePage data:", homePageData);
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className="text-2xl font-bold mb-4">

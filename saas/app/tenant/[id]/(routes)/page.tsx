@@ -3,11 +3,23 @@
 import Card from "@/components/cards/Card";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
+import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
 import { useUser } from "@clerk/nextjs";
 import { useParams } from "next/navigation";
+import { useMemo } from "react";
 
 export default function Home() {
-  const tenantId = useParams().id;
+  const tenantId = Number(useParams().id);
+  const { data: homePageData, isLoading, isError } = useGetTenantById(tenantId);
+
+  // Use useMemo to prevent unnecessary recalculations on re-renders
+  const displayData = useMemo(() => {
+    // Only process data when it's available
+    if (homePageData) {
+      return homePageData;
+    }
+    return null;
+  }, [homePageData]);
 
   return (
     <div className="flex flex-col gap-4">
