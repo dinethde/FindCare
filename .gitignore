@@ -20,6 +20,10 @@
 
 # intelij
 /.idea/
+.idea
+*.iws
+*.iml
+*.ipr
 
 # production
 /build
@@ -42,7 +46,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-.idea
 
 # typescript
 *.tsbuildinfo

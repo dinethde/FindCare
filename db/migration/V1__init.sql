@@ -21,6 +21,13 @@ CREATE TABLE Household_Reference (
     household_name VARCHAR(255)
 );
 
+-- ===== Carerecipient Reference Table =====
+CREATE TABLE Care_Recipient_Reference (
+    care_recipient_ref_id SERIAL PRIMARY KEY,
+    care_recipient_name VARCHAR(255),
+    household_ref_id INT,
+    FOREIGN KEY (household_ref_id) REFERENCES Household_Reference(household_ref_id) ON DELETE CASCADE
+);
 
 -- Agency Tables 
 -- ===== Agency Account Table =====
@@ -51,15 +58,15 @@ CREATE TABLE Agency (
     FOREIGN KEY (agency_account_id) REFERENCES Agency_Account(agency_account_id) ON DELETE CASCADE
 );
 
--- ===== Carerecipient Reference Table =====
-CREATE TABLE Care_Recipient_Reference (
-    care_recipient_ref_id SERIAL PRIMARY KEY,
-    care_recipient_name VARCHAR(255),
-    household_ref_id INT,
-    FOREIGN KEY (household_ref_id) REFERENCES Household_Reference(household_ref_id) ON DELETE CASCADE
+-- ===== Caregiver Tables =====
+-- Create the Caregiver Account table.
+CREATE TABLE Caregiver_Account (
+    caregiver_account_id SERIAL PRIMARY KEY,
+    unique_identifier VARCHAR(255) UNIQUE,
+    email VARCHAR(255) UNIQUE,
+    mobile_app_status VARCHAR(50)
 );
 
--- ===== Caregiver Tables =====
 -- Create the Caregiver table with a gender column of type gender_enum.
 CREATE TABLE Caregiver (
     caregiver_id SERIAL PRIMARY KEY,
@@ -74,8 +81,11 @@ CREATE TABLE Caregiver (
     hired_date DATE,
     AVG_CSR DECIMAL(3,2),
     total_Clients INTEGER,
+    profile_img TEXT,
     agency_id INTEGER,
-    FOREIGN KEY (agency_id) REFERENCES Agency(agency_id) ON DELETE CASCADE
+    caregiver_account_id INTEGER NOT NULL,
+    FOREIGN KEY (agency_id) REFERENCES Agency(agency_id) ON DELETE CASCADE,
+    FOREIGN KEY (caregiver_account_id) REFERENCES CaregiverAccount(caregiver_account_id) ON DELETE SET NULL
 );
 
 -- ===== Rest of the tables =====
@@ -113,17 +123,6 @@ CREATE TABLE Available_Work_Day (
 );
 
 -- Dependent Tables
-CREATE TABLE Caregiver_Account (
-    caregiver_account_id SERIAL PRIMARY KEY,
-    email VARCHAR(255) UNIQUE,
-    username VARCHAR(255) UNIQUE,
-    mobile VARCHAR(20) UNIQUE,
-    profile_img TEXT,
-    mobile_app_status VARCHAR(50),
-    caregiver_id INTEGER NOT NULL,
-    FOREIGN KEY (caregiver_id) REFERENCES Caregiver(caregiver_id) ON DELETE CASCADE
-);
-
 CREATE TABLE Caregiver_Reviews (
     review_id SERIAL PRIMARY KEY,
     rate DECIMAL(10,2),

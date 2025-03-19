@@ -1,6 +1,6 @@
 spring:
   application:
-    name: agency-service
+    name: caregiver-service
 
   datasource:
     url: jdbc:postgresql://postgres:5432/tenantdb
@@ -20,4 +20,4 @@ spring:
 
 app:
   cors:
-    allowed-origins: http://localhost:3000,http://localhost:8081
+    allowed-origins: http://localhost:3000,http://localhost:8082
