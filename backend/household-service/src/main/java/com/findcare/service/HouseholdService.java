@@ -55,7 +55,7 @@ public class HouseholdService {
     public boolean updateHouseholdProfile(String authId, String language, String mobilePhone, 
                                        String landPhone, String address, String city, 
                                        String postalCode, String username, String useFor) {
-        log.info("Updating household profile for auth0Identifier: {}", authId);
+        log.info("Updating household profile for auth0Identifier: {} with language: {}", authId, language);
         
         Optional<HouseholdEntity> householdOpt = householdRepository.findByAuth0Identifier(authId);
         if (householdOpt.isEmpty()) {
@@ -63,28 +63,44 @@ public class HouseholdService {
             return false;
         }
         
-        HouseholdEntity household = householdOpt.get();
-        
-        // Update household fields
-        if (language != null) household.setPreferredLanguage(language);
-        if (username != null) household.setUsername(username);
-        if (useFor != null) household.setUseFor(useFor);
-        
         try {
-            // Save household updates
-            household = householdRepository.save(household);
+            HouseholdEntity household = householdOpt.get();
+            boolean needsUpdate = false;
             
-            // Create or update phone information
-            updatePhoneInfo(household, mobilePhone, landPhone);
+            // Update household fields
+            if (language != null && !language.trim().isEmpty()) {
+                log.debug("Setting preferred_language from '{}' to '{}'", household.getPreferredLanguage(), language);
+                household.setPreferredLanguage(language.trim());
+                needsUpdate = true;
+            }
+            if (username != null && !username.trim().isEmpty()) {
+                household.setUsername(username.trim());
+                needsUpdate = true;
+            }
+            if (useFor != null && !useFor.trim().isEmpty()) {
+                household.setUseFor(useFor.trim());
+                needsUpdate = true;
+            }
             
-            // Create or update address information
-            updateAddressInfo(household, address, city, postalCode);
+            // Save household updates if needed
+            if (needsUpdate) {
+                household = householdRepository.save(household);
+                log.debug("Updated household: {}", household);
+            }
             
-            log.info("Successfully updated household profile with ID: {}", household.getHouseholdId());
+            // Handle phones if provided
+            if (mobilePhone != null || landPhone != null) {
+                updatePhoneInfo(household, mobilePhone, landPhone);
+            }
+            
+            // Handle address if any address field is provided
+            if ((address != null && !address.trim().isEmpty()) || 
+                (city != null && !city.trim().isEmpty()) || 
+                (postalCode != null && !postalCode.trim().isEmpty())) {
+                updateAddressInfo(household, address, city, postalCode);
+            }
+            
             return true;
-        } catch (DataIntegrityViolationException e) {
-            log.error("Database constraint violation while updating household profile", e);
-            throw new IllegalStateException("Failed to update household profile due to database constraint violation", e);
         } catch (Exception e) {
             log.error("Error updating household profile", e);
             throw new IllegalStateException("Failed to update household profile", e);
@@ -93,8 +109,6 @@ public class HouseholdService {
     
     private void updatePhoneInfo(HouseholdEntity household, String mobilePhone, String landPhone) {
         if (mobilePhone != null || landPhone != null) {
-            // Check for existing phone record
-            PhoneEntity phoneEntity = new PhoneEntity();
             phoneRepository.findByHousehold(household)
                 .stream()
                 .findFirst()
@@ -116,27 +130,40 @@ public class HouseholdService {
     }
     
     private void updateAddressInfo(HouseholdEntity household, String address, String city, String postalCode) {
-        if (address != null || city != null || postalCode != null) {
-            // Check for existing address record
-            addressRepository.findByHousehold(household)
-                .stream()
-                .findFirst()
-                .ifPresentOrElse(
-                    existing -> {
-                        if (address != null) existing.setAddress(address);
-                        if (city != null) existing.setCity(city);
-                        if (postalCode != null) existing.setPostalCode(postalCode);
-                        addressRepository.save(existing);
-                    },
-                    () -> {
-                        AddressEntity newAddress = new AddressEntity();
-                        newAddress.setHousehold(household);
-                        newAddress.setAddress(address);
-                        newAddress.setCity(city);
-                        newAddress.setPostalCode(postalCode);
-                        addressRepository.save(newAddress);
-                    }
-                );
+        log.debug("Starting address update for household ID: {} with address: {}, city: {}, postalCode: {}", 
+                 household.getHouseholdId(), address, city, postalCode);
+        
+        try {
+            var existingAddresses = addressRepository.findByHousehold(household);
+            AddressEntity addressEntity;
+            
+            if (existingAddresses.isEmpty()) {
+                addressEntity = new AddressEntity();
+                addressEntity.setHousehold(household);
+                log.debug("Creating new address for household ID: {}", household.getHouseholdId());
+            } else {
+                addressEntity = existingAddresses.get(0);
+                log.debug("Updating existing address ID: {} for household ID: {}", 
+                         addressEntity.getAddressId(), household.getHouseholdId());
+            }
+            
+            // Update only non-null and non-empty values
+            if (address != null && !address.trim().isEmpty()) {
+                addressEntity.setAddress(address.trim());
+            }
+            if (city != null && !city.trim().isEmpty()) {
+                addressEntity.setCity(city.trim());
+            }
+            if (postalCode != null && !postalCode.trim().isEmpty()) {
+                addressEntity.setPostalCode(postalCode.trim());
+            }
+            
+            var savedAddress = addressRepository.save(addressEntity);
+            log.info("Successfully saved address ID: {} for household ID: {}", 
+                    savedAddress.getAddressId(), household.getHouseholdId());
+        } catch (Exception e) {
+            log.error("Failed to save address for household ID: {}", household.getHouseholdId(), e);
+            throw new IllegalStateException("Failed to save address", e);
         }
     }
 

@@ -87,7 +87,8 @@ public class HouseholdController {
             @RequestParam(value = "use-for", required = false) String useFor) {
         
         try {
-            log.info("Received profile update request for authId: {}", authId);
+            log.info("Received profile update request for authId: {} with language: {}", authId, language);
+            log.info("Address details - address: {}, city: {}, postalCode: {}", address, city, postalCode);
             
             boolean updated = householdService.updateHouseholdProfile(
                     authId, language, mobilePhone, landPhone, 
