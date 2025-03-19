@@ -74,40 +74,37 @@ public class HouseholdController {
         }
     }
 
-    @PostMapping(value = "/profile", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PutMapping(value = "/profile", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<Object> updateHouseholdProfile(
             @RequestParam("authId") String authId,
-            @RequestParam(value = "language", required = false) String language,
+            @RequestParam("language") String language,
             @RequestParam(value = "mobile-1", required = false) String mobilePhone,
             @RequestParam(value = "land-phone", required = false) String landPhone,
-            @RequestParam(value = "address", required = false) String address,
-            @RequestParam(value = "city", required = false) String city,
-            @RequestParam(value = "postalCode", required = false) String postalCode,
-            @RequestParam(value = "user-name", required = false) String username,
-            @RequestParam(value = "use-for", required = false) String useFor) {
+            @RequestParam("address") String address,
+            @RequestParam("city") String city,
+            @RequestParam("postalCode") String postalCode,
+            @RequestParam("user-name") String username,
+            @RequestParam("use-for") String useFor) {
         
         try {
-            log.info("Received profile update request for authId: {} with language: {}", authId, language);
-            log.info("Address details - address: {}, city: {}, postalCode: {}", address, city, postalCode);
+            log.info("Updating household profile - authId: {}, language: {}", authId, language);
+            log.info("Address info - address: {}, city: {}, postalCode: {}", address, city, postalCode);
+            log.info("Contact info - mobile: {}, landline: {}", mobilePhone, landPhone);
             
-            boolean updated = householdService.updateHouseholdProfile(
-                    authId, language, mobilePhone, landPhone, 
+            householdService.updateHouseholdProfile(authId, language, mobilePhone, landPhone, 
                     address, city, postalCode, username, useFor);
             
-            if (updated) {
-                Map<String, String> response = new HashMap<>();
-                response.put("status", "success");
-                response.put("message", "Household profile updated successfully");
-                return ResponseEntity.ok(response);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
-        } catch (IllegalArgumentException e) {
-            log.error("Invalid input data: {}", e.getMessage());
-            return ResponseEntity.badRequest().body("Invalid input data: " + e.getMessage());
-        } catch (Exception e) {
-            log.error("Error updating household profile", e);
-            return ResponseEntity.internalServerError().body("Failed to update profile: " + e.getMessage());
+            Map<String, String> response = new HashMap<>();
+            response.put("status", "success");
+            response.put("message", "Household profile updated successfully");
+            return ResponseEntity.ok(response);
+            
+        } catch (RuntimeException e) {
+            log.error("Error updating household profile: {}", e.getMessage(), e);
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", e.getMessage());
+            return ResponseEntity.badRequest().body(errorResponse);
         }
     }
 }
