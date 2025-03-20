@@ -1,7 +1,6 @@
 package com.findcare.caregiver.controller;
 
 import com.findcare.caregiver.dto.CaregiverAccount;
-import com.findcare.caregiver.entity.CaregiverAccountEntity;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +18,21 @@ public class CaregiverController {
 
     @PostMapping
     public ResponseEntity<CaregiverAccount> createCaregiver(@RequestBody CaregiverAccount caregiverAccount) {
-        log.info("Creating caregiver with email: {}", caregiverAccount.getEmail());
-        CaregiverAccount createdCaregiverAccount = caregiverService.createCaregiver(caregiverAccount);
-        return ResponseEntity.ok(createdCaregiverAccount);
+        log.info("REQUEST: Creating caregiver - email: {}, name: {}, phone: {}",
+                caregiverAccount.getEmail(),
+                caregiverAccount.getUniqueIdentifier());
+
+        try {
+            CaregiverAccount createdCaregiverAccount = caregiverService.createCaregiver(caregiverAccount);
+            log.info("RESPONSE: Successfully created caregiver with ID: {}, email: {}",
+                    createdCaregiverAccount.getUniqueIdentifier(),
+                    createdCaregiverAccount.getEmail());
+            return ResponseEntity.ok(createdCaregiverAccount);
+        } catch (Exception e) {
+            log.error("ERROR: Failed to create caregiver with email: {} - Error: {}",
+                    caregiverAccount.getEmail(),
+                    e.getMessage(), e);
+            throw e;
+        }
     }
 }

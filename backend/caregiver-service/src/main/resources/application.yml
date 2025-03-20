@@ -1,24 +1,37 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: caregiver-service
 
+  # Primary datasource for JPA
   datasource:
     url: jdbc:postgresql://findcare-postgres:5432/tenantdb
     username: admin
     password: root123
     driver-class-name: org.postgresql.Driver
 
+  # Explicitly disable JPA schema generation
   jpa:
     hibernate:
-      ddl-auto: none # Changed from validate to none
-    show-sql: true
+      ddl-auto: none
     properties:
-      jakarta.persistence.schema-generation.database.action: none
-    defer-datasource-initialization: true
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl.auto: none
+    # Turn off schema validation entirely
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
 
+  # Configure Flyway without JPA dependency
   flyway:
     enabled: true
-    locations: filesystem:d:/SDGP/development/FindCare/db/migration
+    # No dependency on EntityManagerFactory
+    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
+    user: admin
+    password: root123
+    locations: filesystem:/app/db/migration
     baseline-on-migrate: true
     baseline-version: 0
     schemas: public
@@ -31,4 +44,4 @@ logging:
 
 app:
   cors:
-    allowed-origins: http://localhost:3000,http://localhost:8082
+    allowed-origins: http://localhost:3000,http://localhost:8081

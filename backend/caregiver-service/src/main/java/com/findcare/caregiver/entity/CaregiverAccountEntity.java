@@ -19,7 +19,7 @@ public class CaregiverAccountEntity {
     private Integer caregiverId;
 
     @Column(name = "unique_identifier", unique = true)
-    private String auth0Identifier;
+    private String uniqueIdentifier;
 
     @Column(name = "email", unique = true)
     private String email;
