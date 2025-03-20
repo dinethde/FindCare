@@ -35,4 +35,20 @@ public class CaregiverController {
             throw e;
         }
     }
+
+    @GetMapping("/{uniqueIdentifier}")
+    public ResponseEntity<CaregiverAccount> getCaregiverByUniqueIdentifier(@PathVariable String uniqueIdentifier) {
+        log.info("REQUEST: Fetching caregiver with uniqueIdentifier: {}", uniqueIdentifier);
+
+        try {
+            CaregiverAccount caregiver = caregiverService.getCaregiverByUniqueIdentifier(uniqueIdentifier);
+            log.info("RESPONSE: Successfully retrieved caregiver with uniqueIdentifier: {}", uniqueIdentifier);
+            return ResponseEntity.ok(caregiver);
+        } catch (Exception e) {
+            log.error("ERROR: Failed to fetch caregiver with uniqueIdentifier: {} - Error: {}",
+                    uniqueIdentifier,
+                    e.getMessage(), e);
+            throw e;
+        }
+    }
 }
