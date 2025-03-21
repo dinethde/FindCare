@@ -15,6 +15,7 @@ import { useMemo } from "react";
 export default function CaregiverPage() {
 
   const { data: caregiversData, isLoading, isError } = useGetAllCaregivers();
+  console.log("caregiversData", caregiversData);
 
   const displayData = useMemo(() => {
     if (caregiversData) {
@@ -53,7 +54,7 @@ export default function CaregiverPage() {
     <div className="flex flex-col gap-8">
       {
         !isLoading ? (
-          <div>
+          <div className="flex flex-col gap-8">
             <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
               {/* == Best caregiver card == */}
               <div>

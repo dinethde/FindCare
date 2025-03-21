@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service class responsible for handling business logic related to caregivers.
@@ -105,6 +107,32 @@ public class CaregiverService {
             throw new ResponseStatusException(
                     HttpStatus.INTERNAL_SERVER_ERROR,
                     "Failed to fetch caregiver");
+        }
+    }
+
+    /**
+     * Retrieves all caregivers from the database.
+     * 
+     * @return List of all caregivers in the system
+     * @throws ResponseStatusException with INTERNAL_SERVER_ERROR for unexpected
+     *                                 errors
+     */
+    @Transactional(readOnly = true)
+    public List<Caregiver> getAllCaregivers() {
+        log.info("Fetching all caregivers from database");
+
+        try {
+            List<Caregiver> caregivers = caregiverRepository.findAll().stream()
+                    .map(entity -> modelMapper.map(entity, Caregiver.class))
+                    .collect(Collectors.toList());
+
+            log.info("Successfully retrieved {} caregivers", caregivers.size());
+            return caregivers;
+        } catch (Exception e) {
+            log.error("Unexpected error while fetching all caregivers", e);
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Failed to retrieve caregivers");
         }
     }
 }

@@ -26,7 +26,6 @@ export default function TenantPage() {
   //   }
   // }
 
-
   useEffect(() => {
     let isMounted = true;
 

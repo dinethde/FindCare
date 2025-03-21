@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 /**
  * REST Controller for managing caregiver-related operations.
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin
-@RequestMapping("/api/caregivers/create")
+@RequestMapping("/api/caregivers")
 public class CaregiverController {
     private final CaregiverService caregiverService;
 
@@ -58,5 +59,25 @@ public class CaregiverController {
 
         log.info("RESPONSE: Successfully retrieved caregiver with ID: {}", caregiver.getCaregiverId());
         return ResponseEntity.ok(caregiver);
+    }
+
+    /**
+     * Retrieves all caregivers from the system.
+     * 
+     * @return ResponseEntity containing a list of all caregivers
+     * @throws org.springframework.web.server.ResponseStatusException with
+     *                                                                INTERNAL_SERVER_ERROR
+     *                                                                if there's an
+     *                                                                unexpected
+     *                                                                error
+     */
+    @GetMapping
+    public ResponseEntity<List<Caregiver>> getAllCaregivers() {
+        log.info("REQUEST: Fetching all caregivers");
+
+        List<Caregiver> caregivers = caregiverService.getAllCaregivers();
+
+        log.info("RESPONSE: Successfully retrieved {} caregivers", caregivers.size());
+        return ResponseEntity.ok(caregivers);
     }
 }
