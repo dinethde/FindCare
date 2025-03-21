@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * Entity class representing a caregiver in the system.
@@ -15,99 +14,57 @@ import java.time.LocalDateTime;
  * the FindCare platform.
  */
 @Entity
-@Table(name = "caregivers")
+@Table(name = "Caregiver")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Caregiver {
-    /**
-     * Unique identifier for the caregiver
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "caregiver_id")
     private Long caregiverId;
 
-    /**
-     * Foreign key referencing the caregiver's account in the authentication system
-     */
-    @Column(unique = true, nullable = false)
-    private Integer caregiverAccountId;
+    @Column(name = "username")
+    private String username;
 
-    /**
-     * National Identity Card number of the caregiver
-     */
-    @Column(unique = true, nullable = false)
-    private String nicNumber;
-
-    /**
-     * First name of the caregiver
-     */
-    @Column(nullable = false)
+    @Column(name = "f_name")
     private String firstName;
 
-    /**
-     * Last name of the caregiver
-     */
-    @Column(nullable = false)
+    @Column(name = "m_name")
+    private String middleName;
+
+    @Column(name = "l_name")
     private String lastName;
 
-    /**
-     * Date of birth of the caregiver
-     */
-    @Column(nullable = false)
-    private LocalDate dateOfBirth;
+    @Column(name = "NIC_Number", unique = true, length = 20)
+    private String nicNumber;
 
-    /**
-     * Contact phone number for the caregiver
-     */
-    @Column(nullable = false)
-    private String phoneNumber;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender", columnDefinition = "gender_enum")
+    private Gender gender;
 
-    /**
-     * Current residential address of the caregiver
-     */
-    @Column(nullable = false)
-    private String address;
+    @Column(name = "age")
+    private Integer age;
 
-    /**
-     * Years of experience in caregiving
-     */
-    @Column(nullable = false)
-    private Integer yearsOfExperience;
-
-    /**
-     * Brief description of the caregiver's background and expertise
-     */
-    @Column(length = 1000)
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    /**
-     * Hourly rate charged by the caregiver for their services
-     */
-    @Column(nullable = false)
-    private BigDecimal hourlyRate;
+    @Column(name = "hired_date")
+    private LocalDate hiredDate;
 
-    /**
-     * Creation timestamp of the caregiver record
-     */
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "AVG_CSR", precision = 3, scale = 2)
+    private BigDecimal avgCsr;
 
-    /**
-     * Last update timestamp of the caregiver record
-     */
-    @Column(nullable = false)
-    private LocalDateTime updatedAt;
+    @Column(name = "total_Clients")
+    private Integer totalClients;
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
+    @Column(name = "profile_img", columnDefinition = "TEXT")
+    private String profileImg;
 
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
+    @Column(name = "agency_id")
+    private Integer agencyId;
+
+    @Column(name = "caregiver_account_id", nullable = false)
+    private Integer caregiverAccountId;
 }
