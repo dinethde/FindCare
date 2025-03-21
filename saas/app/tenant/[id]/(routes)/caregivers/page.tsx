@@ -9,8 +9,21 @@ import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
 import { shiftsData } from "@/data/pie-chart/totalShiftCard";
 import { FilterOption } from "@/types/TableTypes";
+import { useGetAllCaregivers } from "@/utils/hooks/useGetAllCaregivers";
+import { useMemo } from "react";
 
 export default function CaregiverPage() {
+
+  const { data: caregiversData, isLoading, isError } = useGetAllCaregivers();
+
+  const displayData = useMemo(() => {
+    if (caregiversData) {
+      return caregiversData;
+    }
+    return null;
+  }, [caregiversData]);
+
+
   const caregiverConfig: TableConfig = {
     title: "Caregiver List",
     columns: [
@@ -38,39 +51,49 @@ export default function CaregiverPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
-        {/* == Best caregiver card == */}
-        <div>
-          <BestCaregiversCard caregivers={caregivers} />
-        </div>
+      {
+        !isLoading ? (
+          <div>
+            <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
+              {/* == Best caregiver card == */}
+              <div>
+                <BestCaregiversCard caregivers={caregivers} />
+              </div>
 
-        {/* == Total Shifts caregiver card == */}
-        <div>
-          <TotalShiftsCard {...shiftsData} />
-        </div>
+              {/* == Total Shifts caregiver card == */}
+              <div>
+                <TotalShiftsCard {...shiftsData} />
+              </div>
 
-        <div className="flex flex-col gap-4">
-          {/* == Card == */}
-          <Card
-            revenue={"24/"}
-            title="Active Caregivers"
-            dataType={`${totalCaregivers}`}
-            dataTypeClassName="text-[18px] font-medium text-neutral-8"
-            contentClassName="text-h4"
-          />
-          {/* == Care afficeny Card plus chart  == */}
-          <CareEfficiencyCard data={efficiencyData} />
-        </div>
-      </div>
+              <div className="flex flex-col gap-4">
+                {/* == Card == */}
+                <Card
+                  revenue={"24/"}
+                  title="Active Caregivers"
+                  dataType={`${totalCaregivers}`}
+                  dataTypeClassName="text-[18px] font-medium text-neutral-8"
+                  contentClassName="text-h4"
+                />
+                {/* == Care afficeny Card plus chart  == */}
+                <CareEfficiencyCard data={efficiencyData} />
+              </div>
+            </div>
 
-      <div>
-        {/* <CaregiverList /> */}
-        <CaregiverTable
-          caregiverConfig={caregiverConfig}
-          filterOptions={filterOptions}
-          tableType="eye"
-        />
-      </div>
+            <div>
+              {/* <CaregiverList /> */}
+              <CaregiverTable
+                caregiverConfig={caregiverConfig}
+                filterOptions={filterOptions}
+                tableType="eye"
+              />
+            </div>
+          </div>
+        ) : (
+          <div>
+            <p>Loading...</p>
+          </div>
+        )
+      }
     </div>
   );
 }
