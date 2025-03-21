@@ -1,4 +1,4 @@
-package com.findcare.caregiver.entity;
+package com.findcare.caregiver.entity.caregiver;
 
 public enum Gender {
     MALE,
