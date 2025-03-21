@@ -3,7 +3,7 @@ package com.findcare.caregiver.service;
 import java.util.Optional;
 
 import com.findcare.caregiver.entity.CaregiverAccountEntity;
-import com.findcare.caregiver.repository.CaregiverRepository;
+import com.findcare.caregiver.repository.CaregiverAccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,9 +16,9 @@ import org.springframework.web.server.ResponseStatusException;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CaregiverService {
+public class CaregiverAccountService {
 
-    private final CaregiverRepository caregiverRepository;
+    private final CaregiverAccountRepository caregiverRepository;
     private final ModelMapper modelMapper;
 
     public CaregiverAccount createCaregiver(CaregiverAccount caregiver) {

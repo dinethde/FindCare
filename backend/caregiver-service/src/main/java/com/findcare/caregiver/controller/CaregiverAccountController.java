@@ -6,15 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.findcare.caregiver.service.CaregiverService;
+import com.findcare.caregiver.service.CaregiverAccountService;
 
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin
 @RequestMapping("/api/caregivers")
-public class CaregiverController {
-    private final CaregiverService caregiverService;
+public class CaregiverAccountController {
+    private final CaregiverAccountService caregiverService;
 
     @PostMapping
     public ResponseEntity<CaregiverAccount> createCaregiver(@RequestBody CaregiverAccount caregiverAccount) {
