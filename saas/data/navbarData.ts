@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // navbarData.ts
 import SearchIcon from "@/components/icons/SearchIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
@@ -49,7 +49,7 @@ const createLinks = (tenantId: string) => {
     },
     {
       label: "Clients",
-      href: `${baseUrl}/clients`,
+      href: `${baseUrl}/clients`, // This is correct - pointing to the plural "clients"
       icon: ClientIcon,
     },
     {

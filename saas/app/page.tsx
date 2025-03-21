@@ -26,7 +26,7 @@ export default async function HomePage() {
           <SignInButton
             mode="modal"
             forceRedirectUrl={
-              process.env.NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL
+              process.env.NEXT_PUBLIC_SIGN_IN_FORCE_REDIRECT_URL
             }
           />
         </SignedOut>
