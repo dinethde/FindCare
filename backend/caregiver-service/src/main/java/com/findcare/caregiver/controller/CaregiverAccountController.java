@@ -12,7 +12,7 @@ import com.findcare.caregiver.service.CaregiverAccountService;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin
-@RequestMapping("/api/caregivers")
+@RequestMapping("/api/caregivers/accounts")
 public class CaregiverAccountController {
     private final CaregiverAccountService caregiverService;
 

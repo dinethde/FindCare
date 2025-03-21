@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin
-@RequestMapping("/api/caregivers/")
+@RequestMapping("/api/caregivers/create")
 public class CaregiverController {
     private final CaregiverService caregiverService;
 
@@ -50,7 +50,7 @@ public class CaregiverController {
      * @throws org.springframework.web.server.ResponseStatusException if caregiver
      *                                                                is not found
      */
-    @GetMapping("{accountId}")
+    @GetMapping("/{accountId}")
     public ResponseEntity<Caregiver> getCaregiverByAccountId(@PathVariable Integer accountId) {
         log.info("REQUEST: Fetching caregiver with account ID: {}", accountId);
 
