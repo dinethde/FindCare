@@ -1,10 +1,16 @@
 package com.findcare.agency.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
 public class AccountDTO {
     private Integer accountId;
+
     private String auth0Identifier;
+
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Please provide a valid email address")
     private String email;
 }

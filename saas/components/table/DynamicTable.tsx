@@ -23,6 +23,7 @@ interface DynamicTableProps {
     options?: string[];
   }>;
   initialFilters?: Record<string, any>;
+  profilePath?: string; // Add profilePath for dynamic navigation
 }
 
 export function DynamicTable({
@@ -31,20 +32,29 @@ export function DynamicTable({
   filterOptions,
   tableType = "",
   initialFilters = {},
+  profilePath = "", // Default to empty string if not provided
 }: DynamicTableProps) {
   const pathname = usePathname();
-  const pageIn = pathname.split("/")[1];
-  let navigationLink: string | UrlObject;
+  const pageIn = pathname.split("/")[3]; // Get the route section (caregivers, clients, etc.)
 
-  if (pageIn === "caregivers") {
-    navigationLink = "caregivers/profile/overview";
-  } else if (pageIn === "clients") {
-    navigationLink = "/clients/profile/overview";
-  } else if (pageIn === "filla-spot") {
-    navigationLink = "/filla-spot/modal";
-  } else {
-    navigationLink = "/";
-  }
+  // Function to generate dynamic navigation link based on item ID
+  const getNavigationLink = (itemId: string): string => {
+    // If a profile path was provided, use it with the item ID
+    if (profilePath) {
+      return `${profilePath}/${itemId}/profile/overview`;
+    }
+
+    // Otherwise fall back to default navigation paths
+    if (pageIn === "caregivers") {
+      return `/tenant/${pathname.split("/")[2]}/caregivers/${itemId}/profile/overview`;
+    } else if (pageIn === "clients") {
+      return `/tenant/${pathname.split("/")[2]}/clients/${itemId}/profile/overview`;
+    } else if (pageIn === "filla-spot") {
+      return `/tenant/${pathname.split("/")[2]}/filla-spot/modal`;
+    } else {
+      return "/";
+    }
+  };
 
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] =
@@ -148,11 +158,10 @@ export function DynamicTable({
                 ) => (
                   <th
                     key={column.key}
-                    className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${
-                      config.headerAlignments && config.headerAlignments[index]
+                    className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${config.headerAlignments && config.headerAlignments[index]
                         ? `text-${config.headerAlignments[index]}`
                         : ""
-                    }`}
+                      }`}
                     style={{ width: column.width }}
                   >
                     {column.header}
@@ -180,29 +189,28 @@ export function DynamicTable({
                     ) => (
                       <td
                         key={column.key}
-                        className={`${
-                          config.title === "Caregiver List" ? "py-6" : "py-5"
-                        } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${
-                          config.headerAlignments &&
-                          config.headerAlignments[colIndex]
+                        className={`${config.title === "Caregiver List" ? "py-6" : "py-5"
+                          } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${config.headerAlignments &&
+                            config.headerAlignments[colIndex]
                             ? `text-${config.headerAlignments[colIndex]}`
                             : ""
-                        }`}
+                          }`}
                       >
                         {renderCell(column, item)}
                       </td>
                     )
                   )}
 
+                  {/* Action buttons with dynamic navigation */}
                   {tableType === "fill" ? (
                     <td className="py-5 pr-4 flex justify-end">
-                      <Link href={navigationLink}>
+                      <Link href={getNavigationLink(item.id)}>
                         <Square2StackIcon className="h-5 w-5" />
                       </Link>
                     </td>
                   ) : tableType === "eye" ? (
                     <td className="py-5 pr-4 flex justify-end">
-                      <Link href={navigationLink}>
+                      <Link href={getNavigationLink(item.id)}>
                         <Eye className="h-5 w-5" />
                       </Link>
                     </td>

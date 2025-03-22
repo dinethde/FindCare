@@ -25,6 +25,7 @@ export const caregiverData: Caregiver[] = [
     rate: 4.2,
     location: "San Francisco",
   },
+
   {
     id: "4",
     name: "Emma Watson",

@@ -27,8 +27,6 @@ public class CaregiverController {
      * @param caregiver The caregiver information to be created. Must be valid
      *                  according to the DTO constraints.
      * @return ResponseEntity containing the created caregiver with generated ID
-     * @throws jakarta.validation.ValidationException if the caregiver data fails
-     *                                                validation
      */
     @PostMapping
     public ResponseEntity<Caregiver> createCaregiver(@Valid @RequestBody Caregiver caregiver) {
@@ -48,8 +46,6 @@ public class CaregiverController {
      * 
      * @param accountId The unique identifier of the caregiver's account
      * @return ResponseEntity containing the caregiver information if found
-     * @throws org.springframework.web.server.ResponseStatusException if caregiver
-     *                                                                is not found
      */
     @GetMapping("/{accountId}")
     public ResponseEntity<Caregiver> getCaregiverByAccountId(@PathVariable Integer accountId) {
@@ -65,11 +61,6 @@ public class CaregiverController {
      * Retrieves all caregivers from the system.
      * 
      * @return ResponseEntity containing a list of all caregivers
-     * @throws org.springframework.web.server.ResponseStatusException with
-     *                                                                INTERNAL_SERVER_ERROR
-     *                                                                if there's an
-     *                                                                unexpected
-     *                                                                error
      */
     @GetMapping
     public ResponseEntity<List<Caregiver>> getAllCaregivers() {
