@@ -138,7 +138,7 @@ export function BulkUpload(): JSX.Element {
         {isDragActive ? (
           <p>Drop the CSV file here ...</p>
         ) : (
-          <p>Drag 'n' drop a CSV file here, or click to select one</p>
+          <p>Drag &apos;n&apos; drop a CSV file here, or click to select one</p>
         )}
       </div>
 

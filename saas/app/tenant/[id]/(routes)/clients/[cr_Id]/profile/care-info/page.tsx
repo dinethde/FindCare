@@ -70,11 +70,11 @@ export default function CareInfo() {
                 >
                   {profileData.goals.goalsList.length > 0 ? (
                     profileData.goals.goalsList.map((goal, index) => (
-                      <DetailRow label={`Goal ${index}`} value={goal} />
+                      <DetailRow key={index} label={`Goal ${index}`} value={goal} />
                     ))
                   ) : (
                     <p className="text-grey">
-                      <i>This use doesn't have any goals yet.</i>
+                      <i>This use doesn&apos;t have any goals yet.</i>
                     </p>
                   )}
                 </SectionCard>

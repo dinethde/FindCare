@@ -14,7 +14,7 @@ import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 
 export default function CaregiverPage() {
-  const { data: caregiversData, isLoading, isError } = useGetAllCaregivers();
+  const { data: caregiversData, isLoading } = useGetAllCaregivers();
   const pathname = usePathname();
   const tenantId = pathname.split("/")[2]; // Extract the tenant ID from path
 

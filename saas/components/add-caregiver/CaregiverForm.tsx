@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -47,9 +48,9 @@ type FormData = z.infer<typeof schema>;
 
 /**
  * CaregiverForm component for adding new caregivers
- * @returns {JSX.Element} The rendered CaregiverForm component
+ * @returns {React.ReactElement} The rendered CaregiverForm component
  */
-export function CaregiverForm(): JSX.Element {
+export function CaregiverForm(): React.ReactElement {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [clearImage, setClearImage] = useState(false);
@@ -57,7 +58,6 @@ export function CaregiverForm(): JSX.Element {
   const {
     control,
     handleSubmit,
-    setValue,
     reset,
     formState: { errors },
   } = useForm<FormData>({
@@ -95,9 +95,6 @@ export function CaregiverForm(): JSX.Element {
     // Add the new caregiver to the caregivers array
     caregivers.push(newCaregiver);
 
-    console.log("New caregiver added:", newCaregiver);
-    console.log("Updated caregivers array:", caregivers);
-
     // Simulating an API call with setTimeout
     setTimeout(() => {
       setIsSubmitting(false);
@@ -112,6 +109,37 @@ export function CaregiverForm(): JSX.Element {
         setClearImage(false);
       }, 3000);
     }, 1000);
+  };
+
+  const renderFieldContent = (
+    field: any,
+    value: string | string[],
+    onChange: (value: any) => void,
+    isLastInGroup: boolean = false
+  ) => {
+    if (field.type === "select") {
+      return (
+        <MultiSelect
+          label={field.label}
+          options={field.options || []}
+          maxSelect={field.maxSelect}
+          selectedValues={Array.isArray(value) ? value : []}
+          onChange={onChange}
+          error={errors[field.id as keyof FormData]?.message}
+        />
+      );
+    }
+    return (
+      <FormField
+        field={field}
+        value={typeof value === 'string' ? value : ''}
+        onChange={onChange}
+        error={errors[field.id as keyof FormData]?.message}
+        isLastInGroup={isLastInGroup}
+        readOnly={field.id === "caregiver_id"}
+        clearImage={clearImage && field.type === "file"}
+      />
+    );
   };
 
   return (
@@ -166,17 +194,9 @@ export function CaregiverForm(): JSX.Element {
                         key={field.id}
                         name={field.id as keyof FormData}
                         control={control}
-                        render={({ field: { onChange, value } }) => (
-                          <FormField
-                            field={field}
-                            value={value || ""}
-                            onChange={onChange}
-                            readOnly={field.id === "caregiver_id"}
-                            error={errors[field.id as keyof FormData]?.message}
-                            clearImage={clearImage && field.type === "file"}
-                            isLastInGroup={index === 3}
-                          />
-                        )}
+                        render={({ field: { onChange, value } }) =>
+                          renderFieldContent(field, value, onChange, index === 3)
+                        }
                       />
                     ))}
                   </div>
@@ -187,71 +207,28 @@ export function CaregiverForm(): JSX.Element {
                         key={field.id}
                         name={field.id as keyof FormData}
                         control={control}
-                        render={({ field: { onChange, value } }) => (
-                          <FormField
-                            field={field}
-                            value={value || ""}
-                            onChange={onChange}
-                            readOnly={field.id === "caregiver_id"}
-                            error={errors[field.id as keyof FormData]?.message}
-                            clearImage={clearImage && field.type === "file"}
-                            isLastInGroup={index === 3}
-                          />
-                        )}
+                        render={({ field: { onChange, value } }) =>
+                          renderFieldContent(field, value, onChange, index === 3)
+                        }
                       />
                     ))}
                   </div>
 
                   {/* Render the rest of the form fields */}
-                  {formFields.slice(8, 11).map((field, index, array) => {
-                    if (field.type === "select") {
-                      return (
-                        <div
-                          key={field.id}
-                          className="bg-main border rounded-lg p-4 space-y-2"
-                        >
-                          <Controller
-                            name={field.id as keyof FormData}
-                            control={control}
-                            render={({ field: { onChange, value } }) => (
-                              <MultiSelect
-                                label={field.label}
-                                options={field.options || []}
-                                maxSelect={field.maxSelect}
-                                selectedValues={value || []}
-                                onChange={onChange}
-                                error={
-                                  errors[field.id as keyof FormData]?.message
-                                }
-                              />
-                            )}
-                          />
-                        </div>
-                      );
-                    }
-                    return (
-                      <div
-                        key={field.id}
-                        className="bg-main border rounded-lg p-4 space-y-2"
-                      >
-                        <Controller
-                          name={field.id as keyof FormData}
-                          control={control}
-                          render={({ field: { onChange, value } }) => (
-                            <FormField
-                              field={field}
-                              value={value || ""}
-                              onChange={onChange}
-                              error={
-                                errors[field.id as keyof FormData]?.message
-                              }
-                              isLastInGroup={true}
-                            />
-                          )}
-                        />
-                      </div>
-                    );
-                  })}
+                  {formFields.slice(8, 11).map((field) => (
+                    <div
+                      key={field.id}
+                      className="bg-main border rounded-lg p-4 space-y-2"
+                    >
+                      <Controller
+                        name={field.id as keyof FormData}
+                        control={control}
+                        render={({ field: { onChange, value } }) =>
+                          renderFieldContent(field, value, onChange, true)
+                        }
+                      />
+                    </div>
+                  ))}
 
                   <div className="border rounded-lg py-4 space-y-2">
                     {formFields.slice(11).map((field, index) => (
@@ -259,17 +236,9 @@ export function CaregiverForm(): JSX.Element {
                         key={field.id}
                         name={field.id as keyof FormData}
                         control={control}
-                        render={({ field: { onChange, value } }) => (
-                          <FormField
-                            field={field}
-                            value={value || ""}
-                            onChange={onChange}
-                            readOnly={field.id === "caregiver_id"}
-                            error={errors[field.id as keyof FormData]?.message}
-                            clearImage={clearImage && field.type === "file"}
-                            isLastInGroup={index === 1}
-                          />
-                        )}
+                        render={({ field: { onChange, value } }) =>
+                          renderFieldContent(field, value, onChange, index === 1)
+                        }
                       />
                     ))}
                   </div>

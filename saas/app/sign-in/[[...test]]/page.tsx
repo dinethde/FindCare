@@ -2,11 +2,11 @@
 
 import { SignUp } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 // Separate client component to handle client-side rendering
 function SignUpContent() {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {

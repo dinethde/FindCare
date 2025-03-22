@@ -3,19 +3,7 @@ import { TableConfig } from "@/types/TableTypes";
 import React from "react";
 
 export default function page() {
-  // For demonstration purposes, we'll use the first caregiver and client
-
-  const clientConfigWithTimes: TableConfig = {
-    title: "Client List ",
-    columns: [
-      { key: "name", header: "Name", width: "20%" },
-      { key: "careType", header: "Care Type", width: "20%" },
-      { key: "primaryCaregiver", header: "Primary caregiver", width: "20%" },
-      { key: "location", header: "location", width: "20%" },
-      { key: "assignedTimes", header: "Assigned Times", width: "20%" },
-    ],
-    headerAlignments: ["left", "center", "center", "center", "right"],
-  };
+  // Removed unused variable clientConfigWithTimes
 
   const clientConfigWithNOK: TableConfig = {
     title: "Client List",

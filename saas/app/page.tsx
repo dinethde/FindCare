@@ -2,7 +2,6 @@ import { currentUser } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
 
 export const metadata: Metadata = {
   title: "FindCare Home",

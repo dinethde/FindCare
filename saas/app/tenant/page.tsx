@@ -5,7 +5,6 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { useUser } from '@clerk/nextjs';
-import { createTenant } from '@/utils/api-calls/create-tenant-acc';
 
 export interface TenantResponse {
   accountId: string;
@@ -91,7 +90,7 @@ export default function TenantPage() {
     return () => {
       isMounted = false;
     };
-  }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError]); // Updated dependencies
+  }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]); // Added router to dependencies
 
 
   if (!isLoaded) {
