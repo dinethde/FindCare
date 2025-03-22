@@ -27,6 +27,12 @@ public class AccountService {
         log.info("Processing account creation request for email: {}", accountDTO.getEmail());
 
         try {
+
+            if (accountDTO.getEmail() == null || accountDTO.getEmail().isEmpty()) {
+                log.error("Email is required for account creation");
+                throw new IllegalArgumentException("Email is required");
+            }
+
             // Check if account already exists by email
             Optional<AccountEntity> existingAccountByEmail = accountRepository.findByEmail(accountDTO.getEmail());
 
