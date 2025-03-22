@@ -1,16 +1,17 @@
 package com.findcare.caregiver.service;
 
 import com.findcare.caregiver.dto.Caregiver;
+import com.findcare.caregiver.exception.BusinessRuleViolationException;
+import com.findcare.caregiver.exception.ResourceAlreadyExistsException;
+import com.findcare.caregiver.exception.ResourceNotFoundException;
 import com.findcare.caregiver.repository.CaregiverRepository;
 import com.findcare.caregiver.repository.CaregiverAccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,31 +33,39 @@ public class CaregiverService {
      * 
      * @param caregiver The caregiver DTO containing all required information
      * @return The created caregiver DTO with generated ID
-     * @throws ResponseStatusException with NOT_FOUND if the caregiver account
-     *                                 doesn't exist
-     * @throws ResponseStatusException with CONFLICT if a caregiver with the same
-     *                                 NIC already exists
-     * @throws ResponseStatusException with INTERNAL_SERVER_ERROR for unexpected
-     *                                 errors
+     * @throws ResourceNotFoundException      if the caregiver account doesn't exist
+     * @throws ResourceAlreadyExistsException if a caregiver with the same NIC
+     *                                        already exists
+     * @throws BusinessRuleViolationException if a caregiver already exists with the
+     *                                        same account ID
      */
     @Transactional
     public Caregiver createCaregiver(Caregiver caregiver) {
         log.info("Creating caregiver with NIC: {}", caregiver.getNicNumber());
 
+        // Validate caregiver account exists
+        caregiverAccountRepository.findById(caregiver.getCaregiverAccountId())
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Caregiver account", "ID", caregiver.getCaregiverAccountId()));
+
+        // Check if caregiver already exists with the same account ID
+        List<com.findcare.caregiver.entity.caregiver.Caregiver> existingCaregivers = caregiverRepository
+                .findAllByCaregiverAccountId(caregiver.getCaregiverAccountId());
+
+        if (!existingCaregivers.isEmpty()) {
+            log.warn("Attempting to create multiple caregivers for account ID: {}", caregiver.getCaregiverAccountId());
+            throw new BusinessRuleViolationException(
+                    "Caregiver", "account ID", caregiver.getCaregiverAccountId(),
+                    "A caregiver is already associated with this account");
+        }
+
+        // Check if caregiver already exists with NIC
+        if (caregiverRepository.findByNicNumber(caregiver.getNicNumber()).isPresent()) {
+            throw new ResourceAlreadyExistsException(
+                    "Caregiver", "NIC", caregiver.getNicNumber());
+        }
+
         try {
-            // Validate caregiver account exists
-            caregiverAccountRepository.findById(caregiver.getCaregiverAccountId())
-                    .orElseThrow(() -> new ResponseStatusException(
-                            HttpStatus.NOT_FOUND,
-                            "Caregiver account not found with ID: " + caregiver.getCaregiverAccountId()));
-
-            // Check if caregiver already exists with NIC
-            if (caregiverRepository.findByNicNumber(caregiver.getNicNumber()).isPresent()) {
-                throw new ResponseStatusException(
-                        HttpStatus.CONFLICT,
-                        "Caregiver already exists with NIC: " + caregiver.getNicNumber());
-            }
-
             // Save the caregiver
             com.findcare.caregiver.entity.caregiver.Caregiver caregiverEntity = modelMapper.map(caregiver,
                     com.findcare.caregiver.entity.caregiver.Caregiver.class);
@@ -66,14 +75,7 @@ public class CaregiverService {
             return modelMapper.map(savedEntity, Caregiver.class);
         } catch (DataIntegrityViolationException e) {
             log.error("Database constraint violation while creating caregiver", e);
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Database constraint violation occurred");
-        } catch (ResponseStatusException e) {
-            throw e;
-        } catch (Exception e) {
-            log.error("Unexpected error while creating caregiver", e);
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Failed to create caregiver");
+            throw new ResourceAlreadyExistsException("Database constraint violation occurred");
         }
     }
 
@@ -82,57 +84,44 @@ public class CaregiverService {
      * 
      * @param caregiverAccountId The account ID of the caregiver to retrieve
      * @return The caregiver DTO if found
-     * @throws ResponseStatusException with NOT_FOUND if no caregiver is found with
-     *                                 the given account ID
-     * @throws ResponseStatusException with INTERNAL_SERVER_ERROR for unexpected
-     *                                 errors
+     * @throws ResourceNotFoundException if no caregiver is found with the given
+     *                                   account ID
      */
     @Transactional(readOnly = true)
     public Caregiver getCaregiverByAccountId(Integer caregiverAccountId) {
         log.info("Fetching caregiver with account ID: {}", caregiverAccountId);
 
-        try {
-            return caregiverRepository.findByCaregiverAccountId(caregiverAccountId)
-                    .map(entity -> modelMapper.map(entity, Caregiver.class))
-                    .orElseThrow(() -> {
-                        log.error("Caregiver not found with account ID: {}", caregiverAccountId);
-                        return new ResponseStatusException(
-                                HttpStatus.NOT_FOUND,
-                                String.format("Caregiver not found with account ID: %d", caregiverAccountId));
-                    });
-        } catch (ResponseStatusException e) {
-            throw e;
-        } catch (Exception e) {
-            log.error("Unexpected error while fetching caregiver", e);
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Failed to fetch caregiver");
+        List<com.findcare.caregiver.entity.caregiver.Caregiver> caregivers = caregiverRepository
+                .findAllByCaregiverAccountId(caregiverAccountId);
+
+        if (caregivers.isEmpty()) {
+            log.error("Caregiver not found with account ID: {}", caregiverAccountId);
+            throw new ResourceNotFoundException("Caregiver", "account ID", caregiverAccountId);
+        } else if (caregivers.size() > 1) {
+            // This is a data integrity issue that should be reported but still return the
+            // first entry
+            log.warn("Multiple caregivers found for account ID: {}. This indicates a data integrity issue.",
+                    caregiverAccountId);
+            // We'll return the first one to maintain backward compatibility
         }
+
+        return modelMapper.map(caregivers.get(0), Caregiver.class);
     }
 
     /**
      * Retrieves all caregivers from the database.
      * 
      * @return List of all caregivers in the system
-     * @throws ResponseStatusException with INTERNAL_SERVER_ERROR for unexpected
-     *                                 errors
      */
     @Transactional(readOnly = true)
     public List<Caregiver> getAllCaregivers() {
         log.info("Fetching all caregivers from database");
 
-        try {
-            List<Caregiver> caregivers = caregiverRepository.findAll().stream()
-                    .map(entity -> modelMapper.map(entity, Caregiver.class))
-                    .collect(Collectors.toList());
+        List<Caregiver> caregivers = caregiverRepository.findAll().stream()
+                .map(entity -> modelMapper.map(entity, Caregiver.class))
+                .collect(Collectors.toList());
 
-            log.info("Successfully retrieved {} caregivers", caregivers.size());
-            return caregivers;
-        } catch (Exception e) {
-            log.error("Unexpected error while fetching all caregivers", e);
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Failed to retrieve caregivers");
-        }
+        log.info("Successfully retrieved {} caregivers", caregivers.size());
+        return caregivers;
     }
 }
