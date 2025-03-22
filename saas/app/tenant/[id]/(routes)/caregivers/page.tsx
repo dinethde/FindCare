@@ -11,12 +11,17 @@ import { shiftsData } from "@/data/pie-chart/totalShiftCard";
 import { FilterOption } from "@/types/TableTypes";
 import { useGetAllCaregivers } from "@/utils/hooks/useGetAllCaregivers";
 import { useMemo } from "react";
+import { usePathname } from "next/navigation";
 
 export default function CaregiverPage() {
-
   const { data: caregiversData, isLoading, isError } = useGetAllCaregivers();
-  console.log("caregiversData", caregiversData);
+  const pathname = usePathname();
+  const tenantId = pathname.split("/")[2]; // Extract the tenant ID from path
 
+  // Create the dynamic path for caregiver profiles
+  const profileBasePath = `/tenant/${tenantId}/caregivers`;
+
+  // Format the data for display if needed
   const displayData = useMemo(() => {
     if (caregiversData) {
       return caregiversData;
@@ -24,17 +29,17 @@ export default function CaregiverPage() {
     return null;
   }, [caregiversData]);
 
-
   const caregiverConfig: TableConfig = {
     title: "Caregiver List",
     columns: [
       { key: "name", header: "Name", width: "15%" },
-      { key: "contactInfo", header: "Schedule", width: "25%" },
+      { key: "id", header: "id", width: "8%" },
+      { key: "contactInfo", header: "mobile", width: "20%" },
       { key: "careType", header: "Care Type", width: "15%" },
-      { key: "rate", header: "Rate", width: "12%" },
-      { key: "location", header: "location", width: "15%" },
+      { key: "rate", header: "Rate", width: "15%" },
+      { key: "location", header: "location", width: "12%" },
     ],
-    headerAlignments: ["left", "center", "center", "center", "right"],
+    headerAlignments: ["left", "center", "center", "center", "center", "right"],
   };
 
   const filterOptions: FilterOption[] = [
@@ -48,7 +53,7 @@ export default function CaregiverPage() {
     { key: "location", label: "Location", type: "text" },
   ];
 
-  const totalCaregivers = 32;
+  const totalCaregivers = displayData ? displayData.length : 0;
 
   return (
     <div className="flex flex-col gap-8">
@@ -81,11 +86,13 @@ export default function CaregiverPage() {
             </div>
 
             <div>
-              {/* <CaregiverList /> */}
+              {/* Pass fetched data and profilePath to CaregiverTable */}
               <CaregiverTable
                 caregiverConfig={caregiverConfig}
                 filterOptions={filterOptions}
                 tableType="eye"
+                data={displayData || []}
+                profilePath={profileBasePath}
               />
             </div>
           </div>

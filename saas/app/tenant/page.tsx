@@ -78,8 +78,6 @@ export default function TenantPage() {
           );
         }
 
-
-
       } catch (error) {
         console.error('Failed to create tenant:', error);
         if (isMounted) {
@@ -95,6 +93,7 @@ export default function TenantPage() {
     };
   }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError]); // Updated dependencies
 
+
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -103,10 +102,12 @@ export default function TenantPage() {
     );
   }
 
+
   if (!isSignedIn) {
     router.push('/sign-in');
     return null;
   }
+
 
   return (
     <div className="flex items-center justify-center min-h-screen">

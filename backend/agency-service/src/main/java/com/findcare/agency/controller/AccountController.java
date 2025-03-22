@@ -1,7 +1,9 @@
 package com.findcare.agency.controller;
 
 import com.findcare.agency.dto.AccountDTO;
+import com.findcare.agency.dto.ApiResponse;
 import com.findcare.agency.service.AccountService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,15 +20,19 @@ public class AccountController {
     }
 
     @PostMapping
-    public ResponseEntity<AccountDTO> createAccount(@RequestBody AccountDTO accountDTO) {
+    public ResponseEntity<ApiResponse<AccountDTO>> createAccount(@Valid @RequestBody AccountDTO accountDTO) {
+        log.info("Received account creation request");
         AccountDTO createdAccount = accountService.createAccount(accountDTO);
-        return ResponseEntity.ok(createdAccount);
+        ApiResponse<AccountDTO> response = ApiResponse.success("Account created or retrieved successfully",
+                createdAccount);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping
-    public ResponseEntity<AccountDTO> getAccountById(@RequestParam Integer id) {
-        return accountService.getAccountById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<ApiResponse<AccountDTO>> getAccountById(@RequestParam Integer id) {
+        log.info("Received request to get account by ID: {}", id);
+        AccountDTO account = accountService.getAccountById(id);
+        ApiResponse<AccountDTO> response = ApiResponse.success("Account retrieved successfully", account);
+        return ResponseEntity.ok(response);
     }
 }
