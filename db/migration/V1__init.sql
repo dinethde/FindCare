@@ -5,6 +5,7 @@ CREATE TYPE gender_enum AS ENUM ('male', 'female', 'other');
 CREATE TYPE payment_type_enum AS ENUM ('hourly', 'daily');
 CREATE TYPE transaction_method_enum AS ENUM ('card', 'cash');
 CREATE TYPE tier_enum AS ENUM ('basic', 'standard', 'premium');
+CREATE TYPE care_type_enum AS ENUM ('senior', 'child', 'domiciliary', 'disabled', 'other');
 
 -- Create sequence for Agency_Account IDs
 CREATE SEQUENCE IF NOT EXISTS agency_account_seq
@@ -75,6 +76,7 @@ CREATE TABLE Caregiver (
     m_name VARCHAR(255),
     l_name VARCHAR(255),
     NIC_Number VARCHAR(20) UNIQUE,
+    care_type care_type_enum,
     gender gender_enum,
     age INTEGER,
     description TEXT,
@@ -458,3 +460,18 @@ CREATE TABLE Agency_Household (
     FOREIGN KEY (agency_id) REFERENCES Agency(agency_id) ON DELETE CASCADE,
     FOREIGN KEY (household_ref_id) REFERENCES Household_Reference(household_ref_id) ON DELETE CASCADE
 );
+
+-- Create CAST for ENUM 'gender_enum'
+CREATE CAST (varchar AS gender_enum) WITH INOUT AS IMPLICIT;
+
+-- Create CAST for ENUM 'payment_type_enum'
+CREATE CAST (varchar AS payment_type_enum) WITH INOUT AS IMPLICIT;
+
+-- Create CAST for ENUM 'transaction_method_enum'
+CREATE CAST (varchar AS transaction_method_enum) WITH INOUT AS IMPLICIT;
+
+-- Create CAST for ENUM 'tier_enum'
+CREATE CAST (varchar AS tier_enum) WITH INOUT AS IMPLICIT;
+
+-- Create CAST for ENUM 'care_type_enum'
+CREATE CAST (varchar AS care_type_enum) WITH INOUT AS IMPLICIT;
