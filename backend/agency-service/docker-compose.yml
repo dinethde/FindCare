@@ -1,35 +1,26 @@
-version: "3.8"
 services:
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U myuser"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   agency-service:
     build: .
     container_name: agency-service
     ports:
       - "8081:8081"
-    depends_on:
-      postgres:
-        condition: service_healthy
+    volumes:
+      - ../../db/migration:/app/db/migration
     environment:
-      # Optional: Override any configuration if needed.
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydatabase
-      SPRING_DATASOURCE_USERNAME: myuser
-      SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root123
+      SPRING_FLYWAY_ENABLED: true
+      SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
+      SERVER_PORT: 8081
+      SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
+    networks:
+      - service-network
+      - shared-db-network
 
-volumes:
-  postgres-data:
+networks:
+  service-network:
+    driver: bridge
+  shared-db-network:
+    external: true
+    name: findcare-network

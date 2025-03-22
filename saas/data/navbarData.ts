@@ -1,3 +1,4 @@
+import React from "react";
 // navbarData.ts
 import SearchIcon from "@/components/icons/SearchIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
@@ -14,75 +15,89 @@ import StarsIcon from "@/components/icons/StarsIcon";
 interface NavLink {
   label: string;
   href: string;
-  icon: (props: any) => JSX.Element;
+  icon: (props: any) => React.ReactElement;
 }
 
-// If you also have "bottom links," you can separate them:
-export const NAVBAR_TOP_LINKS: NavLink[] = [
-  {
-    label: "Search",
-    href: "/search",
-    icon: SearchIcon,
-  },
-  {
-    label: "Home",
-    href: "/",
-    icon: HomeIcon,
-  },
-  {
-    label: "Inbox",
-    href: "/inbox",
-    icon: InboxIcon,
-  },
-];
+const createLinks = (tenantId: string) => {
+  const baseUrl = `/tenant/${tenantId}`;
 
-export const NAVBAR_MIDDLE_LINKS: NavLink[] = [
-  {
-    label: "Caregivers",
-    href: "/caregivers",
-    icon: CaregiverIcon,
-  },
-  {
-    label: "Clients",
-    href: "/clients",
-    icon: ClientIcon,
-  },
-  {
-    label: "Schedules",
-    href: "/schedules",
-    icon: CalendarIcon,
-  },
-  {
-    label: "Fill a Spot",
-    href: "/filla-spot",
-    icon: MobileAppIcon,
-  },
-  {
-    label: "Agreements",
-    href: "/agreements",
-    icon: AgreementIcon,
-  },
-  {
-    label: "Notifications & ...",
-    href: "/notification",
-    icon: NotificationIcon,
-  },
-  {
-    label: "Mobile App",
-    href: "/mobileapp",
-    icon: MobileAppIcon,
-  },
-];
+  // Top links with dynamic tenant ID
+  const topLinks: NavLink[] = [
+    {
+      label: "Search",
+      href: `${baseUrl}/search`,
+      icon: SearchIcon,
+    },
+    {
+      label: "Home",
+      href: baseUrl,
+      icon: HomeIcon,
+    },
+    {
+      label: "Inbox",
+      href: `${baseUrl}/inbox`,
+      icon: InboxIcon,
+    },
+  ];
 
-export const NAVBAR_BOTTOM_LINKS: NavLink[] = [
-  {
-    label: "Help",
-    href: "/help",
-    icon: HelpIcon,
-  },
-  {
-    label: "Getting started",
-    href: "/getting-starting",
-    icon: StarsIcon,
-  },
-];
+  // Middle links with dynamic tenant ID
+  const middleLinks: NavLink[] = [
+    {
+      label: "Caregivers",
+      href: `${baseUrl}/caregivers`,
+      icon: CaregiverIcon,
+    },
+    {
+      label: "Clients",
+      href: `${baseUrl}/clients`, // This is correct - pointing to the plural "clients"
+      icon: ClientIcon,
+    },
+    {
+      label: "Schedules",
+      href: `${baseUrl}/schedules`,
+      icon: CalendarIcon,
+    },
+    {
+      label: "Fill a Spot",
+      href: `${baseUrl}/filla-spot`,
+      icon: MobileAppIcon,
+    },
+    {
+      label: "Agreements",
+      href: `${baseUrl}/agreements`,
+      icon: AgreementIcon,
+    },
+    {
+      label: "Notifications & ...",
+      href: `${baseUrl}/notification`,
+      icon: NotificationIcon,
+    },
+    {
+      label: "Mobile App",
+      href: `${baseUrl}/mobileapp`,
+      icon: MobileAppIcon,
+    },
+  ];
+
+  // Bottom links with dynamic tenant ID
+  const bottomLinks: NavLink[] = [
+    {
+      label: "Help",
+      href: `${baseUrl}/help`,
+      icon: HelpIcon,
+    },
+    {
+      label: "Getting started",
+      href: `${baseUrl}/getting-starting`,
+      icon: StarsIcon,
+    },
+  ];
+
+  return {
+    NAVBAR_TOP_LINKS: topLinks,
+    NAVBAR_MIDDLE_LINKS: middleLinks,
+    NAVBAR_BOTTOM_LINKS: bottomLinks,
+  };
+};
+
+export default createLinks;

@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: caregiver-service
+
+  # Primary datasource for JPA
+  datasource:
+    url: jdbc:postgresql://tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require
+    username: tenantdb
+    password: Findcare_pwd_db
+
+  # Explicitly disable JPA schema generation
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  # Configure Flyway without JPA dependency
+  flyway:
+    enabled: true
+    locations: filesystem:/app/db/migration
+    baseline-on-migrate: true
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+    org.hibernate.SQL: DEBUG
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:8081

@@ -9,7 +9,7 @@ import {
   Tooltip,
   Label,
 } from "recharts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
 import SelectTime from "./SelectTime";
 
@@ -161,6 +161,29 @@ export function TotalShiftsCard({
 }: ChartData) {
   // State for managing the selected time period
   const [selectedTime, setSelectedTime] = useState(timeOptions[0].value);
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  
+  // Don't render the chart on the server
+  if (!isMounted) {
+    return (
+      <Card className="h-full big-card flex flex-col justify-between rounded-xl shadow-sm overflow-hidden">
+        <CardHeader className="flex flex-row items-center justify-between p-0 bg-gray-50 text-neutral-10">
+          <CardTitle className="text-h6 "> {title}</CardTitle>
+          <div className="w-[100px] h-[30px]"></div>
+        </CardHeader>
+        <CardContent className="flex flex-col items-center p-0">
+          <div className="h-[250px] w-[250px] mx-auto relative"></div>
+        </CardContent>
+        {isCaptionVisible && (
+          <div className="flex flex-wrap justify-center gap-3 py-2 px-4 bg-gray-50 h-[40px]"></div>
+        )}
+      </Card>
+    );
+  }
 
   return (
     <Card className="h-full big-card flex flex-col justify-between rounded-xl shadow-sm overflow-hidden">

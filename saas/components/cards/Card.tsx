@@ -36,12 +36,12 @@ export default function RevenueCard({
   };
 
   return (
-    <Card className="w-full big-card p-0">
+    <Card className="w-full big-card p-0 shadow-sm">
       <div
         className={`flex flex-col ${btnVarient === "SelectTime" ? "gap-3" : "gap-4"} `}
       >
         <CardHeader className="flex flex-row items-center justify-between p-0">
-          <h2 className="text-h6 text-neutral-12">{title}</h2>
+          <h2 className="card-header">{title}</h2>
 
           {isButtonVisible &&
             (btnVarient === "SelectTime" ? (

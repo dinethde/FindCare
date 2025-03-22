@@ -47,6 +47,10 @@ p {
   @apply bg-support-colors-color3 text-white;
 }
 
+.card-header {
+  @apply text-h6 text-neutral-9;
+}
+
 .your-input-class::placeholder {
   color: black; /* gray-400 */
   font-size: 0.875rem; /* text-sm */
