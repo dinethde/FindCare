@@ -1,23 +1,58 @@
 package com.findcare.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.findcare.dto.HouseholdDto;
+import com.findcare.service.HouseholdService;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
 @Slf4j
+@RestController
+@RequestMapping("/household")
+@RequiredArgsConstructor
 public class HouseholdController {
 
-    @GetMapping("/")
-    public String home() {
-//        log.info("Request reveived for Household Service");
-        return "Welcome to Household Service!";
+    private final HouseholdService householdService;
+
+    @PostMapping(value = "/", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<HouseholdDto> createHousehold(@ModelAttribute HouseholdDto household) {
+        try {
+            HouseholdDto createdHousehold = householdService.createHousehold(household);
+            return ResponseEntity.ok(createdHousehold);
+        } catch (Exception e) {
+            log.error("Error creating household", e);
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
-    @PostMapping("/")
-    public String postHome(){
-        return "Welcome to POST Household Service!";
+    @GetMapping(value = "/")
+    public ResponseEntity<HouseholdDto> getHousehold(@RequestHeader("auth0Identifier") String auth0Identifier) {
+        try {
+            HouseholdDto household = householdService.getHouseholdByAuth0Identifier(auth0Identifier);
+            return ResponseEntity.ok(household);
+        } catch (RuntimeException e) {
+            log.error("Error fetching household", e);
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            log.error("Unexpected error fetching household", e);
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> checkDatabaseConnection() {
+        try {
+            boolean isConnected = householdService.testDatabaseConnection();
+            if (isConnected) {
+                return ResponseEntity.ok("Successfully connected to Azure database");
+            } else {
+                return ResponseEntity.status(503).body("Database connection failed");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(503).body("Database connection error: " + e.getMessage());
+        }
     }
 }

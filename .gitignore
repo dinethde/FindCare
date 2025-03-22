@@ -20,9 +20,16 @@
 
 # intelij
 /.idea/
+.idea
+*.iws
+*.iml
+*.ipr
 
 # production
 /build
+
+# Java build folders
+target/
 
 # misc
 .DS_Store

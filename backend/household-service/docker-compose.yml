@@ -5,6 +5,6 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://household-db-postgres.postgres.database.azure.com:5432/household?sslmode=require"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://household-db.postgres.database.azure.com:5432/household?sslmode=require"
       SPRING_DATASOURCE_USERNAME: "dbhousehold"
       SPRING_DATASOURCE_PASSWORD: "Findcare_householdDb"

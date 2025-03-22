@@ -26,7 +26,7 @@ const CustomTooltip = ({
     const data = payload[0].payload as GrowthDataPoint;
     return (
       <div
-        className="w-40 absolute rounded-lg border bg-card p-3 shadow-lg"
+        className="w-40 absolute rounded-lg border bg-card p-3 shadow-sm"
         style={{
           left: coordinate.x,
           top: coordinate.y - 10,
@@ -65,9 +65,9 @@ export function GrowthChart({ height = 250 }: GrowthChartProps) {
   };
 
   return (
-    <Card className="w-full big-card shadow-md">
+    <Card className="w-full big-card shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between p-0 ">
-        <CardTitle className="text-h6">{CHART_CONFIG.title}</CardTitle>
+        <CardTitle><p className="card-header">{CHART_CONFIG.title}</p></CardTitle>
         <SelectTime />
       </CardHeader>
       <CardContent className="p-0">
@@ -100,7 +100,7 @@ export function GrowthChart({ height = 250 }: GrowthChartProps) {
 
               <XAxis
                 dataKey="month"
-                stroke={colorProps.brand.hex}
+                stroke={colorProps.orange.hsl}
                 tickLine={false}
                 axisLine={false}
                 tickFormatter={formatXAxis}

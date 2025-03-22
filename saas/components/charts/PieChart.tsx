@@ -3,6 +3,7 @@
 import * as React from "react";
 import { TrendingUp } from "lucide-react";
 import { Label, Pie, PieChart } from "recharts";
+import { useState, useEffect } from "react";
 
 import {
   Card,
@@ -61,9 +62,36 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export default function Component() {
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const totalVisitors = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
   }, []);
+
+  // Don't render the chart content on the server
+  if (!isMounted) {
+    return (
+      <div className="h-full">
+        <Card className="flex flex-col big-card h-full">
+          <CardHeader className="items-center p-0 flex flex-row w-full justify-between">
+            <CardTitle className="text-h6">Total Shifts</CardTitle>
+            <div className="w-[100px] h-[40px]"></div>
+          </CardHeader>
+          <CardContent className="flex-1 p-0">
+            <div className="mx-auto aspect-square"></div>
+          </CardContent>
+          <CardFooter className="flex-col gap-2 text-sm p-0">
+            <div className="h-[20px]"></div>
+            <div className="h-[20px]"></div>
+          </CardFooter>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="h-full">

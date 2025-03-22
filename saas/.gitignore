@@ -43,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 Frontend/findecare-demo-com/next-env.d.ts
+
+# clerk configuration (can include secrets)
+/.clerk/
