@@ -1,21 +1,4 @@
-# services:
-#   caregiver-service:
-#     build: .
-#     container_name: caregiver-service
-#     ports:
-#       - "8082:8082"
-#     volumes:
-#       - ../../db/migration:/app/db/migration
-#     environment:
-#       SPRING_DATASOURCE_URL: "jdbc:postgresql://tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require"
-#       SPRING_DATASOURCE_USERNAME: "tenantdb"
-#       SPRING_DATASOURCE_PASSWORD: "Findcare_pwd_db"
-#       SPRING_FLYWAY_ENABLED: true
-#       SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
-#       SERVER_PORT: 8082
-#       SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
-
-
+# Azure setup
 services:
   caregiver-service:
     build: .
@@ -25,20 +8,38 @@ services:
     volumes:
       - ../../db/migration:/app/db/migration
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: root123
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require"
+      SPRING_DATASOURCE_USERNAME: "tenantdb"
+      SPRING_DATASOURCE_PASSWORD: "Findcare_pwd_db"
       SPRING_FLYWAY_ENABLED: true
       SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
       SERVER_PORT: 8082
       SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
-    networks:
-      - service-network
-      - shared-db-network
 
-networks:
-  service-network:
-    driver: bridge
-  shared-db-network:
-    external: true
-    name: findcare-network
+
+# services:
+#   caregiver-service:
+#     build: .
+#     container_name: caregiver-service
+#     ports:
+#       - "8082:8082"
+#     volumes:
+#       - ../../db/migration:/app/db/migration
+#     environment:
+#       SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
+#       SPRING_DATASOURCE_USERNAME: admin
+#       SPRING_DATASOURCE_PASSWORD: root123
+#       SPRING_FLYWAY_ENABLED: true
+#       SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
+#       SERVER_PORT: 8082
+#       SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
+#     networks:
+#       - service-network
+#       - shared-db-network
+
+# networks:
+#   service-network:
+#     driver: bridge
+#   shared-db-network:
+#     external: true
+#     name: findcare-network
