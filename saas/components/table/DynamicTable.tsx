@@ -129,6 +129,8 @@ export function DynamicTable<T extends { id: string }>({
     return <span className="text-regular-text text-neutral-10">{String(value)}</span>;
   };
 
+
+  // Handle filter and search actions
   const handleFilter = (filters: FilterRecord) => {
     setActiveFilters(filters);
   };
