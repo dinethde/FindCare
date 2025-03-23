@@ -109,7 +109,9 @@ export function DynamicTable<T extends { id: string }>({
     }
 
     if (column.key === "review") {
-      return <ReviewBox review={value as string} rate={(item as any).rate} />;
+      // Safely type the item so that 'rate' is no longer 'any'.
+      const typedItem = item as T & { rate?: number };
+      return <ReviewBox review={value as string} rate={typedItem.rate ?? 0} />;
     }
 
     if (column.key === "assignedTimes" && Array.isArray(value)) {
@@ -127,7 +129,7 @@ export function DynamicTable<T extends { id: string }>({
     return <span className="text-regular-text text-neutral-10">{String(value)}</span>;
   };
 
-  const handleFilter = (filters: Record<string, any>) => {
+  const handleFilter = (filters: FilterRecord) => {
     setActiveFilters(filters);
   };
 
