@@ -1,6 +1,6 @@
 import type { AgencyData, Appointment } from "@/types/ScheduleTypes";
 import { Calendar } from "./Calendar";
-import {calculateEventPosition} from "@/utils/TimeUtils"// Import the function
+import { calculateEventPosition } from "@/utils/TimeUtils"// Import the function
 import Image from "next/image";
 
 interface CareProviderCalendarProps {
@@ -84,26 +84,21 @@ function CareProviderAppointmentCard({
 
   const styles = isSelected
     ? {
-        wrapper: "bg-brand-colors-brand3 text-white",
-        title: "text-white",
-        subtitle: "text-[#FFDDCC]",
-        avatarContainer: "bg-[#FFF1EB]",
-        time: "bg-[#FFF1EB] text-[#FF7733]",
-        border: "none",
-      }
+      wrapper: "bg-brand-colors-brand3 text-white",
+      title: "text-white",
+      subtitle: "text-[#FFDDCC]",
+      avatarContainer: "bg-[#FFF1EB]",
+      time: "bg-[#FFF1EB] text-[#FF7733]",
+      border: "none",
+    }
     : {
-        wrapper: "bg-[#FFF5E6] text-brand-colors-brand2",
-        title: "text-brand-colors-brand2",
-        subtitle: "text-brand-colors-brand4 font-semibold",
-        avatarContainer: "bg-white",
-        time: "bg-[#FF7733] text-white",
-        border: "border-2 border-brand-colors-brand8",
-      };
-
-  const truncateText = (text: string, maxLength: number) => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength - 1) + "…";
-  };
+      wrapper: "bg-[#FFF5E6] text-brand-colors-brand2",
+      title: "text-brand-colors-brand2",
+      subtitle: "text-brand-colors-brand4 font-semibold",
+      avatarContainer: "bg-white",
+      time: "bg-[#FF7733] text-white",
+      border: "border-2 border-brand-colors-brand8",
+    };
 
   return (
     <div

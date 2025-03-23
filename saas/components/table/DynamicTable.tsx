@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, Key } from "react";
-import type { TableConfig } from "../../types/TableTypes";
+import type { TableConfig, TableColumn } from "../../types/TableTypes";
 import { TableHeader } from "./TableHeader";
 import { CareTypeBadge } from "../CareTypeBadge";
 import { SquareStackIcon as Square2StackIcon } from "lucide-react";
@@ -10,12 +10,11 @@ import { ReviewBox } from "../ReviewBadge";
 import Link from "next/link";
 import { Eye } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { UrlObject } from "url";
 
-interface DynamicTableProps {
-  config: TableConfig;
+interface DynamicTableProps<T> {
+  config: TableConfig<T>;
   tableType?: string;
-  data: any[];
+  data: T[];
   filterOptions: Array<{
     key: string;
     label: string;
@@ -26,14 +25,14 @@ interface DynamicTableProps {
   profilePath?: string; // Add profilePath for dynamic navigation
 }
 
-export function DynamicTable({
+export function DynamicTable<T extends { id: string }>({
   config,
   data,
   filterOptions,
   tableType = "",
   initialFilters = {},
   profilePath = "", // Default to empty string if not provided
-}: DynamicTableProps) {
+}: DynamicTableProps<T>) {
   const pathname = usePathname();
   const pageIn = pathname.split("/")[3]; // Get the route section (caregivers, clients, etc.)
 
@@ -57,8 +56,7 @@ export function DynamicTable({
   };
 
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const [activeFilters, setActiveFilters] =
-    useState<Record<string, any>>(initialFilters);
+  const [activeFilters, setActiveFilters] = useState<Record<string, any>>(initialFilters);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredData = useMemo(() => {
@@ -66,17 +64,20 @@ export function DynamicTable({
       // Apply filters
       const passesFilters = Object.entries(activeFilters).every(
         ([key, value]) => {
+          if (!value) return true;
+          
+          const itemValue = item[key as keyof T];
           if (Array.isArray(value)) {
             // For checkbox filters
-            return value.length === 0 || value.includes(item[key]);
+            return value.length === 0 || value.includes(itemValue);
           } else if (typeof value === "string") {
             // For text filters
-            return String(item[key])
+            return String(itemValue)
               .toLowerCase()
               .includes(value.toLowerCase());
           } else if (typeof value === "number") {
             // For number filters
-            return item[key] >= value;
+            return Number(itemValue) >= value;
           }
           return true;
         }
@@ -94,19 +95,19 @@ export function DynamicTable({
     });
   }, [data, activeFilters, searchQuery]);
 
-  const renderCell = (column: any, item: any) => {
+  const renderCell = (column: TableColumn<T>, item: T) => {
     const value = item[column.key];
 
     if (column.render) {
-      return column.render(value);
+      return column.render(value, item);
     }
 
     if (column.key === "careType") {
-      return <CareTypeBadge type={value} />;
+      return <CareTypeBadge type={value as string} />;
     }
 
     if (column.key === "review") {
-      return <ReviewBox review={value} rate={item.rate} />;
+      return <ReviewBox review={value as string} rate={(item as any).rate} />;
     }
 
     if (column.key === "assignedTimes" && Array.isArray(value)) {
@@ -121,7 +122,7 @@ export function DynamicTable({
       );
     }
 
-    return <span className="text-regular-text text-neutral-10">{value}</span>;
+    return <span className="text-regular-text text-neutral-10">{String(value)}</span>;
   };
 
   const handleFilter = (filters: Record<string, any>) => {
@@ -133,8 +134,8 @@ export function DynamicTable({
   };
 
   return (
-    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8 w-full ">
-      <div className="">
+    <div className="rounded-regular border bg-main overflow-hidden shadow-md flex flex-col p-5 gap-8 w-full">
+      <div>
         <TableHeader
           title={config.title}
           onSearch={handleSearch}
@@ -143,31 +144,21 @@ export function DynamicTable({
           showSeeMore={config.showSeeMore}
         />
       </div>
-      <div className="">
+      <div>
         <table className="w-full">
           <thead>
             <tr className="border-b border-neutral-3">
-              {config.columns.map(
-                (
-                  column: {
-                    key: string;
-                    header: string;
-                    width?: string | number;
-                  },
-                  index: number
-                ) => (
-                  <th
-                    key={column.key}
-                    className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""} ${config.headerAlignments && config.headerAlignments[index]
-                        ? `text-${config.headerAlignments[index]}`
-                        : ""
-                      }`}
-                    style={{ width: column.width }}
-                  >
-                    {column.header}
-                  </th>
-                )
-              )}
+              {config.columns.map((column, index) => (
+                <th
+                  key={String(column.key)}
+                  className={`pb-3 text-left text-tagline text-neutral-7 ${
+                    index === 0 ? "pl-4" : ""
+                  }`}
+                  style={{ width: column.width }}
+                >
+                  {column.header}
+                </th>
+              ))}
               <th className="w-10 pb-2" />
             </tr>
           </thead>
@@ -182,24 +173,18 @@ export function DynamicTable({
                       : ""
                   }
                 >
-                  {config.columns.map(
-                    (
-                      column: { key: Key | null | undefined },
-                      colIndex: number
-                    ) => (
-                      <td
-                        key={column.key}
-                        className={`${config.title === "Caregiver List" ? "py-6" : "py-5"
-                          } ${colIndex === 0 ? "pl-4" : "px-4"}  ${colIndex === config.columns.length - 1 ? "pr-0" : ""} ${config.headerAlignments &&
-                            config.headerAlignments[colIndex]
-                            ? `text-${config.headerAlignments[colIndex]}`
-                            : ""
-                          }`}
-                      >
-                        {renderCell(column, item)}
-                      </td>
-                    )
-                  )}
+                  {config.columns.map((column, colIndex) => (
+                    <td
+                      key={String(column.key)}
+                      className={`${
+                        config.title === "Caregiver List" ? "py-6" : "py-5"
+                      } ${colIndex === 0 ? "pl-4" : "px-4"} ${
+                        colIndex === config.columns.length - 1 ? "pr-0" : ""
+                      }`}
+                    >
+                      {renderCell(column as TableColumn<T>, item)}
+                    </td>
+                  ))}
 
                   {/* Action buttons with dynamic navigation */}
                   {tableType === "fill" ? (
@@ -223,12 +208,10 @@ export function DynamicTable({
           ) : (
             <tr>
               <td
-                colSpan={
-                  config.columns.length + (config.showViewAction ? 1 : 0)
-                }
+                colSpan={config.columns.length + (config.showViewAction ? 1 : 0)}
                 className="py-8 text-center"
               >
-                {config.emptyStateMessage || "No data available"}
+                No data available
               </td>
             </tr>
           )}

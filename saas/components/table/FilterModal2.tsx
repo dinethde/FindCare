@@ -20,12 +20,14 @@ interface FilterOption {
   options?: string[];
 }
 
+type FilterValue = string | number | string[];
+
 interface FilterModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onApply: (filters: Record<string, any>) => void;
+  onApply: (filters: Record<string, FilterValue>) => void;
   filterOptions: FilterOption[];
-  initialFilters?: Record<string, any>;
+  initialFilters?: Record<string, FilterValue>;
 }
 
 export function FilterModal2({
@@ -35,7 +37,7 @@ export function FilterModal2({
   filterOptions,
   initialFilters = {},
 }: FilterModalProps) {
-  const [filters, setFilters] = useState<Record<string, any>>(initialFilters);
+  const [filters, setFilters] = useState<Record<string, FilterValue>>(initialFilters);
 
   // Reset filters to initial state when modal opens
   useEffect(() => {
@@ -44,8 +46,16 @@ export function FilterModal2({
     }
   }, [isOpen, initialFilters]);
 
-  const handleFilterChange = (key: string, value: any) => {
+  const handleFilterChange = (key: string, value: FilterValue) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleCheckboxChange = (key: string, opt: string, checked: boolean) => {
+    const currentValues = (filters[key] || []) as string[];
+    const newValues = checked
+      ? [...currentValues, opt]
+      : currentValues.filter((value) => value !== opt);
+    handleFilterChange(key, newValues);
   };
 
   const handleApply = () => {
@@ -70,7 +80,7 @@ export function FilterModal2({
         </DialogHeader>
         <div className="flex flex-col gap-6 py-4">
           {filterOptions.map((option) => (
-            <div key={option.key} className="flex  items-center gap-4">
+            <div key={option.key} className="flex items-center gap-4">
               <Label
                 htmlFor={option.key}
                 className="text-right text-tagline text-test-color2"
@@ -83,16 +93,8 @@ export function FilterModal2({
                     <div key={opt} className="flex items-center space-x-2">
                       <Checkbox
                         id={`${option.key}-${opt}`}
-                        checked={filters[option.key]?.includes(opt)}
-                        onCheckedChange={(checked) => {
-                          const currentValues = filters[option.key] || [];
-                          const newValues = checked
-                            ? [...currentValues, opt]
-                            : currentValues.filter(
-                                (value: string) => value !== opt
-                              );
-                          handleFilterChange(option.key, newValues);
-                        }}
+                        checked={Array.isArray(filters[option.key]) && (filters[option.key] as string[]).includes(opt)}
+                        onCheckedChange={(checked: boolean) => handleCheckboxChange(option.key, opt, checked)}
                       />
                       <Label
                         className="text-small-text"
@@ -106,8 +108,8 @@ export function FilterModal2({
               ) : (
                 <Input
                   id={option.key}
-                  className=" col-span-3 focus:ring-blue-500 focus:border-blue-500 "
-                  value={filters[option.key] || ""}
+                  className="col-span-3 focus:ring-blue-500 focus:border-blue-500"
+                  value={filters[option.key]?.toString() || ""}
                   onChange={(e) =>
                     handleFilterChange(option.key, e.target.value)
                   }
@@ -126,8 +128,8 @@ export function FilterModal2({
               Cancel
             </Button>
           </div>
-          <Button variant={"primary"} type="submit" onClick={handleApply}>
-            <p className="text-white"> Apply Filters</p>
+          <Button variant="primary" onClick={handleApply}>
+            <p className="text-white">Apply Filters</p>
           </Button>
         </DialogFooter>
       </DialogContent>

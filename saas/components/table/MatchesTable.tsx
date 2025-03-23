@@ -6,21 +6,24 @@ import { matchesData } from "@/data/TableData";
 import { matchesConfig, matchesFilterOptions } from "@/config/tableConfig";
 import Link from "next/link";
 
+type FilterValue = string | number | string[];
+
 export function MatchesTable() {
   // Initialize with best matches filter enabled
-  const [activeFilters, setActiveFilters] = useState<Record<string, any>>({
+  const [activeFilters, setActiveFilters] = useState<Record<string, FilterValue>>({
     isBestMatch: ["true"],
   });
 
   // Filter the data based on best matches
   const filteredData = matchesData.filter((match) => {
-    if (!activeFilters.isBestMatch?.includes("true")) {
+    const bestMatchFilter = activeFilters.isBestMatch;
+    if (!Array.isArray(bestMatchFilter) || !bestMatchFilter.includes("true")) {
       return true; // Show all matches when filter is off
     }
     return match.isBestMatch; // Only show best matches when filter is on
   });
 
-  const handleFilterChange = (filters: Record<string, any>) => {
+  const handleFilterChange = (filters: Record<string, FilterValue>) => {
     setActiveFilters(filters);
   };
 
@@ -61,6 +64,7 @@ export function MatchesTable() {
         filterOptions={matchesFilterOptions}
         onFilterChange={handleFilterChange}
         initialFilters={activeFilters}
+        tableType="fill"
       />
     </div>
   );

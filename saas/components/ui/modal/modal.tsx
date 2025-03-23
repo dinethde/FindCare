@@ -8,7 +8,7 @@ interface ModalProps {
   width?: number;
 }
 
-export function Modal({ children, routePath, width = 90 }: ModalProps) {
+export function Modal({ children, routePath, }: ModalProps) {
   const router = useRouter();
 
   // When the overlay is clicked, navigate to "/cargiver"
