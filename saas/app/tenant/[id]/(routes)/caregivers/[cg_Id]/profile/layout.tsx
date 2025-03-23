@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: { id: string; cg_Id: string };
-}>) {
+}) {
   // Create dynamic path that includes the tenant ID
   const dynamicPath = `/tenant/${params.id}/caregivers`;
-  
+
   return (
     <div>
       <Modal routePath={dynamicPath}>
