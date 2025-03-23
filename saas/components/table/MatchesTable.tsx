@@ -10,7 +10,7 @@ type FilterValue = string | number | string[];
 
 export function MatchesTable() {
   // Initialize with best matches filter enabled
-  const [activeFilters, setActiveFilters] = useState<Record<string, FilterValue>>({
+  const [activeFilters] = useState<Record<string, FilterValue>>({
     isBestMatch: ["true"],
   });
 
@@ -23,9 +23,9 @@ export function MatchesTable() {
     return match.isBestMatch; // Only show best matches when filter is on
   });
 
-  const handleFilterChange = (filters: Record<string, FilterValue>) => {
-    setActiveFilters(filters);
-  };
+  // const handleFilterChange = (filters: Record<string, FilterValue>) => {
+  //   setActiveFilters(filters);
+  // };
 
   // Create a custom config that includes the empty state message
   const customConfig = {
@@ -62,7 +62,6 @@ export function MatchesTable() {
         config={customConfig}
         data={filteredData}
         filterOptions={matchesFilterOptions}
-        onFilterChange={handleFilterChange}
         initialFilters={activeFilters}
         tableType="fill"
       />

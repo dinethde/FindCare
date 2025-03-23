@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { usePathname, useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import NetworkIcon from "../icons/NetworkIcon";
 import UserProfileIcon from "../icons/UserProfileIcon copy";
 import PrimaryButton from "../ui/PrimaryButton";
@@ -24,8 +24,8 @@ const pageTitles: { [key: string]: string } = {
 
 export default function Header() {
   const pathname = usePathname();
-  const params = useParams();
-  const tenantId = params?.id as string;
+  // const params = useParams();
+  // const tenantId = params?.id as string;
 
   // Extract the base path without tenant ID to match our page titles
   const basePath = pathname.split('/').slice(3).join('/');

@@ -2,8 +2,6 @@
 
 import type {
   CareProviderDashboardProps,
-  ShiftStatistics,
-  TaskStatistics,
 } from "@/types/ScheduleTypes";
 import { CareProviderCalendar } from "./CareProviderCalendar";
 
@@ -24,16 +22,16 @@ export function CareProviderDashboard({
   // );
 
   // Calculate task completion statistics
-  const taskStats: TaskStatistics = Object.values(agencyData.clients).reduce(
-    (acc, client) => {
-      client.tasks.forEach((task) => {
-        acc.total++;
-        if (task.completed) acc.completed++;
-      });
-      return acc;
-    },
-    { completed: 0, total: 0 }
-  );
+  // const taskStats: TaskStatistics = Object.values(agencyData.clients).reduce(
+  //   (acc, client) => {
+  //     client.tasks.forEach((task) => {
+  //       acc.total++;
+  //       if (task.completed) acc.completed++;
+  //     });
+  //     return acc;
+  //   },
+  //   { completed: 0, total: 0 }
+  // );
 
   // const completionPercentage = Math.round(
   //   (taskStats.completed / taskStats.total) * 100

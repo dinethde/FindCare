@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 
 export function Button({
   variant = "primary",
-  className,
   children,
   ...props
 }: ButtonProps) {

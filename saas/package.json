@@ -1,10 +1,10 @@
 {
-    "name": "SaaS-frontend",
+    "name": "saas",
     "version": "0.1.0",
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build",
+        "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
         "start": "next start",
         "lint": "next lint",
         "check-types": "tsc --noEmit"

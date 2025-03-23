@@ -48,7 +48,7 @@ const PieChartLabel = ({
         width={maxWidth}
         height="20"
       >
-        <div xmlns="http://www.w3.org/1999/xhtml" className="text-center">
+        <div className="text-center">
           <p className="text-tagline text-neutral-7">{title}</p>
         </div>
       </foreignObject>

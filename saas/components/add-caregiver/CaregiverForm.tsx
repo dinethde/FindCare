@@ -47,6 +47,17 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 /**
+ * Field configuration interface to replace any type
+ */
+interface FieldConfig {
+  id: string;
+  label: string;
+  type: string;
+  options?: string[];
+  maxSelect?: number;
+}
+
+/**
  * CaregiverForm component for adding new caregivers
  * @returns {React.ReactElement} The rendered CaregiverForm component
  */
@@ -112,9 +123,9 @@ export function CaregiverForm(): React.ReactElement {
   };
 
   const renderFieldContent = (
-    field: any,
+    field: FieldConfig,
     value: string | string[],
-    onChange: (value: any) => void,
+    onChange: (value: string | string[]) => void,
     isLastInGroup: boolean = false
   ) => {
     if (field.type === "select") {
