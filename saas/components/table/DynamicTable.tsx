@@ -11,12 +11,6 @@ import Link from "next/link";
 import { Eye } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-interface FilterValue {
-  string: string;
-  number: number;
-  checkbox: string[];
-}
-
 type FilterRecord = Record<string, string | number | string[]>;
 
 interface DynamicTableProps<T> {
@@ -64,7 +58,7 @@ export function DynamicTable<T extends { id: string }>({
   };
 
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const [activeFilters, setActiveFilters] = useState<Record<string, any>>(initialFilters);
+  const [activeFilters, setActiveFilters] = useState<FilterRecord>(initialFilters);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredData = useMemo(() => {
@@ -77,7 +71,7 @@ export function DynamicTable<T extends { id: string }>({
           const itemValue = item[key as keyof T];
           if (Array.isArray(value)) {
             // For checkbox filters
-            return value.length === 0 || value.includes(itemValue);
+            return value.length === 0 || value.includes(String(itemValue));
           } else if (typeof value === "string") {
             // For text filters
             return String(itemValue)

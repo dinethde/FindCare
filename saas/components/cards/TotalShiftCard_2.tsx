@@ -10,7 +10,7 @@ import {
   Label,
 } from "recharts";
 import { useState, useEffect } from "react";
-import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
+import type { ChartData, DataItem } from "@/types/pie-chart/types";
 import SelectTime from "./SelectTime";
 
 /**
