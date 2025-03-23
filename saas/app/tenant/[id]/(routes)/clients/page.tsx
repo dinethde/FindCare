@@ -1,3 +1,8 @@
+/**
+ * Client Management Page Component
+ * Displays client information, statistics, and management interface
+ */
+
 import { ClientTable } from "@/components/table/ClientTable";
 import type { TableConfig } from "@/types/TableTypes";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
@@ -6,6 +11,10 @@ import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { taskCompletionData } from "@/data/pie-chart/totalShiftCard";
 import { colorProps } from "@/data/ColorProps";
 
+/**
+ * Configuration for the client table display
+ * @type {TableConfig}
+ */
 const clientConfigWithNOK: TableConfig = {
   title: "Client List",
   columns: [
@@ -20,6 +29,9 @@ const clientConfigWithNOK: TableConfig = {
   showViewAction: true,
 };
 
+/**
+ * Defines the structure for filter options in the client table
+ */
 interface FilterOption {
   key: string;
   label: string;
@@ -27,6 +39,10 @@ interface FilterOption {
   options?: string[];
 }
 
+/**
+ * Available filter options for the client table
+ * @type {FilterOption[]}
+ */
 const filterOptions: FilterOption[] = [
   { key: "name", label: "Name", type: "text" },
   {
@@ -38,7 +54,11 @@ const filterOptions: FilterOption[] = [
   { key: "location", label: "Location", type: "text" },
 ];
 
-export default function Page() {
+/**
+ * Client Management Page Component
+ * @returns {JSX.Element} The rendered client management page
+ */
+export default function Page(): JSX.Element {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-[0.75fr_1.5fr_0.75fr] gap-4">
