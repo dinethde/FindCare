@@ -20,17 +20,32 @@ import SelectTime from "./SelectTime";
  * @param {string} title - The title to display below the total
  * @returns {JSX.Element} The label JSX
  */
+
+export interface PieChartLabelProps {
+  viewBox?: {
+    cx?: number | string;
+    cy?: number | string;
+    innerRadius?: number;
+    outerRadius?: number;
+    startAngle?: number;
+    endAngle?: number;
+    width?: number;
+    height?: number;
+  };
+  total: number;
+  title: string;
+}
+
 const PieChartLabel = ({
   viewBox,
   total,
-  title,
-}: {
-  viewBox: any;
-  total: number;
-  title: string;
-}) => {
-  const { cx, cy } = viewBox;
+  title
+}: PieChartLabelProps) => {
+  // Convert potential string values to numbers and provide defaults
+  const cx = typeof viewBox?.cx === 'string' ? parseFloat(viewBox.cx) : (viewBox?.cx ?? 0);
+  const cy = typeof viewBox?.cy === 'string' ? parseFloat(viewBox.cy) : (viewBox?.cy ?? 0);
   const maxWidth = 80;
+
   return (
     <g>
       <text
