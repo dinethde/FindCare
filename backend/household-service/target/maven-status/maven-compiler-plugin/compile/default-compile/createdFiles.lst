@@ -1,0 +1,14 @@
+com\findcare\controller\CareRecipientController.class
+com\findcare\HouseholdServiceApplication.class
+com\findcare\entity\CareRecipientEntity.class
+com\findcare\repository\CareRecipientRepository.class
+com\findcare\service\HouseholdService.class
+com\findcare\dto\HouseholdDto.class
+com\findcare\service\CareRecipientService.class
+com\findcare\repository\AddressRepository.class
+com\findcare\repository\PhoneRepository.class
+com\findcare\entity\PhoneEntity.class
+com\findcare\controller\HouseholdController.class
+com\findcare\entity\HouseholdEntity.class
+com\findcare\entity\AddressEntity.class
+com\findcare\repository\HouseholdRepository.class
