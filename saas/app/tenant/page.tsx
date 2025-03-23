@@ -6,9 +6,6 @@ import { useRouter } from 'next/navigation';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { useUser } from '@clerk/nextjs';
 
-/**
- * Interface representing the response from tenant creation
- */
 export interface TenantResponse {
   accountId: string;
   auth0Identifier: string;
@@ -16,26 +13,15 @@ export interface TenantResponse {
   tier: string;
 }
 
-/**
- * TenantPage component handles tenant creation and routing after user registration
- * @returns JSX.Element The rendered tenant page component
- */
-export default function TenantPage(): JSX.Element {
+export default function TenantPage() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
-  const [hasAttemptedCreation, setHasAttemptedCreation] = useState<boolean>(false);
-  const [hasError, setHasError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [hasAttemptedCreation, setHasAttemptedCreation] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  /**
-   * Effect hook to handle tenant setup and creation
-   * Runs when authentication state or user data changes
-   */
   useEffect(() => {
-    /**
-     * Attempts to create a new tenant for the authenticated user
-     */
-    const setupTenant = async (): Promise<void> => {
+    const setupTenant = async () => {
       if (!isLoaded || !isSignedIn || !user?.id || !user?.primaryEmailAddress?.emailAddress) {
         setIsLoading(false);
         return;
@@ -77,7 +63,6 @@ export default function TenantPage(): JSX.Element {
     setupTenant();
   }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]);
 
-  // Show loading spinner while authentication is being checked
   if (!isLoaded || isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -86,13 +71,11 @@ export default function TenantPage(): JSX.Element {
     );
   }
 
-  // Redirect to sign-in if user is not authenticated
   if (!isSignedIn) {
     router.push('/sign-in');
     return null;
   }
 
-  // Show error message if tenant creation failed
   if (hasError) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -101,7 +84,6 @@ export default function TenantPage(): JSX.Element {
     );
   }
 
-  // Show loading spinner while tenant is being created
   return (
     <div className="flex items-center justify-center min-h-screen">
       <LoadingSpinner className="w-6 h-6" />
