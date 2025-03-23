@@ -2,6 +2,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { JSX } from "react";
 
 /**
  * Interface defining the homepage props
@@ -48,7 +49,7 @@ export default async function HomePage(): Promise<JSX.Element> {
         </SignedOut>
 
         <SignedIn>
-          <UserButton afterSignOutUrl="/" />
+          <UserButton />
         </SignedIn>
       </div>
     </div>
