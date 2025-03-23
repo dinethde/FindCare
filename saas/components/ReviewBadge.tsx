@@ -1,9 +1,25 @@
+/**
+ * Props interface for the ReviewBox component
+ * @interface ReviewBoxProps
+ * @property {string} review - The review text to display
+ * @property {number} rate - The rating value (1-5)
+ */
 interface ReviewBoxProps {
   review: string;
   rate: number;
 }
 
+/**
+ * ReviewBox component displays a review with different styling based on the rating
+ * @param {ReviewBoxProps} props - The component props
+ * @returns {JSX.Element} A styled div containing the review text
+ */
 export function ReviewBox({ review, rate }: ReviewBoxProps) {
+  /**
+   * Determines the styling for the review box based on the rating
+   * @param {number} rate - The rating value (1-5)
+   * @returns {Object} An object containing background, border, and text colors
+   */
   const getReviewStyles = (rate: number) => {
     if (rate < 3) {
       return {
@@ -26,6 +42,7 @@ export function ReviewBox({ review, rate }: ReviewBoxProps) {
     }
   };
 
+  // Get the appropriate styles based on the rating
   const styles = getReviewStyles(rate);
 
   return (
