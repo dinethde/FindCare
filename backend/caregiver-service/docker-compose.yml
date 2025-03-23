@@ -8,6 +8,7 @@ services:
     volumes:
       - ../../db/migration:/app/db/migration
     environment:
+      SPRING_APPLICATION_NAME: "caregiver-service"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require"
       SPRING_DATASOURCE_USERNAME: "tenantdb"
       SPRING_DATASOURCE_PASSWORD: "Findcare_pwd_db"
@@ -26,6 +27,7 @@ services:
 #     volumes:
 #       - ../../db/migration:/app/db/migration
 #     environment:
+#       SPRING_APPLICATION_NAME: "caregiver-service"
 #       SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
 #       SPRING_DATASOURCE_USERNAME: admin
 #       SPRING_DATASOURCE_PASSWORD: root123

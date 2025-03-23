@@ -57,4 +57,5 @@ jobs:
               --dns-name-label caregiver \
               --registry-username ${{ secrets.ACR_USERNAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }} \
-              --os-type Linux
+              --os-type Linux \
+              --environment-variables SPRING_APPLICATION_NAME=caregiver-service
