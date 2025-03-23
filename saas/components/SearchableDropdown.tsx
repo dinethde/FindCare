@@ -1,9 +1,24 @@
 "use client";
 
+/**
+ * A searchable dropdown component that allows users to search and select from a list of options
+ * @component
+ */
+
 import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Search, X } from "lucide-react";
 
+/**
+ * Props for the SearchableDropdown component
+ * @interface
+ * @property {Array<{id: string, name: string}>} options - Array of options to display in the dropdown
+ * @property {string} value - Currently selected value
+ * @property {Function} onChange - Callback function when an option is selected
+ * @property {Function} onManualEdit - Callback function when input value is manually edited
+ * @property {string} placeholder - Placeholder text for the input field
+ * @property {('id'|'name')} searchBy - Property to use for searching options
+ */
 interface SearchableDropdownProps {
   options: { id: string; name: string }[];
   value: string;
@@ -13,6 +28,11 @@ interface SearchableDropdownProps {
   searchBy: "id" | "name";
 }
 
+/**
+ * SearchableDropdown component that provides a searchable dropdown interface
+ * @param {SearchableDropdownProps} props - Component props
+ * @returns {JSX.Element} Rendered component
+ */
 export function SearchableDropdown({
   options,
   value,
@@ -21,10 +41,16 @@ export function SearchableDropdown({
   placeholder,
   searchBy,
 }: SearchableDropdownProps) {
+  // State to control dropdown visibility
   const [isOpen, setIsOpen] = useState(false);
+  // State to store search input value
   const [search, setSearch] = useState("");
+  // Reference to the dropdown container for click outside detection
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Effect to handle clicking outside the dropdown to close it
+   */
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -39,10 +65,17 @@ export function SearchableDropdown({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /**
+   * Filters options based on the search input
+   */
   const filteredOptions = options.filter((option) =>
     option[searchBy].toLowerCase().includes(search.toLowerCase())
   );
 
+  /**
+   * Handles changes to the input field
+   * @param {React.ChangeEvent<HTMLInputElement>} e - Input change event
+   */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setSearch(newValue);
@@ -50,6 +83,9 @@ export function SearchableDropdown({
     setIsOpen(true);
   };
 
+  /**
+   * Clears the search input and selected value
+   */
   const handleClear = () => {
     setSearch("");
     onChange(null);
