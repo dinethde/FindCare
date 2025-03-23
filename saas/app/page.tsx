@@ -3,12 +3,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
+/**
+ * Interface defining the homepage props
+ * In this case, we don't have props but we define it for clarity and future extensibility
+ */
+interface HomePageProps {}
+
+/**
+ * Metadata configuration for the homepage
+ * @const metadata
+ */
 export const metadata: Metadata = {
   title: "FindCare Home",
   description: "FindCare application home page",
 };
 
-export default async function HomePage() {
+/**
+ * HomePage component - The main landing page of the FindCare application
+ * @async
+ * @function HomePage
+ * @returns {Promise<JSX.Element>} The rendered homepage component
+ */
+export default async function HomePage(): Promise<JSX.Element> {
+  // Get the current user from Clerk authentication
   const user = await currentUser();
   const userid = Number(user?.id);
 
