@@ -3,9 +3,9 @@ spring:
     name: household-service
 
   datasource:
-    url: jdbc:postgresql://household-db.postgres.database.azure.com:5432/household?sslmode=require
-    username: dbhousehold
-    password: Findcare_householdDb
+    url: "jdbc:postgresql://postgres:5432/household"
+    username: postgres
+    password: postgres
 
   jpa:
     hibernate:
