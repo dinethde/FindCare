@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, Key } from "react";
+import { useState, useMemo } from "react";
 import type { TableConfig, TableColumn } from "../../types/TableTypes";
 import { TableHeader } from "./TableHeader";
 import { CareTypeBadge } from "../CareTypeBadge";
@@ -10,6 +10,14 @@ import { ReviewBox } from "../ReviewBadge";
 import Link from "next/link";
 import { Eye } from "lucide-react";
 import { usePathname } from "next/navigation";
+
+interface FilterValue {
+  string: string;
+  number: number;
+  checkbox: string[];
+}
+
+type FilterRecord = Record<string, string | number | string[]>;
 
 interface DynamicTableProps<T> {
   config: TableConfig<T>;
@@ -21,7 +29,7 @@ interface DynamicTableProps<T> {
     type: "text" | "number" | "checkbox";
     options?: string[];
   }>;
-  initialFilters?: Record<string, any>;
+  initialFilters?: FilterRecord;
   profilePath?: string; // Add profilePath for dynamic navigation
 }
 
@@ -65,7 +73,7 @@ export function DynamicTable<T extends { id: string }>({
       const passesFilters = Object.entries(activeFilters).every(
         ([key, value]) => {
           if (!value) return true;
-          
+
           const itemValue = item[key as keyof T];
           if (Array.isArray(value)) {
             // For checkbox filters
@@ -151,9 +159,8 @@ export function DynamicTable<T extends { id: string }>({
               {config.columns.map((column, index) => (
                 <th
                   key={String(column.key)}
-                  className={`pb-3 text-left text-tagline text-neutral-7 ${
-                    index === 0 ? "pl-4" : ""
-                  }`}
+                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""
+                    }`}
                   style={{ width: column.width }}
                 >
                   {column.header}
@@ -176,11 +183,9 @@ export function DynamicTable<T extends { id: string }>({
                   {config.columns.map((column, colIndex) => (
                     <td
                       key={String(column.key)}
-                      className={`${
-                        config.title === "Caregiver List" ? "py-6" : "py-5"
-                      } ${colIndex === 0 ? "pl-4" : "px-4"} ${
-                        colIndex === config.columns.length - 1 ? "pr-0" : ""
-                      }`}
+                      className={`${config.title === "Caregiver List" ? "py-6" : "py-5"
+                        } ${colIndex === 0 ? "pl-4" : "px-4"} ${colIndex === config.columns.length - 1 ? "pr-0" : ""
+                        }`}
                     >
                       {renderCell(column as TableColumn<T>, item)}
                     </td>
