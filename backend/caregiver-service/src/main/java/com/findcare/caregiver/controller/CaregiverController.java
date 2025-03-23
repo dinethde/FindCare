@@ -37,8 +37,26 @@ public class CaregiverController {
 
         Caregiver createdCaregiver = caregiverService.createCaregiver(caregiver);
 
-        log.info("RESPONSE: Successfully created caregiver with ID: {}", createdCaregiver.getCaregiverId());
+        log.info("RESPONSE: Successfully created caregiver with ID: {}, NIC: {}",
+                createdCaregiver.getCaregiverId(),
+                createdCaregiver.getNicNumber());
         return ResponseEntity.ok(createdCaregiver);
+    }
+
+    /**
+     * Retrieves a caregiver by their ID.
+     * 
+     * @param id The unique identifier of the caregiver
+     * @return ResponseEntity containing the caregiver information if found
+     */
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Caregiver> getCaregiverById(@PathVariable Long id) {
+        log.info("REQUEST: Fetching caregiver with ID: {}", id);
+
+        Caregiver caregiver = caregiverService.getCaregiverById(id);
+
+        log.info("RESPONSE: Successfully retrieved caregiver with ID: {}", caregiver.getCaregiverId());
+        return ResponseEntity.ok(caregiver);
     }
 
     /**
@@ -46,8 +64,9 @@ public class CaregiverController {
      * 
      * @param accountId The unique identifier of the caregiver's account
      * @return ResponseEntity containing the caregiver information if found
+     * @deprecated Use {@link #getCaregiverById(Long)} instead
      */
-    @GetMapping("/{accountId}")
+    @GetMapping("/account/{accountId}")
     public ResponseEntity<Caregiver> getCaregiverByAccountId(@PathVariable Integer accountId) {
         log.info("REQUEST: Fetching caregiver with account ID: {}", accountId);
 

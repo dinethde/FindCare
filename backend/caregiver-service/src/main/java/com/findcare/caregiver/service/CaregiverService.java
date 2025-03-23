@@ -72,11 +72,37 @@ public class CaregiverService {
             com.findcare.caregiver.entity.caregiver.Caregiver savedEntity = caregiverRepository.save(caregiverEntity);
             log.info("Successfully created caregiver with ID: {}", savedEntity.getCaregiverId());
 
-            return modelMapper.map(savedEntity, Caregiver.class);
+            // Explicitly ensure caregiverId is set in the returned DTO
+            Caregiver resultDTO = modelMapper.map(savedEntity, Caregiver.class);
+            log.info("Mapped entity to DTO with caregiverId: {}", resultDTO.getCaregiverId());
+
+            return resultDTO;
         } catch (DataIntegrityViolationException e) {
             log.error("Database constraint violation while creating caregiver", e);
             throw new ResourceAlreadyExistsException("Database constraint violation occurred");
         }
+    }
+
+    /**
+     * Retrieves a caregiver by their ID.
+     * 
+     * @param caregiverId The ID of the caregiver to retrieve
+     * @return The caregiver DTO if found
+     * @throws ResourceNotFoundException if no caregiver is found with the given ID
+     */
+    @Transactional(readOnly = true)
+    public Caregiver getCaregiverById(Long caregiverId) {
+        log.info("Fetching caregiver with ID: {}", caregiverId);
+
+        return caregiverRepository.findById(caregiverId)
+                .map(entity -> {
+                    log.info("Successfully retrieved caregiver with ID: {}", caregiverId);
+                    return modelMapper.map(entity, Caregiver.class);
+                })
+                .orElseThrow(() -> {
+                    log.error("Caregiver not found with ID: {}", caregiverId);
+                    return new ResourceNotFoundException("Caregiver", "ID", caregiverId);
+                });
     }
 
     /**
@@ -86,7 +112,9 @@ public class CaregiverService {
      * @return The caregiver DTO if found
      * @throws ResourceNotFoundException if no caregiver is found with the given
      *                                   account ID
+     * @deprecated Use {@link #getCaregiverById(Long)} instead
      */
+    @Deprecated
     @Transactional(readOnly = true)
     public Caregiver getCaregiverByAccountId(Integer caregiverAccountId) {
         log.info("Fetching caregiver with account ID: {}", caregiverAccountId);

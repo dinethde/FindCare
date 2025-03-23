@@ -63,7 +63,11 @@ public class CaregiverAccountService {
             CaregiverAccountEntity savedEntity = caregiverRepository.save(caregiverToSave);
             log.info("Successfully created caregiver account with ID: {}", savedEntity.getCaregiverId());
 
-            return modelMapper.map(savedEntity, CaregiverAccount.class);
+            // Explicitly ensure ID is set in the returned DTO
+            CaregiverAccount resultDTO = modelMapper.map(savedEntity, CaregiverAccount.class);
+            log.info("Mapped entity to DTO with caregiverAccountId: {}", resultDTO.getCaregiverAccountId());
+
+            return resultDTO;
         } catch (DataIntegrityViolationException e) {
             log.error("Database constraint violation while creating caregiver account", e);
             throw new ResourceAlreadyExistsException("Database constraint violation occurred");
