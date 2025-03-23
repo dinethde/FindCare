@@ -20,10 +20,10 @@ interface SatisfactionGaugeProps {
 
 export default function SatisfactionGauge({
   value,
-  date = "Oct 2024",
+  // date = "Oct 2024",
   title = "Satisfaction Rate",
   color = "#ff4b00",
-  width = 400,
+  // width = 400,
   isCaptionVisible = true,
   isTitleVisible = true,
   isSelectTimeVisible = false,

@@ -20,7 +20,7 @@ const FilterIcon = ({ color = "#333" }: UserProfileIconProps) => {
         cy="2.5"
         r="2"
         transform="matrix(-1 0 0 1 16 7.5)"
-        stroke="black"
+        stroke={color}
       />
       <line
         y1="-0.5"
