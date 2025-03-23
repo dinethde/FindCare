@@ -1,40 +1,80 @@
+/**
+ * @fileoverview Global CSS styles for FindCare application
+ * Includes Tailwind configuration, custom properties, and utility classes
+ */
+
+/* Font imports for the application typography */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap");
 
+/* Tailwind base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Global box sizing reset
+ */
 * {
   box-sizing: border-box;
 }
 
+/**
+ * Reset paragraph margins
+ */
 p {
   margin: 0;
 }
 
+/**
+ * Navigation link styles
+ * @class navbar-link
+ * @extends Tailwind utilities
+ */
 .navbar-link {
   @apply self-stretch flex flex-row items-center justify-start gap-[0.5rem] text-grey no-underline;
 }
 
+/**
+ * Navigation item wrapper styles
+ * @class navitem-wrapper
+ */
 .navitem-wrapper {
   @apply overflow-hidden flex items-center justify-start;
 }
 
+/**
+ * Font weight utility class
+ * @class weight-500
+ */
 .weight-500 {
   @apply font-medium;
 }
 
+/**
+ * Selected table row styles
+ * @class selected-table-row
+ */
 .selected-table-row {
   @apply bg-main2 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.1)] border-neutral-3 border-[0.8px] border-solid box-border py-[0.375rem] px-[0.5rem] rounded-md;
 }
 
+/**
+ * Large card container styles
+ * @class big-card
+ */
 .big-card {
   @apply bg-main pt-2 px-4 pb-4 border-neutral-3 border-[1px] border-solid rounded-regular;
 }
 
+/**
+ * Status indicator classes
+ * @class Free - Available status
+ * @class Working - Currently working status
+ * @class Leave - On leave status
+ */
 .Free {
   @apply bg-support-colors-color1 text-white;
 }
@@ -47,17 +87,29 @@ p {
   @apply bg-support-colors-color3 text-white;
 }
 
+/**
+ * Card header typography
+ * @class card-header
+ */
 .card-header {
   @apply text-h6 text-neutral-9;
 }
 
+/**
+ * Input placeholder styles
+ */
 .your-input-class::placeholder {
   color: black; /* gray-400 */
   font-size: 0.875rem; /* text-sm */
 }
 
+/**
+ * Theme configuration
+ * Defines CSS custom properties for light and dark modes
+ */
 @layer base {
   :root {
+    /* Light theme variables */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -85,6 +137,7 @@ p {
     --radius: 0.5rem;
   }
   .dark {
+    /* Dark theme variables */
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -112,17 +165,10 @@ p {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-
-
+/**
+ * Global base styles
+ * Applies border and background styles to all elements
+ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
