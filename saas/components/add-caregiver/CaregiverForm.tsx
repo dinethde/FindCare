@@ -18,7 +18,7 @@ import {
   caregivers,
 } from "@/data/add-caregiver-form";
 import { useState } from "react";
-import type { Caregiver } from "@/types/add-caregiver-form";
+import type { Caregiver, FieldType } from "@/types/add-caregiver-form";
 import { colorProps } from "@/data/ColorProps";
 
 // Define the schema for form validation
@@ -52,7 +52,7 @@ type FormData = z.infer<typeof schema>;
 interface FieldConfig {
   id: string;
   label: string;
-  type: string;
+  type: FieldType;
   options?: string[];
   maxSelect?: number;
 }
