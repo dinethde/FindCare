@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import { profile } from "@/data/dashboard-2";
 import photo from "@/public/images/photo.png";
 
@@ -20,9 +20,9 @@ export default function CaregiverImg({
       <Image
         src={image}
         alt={profile.name}
-        width={0}
-        height={0}
-        sizes="270px"
+        width={imgSize}
+        height={imgSize}
+        sizes={`${imgSize}px`}
         className="object-cover h-full w-full"
       />
     </div>

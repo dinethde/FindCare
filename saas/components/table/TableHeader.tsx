@@ -1,7 +1,4 @@
 "use client";
-
-import { Filter, SlidersHorizontal } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SearchBar2 } from "./SearchBar2";
 import ApplyFilter from "../ApplyFilter";

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FilterIcon from "@/components/icons/FilterIcon";
 

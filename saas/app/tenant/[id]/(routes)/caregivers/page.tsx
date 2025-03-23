@@ -58,7 +58,7 @@ export default function CaregiverPage() {
   return (
     <div className="flex flex-col gap-8">
       {
-        !isLoading ? (
+        isLoading ? (
           <div className="flex flex-col gap-8">
             <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
               {/* == Best caregiver card == */}

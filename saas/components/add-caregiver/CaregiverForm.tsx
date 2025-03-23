@@ -18,7 +18,7 @@ import {
   caregivers,
 } from "@/data/add-caregiver-form";
 import { useState } from "react";
-import type { Caregiver } from "@/types/add-caregiver-form";
+import type { Caregiver, FieldType } from "@/types/add-caregiver-form";
 import { colorProps } from "@/data/ColorProps";
 
 // Define the schema for form validation
@@ -45,6 +45,17 @@ const schema = z.object({
 });
 
 type FormData = z.infer<typeof schema>;
+
+/**
+ * Field configuration interface to replace any type
+ */
+interface FieldConfig {
+  id: string;
+  label: string;
+  type: FieldType;
+  options?: string[];
+  maxSelect?: number;
+}
 
 /**
  * CaregiverForm component for adding new caregivers
@@ -112,9 +123,9 @@ export function CaregiverForm(): React.ReactElement {
   };
 
   const renderFieldContent = (
-    field: any,
+    field: FieldConfig,
     value: string | string[],
-    onChange: (value: any) => void,
+    onChange: (value: string | string[]) => void,
     isLastInGroup: boolean = false
   ) => {
     if (field.type === "select") {

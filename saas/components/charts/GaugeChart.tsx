@@ -20,10 +20,10 @@ interface SatisfactionGaugeProps {
 
 export default function SatisfactionGauge({
   value,
-  date = "Oct 2024",
+  // date = "Oct 2024",
   title = "Satisfaction Rate",
   color = "#ff4b00",
-  width = 400,
+  // width = 400,
   isCaptionVisible = true,
   isTitleVisible = true,
   isSelectTimeVisible = false,
@@ -50,7 +50,7 @@ export default function SatisfactionGauge({
     return (
       <div className="w-full h-full">
         <Card
-          className={`p-6 transition-all duration-300 ease-in-out opacity-0 space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start items-center h-full`}
+          className={`transition-all duration-300 ease-in-out opacity-0 space-y-6 p-4 bg-[#FCFDFD] w-full flex flex-col justify-start items-center h-full`}
         >
           {isTitleVisible && (
             <div className="flex items-center justify-between w-full">

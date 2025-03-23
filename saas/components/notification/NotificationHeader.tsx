@@ -1,5 +1,5 @@
 import type React from "react";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search } from "lucide-react";
 import FilterIcon from "../icons/FilterIcon";
 
 /**

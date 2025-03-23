@@ -34,9 +34,10 @@ export function ChartCard({
   footer,
 }: ChartCardProps) {
   return (
-    <Card className="w-full w-48  p-4 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.15)]">
+    <Card className="w-48 p-4 shadow-[0px_1px_4px_rgba(0,_0,_0,_0.15)]">
       <CardHeader className="p-0">
         <CardTitle className="texxt-h6">{title}</CardTitle>
+        {subtitle && <p className="text-muted-foreground text-sm">{subtitle}</p>}
       </CardHeader>
       <CardContent className="p-0">
         <div className="relative h-[180px] w-full">

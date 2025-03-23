@@ -1,16 +1,13 @@
-import type { AgencyData, Appointment } from "@/types/ScheduleTypes";
+import type { AgencyData, Appointment, WeekSchedule } from "@/types/ScheduleTypes";
 import { Calendar } from "./Calendar";
-import {calculateEventPosition} from "@/utils/TimeUtils"// Import the function
+import { calculateEventPosition } from "@/utils/TimeUtils";
 import Image from "next/image";
 
 interface CareProviderCalendarProps {
   agencyData: AgencyData;
 }
 
-interface ConsolidatedAppointment {
-  id: string;
-  startTime: string;
-  endTime: string;
+interface ConsolidatedAppointment extends Omit<Appointment, 'caregiverId' | 'clientId' | 'status'> {
   numberOfAppointments: number;
   caregiverIds: string[];
 }
@@ -20,22 +17,22 @@ export function CareProviderCalendar({
 }: CareProviderCalendarProps) {
   const consolidateAppointments = (
     appointments: Appointment[]
-  ): ConsolidatedAppointment => {
+  ): Appointment => {
     const sortedAppointments = appointments.sort((a, b) =>
       a.startTime.localeCompare(b.startTime)
     );
+    const firstAppointment = sortedAppointments[0];
     return {
-      id: `consolidated-${sortedAppointments[0].id}`,
-      startTime: sortedAppointments[0].startTime,
+      id: `consolidated-${firstAppointment.id}`,
+      startTime: firstAppointment.startTime,
       endTime: sortedAppointments[sortedAppointments.length - 1].endTime,
-      numberOfAppointments: sortedAppointments.length,
-      caregiverIds: [
-        ...new Set(sortedAppointments.map((appt) => appt.caregiverId)),
-      ],
+      caregiverId: firstAppointment.caregiverId,
+      clientId: firstAppointment.clientId,
+      status: firstAppointment.status,
     };
   };
 
-  const consolidatedSchedule = {
+  const consolidatedSchedule: WeekSchedule = {
     weekOf: agencyData.schedule.weekOf,
     days: agencyData.schedule.days.map((day) => ({
       ...day,
@@ -55,13 +52,25 @@ export function CareProviderCalendar({
     <Calendar
       agencyData={modifiedAgencyData}
       view="care-provider"
-      renderAppointment={(appointment, isSelected) => (
-        <CareProviderAppointmentCard
-          appointment={appointment as ConsolidatedAppointment}
-          agencyData={agencyData}
-          isSelected={isSelected}
-        />
-      )}
+      renderAppointment={(appointment, isSelected) => {
+        const consolidatedInfo = {
+          ...appointment,
+          numberOfAppointments: agencyData.schedule.days
+            .find(day => day.appointments.some(appt => appt.id === appointment.id.replace('consolidated-', '')))
+            ?.appointments.length || 0,
+          caregiverIds: Array.from(new Set(agencyData.schedule.days
+            .flatMap(day => day.appointments)
+            .filter(appt => appt.id === appointment.id.replace('consolidated-', ''))
+            .map(appt => appt.caregiverId))),
+        };
+        return (
+          <CareProviderAppointmentCard
+            appointment={consolidatedInfo}
+            agencyData={agencyData}
+            isSelected={isSelected}
+          />
+        );
+      }}
     />
   );
 }
@@ -84,26 +93,21 @@ function CareProviderAppointmentCard({
 
   const styles = isSelected
     ? {
-        wrapper: "bg-brand-colors-brand3 text-white",
-        title: "text-white",
-        subtitle: "text-[#FFDDCC]",
-        avatarContainer: "bg-[#FFF1EB]",
-        time: "bg-[#FFF1EB] text-[#FF7733]",
-        border: "none",
-      }
+      wrapper: "bg-brand-colors-brand3 text-white",
+      title: "text-white",
+      subtitle: "text-[#FFDDCC]",
+      avatarContainer: "bg-[#FFF1EB]",
+      time: "bg-[#FFF1EB] text-[#FF7733]",
+      border: "none",
+    }
     : {
-        wrapper: "bg-[#FFF5E6] text-brand-colors-brand2",
-        title: "text-brand-colors-brand2",
-        subtitle: "text-brand-colors-brand4 font-semibold",
-        avatarContainer: "bg-white",
-        time: "bg-[#FF7733] text-white",
-        border: "border-2 border-brand-colors-brand8",
-      };
-
-  const truncateText = (text: string, maxLength: number) => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength - 1) + "…";
-  };
+      wrapper: "bg-[#FFF5E6] text-brand-colors-brand2",
+      title: "text-brand-colors-brand2",
+      subtitle: "text-brand-colors-brand4 font-semibold",
+      avatarContainer: "bg-white",
+      time: "bg-[#FF7733] text-white",
+      border: "border-2 border-brand-colors-brand8",
+    };
 
   return (
     <div

@@ -11,7 +11,7 @@ export function ClientCalendarView({
   selectedClientId,
 }: ClientCalendarViewProps) {
   // Find primary caregiver (for demo, using first caregiver)
-  const primaryCaregiver = Object.values(agencyData.caregivers)[0];
+  // const primaryCaregiver = Object.values(agencyData.caregivers)[0];
 
   return (
     <div className="flex gap-4">
