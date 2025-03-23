@@ -55,6 +55,6 @@ function SignUpContent(){
  * Main page component that renders the SignUpContent
  * @returns JSX.Element The rendered page component
  */
-export default function Page(): JSX.Element {
+export default function Page() {
   return <SignUpContent />;
 }
