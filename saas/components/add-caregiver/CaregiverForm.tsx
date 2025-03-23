@@ -18,7 +18,7 @@ import {
   caregivers,
 } from "@/data/add-caregiver-form";
 import { useState } from "react";
-import type { Caregiver } from "@/types/add-caregiver-form";
+import type { Caregiver, FormField as FormFieldType } from "@/types/add-caregiver-form";
 import { colorProps } from "@/data/ColorProps";
 
 // Define the schema for form validation
@@ -112,9 +112,9 @@ export function CaregiverForm(): React.ReactElement {
   };
 
   const renderFieldContent = (
-    field: any,
+    field: FormFieldType,
     value: string | string[],
-    onChange: (value: any) => void,
+    onChange: (value: string | string[]) => void,
     isLastInGroup: boolean = false
   ) => {
     if (field.type === "select") {

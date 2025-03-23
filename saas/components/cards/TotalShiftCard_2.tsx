@@ -13,6 +13,17 @@ import { useState, useEffect } from "react";
 import type { ChartData, DataItem, TimeOption } from "@/types/pie-chart/types";
 import SelectTime from "./SelectTime";
 
+// ViewBox interface for the pie chart label
+interface ViewBox {
+  cx: number;
+  cy: number;
+}
+
+// Tooltip payload interface
+interface TooltipPayload {
+  payload: DataItem & { color: string };
+}
+
 /**
  * Renders the label in the center of the pie chart
  * @param {Object} viewBox - The viewBox object from the SVG
@@ -25,7 +36,7 @@ const PieChartLabel = ({
   total,
   title,
 }: {
-  viewBox: any;
+  viewBox: ViewBox;
   total: number;
   title: string;
 }) => {
@@ -67,7 +78,7 @@ const CustomTooltip = ({
   payload,
 }: {
   active?: boolean;
-  payload?: any[];
+  payload?: TooltipPayload[];
 }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
@@ -84,47 +95,6 @@ const CustomTooltip = ({
   }
   return null;
 };
-
-/**
- * Renders a time period selector
- * @param {TimeOption[]} options - Array of time options
- * @param {string} value - Currently selected value
- * @param {function} onChange - Function to call when selection changes
- * @returns {JSX.Element} The time selector JSX
- */
-const TimeSelector = ({
-  options,
-  value,
-  onChange,
-}: {
-  options: TimeOption[];
-  value: string;
-  onChange: (value: string) => void;
-}) => (
-  <div className="relative">
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="appearance-none bg-white border border-gray-300 rounded-md px-3 py-1 pr-8 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-    >
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
-    {/* Custom dropdown arrow */}
-    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-      <svg
-        className="fill-current h-4 w-4"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-      >
-        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-      </svg>
-    </div>
-  </div>
-);
 
 /**
  * Renders the legend for the pie chart
@@ -162,11 +132,11 @@ export function TotalShiftsCard({
   // State for managing the selected time period
   const [selectedTime, setSelectedTime] = useState(timeOptions[0].value);
   const [isMounted, setIsMounted] = useState(false);
-  
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  
+
   // Don't render the chart on the server
   if (!isMounted) {
     return (
@@ -190,7 +160,11 @@ export function TotalShiftsCard({
       <CardHeader className="flex flex-row items-center justify-between p-0 bg-gray-50 text-neutral-10">
         <CardTitle className="text-h6 "> {title}</CardTitle>
 
-        <SelectTime />
+        <SelectTime
+          selectedYear={selectedTime}
+          setSelectedYear={setSelectedTime}
+          data={timeOptions}
+        />
       </CardHeader>
       <CardContent className="flex flex-col items-center p-0">
         <div className="h-[250px] w-[250px] mx-auto relative">
