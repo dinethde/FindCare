@@ -2,13 +2,14 @@
  * Import profile data from dashboard
  */
 import { profile } from "@/data/dashboard-2";
-import { FC } from 'react';
+import { JSX } from "react";
 
 /**
  * CaregiverDescription Component
  * @description Displays the about/description section for a caregiver profile
+ * @returns {JSX.Element} A div containing the caregiver's description or default text
  */
-const CaregiverDescription: FC = () => {
+export default function CaregiverDescription(): JSX.Element {
   return (
     // Container div for the description
     <div className="h-full w-full">
@@ -19,5 +20,3 @@ const CaregiverDescription: FC = () => {
     </div>
   );
 }
-
-export default CaregiverDescription;
