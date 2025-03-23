@@ -20,7 +20,7 @@ export default function SelectTime({
   setSelectedYear,
   data = months,
 }: SelectTimeProps) {
-  const isMonthData = (item: any): item is Month => "value" in item;
+  const isMonthData = (item: Month | YearData): item is Month => "value" in item;
 
   return (
     <div className="text-grey">

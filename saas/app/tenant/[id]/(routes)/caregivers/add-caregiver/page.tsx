@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <Modal routePath="/caregivers">
+      <Modal routePath="/tenant/1/caregivers">
         <div className="flex gap-3 p-2 min-h-[87vh] max-h-[87vh]">
           <CaregiverForm />;
         </div>
