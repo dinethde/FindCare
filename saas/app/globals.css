@@ -1,3 +1,8 @@
+/* postcss-preset-env syntax stage 1 */
+/* tailwindcss base;
+   tailwindcss components;
+   tailwindcss utilities; */
+
 /**
  * @fileoverview Global CSS styles for FindCare application
  * Includes Tailwind configuration, custom properties, and utility classes
@@ -11,7 +16,7 @@
 
 /* Tailwind base styles */
 @tailwind base;
-@tailwind components;
+@import "tailwindcss/components";
 @tailwind utilities;
 
 /**
