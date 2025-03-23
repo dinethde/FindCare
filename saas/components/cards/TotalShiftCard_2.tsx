@@ -77,12 +77,20 @@ const PieChartLabel = ({
  * @param {Array} payload - The data payload for the tooltip
  * @returns {JSX.Element|null} The tooltip JSX or null if not active
  */
+interface TooltipPayload {
+  payload: {
+    name: string;
+    value: number;
+    color?: string;
+  };
+}
+
 const CustomTooltip = ({
   active,
   payload,
 }: {
   active?: boolean;
-  payload?: any[];
+  payload?: TooltipPayload[];
 }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
@@ -171,11 +179,9 @@ export function TotalShiftsCard({
   data,
   title,
   total,
-  timeOptions,
   isCaptionVisible = true,
 }: ChartData) {
   // State for managing the selected time period
-  const [selectedTime, setSelectedTime] = useState(timeOptions[0].value);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
