@@ -25,7 +25,7 @@ export const metadata: Metadata = {
  * @function HomePage
  * @returns {Promise<JSX.Element>} The rendered homepage component
  */
-export default async function HomePage(): Promise<JSX.Element> {
+export default async function HomePage(){
   // Get the current user from Clerk authentication
   const user = await currentUser();
   const userid = Number(user?.id);

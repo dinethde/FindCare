@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import type { Metadata } from "next";
 import NavbarComponent from "@/components/layout-components/NavbarComponent";
@@ -17,7 +15,10 @@ interface TenantLayoutProps {
  * Metadata configuration for the tenant dashboard
  * @constant
  */
-
+export const metadata: Metadata = {
+  title: "FindCare - Tenant Dashboard",
+  description: "Tenant dashboard for FindCare application",
+};
 
 /**
  * TenantLayout Component - Provides the layout structure for tenant dashboard pages
@@ -31,7 +32,7 @@ interface TenantLayoutProps {
  */
 export default function TenantLayout({
   children,
-}: Readonly<TenantLayoutProps>): React.ReactElement {
+}: Readonly<TenantLayoutProps>) {
   return (
     <div className="min-h-screen flex">
       <NavbarComponent />

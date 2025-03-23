@@ -32,7 +32,7 @@ export const metadata: Metadata = {
  */
 export default function RootLayout({
   children,
-}: Readonly<RootLayoutProps>): React.ReactElement {
+}: Readonly<RootLayoutProps>){
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>

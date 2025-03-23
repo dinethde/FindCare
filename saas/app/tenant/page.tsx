@@ -12,88 +12,58 @@ export interface TenantResponse {
   email: string;
   tier: string;
 }
+
 export default function TenantPage() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
   const [hasAttemptedCreation, setHasAttemptedCreation] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  // const user = {
-  //   id: '10', // Replace with actual user ID
-  //   primaryEmailAddress: {
-  //     emailAddress: 'randandu'
-  //   }
-  // }
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let isMounted = true;
-
     const setupTenant = async () => {
-      // Prevent running if component is unmounted
-      if (!isMounted) return;
+      if (!isLoaded || !isSignedIn || !user?.id || !user?.primaryEmailAddress?.emailAddress) {
+        setIsLoading(false);
+        return;
+      }
 
-      // Don't proceed if already attempted or has error
       if (hasAttemptedCreation || hasError) {
-        return;
-      }
-
-      // Don't proceed if Clerk hasn't loaded yet or user isn't signed in
-      if (!isLoaded || !isSignedIn) {
-        return;
-      }
-
-      // Don't proceed if don't have required user data
-      if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
+        setIsLoading(false);
         return;
       }
 
       try {
         setHasAttemptedCreation(true);
-
         const url = process.env.NEXT_PUBLIC_AGENCY_SERVICE_URL;
-
+        
         const tenant = {
           auth0Identifier: user.id,
           email: user.primaryEmailAddress.emailAddress,
           tier: "premium",
         };
-        try {
-          const response = await axios.post<TenantResponse>(
-            `${url}/accounts`,
-            tenant
-          );
 
-          if (!response.data || !response.data.accountId) {
-            throw new Error("Invalid response from server: Missing account ID");
-          }
+        const response = await axios.post<TenantResponse>(
+          `${url}/accounts`,
+          tenant
+        );
 
-          console.log('Tenant created successfully:', response);
-          router.push(`/tenant/${response.data.accountId}/`);
-
-          return response.data;
-        } catch (error) {
-          throw new Error(
-            error instanceof Error ? error.message : "Failed to create tenant"
-          );
+        if (!response.data || !response.data.accountId) {
+          throw new Error("Invalid response from server: Missing account ID");
         }
 
+        router.push(`/tenant/${response.data.accountId}/`);
       } catch (error) {
         console.error('Failed to create tenant:', error);
-        if (isMounted) {
-          setHasError(true);
-        }
+        setHasError(true);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     setupTenant();
+  }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]);
 
-    return () => {
-      isMounted = false;
-    };
-  }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]); // Added router to dependencies
-
-
-  if (!isLoaded) {
+  if (!isLoaded || isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <LoadingSpinner className="w-6 h-6" />
@@ -101,12 +71,18 @@ export default function TenantPage() {
     );
   }
 
-
   if (!isSignedIn) {
     router.push('/sign-in');
     return null;
   }
 
+  if (hasError) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-red-600">Error creating tenant. Please try again later.</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen">

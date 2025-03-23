@@ -58,7 +58,7 @@ const filterOptions: FilterOption[] = [
  * Client Management Page Component
  * @returns {JSX.Element} The rendered client management page
  */
-export default function Page(): JSX.Element {
+export default function Page() {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-[0.75fr_1.5fr_0.75fr] gap-4">
