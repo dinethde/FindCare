@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - backend/caregiver
+      - backend/dev
 
 jobs:
   build-and-deploy:

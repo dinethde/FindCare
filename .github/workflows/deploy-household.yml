@@ -1,10 +1,10 @@
-
 name: Deploy Household Service
 
 on:
   push:
     branches:
       - backend/household
+      - backend/dev
 
 jobs:
   build-and-deploy:
@@ -24,10 +24,9 @@ jobs:
       # 3. (Optional) Log in to ACR if needed
       # The azure/login@v1 step can automatically authenticate to your ACR if your SP has Contributor access to the registry’s resource group.
       # If you prefer separate ACR credentials:
-      
+
       - name: ACR Login
         run: az acr login --name findcarebackendcr
-      
 
       # 4. Build the Docker image
       - name: Build Docker image
@@ -59,4 +58,4 @@ jobs:
               --dns-name-label household \
               --registry-username ${{ secrets.ACR_USERNAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }} \
-              --os-type Linux 
+              --os-type Linux
