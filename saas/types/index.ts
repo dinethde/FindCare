@@ -22,3 +22,16 @@ export interface CommentFormData {
   caregiverId: string;
   caregiverName: string;
 }
+
+export interface AvatarProps {
+  src?: string;
+  alt: string;
+  size?: "xs" | "sm" | "md" | "lg";
+}
+
+export interface ButtonProps {
+  variant?: "primary" | "feedback" | "compliment" | "complaint";
+  className?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}

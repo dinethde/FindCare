@@ -3,23 +3,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { metrics } from "@/data/dashboard-2";
-import { shiftStats } from "@/data/mock-data";
-import SelectTime from "@/components/cards/SelectTime";
-import type { Month } from "@/types/CardTypes";
-import { commentStyles } from "style-dictionary/enums";
-import none = commentStyles.none;
-import GaugeChart from "./charts/GaugeChart";
-import { TotalShiftsCard } from "./cards/TotalShiftCard_2";
-import { shiftsData } from "@/data/pie-chart/totalShiftCard";
-
-const months: Month[] = [
-  { value: "oct-2024", label: "Oct 2024" },
-  { value: "sep-2024", label: "Sep 2024" },
-  { value: "aug-2024", label: "Aug 2024" },
-];
 
 export function TasksCard() {
-  const { clientSatisfaction, totalShifts, tasks } = metrics;
+  const { tasks } = metrics;
 
   return (
     <div className=" w-full h-full">

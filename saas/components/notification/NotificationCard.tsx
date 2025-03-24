@@ -30,38 +30,18 @@ export default function NotificationCard({
   notification,
   isEditMode = false,
   isSelected = false,
-  onSelect = () => {},
-  onMarkAsRead = () => {},
-  onDelete = () => {},
-  onClick = () => {},
+  onSelect = () => { },
+  onMarkAsRead = () => { },
+  onDelete = () => { },
+  onClick = () => { },
 }: NotificationCardProps) {
-  const { id, user, timestamp, message, isUnread } = notification;
+  const { user, timestamp, message, isUnread } = notification;
 
   /**
    * Handle checkbox change
    */
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onSelect(e.target.checked);
-  };
-
-  /**
-   * Truncate message to two lines
-   */
-  const truncateMessage = (msg: string) => {
-    const words = msg.split(" ");
-    let truncated = "";
-    let lines = 0;
-
-    for (const word of words) {
-      if (lines >= 2) break;
-      if ((truncated + word).length > 100) {
-        lines++;
-        if (lines < 2) truncated += "\n";
-      }
-      if (lines < 2) truncated += (truncated.endsWith("\n") ? "" : " ") + word;
-    }
-
-    return truncated.trim() + (truncated.length < msg.length ? "..." : "");
   };
 
   const handleClick = () => {

@@ -23,7 +23,7 @@ export default function RevenueCard({
   btnVarient = "SelectTime",
   dataType = "LKR",
   link = "/",
-  isBigText = true,
+  // isBigText = true,
   contentClassName = "font-bold text-neutral-10",
   dataTypeClassName = "",
 }: RevenueCardProps) {

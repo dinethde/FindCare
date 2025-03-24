@@ -8,7 +8,6 @@ import type { FormField as FormFieldType } from "@/types/add-caregiver-form";
 import type React from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { colorProps } from "@/data/ColorProps";
 
 interface FormFieldProps {
   field: FormFieldType;

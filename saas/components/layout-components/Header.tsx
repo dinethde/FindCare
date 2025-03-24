@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import { usePathname, useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import NetworkIcon from "../icons/NetworkIcon";
 import UserProfileIcon from "../icons/UserProfileIcon copy";
-import SearchIcon from "../icons/SearchIcon";
 import PrimaryButton from "../ui/PrimaryButton";
 
 // Define page title mapping
@@ -25,23 +24,20 @@ const pageTitles: { [key: string]: string } = {
 
 export default function Header() {
   const pathname = usePathname();
-  const params = useParams();
-  const tenantId = params?.id as string;
+  // const params = useParams();
+  // const tenantId = params?.id as string;
 
   // Extract the base path without tenant ID to match our page titles
   const basePath = pathname.split('/').slice(3).join('/');
   const normalizedPath = '/' + basePath;
-  
+
   // Determine page types
   const isHomePage = normalizedPath === "/";
   const isCaregiverPage = normalizedPath === "/caregivers";
   const isFillaSpotPage = normalizedPath === "/filla-spot";
-  
+
   // Get title based on the normalized path
   const pageTitle = pageTitles[normalizedPath] || "Home";
-
-  // Create dynamic paths with tenant ID for navigation
-  const createTenantPath = (path: string) => `/tenant/${tenantId}/${path}`;
 
   return (
     <div className="flex flex-col gap-6">

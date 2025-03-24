@@ -59,7 +59,7 @@ export default function NotificationList({
     return (
       <div className="p-8 text-center">
         <p className="text-[#7e7e7e]">
-          No notifications found matching "{searchQuery}"
+          No notifications found matching &quot;{searchQuery}&quot;
         </p>
       </div>
     );
