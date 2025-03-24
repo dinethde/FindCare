@@ -10,6 +10,9 @@ export 'caregiver_requirements_model.dart';
 class CaregiverRequirementsWidget extends StatefulWidget {
   const CaregiverRequirementsWidget({super.key});
 
+  static String routeName = 'CaregiverRequirements';
+  static String routePath = '/caregiverRequirements';
+
   @override
   State<CaregiverRequirementsWidget> createState() =>
       _CaregiverRequirementsWidgetState();
@@ -69,7 +72,7 @@ class _CaregiverRequirementsWidgetState
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Caregiver Requirements',
+                          'Health Information',
                           style: FlutterFlowTheme.of(context)
                               .displayMedium
                               .override(
@@ -78,7 +81,7 @@ class _CaregiverRequirementsWidgetState
                               ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                          'Provide the patient’s health details to ensure personalized care and appropriate caregiver assignment.',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',

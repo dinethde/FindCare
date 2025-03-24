@@ -11,6 +11,9 @@ export 'caregiver_reports_model.dart';
 class CaregiverReportsWidget extends StatefulWidget {
   const CaregiverReportsWidget({super.key});
 
+  static String routeName = 'CaregiverReports';
+  static String routePath = '/caregiverReports';
+
   @override
   State<CaregiverReportsWidget> createState() => _CaregiverReportsWidgetState();
 }
@@ -90,7 +93,7 @@ class _CaregiverReportsWidgetState extends State<CaregiverReportsWidget> {
                                     ),
                               ),
                               Text(
-                                'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                'View detailed client reports to track patient satisfaction and the effectiveness of care services.',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

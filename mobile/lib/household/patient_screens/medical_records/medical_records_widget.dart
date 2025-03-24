@@ -4,12 +4,16 @@ import '/household/app_bar_leftside/app_bar_leftside_widget.dart';
 import '/household/record_button/record_button_widget.dart';
 import '/onboarding/button/button_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'medical_records_model.dart';
 export 'medical_records_model.dart';
 
 class MedicalRecordsWidget extends StatefulWidget {
   const MedicalRecordsWidget({super.key});
+
+  static String routeName = 'MedicalRecords';
+  static String routePath = '/medicalRecords';
 
   @override
   State<MedicalRecordsWidget> createState() => _MedicalRecordsWidgetState();
@@ -81,7 +85,7 @@ class _MedicalRecordsWidgetState extends State<MedicalRecordsWidget> {
                                 ),
                           ),
                           Text(
-                            'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                            'Keep track of all your medical records in one place for easy access and updates.',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -102,7 +106,8 @@ class _MedicalRecordsWidgetState extends State<MedicalRecordsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('pcMedicalRecordsEDIT');
+                            context.pushNamed(
+                                PcMedicalRecordsEDITWidget.routeName);
                           },
                           child: wrapWithModel(
                             model: _model.buttonModel,
@@ -133,7 +138,8 @@ class _MedicalRecordsWidgetState extends State<MedicalRecordsWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('MedicalRecordsINFO');
+                              context.pushNamed(
+                                  MedicalRecordsINFOWidget.routeName);
                             },
                             child: wrapWithModel(
                               model: _model.recordButtonModel,

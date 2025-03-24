@@ -1,5 +1,7 @@
+import '';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'nav_bar_model.dart';
@@ -74,7 +76,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 0;
                     safeSetState(() {});
 
-                    context.pushNamed('CaregiverHomeage');
+                    context.pushNamed(CaregiverHomeageWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -117,7 +119,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 1;
                     safeSetState(() {});
 
-                    context.pushNamed('Marketplace');
+                    context.pushNamed(MarketplaceWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -160,7 +162,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     _model.number = 2;
                     safeSetState(() {});
 
-                    context.pushNamed('CaregiverPage');
+                    context.pushNamed(CaregiverPageWidget.routeName);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

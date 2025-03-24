@@ -9,6 +9,9 @@ export 'agency_general_info_model.dart';
 class AgencyGeneralInfoWidget extends StatefulWidget {
   const AgencyGeneralInfoWidget({super.key});
 
+  static String routeName = 'AgencyGeneralInfo';
+  static String routePath = '/agencyGeneralInfo';
+
   @override
   State<AgencyGeneralInfoWidget> createState() =>
       _AgencyGeneralInfoWidgetState();

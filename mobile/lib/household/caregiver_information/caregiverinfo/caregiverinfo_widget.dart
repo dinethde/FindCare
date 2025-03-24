@@ -2,12 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'caregiverinfo_model.dart';
 export 'caregiverinfo_model.dart';
 
 class CaregiverinfoWidget extends StatefulWidget {
   const CaregiverinfoWidget({super.key});
+
+  static String routeName = 'Caregiverinfo';
+  static String routePath = '/caregiverinfo';
 
   @override
   State<CaregiverinfoWidget> createState() => _CaregiverinfoWidgetState();
@@ -88,7 +92,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('CaregiverPersonal');
+                    context.pushNamed(CaregiverPersonalWidget.routeName);
                   },
                   child: wrapWithModel(
                     model: _model.iconButtonModel1,
@@ -119,7 +123,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('AcademicInfo');
+                        context.pushNamed(AcademicInfoWidget.routeName);
                       },
                       child: wrapWithModel(
                         model: _model.iconButtonModel2,
@@ -140,7 +144,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('ExperiencePage');
+                        context.pushNamed(ExperiencePageWidget.routeName);
                       },
                       child: wrapWithModel(
                         model: _model.iconButtonModel3,
@@ -161,7 +165,7 @@ class _CaregiverinfoWidgetState extends State<CaregiverinfoWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('SpecializedinPage');
+                        context.pushNamed(SpecializedinPageWidget.routeName);
                       },
                       child: wrapWithModel(
                         model: _model.iconButtonModel4,

@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'patient_details_model.dart';
@@ -9,6 +10,9 @@ export 'patient_details_model.dart';
 
 class PatientDetailsWidget extends StatefulWidget {
   const PatientDetailsWidget({super.key});
+
+  static String routeName = 'PatientDetails';
+  static String routePath = '/patientDetails';
 
   @override
   State<PatientDetailsWidget> createState() => _PatientDetailsWidgetState();
@@ -62,7 +66,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Please fill in the required patient details to proceed.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
@@ -134,7 +138,7 @@ class _PatientDetailsWidgetState extends State<PatientDetailsWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('PrimaryCareOptions');
+                    context.pushNamed(PrimaryCareOptionsWidget.routeName);
                   },
                   text: '+ Add',
                   options: FFButtonOptions(

@@ -10,6 +10,9 @@ export 'health_information_model.dart';
 class HealthInformationWidget extends StatefulWidget {
   const HealthInformationWidget({super.key});
 
+  static String routeName = 'HealthInformation';
+  static String routePath = '/healthInformation';
+
   @override
   State<HealthInformationWidget> createState() =>
       _HealthInformationWidgetState();
@@ -69,7 +72,7 @@ class _HealthInformationWidgetState extends State<HealthInformationWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Health Information',
+                          'Caregiver Requirements',
                           style: FlutterFlowTheme.of(context)
                               .displayMedium
                               .override(
@@ -78,7 +81,7 @@ class _HealthInformationWidgetState extends State<HealthInformationWidget> {
                               ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                          'Specify the caregiver’s expertise and experience required to meet the patient\'s needs.',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',

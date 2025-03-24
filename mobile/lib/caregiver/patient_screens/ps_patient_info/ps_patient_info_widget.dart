@@ -9,6 +9,9 @@ export 'ps_patient_info_model.dart';
 class PsPatientInfoWidget extends StatefulWidget {
   const PsPatientInfoWidget({super.key});
 
+  static String routeName = 'psPatientInfo';
+  static String routePath = '/psPatientInfo';
+
   @override
   State<PsPatientInfoWidget> createState() => _PsPatientInfoWidgetState();
 }

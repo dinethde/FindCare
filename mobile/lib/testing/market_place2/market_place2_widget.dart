@@ -7,6 +7,9 @@ export 'market_place2_model.dart';
 class MarketPlace2Widget extends StatefulWidget {
   const MarketPlace2Widget({super.key});
 
+  static String routeName = 'MarketPlace2';
+  static String routePath = '/marketPlace2';
+
   @override
   State<MarketPlace2Widget> createState() => _MarketPlace2WidgetState();
 }

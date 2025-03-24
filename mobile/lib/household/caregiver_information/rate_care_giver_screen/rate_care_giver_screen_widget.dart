@@ -9,6 +9,9 @@ export 'rate_care_giver_screen_model.dart';
 class RateCareGiverScreenWidget extends StatefulWidget {
   const RateCareGiverScreenWidget({super.key});
 
+  static String routeName = 'RateCareGiverScreen';
+  static String routePath = '/rateCareGiverScreen';
+
   @override
   State<RateCareGiverScreenWidget> createState() =>
       _RateCareGiverScreenWidgetState();

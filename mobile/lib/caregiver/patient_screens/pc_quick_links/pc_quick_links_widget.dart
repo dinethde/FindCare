@@ -9,6 +9,9 @@ export 'pc_quick_links_model.dart';
 class PcQuickLinksWidget extends StatefulWidget {
   const PcQuickLinksWidget({super.key});
 
+  static String routeName = 'pcQuickLinks';
+  static String routePath = '/pcQuickLinks';
+
   @override
   State<PcQuickLinksWidget> createState() => _PcQuickLinksWidgetState();
 }

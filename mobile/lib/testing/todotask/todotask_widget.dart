@@ -10,6 +10,9 @@ export 'todotask_model.dart';
 class TodotaskWidget extends StatefulWidget {
   const TodotaskWidget({super.key});
 
+  static String routeName = 'todotask';
+  static String routePath = '/todotask';
+
   @override
   State<TodotaskWidget> createState() => _TodotaskWidgetState();
 }

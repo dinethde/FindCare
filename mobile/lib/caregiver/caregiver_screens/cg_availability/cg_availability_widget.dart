@@ -9,6 +9,9 @@ export 'cg_availability_model.dart';
 class CgAvailabilityWidget extends StatefulWidget {
   const CgAvailabilityWidget({super.key});
 
+  static String routeName = 'cgAvailability';
+  static String routePath = '/cgAvailability';
+
   @override
   State<CgAvailabilityWidget> createState() => _CgAvailabilityWidgetState();
 }

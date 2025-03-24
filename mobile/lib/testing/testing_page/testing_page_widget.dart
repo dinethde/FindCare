@@ -1,11 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/testing/task4new_copy/task4new_copy_widget.dart';
 import 'package:flutter/material.dart';
 import 'testing_page_model.dart';
 export 'testing_page_model.dart';
 
 class TestingPageWidget extends StatefulWidget {
   const TestingPageWidget({super.key});
+
+  static String routeName = 'testingPage';
+  static String routePath = '/testingPage';
 
   @override
   State<TestingPageWidget> createState() => _TestingPageWidgetState();
@@ -41,10 +45,23 @@ class _TestingPageWidgetState extends State<TestingPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: wrapWithModel(
+                      model: _model.task4newCopyModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: Task4newCopyWidget(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),

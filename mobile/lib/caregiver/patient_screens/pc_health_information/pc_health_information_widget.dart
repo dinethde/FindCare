@@ -10,6 +10,9 @@ export 'pc_health_information_model.dart';
 class PcHealthInformationWidget extends StatefulWidget {
   const PcHealthInformationWidget({super.key});
 
+  static String routeName = 'pcHealthInformation';
+  static String routePath = '/pcHealthInformation';
+
   @override
   State<PcHealthInformationWidget> createState() =>
       _PcHealthInformationWidgetState();
@@ -78,7 +81,7 @@ class _PcHealthInformationWidgetState extends State<PcHealthInformationWidget> {
                               ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                          'Provide the patient’s health details to ensure personalized care and appropriate caregiver assignment.',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',

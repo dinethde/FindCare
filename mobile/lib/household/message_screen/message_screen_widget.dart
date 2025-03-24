@@ -10,6 +10,9 @@ export 'message_screen_model.dart';
 class MessageScreenWidget extends StatefulWidget {
   const MessageScreenWidget({super.key});
 
+  static String routeName = 'MessageScreen';
+  static String routePath = '/messageScreen';
+
   @override
   State<MessageScreenWidget> createState() => _MessageScreenWidgetState();
 }
@@ -163,7 +166,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                   ],
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                  'Hi, I wanted to confirm the schedule for tomorrow. Please let me know if there are any changes.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -234,7 +237,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                   ],
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                  'Thank you for the service provided last week. The caregiver was excellent and very professional.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -305,7 +308,7 @@ class _MessageScreenWidgetState extends State<MessageScreenWidget> {
                                   ],
                                 ),
                                 Text(
-                                  'Lorem ipsum dolor sit amet consectetur. Eu ipsum vulputate dictumst mauris amet consequat ...',
+                                  'The caregiver app is slow, with frequent loading delays, freezing, and crashes, affecting user satisfaction and service efficiency.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

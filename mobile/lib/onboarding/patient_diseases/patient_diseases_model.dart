@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/button_half/button_half_widget.dart';
 import '/onboarding/dropdown/dropdown_widget.dart';
+import '/index.dart';
 import 'patient_diseases_widget.dart' show PatientDiseasesWidget;
 import 'package:flutter/material.dart';
 

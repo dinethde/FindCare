@@ -8,6 +8,9 @@ export 'marketplace_model.dart';
 class MarketplaceWidget extends StatefulWidget {
   const MarketplaceWidget({super.key});
 
+  static String routeName = 'Marketplace';
+  static String routePath = '/marketplace';
+
   @override
   State<MarketplaceWidget> createState() => _MarketplaceWidgetState();
 }

@@ -11,6 +11,9 @@ export 'patient_reports_model.dart';
 class PatientReportsWidget extends StatefulWidget {
   const PatientReportsWidget({super.key});
 
+  static String routeName = 'PatientReports';
+  static String routePath = '/patientReports';
+
   @override
   State<PatientReportsWidget> createState() => _PatientReportsWidgetState();
 }
@@ -91,7 +94,7 @@ class _PatientReportsWidgetState extends State<PatientReportsWidget> {
                                     ),
                               ),
                               Text(
-                                'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                                'View detailed client reports to track patient satisfaction and the effectiveness of care services.',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

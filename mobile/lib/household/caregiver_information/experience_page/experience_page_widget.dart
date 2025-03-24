@@ -10,6 +10,9 @@ export 'experience_page_model.dart';
 class ExperiencePageWidget extends StatefulWidget {
   const ExperiencePageWidget({super.key});
 
+  static String routeName = 'ExperiencePage';
+  static String routePath = '/experiencePage';
+
   @override
   State<ExperiencePageWidget> createState() => _ExperiencePageWidgetState();
 }
@@ -83,7 +86,7 @@ class _ExperiencePageWidgetState extends State<ExperiencePageWidget> {
                                   ),
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                              'Explore extensive professional experience, showcasing their reliability, skills, and the number of clients served.',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

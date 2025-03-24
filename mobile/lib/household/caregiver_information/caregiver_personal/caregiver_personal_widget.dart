@@ -9,6 +9,9 @@ export 'caregiver_personal_model.dart';
 class CaregiverPersonalWidget extends StatefulWidget {
   const CaregiverPersonalWidget({super.key});
 
+  static String routeName = 'CaregiverPersonal';
+  static String routePath = '/caregiverPersonal';
+
   @override
   State<CaregiverPersonalWidget> createState() =>
       _CaregiverPersonalWidgetState();

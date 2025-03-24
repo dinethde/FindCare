@@ -9,6 +9,9 @@ export 'pc_calendar_i_n_f_o_model.dart';
 class PcCalendarINFOWidget extends StatefulWidget {
   const PcCalendarINFOWidget({super.key});
 
+  static String routeName = 'pcCalendarINFO';
+  static String routePath = '/pcCalendarINFO';
+
   @override
   State<PcCalendarINFOWidget> createState() => _PcCalendarINFOWidgetState();
 }

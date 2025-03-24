@@ -9,6 +9,9 @@ export 'patient_information_e_d_i_t_model.dart';
 class PatientInformationEDITWidget extends StatefulWidget {
   const PatientInformationEDITWidget({super.key});
 
+  static String routeName = 'PatientInformationEDIT';
+  static String routePath = '/patientInformationEDIT';
+
   @override
   State<PatientInformationEDITWidget> createState() =>
       _PatientInformationEDITWidgetState();

@@ -10,6 +10,9 @@ export 'patient_calendar_model.dart';
 class PatientCalendarWidget extends StatefulWidget {
   const PatientCalendarWidget({super.key});
 
+  static String routeName = 'PatientCalendar';
+  static String routePath = '/patientCalendar';
+
   @override
   State<PatientCalendarWidget> createState() => _PatientCalendarWidgetState();
 }

@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/text_box/text_box_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'personalization_model.dart';
@@ -9,6 +10,9 @@ export 'personalization_model.dart';
 
 class PersonalizationWidget extends StatefulWidget {
   const PersonalizationWidget({super.key});
+
+  static String routeName = 'Personalization';
+  static String routePath = '/personalization';
 
   @override
   State<PersonalizationWidget> createState() => _PersonalizationWidgetState();
@@ -62,7 +66,7 @@ class _PersonalizationWidgetState extends State<PersonalizationWidget> {
                           ),
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet consectetur. Dictum pulvinar dolor',
+                      'Provide additional details to personalize the caregiving experience and find the best match for your needs.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
@@ -221,7 +225,7 @@ class _PersonalizationWidgetState extends State<PersonalizationWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('homePage');
+                    context.pushNamed(HomePageWidget.routeName);
                   },
                   text: 'Find a Caregiver',
                   options: FFButtonOptions(

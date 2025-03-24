@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/onboarding/care_type_b_o_x/care_type_b_o_x_widget.dart';
+import '/index.dart';
 import 'care_type_widget.dart' show CareTypeWidget;
 import 'package:flutter/material.dart';
 

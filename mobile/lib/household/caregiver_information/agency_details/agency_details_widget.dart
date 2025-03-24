@@ -2,12 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'agency_details_model.dart';
 export 'agency_details_model.dart';
 
 class AgencyDetailsWidget extends StatefulWidget {
   const AgencyDetailsWidget({super.key});
+
+  static String routeName = 'AgencyDetails';
+  static String routePath = '/agencyDetails';
 
   @override
   State<AgencyDetailsWidget> createState() => _AgencyDetailsWidgetState();
@@ -111,7 +115,7 @@ class _AgencyDetailsWidgetState extends State<AgencyDetailsWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('AgencyGeneralInfo');
+                        context.pushNamed(AgencyGeneralInfoWidget.routeName);
                       },
                       child: wrapWithModel(
                         model: _model.iconButtonModel2,
@@ -132,7 +136,7 @@ class _AgencyDetailsWidgetState extends State<AgencyDetailsWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('AgencyRatings');
+                        context.pushNamed(AgencyRatingsWidget.routeName);
                       },
                       child: wrapWithModel(
                         model: _model.iconButtonModel3,

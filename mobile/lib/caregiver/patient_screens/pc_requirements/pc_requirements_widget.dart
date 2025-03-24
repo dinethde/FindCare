@@ -10,6 +10,9 @@ export 'pc_requirements_model.dart';
 class PcRequirementsWidget extends StatefulWidget {
   const PcRequirementsWidget({super.key});
 
+  static String routeName = 'pcRequirements';
+  static String routePath = '/pcRequirements';
+
   @override
   State<PcRequirementsWidget> createState() => _PcRequirementsWidgetState();
 }
@@ -77,7 +80,7 @@ class _PcRequirementsWidgetState extends State<PcRequirementsWidget> {
                               ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                          'Specify the caregiver’s expertise and experience required to meet the patient\'s needs.',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',

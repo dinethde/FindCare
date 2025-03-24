@@ -9,6 +9,9 @@ export 'c_g_quicklinks_model.dart';
 class CGQuicklinksWidget extends StatefulWidget {
   const CGQuicklinksWidget({super.key});
 
+  static String routeName = 'CGQuicklinks';
+  static String routePath = '/cGQuicklinks';
+
   @override
   State<CGQuicklinksWidget> createState() => _CGQuicklinksWidgetState();
 }

@@ -11,6 +11,9 @@ export 'pc_medical_records_model.dart';
 class PcMedicalRecordsWidget extends StatefulWidget {
   const PcMedicalRecordsWidget({super.key});
 
+  static String routeName = 'pcMedicalRecords';
+  static String routePath = '/pcMedicalRecords';
+
   @override
   State<PcMedicalRecordsWidget> createState() => _PcMedicalRecordsWidgetState();
 }
@@ -85,7 +88,7 @@ class _PcMedicalRecordsWidgetState extends State<PcMedicalRecordsWidget> {
                                 ),
                           ),
                           Text(
-                            'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                            'Keep track of all your medical records in one place for easy access and updates.',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

@@ -3,12 +3,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/appbar/appbar_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'medical_records_i_n_f_o_model.dart';
 export 'medical_records_i_n_f_o_model.dart';
 
 class MedicalRecordsINFOWidget extends StatefulWidget {
   const MedicalRecordsINFOWidget({super.key});
+
+  static String routeName = 'MedicalRecordsINFO';
+  static String routePath = '/medicalRecordsINFO';
 
   @override
   State<MedicalRecordsINFOWidget> createState() =>
@@ -79,7 +83,8 @@ class _MedicalRecordsINFOWidgetState extends State<MedicalRecordsINFOWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('MedicalRecordUpdate');
+                          context
+                              .pushNamed(MedicalRecordUpdateWidget.routeName);
                         },
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.08,

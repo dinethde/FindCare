@@ -9,6 +9,9 @@ export 'patients_list_model.dart';
 class PatientsListWidget extends StatefulWidget {
   const PatientsListWidget({super.key});
 
+  static String routeName = 'PatientsList';
+  static String routePath = '/patientsList';
+
   @override
   State<PatientsListWidget> createState() => _PatientsListWidgetState();
 }

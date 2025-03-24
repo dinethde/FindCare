@@ -10,6 +10,9 @@ export 'pc_medical_records_e_d_i_t_model.dart';
 class PcMedicalRecordsEDITWidget extends StatefulWidget {
   const PcMedicalRecordsEDITWidget({super.key});
 
+  static String routeName = 'pcMedicalRecordsEDIT';
+  static String routePath = '/pcMedicalRecordsEDIT';
+
   @override
   State<PcMedicalRecordsEDITWidget> createState() =>
       _PcMedicalRecordsEDITWidgetState();

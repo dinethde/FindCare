@@ -10,6 +10,9 @@ export 'medical_record_update_model.dart';
 class MedicalRecordUpdateWidget extends StatefulWidget {
   const MedicalRecordUpdateWidget({super.key});
 
+  static String routeName = 'MedicalRecordUpdate';
+  static String routePath = '/medicalRecordUpdate';
+
   @override
   State<MedicalRecordUpdateWidget> createState() =>
       _MedicalRecordUpdateWidgetState();

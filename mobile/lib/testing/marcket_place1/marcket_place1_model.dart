@@ -13,14 +13,26 @@ class MarcketPlace1Model extends FlutterFlowModel<MarcketPlace1Widget> {
   // Model for SepcifiedCareTabBar component.
   late SepcifiedCareTabBarModel sepcifiedCareTabBarModel;
   // Model for MarketplaceCaregiverCard component.
-  late MarketplaceCaregiverCardModel marketplaceCaregiverCardModel;
+  late MarketplaceCaregiverCardModel marketplaceCaregiverCardModel1;
+  // Model for MarketplaceCaregiverCard component.
+  late MarketplaceCaregiverCardModel marketplaceCaregiverCardModel2;
+  // Model for MarketplaceCaregiverCard component.
+  late MarketplaceCaregiverCardModel marketplaceCaregiverCardModel3;
+  // Model for MarketplaceCaregiverCard component.
+  late MarketplaceCaregiverCardModel marketplaceCaregiverCardModel4;
 
   @override
   void initState(BuildContext context) {
     skillSearchBarModel = createModel(context, () => SkillSearchBarModel());
     sepcifiedCareTabBarModel =
         createModel(context, () => SepcifiedCareTabBarModel());
-    marketplaceCaregiverCardModel =
+    marketplaceCaregiverCardModel1 =
+        createModel(context, () => MarketplaceCaregiverCardModel());
+    marketplaceCaregiverCardModel2 =
+        createModel(context, () => MarketplaceCaregiverCardModel());
+    marketplaceCaregiverCardModel3 =
+        createModel(context, () => MarketplaceCaregiverCardModel());
+    marketplaceCaregiverCardModel4 =
         createModel(context, () => MarketplaceCaregiverCardModel());
   }
 
@@ -28,6 +40,9 @@ class MarcketPlace1Model extends FlutterFlowModel<MarcketPlace1Widget> {
   void dispose() {
     skillSearchBarModel.dispose();
     sepcifiedCareTabBarModel.dispose();
-    marketplaceCaregiverCardModel.dispose();
+    marketplaceCaregiverCardModel1.dispose();
+    marketplaceCaregiverCardModel2.dispose();
+    marketplaceCaregiverCardModel3.dispose();
+    marketplaceCaregiverCardModel4.dispose();
   }
 }

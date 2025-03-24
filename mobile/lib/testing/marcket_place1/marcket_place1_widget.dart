@@ -10,6 +10,9 @@ export 'marcket_place1_model.dart';
 class MarcketPlace1Widget extends StatefulWidget {
   const MarcketPlace1Widget({super.key});
 
+  static String routeName = 'MarcketPlace1';
+  static String routePath = '/marcketPlace1';
+
   @override
   State<MarcketPlace1Widget> createState() => _MarcketPlace1WidgetState();
 }
@@ -75,17 +78,55 @@ class _MarcketPlace1WidgetState extends State<MarcketPlace1Widget> {
                 ),
                 Flexible(
                   child: wrapWithModel(
-                    model: _model.marketplaceCaregiverCardModel,
+                    model: _model.marketplaceCaregiverCardModel1,
                     updateCallback: () => safeSetState(() {}),
                     child: MarketplaceCaregiverCardWidget(
                       name: 'Dineth S',
                       caregiverAgency: 'Royal Nursing Home',
                       rating: '5.0 Stars',
                       description:
-                          'KKAJDNVFOASEIDGKNWOSDJBNSIKLDJVMOSLDKVNSODVKNGDSGKV',
+                          'Dineth S  is a dedicated caregiver from Royal Nursing Home, offering professional elderly and disability care. With expertise in daily assistance and medical support, Dineth ensures compassionate and personalized care. Available at 6000 LKR/hr.',
                       priceLKR: '6000LKR',
                       image: '',
                     ),
+                  ),
+                ),
+                Flexible(
+                  child: wrapWithModel(
+                    model: _model.marketplaceCaregiverCardModel2,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MarketplaceCaregiverCardWidget(
+                      name: 'Rovindie A',
+                      caregiverAgency: 'Ninewells',
+                      rating: '4.5 Stars',
+                      description:
+                          'Rovindie A is a dedicated caregiver from Ninewells, offering professional elderly and disability care. With expertise in daily assistance and medical support, Rovindie ensures compassionate and personalized care. Available at 5000 LKR/hr.',
+                      priceLKR: '5000LKR',
+                    ),
+                  ),
+                ),
+                wrapWithModel(
+                  model: _model.marketplaceCaregiverCardModel3,
+                  updateCallback: () => safeSetState(() {}),
+                  child: MarketplaceCaregiverCardWidget(
+                    name: 'Thiyumi W',
+                    caregiverAgency: 'KINGS',
+                    rating: '4.0 Stars',
+                    description:
+                        'Thiyumi W is a dedicated caregiver from KINGS, offering professional elderly and disability care. With expertise in daily assistance and medical support, Thiyumi ensures compassionate and personalized care. Available at 5000 LKR/hr.',
+                    priceLKR: '5000LKR',
+                  ),
+                ),
+                wrapWithModel(
+                  model: _model.marketplaceCaregiverCardModel4,
+                  updateCallback: () => safeSetState(() {}),
+                  child: MarketplaceCaregiverCardWidget(
+                    name: 'Sethum M',
+                    caregiverAgency: 'Royal Nursing Home',
+                    rating: '4.0 Stars',
+                    description:
+                        'Sethum M is a dedicated caregiver from Royal Nursing Home, offering professional elderly and disability care. With expertise in daily assistance and medical support, Sethum ensures compassionate and personalized care. Available at 4000 LKR/hr.',
+                    priceLKR: '4000LKR',
                   ),
                 ),
               ].divide(SizedBox(height: 24.0)),

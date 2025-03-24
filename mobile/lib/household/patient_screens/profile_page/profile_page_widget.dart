@@ -2,12 +2,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/household/app_bar_rightside/app_bar_rightside_widget.dart';
 import '/household/icon_button/icon_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'profile_page_model.dart';
 export 'profile_page_model.dart';
 
 class ProfilePageWidget extends StatefulWidget {
   const ProfilePageWidget({super.key});
+
+  static String routeName = 'profilePage';
+  static String routePath = '/profilePage';
 
   @override
   State<ProfilePageWidget> createState() => _ProfilePageWidgetState();
@@ -101,7 +105,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('PatientInfo');
+                          context.pushNamed(PatientInfoWidget.routeName);
                         },
                         child: wrapWithModel(
                           model: _model.iconButtonModel1,
@@ -122,7 +126,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('PatientReports');
+                          context.pushNamed(PatientReportsWidget.routeName);
                         },
                         child: wrapWithModel(
                           model: _model.iconButtonModel2,
@@ -143,7 +147,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('pcCalendar');
+                          context.pushNamed(PcCalendarWidget.routeName);
                         },
                         child: wrapWithModel(
                           model: _model.iconButtonModel3,

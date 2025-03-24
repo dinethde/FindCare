@@ -9,6 +9,9 @@ export 'specializedin_page_model.dart';
 class SpecializedinPageWidget extends StatefulWidget {
   const SpecializedinPageWidget({super.key});
 
+  static String routeName = 'SpecializedinPage';
+  static String routePath = '/specializedinPage';
+
   @override
   State<SpecializedinPageWidget> createState() =>
       _SpecializedinPageWidgetState();
@@ -86,7 +89,7 @@ class _SpecializedinPageWidgetState extends State<SpecializedinPageWidget> {
                                 ),
                           ),
                           Text(
-                            'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                            'Discover the focused areas of expertise, backed by extensive training and practical experience.',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

@@ -1,7 +1,9 @@
+import '';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/onboarding/care_type_b_o_x/care_type_b_o_x_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'care_type_model.dart';
@@ -14,6 +16,9 @@ class CareTypeWidget extends StatefulWidget {
   }) : this.typeColor = typeColor ?? Colors.white;
 
   final Color typeColor;
+
+  static String routeName = 'careType';
+  static String routePath = '/careType';
 
   @override
   State<CareTypeWidget> createState() => _CareTypeWidgetState();
@@ -144,7 +149,7 @@ class _CareTypeWidgetState extends State<CareTypeWidget> {
                   onPressed: (_model.careType == null)
                       ? null
                       : () async {
-                          context.pushNamed('Householdsignup');
+                          context.pushNamed(HouseholdsignupWidget.routeName);
                         },
                   text: 'Continue',
                   options: FFButtonOptions(

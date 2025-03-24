@@ -9,6 +9,9 @@ export 'personal_info_e_d_i_t_model.dart';
 class PersonalInfoEDITWidget extends StatefulWidget {
   const PersonalInfoEDITWidget({super.key});
 
+  static String routeName = 'personalInfoEDIT';
+  static String routePath = '/personalInfoEDIT';
+
   @override
   State<PersonalInfoEDITWidget> createState() => _PersonalInfoEDITWidgetState();
 }
@@ -75,7 +78,7 @@ class _PersonalInfoEDITWidgetState extends State<PersonalInfoEDITWidget> {
                               ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                          'Update your personal information to ensure accuracy and keep your profile up-to-date.',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

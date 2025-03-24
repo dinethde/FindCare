@@ -9,6 +9,9 @@ export 'rate_caregiver_model.dart';
 class RateCaregiverWidget extends StatefulWidget {
   const RateCaregiverWidget({super.key});
 
+  static String routeName = 'RateCaregiver';
+  static String routePath = '/rateCaregiver';
+
   @override
   State<RateCaregiverWidget> createState() => _RateCaregiverWidgetState();
 }
@@ -86,7 +89,7 @@ class _RateCaregiverWidgetState extends State<RateCaregiverWidget> {
                                   ),
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                              'Provide feedback for caregivers you’ve worked with to help improve services and guide others in selecting the right caregiver.',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

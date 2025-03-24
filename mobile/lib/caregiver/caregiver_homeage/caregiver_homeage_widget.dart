@@ -16,6 +16,9 @@ export 'caregiver_homeage_model.dart';
 class CaregiverHomeageWidget extends StatefulWidget {
   const CaregiverHomeageWidget({super.key});
 
+  static String routeName = 'CaregiverHomeage';
+  static String routePath = '/caregiverHomeage';
+
   @override
   State<CaregiverHomeageWidget> createState() => _CaregiverHomeageWidgetState();
 }
@@ -63,10 +66,10 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                       children: [
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 0.5,
-                          child: custom_widgets.GradientTwo(
+                          height: MediaQuery.sizeOf(context).height * 0.48,
+                          child: custom_widgets.AngularGradient(
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: MediaQuery.sizeOf(context).height * 0.5,
+                            height: MediaQuery.sizeOf(context).height * 0.48,
                           ),
                         ),
                         Padding(
@@ -547,8 +550,6 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       wrapWithModel(
                                         model: _model.patientBlockModel,
@@ -623,14 +624,11 @@ class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
-              child: wrapWithModel(
-                model: _model.navBarModel,
-                updateCallback: () => safeSetState(() {}),
-                child: NavBarWidget(
-                  page: 0,
-                ),
+            wrapWithModel(
+              model: _model.navBarModel,
+              updateCallback: () => safeSetState(() {}),
+              child: NavBarWidget(
+                page: 0,
               ),
             ),
           ],

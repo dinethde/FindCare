@@ -1,6 +1,8 @@
+import '';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'onboard_role_select_model.dart';
@@ -13,6 +15,9 @@ class OnboardRoleSelectWidget extends StatefulWidget {
   }) : this.typeColor = typeColor ?? Colors.transparent;
 
   final Color typeColor;
+
+  static String routeName = 'onboardRoleSelect';
+  static String routePath = '/onboardRoleSelect';
 
   @override
   State<OnboardRoleSelectWidget> createState() =>
@@ -281,9 +286,9 @@ class _OnboardRoleSelectWidgetState extends State<OnboardRoleSelectWidget> {
                       ? null
                       : () async {
                           if (_model.type == 0) {
-                            context.pushNamed('registerName');
+                            context.pushNamed(RegisterNameWidget.routeName);
                           } else {
-                            context.pushNamed('careGiverSignIn');
+                            context.pushNamed(CareGiverSignInWidget.routeName);
                           }
                         },
                   text: 'Continue',

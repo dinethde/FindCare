@@ -10,6 +10,9 @@ export 'cg_experience_model.dart';
 class CgExperienceWidget extends StatefulWidget {
   const CgExperienceWidget({super.key});
 
+  static String routeName = 'cgExperience';
+  static String routePath = '/cgExperience';
+
   @override
   State<CgExperienceWidget> createState() => _CgExperienceWidgetState();
 }
@@ -83,7 +86,7 @@ class _CgExperienceWidgetState extends State<CgExperienceWidget> {
                                   ),
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet consectetur. Vitae dui volutpat leo euismod lacinia egestas. Eu arcu hac sociis arcu quis nibh.',
+                              'Explore extensive professional experience, showcasing their reliability, skills, and the number of clients served.',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

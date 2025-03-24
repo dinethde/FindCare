@@ -9,6 +9,9 @@ export 'rate_agency_model.dart';
 class RateAgencyWidget extends StatefulWidget {
   const RateAgencyWidget({super.key});
 
+  static String routeName = 'RateAgency';
+  static String routePath = '/rateAgency';
+
   @override
   State<RateAgencyWidget> createState() => _RateAgencyWidgetState();
 }

@@ -46,7 +46,6 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
     return Container(
       constraints: BoxConstraints(
         minWidth: 160.0,
-        minHeight: 148.0,
         maxWidth: double.infinity,
         maxHeight: double.infinity,
       ),
