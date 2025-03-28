@@ -5,6 +5,7 @@ services:
     ports:
       - "8082:8082"
     environment:
+      SPRING_APPLICATION_NAME: "caregiver-service"
       SPRING_DATASOURCE_URL: jdbc:postgresql://fc-tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require
       SPRING_DATASOURCE_USERNAME: adminTenantDb
       SPRING_DATASOURCE_PASSWORD: Findcare_MAIN_pwd
