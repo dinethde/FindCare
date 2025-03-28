@@ -7,14 +7,14 @@ spring:
 
   # Primary datasource for JPA
   datasource:
-    url: jdbc:postgresql://tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require
-    username: tenantdb
-    password: Findcare_pwd_db
+    url: jdbc:postgresql://fc-tenant-db.postgres.database.azure.com:5432/tenantdb?sslmode=require
+    username: adminTenantDb
+    password: Findcare_MAIN_pwd
 
   # Explicitly disable JPA schema generation
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
     show-sql: true
 
   # Configure Flyway without JPA dependency
