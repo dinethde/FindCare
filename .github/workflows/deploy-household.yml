@@ -26,7 +26,7 @@ jobs:
       # If you prefer separate ACR credentials:
 
       - name: ACR Login
-        run: az acr login --name findcarebackendcr
+        run: az acr login --name findcarecr
 
       # 4. Build the Docker image
       - name: Build Docker image
