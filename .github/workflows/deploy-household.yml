@@ -58,5 +58,5 @@ jobs:
               --dns-name-label household \
               --registry-username ${{ secrets.ACR_USERNAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }} \
-              --loacation "japaneast" \
-              --os-type Linux
+              --os-type Linux \
+              --location "japaneast"

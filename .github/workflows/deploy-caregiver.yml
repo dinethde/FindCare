@@ -59,4 +59,5 @@ jobs:
               --registry-username ${{ secrets.ACR_USERNAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }} \
               --os-type Linux \
+              --location "japaneast" \
               --environment-variables SPRING_APPLICATION_NAME=caregiver-service
