@@ -7,7 +7,7 @@ services:
       - "8080:8080"
     environment:
       SPRING_APPLICATION_NAME: "household-service"
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://fc-household-db.postgres.database.azure.com:5432/household?sslmode=require"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://fc-household-db-dev.postgres.database.azure.com:5432/household?sslmode=require"
       SPRING_DATASOURCE_USERNAME: "householddbadmin"
       SPRING_DATASOURCE_PASSWORD: "Findcare_admin_pwd"
       SPRING_FLYWAY_ENABLED: true

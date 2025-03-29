@@ -19,11 +19,5 @@ spring:
     enabled: true
     locations: classpath:db/migration
     baseline-on-migrate: true
-    #  security:
-    #    oauth2:
-    #      resourceserver:
-    #        jwt:
-    #          issuer-uri: https://findcare.jp.auth0.com/
-    #          audiences: https://findcareff
     validate-on-migrate: true
     out-of-order: true
