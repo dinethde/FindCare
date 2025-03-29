@@ -91,7 +91,7 @@ public class CaregiverService {
      * @throws ResourceNotFoundException if no caregiver is found with the given ID
      */
     @Transactional(readOnly = true)
-    public Caregiver getCaregiverById(Long caregiverId) {
+    public Caregiver getCaregiverById(Integer caregiverId) {
         log.info("Fetching caregiver with ID: {}", caregiverId);
 
         return caregiverRepository.findById(caregiverId)
@@ -112,7 +112,7 @@ public class CaregiverService {
      * @return The caregiver DTO if found
      * @throws ResourceNotFoundException if no caregiver is found with the given
      *                                   account ID
-     * @deprecated Use {@link #getCaregiverById(Long)} instead
+     * @deprecated Use {@link #getCaregiverById(Integer)} instead
      */
     @Deprecated
     @Transactional(readOnly = true)

@@ -13,7 +13,7 @@ import java.util.Optional;
  * caregiver-specific operations.
  */
 @Repository
-public interface CaregiverRepository extends JpaRepository<Caregiver, Long> {
+public interface CaregiverRepository extends JpaRepository<Caregiver, Integer> {
 
     /**
      * Finds a caregiver by their associated account ID.
