@@ -3,7 +3,7 @@ spring:
     name: household-service
 
   datasource:
-    url: "jdbc:postgresql://fc-household-db.postgres.database.azure.com:5432/household?sslmode=require"
+    url: "jdbc:postgresql://fc-household-db-dev.postgres.database.azure.com:5432/household?sslmode=require"
     username: "householddbadmin"
     password: "Findcare_admin_pwd"
 
