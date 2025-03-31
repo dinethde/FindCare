@@ -9,8 +9,8 @@ interface HostDetailsProps {
  */
 export default function HostDetails({ details }: HostDetailsProps) {
   return (
-    <div className="space-y-3">
-      <h2 className="text-xl font-bold">Host Details</h2>
+    <div className="flex flex-col gap-4 text-small-text text-neutral-10">
+      <h2 className="text-h5">Host Details</h2>
       <ul className="space-y-2 text-sm">
         {details.map((detail, index) => (
           <li key={index} className="flex items-start">
@@ -19,7 +19,7 @@ export default function HostDetails({ details }: HostDetailsProps) {
           </li>
         ))}
       </ul>
-      <button className="text-sm font-medium">Show more ›</button>
+      <button className="text-tagline w-fit underline">Show more ›</button>
     </div>
   )
 }

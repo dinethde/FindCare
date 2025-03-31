@@ -9,6 +9,7 @@ import EducationalBackground from "@/components/EducationalBackground"
 import RatingSection from "@/components/RatingSection"
 import AgencyDetails from "@/components/AgencyDetails"
 import HostDetails from "@/components/HostDetails"
+import { ArrowLeft, Download, Heart } from "lucide-react"
 
 interface CaregiverProfileProps {
   caregiver: Caregiver
@@ -20,7 +21,7 @@ interface CaregiverProfileProps {
  */
 export default function CaregiverProfile({ caregiver }: CaregiverProfileProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       {/* Profile Image */}
       <div className="relative w-full h-64">
         <Image
@@ -30,73 +31,37 @@ export default function CaregiverProfile({ caregiver }: CaregiverProfileProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute top-4 left-4 p-2 rounded-full bg-white/80 cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
+        <div className="absolute top-4 left-4 p-2 rounded-full">
+          <ArrowLeft className="text-white" />
         </div>
         <div className="absolute top-4 right-4 flex space-x-2">
-          <div className="p-2 rounded-full bg-white/80 cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
+          <div className="p-2 ">
+            <Download className="text-white" />
           </div>
-          <div className="p-2 rounded-full bg-white/80 cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
+          <div className="p-2 ">
+            <Heart className="text-white" />
           </div>
         </div>
       </div>
 
       {/* Profile Content */}
-      <div className="p-6 space-y-6">
-        <ProfileHeaderMobile
-          name={caregiver.name}
-          location={caregiver.location}
-          rating={caregiver.rating}
-          reviews={caregiver.reviews}
-        />
+      <div className="p-6 flex flex-col gap-8">
+        <div className="flex flex-col gap-6">
+          <ProfileHeaderMobile
+            name={caregiver.name}
+            location={caregiver.location}
+            rating={caregiver.rating}
+            reviews={caregiver.reviews}
+          />
 
-        <KeyStats stats={caregiver.keyStats} />
+          <KeyStats stats={caregiver.keyStats} />
 
-        <HostedBy
-          agency={caregiver.hostedBy.agency}
-          years={caregiver.hostedBy.years}
-          image={caregiver.hostedBy.image}
-        />
+          <HostedBy
+            agency={caregiver.hostedBy.agency}
+            years={caregiver.hostedBy.years}
+            image={caregiver.hostedBy.image}
+          />
+        </div>
 
         <FeatureList title="Key feature" features={caregiver.keyFeatures} />
 
@@ -106,17 +71,20 @@ export default function CaregiverProfile({ caregiver }: CaregiverProfileProps) {
 
         <EducationalBackground qualifications={caregiver.education} />
 
+      </div>
+
+      <div className="w-full">
         <RatingSection
-          rating={caregiver.ratingSection.rating}
-          date={caregiver.ratingSection.date}
-          review={caregiver.ratingSection.review}
-          reviewer={caregiver.ratingSection.reviewer}
-          reviewerImage={caregiver.ratingSection.reviewerImage}
+          reviews={caregiver.agencyReviews}
         />
+      </div>
+
+      <div className="p-6 flex flex-col gap-8">
 
         <AgencyDetails agency={caregiver.agencyDetails} />
 
         <HostDetails details={caregiver.hostDetails} />
+
       </div>
     </div>
   )

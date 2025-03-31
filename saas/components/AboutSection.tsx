@@ -7,9 +7,9 @@ interface AboutSectionProps {
  */
 export default function AboutSection({ content }: AboutSectionProps) {
   return (
-    <div className="space-y-2">
-      <h2 className="text-xl font-bold">About</h2>
-      <p className="text-gray-600 text-sm">{content}</p>
+    <div className="space-y-5">
+      <h2 className="text-h5 text-neutral-11">About</h2>
+      <p className="text-neutral-10  text-small-text "><span className="leading-[1.5]">{content}</span></p>
     </div>
   )
 }

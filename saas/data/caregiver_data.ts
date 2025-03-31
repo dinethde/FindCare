@@ -1,4 +1,5 @@
-import type { Caregiver } from "@/types/caregiver"
+import type { Caregiver } from "@/types/caregiver";
+import CgImage from "@/public/images/photo.png";
 
 /**
  * Sample data for the caregiver profile
@@ -6,15 +7,21 @@ import type { Caregiver } from "@/types/caregiver"
  */
 export const caregiverData: Caregiver = {
   name: "Dineth De Silva",
-  profileImage: "/placeholder.svg?height=500&width=500",
+  profileImage: CgImage,
   location: "Dahlonega, Georgia, United States",
   rating: 4.2,
   reviews: 76,
   keyStats: [
     {
       value: "4.5",
-      label: "House-Holds Certificate",
+      label: "CSR",
     },
+
+    {
+      value: "Household favourite",
+      label: undefined,
+    },
+
     {
       value: "10+",
       label: "Clients Served",
@@ -27,32 +34,39 @@ export const caregiverData: Caregiver = {
   },
   keyFeatures: [
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Orci proin massa nisi sit.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Orci proin massa nisi sit.",
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Orci proin massa nisi sit.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Orci proin massa nisi sit.",
     },
   ],
   about:
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit et eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   normalFeatures: [
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
     },
   ],
   education: [
     {
       level: "NQO LEVEL 5",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum.",
     },
     {
       level: "NQO LE",
@@ -67,14 +81,45 @@ export const caregiverData: Caregiver = {
       description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
   ],
-  ratingSection: {
-    rating: 5.0,
-    date: "20th February 2023",
-    review:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
-    reviewer: "Dineth Silva",
-    reviewerImage: "/placeholder.svg?height=100&width=100",
-  },
+
+  agencyReviews: [
+    {
+      rating: 5.0,
+      date: "20th February 2023",
+      review:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
+      reviewer: "Dineth Silva",
+      reviewerImage: "/placeholder.svg?height=100&width=100",
+    },
+
+    {
+      rating: 4.0,
+      date: "20th February 2023",
+      review:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
+      reviewer: "Dineth Silva",
+      reviewerImage: "/placeholder.svg?height=100&width=100",
+    },
+
+    {
+      rating: 5.0,
+      date: "20th February 2023",
+      review:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
+      reviewer: "Dineth Silva",
+      reviewerImage: "/placeholder.svg?height=100&width=100",
+    },
+
+    {
+      rating: 5.0,
+      date: "20th February 2023",
+      review:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
+      reviewer: "Dineth Silva",
+      reviewerImage: "/placeholder.svg?height=100&width=100",
+    },
+  ],
+
   agencyDetails: {
     name: "Find Care",
     logo: "/placeholder.svg?height=100&width=100",
@@ -84,7 +129,12 @@ export const caregiverData: Caregiver = {
     caregivers: "100+ caregivers",
     responseRate: "100%",
     responseTime: "within an hour",
+    verified: true,
   },
-  hostDetails: ["100+ caregivers", "Response rate: 100%", "Responds within an hour"],
-}
 
+  hostDetails: [
+    "100+ caregivers",
+    "Response rate: 100%",
+    "Responds within an hour",
+  ],
+};

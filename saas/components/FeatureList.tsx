@@ -16,13 +16,13 @@ interface FeatureListProps {
  */
 export default function FeatureList({ title, features }: FeatureListProps) {
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-5 text-neutral-10">
       {features.map((feature, index) => (
         <div key={index} className="flex items-start space-x-3">
-          <ClipboardList className="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-600" />
-          <div>
-            <div className="font-medium">{title}</div>
-            <p className="text-sm text-gray-600">{feature.description}</p>
+          <ClipboardList className="w-6 h-6 mt-1 flex-shrink-0 text-neutral-9" />
+          <div className="space-y-1">
+            <div className="text-regular-text-thicker">{title}</div>
+            <p className="text-small-text text-neutral-7 "><span className="leading-3"> {feature.description}</span></p>
           </div>
         </div>
       ))}

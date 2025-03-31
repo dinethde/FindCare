@@ -12,13 +12,13 @@ interface ProfileHeaderProps {
  */
 export default function ProfileHeader({ name, location, rating, reviews }: ProfileHeaderProps) {
     return (
-        <div className="space-y-2">
-            <h1 className="text-2xl font-bold">{name}</h1>
-            <p className="text-gray-600">{location}</p>
-            <div className="flex items-center space-x-1">
-                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+        <div className="flex flex-col items-start gap-4 ">
+            <h1 className="text-h4  text-neutral-12">{name}</h1>
+            <p className="text-small-text">{location}</p>
+            <div className="flex items-center gap-1 space-x-1 text-small-text">
+                <Star className="w-4 h-4 fill-black" />
                 <span className="font-medium">{rating}</span>
-                <span className="text-gray-500">{reviews} reviews</span>
+                <span className="text-gray-500 underline">{reviews} reviews</span>
             </div>
         </div>
     )
