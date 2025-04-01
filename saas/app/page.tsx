@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const user = await currentUser();
-  const userid = Number(user?.id);
+  const userid = user?.id ?? 'Not logged in';
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className="text-2xl font-bold mb-4">
-        User {userid} - Welcome to FindCare
+        {user ? `User ${userid} - Welcome to FindCare` : 'Welcome to FindCare'}
       </h1>
       <Link href="/tenant/1" className="text-blue-500 hover:underline">
         Go to tenant dashboard
