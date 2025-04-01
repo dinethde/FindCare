@@ -40,6 +40,6 @@ export interface CaregiverData {
   caregiverSpecificity: FeatureItem[];
   keyFeatures: FeatureItem[];
   generalFeatures: FeatureItem[];
-  certifications: CertificationItem[];
+  certifications: CertificationItemType[];
   availableFeatures: AvailableFeatures;
 }

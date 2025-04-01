@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactElement } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Upload, X, Loader2 } from "lucide-react";
@@ -22,7 +22,7 @@ interface FormFieldProps {
 /**
  * FormField component for rendering different types of form inputs
  * @param {FormFieldProps} props - The props for the FormField component
- * @returns {JSX.Element} The rendered FormField component
+ * @returns {ReactElement} The rendered FormField component
  */
 export function FormField({
   field,
@@ -32,7 +32,7 @@ export function FormField({
   error,
   clearImage = false,
   isLastInGroup = false, // New prop with default value
-}: FormFieldProps): JSX.Element {
+}: FormFieldProps): ReactElement {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
@@ -71,9 +71,9 @@ export function FormField({
 
   /**
    * Renders the appropriate input based on the field type
-   * @returns {JSX.Element} The rendered input element
+   * @returns {ReactElement} The rendered input element
    */
-  const renderInput = (): JSX.Element => {
+  const renderInput = (): ReactElement => {
     switch (field.type) {
       case "textarea":
         return (

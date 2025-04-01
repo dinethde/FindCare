@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronDown, User } from "lucide-react"
-import type { FeatureItem } from "@/types/caregiver"
+import type { FeatureItem } from "@/types/caregiver-details-ma/caregiver"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 

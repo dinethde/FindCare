@@ -2,10 +2,10 @@
 
 import { DynamicTable } from "./DynamicTable";
 import { clientData } from "@/data/TableData";
-import type { TableConfig } from "@/types/TableTypes";
+import type { TableConfig, Client } from "@/types/TableTypes";
 
 interface ClientTableProps {
-  config: TableConfig;
+  config: TableConfig<Client>;
   tableType?: string;
   filterOptions: Array<{
     key: string;
@@ -20,7 +20,7 @@ export function ClientTable({
   filterOptions,
   tableType,
 }: ClientTableProps) {
-  const tableConfig: TableConfig = {
+  const tableConfig: TableConfig<Client> = {
     ...config,
   };
 
