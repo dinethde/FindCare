@@ -19,7 +19,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Caregiver {
-    private Long caregiverId;
+    private Integer caregiverId;
 
     private String username;
 

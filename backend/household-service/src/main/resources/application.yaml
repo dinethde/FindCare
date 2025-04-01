@@ -3,23 +3,21 @@ spring:
     name: household-service
 
   datasource:
-    url: "jdbc:postgresql://postgres:5432/household"
-    username: postgres
-    password: postgres
+    url: "jdbc:postgresql://fc-household-db-dev.postgres.database.azure.com:5432/household?sslmode=require"
+    username: "householddbadmin"
+    password: "Findcare_admin_pwd"
 
   jpa:
     hibernate:
       ddl-auto: validate
     show-sql: true
+    properties:
+      hibernate:
+        "[format_sql]": true
 
   flyway:
     enabled: true
     locations: classpath:db/migration
     baseline-on-migrate: true
-
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          issuer-uri: https://findcare.jp.auth0.com/
-#          audiences: https://findcareff
+    validate-on-migrate: true
+    out-of-order: true

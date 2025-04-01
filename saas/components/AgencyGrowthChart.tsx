@@ -13,10 +13,14 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { agencyGrowthData } from "@/data/agency-growth";
-import type { AgencyGrowthData } from "@/types/chart";
 import SelectTime from "@/components/cards/SelectTime";
 
 export function AgencyGrowthChart() {
+  interface AgencyGrowthData {
+    month: string;
+    total: number;
+  }
+
   const [selectedYear, setSelectedYear] = useState<string>("2024");
   const currentYearData =
     agencyGrowthData.find((d) => d.year === parseInt(selectedYear))?.data || [];

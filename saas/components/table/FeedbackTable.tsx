@@ -1,8 +1,10 @@
 import { DynamicTable } from "./DynamicTable";
 import { feedbackData } from "../../data/TableData";
 import type { TableConfig } from "../../types/TableTypes";
+import type { Feedback } from "../../types/TableTypes";
 
-const feedbackConfig: TableConfig = {
+
+const feedbackConfig: TableConfig<Feedback> = {
   title: "Feedback List",
   columns: [
     { key: "name", header: "Name", width: "15%" },

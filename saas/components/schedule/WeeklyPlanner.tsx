@@ -8,7 +8,7 @@ import {
   YAxis,
   BarChart,
   Bar,
-  LabelList,
+  /*LabelList,*/
   CartesianGrid,
 } from "recharts";
 
@@ -42,13 +42,13 @@ interface DayData {
   end?: number;
 }
 
-interface AppointmentLabelProps {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  value: DayData;
-}
+// interface AppointmentLabelProps {
+//   x: number;
+//   y: number;
+//   width: number;
+//   height: number;
+//   value: DayData;
+// }
 
 interface DayLabelProps {
   x: number;
@@ -58,7 +58,6 @@ interface DayLabelProps {
   };
 }
 
-// Constants and Data
 const DAYS_OF_WEEK: DayOfWeek[] = [
   "Monday",
   "Tuesday",
@@ -115,51 +114,51 @@ const APPOINTMENTS: Appointment[] = [
 ];
 
 // Utility Functions
-const formatTime = (time: number): string => {
-  const hours = Math.floor(time);
-  const minutes = Math.round((time - hours) * 60);
-  const ampm = hours >= 12 ? "pm" : "am";
-  const formattedHours = hours % 12 || 12;
-  return `${formattedHours}:${minutes.toString().padStart(2, "0")}${ampm}`;
-};
+// const formatTime = (time: number): string => {
+//   const hours = Math.floor(time);
+//   const minutes = Math.round((time - hours) * 60);
+//   const ampm = hours >= 12 ? "pm" : "am";
+//   const formattedHours = hours % 12 || 12;
+//   return `${formattedHours}:${minutes.toString().padStart(2, "0")}${ampm}`;
+// };
 
 // Components
-const AppointmentLabel: React.FC<AppointmentLabelProps> = ({
-  x,
-  y,
-  width,
-  height,
-  value,
-}) => {
-  if (!value?.name) return null;
+// const AppointmentLabel = ({
+//   x,
+//   y,
+//   width,
+//   height,
+//   value,
+// }: AppointmentLabelProps): React.ReactElement<SVGElement> | null => {
+//   if (!value?.name) return null;
 
-  return (
-    <g>
-      <foreignObject x={x} y={y} width={width} height={height}>
-        <div className="flex h-full flex-col justify-between p-2 text-xs">
-          <div>
-            <div className="text-tagline text-brand-colors-main truncate">
-              {value.name}
-            </div>
-            {/* <div className="text-muted-foreground truncate">{value.type}</div> */}
-          </div>
-          <div className="mt-auto">
-            <div className="text-brand-colors-main text-tagline">
-              {value.start !== undefined && value.end !== undefined && (
-                <div className="flex flex-col gap-1">
-                  <span>{formatTime(value.end)}</span>
-                  <span>{formatTime(value.start)}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </foreignObject>
-    </g>
-  );
-};
+//   return (
+//     <g>
+//       <foreignObject x={x} y={y} width={width} height={height}>
+//         <div className="flex h-full flex-col justify-between p-2 text-xs">
+//           <div>
+//             <div className="text-tagline text-brand-colors-main truncate">
+//               {value.name}
+//             </div>
+//             {/* <div className="text-muted-foreground truncate">{value.type}</div> */}
+//           </div>
+//           <div className="mt-auto">
+//             <div className="text-brand-colors-main text-tagline">
+//               {value.start !== undefined && value.end !== undefined && (
+//                 <div className="flex flex-col gap-1">
+//                   <span>{formatTime(value.end)}</span>
+//                   <span>{formatTime(value.start)}</span>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       </foreignObject>
+//     </g>
+//   );
+// };
 
-const DayLabel: React.FC<DayLabelProps> = ({ x, y, payload }) => (
+const DayLabel = ({ x, y, payload }: DayLabelProps): React.ReactElement<SVGElement> => (
   <g transform={`translate(${x},${y})`}>
     <rect
       x={-50}
@@ -253,11 +252,11 @@ export const WeeklyPlanner: React.FC = () => {
               strokeWidth={1}
               filter="drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1))"
             >
-              <LabelList
+              {/* <LabelList
                 dataKey={(d: DayData) => d}
                 content={<AppointmentLabel />}
                 position="center"
-              />
+              /> */}
             </Bar>
           </BarChart>
         </ResponsiveContainer>

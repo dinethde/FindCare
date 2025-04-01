@@ -16,15 +16,15 @@ export default function NavbarComponent() {
   return (
     <div className="relative bg-main2 min-h-screen flex flex-col items-start justify-center w-auto max-w-[16rem] whitespace-nowrap text-grey border-r border-r-neutral-2">
       {/* Logo + Agency Name */}
-      <div className="self-stretch flex justify-start p1-4 p-[0.5rem] pl-3 gap-2">
+      <div className="w-full flex justify-start p1-4 p-[0.5rem] pl-3 gap-2">
         <Image
-          className="w-[2em] relative h-[2rem] object-cover rounded-md"
+          className="w-[1.8em] relative h-[1.8rem] object-cover rounded-md"
           alt=""
           src={photo}
         />
-        <div className="flex flex-row items-center justify-start">
-          <b className="text-[1.25rem] font-plus-jakarta-sans font-semibold text-black">
-            Find Care
+        <div className="flex flex-row items-center justify-start overflow-hidden">
+          <b className="text-h6 text-neutral-11 truncate w-full">
+            Royal Nurseryxsffd
           </b>
         </div>
       </div>

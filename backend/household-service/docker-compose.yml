@@ -1,3 +1,4 @@
+# ========== Azure Production setup ==========
 services:
   household-service:
     build: .
@@ -5,32 +6,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/household"
-      SPRING_DATASOURCE_USERNAME: "postgres"
-      SPRING_DATASOURCE_PASSWORD: "postgres"
-    depends_on:
-      - postgres
-    networks:
-      - household-network
-
-  postgres:
-    image: postgres:15
-    container_name: household-postgres
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: household
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    networks:
-      - household-network
-
-volumes:
-  postgres-data:
-    driver: local
-
-networks:
-  household-network:
-    driver: bridge
+      SPRING_APPLICATION_NAME: "household-service"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://fc-household-db-dev.postgres.database.azure.com:5432/household?sslmode=require"
+      SPRING_DATASOURCE_USERNAME: "householddbadmin"
+      SPRING_DATASOURCE_PASSWORD: "Findcare_admin_pwd"
+      SPRING_FLYWAY_ENABLED: true
+      SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
+      SERVER_PORT: 8080

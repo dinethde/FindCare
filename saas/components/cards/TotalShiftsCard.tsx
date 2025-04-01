@@ -68,13 +68,13 @@ export function TotalShiftsCard({
                   <Cell key={`cell-${index}`} fill={COLORS[index]} />
                 ))}
                 <Label
-                  content={({ viewBox }) => {
-                    const { cx, cy } = viewBox;
+                  content={() => {
+                    // const { cx, cy } = viewBox;
                     return (
                       <>
                         <text
-                          x={cx}
-                          y={cy - 10}
+                          // x={cx}
+                          // y={cy - 10}
                           textAnchor="middle"
                           className="text-h3 font-bold"
                           dominantBaseline="middle"
@@ -82,8 +82,8 @@ export function TotalShiftsCard({
                           {total}
                         </text>
                         <text
-                          x={cx}
-                          y={cy + 15}
+                          // x={cx}
+                          // y={cy + 15}
                           textAnchor="middle"
                           className="text-tagline fill-neutral-8"
                           dominantBaseline="middle"

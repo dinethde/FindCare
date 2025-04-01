@@ -16,6 +16,7 @@ export interface TableConfig<T> {
   showTabs?: boolean;
   showSeeMore?: boolean;
   showViewAction?: boolean;
+  headerAlignments?: string[];
 }
 
 export interface FilterOption {

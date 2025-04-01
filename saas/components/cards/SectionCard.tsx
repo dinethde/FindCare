@@ -8,7 +8,7 @@ interface SectionCardProps {
   children: React.ReactNode;
   className?: string;
   stackVertical?: boolean;
-  imgSize?: string;
+  imgSize?: "xs" | "sm" | "md" | "lg";
   isIconVisible?: boolean;
 }
 

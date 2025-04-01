@@ -50,7 +50,7 @@ public class CaregiverController {
      * @return ResponseEntity containing the caregiver information if found
      */
     @GetMapping("/id/{id}")
-    public ResponseEntity<Caregiver> getCaregiverById(@PathVariable Long id) {
+    public ResponseEntity<Caregiver> getCaregiverById(@PathVariable Integer id) {
         log.info("REQUEST: Fetching caregiver with ID: {}", id);
 
         Caregiver caregiver = caregiverService.getCaregiverById(id);
@@ -64,7 +64,7 @@ public class CaregiverController {
      * 
      * @param accountId The unique identifier of the caregiver's account
      * @return ResponseEntity containing the caregiver information if found
-     * @deprecated Use {@link #getCaregiverById(Long)} instead
+     * @deprecated Use {@link #getCaregiverById(Integer)} instead
      */
     @GetMapping("/account/{accountId}")
     public ResponseEntity<Caregiver> getCaregiverByAccountId(@PathVariable Integer accountId) {

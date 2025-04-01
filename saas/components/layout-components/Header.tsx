@@ -44,12 +44,11 @@ export default function Header() {
       <div className="w-full relative flex flex-row items-center justify-between ">
         {/* Current Page name */}
         <div className="flex flex-row items-center justify-center text-h4 text-grey-darker">
-          <p>{pageTitle}</p>
+          <p>FindCare</p>
         </div>
 
         {/* Header left items */}
         <div className="w-[22.75rem] flex flex-row items-center justify-end gap-[1.25rem] text-[0.875rem] text-neutral-colors-neutral-9">
-          {/* Searching bar */}
 
           {/* Userprofile icon and Localization settings' icon wrapper */}
           <div className="flex flex-row items-center justify-start gap-[0.75rem]">

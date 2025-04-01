@@ -2,12 +2,12 @@ import React from "react";
 import { CaregiverCalendarView } from "@/components/schedule/CaregiverCalendarView";
 import { agencyData } from "@/data/AgencyData";
 import { ClientTable } from "@/components/table/ClientTable";
-import { TableConfig } from "@/types/TableTypes";
+import { TableConfig, Client } from "@/types/TableTypes";
 
 export default function SchedulePage() {
   const selectedCaregiverId = Object.keys(agencyData.caregivers)[0];
 
-  const clientConfig: TableConfig = {
+  const clientConfig: TableConfig<Client> = {
     title: "Client List ",
     columns: [
       { key: "name", header: "Name", width: "20%" },

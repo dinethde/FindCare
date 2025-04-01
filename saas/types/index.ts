@@ -30,8 +30,10 @@ export interface AvatarProps {
 }
 
 export interface ButtonProps {
-  variant?: "primary" | "feedback" | "compliment" | "complaint";
+  variant?: "primary" | "feedback" | "compliment" | "complaint" | "secondary";
   className?: string;
   children: React.ReactNode;
+  type?: "button" | "submit";
+  disabled?: boolean;
   onClick?: () => void;
 }

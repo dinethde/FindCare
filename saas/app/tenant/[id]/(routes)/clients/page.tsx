@@ -1,12 +1,12 @@
 import { ClientTable } from "@/components/table/ClientTable";
-import type { TableConfig } from "@/types/TableTypes";
+import type { Client, TableConfig } from "@/types/TableTypes";
 import { TotalShiftsCard } from "@/components/cards/TotalShiftCard_2";
 import { GrowthChart } from "@/components/charts/growth-chart";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { taskCompletionData } from "@/data/pie-chart/totalShiftCard";
 import { colorProps } from "@/data/ColorProps";
 
-const clientConfigWithNOK: TableConfig = {
+const clientConfigWithNOK: TableConfig<Client> = {
   title: "Client List",
   columns: [
     { key: "name", header: "Name", width: "15%" },

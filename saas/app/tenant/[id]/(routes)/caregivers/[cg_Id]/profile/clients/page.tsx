@@ -2,10 +2,10 @@
 import { CaregiverTable } from "@/components/table/CaregiverTable";
 import { FeedbackTable } from "@/components/table/FeedbackTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TableConfig } from "@/types/TableTypes";
+import { TableConfig, Caregiver } from "@/types/TableTypes";
 
 export default function CgClientsModal() {
-  const caregiverConfig: TableConfig = {
+  const caregiverConfig: TableConfig<Caregiver> = {
     title: "Client List",
     columns: [
       { key: "name", header: "Name", width: "15%" },

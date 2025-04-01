@@ -23,7 +23,7 @@ public class Caregiver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "caregiver_id")
-    private Long caregiverId;
+    private Integer caregiverId;
 
     @Column(name = "username")
     private String username;

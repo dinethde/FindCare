@@ -2,6 +2,9 @@
  * Do not edit directly, this file was auto-generated.
  */
 
+const { LineChart } = require("lucide-react");
+const { Line } = require("recharts");
+
 module.exports = {
   Backgrounds: {
     main: {
@@ -774,6 +777,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -787,6 +791,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -800,6 +805,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -813,6 +819,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -826,6 +833,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -839,6 +847,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.4,
       textCase: "ORIGINAL",
     },
     {
@@ -852,6 +861,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.3,
       textCase: "ORIGINAL",
     },
     {
@@ -865,6 +875,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.5,
       textCase: "ORIGINAL",
     },
     {
@@ -878,6 +889,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.5,
       textCase: "ORIGINAL",
     },
     {
@@ -891,6 +903,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.5,
       textCase: "ORIGINAL",
     },
     {
@@ -904,6 +917,7 @@ module.exports = {
         filePath: "design.textStyles.tokens.json",
         isSource: true,
       },
+      LineHeight: 1.5,
       textCase: "ORIGINAL",
     },
   ],

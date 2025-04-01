@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import type { ReactElement } from "react"
 import { useDropzone } from "react-dropzone"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -35,9 +36,9 @@ interface UploadSummary {
 
 /**
  * BulkUpload component for uploading multiple caregivers via CSV
- * @returns {JSX.Element} The rendered BulkUpload component
+ * @returns {ReactElement} The rendered BulkUpload component
  */
-export function BulkUpload(): JSX.Element {
+export function BulkUpload(): ReactElement {
   const [csvData, setCsvData] = useState<CsvRow[]>([])
   const [errors, setErrors] = useState<string[]>([])
   const [uploadSummary, setUploadSummary] = useState<UploadSummary | null>(null)

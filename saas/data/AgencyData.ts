@@ -1,9 +1,20 @@
-import type { AgencyData } from "../types/ScheduleTypes";
+import type { AgencyData, AppointmentStatus } from "../types/ScheduleTypes";
 import { getCurrentWeekDates } from "../utils/DateUtils";
 import cg_photo from "@/public/images/photo.png";
 import cl_photo from "@/public/images/photo-rovi.png";
 
 const currentWeekDates = getCurrentWeekDates();
+
+// Define appointment statuses with proper typing
+const STATUS: {
+  SUCCESSFUL: AppointmentStatus;
+  LATE: AppointmentStatus;
+  CANCELLED: AppointmentStatus;
+} = {
+  SUCCESSFUL: "successful",
+  LATE: "late",
+  CANCELLED: "cancelled",
+};
 
 export const agencyData: AgencyData = {
   clients: {
@@ -80,7 +91,7 @@ export const agencyData: AgencyData = {
                 endTime: "06:00",
                 caregiverId: "cg-1",
                 clientId: "client-1",
-                status: "successful",
+                status: STATUS.SUCCESSFUL,
               },
               {
                 id: "appt-2",
@@ -88,7 +99,7 @@ export const agencyData: AgencyData = {
                 endTime: "15:00",
                 caregiverId: "cg-2",
                 clientId: "client-2",
-                status: "cancelled",
+                status: STATUS.CANCELLED,
               },
               {
                 id: "appt-3",
@@ -96,7 +107,7 @@ export const agencyData: AgencyData = {
                 endTime: "18:00",
                 caregiverId: "cg-3",
                 clientId: "client-3",
-                status: "late",
+                status: STATUS.LATE,
               },
 
               {
@@ -105,7 +116,7 @@ export const agencyData: AgencyData = {
                 endTime: "22:00",
                 caregiverId: "cg-3",
                 clientId: "client-3",
-                status: "late",
+                status: STATUS.LATE,
               },
             ]
           : []),
@@ -118,7 +129,7 @@ export const agencyData: AgencyData = {
                 endTime: "08:00",
                 caregiverId: "cg-1",
                 clientId: "client-3",
-                status: "successful",
+                status: STATUS.SUCCESSFUL,
               },
               {
                 id: "appt-5",
@@ -126,7 +137,7 @@ export const agencyData: AgencyData = {
                 endTime: "16:00",
                 caregiverId: "cg-2",
                 clientId: "client-1",
-                status: "cancelled",
+                status: STATUS.CANCELLED,
               },
               {
                 id: "appt-6",
@@ -134,7 +145,7 @@ export const agencyData: AgencyData = {
                 endTime: "16:00",
                 caregiverId: "cg-3",
                 clientId: "client-4",
-                status: "late",
+                status: STATUS.LATE,
               },
             ]
           : []),
@@ -159,7 +170,7 @@ export const agencyData: AgencyData = {
                   `client-4`,
                   `client-5`,
                 ][index - 2],
-                status: "successful",
+                status: STATUS.SUCCESSFUL,
               },
             ]
           : []),
