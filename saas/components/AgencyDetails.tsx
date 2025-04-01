@@ -1,9 +1,9 @@
 import { Star, Clock, Users } from "lucide-react"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 interface AgencyDetail {
   name: string
-  logo: string
+  logo: string | StaticImageData
   reviews: number
   rating: number
   years: number
@@ -27,17 +27,17 @@ export default function AgencyDetails({ agency }: AgencyDetailsProps) {
 
       <div className="flex gap-8 bg-main border-[0.5px] border-neutral-5 rounded-lg p-6">
         <div className="flex flex-col gap-3">
-          <div className=" rounded-full border-[0.5px] border-black relative">
-            <Image src={"/placeholder"} alt="agency" width="140" height="140" className="rounded-full" />
-
+          <div className="relative">
+            <div className=" rounded-full relative h-[120px] w-[120px] overflow-hidden">
+              <Image src={agency.logo} alt="agency" width="120" height="120" className="rounded-full" />
+            </div>
             {agency.verified && (
-              <div className="h-8 w-8 absolute bottom-4 right-0 z-10 bg-neutral-12 rounded-full">
+              <div className="h-8 w-8 overflow-hidden rounded-full absolute bottom-4 right-0 bg-neutral-12 z-10 ">
                 <Image src={agency.logo} alt="agency" width="32" height="32" className="rounded-full" />
               </div>
             )}
-
           </div>
-          <h3 className="text-h4">FindCare</h3>
+          <h3 className="text-h4 text-center text-neutral-11">FindCare</h3>
         </div>
 
         <div className="flex flex-col gap-4 text-start w-full">

@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import { Star } from "lucide-react"
 
 interface reviews {
@@ -6,7 +6,7 @@ interface reviews {
   date: string
   review: string
   reviewer: string
-  reviewerImage: string
+  reviewerImage: string | StaticImageData
 }
 
 interface RatingSectionProps {

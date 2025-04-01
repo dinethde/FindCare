@@ -1,9 +1,9 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 interface HostedByProps {
   agency: string
   years: number
-  image: string
+  image: string | StaticImageData
 }
 
 /**

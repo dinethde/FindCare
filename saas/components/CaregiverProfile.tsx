@@ -63,11 +63,17 @@ export default function CaregiverProfile({ caregiver }: CaregiverProfileProps) {
           />
         </div>
 
+        <hr />
+
         <FeatureList title="Key feature" features={caregiver.keyFeatures} />
 
         <AboutSection content={caregiver.about} />
 
+        <hr />
+
         <FeatureList title="Normal feature" features={caregiver.normalFeatures} />
+
+        <hr />
 
         <EducationalBackground qualifications={caregiver.education} />
 

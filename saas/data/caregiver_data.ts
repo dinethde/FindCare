@@ -30,7 +30,7 @@ export const caregiverData: Caregiver = {
   hostedBy: {
     agency: "Find Care",
     years: 8,
-    image: "/placeholder.svg?height=100&width=100",
+    image: CgImage,
   },
   keyFeatures: [
     {
@@ -89,7 +89,7 @@ export const caregiverData: Caregiver = {
       review:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
       reviewer: "Dineth Silva",
-      reviewerImage: "/placeholder.svg?height=100&width=100",
+      reviewerImage: CgImage,
     },
 
     {
@@ -98,7 +98,7 @@ export const caregiverData: Caregiver = {
       review:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
       reviewer: "Dineth Silva",
-      reviewerImage: "/placeholder.svg?height=100&width=100",
+      reviewerImage: CgImage,
     },
 
     {
@@ -107,7 +107,7 @@ export const caregiverData: Caregiver = {
       review:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
       reviewer: "Dineth Silva",
-      reviewerImage: "/placeholder.svg?height=100&width=100",
+      reviewerImage: CgImage,
     },
 
     {
@@ -116,13 +116,13 @@ export const caregiverData: Caregiver = {
       review:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit. Tempus dolor sit amet consectetur, adipisicing elit. Tempus dolor sit amet consectetur, adipisicing elit. Quisquam, voluptatum. Orci proin massa nisi sit.",
       reviewer: "Dineth Silva",
-      reviewerImage: "/placeholder.svg?height=100&width=100",
+      reviewerImage: CgImage,
     },
   ],
 
   agencyDetails: {
     name: "Find Care",
-    logo: "/placeholder.svg?height=100&width=100",
+    logo: CgImage,
     reviews: 486,
     rating: 5.0,
     years: 8,

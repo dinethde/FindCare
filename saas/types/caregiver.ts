@@ -14,7 +14,7 @@ export interface Caregiver {
   hostedBy: {
     agency: string;
     years: number;
-    image: string;
+    image: string | StaticImageData;
   };
 
   keyFeatures: {
@@ -36,12 +36,12 @@ export interface Caregiver {
     date: string;
     review: string;
     reviewer: string;
-    reviewerImage: string;
+    reviewerImage: string | StaticImageData;
   }[];
 
   agencyDetails: {
     name: string;
-    logo: string;
+    logo: string | StaticImageData;
     reviews: number;
     rating: number;
     years: number;

@@ -12,7 +12,7 @@ interface KeyStatsProps {
  */
 export default function KeyStats({ stats }: KeyStatsProps) {
   return (
-    <div className="grid grid-cols-[0.5fr_1fr_0.5fr] w-full p-4 border-[0.2px] border-neutral-5 rounded-md shadow-medium bg-white px-6">
+    <div className="grid grid-cols-[0.5fr_1fr_0.6fr] w-full p-4 border-[0.2px] border-neutral-5 rounded-md shadow-medium bg-white">
       {stats.map((stat, index) => (
         <div key={index} className="flex flex-col items-center gap-1">
           <div className="text-h6 font-semibold text-center">{stat.value}</div>
