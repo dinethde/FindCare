@@ -1,23 +1,8 @@
 import { Modal } from "@/components/ui/modal/modal";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import React from "react";
+import { Metadata } from "next";
 
-<<<<<<< HEAD
-interface ProfileParams {
-  id: string;
-  cr_Id: string;
-}
-
-export default async function ProfileLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<ProfileParams>;
-}) {
-  const resolvedParams = await params;
-  const dynamicPath = `/tenant/${resolvedParams.id}/clients`;
-=======
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,7 +19,6 @@ export default function RootLayout({
 }: ClientProfileLayoutProps) {
 
   const dynamicPath = `/tenant/1/clients`;
->>>>>>> bd9da10c3159df2668fbd9e686f0d1090893b11d
 
   return (
     <div>
