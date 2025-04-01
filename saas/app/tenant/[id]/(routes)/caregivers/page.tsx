@@ -12,6 +12,7 @@ import { FilterOption } from "@/types/TableTypes";
 import { useGetAllCaregivers } from "@/utils/hooks/useGetAllCaregivers";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
+import { Caregiver } from "@/types/TableTypes"
 
 export default function CaregiverPage() {
   const { data: caregiversData, isLoading } = useGetAllCaregivers();
@@ -29,7 +30,7 @@ export default function CaregiverPage() {
     return null;
   }, [caregiversData]);
 
-  const caregiverConfig: TableConfig = {
+  const caregiverConfig: TableConfig<Caregiver> = {
     title: "Caregiver List",
     columns: [
       { key: "name", header: "Name", width: "15%" },

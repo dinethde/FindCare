@@ -1,10 +1,10 @@
 import { DynamicTable } from "./DynamicTable";
-import { caregiverData } from "../../data/TableData";
-import type { TableConfig } from "../../types/TableTypes";
-import { Caregiver } from "../../types/TableTypes";
+import { caregiverData } from "@/data/TableData";
+import type { TableConfig } from "@/types/TableTypes";
+import { Caregiver } from "@/types/TableTypes";
 
 interface CaregiverTableProps {
-  caregiverConfig: TableConfig;
+  caregiverConfig: TableConfig<Caregiver>;
   tableType: string;
   filterOptions: Array<{
     key: string;

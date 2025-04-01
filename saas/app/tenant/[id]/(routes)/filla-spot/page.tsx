@@ -1,11 +1,11 @@
 import { ClientTable } from "@/components/table/ClientTable";
-import { TableConfig } from "@/types/TableTypes";
+import { Client, TableConfig } from "@/types/TableTypes";
 import React from "react";
 
 export default function page() {
   // Removed unused variable clientConfigWithTimes
 
-  const clientConfigWithNOK: TableConfig = {
+  const clientConfigWithNOK: TableConfig<Client> = {
     title: "Client List",
     columns: [
       { key: "name", header: "Name", width: "16%" },

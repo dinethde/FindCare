@@ -31,7 +31,7 @@ export function DynamicTable<T extends { id: string }>({
   config,
   data,
   filterOptions,
-  tableType = "",
+  tableType = "eye",
   initialFilters = {},
   profilePath = "", // Default to empty string if not provided
 }: DynamicTableProps<T>) {
@@ -104,7 +104,7 @@ export function DynamicTable<T extends { id: string }>({
       return column.render(value, item);
     }
 
-    if (column.key === "careType") {
+    if (column.key === "careType" || column.key === "status") {
       return <CareTypeBadge type={value as string} />;
     }
 
@@ -126,7 +126,7 @@ export function DynamicTable<T extends { id: string }>({
       );
     }
 
-    return <span className="text-regular-text text-neutral-10">{String(value)}</span>;
+    return <div className="text-regular-text text-neutral-10 w-fit">{String(value)}</div>;
   };
 
 
@@ -153,11 +153,11 @@ export function DynamicTable<T extends { id: string }>({
       <div>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-neutral-3">
+            <tr className="border-b border-neutral-3 flex">
               {config.columns.map((column, index) => (
                 <th
                   key={String(column.key)}
-                  className={`pb-3 text-left text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""
+                  className={`pb-3 text-${config?.headerAlignments ? config.headerAlignments[index] : "left"} text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""
                     }`}
                   style={{ width: column.width }}
                 >
@@ -167,15 +167,16 @@ export function DynamicTable<T extends { id: string }>({
               <th className="w-10 pb-2" />
             </tr>
           </thead>
+
           {filteredData.length > 0 ? (
             <tbody>
               {filteredData.map((item, index) => (
                 <tr
                   key={item.id}
                   className={
-                    index !== filteredData.length - 1
+                    `flex  ${index !== filteredData.length - 1
                       ? "border-b border-gray-600"
-                      : ""
+                      : ""}`
                   }
                 >
                   {config.columns.map((column, colIndex) => (
@@ -183,7 +184,9 @@ export function DynamicTable<T extends { id: string }>({
                       key={String(column.key)}
                       className={`${config.title === "Caregiver List" ? "py-6" : "py-5"
                         } ${colIndex === 0 ? "pl-4" : "px-4"} ${colIndex === config.columns.length - 1 ? "pr-0" : ""
-                        }`}
+                        } inline-flex justify-${config?.headerAlignments ? config.headerAlignments[colIndex] === "right" ? "end" : config.headerAlignments[colIndex] : "left"}`}
+                      style={{ width: column.width }}
+
                     >
                       {renderCell(column as TableColumn<T>, item)}
                     </td>
@@ -191,13 +194,13 @@ export function DynamicTable<T extends { id: string }>({
 
                   {/* Action buttons with dynamic navigation */}
                   {tableType === "fill" ? (
-                    <td className="py-5 pr-4 flex justify-end">
+                    <td className="py-5 pr-4 flex justify-end flex-grow">
                       <Link href={getNavigationLink(item.id)}>
                         <Square2StackIcon className="h-5 w-5" />
                       </Link>
                     </td>
                   ) : tableType === "eye" ? (
-                    <td className="py-5 pr-4 flex justify-end">
+                    <td className="py-5 pr-4 flex justify-end flex-grow">
                       <Link href={getNavigationLink(item.id)}>
                         <Eye className="h-5 w-5" />
                       </Link>
@@ -209,17 +212,20 @@ export function DynamicTable<T extends { id: string }>({
               ))}
             </tbody>
           ) : (
-            <tr>
-              <td
-                colSpan={config.columns.length + (config.showViewAction ? 1 : 0)}
-                className="py-8 text-center"
-              >
-                No data available
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td
+                  colSpan={config.columns.length + (config.showViewAction ? 1 : 0)}
+                  className="py-8 text-center"
+                >
+                  No data available
+                </td>
+              </tr>
+            </tbody>
           )}
         </table>
       </div>
+
       <FilterModal2
         isOpen={isFilterModalOpen}
         onClose={() => setIsFilterModalOpen(false)}

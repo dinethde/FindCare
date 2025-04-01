@@ -1,11 +1,13 @@
 import { StaticImageData } from "next/image";
 
 export interface Caregiver {
+  id: number;
   name: string;
   profileImage: string | StaticImageData;
   location: string;
   rating: number;
   reviews: number;
+  status: string;
   keyStats: {
     value: string;
     label: string | undefined;
