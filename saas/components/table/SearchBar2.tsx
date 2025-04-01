@@ -27,9 +27,9 @@ export function SearchBar2({
 
   return (
     <div className="relative w-full ">
-      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-grey" />
+      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-7" />
       <Input
-        className="pl-9 text-regular-text text-neutral-10 w-full [&::placeholder]-text-grey rounded-[30px] shadow-[0px_5px_20px_rgba(0,_0,_0,_0.04),_0px_0px_4px_rgba(0,_0,_0,_0.15)]"
+        className="pl-9 text-regular-text text-neutral-9 w-full [&::placeholder]-text-neutral-7 rounded-[10px] shadow-[0px_5px_20px_rgba(0,_0,_0,_0.04)]"
         placeholder={placeholder}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}

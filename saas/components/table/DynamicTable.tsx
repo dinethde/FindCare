@@ -156,7 +156,7 @@ export function DynamicTable<T extends { id: string }>({
             <tr className="border-b border-neutral-3 flex">
               {config.columns.map((column, index) => (
                 <th
-                  key={String(column.key)}
+                  key={String(index)}
                   className={`pb-3 text-${config?.headerAlignments ? config.headerAlignments[index] : "left"} text-tagline text-neutral-7 ${index === 0 ? "pl-4" : ""
                     }`}
                   style={{ width: column.width }}
