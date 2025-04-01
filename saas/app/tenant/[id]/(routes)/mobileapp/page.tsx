@@ -1,7 +1,7 @@
 import CaregiverProfile from "@/components/CaregiverProfile"
 import { DynamicTable } from "@/components/table/DynamicTable";
 import { caregiverData } from "@/data/caregiver_data"
-import { Caregiver, FilterOption, TableConfig } from "@/types/TableTypes";
+import { FilterOption, TableConfig } from "@/types/TableTypes";
 
 export default function MobileAppPage() {
   interface CaregiverData {

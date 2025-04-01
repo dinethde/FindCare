@@ -99,7 +99,7 @@ const FeatureSection = ({
             onClick={toggleSelection}
             className="flex items-center gap-1 text-sm bg-gray-100 px-3 py-1 rounded-md"
           >
-            <span>Choose 3</span>
+            <span>Choose &quot;3&quot;</span>
             {isSelectionOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
           </button>
         )}
@@ -129,7 +129,7 @@ const FeatureSection = ({
               </div>
               <div className="flex-1">
                 <div className="text-sm font-medium text-gray-400">Select an option</div>
-                <p className="text-xs text-gray-400">Click "Choose 3" to select features</p>
+                <p className="text-xs text-gray-400">Click &quot;Choose 3&quot; to select features</p>
               </div>
             </div>
           ))}

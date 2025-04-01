@@ -10,7 +10,7 @@ import CertificationItem from "@/components/caregiver-details-ma/CertificationIt
 import FieldGroup from "@/components/caregiver-details-ma/FieldGroup"
 import EditableField from "@/components/caregiver-details-ma/EditableField"
 import { Button } from "@/components/ui/button"
-import type { CaregiverData, FeatureItem } from "@/types/caregiver-details-ma/caregiver"
+import type { CaregiverData, FeatureItem, CertificationItemType } from "@/types/caregiver-details-ma/caregiver"
 
 /**
  * CaregiverInformation component displays detailed information about a caregiver
@@ -42,7 +42,7 @@ const CaregiverInformation = () => {
    * @param field - The field name to update
    * @param value - The new value
    */
-  const handleInputChange = (field: keyof CaregiverData, value: any) => {
+  const handleInputChange = (field: keyof CaregiverData, value: string | number | FeatureItem[] | CertificationItemType[]) => {
     setFormValues((prev) => ({
       ...prev,
       [field]: value,
