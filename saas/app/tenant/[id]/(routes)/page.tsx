@@ -5,7 +5,7 @@ import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
 // import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
 import { useParams } from "next/navigation";
-import { useMemo } from "react";
+// import { useMemo } from "react";
 
 export default function Home() {
   const tenantId = Number(useParams().id);
