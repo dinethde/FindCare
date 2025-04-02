@@ -1,10 +1,10 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 /**
  * Props for the FieldGroup component
  */
 interface FieldGroupProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 /**
@@ -12,8 +12,11 @@ interface FieldGroupProps {
  * with a separator line between groups
  */
 const FieldGroup = ({ children }: FieldGroupProps) => {
-  return <div className="divide-y border-b border-gray-200">{children}</div>
-}
+  return (
+    <div className="divide-y border-[0.5px] rounded-[12px] border-gray-200">
+      {children}
+    </div>
+  );
+};
 
-export default FieldGroup
-
+export default FieldGroup;
