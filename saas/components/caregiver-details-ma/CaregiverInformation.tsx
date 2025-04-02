@@ -310,12 +310,12 @@ const CaregiverInformation = () => {
 
         {/* Group 6: Certifications */}
         <FieldGroup>
-          <div className="p-4 flex items-center justify-between">
-            <span className="text-gray-500">Certifications</span>
-            <button className="flex items-center gap-1 text-sm bg-gray-100 px-3 py-1 rounded-md">
+          <div className="p-5 flex items-center justify-between">
+            <span className="text-tagline text-neutral-7">Certifications</span>
+            <Button variant="secondary">
               <span>Add</span>
               <Plus size={16} />
-            </button>
+            </Button>
           </div>
 
           {/* Certification items */}
@@ -349,7 +349,8 @@ const CaregiverInformation = () => {
           <div className="p-4 flex justify-center">
             <Button
               onClick={saveUpdatedInfo}
-              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md"
+              variant={"primary"}
+              className="text-white"
             >
               <Save size={16} />
               Save Updated Info

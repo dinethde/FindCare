@@ -104,17 +104,14 @@ const FeatureSection = ({
       <div className="p-5 flex items-center justify-between border-b">
         <span className="text-neutral-7 text-tagline">{title}</span>
         {isEditing && (
-          <button
-            onClick={toggleSelection}
-            className="flex items-center gap-2 text-tagline text-neutral-9 px-3 py-2 rounded-md bg-main2 border-[0.5px] border-[#e6e6e6] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)]"
-          >
+          <Button onClick={toggleSelection} variant={"secondary"}>
             <span>Choose 3</span>
             {isSelectionOpen ? (
               <ChevronUp size={16} />
             ) : (
               <ChevronDown size={16} />
             )}
-          </button>
+          </Button>
         )}
       </div>
 
@@ -152,7 +149,7 @@ const FeatureSection = ({
                     Select an option
                   </div>
                   <p className="text-xs text-gray-400">
-                    Click &quot;Choose 3&quot; to select features
+                    Click Choose 3 to select features
                   </p>
                 </div>
               </div>
