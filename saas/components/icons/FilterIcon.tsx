@@ -2,9 +2,10 @@ import React from "react";
 
 type UserProfileIconProps = {
   color?: string;
+  className?: string;
 };
 
-const FilterIcon = ({ color = "#333" }: UserProfileIconProps) => {
+const FilterIcon = ({ color = "#333", className }: UserProfileIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,9 +13,10 @@ const FilterIcon = ({ color = "#333" }: UserProfileIconProps) => {
       height="13"
       viewBox="0 0 16 13"
       fill="none"
+      className={className}
     >
-      <circle cx="2.5" cy="3" r="2" stroke="black" />
-      <line x1="6" y1="3" x2="16" y2="3" stroke="black" />
+      <circle cx="2.5" cy="3" r="2" stroke={color} />
+      <line x1="6" y1="3" x2="16" y2="3" stroke={color} />
       <circle
         cx="2.5"
         cy="2.5"
@@ -27,7 +29,7 @@ const FilterIcon = ({ color = "#333" }: UserProfileIconProps) => {
         x2="10"
         y2="-0.5"
         transform="matrix(-1 0 0 1 10 10.5)"
-        stroke="black"
+        stroke={color}
       />
     </svg>
   );

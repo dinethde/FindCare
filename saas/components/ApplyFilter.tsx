@@ -12,19 +12,13 @@ export default function ApplyFilter({ onFilter }: ApplyFilterProps) {
   return (
     <div>
       <Button
-        variant="outline"
         onClick={onFilter}
-        className="text-small-text bg-transparent m-0 p-2 flex justify-center items-center 
-    border border-main2
-    hover:bg-[#FFF5E5] 
-    hover:border-[1px] 
-    hover:border-brand-colors-brand5 
-    hover:shadow-[0px_2px_4px_rgba(0,_0,_0,_0.15)]
-    transition-all duration-200"
+        className=" bg-white m-0 p-2 px-3 flex justify-center items-center border-[2px] border-neutral-3 rounded-[10px] hover:border-[#99CAFF] hover:bg-white relative z-10 text-neutral-7 hover:text-neutral-9"
       >
-        <FilterIcon />
-        <span className=""> Apply filter</span>
-      </Button>
-    </div>
+        <FilterIcon color="#808080" />
+        <span className="text-small-text"> Apply filter</span>
+
+      </Button >
+    </div >
   );
 }
