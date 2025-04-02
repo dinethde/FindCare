@@ -187,7 +187,7 @@ export function DynamicTable<T extends { id: string }>({
                 >
                   {config.columns.map((column, colIndex) => (
                     <td
-                      key={String(column.key)}
+                      key={colIndex}
                       className={`${config.title === "Caregiver List" ? "py-6" : "py-5"
                         } ${colIndex === 0 ? "pl-4" : "px-4"} ${colIndex === config.columns.length - 1 ? "pr-0" : ""
                         } inline-flex justify-${config?.headerAlignments ? config.headerAlignments[colIndex] === "right" ? "end" : config.headerAlignments[colIndex] : "left"}`}
