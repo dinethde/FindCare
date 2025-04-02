@@ -3,29 +3,28 @@
 import Card from "@/components/cards/Card";
 import SatisfactionGauge from "@/components/charts/GaugeChart";
 import { GrowthChart } from "@/components/charts/growth-chart";
-import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
+// import { useGetTenantById } from "@/utils/hooks/useGetTenantById";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
 
 export default function Home() {
   const tenantId = Number(useParams().id);
-  const { data: homePageData } = useGetTenantById(tenantId);
+  // const { data: homePageData } = useGetTenantById(tenantId);
 
   // Use useMemo to prevent unnecessary recalculations on re-renders
-  useMemo(() => {
-    // Only process data when it's available
-    if (homePageData) {
-      return homePageData;
-    }
-    return null;
-  }, [homePageData]);
+  // useMemo(() => {
+  //   // Only process data when it's available
+  //   if (homePageData) {
+  //     return homePageData;
+  //   }
+  //   return null;
+  // }, [homePageData]);
 
   return (
     <div className="flex flex-col gap-4">
       <div>
         <div className="w-full relative flex flex-row items-start justify-start gap-[1.25rem] text-left text-[1.25rem] text-neutral-colors-neutral-11 font-small-text">
           <div className="w-full flex gap-4 ">
-
             <Card revenue={560000} color={"#FF4B00"} />
 
             <Card
@@ -49,7 +48,6 @@ export default function Home() {
               title="Total Clients"
               color="#007AFF"
             />
-
           </div>
         </div>
       </div>
