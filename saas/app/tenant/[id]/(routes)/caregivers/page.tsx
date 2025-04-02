@@ -15,7 +15,7 @@ import { usePathname } from "next/navigation";
 import { Caregiver } from "@/types/TableTypes";
 
 export default function CaregiverPage() {
-  const { data: caregiversData, isLoading } = useGetAllCaregivers();
+  const { data: caregiversData } = useGetAllCaregivers();
   const pathname = usePathname();
   const tenantId = pathname.split("/")[2]; // Extract the tenant ID from path
 
