@@ -1,6 +1,7 @@
 import { DynamicTable } from "@/components/table/DynamicTable";
 import { caregiverData } from "@/data/caregiver_data"
 import { FilterOption, TableConfig } from "@/types/TableTypes";
+import Link from "next/link";
 
 export default function CaregiverListMobileApp() {
     interface CaregiverData {
@@ -37,10 +38,14 @@ export default function CaregiverListMobileApp() {
     }));
 
     return (
-        <DynamicTable
-            config={caregiverConfig}
-            data={displayData}
-            filterOptions={filterOptions}
-        />
+        <div>
+            <Link href="/tenant/1/mobileapp/edit_caregiver_info" className="text-blue-500 underline">To Caregiver Edit screen</Link>
+            <DynamicTable
+                config={caregiverConfig}
+                data={displayData}
+                filterOptions={filterOptions}
+            />
+        </div>
+
     )
 }
