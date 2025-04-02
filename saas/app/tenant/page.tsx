@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
+// import { LoadingSpinner } from "@/components/ui/loading-spinner";
 // import { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { useRouter } from 'next/navigation';
@@ -92,7 +92,6 @@ export default function TenantPage() {
   //   };
   // }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]); // Added router to dependencies
 
-
   // if (!isLoaded) {
   //   return (
   //     <div className="flex items-center justify-center min-h-screen">
@@ -101,16 +100,13 @@ export default function TenantPage() {
   //   );
   // }
 
-
   // if (!isSignedIn) {
   //   router.push('/sign-in');
   //   return null;
   // }
 
-
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <LoadingSpinner className="w-6 h-6" />
       <h1 className="text-2xl font-bold mb-4">Tenant</h1>
     </div>
   );
