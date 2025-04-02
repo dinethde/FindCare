@@ -1,4 +1,3 @@
-import CaregiverInformation from "@/components/caregiver-details-ma/CaregiverInformation";
 import React from "react";
 
 export default function CaregiversPage() {

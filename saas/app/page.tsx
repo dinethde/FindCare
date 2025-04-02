@@ -1,7 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+// import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "FindCare Home",
@@ -20,7 +20,7 @@ export default async function HomePage() {
       <Link href="/tenant/1" className="text-blue-500 hover:underline">
         Go to tenant dashboard
       </Link>
-      <div className="flex ">
+      {/* <div className="flex ">
         <SignedOut>
           <SignInButton
             mode="modal"
@@ -33,7 +33,7 @@ export default async function HomePage() {
         <SignedIn>
           <UserButton afterSignOutUrl="/" />
         </SignedIn>
-      </div>
+      </div> */}
     </div>
   );
 }
