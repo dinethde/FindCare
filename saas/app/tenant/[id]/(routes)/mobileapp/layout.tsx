@@ -1,5 +1,5 @@
 export default function Layout({
-  children,
+  // children,
   CaregiverMobileAppView,
   CaregiverListMobileApp,
 }: {
@@ -15,10 +15,8 @@ export default function Layout({
         <div className="w-full grid grid-cols-[1.5fr_.5fr] gap-4 ">
           <div className="w-full">
             {CaregiverListMobileApp}
-
           </div>
           {CaregiverMobileAppView}
-
         </div>
       </div>
     </>

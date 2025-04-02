@@ -52,8 +52,8 @@ export function DynamicTable<T extends { id: string }>({
     else if (pageIn === "clients") {
       return `/tenant/${pathname.split("/")[2]}/clients/${itemId}/profile/overview`;
     }
-    else if (pageIn === "filla-spot") {
-      return `/tenant/${pathname.split("/")[2]}/mobileapp/`;
+    else if (pageIn === "mobileapp") {
+      return `/tenant/${pathname.split("/")[2]}/mobileapp/${itemId}/edit_caregiver_info`;
     }
     else if (pageIn === "filla-spot") {
       return `/tenant/${pathname.split("/")[2]}/filla-spot/modal`;

@@ -11,6 +11,7 @@ import FieldGroup from "@/components/caregiver-details-ma/FieldGroup"
 import EditableField from "@/components/caregiver-details-ma/EditableField"
 import { Button } from "@/components/ui/button"
 import type { CaregiverData, FeatureItem, CertificationItemType } from "@/types/caregiver-details-ma/caregiver"
+import Link from "next/link"
 
 /**
  * CaregiverInformation component displays detailed information about a caregiver
@@ -74,9 +75,9 @@ const CaregiverInformation = () => {
       {/* Header with back button and edit button */}
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center gap-2">
-          <button className="text-gray-500">
+          <Link href="/tenant/1/mobileapp" className="text-gray-500">
             <ArrowLeft size={20} />
-          </button>
+          </Link>
           <div>
             <h1 className="text-lg font-medium">{caregiverData.name} Information</h1>
             <p className="text-sm text-gray-500">{caregiverData.id}</p>
