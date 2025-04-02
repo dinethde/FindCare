@@ -48,11 +48,17 @@ export function DynamicTable<T extends { id: string }>({
     // Otherwise fall back to default navigation paths
     if (pageIn === "caregivers") {
       return `/tenant/${pathname.split("/")[2]}/caregivers/${itemId}/profile/overview`;
-    } else if (pageIn === "clients") {
+    }
+    else if (pageIn === "clients") {
       return `/tenant/${pathname.split("/")[2]}/clients/${itemId}/profile/overview`;
-    } else if (pageIn === "filla-spot") {
+    }
+    else if (pageIn === "filla-spot") {
+      return `/tenant/${pathname.split("/")[2]}/mobileapp/`;
+    }
+    else if (pageIn === "filla-spot") {
       return `/tenant/${pathname.split("/")[2]}/filla-spot/modal`;
-    } else {
+    }
+    else {
       return "/";
     }
   };
