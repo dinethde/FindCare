@@ -3,12 +3,13 @@ services:
     image: postgres:latest
     container_name: findcare-postgres
     environment:
-      POSTGRES_DB: tenantdb
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: root123
+      POSTGRES_MULTIPLE_DATABASES: "master_db,tenantdb" # Creating both databases
     ports:
       - "5432:5432"
     volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - postgres-data:/var/lib/postgresql/data
     networks:
       - shared-db-network

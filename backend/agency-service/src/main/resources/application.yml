@@ -5,12 +5,20 @@ spring:
   application:
     name: agency-service
 
-  # Primary datasource for JPA
+  # Master datasource for tenant management
   datasource:
-    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
-    username: admin
-    password: root123
-    driver-class-name: org.postgresql.Driver
+    master:
+      url: jdbc:postgresql://findcare-postgres:5432/master_db
+      username: admin
+      password: root123
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        minimum-idle: 5
+        maximum-pool-size: 20
+        idle-timeout: 30000
+        max-lifetime: 2000000
+        connection-timeout: 30000
+        pool-name: MasterHikariPool
 
   # Explicitly disable JPA schema generation
   jpa:
@@ -24,14 +32,14 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 
-  # Configure Flyway without JPA dependency
+  # Configure Flyway for master database
   flyway:
     enabled: true
     # No dependency on EntityManagerFactory
-    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
+    url: jdbc:postgresql://findcare-postgres:5432/master_db
     user: admin
     password: root123
-    locations: filesystem:/app/db/migration
+    locations: classpath:db/migration/master
     baseline-on-migrate: true
     baseline-version: 0
     schemas: public
@@ -41,7 +49,15 @@ logging:
   level:
     org.flywaydb: DEBUG
     org.hibernate.SQL: DEBUG
+    com.findcare.agency.multitenancy: DEBUG
 
 app:
   cors:
     allowed-origins: http://localhost:3000,http://localhost:8081
+
+  tenant:
+    # Default database connection properties for new tenant databases
+    default-datasource:
+      url-template: jdbc:postgresql://findcare-postgres:5432/{database}
+      username: admin
+      password: root123
