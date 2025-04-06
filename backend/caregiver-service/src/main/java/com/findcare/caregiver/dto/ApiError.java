@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * A Data Transfer Object (DTO) for representing API error responses.
+ * This class is used to standardize the structure of error messages returned by the API.
+ */
 @Data
 @Builder
 @NoArgsConstructor
