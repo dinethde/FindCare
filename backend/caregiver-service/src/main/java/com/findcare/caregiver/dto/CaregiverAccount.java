@@ -17,6 +17,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CaregiverAccount {
+    /**
+     * Unique identifier for the caregiver account.
+     */
     private Integer caregiverAccountId;
 
     /**
