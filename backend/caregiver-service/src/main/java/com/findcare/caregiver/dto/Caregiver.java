@@ -19,6 +19,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Caregiver {
+    /**
+     * Unique identifier for the caregiver.
+     */
     private Long caregiverId;
 
     private String username;
