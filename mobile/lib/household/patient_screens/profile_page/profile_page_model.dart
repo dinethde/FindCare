@@ -19,14 +19,7 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   // Model for iconButton component.
   late IconButtonModel iconButtonModel4;
 
-  @override
-  void initState(BuildContext context) {
-    appBarRightsideModel = createModel(context, () => AppBarRightsideModel());
-    iconButtonModel1 = createModel(context, () => IconButtonModel());
-    iconButtonModel2 = createModel(context, () => IconButtonModel());
-    iconButtonModel3 = createModel(context, () => IconButtonModel());
-    iconButtonModel4 = createModel(context, () => IconButtonModel());
-  }
+  
 
   @override
   void dispose() {
