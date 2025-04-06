@@ -9,6 +9,13 @@ import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
+/**
+ * Generic Data Transfer Object (DTO) for representing API responses.
+ * This class is used to standardize the structure of responses returned by the API.
+ * It includes metadata such as timestamp, HTTP status, and a message, along with optional data.
+ *
+ * @param <T> The type of the data payload included in the response.
+ */
 @Data
 @Builder
 @NoArgsConstructor
