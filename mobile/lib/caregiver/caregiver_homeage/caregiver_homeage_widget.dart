@@ -13,15 +13,7 @@ import 'package:flutter/material.dart';
 import 'caregiver_homeage_model.dart';
 export 'caregiver_homeage_model.dart';
 
-class CaregiverHomeageWidget extends StatefulWidget {
-  const CaregiverHomeageWidget({super.key});
 
-  static String routeName = 'CaregiverHomeage';
-  static String routePath = '/caregiverHomeage';
-
-  @override
-  State<CaregiverHomeageWidget> createState() => _CaregiverHomeageWidgetState();
-}
 
 class _CaregiverHomeageWidgetState extends State<CaregiverHomeageWidget> {
   late CaregiverHomeageModel _model;
