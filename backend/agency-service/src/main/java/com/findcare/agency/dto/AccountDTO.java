@@ -4,6 +4,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+/**
+ * Data Transfer Object (DTO) representing an account in the system.
+ * This class is used to transfer account-related data between the service layer and client applications.
+ * It includes fields for account identification, authentication, and contact details.
+ */
 @Data
 public class AccountDTO {
     private Integer accountId;
