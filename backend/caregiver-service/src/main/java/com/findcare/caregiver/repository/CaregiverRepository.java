@@ -7,10 +7,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+
 /**
- * Repository interface for managing Caregiver entities in the database.
- * Provides standard JPA operations and custom query methods for
- * caregiver-specific operations.
+ * Repository interface for managing `Caregiver` entity persistence.
+ * This interface provides methods for performing CRUD operations and custom queries
+ * on the "Caregiver" table in the database.
+ * 
+ * It extends the `JpaRepository` interface, which provides built-in methods for
+ * common database
  */
 @Repository
 public interface CaregiverRepository extends JpaRepository<Caregiver, Long> {
