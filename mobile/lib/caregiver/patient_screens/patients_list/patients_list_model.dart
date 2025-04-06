@@ -16,7 +16,18 @@ class PatientsListModel extends FlutterFlowModel<PatientsListWidget> {
   // Model for iconButton component.
   late IconButtonModel iconButtonModel3;
 
-  
+ // Model for nav_bar component.
+  late NavBarModel navBarModel;
+
+  @override
+  void initState(BuildContext context) {
+    appBarRightsideModel = createModel(context, () => AppBarRightsideModel());
+    iconButtonModel1 = createModel(context, () => IconButtonModel());
+    iconButtonModel2 = createModel(context, () => IconButtonModel());
+    iconButtonModel3 = createModel(context, () => IconButtonModel());
+    navBarModel = createModel(context, () => NavBarModel());
+  }
+
 
   @override
   void dispose() {
