@@ -8,10 +8,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.Data;
 
+/**
+ * Entity class representing the "household" table in the database.
+ * This class maps the database table columns to Java fields and provides
+ * an object-oriented representation of the household data.
+ */
 @Data
 @Entity
 @Table(name = "household")
 public class HouseholdEntity {
+    /**
+     * Primary key for the household table.
+     * This field is auto-generated using the IDENTITY strategy.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "household_id")
