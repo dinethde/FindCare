@@ -18,14 +18,26 @@ import lombok.Data;
 @Data
 public class CaregiverAccountEntity {
 
+    /**
+     * Primary key for the caregiver account table.
+     * This field is auto-generated using the IDENTITY strategy.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "caregiver_account_id")
     private Integer caregiverId;
 
+    /**
+     * A unique identifier for the caregiver account, such as a username or external system ID.
+     * This field is unique to ensure no duplicate identifiers exist.
+     */
     @Column(name = "unique_identifier", unique = true)
     private String uniqueIdentifier;
 
+    /**
+     * Email address associated with the caregiver account.
+     * This field is unique and cannot be null.
+     */
     @Column(name = "email", unique = true)
     private String email;
 
