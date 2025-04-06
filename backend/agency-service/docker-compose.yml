@@ -57,6 +57,8 @@ services:
       POSTGRES_DB: tenant_management
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      # Mount master migrations for initial setup
+      - ../../db/migration/master:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -65,8 +67,8 @@ services:
 
   tenant-service-app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../../  # Set context to parent directory to access db files
+      dockerfile: backend/agency-service/Dockerfile
     container_name: tenant-service-app
     ports:
       - "8080:8080"
@@ -75,6 +77,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SPRING_FLYWAY_ENABLED: 'true'
+      SPRING_FLYWAY_LOCATIONS: 'classpath:db/migration/master'
     depends_on:
       postgres:
         condition: service_healthy

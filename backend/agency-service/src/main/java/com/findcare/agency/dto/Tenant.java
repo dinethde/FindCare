@@ -1,6 +1,5 @@
 package com.findcare.agency.dto;
 
-import com.findcare.agency.entity.TierEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

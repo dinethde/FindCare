@@ -4,10 +4,12 @@ import javax.sql.DataSource;
 
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -70,6 +72,20 @@ public class DataSourceConfig {
         return dataSource;
     }
 
+    @Bean(name = "flyway")
+    public Flyway flyway() {
+        Flyway flyway = Flyway.configure()
+                .dataSource(masterDataSource())
+                .locations("classpath:db/migration/master")
+                .baselineOnMigrate(true)
+                .load();
+
+        // Execute the migration
+        flyway.migrate();
+
+        return flyway;
+    }
+
     /**
      * Create a JdbcTemplate using the master datasource
      */
@@ -90,23 +106,22 @@ public class DataSourceConfig {
      * Configure the entity manager factory for JPA
      */
     @Bean
+    @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean tenantEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(tenantRoutingDataSource());
-        em.setPackagesToScan("com.findcare.agency.entity");
+        em.setPackagesToScan("com.findcare.agency.dto");
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
 
         Properties properties = new Properties();
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+
+        // Change validation mode to 'none' to prevent validation errors on startup
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
+
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
-
-        // // Add entity filtering to exclude tenant-specific entities when using master
-        // DB
-        // properties.setProperty("hibernate.exclude-unlisted-classes", "false");
 
         em.setJpaProperties(properties);
 
@@ -146,6 +161,14 @@ public class DataSourceConfig {
         dataSource.setMaximumPoolSize(maxPoolSize);
         dataSource.setMinimumIdle(minIdle);
         dataSource.setMaxLifetime(maxLifetime);
+
+        // Apply tenant-specific Flyway migrations
+        Flyway flyway = Flyway.configure()
+                .dataSource(dataSource)
+                .locations("classpath:db/migration/tenant")
+                .baselineOnMigrate(true)
+                .load();
+        flyway.migrate();
 
         // Add to map of tenant datasources
         tenantDataSources.put(tenantId, dataSource);

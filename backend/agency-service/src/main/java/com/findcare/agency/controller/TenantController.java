@@ -1,13 +1,12 @@
 package com.findcare.agency.controller;
 
-import com.findcare.agency.dto.AccountDTO;
-import com.findcare.agency.dto.ApiResponse;
 import com.findcare.agency.dto.Tenant;
-import com.findcare.agency.service.AccountService;
 import com.findcare.agency.service.TenantService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,16 +15,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Controller for tenant sign-up and sign-in operations
  */
 @RestController
 @RequestMapping("/api/auth")
+@RequiredArgsConstructor
 public class TenantController {
 
-    @Autowired
-    private TenantService tenantService;
+    private final TenantService tenantService;
 
     /**
      * Sign up a new tenant (creates a new database)

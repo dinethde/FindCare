@@ -93,7 +93,7 @@ spring:
     enabled: true
     baseline-on-migrate: true
     repair-before-migrate: true
-    locations: classpath:/app/db/migration/master
+    locations: classpath:app/db/migration/master
 
 # Tenant configuration
 tenant:

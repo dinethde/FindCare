@@ -1,6 +1,5 @@
 package com.findcare.agency.service;
 
-
 import com.findcare.agency.config.DataSourceConfig;
 import com.findcare.agency.config.TenantContext;
 import com.findcare.agency.dto.Tenant;
@@ -124,7 +123,7 @@ public class TenantService {
                         "jdbc:postgresql://postgres:5432/" + dbName,
                         "postgres",
                         "postgres")
-                .locations("classpath:db/migration/tenant")
+                .locations("classpath:app/db/migration/tenant")
                 .baselineOnMigrate(true)
                 .load();
 
@@ -145,7 +144,7 @@ public class TenantService {
             // Create a direct connection to the tenant database
             String url = "jdbc:postgresql://postgres:5432/" + dbName;
             try (Connection connection = DriverManager.getConnection(url, "postgres", "postgres")) {
-                String sql = "INSERT INTO tenant_account (tenant_id, name) VALUES (?, ?)";
+                String sql = "INSERT INTO Tenant_Account (tenant_id, name) VALUES (?, ?)";
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, tenantId);
                     statement.setString(2, name);
