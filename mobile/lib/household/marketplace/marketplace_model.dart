@@ -9,11 +9,7 @@ class MarketplaceModel extends FlutterFlowModel<MarketplaceWidget> {
   // Model for nav_bar component.
   late NavBarModel navBarModel;
 
-  @override
-  void initState(BuildContext context) {
-    navBarModel = createModel(context, () => NavBarModel());
-  }
-
+  
   @override
   void dispose() {
     navBarModel.dispose();
