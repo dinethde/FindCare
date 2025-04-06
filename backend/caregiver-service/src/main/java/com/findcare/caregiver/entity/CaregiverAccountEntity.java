@@ -8,6 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.Data;
 
+/**
+ * Entity class representing a caregiver account in the system.
+ * This class maps to the "caregiver_account" table in the database and contains
+ * account-related information such as unique identifiers and contact details.
+ */
 @Entity
 @Table(name = "caregiver_account")
 @Data
