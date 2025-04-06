@@ -1,47 +1,112 @@
-server:
-  port: 8081
+# ====== Finsdcare db =======
+#server:
 
+#  port: 8081
+#
+#spring:
+#  application:
+#    name: agency-service
+#
+#  # Primary datasource for JPA
+#  datasource:
+#    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
+#    username: admin
+#    password: root123
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      maximum-pool-size: 10
+#      minimum-idle: 5
+#      idle-timeout: 30000
+#      connection-timeout: 20000
+#
+#  # Explicitly disable JPA schema generation
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        hbm2ddl.auto: none
+#    # Turn off schema validation entirely
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: true
+#
+#  # Configure Flyway without JPA dependency
+#  flyway:
+#    enabled: true
+#    # No dependency on EntityManagerFactory
+#    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
+#    user: admin
+#    password: root123
+#    locations: filesystem:/app/db/migration
+#    baseline-on-migrate: true
+#    baseline-version: 0
+#    schemas: public
+#    validate-on-migrate: false
+#
+## Tenant configuration
+#tenant:
+#  datasource:
+#    url-base: jdbc:postgresql://postgres:5432/
+#    username: postgres
+#    password: postgres
+#    driver-class-name: org.postgresql.Driver
+#    pool:
+#      max-size: 5
+#      min-idle: 2
+#      max-lifetime: 300000
+#
+#logging:
+#  level:
+#    org.flywaydb: DEBUG
+#    org.hibernate.SQL: DEBUG
+#
+#app:
+#  cors:
+#    allowed-origins: http://localhost:3000,http://localhost:8081
+
+# ======== Multi db test ========
 spring:
-  application:
-    name: agency-service
-
-  # Primary datasource for JPA
+  # Master datasource configuration for tenant management
   datasource:
-    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
-    username: admin
-    password: root123
+    url: jdbc:postgresql://postgres:5432/tenant_management
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      connection-timeout: 20000
 
-  # Explicitly disable JPA schema generation
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        hbm2ddl.auto: none
-    # Turn off schema validation entirely
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
     show-sql: true
 
-  # Configure Flyway without JPA dependency
+  # Flyway configuration for master database
   flyway:
     enabled: true
-    # No dependency on EntityManagerFactory
-    url: jdbc:postgresql://findcare-postgres:5432/tenantdb
-    user: admin
-    password: root123
-    locations: filesystem:/app/db/migration
     baseline-on-migrate: true
-    baseline-version: 0
-    schemas: public
-    validate-on-migrate: false
+    repair-before-migrate: true
+    locations: classpath:/app/db/migration/master
 
-logging:
-  level:
-    org.flywaydb: DEBUG
-    org.hibernate.SQL: DEBUG
 
-app:
-  cors:
-    allowed-origins: http://localhost:3000,http://localhost:8081
+# Tenant configuration
+tenant:
+  datasource:
+    url-base: jdbc:postgresql://postgres:5432/
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    pool:
+      max-size: 5
+      min-idle: 2
+      max-lifetime: 300000
+
+server:
+  port: 8080

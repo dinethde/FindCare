@@ -16,29 +16,69 @@
 #       SERVER_PORT: 8082
 #       SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
 
-services:
-  agency-service:
-    build: .
-    container_name: agency-service
-    ports:
-      - "8081:8081"
-    volumes:
-      - ../../db/migration:/app/db/migration
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: root123
-      SPRING_FLYWAY_ENABLED: true
-      SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
-      SERVER_PORT: 8081
-      SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
-    networks:
-      - service-network
-      - shared-db-network
+# ======== Findcare docker ========
+#services:
+#  agency-service:
+#    build: .
+#    container_name: agency-service
+#    ports:
+#      - "8081:8081"
+#    volumes:
+#      - ../../db/migration:/app/db/migration
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://findcare-postgres:5432/tenantdb
+#      SPRING_DATASOURCE_USERNAME: admin
+#      SPRING_DATASOURCE_PASSWORD: root123
+#      SPRING_FLYWAY_ENABLED: true
+#      SPRING_FLYWAY_BASELINE_ON_MIGRATE: true
+#      SERVER_PORT: 8081
+#      SPRING_FLYWAY_LOCATIONS: filesystem:/app/db/migration
+#    networks:
+#      - service-network
+#      - shared-db-network
+#
+#networks:
+#  service-network:
+#    driver: bridge
+#  shared-db-network:
+#    external: true
+#    name: findcare-network
 
-networks:
-  service-network:
-    driver: bridge
-  shared-db-network:
-    external: true
-    name: findcare-network
+# ======== Multi db test ========
+services:
+  postgres:
+    image: postgres:14
+    container_name: multi-tenant-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tenant_management
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+  multi-tenant-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: multi-tenant-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tenant_management
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_FLYWAY_ENABLED: 'true'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
