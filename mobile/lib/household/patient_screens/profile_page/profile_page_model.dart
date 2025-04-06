@@ -28,4 +28,12 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
     iconButtonModel4 = createModel(context, () => IconButtonModel());
   }
 
-  
+  @override
+  void dispose() {
+    appBarRightsideModel.dispose();
+    iconButtonModel1.dispose();
+    iconButtonModel2.dispose();
+    iconButtonModel3.dispose();
+    iconButtonModel4.dispose();
+  }
+}
