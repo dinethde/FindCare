@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 /**
  * Entity class representing a caregiver in the system.
  * This class maps to the "Caregiver" table in the database and contains
- * personal and professional information about caregivers registered in
- * the FindCare platform.
+ * personal and professional information about caregivers.
  */
 @Entity
 @Table(name = "Caregiver")
@@ -29,16 +29,27 @@ public class Caregiver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "caregiver_id")
     private Long caregiverId;
-
+    /**
+     * Username associated with the caregiver.
+     */
     @Column(name = "username")
     private String username;
 
+    /**
+     * First name of the caregiver.
+     */
     @Column(name = "f_name")
     private String firstName;
 
+    /**
+     * middle name of the caregiver.
+     */
     @Column(name = "m_name")
     private String middleName;
 
+    /**
+     * Last name of the caregiver.
+     */
     @Column(name = "l_name")
     private String lastName;
 
