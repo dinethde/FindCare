@@ -15,5 +15,11 @@ import java.util.Optional;
  */
 @Repository
 public interface HouseholdRepository extends JpaRepository<HouseholdEntity, Long> {
+    /**
+     * Finds a household entity by its Auth0 identifier.
+     * 
+     * @param auth0Identifier The Auth0 identifier of the household.
+     * @return An `Optional` containing the `HouseholdEntity` if found, or empty if not found.
+     */
     Optional<HouseholdEntity> findByAuth0Identifier(String auth0Identifier);
 }
