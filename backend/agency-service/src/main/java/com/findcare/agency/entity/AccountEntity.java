@@ -5,6 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entity class representing an agency account in the system.
+ * This class maps to the "Agency_Account" table in the database and contains
+ * account-related information such as unique identifiers and authentication details.
+ */
 @Entity
 @Table(name = "Agency_Account")
 @Data
