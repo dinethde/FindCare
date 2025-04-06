@@ -81,7 +81,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -94,7 +94,6 @@ spring:
     baseline-on-migrate: true
     repair-before-migrate: true
     locations: classpath:/app/db/migration/master
-
 
 # Tenant configuration
 tenant:

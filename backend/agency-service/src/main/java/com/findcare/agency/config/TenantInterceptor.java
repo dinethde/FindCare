@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
 @Component
 public class TenantInterceptor implements HandlerInterceptor {
@@ -21,15 +20,16 @@ public class TenantInterceptor implements HandlerInterceptor {
         return true;
     }
 
-//    @Override
-//    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-//                           ModelAndView modelAndView) {
-//        // No operations needed here
-//    }
+    // @Override
+    // public void postHandle(HttpServletRequest request, HttpServletResponse
+    // response, Object handler,
+    // ModelAndView modelAndView) {
+    // // No operations needed here
+    // }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
-                                Object handler, Exception ex) {
+            Object handler, Exception ex) {
         // Clear the tenant context
         TenantContext.clear();
     }

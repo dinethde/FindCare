@@ -23,11 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(
-        basePackages = "com.findcare.agency.repository",
-        entityManagerFactoryRef = "tenantEntityManagerFactory",
-        transactionManagerRef = "tenantTransactionManager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "
-)
+@EnableJpaRepositories(basePackages = "com.findcare.agency.repository", entityManagerFactoryRef = "tenantEntityManagerFactory", transactionManagerRef = "tenantTransactionManager")
 public class DataSourceConfig {
     @Value("${spring.datasource.url}")
     private String masterUrl;
@@ -58,7 +54,6 @@ public class DataSourceConfig {
 
     @Value("${tenant.datasource.pool.max-lifetime}")
     private long maxLifetime;
-
 
     // Store tenant datasources
     private final Map<String, DataSource> tenantDataSources = new ConcurrentHashMap<>();
@@ -98,7 +93,7 @@ public class DataSourceConfig {
     public LocalContainerEntityManagerFactoryBean tenantEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(tenantRoutingDataSource());
-        em.setPackagesToScan("com.example.model");
+        em.setPackagesToScan("com.findcare.agency.entity");
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -108,6 +103,11 @@ public class DataSourceConfig {
         properties.setProperty("hibernate.hbm2ddl.auto", "validate");
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
+
+        // // Add entity filtering to exclude tenant-specific entities when using master
+        // DB
+        // properties.setProperty("hibernate.exclude-unlisted-classes", "false");
+
         em.setJpaProperties(properties);
 
         return em;
@@ -157,7 +157,4 @@ public class DataSourceConfig {
         routingDataSource.setTargetDataSources(targetDataSources);
         routingDataSource.afterPropertiesSet();
     }
-
-
 }
-

@@ -4,26 +4,30 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Agency_Account")
+@Table(name = "tenants")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class TenantEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "agency_account_seq")
-    @SequenceGenerator(name = "agency_account_seq", sequenceName = "agency_account_seq", allocationSize = 1)
-    @Column(name = "agency_account_id")
-    private Integer accountId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(name = "auth0_identifier", unique = true)
-    private String auth0Identifier;
+    @Column(name = "tenant_id", unique = true, nullable = false)
+    private String tenantId;
 
-    @Column(unique = true)
-    private String email;
+    @Column(nullable = false)
+    private String name;
 
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "tier_enum")
-    private TierEnum tier;
+    @Column(name = "db_name", unique = true, nullable = false)
+    private String dbName;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column
+    private Boolean active = true;
 }

@@ -48,7 +48,7 @@
 services:
   postgres:
     image: postgres:14
-    container_name: multi-tenant-postgres
+    container_name: tenant-service-db
     ports:
       - "5432:5432"
     environment:
@@ -63,11 +63,11 @@ services:
       timeout: 10s
       retries: 3
 
-  multi-tenant-app:
+  tenant-service-app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: multi-tenant-app
+    container_name: tenant-service-app
     ports:
       - "8080:8080"
     environment:

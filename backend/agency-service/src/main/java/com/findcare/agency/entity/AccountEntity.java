@@ -5,6 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entity representing an Agency Account in tenant databases.
+ * Note: This entity is intended for tenant-specific databases only, not the
+ * master database.
+ */
 @Entity
 @Table(name = "Agency_Account")
 @Data
