@@ -10,7 +10,8 @@ import java.time.LocalDate;
 
 /**
  * Entity class representing a caregiver in the system.
- * Contains personal and professional information about caregivers registered in
+ * This class maps to the "Caregiver" table in the database and contains
+ * personal and professional information about caregivers registered in
  * the FindCare platform.
  */
 @Entity
@@ -20,6 +21,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Caregiver {
+    /**
+     * Primary key for the caregiver table.
+     * This field is auto-generated using the IDENTITY strategy.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "caregiver_id")
