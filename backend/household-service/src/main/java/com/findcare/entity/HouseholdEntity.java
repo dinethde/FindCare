@@ -26,21 +26,39 @@ public class HouseholdEntity {
     @Column(name = "household_id")
     private Long householdId;
     
+    /**
+     * Identifier for the user in the Auth0 authentication system.
+     */
     @Column(name = "auth0_identifier")
     private String auth0Identifier;
     
+    /**
+     * Purpose or usage context of the household (e.g., residential, commercial).
+     */
     @Column(name = "use_for")
     private String useFor;
     
+    /**
+     * Name of the household or household owner.
+     */
     @Column(name = "name")
     private String name;
     
+    /**
+     * Username associated with the household.
+     */
     @Column(name = "username")
     private String username;
     
+    /**
+     * Email address associated with the household.
+     */
     @Column(name = "email")
     private String email;
     
+    /**
+     * Preferred language for communication with the household.
+     */
     @Column(name = "preferred_language")
     private String preferredLanguage;
 }
