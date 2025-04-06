@@ -15,6 +15,7 @@ import java.util.UUID;
 /**
  * A Data Transfer Object (DTO) for representing API error responses.
  * This class is used to standardize the structure of error messages returned by the API.
+ * It includes metadata such as a unique error ID, timestamp, HTTP status, and detailed error messages.
  */
 @Data
 @Builder
@@ -31,6 +32,10 @@ public class ApiError {
     private String message;
     private String path;
 
+    /**
+     * The timestamp when the error occurred.
+     * This is formatted as `yyyy-MM-dd HH:mm:ss` for readability.
+     */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
