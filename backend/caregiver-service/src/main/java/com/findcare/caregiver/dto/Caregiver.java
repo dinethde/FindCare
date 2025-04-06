@@ -11,8 +11,8 @@ import java.time.LocalDate;
 
 /**
  * Data Transfer Object (DTO) representing a caregiver.
- * Used for transferring caregiver data between the service layer and client
- * applications.
+ * This class is used for transferring caregiver data between the service layer and client applications.
+ * It includes fields for caregiver identification, personal details, and other relevant information.
  */
 @Data
 @Builder
