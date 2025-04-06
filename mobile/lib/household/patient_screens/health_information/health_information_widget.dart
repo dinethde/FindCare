@@ -23,11 +23,7 @@ class _HealthInformationWidgetState extends State<HealthInformationWidget> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  @override
-  void initState() {
-    super.initState();
-    _model = createModel(context, () => HealthInformationModel());
-  }
+  
 
   @override
   void dispose() {
