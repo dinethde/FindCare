@@ -17,10 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <QueryClientProvider>
-          {children}
-          <Toaster />
-        </QueryClientProvider>
+        <ClerkProvider>
+          <QueryClientProvider>
+            {children}
+            <Toaster />
+          </QueryClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
