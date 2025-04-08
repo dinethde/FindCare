@@ -45,15 +45,15 @@ export default function TenantPage() {
         }
 
         // Call the API service function
-        const responseData = await signupTenant(userIdentifier, userEmail);
+        // const responseData = await signupTenant(userIdentifier, userEmail);
 
-        console.log(
-          "Debug: Signup successful, navigating to tenant page",
-          responseData
-        );
+        // console.log(
+        //   "Debug: Signup successful, navigating to tenant page",
+        //   responseData
+        // );
 
         // Navigate to tenant-specific page with the returned ID
-        router.push(`/tenant/${responseData.id}`);
+        router.push(`/tenant/1`);
       } catch (err) {
         console.error("Debug: Error during signup process:", err);
         setError("Failed to sign up. Please try again.");
