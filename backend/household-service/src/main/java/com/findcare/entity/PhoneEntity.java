@@ -3,6 +3,10 @@ package com.findcare.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * Entity class representing phone contact information in the system.
+ * This class maps to the 'phone' table in the database.
+ */
 @Data
 @Entity
 @Table(name = "phone")
