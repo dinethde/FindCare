@@ -29,6 +29,7 @@ export default function TenantPage() {
         const userIdentifier = user.id;
         const userEmail = user.primaryEmailAddress?.emailAddress;
 
+        // Debugging information
         console.log("Debug: User data retrieved", {
           userIdentifier,
           userEmail,
