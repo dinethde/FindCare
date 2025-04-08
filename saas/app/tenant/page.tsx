@@ -4,7 +4,6 @@ import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
-import { signupTenant } from "@/utils/api-calls/tenantService";
 export default function TenantPage() {
   const router = useRouter();
   const { user } = useUser();
