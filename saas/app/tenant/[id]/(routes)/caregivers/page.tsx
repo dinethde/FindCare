@@ -13,6 +13,7 @@ import { useGetAllCaregivers } from "@/utils/hooks/useGetAllCaregivers";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { Caregiver } from "@/types/TableTypes";
+import { caregiverData } from "@/data/caregiver_data";
 
 export default function CaregiverPage() {
   const { data: caregiversData } = useGetAllCaregivers();
@@ -91,7 +92,7 @@ export default function CaregiverPage() {
               caregiverConfig={caregiverConfig}
               filterOptions={filterOptions}
               tableType="eye"
-              data={displayData || []}
+              data={caregiverData || []}
               profilePath={profileBasePath}
             />
           </div>

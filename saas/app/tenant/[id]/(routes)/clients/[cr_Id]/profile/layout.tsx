@@ -2,7 +2,7 @@ import { Modal } from "@/components/ui/modal/modal";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import React from "react";
 import { Metadata } from "next";
-
+import { SidebarClient } from "@/components/layout-components/SidebarClient";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +14,7 @@ interface ClientProfileLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-}: ClientProfileLayoutProps) {
-
+export default function RootLayout({ children }: ClientProfileLayoutProps) {
   const dynamicPath = `/tenant/1/clients`;
 
   return (
@@ -25,6 +22,7 @@ export default function RootLayout({
       <Modal routePath={dynamicPath}>
         <div className="flex gap-3 p-2 min-h-[87vh] max-h-[87vh]">
           {/* Replace with the appropriate sidebar for clients if needed */}
+          <SidebarClient />
           <div className="flex flex-col gap-2 w-full overflow-y-scroll pr-2">
             <ProfileHeader />
             {children}

@@ -26,7 +26,7 @@ export const signupTenant = async (
 
   try {
     const response = await axios.post("http://localhost:8080/api/auth/signup", {
-      tenantId,
+      tenantId: tenantId,
       name: email,
     });
 

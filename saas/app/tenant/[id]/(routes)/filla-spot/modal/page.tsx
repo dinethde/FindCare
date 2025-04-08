@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout() {
   return (
     <div>
-      <Modal routePath="/filla-spot" width={80}>
+      <Modal routePath="/tenant/1/filla-spot/" width={80}>
         <div className="flex gap-3 p-2 min-h-[87vh] max-h-[87vh]">
           <MatchesTable />
         </div>
