@@ -67,8 +67,8 @@ services:
 
   tenant-service-app:
     build:
-      context: ../../  # Set context to parent directory to access db files
-      dockerfile: backend/agency-service/Dockerfile
+      context: .  # Set context to parent directory to access db files
+      dockerfile: Dockerfile
     container_name: tenant-service-app
     ports:
       - "8080:8080"

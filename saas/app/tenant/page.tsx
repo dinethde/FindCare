@@ -1,113 +1,85 @@
 "use client";
 
-// import { LoadingSpinner } from "@/components/ui/loading-spinner";
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { useRouter } from 'next/navigation';
-// import { useUser } from '@clerk/nextjs';
-
-export interface TenantResponse {
-  accountId: string;
-  auth0Identifier: string;
-  email: string;
-  tier: string;
-}
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
+import { signupTenant } from "@/utils/api-calls/tenantService";
 export default function TenantPage() {
-  // const router = useRouter();
-  // const { user, isLoaded, isSignedIn } = useUser();
-  // const [hasAttemptedCreation, setHasAttemptedCreation] = useState(false);
-  // const [hasError, setHasError] = useState(false);
+  const router = useRouter();
+  const { user } = useUser();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    const signupUser = async () => {
+      if (!user) {
+        console.log("Debug: User not available yet, waiting...");
+        return;
+      }
 
-  // // const user = {
-  // //   id: '10', // Replace with actual user ID
-  // //   primaryEmailAddress: {
-  // //     emailAddress: 'randandu'
-  // //   }
-  // // }
+      try {
+        console.log("Debug: Starting tenant signup process");
+        setLoading(true);
+        setError(null);
 
-  // useEffect(() => {
-  //   let isMounted = true;
+        // Get user identifier and email from Clerk
+        const userIdentifier = user.id;
+        const userEmail = user.primaryEmailAddress?.emailAddress;
 
-  //   const setupTenant = async () => {
-  //     // Prevent running if component is unmounted
-  //     if (!isMounted) return;
+        console.log("Debug: User data retrieved", {
+          userIdentifier,
+          userEmail,
+          hasEmail: !!userEmail,
+        });
 
-  //     // Don't proceed if already attempted or has error
-  //     if (hasAttemptedCreation || hasError) {
-  //       return;
-  //     }
+        if (!userEmail) {
+          console.error("Debug: Email not available from auth provider");
+          setError("Email not available");
+          setLoading(false);
+          return;
+        }
 
-  //     // Don't proceed if Clerk hasn't loaded yet or user isn't signed in
-  //     if (!isLoaded || !isSignedIn) {
-  //       return;
-  //     }
+        // Call the API service function
+        const responseData = await signupTenant(userIdentifier, userEmail);
 
-  //     // Don't proceed if don't have required user data
-  //     if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
-  //       return;
-  //     }
+        console.log(
+          "Debug: Signup successful, navigating to tenant page",
+          responseData
+        );
 
-  //     try {
-  //       setHasAttemptedCreation(true);
+        // Navigate to tenant-specific page with the returned ID
+        router.push(`/tenant/${responseData.id}`);
+      } catch (err) {
+        console.error("Debug: Error during signup process:", err);
+        setError("Failed to sign up. Please try again.");
+        setLoading(false);
+      }
+    };
 
-  //       const url = process.env.NEXT_PUBLIC_AGENCY_SERVICE_URL;
-
-  //       const tenant = {
-  //         auth0Identifier: user.id,
-  //         email: user.primaryEmailAddress.emailAddress,
-  //         tier: "premium",
-  //       };
-  //       try {
-  //         const response = await axios.post<TenantResponse>(
-  //           `${url}/accounts`,
-  //           tenant
-  //         );
-
-  //         if (!response.data || !response.data.accountId) {
-  //           throw new Error("Invalid response from server: Missing account ID");
-  //         }
-
-  //         console.log('Tenant created successfully:', response);
-  //         router.push(`/tenant/${response.data.accountId}/`);
-
-  //         return response.data;
-  //       } catch (error) {
-  //         throw new Error(
-  //           error instanceof Error ? error.message : "Failed to create tenant"
-  //         );
-  //       }
-
-  //     } catch (error) {
-  //       console.error('Failed to create tenant:', error);
-  //       if (isMounted) {
-  //         setHasError(true);
-  //       }
-  //     }
-  //   };
-
-  //   setupTenant();
-
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, [isLoaded, isSignedIn, user, hasAttemptedCreation, hasError, router]); // Added router to dependencies
-
-  // if (!isLoaded) {
-  //   return (
-  //     <div className="flex items-center justify-center min-h-screen">
-  //       <LoadingSpinner className="w-6 h-6" />
-  //     </div>
-  //   );
-  // }
-
-  // if (!isSignedIn) {
-  //   router.push('/sign-in');
-  //   return null;
-  // }
+    signupUser();
+  }, [user, router]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Tenant</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      {loading && (
+        <>
+          <LoadingSpinner />
+          <p className="mt-4 text-gray-600">Setting up your account...</p>
+        </>
+      )}
+
+      {error && (
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4 text-red-500">Error</h1>
+          <p className="mb-4">{error}</p>
+          <button
+            onClick={() => router.push("/")}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Return Home
+          </button>
+        </div>
+      )}
     </div>
   );
 }
