@@ -36,6 +36,7 @@ export default function TenantPage() {
           hasEmail: !!userEmail,
         });
 
+        // Check if userEmail is available
         if (!userEmail) {
           console.error("Debug: Email not available from auth provider");
           setError("Email not available");
