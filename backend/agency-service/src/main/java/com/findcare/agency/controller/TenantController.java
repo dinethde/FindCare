@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
+@Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TenantController {
 
     private final TenantService tenantService;
@@ -30,6 +33,8 @@ public class TenantController {
     @PostMapping("/signup")
     public ResponseEntity<?> signUp(@Valid @RequestBody SignUpRequest request) {
         try {
+
+            log.info("Request recieved");
             // Create new tenant with its own database
             Tenant tenant = tenantService.createTenant(request.getTenantId(), request.getName());
 
