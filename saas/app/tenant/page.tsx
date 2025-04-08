@@ -10,6 +10,9 @@ export default function TenantPage() {
   const { user } = useUser();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Use effect to handle the signup process
+  // This effect will run when the component mounts and when the user changes
   useEffect(() => {
     const signupUser = async () => {
       if (!user) {
