@@ -12,7 +12,7 @@ import { FilterOption } from "@/types/TableTypes";
 import { useGetAllCaregivers } from "@/utils/hooks/useGetAllCaregivers";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { Caregiver } from "@/types/TableTypes"
+import { Caregiver } from "@/types/TableTypes";
 
 export default function CaregiverPage() {
   const { data: caregiversData, isLoading } = useGetAllCaregivers();
@@ -59,49 +59,43 @@ export default function CaregiverPage() {
   return (
     <div className="flex flex-col gap-8">
       {
-        isLoading ? (
-          <div className="flex flex-col gap-8">
-            <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
-              {/* == Best caregiver card == */}
-              <div>
-                <BestCaregiversCard caregivers={caregivers} />
-              </div>
-
-              {/* == Total Shifts caregiver card == */}
-              <div>
-                <TotalShiftsCard {...shiftsData} />
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {/* == Card == */}
-                <Card
-                  revenue={"24/"}
-                  title="Active Caregivers"
-                  dataType={`${totalCaregivers}`}
-                  dataTypeClassName="text-[18px] font-medium text-neutral-8"
-                  contentClassName="text-h4"
-                />
-                {/* == Care afficeny Card plus chart  == */}
-                <CareEfficiencyCard data={efficiencyData} />
-              </div>
-            </div>
-
+        <div className="flex flex-col gap-8">
+          <div className="container mx-auto grid grid-cols-[1.25fr_0.65fr_1fr] gap-4 p-0 m-0">
+            {/* == Best caregiver card == */}
             <div>
-              {/* Pass fetched data and profilePath to CaregiverTable */}
-              <CaregiverTable
-                caregiverConfig={caregiverConfig}
-                filterOptions={filterOptions}
-                tableType="eye"
-                data={displayData || []}
-                profilePath={profileBasePath}
+              <BestCaregiversCard caregivers={caregivers} />
+            </div>
+
+            {/* == Total Shifts caregiver card == */}
+            <div>
+              <TotalShiftsCard {...shiftsData} />
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {/* == Card == */}
+              <Card
+                revenue={"24/"}
+                title="Active Caregivers"
+                dataType={`${totalCaregivers}`}
+                dataTypeClassName="text-[18px] font-medium text-neutral-8"
+                contentClassName="text-h4"
               />
+              {/* == Care afficeny Card plus chart  == */}
+              <CareEfficiencyCard data={efficiencyData} />
             </div>
           </div>
-        ) : (
+
           <div>
-            <p>Loading...</p>
+            {/* Pass fetched data and profilePath to CaregiverTable */}
+            <CaregiverTable
+              caregiverConfig={caregiverConfig}
+              filterOptions={filterOptions}
+              tableType="eye"
+              data={displayData || []}
+              profilePath={profileBasePath}
+            />
           </div>
-        )
+        </div>
       }
     </div>
   );
