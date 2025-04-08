@@ -8,6 +8,8 @@ function toKebabCase(str) {
     .toLowerCase();
 }
 
+// =============
+// Parse Colors
 function stripCategory(name, category) {
   if (category.toLowerCase() === 'neutral-colors') {
     // Remove "neutral", "neutral colors", "neutral-colors", etc.
